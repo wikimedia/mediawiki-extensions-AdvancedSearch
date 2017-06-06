@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"WMDE"
+		]
+	},
+	"advancedsearch-desc": "{{desc|name=AdvancedSearch|url=https://www.mediawiki.org/wiki/Extension:AdvancedSearch}}",
+	"advancedsearch-filetype-section-types": "Label for the file type section",
+	"advancedsearch-filetype-section-image": "Label for the image format section",
+	"advancedsearch-filetype-section-video": "Label for the video format section",
+	"advancedsearch-filetype-section-sound": "Label for the audio Format section",
+	"advancedsearch-filetype-section-document": "Label for the document format section",
+	"advancedsearch-filetype-bitmap": "Label for image file type",
+	"advancedsearch-filetype-vector": "Label for drawing file type",
+	"advancedsearch-filetype-audio": "Label for audio file type",
+	"advancedsearch-filetype-video": "Label for video file type",
+	"advancedsearch-filetype-multimedia": "Label for multimedia file type",
+	"advancedsearch-filetype-document": "Label for document file type",
+	"advancedsearch-filetype-bitmap-jpeg": "Label for the JPEG file/mime type",
+	"advancedsearch-filetype-bitmap-tiff": "Label for TIFF file/mime type",
+	"advancedsearch-filetype-vector-svg": "Label for SVG file/mime type",
+	"advancedsearch-filetype-audio-midi": "Label for Midi file/mime type",
+	"advancedsearch-filetype-audio-wav": "Label for WAV file/mime type",
+	"advancedsearch-filetype-audio-flac": "Label for FLAC file/mime type",
+	"advancedsearch-filetype-document-office": "Label for Office file/mime type",
+	"advancedsearch-filetype-document-pdf": "Label for PDF file/mime type",
+	"advancedSearch-filesize-equals": "Label for the file width/height 'equals' comparator selection",
+	"advancedSearch-filesize-greater-than": "Label for the file width/height 'greater than' comparator selection",
+	"advancedSearch-filesize-smaller-than": "Label for the file width/height 'smaller than' comparator selection"
+}
