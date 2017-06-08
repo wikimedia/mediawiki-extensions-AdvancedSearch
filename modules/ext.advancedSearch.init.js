@@ -118,9 +118,8 @@
 			state,
 			widget,
 			{
-				label: msg( option.id ),
+				label: mw.msg( 'advancedsearch-field-' + option.id ),
 				align: 'right',
-				help: msg( option.id +  '_help' ),
 				checkVisibility: function () {
 					return state.filetypeSupportsDimensions();
 				}
@@ -365,55 +364,19 @@
 
 	var i18n = {
 		de: {
-			// FIXME: Quite some of these translation are now out of sync with the English ones.
 			'advanced-search': 'Erweiterte Suchoptionen:',
 
+			// TODO Move these to i18n
 			text: 'Seite enthält …',
-			plain: 'Dieses Wort:',
-			phrase: 'Genau diesen Text:',
-			fuzzy: 'Ungefähr dieses Wort:',
-			not: 'Nicht dieses Wort:',
-
 			structure: 'Struktur',
-			// FIXME: This description of what "prefix:" does is incorrect, and misleading.
-			prefix: 'Unterseiten von:',
-			intitle: 'Seitentitel enthält:',
-			deepcat: 'In dieser Kategorie:',
-			hastemplate: 'Nur Seiten mit dieser Vorlage:',
-			insource: 'Suche im Wikitext:',
-
-			files: 'Dateien und Bilder',
-			filetype: 'Dateien dieses Typs:',
-			filew: 'Dateibreite in Pixel:',
-			fileh: 'Dateihöhe in Pixel:',
-			fileres: 'Diagonalauflösung in Pixel:'
+			files: 'Dateien und Bilder'
 		},
 		en: {
 			'advanced-search': 'Advanced parameters:',
-
 			text: 'The page should include …',
-			plain: 'This word:',
-			phrase: 'Exactly this text:',
-			// FIXME: This describes an OR concatenation, but not what the fuzzy search does.
-			fuzzy: 'One of those words:',
-			// FIXME: This is not only for words but also for phrases.
-			not: 'Not this word:',
-
 			structure: 'Structure',
-			// FIXME: This description of what "prefix:" does is incorrect, and misleading.
-			prefix: 'Subpages of this page:',
-			intitle: 'Page title contains:',
-			deepcat: 'Page in this category:',
-			hastemplate: 'Only pages with this template:',
-			// FIXME: Why doesn't this mention wikitext any more? Also wikitext is not "code".
-			insource: 'Source code contains:',
-
 			// FIXME: Why does this need to mention both, like images are not files?
-			files: 'Files and images',
-			filetype: 'File type:',
-			// FIXME: How can a file that is not an image have a width and a height? Videos?
-			filew: 'File width in pixels:',
-			fileh: 'File height in pixels:'
+			files: 'Files and images'
 		}
 	};
 
@@ -497,9 +460,8 @@
 			layout = option.layout( widget, option );
 		} else {
 			layout = new OO.ui.FieldLayout( widget, {
-				label: msg( option.id ),
-				align: 'right',
-				help: msg( option.id +  '_help' )
+				label: mw.msg( 'advancedsearch-field-' + option.id ),
+				align: 'right'
 			} );
 		}
 		optionSets[ option.group ].addItems( [ layout ] );
@@ -544,7 +506,7 @@
 			if ( !searchOptions[ option.id ] ) {
 				return;
 			}
-			var labeltext = msg( option.id ).replace( /:$/, '' );
+			var labeltext = mw.msg( 'advancedsearch-field-' + option.id );
 
 			// TODO remove special case, create pill formatters for each search option
 			if ( !option.id.match( /^file[hw]$/ ) ) {
@@ -556,7 +518,7 @@
 				labeltext += ' ' + searchOptions[ option.id ][ 0 ] + ' ' + searchOptions[ option.id ][ 1 ] + 'px';
 			}
 			var $label = $( '<span>' ).text( labeltext );
-			$label.attr( 'title', msg( option.id ) + ' ' + option.formatter( searchOptions[ option.id ] ) );
+			$label.attr( 'title', mw.msg( 'advancedsearch-field-' + option.id ) + ' ' + option.formatter( searchOptions[ option.id ] ) );
 			$advancedButtonLabel.append( $label );
 		} );
 	}

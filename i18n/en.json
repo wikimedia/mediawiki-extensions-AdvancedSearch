@@ -5,6 +5,20 @@
 		]
 	},
 	"advancedsearch-desc": "Easy access to advanced search capabilities on [[Special:Search]]",
+
+	"advancedsearch-field-plain": "This word:",
+	"advancedsearch-field-phrase": "Exactly this text:",
+	"advancedsearch-field-fuzzy": "One of those words:",
+	"advancedsearch-field-not": "Not this word:",
+	"advancedsearch-field-prefix": "Subpages of this page:",
+	"advancedsearch-field-intitle": "Page title contains:",
+	"advancedsearch-field-deepcat": "Page in this category:",
+	"advancedsearch-field-hastemplate": "Only pages with this template:",
+	"advancedsearch-field-insource": "Wikitext contains:",
+	"advancedsearch-field-filetype": "File type:",
+	"advancedsearch-field-filew": "File width in pixels:",
+	"advancedsearch-field-fileh": "File height in pixels:",
+
 	"advancedsearch-filetype-section-types": "General file type",
 	"advancedsearch-filetype-section-image": "Image format",
 	"advancedsearch-filetype-section-video": "Video format",
