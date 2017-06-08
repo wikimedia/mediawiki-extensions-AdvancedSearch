@@ -4,7 +4,6 @@
 	border: solid 1px #c8ccd1;
 	border-top: 0;
 	box-sizing: border-box;
-	display: none;
 	margin: 0;
 	margin-top: -1px;
 	max-width: 50em;
@@ -42,6 +41,48 @@
 
 .advancedSearch-fieldContainer .oo-ui-fieldLayout.oo-ui-labelElement.oo-ui-fieldLayout-align-right > .oo-ui-fieldLayout-body > .oo-ui-fieldLayout-help {
 	float: right;
+}
+
+/* TODO Remove advancedButton when ExpandablePane is finished */
+.advancedSearch-advancedButton {
+	clear: both;
+	display: block;
+	margin: 0;
+	max-width: 50em;
+	padding-top: 0.3em;
+}
+
+.advancedSearch-expandablePane {
+	clear: both;
+	display: block;
+	margin: 0;
+	max-width: 50em;
+	padding-top: 0.3em
+}
+
+.advancedSearch-expandablePane-button {
+	background-color: #f8f9fa;
+	color: #222;
+	border: solid 1px #a2a9b1;
+	padding: 0.625em 2.5em 0.625em 0.9375em;
+	line-height: 1;
+	position: relative;
+	text-align: left;
+}
+
+.advancedSearch-expandablePane-pane {
+	display: none;
+}
+
+.advancedSearch-expandablePane-button .oo-ui-indicatorElement-indicator {
+	position: absolute;
+	top: 0;
+	height:100%;
+	right: 0.9375em;
+}
+
+.advancedSearch-previewLabel.oo-ui.widget-enabled {
+	background: white;
 }
 
 .advancedSearch-optionTags {

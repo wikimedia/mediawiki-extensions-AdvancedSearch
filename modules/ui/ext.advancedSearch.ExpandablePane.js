@@ -1,0 +1,85 @@
+( function ( mw ) {
+	'use strict';
+
+	mw.libs = mw.libs || {};
+	mw.libs.advancedSearch = mw.libs.advancedSearch || {};
+	mw.libs.advancedSearch.ui = mw.libs.advancedSearch.ui || {};
+
+	/**
+	 * Button that expands a connected pane.
+	 *
+	 * Both button and pane can have arbitrary jQuery content.
+	 *
+	 * @class
+	 * @extends {OO.ui.Widget}
+	 * @mixins {OO.ui.mixin.IndicatorElement}
+	 * @constructor
+	 *
+	 * @param  {Object} config
+	 */
+	mw.libs.advancedSearch.ui.ExpandablePane = function ( config ) {
+		var myConfig = $.extend( {
+			indicator: 'down'
+		}, config );
+
+		mw.libs.advancedSearch.ui.ExpandablePane.parent.call( this, myConfig );
+		OO.ui.mixin.IndicatorElement.call( this, myConfig );
+
+		var self = this;
+		this.$btn = $( '<div></div>' )
+			.addClass( 'oo-ui-buttonElement-button' )
+			.addClass( 'advancedSearch-expandablePane-button' )
+			.on( 'click', function () { self.onButtonClick(); } );
+
+		this.$dependentPane = $( '<div></div>' )
+			.addClass( 'advancedSearch-expandablePane-pane' );
+
+		if ( config.$buttonLabel ) {
+			this.$btn.append( config.$buttonLabel );
+		}
+
+		this.$btn.append( this.$indicator );
+
+		if ( config.$paneContent ) {
+			this.$dependentPane.append( config.$paneContent );
+		}
+
+		// TODO Move the following code to a separate widget
+		/*
+		var $labelContainer = $( '<div><strong>Advanced Parameters</strong></div>' );
+		$bar.append( $labelContainer );
+
+		var dummyDemoWidgets = [
+			new OO.ui.TagItemWidget( { label: 'First demo label: foo' } ),
+			new OO.ui.TagItemWidget( { label: 'Second demo label: bar' } ),
+			new OO.ui.TagItemWidget( { label: 'Third demo label: baz' } ),
+			new OO.ui.TagItemWidget( { label: 'Fourth demo label: quux' } ),
+			new OO.ui.TagItemWidget( { label: 'Fivth demo label: quuz' } )
+		];
+
+		$.each( dummyDemoWidgets, function ( _, w ) {
+			// TODO Create custom TagItemWidget classes that have special classes (for styling) and disable clicking
+			w.$element.on( 'click', function () { return false; } );
+			w.$element.addClass( 'advancedSearch-previewLabel' );
+			$labelContainer.append( w.$element );
+		} );
+		*/
+
+		this.$btn.addClass( 'oo-ui-buttonElement-framed' );
+		this.$element.addClass( 'advancedSearch-expandablePane' );
+		this.$element.append( this.$btn, this.$dependentPane );
+	};
+
+	OO.inheritClass( mw.libs.advancedSearch.ui.ExpandablePane, OO.ui.Widget );
+	OO.mixinClass( mw.libs.advancedSearch.ui.ExpandablePane, OO.ui.mixin.IndicatorElement );
+
+	mw.libs.advancedSearch.ui.ExpandablePane.prototype.onButtonClick = function ( evt ) {
+		if ( this.$dependentPane.is( ':visible' ) ) {
+			this.setIndicator( 'down' );
+		} else {
+			this.setIndicator( 'up' );
+		}
+		this.$dependentPane.toggle();
+	};
+
+} )( mediaWiki );
