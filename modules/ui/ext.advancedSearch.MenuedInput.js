@@ -51,8 +51,12 @@
 		menu.addItems( items );
 	};
 
+	// TODO move to util module
 	function arrayEquals( a1, a2 ) {
 		var i = a1.length;
+		if ( a1.length !== a2.length ) {
+			return false;
+		}
 		while ( i-- ) {
 			if ( a1[ i ] !== a2[ i ] ) {
 				return false;

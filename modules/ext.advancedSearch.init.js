@@ -152,10 +152,6 @@
 					state,
 					{ optionId: 'phrase' }
 				);
-				// TODO Move widget initialization to store, make widget listen to store.
-				$.each( state.getOption( 'phrase' ), function () {
-					widget.addTag( this );
-				} );
 				return widget;
 			}
 		},
@@ -182,10 +178,6 @@
 					state,
 					{ optionId: 'or' }
 				);
-				// TODO Move widget initialization to store, make widget listen to store.
-				$.each( state.getOption( 'or' ), function () {
-					widget.addTag( this );
-				} );
 				return widget;
 			}
 		},
