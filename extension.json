@@ -46,9 +46,9 @@
 			"messages": [
 				"advancedsearch-field-plain",
 				"advancedsearch-field-phrase",
-				"advancedsearch-field-fuzzy",
+				"advancedsearch-field-or",
 				"advancedsearch-field-not",
-				"advancedsearch-field-prefix",
+				"advancedsearch-field-subpage",
 				"advancedsearch-field-intitle",
 				"advancedsearch-field-deepcat",
 				"advancedsearch-field-hastemplate",

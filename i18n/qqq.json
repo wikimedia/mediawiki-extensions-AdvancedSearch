@@ -9,9 +9,9 @@
 
 	"advancedsearch-field-plain": "Label for the field for plain search ",
 	"advancedsearch-field-phrase": "Label for the field for exact search",
-	"advancedsearch-field-fuzzy": "Label for the field for fuzzy search",
+	"advancedsearch-field-or": "Label for the field for or search",
 	"advancedsearch-field-not": "Label for the field for excluded words in search",
-	"advancedsearch-field-prefix": "Label for the field for searching in subpages",
+	"advancedsearch-field-subpage": "Label for the field for searching in subpages",
 	"advancedsearch-field-intitle": "Label for the field for searching in title",
 	"advancedsearch-field-deepcat": "Label for the field for searching in category",
 	"advancedsearch-field-hastemplate": "Label for the field for for searching pages with a template",
