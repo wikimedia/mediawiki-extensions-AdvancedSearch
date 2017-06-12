@@ -488,10 +488,14 @@
 	}
 
 	var $advancedButtonLabel = $( '<span>' ).prop( { 'class': 'mw-advancedSearch-optionTags' } );
+	var searchPreview = new mw.libs.advancedSearch.ui.SearchPreview( state, {
+		label: msg( 'advanced-search' ),
+		previewOptions: getPreviewOptions()
+	} );
 
 	var pane = new mw.libs.advancedSearch.ui.ExpandablePane( {
 		$paneContent: $allOptions,
-		$buttonLabel: $( '<strong></strong>' ).text( msg( 'advanced-search' ) )
+		$buttonLabel: searchPreview.$element
 	} );
 	$( '.mw-search-profile-tabs' ).before( pane.$element );
 
@@ -504,6 +508,17 @@
 			return ' (' + value.length + ')';
 		}
 		return '';
+	}
+
+	function getPreviewOptions() {
+		var previewOptions = {};
+		advancedOptions.forEach( function ( option ) {
+			previewOptions[ option.id ] = {
+				formatter: option.formatter,
+				label: mw.msg( 'advancedsearch-field-' + option.id )
+			};
+		} );
+		return previewOptions;
 	}
 
 	// FIXME make this "button" its own GUI class that does all the things described in mockup.

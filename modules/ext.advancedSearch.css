@@ -81,6 +81,11 @@
 	right: 0.9375em;
 }
 
+.mw-advancedSearch-searchPreview-label {
+	font-weight: bold;
+	margin-right: 0.3125em;
+}
+
 .mw-advancedSearch-previewLabel.oo-ui.widget-enabled {
 	background: white;
 }
