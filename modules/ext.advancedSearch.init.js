@@ -477,7 +477,6 @@
 		$allOptions.append( optionSets[ group ].$element );
 	}
 
-	var $advancedButtonLabel = $( '<span>' ).prop( { 'class': 'mw-advancedSearch-optionTags' } );
 	var searchPreview = new mw.libs.advancedSearch.ui.SearchPreview( state, {
 		label: msg( 'advanced-search' ),
 		previewOptions: getPreviewOptions()
@@ -489,17 +488,6 @@
 	} );
 	$( '.mw-search-profile-tabs' ).before( pane.$element );
 
-	/**
-	 * @param {string|string[]} value
-	 * @return {string}
-	 */
-	function getFormattedElementCount( value ) {
-		if ( $.isArray( value ) && value.length >= 2 ) {
-			return ' (' + value.length + ')';
-		}
-		return '';
-	}
-
 	function getPreviewOptions() {
 		var previewOptions = {};
 		advancedOptions.forEach( function ( option ) {
@@ -509,37 +497,6 @@
 			};
 		} );
 		return previewOptions;
-	}
-
-	// FIXME make this "button" its own GUI class that does all the things described in mockup.
-	function updateAdvancedButtonLabel() {
-		$advancedButtonLabel.empty();
-		$advancedButtonLabel.text( msg( 'advanced-search' ) );
-		if ( $allOptions.is( ':visible' ) ) {
-			return;
-		}
-
-		// Display individual options
-		var searchOptions = state.getOptions();
-		advancedOptions.forEach( function ( option ) {
-			if ( !searchOptions[ option.id ] ) {
-				return;
-			}
-			var labeltext = mw.msg( 'advancedsearch-field-' + option.id );
-
-			// TODO remove special case, create pill formatters for each search option
-			if ( !option.id.match( /^file[hw]$/ ) ) {
-				labeltext += getFormattedElementCount( searchOptions[ option.id ] );
-			} else {
-				if ( $.trim( searchOptions[ option.id ][ 1 ] ) === '' ) {
-					return;
-				}
-				labeltext += ' ' + searchOptions[ option.id ][ 0 ] + ' ' + searchOptions[ option.id ][ 1 ] + 'px';
-			}
-			var $label = $( '<span>' ).text( labeltext );
-			$label.attr( 'title', mw.msg( 'advancedsearch-field-' + option.id ) + ' ' + option.formatter( searchOptions[ option.id ] ) );
-			$advancedButtonLabel.append( $label );
-		} );
 	}
 
 	$search.on( 'submit', function () {
