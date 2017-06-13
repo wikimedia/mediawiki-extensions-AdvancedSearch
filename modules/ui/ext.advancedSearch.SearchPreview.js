@@ -14,7 +14,10 @@
 	 * @param  {Object} config
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview = function ( store, config ) {
-		var myConfig = $.extend( { previewOptions: {} }, config || {} );
+		var myConfig = $.extend( {
+			previewOptions: {},
+			data: true
+		}, config || {} );
 		this.store = store;
 		this.previewOptions = myConfig.previewOptions;
 
@@ -43,7 +46,9 @@
 		// TODO check if we really need to re-generate
 		this.$element.find( '.mw-advancedSearch-searchPreview-previewPill' ).remove();
 
-		// TODO only generate previews if in preview mode, hide previews when form is shown
+		if ( !this.data ) {
+			return;
+		}
 		$.each( this.previewOptions, function ( optionId, option ) {
 			var val = self.store.getOption( optionId );
 			if ( !val || ( optionId.match( '^file[hw]$' ) && ( !$.isArray( val ) || !val[ 1 ] ) ) ) {
@@ -59,6 +64,16 @@
 			tag.$element.addClass( 'mw-advancedSearch-searchPreview-previewPill' );
 			self.$element.append( tag.$element );
 		} );
+	};
+
+	mw.libs.advancedSearch.ui.SearchPreview.prototype.showPreview = function () {
+		this.data = true;
+		this.updatePreview();
+	};
+
+	mw.libs.advancedSearch.ui.SearchPreview.prototype.hidePreview = function () {
+		this.data = false;
+		this.updatePreview();
 	};
 
 } )( mediaWiki );

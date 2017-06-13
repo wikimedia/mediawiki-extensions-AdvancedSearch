@@ -486,6 +486,13 @@
 		$paneContent: $allOptions,
 		$buttonLabel: searchPreview.$element
 	} );
+	pane.on( 'change', function () {
+		if ( pane.isOpen() ) {
+			searchPreview.hidePreview();
+		} else {
+			searchPreview.showPreview();
+		}
+	} );
 	$( '.mw-search-profile-tabs' ).before( pane.$element );
 
 	function getPreviewOptions() {

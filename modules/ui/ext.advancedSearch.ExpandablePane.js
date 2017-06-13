@@ -6,6 +6,14 @@
 	mw.libs.advancedSearch.ui = mw.libs.advancedSearch.ui || {};
 
 	/**
+	 * @param  {string} state 'open' or 'closed'
+	 * @return {string}       Indicator name
+	 */
+	function getIndicatorNameForState( state ) {
+		return state === 'open' ? 'up' : 'down';
+	}
+
+	/**
 	 * Button that expands a connected pane.
 	 *
 	 * Both button and pane can have arbitrary jQuery content.
@@ -18,12 +26,10 @@
 	 * @param  {Object} config
 	 */
 	mw.libs.advancedSearch.ui.ExpandablePane = function ( config ) {
-		var myConfig = $.extend( {
-			indicator: 'down'
-		}, config );
+		var myConfig = $.extend( { data: this.STATE_CLOSED }, config );
 
 		mw.libs.advancedSearch.ui.ExpandablePane.parent.call( this, myConfig );
-		OO.ui.mixin.IndicatorElement.call( this, myConfig );
+		OO.ui.mixin.IndicatorElement.call( this, { indicator: getIndicatorNameForState( myConfig.data ) } );
 
 		var self = this;
 		this.$btn = $( '<div></div>' )
@@ -73,13 +79,26 @@
 	OO.inheritClass( mw.libs.advancedSearch.ui.ExpandablePane, OO.ui.Widget );
 	OO.mixinClass( mw.libs.advancedSearch.ui.ExpandablePane, OO.ui.mixin.IndicatorElement );
 
+	mw.libs.advancedSearch.ui.ExpandablePane.prototype.STATE_CLOSED = 'closed';
+	mw.libs.advancedSearch.ui.ExpandablePane.prototype.STATE_OPEN = 'open';
+
 	mw.libs.advancedSearch.ui.ExpandablePane.prototype.onButtonClick = function ( evt ) {
-		if ( this.$dependentPane.is( ':visible' ) ) {
-			this.setIndicator( 'down' );
+		if ( this.data === this.STATE_OPEN ) {
+			this.data = this.STATE_CLOSED;
+			this.$dependentPane.hide();
 		} else {
-			this.setIndicator( 'up' );
+			this.data = this.STATE_OPEN;
+			this.$dependentPane.show();
 		}
-		this.$dependentPane.toggle();
+		this.setIndicator( getIndicatorNameForState( this.data ) );
+		this.emit( 'change', this.data );
+	};
+
+	/**
+	 * @return {boolean}
+	 */
+	mw.libs.advancedSearch.ui.ExpandablePane.prototype.isOpen = function () {
+		return this.data === this.STATE_OPEN;
 	};
 
 } )( mediaWiki );
