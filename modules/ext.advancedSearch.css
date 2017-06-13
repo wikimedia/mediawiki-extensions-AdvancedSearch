@@ -1,4 +1,5 @@
-#mw-searchoptions,
+#mw-searchoptions { display: none; }
+
 .mw-advancedSearch-fieldContainer {
 	background: linear-gradient(rgba(0, 0, 0, 0.1), #fff 0.5em);
 	border: solid 1px #c8ccd1;
