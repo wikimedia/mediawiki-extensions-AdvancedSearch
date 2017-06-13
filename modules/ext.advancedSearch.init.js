@@ -445,11 +445,9 @@
 		var paramName = 'advancedSearchOption-' + option.id;
 
 		var widgetInit = option.init || function () {
-			return new OO.ui.TextInputWidget( {
+			return new mw.libs.advancedSearch.ui.TextInput( state, {
 				id: paramName,
-				// TODO: These names are to long.
-				name: paramName,
-				value: mw.util.getParamValue( paramName )
+				optionId: option.id
 			} );
 		},
 		widget = widgetInit();
