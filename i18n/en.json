@@ -26,5 +26,7 @@
 	"advancedsearch-filetype-document-pdf": "PDF",
 	"advancedSearch-filesize-equals": "equal to",
 	"advancedSearch-filesize-greater-than": "greater than",
-	"advancedSearch-filesize-smaller-than": "lower than"
+	"advancedSearch-filesize-smaller-than": "lower than",
+  	"advancedSearch-beta-feature-message": "Advanced Search Interface",
+  	"advancedSearch-beta-feature-description": "Easy access to advanced search capabilities on [[Special:Search]]."
 }

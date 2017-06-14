@@ -26,5 +26,7 @@
 	"advancedsearch-filetype-document-pdf": "Label for PDF file/mime type",
 	"advancedSearch-filesize-equals": "Label for the file width/height 'equals' comparator selection",
 	"advancedSearch-filesize-greater-than": "Label for the file width/height 'greater than' comparator selection",
-	"advancedSearch-filesize-smaller-than": "Label for the file width/height 'smaller than' comparator selection"
+	"advancedSearch-filesize-smaller-than": "Label for the file width/height 'smaller than' comparator selection",
+  	"advancedSearch-beta-feature-message": "Label for the AdvancedSearch Beta Feature.",
+  	"advancedSearch-beta-feature-description": "Description for the AdvancedSearch Beta Feature, describing the feature that will be enabled."
 }

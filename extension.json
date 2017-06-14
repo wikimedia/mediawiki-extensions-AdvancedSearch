@@ -13,6 +13,9 @@
 		"AdvancedSearch\\Hooks": "AdvancedSearch.hooks.php"
 	},
 	"Hooks": {
+		"GetBetaFeaturePreferences": [
+		  	"AdvancedSearch\\Hooks::getBetaFeaturePreferences"
+		],
 		"SpecialPageBeforeExecute": [
 			"AdvancedSearch\\Hooks::onSpecialPageBeforeExecute"
 		],
