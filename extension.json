@@ -1,0 +1,149 @@
+{
+	"name": "AdvancedSearch",
+	"version": "0.1.0",
+	"author": [
+		"Thiemo Mättig",
+		"Gabriel Birke"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:AdvancedSearch",
+	"descriptionmsg": "advancedsearch-desc",
+	"license-name": "GPL-2.0+",
+	"type": "other",
+	"AutoloadClasses": {
+		"AdvancedSearch\\Hooks": "AdvancedSearch.hooks.php"
+	},
+	"Hooks": {
+		"SpecialPageBeforeExecute": [
+			"AdvancedSearch\\Hooks::onSpecialPageBeforeExecute"
+		],
+		"SpecialSearchPowerBox": [
+			"AdvancedSearch\\Hooks::onSpecialSearchPowerBox"
+		],
+		"SpecialSearchProfiles": [
+			"AdvancedSearch\\Hooks::onSpecialSearchProfiles"
+		]
+	},
+	"MessagesDirs": {
+		"AdvancedSearch": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"ext.advancedSearch.init": {
+			"scripts": [
+				"modules/ext.advancedSearch.init.js",
+				"modules/ext.advancedSearch.namespaceFilters.js"
+			],
+			"styles": [
+				"modules/ext.advancedSearch.css"
+			],
+			"messages": [
+			],
+			"dependencies": [
+				"mediawiki.util",
+				"oojs-ui",
+				"oojs-ui.styles.icons-content",
+				"oojs-ui.styles.icons-editing-advanced",
+				"oojs-ui.styles.icons-interactions",
+				"oojs-ui.styles.icons-layout",
+				"oojs-ui.styles.icons-media",
+				"oojs-ui.styles.icons-user",
+				"oojs-ui.styles.icons-wikimedia",
+				"ext.advancedSearch.dm.MenuDataModel",
+				"ext.advancedSearch.dm.SearchModel",
+				"ext.advancedSearch.ui.ArbitraryWordInput",
+				"ext.advancedSearch.ui.FileTypeSelection",
+				"ext.advancedSearch.ui.ImageDimensionInput",
+				"ext.advancedSearch.ui.MenuedInput",
+				"ext.advancedSearch.ui.OptionalElementLayout"
+			]
+		},
+		"ext.advancedSearch.ui.ArbitraryWordInput": {
+			"scripts": [
+				"modules/ui/ext.advancedSearch.ArbitraryWordInput.js"
+			],
+			"dependencies": [
+				"oojs-ui"
+			]
+		},
+		"ext.advancedSearch.ui.FileTypeSelection": {
+			"scripts": [
+				"modules/ui/ext.advancedSearch.FileTypeSelection.js"
+			],
+			"dependencies": [
+				"oojs-ui"
+			],
+			"messages": [
+				"advancedsearch-filetype-section-types",
+				"advancedsearch-filetype-section-image",
+				"advancedsearch-filetype-section-video",
+				"advancedsearch-filetype-section-sound",
+				"advancedsearch-filetype-section-document",
+				"advancedsearch-filetype-bitmap",
+				"advancedsearch-filetype-vector",
+				"advancedsearch-filetype-audio",
+				"advancedsearch-filetype-video",
+				"advancedsearch-filetype-multimedia",
+				"advancedsearch-filetype-document",
+				"advancedsearch-filetype-bitmap-jpeg",
+				"advancedsearch-filetype-bitmap-tiff",
+				"advancedsearch-filetype-vector-svg",
+				"advancedsearch-filetype-audio-midi",
+				"advancedsearch-filetype-audio-wav",
+				"advancedsearch-filetype-audio-flac",
+				"advancedsearch-filetype-document-office",
+				"advancedsearch-filetype-document-pdf"
+			]
+		},
+		"ext.advancedSearch.ui.ImageDimensionInput": {
+			"scripts": [
+				"modules/ui/ext.advancedSearch.ImageDimensionInput.js"
+			],
+			"dependencies": [
+				"oojs-ui"
+			],
+			"messages": [
+				"advancedSearch-filesize-equals",
+				"advancedSearch-filesize-greater-than",
+				"advancedSearch-filesize-smaller-than"
+			]
+		},
+		"ext.advancedSearch.ui.MenuedInput": {
+			"scripts": [
+				"modules/ui/ext.advancedSearch.MenuedInput.js"
+			],
+			"dependencies": [
+				"oojs-ui"
+			]
+		},
+		"ext.advancedSearch.ui.OptionalElementLayout": {
+			"scripts": [
+				"modules/ui/ext.advancedSearch.OptionalElementLayout.js"
+			],
+			"dependencies": [
+				"oojs-ui"
+			]
+		},
+		"ext.advancedSearch.dm.SearchModel": {
+			"scripts": [
+				"modules/dm/ext.advancedSearch.SearchModel.js"
+			],
+			"dependencies": [
+				"oojs-ui"
+			]
+		},
+		"ext.advancedSearch.dm.MenuDataModel": {
+			"scripts": [
+				"modules/dm/ext.advancedSearch.MenuDataModel.js"
+			],
+			"dependencies": [
+				"oojs-ui"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "AdvancedSearch"
+	},
+	"manifest_version": 1
+}
