@@ -4,6 +4,7 @@ namespace AdvancedSearch;
 
 use BetaFeatures;
 use MediaWiki\MediaWikiServices;
+use ResourceLoader;
 use SpecialPage;
 use User;
 
@@ -69,6 +70,20 @@ class Hooks {
 			=> 'https://www.mediawiki.org/wiki/Extension:AdvancedSearch',
 			'discussion-link'
 			=> 'https://www.mediawiki.org/wiki/Extension_talk:AdvancedSearch',
+		];
+	}
+
+	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
+		$testModules['qunit']['ext.advancedSearch.tests'] = [
+			'scripts' => [
+				// 'tests/qunit/YourTestName.test.js'
+			],
+			'dependencies' => [
+				// 'ext.advancedSearch.moduleName'
+				'oojs-ui'
+			],
+			'localBasePath' => __DIR__,
+			'remoteExtPath' => 'AdvancedSearch',
 		];
 	}
 }

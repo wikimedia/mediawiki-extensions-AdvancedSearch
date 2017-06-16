@@ -16,6 +16,9 @@
 		"GetBetaFeaturePreferences": [
 		  	"AdvancedSearch\\Hooks::getBetaFeaturePreferences"
 		],
+		"ResourceLoaderTestModules": [
+			"AdvancedSearch\\Hooks::onResourceLoaderTestModules"
+		],
 		"SpecialPageBeforeExecute": [
 			"AdvancedSearch\\Hooks::onSpecialPageBeforeExecute"
 		],
