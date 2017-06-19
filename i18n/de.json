@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Metalhead64"
+		]
+	},
+	"advancedsearch-desc": "Leichter Zugang zu erweiterten Suchmöglichkeiten auf [[Special:Search]]",
+	"advancedsearch-filetype-section-types": "Allgemeiner Dateityp",
+	"advancedsearch-filetype-section-image": "Bildformat",
+	"advancedsearch-filetype-section-video": "Videoformat",
+	"advancedsearch-filetype-section-sound": "Audioformat",
+	"advancedsearch-filetype-section-document": "Format des Dokuments",
+	"advancedsearch-filetype-bitmap": "Bild",
+	"advancedsearch-filetype-vector": "Zeichnung",
+	"advancedsearch-filetype-audio": "Audio",
+	"advancedsearch-filetype-video": "Video",
+	"advancedsearch-filetype-multimedia": "Multimedia",
+	"advancedsearch-filetype-document": "Dokument",
+	"advancedsearch-filetype-document-office": "Office",
+	"advancedSearch-filesize-equals": "gleich",
+	"advancedSearch-filesize-greater-than": "größer als",
+	"advancedSearch-filesize-smaller-than": "kleiner als",
+	"advancedSearch-beta-feature-message": "Erweiterte Suchoberfläche",
+	"advancedSearch-beta-feature-description": "Leichter Zugang zu erweiterten Suchmöglichkeiten auf [[Special:Search]]."
+}
