@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Srdjan m"
+		]
+	},
+	"advancedsearch-desc": "Lagan pristup naprednim mogućnostima pretrage na [[Special:Search]]",
+	"advancedsearch-filetype-section-types": "Opća vrsta datoteke",
+	"advancedsearch-filetype-section-image": "Format slike",
+	"advancedsearch-filetype-section-video": "Format videozapisa",
+	"advancedsearch-filetype-section-sound": "Format zvuka",
+	"advancedsearch-filetype-section-document": "Format dokumenta",
+	"advancedsearch-filetype-bitmap": "Slika",
+	"advancedsearch-filetype-vector": "Crtež",
+	"advancedsearch-filetype-audio": "Zvuk",
+	"advancedsearch-filetype-video": "Video",
+	"advancedsearch-filetype-multimedia": "Multimedija",
+	"advancedsearch-filetype-document": "Dokument",
+	"advancedsearch-filetype-document-office": "Office",
+	"advancedSearch-filesize-equals": "jednaka",
+	"advancedSearch-filesize-greater-than": "veća od",
+	"advancedSearch-filesize-smaller-than": "manja od",
+	"advancedSearch-beta-feature-message": "Interfejs za naprednu pretragu",
+	"advancedSearch-beta-feature-description": "Lagan pristup naprednim mogućnostima pretrage na [[Special:Search]]."
+}

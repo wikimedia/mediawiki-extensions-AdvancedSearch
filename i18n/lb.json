@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"advancedsearch-filetype-section-video": "Videoformat",
+	"advancedsearch-filetype-bitmap": "Bild",
+	"advancedsearch-filetype-vector": "Zeechnung",
+	"advancedsearch-filetype-audio": "Audio",
+	"advancedsearch-filetype-video": "Video",
+	"advancedsearch-filetype-multimedia": "Multimedia",
+	"advancedsearch-filetype-document": "Dokument",
+	"advancedsearch-filetype-document-office": "Büro",
+	"advancedSearch-filesize-greater-than": "méi grouss wéi",
+	"advancedSearch-filesize-smaller-than": "méi kleng wéi"
+}

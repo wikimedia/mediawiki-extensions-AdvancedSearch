@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16"
+		]
+	},
+	"advancedsearch-filetype-section-types": "Tipo di file generale",
+	"advancedsearch-filetype-section-image": "Formato immagine",
+	"advancedsearch-filetype-section-video": "Formato video",
+	"advancedsearch-filetype-section-sound": "Formato audio",
+	"advancedsearch-filetype-section-document": "Formato documento",
+	"advancedsearch-filetype-bitmap": "Immagine",
+	"advancedsearch-filetype-audio": "Audio",
+	"advancedsearch-filetype-video": "Video",
+	"advancedsearch-filetype-multimedia": "Multimedia",
+	"advancedsearch-filetype-document": "Documento",
+	"advancedSearch-filesize-equals": "uguale a",
+	"advancedSearch-filesize-greater-than": "maggiore di",
+	"advancedSearch-filesize-smaller-than": "minore di"
+}

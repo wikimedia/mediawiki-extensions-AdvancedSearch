@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ykhwong"
+		]
+	},
+	"advancedsearch-filetype-section-types": "일반 파일 유형",
+	"advancedsearch-filetype-section-image": "그림 형식",
+	"advancedsearch-filetype-section-video": "동영상 형식",
+	"advancedsearch-filetype-section-sound": "소리 형식",
+	"advancedsearch-filetype-section-document": "문서 형식",
+	"advancedsearch-filetype-bitmap": "그림",
+	"advancedsearch-filetype-vector": "드로잉",
+	"advancedsearch-filetype-audio": "소리",
+	"advancedsearch-filetype-video": "동영상",
+	"advancedsearch-filetype-multimedia": "멀티미디어",
+	"advancedsearch-filetype-document": "문서",
+	"advancedsearch-filetype-document-office": "오피스",
+	"advancedSearch-beta-feature-message": "고급 검색 인터페이스"
+}

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"advancedsearch-filetype-bitmap": "Imaxe",
+	"advancedsearch-filetype-vector": "Dibuxu",
+	"advancedsearch-filetype-audio": "Soníu",
+	"advancedsearch-filetype-video": "Videu"
+}

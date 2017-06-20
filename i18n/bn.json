@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aftabuzzaman"
+		]
+	},
+	"advancedsearch-desc": "[[Special:Search]]-এ উন্নত অনুসন্ধান ক্ষমতায় সহজে প্রবেশাধিকার দেয়",
+	"advancedsearch-filetype-section-types": "সাধারণ ফাইলের ধরন",
+	"advancedsearch-filetype-section-image": "চিত্রের বিন্যাস",
+	"advancedsearch-filetype-section-video": "ভিডিওর বিন্যাস",
+	"advancedsearch-filetype-section-sound": "অডিওর বিন্যাস",
+	"advancedsearch-filetype-section-document": "নথির বিন্যাস",
+	"advancedsearch-filetype-bitmap": "চিত্র",
+	"advancedsearch-filetype-vector": "অংকন",
+	"advancedsearch-filetype-audio": "অডিও",
+	"advancedsearch-filetype-video": "ভিডিও",
+	"advancedsearch-filetype-multimedia": "মাল্টিমিডিয়া",
+	"advancedsearch-filetype-document": "নথি",
+	"advancedsearch-filetype-document-office": "অফিস",
+	"advancedSearch-filesize-equals": "এর সমান",
+	"advancedSearch-filesize-greater-than": "এর চেয়ে বড়",
+	"advancedSearch-filesize-smaller-than": "এর চেয়ে ছোট",
+	"advancedSearch-beta-feature-message": "উন্নত অনুসন্ধান ইন্টারফেস",
+	"advancedSearch-beta-feature-description": "[[Special:Search]]-এ উন্নত অনুসন্ধান ক্ষমতায় সহজে প্রবেশাধিকার দেয়।"
+}

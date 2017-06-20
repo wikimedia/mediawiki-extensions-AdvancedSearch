@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hamilton Abreu"
+		]
+	},
+	"advancedsearch-desc": "Acesso fácil a capacidades de pesquisa avançada em [[Special:Search]]",
+	"advancedsearch-filetype-section-types": "Tipo de ficheiro genérico",
+	"advancedsearch-filetype-section-image": "Formato de imagem",
+	"advancedsearch-filetype-section-video": "Formato de vídeo",
+	"advancedsearch-filetype-section-sound": "Formato de áudio",
+	"advancedsearch-filetype-section-document": "Formato de documento",
+	"advancedsearch-filetype-bitmap": "Imagem",
+	"advancedsearch-filetype-vector": "Desenho",
+	"advancedsearch-filetype-audio": "Áudio",
+	"advancedsearch-filetype-video": "Vídeo",
+	"advancedsearch-filetype-multimedia": "Multimédia",
+	"advancedsearch-filetype-document": "Documento",
+	"advancedsearch-filetype-document-office": "Escritório",
+	"advancedSearch-filesize-equals": "igual a",
+	"advancedSearch-filesize-greater-than": "maior que",
+	"advancedSearch-filesize-smaller-than": "menor que",
+	"advancedSearch-beta-feature-message": "Interface de pesquisa avançada",
+	"advancedSearch-beta-feature-description": "Acesso fácil a capacidades de pesquisa avançada em [[Special:Search]]."
+}
