@@ -20,6 +20,7 @@
 	 */
 	mw.libs.advancedSearch.dm.SearchModel = function () {
 		this.searchOptions = {};
+		this.namespaces = [ '0' ]; // Always start with Article namespace
 
 		// Mixin constructor
 		OO.EventEmitter.call( this );
@@ -35,7 +36,7 @@
 	/**
 	 * @event update
 	 *
-	 * The state of an option has changed
+	 * The state of an option or of the namespaces has changed
 	 */
 
 	/* Methods */
@@ -52,7 +53,7 @@
 			this.searchOptions.filew = [ '>', '' ];
 			this.searchOptions.fileh = [ '>', '' ];
 		}
-		this.emit( 'update' );
+		this.emitUpdate();
 	};
 
 	mw.libs.advancedSearch.dm.SearchModel.prototype.getOption = function ( optionId ) {
@@ -83,8 +84,51 @@
 		return options;
 	};
 
+	/**
+	 * Serialize options and namespaces to JSON
+	 *
+	 * @return {string}
+	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.toJSON = function () {
-		return JSON.stringify( this.searchOptions );
+		return JSON.stringify( {
+			options: this.searchOptions,
+			namespaces: this.namespaces
+		} );
+	};
+
+	/**
+	 * Set options and namespaces from JSON string
+	 *
+	 * @param  {string} jsonSerialized
+	 */
+	mw.libs.advancedSearch.dm.SearchModel.prototype.setAllFromJSON = function ( jsonSerialized ) {
+		var valuesChanged = false,
+			unserialized;
+
+		try {
+			unserialized = JSON.parse( jsonSerialized );
+		} catch ( e ) {
+			return;
+		}
+
+		if ( typeof unserialized !== 'object' ) {
+			return;
+		}
+
+		if ( typeof unserialized.options === 'object' ) {
+			this.searchOptions = {};
+			for ( var opt in unserialized.options ) {
+				this.searchOptions[ opt ] = unserialized.options[ opt ];
+			}
+			valuesChanged = true;
+		}
+		if ( $.isArray( unserialized.namespaces ) ) {
+			this.namespaces = unserialized.namespaces;
+			valuesChanged = true;
+		}
+		if ( valuesChanged ) {
+			this.emitUpdate();
+		}
 	};
 
 	/**
@@ -94,6 +138,27 @@
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.filetypeSupportsDimensions = function () {
 		return FILETYPES_WITH_DIMENSIONS.indexOf( this.getOption( 'filetype' ) ) > -1;
+	};
+
+	/**
+	 * @return {Array}
+	 */
+	mw.libs.advancedSearch.dm.SearchModel.prototype.getNamespaces = function () {
+		return this.namespaces;
+	};
+
+	/**
+	 * @param {Array} namespaces
+	 */
+	mw.libs.advancedSearch.dm.SearchModel.prototype.setNamespaces = function ( namespaces ) {
+		// TODO check namespaces: if empty, set article ns
+		// TODO check options - if filetype is selected, add file ns
+		this.namespaces = namespaces;
+		this.emitUpdate();
+	};
+
+	mw.libs.advancedSearch.dm.SearchModel.prototype.emitUpdate = function () {
+		this.emit( 'update' );
 	};
 
 } )( mediaWiki, jQuery );

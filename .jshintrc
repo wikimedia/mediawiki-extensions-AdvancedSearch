@@ -1,4 +1,9 @@
 {
 	"laxbreak": true,
-	"loopfunc": true
+	"loopfunc": true,
+	"globals": {
+		"mediaWiki": true,
+		"OO": true,
+		"jQuery": true
+	}
 }
