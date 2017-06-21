@@ -511,26 +511,13 @@
 		$allOptions.append( optionSets[ group ].$element );
 	}
 
-	var $advancedButtonLabel = $( '<span>' ).prop( { 'class': 'advancedSearch-optionTags' } ),
-		advancedButton = new OO.ui.ButtonWidget( {
-			$label: $advancedButtonLabel,
-			label: msg( 'advanced-search' ),
-			indicator: 'down'
-		} );
+	var $advancedButtonLabel = $( '<span>' ).prop( { 'class': 'advancedSearch-optionTags' } );
 
-	var $advancedButton = advancedButton.$element.css( {
-		clear: 'both',
-		display: 'block',
-		margin: 0,
-		'max-width': '50em',
-		'padding-top': '0.3em',
-		position: 'relative'
+	var pane = new mw.libs.advancedSearch.ui.ExpandablePane( {
+		$paneContent: $allOptions,
+		$buttonLabel: $( '<strong></strong>' ).text( msg( 'advanced-search' ) )
 	} );
-	$advancedButton.children().css( {
-		display: 'block',
-		'text-align': 'left'
-	} );
-	$( '.mw-search-profile-tabs' ).before( $advancedButton, $allOptions );
+	$( '.mw-search-profile-tabs' ).before( pane.$element );
 
 	/**
 	 * @param {string|string[]} value
@@ -573,12 +560,6 @@
 			$advancedButtonLabel.append( $label );
 		} );
 	}
-
-	updateAdvancedButtonLabel();
-	advancedButton.on( 'click', function () {
-		$allOptions.toggle();
-		updateAdvancedButtonLabel();
-	} );
 
 	$search.on( 'submit', function () {
 		var compiledQuery = $.trim( $searchField.val() + ' ' + formatSearchOptions().join( ' ' ) ),
