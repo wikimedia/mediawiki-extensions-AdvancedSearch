@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"WMDE",
-			"Robby"
+			"Robby",
+			"Liuxinyu970226"
 		]
 	},
 	"advancedsearch-desc": "{{desc|name=AdvancedSearch|url=https://www.mediawiki.org/wiki/Extension:AdvancedSearch}}",
@@ -15,7 +16,7 @@
 	"advancedsearch-filetype-vector": "Label for drawing file type",
 	"advancedsearch-filetype-audio": "Label for audio file type\n{{Identical|Audio}}",
 	"advancedsearch-filetype-video": "Label for video file type\n{{Identical|Video}}",
-	"advancedsearch-filetype-multimedia": "Label for multimedia file type",
+	"advancedsearch-filetype-multimedia": "Label for multimedia file type\n{{Identical|Multimedia}}",
 	"advancedsearch-filetype-document": "Label for document file type\n{{Identical|Document}}",
 	"advancedsearch-filetype-bitmap-jpeg": "Label for the JPEG file/mime type",
 	"advancedsearch-filetype-bitmap-tiff": "Label for TIFF file/mime type",
