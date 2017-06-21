@@ -481,13 +481,13 @@
 		optionSets[ option.group ].addItems( [ layout ] );
 	} );
 
-	var $allOptions = $( '<div>' ).prop( { 'class': 'advancedSearch-fieldContainer' } );
+	var $allOptions = $( '<div>' ).prop( { 'class': 'mw-advancedSearch-fieldContainer' } );
 
 	for ( var group in optionSets ) {
 		$allOptions.append( optionSets[ group ].$element );
 	}
 
-	var $advancedButtonLabel = $( '<span>' ).prop( { 'class': 'advancedSearch-optionTags' } );
+	var $advancedButtonLabel = $( '<span>' ).prop( { 'class': 'mw-advancedSearch-optionTags' } );
 
 	var pane = new mw.libs.advancedSearch.ui.ExpandablePane( {
 		$paneContent: $allOptions,

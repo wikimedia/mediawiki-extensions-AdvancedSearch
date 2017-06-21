@@ -28,11 +28,11 @@
 		var self = this;
 		this.$btn = $( '<div></div>' )
 			.addClass( 'oo-ui-buttonElement-button' )
-			.addClass( 'advancedSearch-expandablePane-button' )
+			.addClass( 'mw-advancedSearch-expandablePane-button' )
 			.on( 'click', function () { self.onButtonClick(); } );
 
 		this.$dependentPane = $( '<div></div>' )
-			.addClass( 'advancedSearch-expandablePane-pane' );
+			.addClass( 'mw-advancedSearch-expandablePane-pane' );
 
 		if ( config.$buttonLabel ) {
 			this.$btn.append( config.$buttonLabel );
@@ -60,13 +60,13 @@
 		$.each( dummyDemoWidgets, function ( _, w ) {
 			// TODO Create custom TagItemWidget classes that have special classes (for styling) and disable clicking
 			w.$element.on( 'click', function () { return false; } );
-			w.$element.addClass( 'advancedSearch-previewLabel' );
+			w.$element.addClass( 'mw-advancedSearch-previewLabel' );
 			$labelContainer.append( w.$element );
 		} );
 		*/
 
 		this.$btn.addClass( 'oo-ui-buttonElement-framed' );
-		this.$element.addClass( 'advancedSearch-expandablePane' );
+		this.$element.addClass( 'mw-advancedSearch-expandablePane' );
 		this.$element.append( this.$btn, this.$dependentPane );
 	};
 
