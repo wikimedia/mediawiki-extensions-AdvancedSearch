@@ -409,7 +409,7 @@
 			if ( option.greedy && !greedyQuery ) {
 				greedyQuery = option.formatter( val );
 			} else {
-				queryElements.push();
+				queryElements.push( formattedQueryElement );
 			}
 
 			// FIXME: This does not work when the advanced namespace field was changed by the user.
