@@ -7,6 +7,20 @@
 		]
 	},
 	"advancedsearch-desc": "{{desc|name=AdvancedSearch|url=https://www.mediawiki.org/wiki/Extension:AdvancedSearch}}",
+
+	"advancedsearch-field-plain": "Label for the field for plain search ",
+	"advancedsearch-field-phrase": "Label for the field for exact search",
+	"advancedsearch-field-fuzzy": "Label for the field for fuzzy search",
+	"advancedsearch-field-not": "Label for the field for excluded words in search",
+	"advancedsearch-field-prefix": "Label for the field for searching in subpages",
+	"advancedsearch-field-intitle": "Label for the field for searching in title",
+	"advancedsearch-field-deepcat": "Label for the field for searching in category",
+	"advancedsearch-field-hastemplate": "Label for the field for for searching pages with a template",
+	"advancedsearch-field-insource": "Label for the field for wikitext search",
+	"advancedsearch-field-filetype": "Label for the field for file type",
+	"advancedsearch-field-filew": "Label for the field for file width in pixels",
+	"advancedsearch-field-fileh": "Label for the field for file height in pixels",
+
 	"advancedsearch-filetype-section-types": "Label for the file type section",
 	"advancedsearch-filetype-section-image": "Label for the image format section",
 	"advancedsearch-filetype-section-video": "Label for the video format section",
