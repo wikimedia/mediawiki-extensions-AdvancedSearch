@@ -169,17 +169,31 @@
 		},
 		{
 			group: 'text',
-			id: 'fuzzy',
-			placeholder: '…~2',
+			id: 'or',
+			placeholder: '…OR',
 			formatter: function ( val ) {
-				return optionalQuotes( val ) + '~2';
+				if ( Array.isArray( val ) ) {
+					return $.map( val, optionalQuotes ).join( ' OR ' );
+				}
+				return optionalQuotes( val );
+			},
+			init: function () {
+				var widget = new mw.libs.advancedSearch.ui.ArbitraryWordInput(
+					state,
+					{ optionId: 'or' }
+				);
+				// TODO Move widget initialization to store, make widget listen to store.
+				$.each( state.getOption( 'or' ), function () {
+					widget.addTag( this );
+				} );
+				return widget;
 			}
 		},
 
 		// Structure
 		{
 			group: 'structure',
-			id: 'prefix',
+			id: 'subpage',
 			placeholder: 'prefix:…',
 			formatter: function ( val ) {
 				return 'prefix:' + val;

@@ -8,9 +8,9 @@
 
 	"advancedsearch-field-plain": "This word:",
 	"advancedsearch-field-phrase": "Exactly this text:",
-	"advancedsearch-field-fuzzy": "One of those words:",
+	"advancedsearch-field-or": "One of those words:",
 	"advancedsearch-field-not": "Not this word:",
-	"advancedsearch-field-prefix": "Subpages of this page:",
+	"advancedsearch-field-subpage": "Subpages of this page:",
 	"advancedsearch-field-intitle": "Page title contains:",
 	"advancedsearch-field-deepcat": "Page in this category:",
 	"advancedsearch-field-hastemplate": "Only pages with this template:",
