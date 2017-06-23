@@ -74,7 +74,8 @@
 				"ext.advancedSearch.ui.ExpandablePane",
 				"ext.advancedSearch.ui.ImageDimensionInput",
 				"ext.advancedSearch.ui.MenuedInput",
-				"ext.advancedSearch.ui.OptionalElementLayout"
+				"ext.advancedSearch.ui.OptionalElementLayout",
+				"ext.advancedSearch.ui.SearchPreview"
 			]
 		},
 		"ext.advancedSearch.ui.ArbitraryWordInput": {
@@ -146,6 +147,14 @@
 		"ext.advancedSearch.ui.OptionalElementLayout": {
 			"scripts": [
 				"modules/ui/ext.advancedSearch.OptionalElementLayout.js"
+			],
+			"dependencies": [
+				"oojs-ui"
+			]
+		},
+		"ext.advancedSearch.ui.SearchPreview": {
+			"scripts": [
+				"modules/ui/ext.advancedSearch.SearchPreview.js"
 			],
 			"dependencies": [
 				"oojs-ui"

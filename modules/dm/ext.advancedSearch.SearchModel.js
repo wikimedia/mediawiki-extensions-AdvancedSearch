@@ -59,6 +59,15 @@
 		return this.searchOptions[ optionId ];
 	};
 
+	mw.libs.advancedSearch.dm.SearchModel.prototype.removeOption = function ( optionId ) {
+		delete this.searchOptions[ optionId ];
+		if ( optionId == 'filetype' ) {
+			this.searchOptions.filew = [ '>', '' ];
+			this.searchOptions.fileh = [ '>', '' ];
+		}
+		this.emit( 'update' );
+	};
+
 	/**
 	 * Get non-empty search options
 	 *
