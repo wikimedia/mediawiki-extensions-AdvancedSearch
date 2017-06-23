@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Leeheonjin"
+		]
+	},
+	"advancedsearch-field-plain": "Ang salitang ito:",
+	"advancedsearch-field-or": "Isa sa mga salitang iyon:",
+	"advancedsearch-field-not": "Hindi ang salitang ito:",
+	"advancedsearch-field-subpage": "Mga subpahina ng pahinang ito:",
+	"advancedsearch-field-intitle": "Naglalaman ang pamagat pampahina ng:",
+	"advancedsearch-field-deepcat": "Pahina sa kategoriyang ito:",
+	"advancedsearch-field-hastemplate": "Tanging mga pahina lang na may ganitong padron/suleras:",
+	"advancedsearch-field-filetype": "Uri ng talaksan:",
+	"advancedsearch-field-filew": "Lapad ng talaksan sa piksel:",
+	"advancedsearch-field-fileh": "Taas ng talaksan sa piksel:"
+}

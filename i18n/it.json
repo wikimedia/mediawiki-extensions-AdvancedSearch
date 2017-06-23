@@ -4,6 +4,16 @@
 			"Beta16"
 		]
 	},
+	"advancedsearch-field-plain": "Questa parola:",
+	"advancedsearch-field-phrase": "Esattamente questo testo:",
+	"advancedsearch-field-or": "Una di queste parole:",
+	"advancedsearch-field-not": "Non questa parola:",
+	"advancedsearch-field-subpage": "Sottopagine di questa pagina:",
+	"advancedsearch-field-intitle": "Il titolo della pagina contiene:",
+	"advancedsearch-field-deepcat": "Pagine in questa categoria:",
+	"advancedsearch-field-hastemplate": "Solo pagine con questo template:",
+	"advancedsearch-field-insource": "Il wikitesto contiene:",
+	"advancedsearch-field-filetype": "Tipo di file:",
 	"advancedsearch-filetype-section-types": "Tipo di file generale",
 	"advancedsearch-filetype-section-image": "Formato immagine",
 	"advancedsearch-filetype-section-video": "Formato video",

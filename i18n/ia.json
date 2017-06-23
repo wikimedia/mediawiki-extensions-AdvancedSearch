@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"advancedsearch-field-or": "Un de iste parolas:",
+	"advancedsearch-field-not": "Non iste parola:",
+	"advancedsearch-field-subpage": "Subpaginas de iste pagina:",
+	"advancedsearch-field-intitle": "Le titulo del pagina contine:"
+}

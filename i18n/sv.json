@@ -4,6 +4,18 @@
 			"WikiPhoenix"
 		]
 	},
+	"advancedsearch-field-plain": "Detta ord:",
+	"advancedsearch-field-phrase": "Exakt denna text:",
+	"advancedsearch-field-or": "Ett av dessa ord:",
+	"advancedsearch-field-not": "Inte detta ord:",
+	"advancedsearch-field-subpage": "Undersidor för denna sida:",
+	"advancedsearch-field-intitle": "Sidans titel innehåller:",
+	"advancedsearch-field-deepcat": "Sida i denna kategori;",
+	"advancedsearch-field-hastemplate": "Endast sidor med denna mall:",
+	"advancedsearch-field-insource": "Wikitext innehåller:",
+	"advancedsearch-field-filetype": "Filtyp:",
+	"advancedsearch-field-filew": "Filbredd i bildpunkter:",
+	"advancedsearch-field-fileh": "Filhöjd i bildpunkter:",
 	"advancedsearch-filetype-section-types": "Allmän filtyp",
 	"advancedsearch-filetype-section-image": "Bildformat",
 	"advancedsearch-filetype-section-video": "Videoformat",
@@ -18,5 +30,6 @@
 	"advancedsearch-filetype-document-office": "Office",
 	"advancedSearch-filesize-equals": "likadant som",
 	"advancedSearch-filesize-greater-than": "större än",
-	"advancedSearch-filesize-smaller-than": "mindre än"
+	"advancedSearch-filesize-smaller-than": "mindre än",
+	"advancedSearch-beta-feature-message": "Avancerat sökgränssnitt"
 }

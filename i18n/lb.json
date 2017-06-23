@@ -4,6 +4,13 @@
 			"Robby"
 		]
 	},
+	"advancedsearch-field-plain": "Dëst Wuert:",
+	"advancedsearch-field-phrase": "Genee dësen Text:",
+	"advancedsearch-field-or": "Eent vun dëse Wierder:",
+	"advancedsearch-field-not": "Dëst Wuert net:",
+	"advancedsearch-field-subpage": "Ënnersäite vun dëser Säit:",
+	"advancedsearch-field-intitle": "Säitentitel enthält:",
+	"advancedsearch-field-deepcat": "Säit aus dëser Kategorie:",
 	"advancedsearch-filetype-section-video": "Videoformat",
 	"advancedsearch-filetype-bitmap": "Bild",
 	"advancedsearch-filetype-vector": "Zeechnung",
