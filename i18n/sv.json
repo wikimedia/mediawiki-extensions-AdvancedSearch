@@ -4,6 +4,7 @@
 			"WikiPhoenix"
 		]
 	},
+	"advancedsearch-desc": "Enkel åtkomst till avancerade sökförmågor på [[Special:Search]]",
 	"advancedsearch-field-plain": "Detta ord:",
 	"advancedsearch-field-phrase": "Exakt denna text:",
 	"advancedsearch-field-or": "Ett av dessa ord:",
@@ -31,5 +32,6 @@
 	"advancedSearch-filesize-equals": "likadant som",
 	"advancedSearch-filesize-greater-than": "större än",
 	"advancedSearch-filesize-smaller-than": "mindre än",
-	"advancedSearch-beta-feature-message": "Avancerat sökgränssnitt"
+	"advancedSearch-beta-feature-message": "Avancerat sökgränssnitt",
+	"advancedSearch-beta-feature-description": "Enkel åtkomst till avancerade sökförmågor på [[Special:Search]]."
 }

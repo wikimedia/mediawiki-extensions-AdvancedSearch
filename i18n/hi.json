@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sfic"
+		]
+	},
+	"advancedsearch-field-filetype": "फ़ाइल का प्रकार:",
+	"advancedsearch-filetype-section-video": "वीडियो का फ़ारमैट",
+	"advancedsearch-filetype-section-document": "दस्तावेज़ का फ़ारमैट",
+	"advancedsearch-filetype-bitmap": "छवि",
+	"advancedsearch-filetype-audio": "ऑडियो",
+	"advancedsearch-filetype-video": "वीडियो",
+	"advancedsearch-filetype-multimedia": "मल्टीमीडिया",
+	"advancedsearch-filetype-document": "दस्तावेज़",
+	"advancedsearch-filetype-document-office": "कार्यालय"
+}
