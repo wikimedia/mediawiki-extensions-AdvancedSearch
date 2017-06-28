@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function ( mw, $ ) {
 	'use strict';
 
 	mw.libs = mw.libs || {};
@@ -72,4 +72,4 @@
 		this.valueInput.setValue( this.data[ 1 ] );
 	};
 
-} )( mediaWiki );
+} )( mediaWiki, jQuery );
