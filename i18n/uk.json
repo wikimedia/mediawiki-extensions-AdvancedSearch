@@ -1,0 +1,37 @@
+{
+	"@metadata": {
+		"authors": [
+			"Piramidion"
+		]
+	},
+	"advancedsearch-desc": "Легкий доступ до можливостей розширеного пошуку на сторінці [[Special:Search|Спеціальна:Пошук]]",
+	"advancedsearch-field-plain": "Це слово:",
+	"advancedsearch-field-phrase": "Точний пошук тексту:",
+	"advancedsearch-field-or": "Одне з цих слів:",
+	"advancedsearch-field-not": "Крім цього слова:",
+	"advancedsearch-field-subpage": "Підсторінки цієї сторінки:",
+	"advancedsearch-field-intitle": "Назва сторінки містить:",
+	"advancedsearch-field-deepcat": "Сторінка в цій категорії:",
+	"advancedsearch-field-hastemplate": "Лише сторінки з цим шаблоном:",
+	"advancedsearch-field-insource": "Вікірозмітка містить:",
+	"advancedsearch-field-filetype": "Тип файлу:",
+	"advancedsearch-field-filew": "Ширина файлу в пікселях:",
+	"advancedsearch-field-fileh": "Висота файлу в пікселях:",
+	"advancedsearch-filetype-section-types": "Загальний тип файлу",
+	"advancedsearch-filetype-section-image": "Формат зображення",
+	"advancedsearch-filetype-section-video": "Відеоформат",
+	"advancedsearch-filetype-section-sound": "Аудіоформат",
+	"advancedsearch-filetype-section-document": "Формат документу",
+	"advancedsearch-filetype-bitmap": "Зображення",
+	"advancedsearch-filetype-vector": "Рисунок",
+	"advancedsearch-filetype-audio": "Аудіо",
+	"advancedsearch-filetype-video": "Відео",
+	"advancedsearch-filetype-multimedia": "Мультимедіа",
+	"advancedsearch-filetype-document": "Документ",
+	"advancedsearch-filetype-document-office": "Офіс",
+	"advancedSearch-filesize-equals": "дорівнює",
+	"advancedSearch-filesize-greater-than": "більше, ніж",
+	"advancedSearch-filesize-smaller-than": "менше, ніж",
+	"advancedSearch-beta-feature-message": "Інтерфейс розширеного пошуку",
+	"advancedSearch-beta-feature-description": "Легкий доступ до можливостей розширеного пошуку на сторінці [[Special:Search|Спеціальна:Пошук]]."
+}

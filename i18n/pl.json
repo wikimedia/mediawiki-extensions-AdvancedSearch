@@ -4,6 +4,10 @@
 			"InternerowyGołąb"
 		]
 	},
+	"advancedsearch-field-or": "Jedno z tych słów:",
 	"advancedsearch-field-not": "Nie to słowo:",
-	"advancedsearch-field-subpage": "Podstrony tej strony:"
+	"advancedsearch-field-subpage": "Podstrony tej strony:",
+	"advancedsearch-field-intitle": "Tytuł strony zawiera:",
+	"advancedsearch-field-deepcat": "Strony w tej kategorii:",
+	"advancedsearch-field-insource": "Wikitekst zawiera:"
 }

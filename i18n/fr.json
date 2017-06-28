@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wladek92"
+		]
+	},
+	"advancedsearch-field-plain": "Ce mot :",
+	"advancedsearch-field-phrase": "Ce texte exactement :",
+	"advancedsearch-field-or": "Une de ces mots :",
+	"advancedsearch-field-not": "Pas ce mot :",
+	"advancedsearch-field-subpage": "Sous-pages de cette page :",
+	"advancedsearch-field-intitle": "Le titre de la page contient :",
+	"advancedsearch-field-deepcat": "Page dans cette catégorie :",
+	"advancedsearch-field-hastemplate": "Seulement les pages avec ce modèle :",
+	"advancedsearch-field-filetype": "Type de fichier :",
+	"advancedsearch-field-filew": "Largeur du fichier en pixels :",
+	"advancedsearch-filetype-section-image": "Format d'image",
+	"advancedsearch-filetype-section-sound": "Format vidéo",
+	"advancedsearch-filetype-bitmap": "Image",
+	"advancedsearch-filetype-audio": "Audio"
+}
