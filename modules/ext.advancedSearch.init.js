@@ -133,7 +133,7 @@
 			id: 'plain',
 			placeholder: '…',
 			formatter: function ( val ) {
-				return val ;
+				return val;
 			}
 		},
 		{
@@ -444,12 +444,12 @@
 		var paramName = 'advancedSearchOption-' + option.id;
 
 		var widgetInit = option.init || function () {
-			return new mw.libs.advancedSearch.ui.TextInput( state, {
-				id: paramName,
-				optionId: option.id
-			} );
-		},
-		widget = widgetInit();
+				return new mw.libs.advancedSearch.ui.TextInput( state, {
+					id: paramName,
+					optionId: option.id
+				} );
+			},
+			widget = widgetInit();
 		widget.on( 'change', createMultiSelectChangeHandler( option.id ) );
 
 		if ( !optionSets[ option.group ] ) {
@@ -476,6 +476,17 @@
 		$allOptions.append( optionSets[ group ].$element );
 	}
 
+	function getPreviewOptions() {
+		var previewOptions = {};
+		advancedOptions.forEach( function ( option ) {
+			previewOptions[ option.id ] = {
+				formatter: option.formatter,
+				label: mw.msg( 'advancedsearch-field-' + option.id )
+			};
+		} );
+		return previewOptions;
+	}
+
 	var searchPreview = new mw.libs.advancedSearch.ui.SearchPreview( state, {
 		label: msg( 'advanced-search' ),
 		previewOptions: getPreviewOptions()
@@ -493,17 +504,6 @@
 		}
 	} );
 	$( '.mw-search-profile-tabs' ).before( pane.$element );
-
-	function getPreviewOptions() {
-		var previewOptions = {};
-		advancedOptions.forEach( function ( option ) {
-			previewOptions[ option.id ] = {
-				formatter: option.formatter,
-				label: mw.msg( 'advancedsearch-field-' + option.id )
-			};
-		} );
-		return previewOptions;
-	}
 
 	$search.on( 'submit', function () {
 		var compiledQuery = $.trim( $searchField.val() + ' ' + formatSearchOptions().join( ' ' ) ),
@@ -525,7 +525,7 @@
 		type: 'hidden'
 	} );
 
-	state.on( 'update', function ( evt ) {
+	state.on( 'update', function () {
 		$currentSearch.val( state.toJSON() );
 	} );
 	$search.append( $currentSearch );
@@ -558,4 +558,4 @@
 	$( '#mw-searchoptions' ).remove();
 
 	mw.loader.load( '//de.wikipedia.org/w/index.php?title=MediaWiki:Gadget-DeepCat.js&action=raw&ctype=text/javascript' );
-} )( mediaWiki, jQuery );
+}( mediaWiki, jQuery ) );

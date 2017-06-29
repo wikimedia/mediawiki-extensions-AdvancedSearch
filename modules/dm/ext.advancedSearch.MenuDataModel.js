@@ -49,4 +49,4 @@
 		this.menuItems = items;
 		this.emit( 'update' );
 	};
-} )( mediaWiki );
+}( mediaWiki ) );

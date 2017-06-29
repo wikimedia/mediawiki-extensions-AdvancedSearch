@@ -66,4 +66,4 @@
 		} );
 	};
 
-} )( mediaWiki, jQuery );
+}( mediaWiki, jQuery ) );

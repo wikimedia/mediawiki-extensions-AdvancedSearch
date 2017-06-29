@@ -49,7 +49,7 @@
 
 	OO.inheritClass( mw.libs.advancedSearch.ui.ImageDimensionInput, OO.ui.Widget );
 
-	mw.libs.advancedSearch.ui.ImageDimensionInput.prototype.onInputChange = function ( val ) {
+	mw.libs.advancedSearch.ui.ImageDimensionInput.prototype.onInputChange = function () {
 		this.data[ 0 ] = this.operatorInput.getValue();
 		this.data[ 1 ] = this.valueInput.getValue();
 		this.emit( 'change', this.data );
@@ -61,7 +61,7 @@
 
 	mw.libs.advancedSearch.ui.ImageDimensionInput.prototype.setValuesFromStore = function () {
 		var newValue = this.store.getOption( this.optionId );
-		if ( !newValue || newValue == this.data ) {
+		if ( !newValue || newValue === this.data ) {
 			return;
 		}
 		this.data = newValue;
@@ -72,4 +72,4 @@
 		this.valueInput.setValue( this.data[ 1 ] );
 	};
 
-} )( mediaWiki, jQuery );
+}( mediaWiki, jQuery ) );

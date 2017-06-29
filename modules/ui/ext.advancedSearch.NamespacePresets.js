@@ -43,9 +43,9 @@
 			this.store.setNamespaces( this.presets[ key ].namespaces );
 		} else {
 			this.store.setNamespaces( this.store.getNamespaces().filter( function ( id ) {
-				return this.presets[ key ].namespaces.indexOf( id ) == -1;
+				return this.presets[ key ].namespaces.indexOf( id ) === -1;
 			}, this ) );
 		}
 	};
 
-} )( mediaWiki, jQuery );
+}( mediaWiki, jQuery ) );

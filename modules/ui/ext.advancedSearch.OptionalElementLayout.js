@@ -33,4 +33,4 @@
 		this.toggle( this.checkVisibility() );
 	};
 
-} )( mediaWiki );
+}( mediaWiki ) );

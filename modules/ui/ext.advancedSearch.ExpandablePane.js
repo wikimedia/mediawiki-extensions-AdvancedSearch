@@ -82,7 +82,7 @@
 	mw.libs.advancedSearch.ui.ExpandablePane.prototype.STATE_CLOSED = 'closed';
 	mw.libs.advancedSearch.ui.ExpandablePane.prototype.STATE_OPEN = 'open';
 
-	mw.libs.advancedSearch.ui.ExpandablePane.prototype.onButtonClick = function ( evt ) {
+	mw.libs.advancedSearch.ui.ExpandablePane.prototype.onButtonClick = function () {
 		if ( this.data === this.STATE_OPEN ) {
 			this.data = this.STATE_CLOSED;
 			this.$dependentPane.hide();
@@ -101,4 +101,4 @@
 		return this.data === this.STATE_OPEN;
 	};
 
-} )( mediaWiki, jQuery );
+}( mediaWiki, jQuery ) );

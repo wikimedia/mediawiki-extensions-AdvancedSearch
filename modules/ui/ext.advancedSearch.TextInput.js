@@ -39,4 +39,4 @@
 		this.setValue( val );
 	};
 
-} )( mediaWiki, jQuery );
+}( mediaWiki, jQuery ) );

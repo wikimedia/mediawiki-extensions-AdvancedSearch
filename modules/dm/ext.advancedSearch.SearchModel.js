@@ -64,7 +64,7 @@
 		var namespaces = this.getNamespaces();
 		// TODO check for allowed options?
 		this.searchOptions[ optionId ] = value;
-		if ( optionId == 'filetype' && !this.filetypeSupportsDimensions() ) {
+		if ( optionId === 'filetype' && !this.filetypeSupportsDimensions() ) {
 			this.searchOptions.filew = [ '>', '' ];
 			this.searchOptions.fileh = [ '>', '' ];
 		}
@@ -83,7 +83,7 @@
 
 	mw.libs.advancedSearch.dm.SearchModel.prototype.removeOption = function ( optionId ) {
 		delete this.searchOptions[ optionId ];
-		if ( optionId == 'filetype' ) {
+		if ( optionId === 'filetype' ) {
 			this.searchOptions.filew = [ '>', '' ];
 			this.searchOptions.fileh = [ '>', '' ];
 		}
@@ -192,4 +192,4 @@
 		this.emit( 'update' );
 	};
 
-} )( mediaWiki, jQuery );
+}( mediaWiki, jQuery ) );

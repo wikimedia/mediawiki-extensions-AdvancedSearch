@@ -120,4 +120,4 @@
 		this.setValue( storeValue );
 	};
 
-} )( mediaWiki, jQuery );
+}( mediaWiki, jQuery ) );

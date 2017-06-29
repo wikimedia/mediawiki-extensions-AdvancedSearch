@@ -18,4 +18,4 @@
 		return true;
 	};
 
-} )( mediaWiki );
+}( mediaWiki ) );

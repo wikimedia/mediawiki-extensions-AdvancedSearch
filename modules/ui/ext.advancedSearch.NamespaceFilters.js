@@ -56,7 +56,7 @@
 			label: label || data,
 			icon: this.getNamespaceIcon( data )
 		} );
-	} ;
+	};
 
 	/**
 	 * @param  {number} ns Namespace ID
@@ -67,7 +67,7 @@
 			return this.namespaceIcons[ ns ];
 		}
 		return ns % 2 ? 'stripeSummary' : 'article';
-	} ;
+	};
 
 	/**
 	 *
@@ -75,7 +75,7 @@
 	 */
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.setNamespaceIcons = function ( icons ) {
 		this.namespaceIcons = icons;
-	} ;
+	};
 
 	/**
 	 * Create an options array suitable for menu items
@@ -97,7 +97,7 @@
 			} );
 		} );
 		return options;
-	} ;
+	};
 
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.onStoreUpdate = function () {
 		this.setValueFromStore();
@@ -127,4 +127,4 @@
 		} );
 	};
 
-} )( mediaWiki, jQuery );
+}( mediaWiki, jQuery ) );

@@ -1,7 +1,10 @@
-#mw-searchoptions { display: none; }
+/* stylelint-disable-next-line selector-no-id */
+#mw-searchoptions {
+	display: none;
+}
 
 .mw-advancedSearch-fieldContainer {
-	background: linear-gradient(rgba(0, 0, 0, 0.1), #fff 0.5em);
+	background: linear-gradient( rgba( 0, 0, 0, 0.1 ), #fff 0.5em );
 	border: solid 1px #c8ccd1;
 	border-top: 0;
 	box-sizing: border-box;
@@ -17,7 +20,7 @@
 
 /* FIXME: Why is this border set on a "label" element and not on the <fieldset>? */
 .mw-advancedSearch-fieldContainer fieldset.oo-ui-labelElement {
-	border: none;
+	border: 0;
 	border-top: solid 1px #c8ccd1;
 	margin-top: 1em;
 }
@@ -49,7 +52,7 @@
 	display: block;
 	margin: 0;
 	max-width: 50em;
-	padding-top: 0.3em
+	padding-top: 0.3em;
 }
 
 .mw-advancedSearch-expandablePane-button {
@@ -69,7 +72,7 @@
 .mw-advancedSearch-expandablePane-button .oo-ui-indicatorElement-indicator {
 	position: absolute;
 	top: 0;
-	height:100%;
+	height: 100%;
 	right: 0.9375em;
 }
 
@@ -79,7 +82,7 @@
 }
 
 .mw-advancedSearch-previewLabel.oo-ui.widget-enabled {
-	background: white;
+	background: #fff;
 }
 
 .mw-advancedSearch-optionTags {
@@ -87,7 +90,7 @@
 }
 
 .mw-advancedSearch-optionTags > span {
-	background: rgba(255, 255, 255, 0.6);
+	background: rgba( 255, 255, 255, 0.6 );
 	border: 1px solid #a2a9b1;
 	border-radius: 2px;
 	display: inline-block;
@@ -114,7 +117,7 @@
 }
 
 .mw-advancedSearch-namespacePresets {
-	float:right;
+	float: right;
 }
 
 .mw-advancedSearch-namespacePresets div {
@@ -132,7 +135,7 @@
 	box-sizing: border-box;
 	margin-top: 0.3em;
 	max-width: 50em;
-	padding: 0.4em 0.9375em;;
+	padding: 0.4em 0.9375em;
 	position: relative;
-	border-bottom: none;
+	border-bottom: 0;
 }
