@@ -37,13 +37,15 @@
 	"ResourceModules": {
 		"ext.advancedSearch.init": {
 			"scripts": [
-				"modules/ext.advancedSearch.init.js",
-				"modules/ext.advancedSearch.namespaceFilters.js"
+				"modules/ext.advancedSearch.init.js"
 			],
 			"styles": [
 				"modules/ext.advancedSearch.css"
 			],
 			"messages": [
+				"advancedSearch-namespaces-articles",
+				"advancedSearch-namespaces-preset-all",
+				"advancedSearch-namespaces-search-in",
 				"advancedsearch-field-plain",
 				"advancedsearch-field-phrase",
 				"advancedsearch-field-or",
@@ -67,6 +69,7 @@
 				"oojs-ui.styles.icons-media",
 				"oojs-ui.styles.icons-user",
 				"oojs-ui.styles.icons-wikimedia",
+				"ext.advancedSearch.util",
 				"ext.advancedSearch.dm.MenuDataModel",
 				"ext.advancedSearch.dm.SearchModel",
 				"ext.advancedSearch.ui.ArbitraryWordInput",
@@ -74,6 +77,9 @@
 				"ext.advancedSearch.ui.ExpandablePane",
 				"ext.advancedSearch.ui.ImageDimensionInput",
 				"ext.advancedSearch.ui.MenuedInput",
+				"ext.advancedSearch.ui.NamespaceFilters",
+				"ext.advancedSearch.ui.NamespacePresets",
+				"ext.advancedSearch.ui.OptionalElementLayout",
 				"ext.advancedSearch.ui.OptionalElementLayout",
 				"ext.advancedSearch.ui.SearchPreview",
 				"ext.advancedSearch.ui.TextInput"
@@ -142,6 +148,24 @@
 				"modules/ui/ext.advancedSearch.MenuedInput.js"
 			],
 			"dependencies": [
+				"ext.advancedSearch.util",
+				"oojs-ui"
+			]
+		},
+		"ext.advancedSearch.ui.NamespaceFilters": {
+			"scripts": [
+				"modules/ui/ext.advancedSearch.NamespaceFilters.js"
+			],
+			"dependencies": [
+				"ext.advancedSearch.util",
+				"oojs-ui"
+			]
+		},
+		"ext.advancedSearch.ui.NamespacePresets": {
+			"scripts": [
+				"modules/ui/ext.advancedSearch.NamespacePresets.js"
+			],
+			"dependencies": [
 				"oojs-ui"
 			]
 		},
@@ -183,6 +207,11 @@
 			],
 			"dependencies": [
 				"oojs-ui"
+			]
+		},
+		"ext.advancedSearch.util": {
+			"scripts": [
+				"modules/ext.advancedSearch.util.js"
 			]
 		}
 	},

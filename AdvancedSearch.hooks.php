@@ -76,10 +76,14 @@ class Hooks {
 	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
 		$testModules['qunit']['ext.advancedSearch.tests'] = [
 			'scripts' => [
-				// 'tests/qunit/YourTestName.test.js'
+				'tests/qunit/ui/NamespaceFilters.test.js',
+				'tests/qunit/ui/NamespacePresets.test.js',
+				'tests/qunit/dm/SearchModel.test.js'
 			],
 			'dependencies' => [
-				// 'ext.advancedSearch.moduleName'
+				'ext.advancedSearch.ui.NamespaceFilters',
+				'ext.advancedSearch.ui.NamespacePresets',
+				'ext.advancedSearch.dm.SearchModel',
 				'oojs-ui'
 			],
 			'localBasePath' => __DIR__,

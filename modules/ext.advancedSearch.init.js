@@ -22,15 +22,7 @@
 		if ( mw.libs.advancedSearch.initializedFromUrl ) {
 			return;
 		}
-		var currentSearch;
-		try {
-			currentSearch = JSON.parse( mw.util.getParamValue( 'advancedSearch-current' ) );
-			if ( typeof currentSearch === 'object' ) {
-				for ( var opt in currentSearch ) {
-					state.storeOption( opt, currentSearch[ opt ] );
-				}
-			}
-		} catch ( e ) {}
+		state.setAllFromJSON( mw.util.getParamValue( 'advancedSearch-current' ) || '' );
 		mw.libs.advancedSearch.initializedFromUrl = true;
 	}
 
@@ -125,6 +117,13 @@
 				}
 			}
 		);
+	}
+
+	function prepareNamespaces() {
+		var namespaces = mw.config.get( 'wgFormattedNamespaces' );
+		// Article namespace has no name by default
+		namespaces[ '0' ] = mw.msg( 'advancedSearch-namespaces-articles' );
+		return namespaces;
 	}
 
 	var advancedOptions = [
@@ -530,6 +529,33 @@
 		$currentSearch.val( state.toJSON() );
 	} );
 	$search.append( $currentSearch );
+
+	var namespaceSelection = new mw.libs.advancedSearch.ui.NamespaceFilters( state, {
+			namespaces: prepareNamespaces()
+		} ),
+		namespacePresets = new mw.libs.advancedSearch.ui.NamespacePresets( state, {
+			presets: {
+				all: {
+					namespaces: Object.keys( prepareNamespaces() ),
+					label: mw.msg( 'advancedSearch-namespaces-preset-all' )
+				}
+			}
+		} );
+
+	namespaceSelection.on( 'change', function ( newValue ) {
+		state.setNamespaces( $.map( newValue, function ( item ) {
+			return item.getData();
+		} ) );
+	} );
+
+	$( '.mw-search-profile-tabs' )
+		.addClass( 'mw-advancedSearch-namespace-selection' )
+		.after( namespaceSelection.$element )
+		.append( $( '<strong></strong>' ).text( mw.msg( 'advancedSearch-namespaces-search-in' ) ) )
+		.append( namespacePresets.$element );
+
+	// remove old namespace selection item to avoid double ns parameters
+	$( '#mw-searchoptions' ).remove();
 
 	mw.loader.load( '//de.wikipedia.org/w/index.php?title=MediaWiki:Gadget-DeepCat.js&action=raw&ctype=text/javascript' );
 } )( mediaWiki, jQuery );

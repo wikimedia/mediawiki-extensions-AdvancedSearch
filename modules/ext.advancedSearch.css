@@ -112,3 +112,27 @@
 .mw-advancedSearch-filesize .operator-container {
 	padding-right: 1em;
 }
+
+.mw-advancedSearch-namespacePresets {
+	float:right;
+}
+
+.mw-advancedSearch-namespacePresets div {
+	display: inline;
+}
+
+.mw-advancedSearch-namespace-selection label {
+	display: inline-block;
+}
+
+/* Convert profile "search in" section for namespace selection */
+.mw-search-profile-tabs {
+	border-color: #a2a9b1;
+	border-radius: 2px;
+	box-sizing: border-box;
+	margin-top: 0.3em;
+	max-width: 50em;
+	padding: 0.4em 0.9375em;;
+	position: relative;
+	border-bottom: none;
+}
