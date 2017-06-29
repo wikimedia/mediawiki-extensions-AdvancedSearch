@@ -44,6 +44,6 @@
 	"advancedSearch-namespaces-articles": "Label for the 'Articles' namespace (usually with a an empty translated namespace label)",
 	"advancedSearch-namespaces-search-in": "Label for the 'Search in' section heading of the namespace section",
 	"advancedSearch-namespaces-preset-all": "Label for the namespace preset 'All namespaces'",
-  	"advancedSearch-beta-feature-message": "Label for the AdvancedSearch Beta Feature.",
-  	"advancedSearch-beta-feature-description": "Description for the AdvancedSearch Beta Feature, describing the feature that will be enabled."
+	"advancedSearch-beta-feature-message": "Label for the AdvancedSearch Beta Feature.",
+	"advancedSearch-beta-feature-description": "Description for the AdvancedSearch Beta Feature, describing the feature that will be enabled."
 }
