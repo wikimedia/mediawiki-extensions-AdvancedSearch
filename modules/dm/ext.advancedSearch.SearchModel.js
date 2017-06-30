@@ -39,6 +39,20 @@
 	 * The state of an option or of the namespaces has changed
 	 */
 
+	/* Constants */
+
+	/**
+	 * Namespace id of Main (Article) namespace
+	 * @type {string}
+	 */
+	mw.libs.advancedSearch.dm.SearchModel.MAIN_NAMESPACE = '0';
+
+	/**
+	 * Namespace id of File namespace
+	 * @type {string}
+	 */
+	mw.libs.advancedSearch.dm.SearchModel.FILE_NAMESPACE = '6';
+
 	/* Methods */
 
 	/**
@@ -47,12 +61,19 @@
 	 * @param  {mixed} value
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.storeOption = function ( optionId, value ) {
+		var namespaces = this.getNamespaces();
 		// TODO check for allowed options?
 		this.searchOptions[ optionId ] = value;
 		if ( optionId == 'filetype' && !this.filetypeSupportsDimensions() ) {
 			this.searchOptions.filew = [ '>', '' ];
 			this.searchOptions.fileh = [ '>', '' ];
 		}
+
+		if ( optionId === 'filetype' && namespaces.indexOf( mw.libs.advancedSearch.dm.SearchModel.FILE_NAMESPACE ) === -1 ) {
+			namespaces.push( mw.libs.advancedSearch.dm.SearchModel.FILE_NAMESPACE );
+			this.setNamespaces( namespaces );
+		}
+
 		this.emitUpdate();
 	};
 
@@ -151,10 +172,20 @@
 	 * @param {Array} namespaces
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.setNamespaces = function ( namespaces ) {
-		// TODO check namespaces: if empty, set article ns
-		// TODO check options - if filetype is selected, add file ns
-		this.namespaces = namespaces;
-		this.emitUpdate();
+		var previousNamespaces = this.namespaces.slice( 0 );
+		if ( this.getOption( 'filetype' ) && namespaces.indexOf( mw.libs.advancedSearch.dm.SearchModel.FILE_NAMESPACE ) === -1 ) {
+			namespaces.push( mw.libs.advancedSearch.dm.SearchModel.FILE_NAMESPACE );
+		}
+
+		if ( !mw.libs.advancedSearch.util.arrayEquals( [], namespaces ) ) {
+			this.namespaces = namespaces;
+		} else {
+			this.namespaces = [ mw.libs.advancedSearch.dm.SearchModel.MAIN_NAMESPACE ];
+		}
+
+		if ( !mw.libs.advancedSearch.util.arrayEquals( previousNamespaces, this.namespaces ) ) {
+			this.emitUpdate();
+		}
 	};
 
 	mw.libs.advancedSearch.dm.SearchModel.prototype.emitUpdate = function () {

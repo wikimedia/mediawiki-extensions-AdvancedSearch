@@ -198,7 +198,8 @@
 				"modules/dm/ext.advancedSearch.SearchModel.js"
 			],
 			"dependencies": [
-				"oojs-ui"
+				"oojs-ui",
+				"ext.advancedSearch.util"
 			]
 		},
 		"ext.advancedSearch.dm.MenuDataModel": {
