@@ -26,5 +26,8 @@
 	"advancedsearch-filetype-document": "Documento",
 	"advancedSearch-filesize-equals": "uguale a",
 	"advancedSearch-filesize-greater-than": "maggiore di",
-	"advancedSearch-filesize-smaller-than": "minore di"
+	"advancedSearch-filesize-smaller-than": "minore di",
+	"advancedSearch-namespaces-articles": "Voci",
+	"advancedSearch-namespaces-search-in": "Cerca in:",
+	"advancedSearch-namespaces-preset-all": "Tutti"
 }

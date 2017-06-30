@@ -32,6 +32,9 @@
 	"advancedSearch-filesize-equals": "likadant som",
 	"advancedSearch-filesize-greater-than": "större än",
 	"advancedSearch-filesize-smaller-than": "mindre än",
+	"advancedSearch-namespaces-articles": "Artiklar",
+	"advancedSearch-namespaces-search-in": "Sök på:",
+	"advancedSearch-namespaces-preset-all": "Alla",
 	"advancedSearch-beta-feature-message": "Avancerat sökgränssnitt",
 	"advancedSearch-beta-feature-description": "Enkel åtkomst till avancerade sökförmågor på [[Special:Search]]."
 }

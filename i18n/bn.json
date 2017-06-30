@@ -32,6 +32,9 @@
 	"advancedSearch-filesize-equals": "এর সমান",
 	"advancedSearch-filesize-greater-than": "এর চেয়ে বড়",
 	"advancedSearch-filesize-smaller-than": "এর চেয়ে ছোট",
+	"advancedSearch-namespaces-articles": "নিবন্ধসমূহ",
+	"advancedSearch-namespaces-search-in": "এতে অনুসন্ধান:",
+	"advancedSearch-namespaces-preset-all": "সব",
 	"advancedSearch-beta-feature-message": "উন্নত অনুসন্ধান ইন্টারফেস",
 	"advancedSearch-beta-feature-description": "[[Special:Search]]-এ উন্নত অনুসন্ধান ক্ষমতায় সহজে প্রবেশাধিকার দেয়।"
 }

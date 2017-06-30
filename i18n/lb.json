@@ -11,6 +11,7 @@
 	"advancedsearch-field-subpage": "Ënnersäite vun dëser Säit:",
 	"advancedsearch-field-intitle": "Säitentitel enthält:",
 	"advancedsearch-field-deepcat": "Säit aus dëser Kategorie:",
+	"advancedsearch-field-filew": "Breet vum Fichier a Pixel",
 	"advancedsearch-filetype-section-video": "Videoformat",
 	"advancedsearch-filetype-bitmap": "Bild",
 	"advancedsearch-filetype-vector": "Zeechnung",
@@ -21,5 +22,7 @@
 	"advancedsearch-filetype-document-office": "Büro",
 	"advancedSearch-filesize-equals": "gläich",
 	"advancedSearch-filesize-greater-than": "méi grouss wéi",
-	"advancedSearch-filesize-smaller-than": "méi kleng wéi"
+	"advancedSearch-filesize-smaller-than": "méi kleng wéi",
+	"advancedSearch-namespaces-articles": "Artikelen",
+	"advancedSearch-namespaces-preset-all": "All"
 }

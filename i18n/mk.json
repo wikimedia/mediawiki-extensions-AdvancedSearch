@@ -32,6 +32,9 @@
 	"advancedSearch-filesize-equals": "еднакво на",
 	"advancedSearch-filesize-greater-than": "поголемо од",
 	"advancedSearch-filesize-smaller-than": "помало од",
+	"advancedSearch-namespaces-articles": "Статии",
+	"advancedSearch-namespaces-search-in": "Пребарај во:",
+	"advancedSearch-namespaces-preset-all": "сите",
 	"advancedSearch-beta-feature-message": "Посредник за напредно пребарување",
 	"advancedSearch-beta-feature-description": "Лесен пристап до напредните можности за пребарување на [[Special:Search]]."
 }

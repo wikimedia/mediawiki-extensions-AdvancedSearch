@@ -32,6 +32,9 @@
 	"advancedSearch-filesize-equals": "gleich",
 	"advancedSearch-filesize-greater-than": "größer als",
 	"advancedSearch-filesize-smaller-than": "kleiner als",
+	"advancedSearch-namespaces-articles": "Artikel",
+	"advancedSearch-namespaces-search-in": "Suchen in:",
+	"advancedSearch-namespaces-preset-all": "Alle",
 	"advancedSearch-beta-feature-message": "Erweiterte Suchoberfläche",
 	"advancedSearch-beta-feature-description": "Leichter Zugang zu erweiterten Suchmöglichkeiten auf [[Special:Search]]."
 }
