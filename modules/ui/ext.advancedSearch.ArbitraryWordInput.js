@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function ( mw, $ ) {
 	'use strict';
 
 	mw.libs = mw.libs || {};
@@ -73,4 +73,4 @@
 		this.setValue( val );
 	};
 
-} )( mediaWiki );
+} )( mediaWiki, jQuery );
