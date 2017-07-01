@@ -1,9 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Subi"
+			"Subi",
+			"Mikel Ibaiba"
 		]
 	},
+	"advancedsearch-field-plain": "Hitz hau:",
+	"advancedsearch-field-phrase": "Zehazki testu hau:",
+	"advancedsearch-field-not": "Hitz hau ez:",
+	"advancedsearch-field-subpage": "Orri honetako azpi-orriak:",
+	"advancedsearch-field-filetype": "Artxibo mota:",
 	"advancedSearch-namespaces-articles": "Artikuluak",
+	"advancedSearch-namespaces-search-in": "Non bilatu:",
 	"advancedSearch-namespaces-preset-all": "Denak"
 }
