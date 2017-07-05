@@ -40,4 +40,21 @@
 		assert.deepEqual( [ '3' ], model.getNamespaces() );
 	} );
 
+	QUnit.test( 'Changing the store to exactly the namespaces in namespaces in preset, selects preset', function ( assert ) {
+		var model = new Model(),
+			presets = new NamespacePresets( model, {
+				presets: {
+					all: {
+						label: 'All',
+						namespaces: [ '0', '1', '2' ]
+					}
+				}
+			} );
+		assert.deepEqual( presets.getValue(), [] );
+		model.setNamespaces( [ '0', '1', '2' ] );
+		assert.deepEqual( presets.getValue(), [ 'all' ] );
+		model.setNamespaces( [ '0', '1' ] );
+		assert.deepEqual( presets.getValue(), [] );
+	} );
+
 }( mediaWiki ) );

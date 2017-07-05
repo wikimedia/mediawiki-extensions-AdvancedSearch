@@ -123,6 +123,11 @@
 		var namespaces = mw.config.get( 'wgFormattedNamespaces' );
 		// Article namespace has no name by default
 		namespaces[ '0' ] = mw.msg( 'advancedSearch-namespaces-articles' );
+		$.each( Object.keys( namespaces ), function ( _, key ) {
+			if ( parseInt( key, 10 ) < 0 ) {
+				delete namespaces[ key ];
+			}
+		} );
 		return namespaces;
 	}
 

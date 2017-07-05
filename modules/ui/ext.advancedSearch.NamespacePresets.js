@@ -33,6 +33,7 @@
 		// Using undocumented internals because this.on does not work, see https://phabricator.wikimedia.org/T168735
 		this.checkboxMultiselectWidget.on( 'change', this.updateStoreFromPresets, [], this );
 		this.$element.addClass( 'mw-advancedSearch-namespacePresets' );
+		store.connect( this, { update: 'updatePresetsFromStore' } );
 	};
 
 	OO.inheritClass( mw.libs.advancedSearch.ui.NamespacePresets, OO.ui.CheckboxMultiselectInputWidget );
@@ -46,6 +47,23 @@
 				return this.presets[ key ].namespaces.indexOf( id ) === -1;
 			}, this ) );
 		}
+	};
+
+	mw.libs.advancedSearch.ui.NamespacePresets.prototype.updatePresetsFromStore = function () {
+		var selectedPresets = {},
+			self = this;
+		$.each( this.presets, function ( key, nsconfig ) {
+			selectedPresets[ key ] = mw.libs.advancedSearch.util.arrayEquals( nsconfig.namespaces, self.store.getNamespaces() );
+		} );
+		this.checkboxMultiselectWidget.off( 'change', this.updateStoreFromPresets, this );
+		$.each( selectedPresets, function ( key, isSelected ) {
+			var presetWidget = self.checkboxMultiselectWidget.getItemFromData( key );
+			if ( presetWidget.isSelected() !== isSelected ) {
+				presetWidget.setSelected( isSelected );
+			}
+		} );
+		this.checkboxMultiselectWidget.on( 'change', this.updateStoreFromPresets, [], this );
+
 	};
 
 }( mediaWiki, jQuery ) );
