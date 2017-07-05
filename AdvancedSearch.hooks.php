@@ -15,6 +15,7 @@ class Hooks {
 	 *
 	 * @param SpecialPage $special
 	 * @param string $subpage
+	 * @return boolean
 	 */
 	public static function onSpecialPageBeforeExecute( SpecialPage $special, $subpage ) {
 		/**
@@ -29,6 +30,8 @@ class Hooks {
 		if ( $special->getName() === 'Search' ) {
 			$special->getOutput()->addModules( 'ext.advancedSearch.init' );
 		}
+
+		return true;
 	}
 
 	/**
