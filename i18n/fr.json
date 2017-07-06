@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Wladek92"
+			"Wladek92",
+			"Gomoko"
 		]
 	},
+	"advancedsearch-desc": "Accès facile aux possibilités de recherche avancée sur [[Special:Search]]",
 	"advancedsearch-field-plain": "Ce mot :",
 	"advancedsearch-field-phrase": "Ce texte exactement :",
 	"advancedsearch-field-or": "Une de ces mots :",
@@ -16,6 +18,7 @@
 	"advancedsearch-field-filetype": "Type de fichier :",
 	"advancedsearch-field-filew": "Largeur du fichier en pixels :",
 	"advancedsearch-field-fileh": "Hauteur du fichier en pixels :",
+	"advancedsearch-filetype-section-types": "Type général de fichier",
 	"advancedsearch-filetype-section-image": "Format d'image",
 	"advancedsearch-filetype-section-video": "Format vidéo",
 	"advancedsearch-filetype-section-sound": "Format vidéo",
@@ -33,5 +36,6 @@
 	"advancedSearch-namespaces-articles": "Articles",
 	"advancedSearch-namespaces-search-in": "Rechercher dans :",
 	"advancedSearch-namespaces-preset-all": "Tous",
-	"advancedSearch-beta-feature-message": "Interface de recherche avancée"
+	"advancedSearch-beta-feature-message": "Interface de recherche avancée",
+	"advancedSearch-beta-feature-description": "Accès facile aux possibilités avancées de recherche sur [[Special:Search]]."
 }
