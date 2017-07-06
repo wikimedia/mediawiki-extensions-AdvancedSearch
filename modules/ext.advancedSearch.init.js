@@ -534,13 +534,15 @@
 			namespaces: prepareNamespaces()
 		} ),
 		namespacePresets = new mw.libs.advancedSearch.ui.NamespacePresets( state, {
+			classes: [ 'mw-advancedSearch-namespacePresets' ],
 			presets: {
 				all: {
 					namespaces: Object.keys( prepareNamespaces() ),
 					label: mw.msg( 'advancedSearch-namespaces-preset-all' )
 				}
 			}
-		} );
+		} ),
+		namespaceSelectionPreview = $( '<div class="mw-advancedSearch-namespace-selection"></div>' );
 
 	namespaceSelection.on( 'change', function ( newValue ) {
 		state.setNamespaces( $.map( newValue, function ( item ) {
@@ -548,8 +550,8 @@
 		} ) );
 	} );
 
-	$( '.mw-search-profile-tabs' )
-		.addClass( 'mw-advancedSearch-namespace-selection' )
+	$( '.mw-search-profile-tabs' ).after( namespaceSelectionPreview );
+	namespaceSelectionPreview
 		.after( namespaceSelection.$element )
 		.append( $( '<strong></strong>' ).text( mw.msg( 'advancedSearch-namespaces-search-in' ) ) )
 		.append( namespacePresets.$element );

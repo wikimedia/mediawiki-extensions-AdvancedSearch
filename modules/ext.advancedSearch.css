@@ -1,8 +1,3 @@
-/* stylelint-disable-next-line selector-no-id */
-#mw-searchoptions {
-	display: none;
-}
-
 .mw-advancedSearch-fieldContainer {
 	background: linear-gradient( rgba( 0, 0, 0, 0.1 ), #fff 0.5em );
 	border: solid 1px #c8ccd1;
@@ -128,14 +123,26 @@
 	display: inline-block;
 }
 
-/* Convert profile "search in" section for namespace selection */
-.mw-search-profile-tabs {
-	border-color: #a2a9b1;
+.mw-advancedSearch-namespace-selection {
 	border-radius: 2px;
+	border: solid 1px #a2a9b1;
+	background: rgb( 248, 249, 250 );
 	box-sizing: border-box;
 	margin-top: 0.3em;
 	max-width: 50em;
 	padding: 0.4em 0.9375em;
 	position: relative;
 	border-bottom: 0;
+}
+
+.mw-advancedSearch-namespace-selection label.oo-ui-checkboxMultioptionWidget {
+	padding: 0;
+}
+
+.mw-advancedSearch-namespaceFilter {
+	top: -2px;
+}
+
+.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-handle {
+	border-top: 0;
 }

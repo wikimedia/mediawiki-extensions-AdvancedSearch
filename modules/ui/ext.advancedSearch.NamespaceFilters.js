@@ -27,11 +27,13 @@
 				12: 'help',
 				828: 'puzzle'
 			},
-			options: []
+			options: [],
+			classes: []
 		}, config || {} );
 
 		this.namespaces = myConfig.namespaces;
 		myConfig.options = myConfig.options.concat( this.createNamespaceOptions( this.namespaces ) );
+		myConfig.classes.push( 'mw-advancedSearch-namespaceFilter' );
 		this.setNamespaceIcons( myConfig.namespaceIcons );
 
 		mw.libs.advancedSearch.ui.NamespaceFilters.parent.call( this, myConfig );

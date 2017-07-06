@@ -29,6 +29,7 @@ class Hooks {
 		}
 		if ( $special->getName() === 'Search' ) {
 			$special->getOutput()->addModules( 'ext.advancedSearch.init' );
+			$special->getOutput()->addModuleStyles( 'ext.advancedSearch.initialstyles' );
 		}
 
 		return true;

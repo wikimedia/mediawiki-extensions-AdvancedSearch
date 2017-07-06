@@ -35,6 +35,11 @@
 		]
 	},
 	"ResourceModules": {
+		"ext.advancedSearch.initialstyles": {
+			"styles": [
+				"modules/ext.advancedSearch.init.css"
+			]
+		},
 		"ext.advancedSearch.init": {
 			"scripts": [
 				"modules/ext.advancedSearch.init.js"

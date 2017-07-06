@@ -1,0 +1,5 @@
+/* stylelint-disable-next-line selector-no-id */
+.client-js #mw-searchoptions,
+.client-js .mw-search-profile-tabs {
+	display: none;
+}
