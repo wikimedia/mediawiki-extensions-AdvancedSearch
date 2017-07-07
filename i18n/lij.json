@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Giromin Cangiaxo"
+		]
+	},
+	"advancedsearch-field-plain": "Questa parolla:",
+	"advancedsearch-field-phrase": "Ezattamente questo testo:",
+	"advancedsearch-field-or": "Un-a de queste parolle:",
+	"advancedsearch-field-not": "Questa parolla no:",
+	"advancedsearch-field-subpage": "Sottopaggine de sta paggina:",
+	"advancedsearch-field-intitle": "O tittolo da paggina o conten:",
+	"advancedsearch-field-deepcat": "Paggine inte sta categoria:",
+	"advancedsearch-field-hastemplate": "Solo paggine con questo template:",
+	"advancedsearch-field-insource": "O wikitesto o conten:",
+	"advancedsearch-field-filetype": "Tipo de file:",
+	"advancedsearch-filetype-section-types": "Tipo de file generâ",
+	"advancedsearch-filetype-section-image": "Formato inmaggine",
+	"advancedsearch-filetype-section-video": "Formato video",
+	"advancedsearch-filetype-section-sound": "Formato audio",
+	"advancedsearch-filetype-section-document": "Formato documento",
+	"advancedsearch-filetype-bitmap": "Inmaggine"
+}
