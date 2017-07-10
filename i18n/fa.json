@@ -1,0 +1,38 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mahdy Saffar"
+		]
+	},
+	"advancedsearch-field-plain": "این واژه:",
+	"advancedsearch-field-phrase": "دقیقاً این متن:",
+	"advancedsearch-field-or": "یکی از این واژگان:",
+	"advancedsearch-field-not": "بدون این واژه:",
+	"advancedsearch-field-subpage": "زیرصفحه‌های این صفحه:",
+	"advancedsearch-field-intitle": "عنوان صفحه شامل:",
+	"advancedsearch-field-deepcat": "صفحه در این رده:",
+	"advancedsearch-field-hastemplate": "تنها صفحات دارای این الگو:",
+	"advancedsearch-field-insource": "متن ویکی شامل:",
+	"advancedsearch-field-filetype": "نوع پرونده:",
+	"advancedsearch-field-filew": "عرض پرونده برحسب پیکسل:",
+	"advancedsearch-field-fileh": "ارتفاع پرونده برحسب پیکسل:",
+	"advancedsearch-filetype-section-types": "نوع پرونده عمومی",
+	"advancedsearch-filetype-section-image": "قالب تصویر",
+	"advancedsearch-filetype-section-video": "قالب ویدئو",
+	"advancedsearch-filetype-section-sound": "قالب صوتی",
+	"advancedsearch-filetype-section-document": "قالب سند",
+	"advancedsearch-filetype-bitmap": "تصویر",
+	"advancedsearch-filetype-vector": "نقاشی",
+	"advancedsearch-filetype-audio": "صوتی",
+	"advancedsearch-filetype-video": "ویدئو",
+	"advancedsearch-filetype-multimedia": "چندرسانه‌ای",
+	"advancedsearch-filetype-document": "سند",
+	"advancedSearch-filesize-equals": "یکسان با",
+	"advancedSearch-filesize-greater-than": "بزرگتر از",
+	"advancedSearch-filesize-smaller-than": "کوچکتر از",
+	"advancedSearch-namespaces-articles": "مقاله‌ها",
+	"advancedSearch-namespaces-search-in": "جستجو در:",
+	"advancedSearch-namespaces-preset-all": "همه",
+	"advancedSearch-beta-feature-message": "رابط جستجوی پیشرفته",
+	"advancedSearch-beta-feature-description": "دسترسی آسان به قابلیت‌های جستجوی پیشرفته با [[ویژه:جستجو]]"
+}
