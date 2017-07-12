@@ -12,9 +12,13 @@
 	"advancedsearch-field-intitle": "Säitentitel enthält:",
 	"advancedsearch-field-deepcat": "Säit aus dëser Kategorie:",
 	"advancedsearch-field-hastemplate": "Nëmme Säite mat dëser Schabloun:",
+	"advancedsearch-field-filetype": "Typ vu Fichier:",
 	"advancedsearch-field-filew": "Breet vum Fichier a Pixel",
 	"advancedsearch-field-fileh": "Héicht vum Fichier a Pixel:",
+	"advancedsearch-filetype-section-image": "Bildformat",
 	"advancedsearch-filetype-section-video": "Videoformat",
+	"advancedsearch-filetype-section-sound": "Audioformat",
+	"advancedsearch-filetype-section-document": "Format vum Dokument",
 	"advancedsearch-filetype-bitmap": "Bild",
 	"advancedsearch-filetype-vector": "Zeechnung",
 	"advancedsearch-filetype-audio": "Audio",
@@ -26,5 +30,7 @@
 	"advancedSearch-filesize-greater-than": "méi grouss wéi",
 	"advancedSearch-filesize-smaller-than": "méi kleng wéi",
 	"advancedSearch-namespaces-articles": "Artikelen",
-	"advancedSearch-namespaces-preset-all": "All"
+	"advancedSearch-namespaces-search-in": "Sichen op:",
+	"advancedSearch-namespaces-preset-all": "All",
+	"advancedSearch-beta-feature-message": "Erweidert Sic-Interface"
 }

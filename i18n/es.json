@@ -1,0 +1,38 @@
+{
+	"@metadata": {
+		"authors": [
+			"Macofe"
+		]
+	},
+	"advancedsearch-field-plain": "Esta palabra:",
+	"advancedsearch-field-phrase": "Exactamente este texto:",
+	"advancedsearch-field-or": "Una de estas palabras:",
+	"advancedsearch-field-not": "No esta palabra:",
+	"advancedsearch-field-subpage": "Subpáginas de esta página:",
+	"advancedsearch-field-intitle": "El título de la página contiene:",
+	"advancedsearch-field-deepcat": "Página en esta categoría:",
+	"advancedsearch-field-hastemplate": "Solo páginas con esta plantilla:",
+	"advancedsearch-field-insource": "El wikitexto contiene:",
+	"advancedsearch-field-filetype": "Tipo de archivo:",
+	"advancedsearch-field-filew": "Ancho de archivo en píxeles:",
+	"advancedsearch-field-fileh": "Altura de archivo en píxeles:",
+	"advancedsearch-filetype-section-types": "Tipo de archivo general",
+	"advancedsearch-filetype-section-image": "Formato de imagen",
+	"advancedsearch-filetype-section-video": "Formato de vídeo",
+	"advancedsearch-filetype-section-sound": "Formato de audio",
+	"advancedsearch-filetype-section-document": "Formato de documento",
+	"advancedsearch-filetype-bitmap": "Imagen",
+	"advancedsearch-filetype-vector": "Dibujo",
+	"advancedsearch-filetype-audio": "Audio",
+	"advancedsearch-filetype-video": "Vídeo",
+	"advancedsearch-filetype-multimedia": "Multimedia",
+	"advancedsearch-filetype-document": "Documento",
+	"advancedsearch-filetype-document-office": "Oficina",
+	"advancedSearch-filesize-equals": "igual a",
+	"advancedSearch-filesize-greater-than": "mayor que",
+	"advancedSearch-filesize-smaller-than": "menor que",
+	"advancedSearch-namespaces-articles": "Artículos",
+	"advancedSearch-namespaces-search-in": "Buscar en:",
+	"advancedSearch-namespaces-preset-all": "Todos",
+	"advancedSearch-beta-feature-message": "Interfaz de búsqueda avanzada"
+}
