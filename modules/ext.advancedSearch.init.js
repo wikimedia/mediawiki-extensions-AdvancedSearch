@@ -519,9 +519,6 @@
 
 		$searchField.prop( 'name', 'advancedSearchOption-original' )
 			.after( $compiledSearchField );
-
-		// Copy to the top-right search box for the sake of completeness
-		$( '#searchInput' ).val( compiledQuery );
 	} );
 
 	// TODO Move this element into an OOUI component with the state as constructor param
