@@ -25,14 +25,12 @@ class Hooks {
 			class_exists( BetaFeatures::class ) &&
 			!BetaFeatures::isFeatureEnabled( $special->getUser(), 'advancedsearch' )
 		) {
-			return true;
+			return;
 		}
 		if ( $special->getName() === 'Search' ) {
 			$special->getOutput()->addModules( 'ext.advancedSearch.init' );
 			$special->getOutput()->addModuleStyles( 'ext.advancedSearch.initialstyles' );
 		}
-
-		return true;
 	}
 
 	/**
@@ -70,10 +68,8 @@ class Hooks {
 				'ltr' => "$extensionAssetsPath/AdvancedSearch/resources/AdvancedSearch-beta-features-ltr.svg",
 				'rtl' => "$extensionAssetsPath/AdvancedSearch/resources/AdvancedSearch-beta-features-rtl.svg",
 			],
-			'info-link'
-			=> 'https://www.mediawiki.org/wiki/Extension:AdvancedSearch',
-			'discussion-link'
-			=> 'https://www.mediawiki.org/wiki/Extension_talk:AdvancedSearch',
+			'info-link' => 'https://www.mediawiki.org/wiki/Extension:AdvancedSearch',
+			'discussion-link' => 'https://www.mediawiki.org/wiki/Extension_talk:AdvancedSearch',
 		];
 	}
 

@@ -48,6 +48,10 @@
 				"modules/ext.advancedSearch.css"
 			],
 			"messages": [
+				"advancedsearch-options-pane-head",
+				"advancedsearch-optgroup-text",
+				"advancedsearch-optgroup-structure",
+				"advancedsearch-optgroup-files",
 				"advancedSearch-namespaces-articles",
 				"advancedSearch-namespaces-preset-all",
 				"advancedSearch-namespaces-search-in",

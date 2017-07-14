@@ -372,34 +372,6 @@
 		// morelike:…
 	];
 
-	var i18n = {
-		de: {
-			'advanced-search': 'Erweiterte Suchoptionen:',
-
-			// TODO Move these to i18n
-			text: 'Seite enthält …',
-			structure: 'Struktur',
-			files: 'Dateien und Bilder'
-		},
-		en: {
-			'advanced-search': 'Advanced parameters:',
-			text: 'The page should include …',
-			structure: 'Structure',
-			// FIXME: Why does this need to mention both, like images are not files?
-			files: 'Files and images'
-		}
-	};
-
-	/**
-	 * @param {string} key
-	 * @return {string}
-	 */
-	function msg( key ) {
-		var lang = mw.config.get( 'wgUserLanguage' );
-
-		return i18n[ lang ] && i18n[ lang ][ key ] || i18n.en[ key ] || '<' + key + '>';
-	}
-
 	/**
 	 * @return {string[]}
 	 */
@@ -422,10 +394,6 @@
 				queryElements.push( formattedQueryElement );
 			}
 
-			// FIXME: This does not work when the advanced namespace field was changed by the user.
-			if ( option.requiredNamespace ) {
-				$( '#mw-search-ns' + option.requiredNamespace ).prop( 'checked', true );
-			}
 		} );
 
 		if ( greedyQuery ) {
@@ -459,7 +427,7 @@
 
 		if ( !optionSets[ option.group ] ) {
 			optionSets[ option.group ] = new OO.ui.FieldsetLayout( {
-				label: msg( option.group )
+				label: mw.msg( 'advancedsearch-optgroup-' + option.group )
 			} );
 		}
 
@@ -493,7 +461,7 @@
 	}
 
 	var searchPreview = new mw.libs.advancedSearch.ui.SearchPreview( state, {
-		label: msg( 'advanced-search' ),
+		label: mw.msg( 'advancedsearch-options-pane-head' ),
 		previewOptions: getPreviewOptions()
 	} );
 

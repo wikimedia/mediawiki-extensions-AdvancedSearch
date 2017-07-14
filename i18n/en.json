@@ -6,9 +6,14 @@
 	},
 	"advancedsearch-desc": "Easy access to advanced search capabilities on [[Special:Search]]",
 
+	"advancedsearch-options-pane-head": "Advanced parameters:",
+	"advancedsearch-optgroup-text": "Search in page text",
+	"advancedsearch-optgroup-structure": "Structure",
+	"advancedsearch-optgroup-files": "Files and images",
+
 	"advancedsearch-field-plain": "This word:",
 	"advancedsearch-field-phrase": "Exactly this text:",
-	"advancedsearch-field-or": "One of those words:",
+	"advancedsearch-field-or": "One of these words:",
 	"advancedsearch-field-not": "Not this word:",
 	"advancedsearch-field-subpage": "Subpages of this page:",
 	"advancedsearch-field-intitle": "Page title contains:",

@@ -7,6 +7,10 @@
 		]
 	},
 	"advancedsearch-desc": "{{desc|name=AdvancedSearch|url=https://www.mediawiki.org/wiki/Extension:AdvancedSearch}}",
+	"advancedsearch-options-pane-head": "Label for the introduction of advanced search. It is used both as a header for the expanded pane and as a label for the following options when the pane is collapsed.",
+	"advancedsearch-optgroup-text": "Label for the option group that contains search fields that refer to page content",
+	"advancedsearch-optgroup-structure": "Label for the option group that contains search fields that are specialized and/or more structural like templates, subpages and catgeories",
+	"advancedsearch-optgroup-files": "Label for the option group that contains search fields for file type and properties",
 	"advancedsearch-field-plain": "Label for the field for plain search",
 	"advancedsearch-field-phrase": "Label for the field for exact search",
 	"advancedsearch-field-or": "Label for the field for or search",
