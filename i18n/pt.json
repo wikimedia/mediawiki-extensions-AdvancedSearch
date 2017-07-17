@@ -5,6 +5,10 @@
 		]
 	},
 	"advancedsearch-desc": "Acesso fácil a capacidades de pesquisa avançada em [[Special:Search]]",
+	"advancedsearch-options-pane-head": "Parâmetros avançados:",
+	"advancedsearch-optgroup-text": "Pesquisar no texto da página",
+	"advancedsearch-optgroup-structure": "Estrutura",
+	"advancedsearch-optgroup-files": "Ficheiros e imagens",
 	"advancedsearch-field-plain": "Esta palavra:",
 	"advancedsearch-field-phrase": "Este texto exato:",
 	"advancedsearch-field-or": "Uma destas palavras:",
