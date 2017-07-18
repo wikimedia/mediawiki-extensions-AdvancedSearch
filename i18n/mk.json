@@ -5,6 +5,10 @@
 		]
 	},
 	"advancedsearch-desc": "Лесен пристап до напредните можности за пребарување на [[Special:Search]]",
+	"advancedsearch-options-pane-head": "Напредни параметри:",
+	"advancedsearch-optgroup-text": "Пребарај во текстот на страницата",
+	"advancedsearch-optgroup-structure": "Структура",
+	"advancedsearch-optgroup-files": "Податотеки и слики",
 	"advancedsearch-field-plain": "Овој збор:",
 	"advancedsearch-field-phrase": "Точно овој текст:",
 	"advancedsearch-field-or": "Еден од овие зборови:",

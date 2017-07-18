@@ -4,6 +4,9 @@
 			"Papuass"
 		]
 	},
+	"advancedsearch-optgroup-text": "Meklēt lapas tekstā",
+	"advancedsearch-optgroup-structure": "Struktūra",
+	"advancedsearch-optgroup-files": "Faili un attēli",
 	"advancedsearch-filetype-section-image": "Attēla formāts",
 	"advancedsearch-filetype-section-video": "Video formāts",
 	"advancedsearch-filetype-bitmap": "Attēls",

@@ -4,6 +4,10 @@
 			"Beta16"
 		]
 	},
+	"advancedsearch-options-pane-head": "Parametri avanzati:",
+	"advancedsearch-optgroup-text": "Cerca nel testo della pagina",
+	"advancedsearch-optgroup-structure": "Struttura",
+	"advancedsearch-optgroup-files": "File e immagini",
 	"advancedsearch-field-plain": "Questa parola:",
 	"advancedsearch-field-phrase": "Esattamente questo testo:",
 	"advancedsearch-field-or": "Una di queste parole:",

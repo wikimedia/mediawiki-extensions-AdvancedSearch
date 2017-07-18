@@ -5,6 +5,10 @@
 		]
 	},
 	"advancedsearch-desc": "在[[Special:Search]]简易访问高级搜索功能",
+	"advancedsearch-options-pane-head": "高级参数：",
+	"advancedsearch-optgroup-text": "在页面文本中搜索",
+	"advancedsearch-optgroup-structure": "结构",
+	"advancedsearch-optgroup-files": "文件和图片",
 	"advancedsearch-field-plain": "此词：",
 	"advancedsearch-field-phrase": "恰好是此词：",
 	"advancedsearch-field-or": "这些词之一：",

@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Leeheonjin"
+			"Leeheonjin",
+			"Emem.calist"
 		]
 	},
+	"advancedsearch-optgroup-structure": "Kayarian",
 	"advancedsearch-field-plain": "Ang salitang ito:",
 	"advancedsearch-field-or": "Isa sa mga salitang iyon:",
 	"advancedsearch-field-not": "Hindi ang salitang ito:",

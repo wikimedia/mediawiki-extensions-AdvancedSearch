@@ -5,6 +5,10 @@
 		]
 	},
 	"advancedsearch-desc": "[[Special:Search]]-এ উন্নত অনুসন্ধান ক্ষমতায় সহজে প্রবেশাধিকার দেয়",
+	"advancedsearch-options-pane-head": "উন্নত প্যারামিটারগুলি:",
+	"advancedsearch-optgroup-text": "পাতার পাঠ্যে সন্ধান করুন",
+	"advancedsearch-optgroup-structure": "কাঠামো",
+	"advancedsearch-optgroup-files": "ফাইল ও চিত্র",
 	"advancedsearch-field-plain": "এই শব্দ:",
 	"advancedsearch-field-phrase": "ঠিক এই লেখা:",
 	"advancedsearch-field-or": "এই শব্দগুলির একটি:",

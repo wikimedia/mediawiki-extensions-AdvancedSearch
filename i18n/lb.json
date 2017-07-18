@@ -4,6 +4,10 @@
 			"Robby"
 		]
 	},
+	"advancedsearch-options-pane-head": "Erweidert Parameteren:",
+	"advancedsearch-optgroup-text": "Am Text vun der Säit sichen",
+	"advancedsearch-optgroup-structure": "Struktur",
+	"advancedsearch-optgroup-files": "Fichieren a Biller",
 	"advancedsearch-field-plain": "Dëst Wuert:",
 	"advancedsearch-field-phrase": "Genee dësen Text:",
 	"advancedsearch-field-or": "Eent vun dëse Wierder:",

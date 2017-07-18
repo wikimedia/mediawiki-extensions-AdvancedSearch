@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Metalhead64"
+			"Metalhead64",
+			"Gabriel Birke (WMDE)"
 		]
 	},
 	"advancedsearch-desc": "Leichter Zugang zu erweiterten Suchmöglichkeiten auf [[Special:Search]]",
-	"advancedsearch-options-pane-head": "Erweiterte Parameter:",
+	"advancedsearch-options-pane-head": "Erweiterte Suchoptionen:",
 	"advancedsearch-optgroup-text": "Im Seitentext suchen",
 	"advancedsearch-optgroup-structure": "Struktur",
 	"advancedsearch-optgroup-files": "Dateien und Bilder",

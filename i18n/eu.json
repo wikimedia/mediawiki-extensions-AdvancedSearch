@@ -5,10 +5,16 @@
 			"Mikel Ibaiba"
 		]
 	},
+	"advancedsearch-options-pane-head": "Parametro aurreratuak:",
+	"advancedsearch-optgroup-text": "Bilatu testu orrialdean",
+	"advancedsearch-optgroup-structure": "Egitura",
+	"advancedsearch-optgroup-files": "Artxibo eta irudiak",
 	"advancedsearch-field-plain": "Hitz hau:",
 	"advancedsearch-field-phrase": "Zehazki testu hau:",
+	"advancedsearch-field-or": "Hitz hauetakoren bat:",
 	"advancedsearch-field-not": "Hitz hau ez:",
 	"advancedsearch-field-subpage": "Orri honetako azpi-orriak:",
+	"advancedsearch-field-intitle": "Orrialdearen izenak du:",
 	"advancedsearch-field-filetype": "Artxibo mota:",
 	"advancedSearch-namespaces-articles": "Artikuluak",
 	"advancedSearch-namespaces-search-in": "Non bilatu:",
