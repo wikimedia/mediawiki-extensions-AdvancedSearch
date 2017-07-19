@@ -15,7 +15,12 @@
 	"advancedsearch-field-not": "Hitz hau ez:",
 	"advancedsearch-field-subpage": "Orri honetako azpi-orriak:",
 	"advancedsearch-field-intitle": "Orrialdearen izenak du:",
+	"advancedsearch-field-deepcat": "Kategoria honetako orrialdea:",
+	"advancedsearch-field-hastemplate": "Itxura hau duten orrialdeak baino ez:",
+	"advancedsearch-field-insource": "Wikitestuak du:",
 	"advancedsearch-field-filetype": "Artxibo mota:",
+	"advancedsearch-field-filew": "Artxiboa pixelen zabaleran:",
+	"advancedsearch-field-fileh": "Artxiboaren neurria pixeletan:",
 	"advancedSearch-namespaces-articles": "Artikuluak",
 	"advancedSearch-namespaces-search-in": "Non bilatu:",
 	"advancedSearch-namespaces-preset-all": "Denak"

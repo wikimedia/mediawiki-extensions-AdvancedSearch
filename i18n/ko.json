@@ -4,6 +4,10 @@
 			"Ykhwong"
 		]
 	},
+	"advancedsearch-options-pane-head": "고급 변수:",
+	"advancedsearch-optgroup-text": "본문 내에서 찾기",
+	"advancedsearch-optgroup-structure": "구조",
+	"advancedsearch-optgroup-files": "파일과 그림",
 	"advancedsearch-field-plain": "이 단어:",
 	"advancedsearch-field-phrase": "이 문자와 정확히 일치:",
 	"advancedsearch-field-or": "이 단어 중 하나:",
