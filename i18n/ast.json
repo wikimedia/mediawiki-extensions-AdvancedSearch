@@ -5,6 +5,10 @@
 		]
 	},
 	"advancedsearch-desc": "Accesu cenciellu a les capacidaes de gueta avanzaes de [[Special:Search]]",
+	"advancedsearch-options-pane-head": "Parámetros avanzaosː",
+	"advancedsearch-optgroup-text": "Buscar nel testu de la páxina",
+	"advancedsearch-optgroup-structure": "Estructura",
+	"advancedsearch-optgroup-files": "Ficheros y imáxenes",
 	"advancedsearch-field-plain": "Esta palabra:",
 	"advancedsearch-field-phrase": "Exautamente esti testu:",
 	"advancedsearch-field-or": "Una d'estes palabres:",
