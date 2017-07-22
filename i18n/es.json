@@ -4,6 +4,10 @@
 			"Macofe"
 		]
 	},
+	"advancedsearch-options-pane-head": "Parámetros avanzados:",
+	"advancedsearch-optgroup-text": "Buscar en el texto de la página",
+	"advancedsearch-optgroup-structure": "Estructura",
+	"advancedsearch-optgroup-files": "Archivos e imágenes",
 	"advancedsearch-field-plain": "Esta palabra:",
 	"advancedsearch-field-phrase": "Exactamente este texto:",
 	"advancedsearch-field-or": "Una de estas palabras:",
