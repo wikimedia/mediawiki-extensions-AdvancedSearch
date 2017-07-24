@@ -83,6 +83,7 @@
 				"ext.advancedSearch.dm.SearchModel",
 				"ext.advancedSearch.ui.ArbitraryWordInput",
 				"ext.advancedSearch.ui.FileTypeSelection",
+				"ext.advancedSearch.ui.FormState",
 				"ext.advancedSearch.ui.ExpandablePane",
 				"ext.advancedSearch.ui.ImageDimensionInput",
 				"ext.advancedSearch.ui.MenuedInput",
@@ -97,6 +98,14 @@
 		"ext.advancedSearch.ui.ArbitraryWordInput": {
 			"scripts": [
 				"modules/ui/ext.advancedSearch.ArbitraryWordInput.js"
+			],
+			"dependencies": [
+				"oojs-ui"
+			]
+		},
+		"ext.advancedSearch.ui.FormState": {
+			"scripts": [
+				"modules/ui/ext.advancedSearch.FormState.js"
 			],
 			"dependencies": [
 				"oojs-ui"

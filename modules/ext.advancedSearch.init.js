@@ -18,20 +18,12 @@
 		return false;
 	}
 
-	function initializeCurrentSearch( state ) {
-		if ( mw.libs.advancedSearch.initializedFromUrl ) {
-			return;
-		}
-		state.setAllFromJSON( mw.util.getParamValue( 'advancedSearch-current' ) || '' );
-		mw.libs.advancedSearch.initializedFromUrl = true;
-	}
-
 	if ( isLoaded() ) {
 		return;
 	}
 
 	var state = new mw.libs.advancedSearch.dm.SearchModel();
-	initializeCurrentSearch( state );
+	state.setAllFromJSON( mw.util.getParamValue( 'advancedSearch-current' ) || '' );
 
 	// TODO initialize with API call instead
 	var templateModel = new mw.libs.advancedSearch.dm.MenuDataModel( {
@@ -489,16 +481,11 @@
 			.after( $compiledSearchField );
 	} );
 
-	// TODO Move this element into an OOUI component with the state as constructor param
-	var $currentSearch = $( '<input>' ).prop( {
-		name: 'advancedSearch-current',
-		type: 'hidden'
+	var currentSearch = new mw.libs.advancedSearch.ui.FormState( state, {
+		name: 'advancedSearch-current'
 	} );
 
-	state.on( 'update', function () {
-		$currentSearch.val( state.toJSON() );
-	} );
-	$search.append( $currentSearch );
+	$search.append( currentSearch.$element );
 
 	var namespaceSelection = new mw.libs.advancedSearch.ui.NamespaceFilters( state, {
 			namespaces: prepareNamespaces()
