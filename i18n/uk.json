@@ -1,10 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Piramidion"
+			"Piramidion",
+			"SimondR"
 		]
 	},
 	"advancedsearch-desc": "Легкий доступ до можливостей розширеного пошуку на сторінці [[Special:Search|Спеціальна:Пошук]]",
+	"advancedsearch-optgroup-structure": "Структура",
+	"advancedsearch-optgroup-files": "Файли та зображення",
 	"advancedsearch-field-plain": "Це слово:",
 	"advancedsearch-field-phrase": "Точний пошук тексту:",
 	"advancedsearch-field-or": "Одне з цих слів:",
@@ -32,6 +35,7 @@
 	"advancedSearch-filesize-equals": "дорівнює",
 	"advancedSearch-filesize-greater-than": "більше, ніж",
 	"advancedSearch-filesize-smaller-than": "менше, ніж",
+	"advancedSearch-namespaces-articles": "Статті",
 	"advancedSearch-beta-feature-message": "Інтерфейс розширеного пошуку",
 	"advancedSearch-beta-feature-description": "Легкий доступ до можливостей розширеного пошуку на сторінці [[Special:Search|Спеціальна:Пошук]]."
 }
