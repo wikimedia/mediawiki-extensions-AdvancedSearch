@@ -81,4 +81,57 @@
 		assert.namespaceElementsPresent( filter.$namespaceContainer, [ '1', '3' ] );
 	} );
 
+	QUnit.test( 'Lonely namespace can not be removed', 1, function ( assert ) {
+		var model = new Model(),
+			filter = new NamespaceFilters( model, {
+				namespaces: {
+					0: 'Article',
+					1: 'Talk',
+					2: 'User',
+					3: 'UserTalk'
+				}
+			} );
+
+		model.setNamespaces( [ '2' ] );
+		assert.equal( filter.getItems()[ 0 ].isDisabled(), true );
+	} );
+
+	QUnit.test( 'On multiple namespaces either one can be removed', 3, function ( assert ) {
+		var model = new Model(),
+			filter = new NamespaceFilters( model, {
+				namespaces: {
+					0: 'Article',
+					1: 'Talk',
+					2: 'User',
+					3: 'UserTalk'
+				}
+			} );
+
+		model.setNamespaces( [ '1', '2', '3' ] );
+		assert.equal( filter.getItems()[ 0 ].isDisabled(), false );
+		assert.equal( filter.getItems()[ 1 ].isDisabled(), false );
+		assert.equal( filter.getItems()[ 2 ].isDisabled(), false );
+	} );
+
+	QUnit.test( 'Value update propagates to model', 1, function ( assert ) {
+		var model = new Model(),
+			filter = new NamespaceFilters( model, {
+				namespaces: {
+					0: 'Article',
+					1: 'Talk',
+					2: 'User',
+					3: 'UserTalk'
+				}
+			} );
+
+		model.setNamespaces = function ( namespaces ) {
+			assert.deepEqual( namespaces, [ '1', '2' ] );
+		};
+		filter.getValue = function () {
+			return [ '1', '2' ];
+		};
+
+		filter.onValueUpdate();
+	} );
+
 }( mediaWiki ) );
