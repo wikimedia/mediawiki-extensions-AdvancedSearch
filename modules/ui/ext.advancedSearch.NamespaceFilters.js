@@ -45,6 +45,8 @@
 		this.store.connect( this, { update: 'onStoreUpdate' } );
 		this.setValueFromStore();
 		this.updateNamespaceFormFields();
+
+		this.connect( this, { change: 'onValueUpdate' } );
 	};
 
 	OO.inheritClass( mw.libs.advancedSearch.ui.NamespaceFilters, OO.ui.MenuTagMultiselectWidget );
@@ -101,9 +103,19 @@
 		return options;
 	};
 
+	/**
+	 * Update internal state on external updates
+	 */
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.onStoreUpdate = function () {
 		this.setValueFromStore();
 		this.updateNamespaceFormFields();
+	};
+
+	/**
+	 * Update external states on internal updates
+	 */
+	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.onValueUpdate = function () {
+		this.store.setNamespaces( this.getValue() );
 	};
 
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.updateNamespaceFormFields = function () {
@@ -119,14 +131,51 @@
 		var self = this,
 			namespaces = this.store.getNamespaces();
 
-		// Avoid endless loop of change events when state is already reached
-		if ( !$.isArray( namespaces ) || mw.libs.advancedSearch.util.arrayEquals( namespaces, this.getValue() ) ) {
-			return;
-		}
+		// prevent updating the store while reacting to its update notification
+		this.disconnect( this, { change: 'onValueUpdate' } );
+
 		this.clearItems();
 		$.each( namespaces, function ( idx, key ) {
 			self.addTag( key, self.namespaces[ key ] );
 		} );
+
+		// re-establish event binding
+		this.connect( this, { change: 'onValueUpdate' } );
+	};
+
+	/**
+	 * Construct a OO.ui.TagItemWidget from given label and data.
+	 *
+	 * Overrides OO.ui.TagMultiselectWidget default behaviour to further configure individual tags; called in addTag()
+	 *
+	 * @protected
+	 * @param {string} data Item data
+	 * @param {string} label The label text.
+	 * @return {OO.ui.TagItemWidget}
+	 */
+	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.createTagItemWidget = function ( data, label ) {
+		label = label || data;
+
+		return new OO.ui.TagItemWidget( {
+			data: data,
+			label: label,
+			draggable: false
+		} );
+	};
+
+	/**
+	 * Respond to change event, where items were added, removed, or cleared.
+	 *
+	 * Overrides OO.ui.TagMultiselectWidget.prototype.onChangeTags default behaviour to add GUI effect
+	 */
+	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.onChangeTags = function () {
+		var items = this.getItems();
+
+		mw.libs.advancedSearch.ui.NamespaceFilters.parent.prototype.onChangeTags.call( this );
+
+		if ( items.length > 0 ) {
+			items[ 0 ].setDisabled( items.length === 1 );
+		}
 	};
 
 }( mediaWiki, jQuery ) );

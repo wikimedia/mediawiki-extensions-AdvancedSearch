@@ -501,12 +501,6 @@
 		} ),
 		namespaceSelectionPreview = $( '<div class="mw-advancedSearch-namespace-selection"></div>' );
 
-	namespaceSelection.on( 'change', function ( newValue ) {
-		state.setNamespaces( $.map( newValue, function ( item ) {
-			return item.getData();
-		} ) );
-	} );
-
 	$( '.mw-search-profile-tabs' ).after( namespaceSelectionPreview );
 	namespaceSelectionPreview
 		.after( namespaceSelection.$element )
