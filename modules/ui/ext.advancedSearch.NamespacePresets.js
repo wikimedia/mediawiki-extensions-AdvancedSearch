@@ -5,6 +5,20 @@
 	mw.libs.advancedSearch = mw.libs.advancedSearch || {};
 	mw.libs.advancedSearch.ui = mw.libs.advancedSearch.ui || {};
 
+	/**
+	 * Prepare presets for improved performance during later processing
+	 *
+	 * @param {Array} presets
+	 * @return {Array}
+	 */
+	function groomPresets( presets ) {
+		$.each( presets, function ( key, presetConfig ) {
+			presetConfig.namespaces.sort();
+		} );
+
+		return presets;
+	}
+
 	function prepareOptions( presets ) {
 		return $.map( presets, function ( preset, id ) {
 			return { data: id, label: preset.label };
@@ -23,6 +37,8 @@
 		var myConfig = $.extend( {
 			presets: {}
 		}, config || {} );
+		config.presets = groomPresets( config.presets );
+
 		myConfig.options = prepareOptions( config.presets );
 		this.store = store;
 
@@ -52,8 +68,11 @@
 	mw.libs.advancedSearch.ui.NamespacePresets.prototype.updatePresetsFromStore = function () {
 		var selectedPresets = {},
 			self = this;
-		$.each( this.presets, function ( key, nsconfig ) {
-			selectedPresets[ key ] = mw.libs.advancedSearch.util.arrayEquals( nsconfig.namespaces, self.store.getNamespaces() );
+		$.each( this.presets, function ( key, presetConfig ) {
+			selectedPresets[ key ] = mw.libs.advancedSearch.util.arrayEquals(
+				presetConfig.namespaces,
+				self.store.getNamespaces().sort()
+			);
 		} );
 		this.checkboxMultiselectWidget.off( 'change', this.updateStoreFromPresets, this );
 		$.each( selectedPresets, function ( key, isSelected ) {
