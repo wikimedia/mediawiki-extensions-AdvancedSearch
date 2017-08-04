@@ -144,11 +144,10 @@
 				return enforceQuotes( val );
 			},
 			init: function () {
-				var widget = new mw.libs.advancedSearch.ui.ArbitraryWordInput(
+				return new mw.libs.advancedSearch.ui.ArbitraryWordInput(
 					state,
 					{ optionId: 'phrase' }
 				);
-				return widget;
 			}
 		},
 		{
