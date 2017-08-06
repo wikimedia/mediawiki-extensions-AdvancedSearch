@@ -177,33 +177,12 @@
 			}
 		},
 
-		// Structure
-		{
-			group: 'structure',
-			id: 'subpage',
-			placeholder: 'prefix:…',
-			formatter: function ( val ) {
-				return 'prefix:' + val;
-			},
-			greedy: true
-		},
 		{
 			group: 'structure',
 			id: 'intitle',
 			placeholder: 'intitle:…',
 			formatter: function ( val ) {
 				return 'intitle:' + optionalQuotes( val );
-			}
-		},
-		{
-			group: 'structure',
-			id: 'deepcat',
-			placeholder: 'deepcat:…',
-			/* enabled: function () {
-			 return !!mw.libs.deepCat;
-			 }, */
-			formatter: function ( val ) {
-				return 'deepcat:' + optionalQuotes( val );
 			}
 		},
 
@@ -236,27 +215,6 @@
 				return 'insource:' + ( /^\/.*\/$/.test( val ) ? val : optionalQuotes( val ) );
 			}
 		},
-
-		/*
-		{
-			group: 'categories',
-			id: 'deepcat2',
-			placeholder: 'deepcat:…',
-			/* enabled: function () {
-			 return !!mw.libs.deepCat;
-			 },
-			formatter: function ( val ) {
-				return 'deepcat:' + optionalQuotes( val );
-			}
-		},
-		{
-			group: 'categories',
-			id: 'incategory',
-			placeholder: 'incategory:…',
-			formatter: function ( val ) {
-				return 'incategory:' + optionalQuotes( val );
-			}
-		}, */
 
 		// Files
 		// filebits:…
@@ -343,15 +301,6 @@
 			},
 			layout: createOptionalFieldLayout
 		}
-		/* {
-			group: 'files',
-			id: 'fileres',
-			placeholder: 'fileres:…',
-			formatter: function ( val ) {
-				return 'fileres:' + formatSizeConstraint( val );
-			},
-			requiredNamespace: 6
-		} */
 
 		// Ordering
 		// prefer-recent:…
