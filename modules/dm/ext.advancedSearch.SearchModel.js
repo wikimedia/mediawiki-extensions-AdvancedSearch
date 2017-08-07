@@ -65,7 +65,7 @@
 
 		// TODO check for allowed options?
 
-		if ( OO.compare( this.searchOptions[ optionId ], value ) ) {
+		if ( this.searchOptions[ optionId ] !== undefined && OO.compare( this.searchOptions[ optionId ], value ) ) {
 			return;
 		}
 

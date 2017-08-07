@@ -162,11 +162,10 @@
 				return optionalQuotes( val );
 			},
 			init: function () {
-				var widget = new mw.libs.advancedSearch.ui.ArbitraryWordInput(
+				return new mw.libs.advancedSearch.ui.ArbitraryWordInput(
 					state,
 					{ optionId: 'or' }
 				);
-				return widget;
 			}
 		},
 
@@ -190,7 +189,14 @@
 					} ).join( ' ' );
 				}
 				return 'hastemplate:' + optionalQuotes( val );
-			}
+			},
+			init: function () {
+				return new mw.libs.advancedSearch.ui.TemplateSearch(
+					state,
+					{ optionId: 'hastemplate' }
+				);
+			},
+			customEventHandling: true
 		},
 		{
 			group: 'structure',
@@ -348,7 +354,10 @@
 				} );
 			},
 			widget = widgetInit();
-		widget.on( 'change', createMultiSelectChangeHandler( option.id ) );
+
+		if ( !option.customEventHandling ) {
+			widget.on( 'change', createMultiSelectChangeHandler( option.id ) );
+		}
 
 		if ( !optionSets[ option.group ] ) {
 			optionSets[ option.group ] = new OO.ui.FieldsetLayout( {

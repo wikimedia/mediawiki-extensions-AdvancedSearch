@@ -90,6 +90,7 @@
 				"ext.advancedSearch.ui.OptionalElementLayout",
 				"ext.advancedSearch.ui.OptionalElementLayout",
 				"ext.advancedSearch.ui.SearchPreview",
+				"ext.advancedSearch.ui.TemplateSearch",
 				"ext.advancedSearch.ui.TextInput"
 			]
 		},
@@ -195,6 +196,14 @@
 				"advancedSearch-filesize-equals",
 				"advancedSearch-filesize-greater-than",
 				"advancedSearch-filesize-smaller-than"
+			]
+		},
+		"ext.advancedSearch.ui.TemplateSearch": {
+			"scripts": [
+				"modules/ui/ext.advancedSearch.TemplateSearch.js"
+			],
+			"dependencies": [
+				"oojs-ui"
 			]
 		},
 		"ext.advancedSearch.ui.TextInput": {

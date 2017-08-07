@@ -79,12 +79,14 @@ class Hooks {
 				'tests/qunit/ui/NamespaceFilters.test.js',
 				'tests/qunit/ui/NamespacePresets.test.js',
 				'tests/qunit/ui/SearchPreview.test.js',
+				'tests/qunit/ui/TemplateSearch.test.js',
 				'tests/qunit/dm/SearchModel.test.js'
 			],
 			'dependencies' => [
 				'ext.advancedSearch.ui.NamespaceFilters',
 				'ext.advancedSearch.ui.NamespacePresets',
 				'ext.advancedSearch.ui.SearchPreview',
+				'ext.advancedSearch.ui.TemplateSearch',
 				'ext.advancedSearch.dm.SearchModel',
 				'oojs-ui'
 			],
