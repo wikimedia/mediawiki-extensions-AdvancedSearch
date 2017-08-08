@@ -50,27 +50,6 @@
 			this.$dependentPane.append( config.$paneContent );
 		}
 
-		// TODO Move the following code to a separate widget
-		/*
-		var $labelContainer = $( '<div><strong>Advanced Parameters</strong></div>' );
-		$bar.append( $labelContainer );
-
-		var dummyDemoWidgets = [
-			new OO.ui.TagItemWidget( { label: 'First demo label: foo' } ),
-			new OO.ui.TagItemWidget( { label: 'Second demo label: bar' } ),
-			new OO.ui.TagItemWidget( { label: 'Third demo label: baz' } ),
-			new OO.ui.TagItemWidget( { label: 'Fourth demo label: quux' } ),
-			new OO.ui.TagItemWidget( { label: 'Fivth demo label: quuz' } )
-		];
-
-		$.each( dummyDemoWidgets, function ( _, w ) {
-			// TODO Create custom TagItemWidget classes that have special classes (for styling) and disable clicking
-			w.$element.on( 'click', function () { return false; } );
-			w.$element.addClass( 'mw-advancedSearch-previewLabel' );
-			$labelContainer.append( w.$element );
-		} );
-		*/
-
 		this.$btn.addClass( 'oo-ui-buttonElement-framed' );
 		this.$element.addClass( 'mw-advancedSearch-expandablePane' );
 		this.$element.append( this.$btn, this.$dependentPane );

@@ -1,3 +1,31 @@
+.mw-advancedSearch-searchPreview-label {
+	font-weight: bold;
+	margin-right: 0.3125em;
+}
+
+.mw-advancedSearch-searchPreview-previewPill {
+	display: inline-flex;
+	display: -ms-inline-flexbox;
+	flex-flow: row nowrap;
+	-ms-flex-direction: row;
+	flex: 0 1 auto;
+}
+
+.mw-advancedSearch-searchPreview-previewPill > .oo-ui-labelElement-label {
+	order: 1;
+	-ms-flex-order: 1;
+}
+
+.mw-advancedSearch-searchPreview-previewPill > .content {
+	display: inline-block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	max-width: 5em;
+	order: 2;
+	-ms-flex-order: 2;
+	padding-left: 0.3em;
+}
+
 .mw-advancedSearch-fieldContainer {
 	background: linear-gradient( rgba( 0, 0, 0, 0.1 ), #fff 0.5em );
 	border: solid 1px #c8ccd1;
@@ -69,15 +97,6 @@
 	top: 0;
 	height: 100%;
 	right: 0.9375em;
-}
-
-.mw-advancedSearch-searchPreview-label {
-	font-weight: bold;
-	margin-right: 0.3125em;
-}
-
-.mw-advancedSearch-previewLabel.oo-ui.widget-enabled {
-	background: #fff;
 }
 
 .mw-advancedSearch-optionTags {

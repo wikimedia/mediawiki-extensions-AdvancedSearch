@@ -389,20 +389,11 @@
 		$allOptions.append( optionSets[ group ].$element );
 	}
 
-	function getPreviewOptions() {
-		var previewOptions = {};
-		advancedOptions.forEach( function ( option ) {
-			previewOptions[ option.id ] = {
-				formatter: option.formatter,
-				label: mw.msg( 'advancedsearch-field-' + option.id )
-			};
-		} );
-		return previewOptions;
-	}
-
 	var searchPreview = new mw.libs.advancedSearch.ui.SearchPreview( state, {
 		label: mw.msg( 'advancedsearch-options-pane-head' ),
-		previewOptions: getPreviewOptions()
+		previewOptions: $.map( advancedOptions, function ( option ) {
+			return option.id;
+		} )
 	} );
 
 	var pane = new mw.libs.advancedSearch.ui.ExpandablePane( {
