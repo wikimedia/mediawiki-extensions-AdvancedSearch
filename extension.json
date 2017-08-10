@@ -201,6 +201,11 @@
 			],
 			"dependencies": [
 				"oojs-ui"
+			],
+			"messages": [
+				"advancedSearch-filesize-equals",
+				"advancedSearch-filesize-greater-than",
+				"advancedSearch-filesize-smaller-than"
 			]
 		},
 		"ext.advancedSearch.ui.TextInput": {

@@ -6,6 +6,25 @@
 	mw.libs.advancedSearch.ui = mw.libs.advancedSearch.ui || {};
 
 	/**
+	 * Get the message associated with a file dimension comparator value
+	 *
+	 * @tutorial
+	 *
+	 * @param {string} comparator
+	 * @return {string}
+	 */
+	var fileComparatorToMessage = function ( comparator ) {
+		switch ( comparator ) {
+			case '':
+				return 'advancedSearch-filesize-equals-symbol';
+			case '>':
+				return 'advancedSearch-filesize-greater-than-symbol';
+			case '<':
+				return 'advancedSearch-filesize-smaller-than-symbol';
+		}
+	};
+
+	/**
 	 * @class
 	 * @extends {OO.ui.Widget}
 	 * @constructor
@@ -92,7 +111,7 @@
 	 * @return {OO.ui.TagItemWidget}
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview.prototype.generateTag = function ( optionId, value ) {
-		var formattedValue = this.formatValue( value ),
+		var formattedValue = this.formatValue( optionId, value ),
 			tag = new OO.ui.TagItemWidget( {
 				label: mw.msg( 'advancedsearch-field-' + optionId ),
 				content: [
@@ -124,12 +143,22 @@
 	/**
 	 * Format a value to be used in the preview
 	 *
+	 * @param {string} optionId
 	 * @param {string|array} value
 	 * @return {string}
 	 */
-	mw.libs.advancedSearch.ui.SearchPreview.prototype.formatValue = function ( value ) {
+	mw.libs.advancedSearch.ui.SearchPreview.prototype.formatValue = function ( optionId, value ) {
+		if ( optionId.match( '^file[hw]$' ) && $.isArray( value ) ) {
+			return mw.msg( fileComparatorToMessage( value[ 0 ] ) ) + ' ' + value[ 1 ];
+		}
 		if ( $.isArray( value ) ) {
-			value = value.join( ' ' );
+			return $.grep(
+				$.map( value, function ( v ) {
+					return String( v ).trim();
+				} ),
+				function ( v ) {
+					return v !== '';
+				} ).join( ', ' );
 		}
 
 		return value.trim();

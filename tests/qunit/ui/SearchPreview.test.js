@@ -148,20 +148,35 @@
 		assert.equal( searchPreview.$element.find( '.mw-advancedSearch-searchPreview-previewPill' ).length, 0 );
 	} );
 
-	QUnit.test( 'Values get formatted well', 9, function ( assert ) {
+	QUnit.test( 'Scalar values get formatted well', 3, function ( assert ) {
 		var searchPreview = new SearchPreview( store, config );
 
-		assert.equal( searchPreview.formatValue( '' ), '' );
-		assert.equal( searchPreview.formatValue( 'hello' ), 'hello' );
-		assert.equal( searchPreview.formatValue( ' stray whitespace  ' ), 'stray whitespace' );
+		assert.equal( searchPreview.formatValue( 'someOption', '' ), '' );
+		assert.equal( searchPreview.formatValue( 'someOption', 'hello' ), 'hello' );
+		assert.equal( searchPreview.formatValue( 'someOption', ' stray whitespace  ' ), 'stray whitespace' );
+	} );
 
-		assert.equal( searchPreview.formatValue( [ '', '' ] ), '' );
-		assert.equal( searchPreview.formatValue( [ '', 1000 ] ), '1000' );
-		assert.equal( searchPreview.formatValue( [ '>', 300 ] ), '> 300' );
-		assert.equal( searchPreview.formatValue( [ '<', 1400 ] ), '< 1400' );
+	QUnit.test( 'Array values get formatted well', 3, function ( assert ) {
+		var searchPreview = new SearchPreview( store, config );
 
-		assert.equal( searchPreview.formatValue( [ 'some', 'words', 'in', 'combination' ] ), 'some words in combination' );
-		assert.equal( searchPreview.formatValue( [ '', ' stray', 'whitespace  ' ] ), 'stray whitespace' );
+		assert.equal( searchPreview.formatValue( 'someOption', [ 'some', 'words', 'in', 'combination' ] ), 'some, words, in, combination' );
+		assert.equal( searchPreview.formatValue( 'someOption', [ 'related words', 'not', 'so' ] ), 'related words, not, so' );
+		assert.equal( searchPreview.formatValue( 'someOption', [ '', ' stray', 'whitespace  ' ] ), 'stray, whitespace' );
+	} );
+
+	QUnit.test( 'Dimension values get formatted well', 5, function ( assert ) {
+		var searchPreview = new SearchPreview( store, config );
+		var translationStub = sandbox.stub( mw, 'msg' );
+		translationStub.withArgs( 'advancedSearch-filesize-equals-symbol' ).returns( '=' );
+		translationStub.withArgs( 'advancedSearch-filesize-greater-than-symbol' ).returns( '>' );
+		translationStub.withArgs( 'advancedSearch-filesize-smaller-than-symbol' ).returns( '<' );
+
+		assert.equal( searchPreview.formatValue( 'someOption', [ '', '' ] ), '' );
+		assert.equal( searchPreview.formatValue( 'fileh', [ '', 1000 ] ), '= 1000' );
+		assert.equal( searchPreview.formatValue( 'fileh', [ '>', 300 ] ), '> 300' );
+		assert.equal( searchPreview.formatValue( 'filew', [ '<', 1400 ] ), '< 1400' );
+
+		assert.equal( translationStub.callCount, 3 );
 	} );
 
 }( jQuery, QUnit, sinon, mediaWiki ) );
