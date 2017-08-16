@@ -449,5 +449,4 @@
 	// remove old namespace selection item to avoid double ns parameters
 	$( '#mw-searchoptions' ).remove();
 
-	mw.loader.load( '//de.wikipedia.org/w/index.php?title=MediaWiki:Gadget-DeepCat.js&action=raw&ctype=text/javascript' );
 }( mediaWiki, jQuery ) );
