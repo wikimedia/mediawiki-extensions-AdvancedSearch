@@ -57,18 +57,25 @@
 
 	/**
 	 *
-	 * @param  {string} optionId
-	 * @param  {mixed} value
+	 * @param {string} optionId
+	 * @param {*} value
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.storeOption = function ( optionId, value ) {
-		var namespaces = this.getNamespaces();
+		var namespaces;
+
 		// TODO check for allowed options?
-		this.searchOptions[ optionId ] = value;
-		if ( optionId === 'filetype' && !this.filetypeSupportsDimensions() ) {
-			this.searchOptions.filew = [ '>', '' ];
-			this.searchOptions.fileh = [ '>', '' ];
+
+		if ( OO.compare( this.searchOptions[ optionId ], value ) ) {
+			return;
 		}
 
+		this.searchOptions[ optionId ] = value;
+
+		if ( optionId === 'filetype' && !this.filetypeSupportsDimensions() ) {
+			this.resetFileDimensionOptions();
+		}
+
+		namespaces = this.getNamespaces();
 		if ( optionId === 'filetype' && namespaces.indexOf( mw.libs.advancedSearch.dm.SearchModel.FILE_NAMESPACE ) === -1 ) {
 			namespaces.push( mw.libs.advancedSearch.dm.SearchModel.FILE_NAMESPACE );
 			this.setNamespaces( namespaces );
@@ -77,17 +84,42 @@
 		this.emitUpdate();
 	};
 
+	/**
+	 * Retrieve value of option with given id
+	 *
+	 * @param {string} optionId
+	 * @return {*}
+	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.getOption = function ( optionId ) {
 		return this.searchOptions[ optionId ];
 	};
 
+	/**
+	 * Remove option with given id
+	 *
+	 * @param {string} optionId
+	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.removeOption = function ( optionId ) {
-		delete this.searchOptions[ optionId ];
-		if ( optionId === 'filetype' ) {
-			this.searchOptions.filew = [ '>', '' ];
-			this.searchOptions.fileh = [ '>', '' ];
+
+		if ( this.searchOptions[ optionId ] === undefined ) {
+			return;
 		}
-		this.emit( 'update' );
+
+		delete this.searchOptions[ optionId ];
+
+		if ( optionId === 'filetype' ) {
+			this.resetFileDimensionOptions();
+		}
+
+		this.emitUpdate();
+	};
+
+	/**
+	 * Reset the file dimension search options
+	 */
+	mw.libs.advancedSearch.dm.SearchModel.prototype.resetFileDimensionOptions = function () {
+		this.searchOptions.filew = [ '>', '' ];
+		this.searchOptions.fileh = [ '>', '' ];
 	};
 
 	/**
@@ -120,7 +152,7 @@
 	/**
 	 * Set options and namespaces from JSON string
 	 *
-	 * @param  {string} jsonSerialized
+	 * @param {string} jsonSerialized
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.setAllFromJSON = function ( jsonSerialized ) {
 		var valuesChanged = false,
@@ -177,13 +209,13 @@
 			namespaces.push( mw.libs.advancedSearch.dm.SearchModel.FILE_NAMESPACE );
 		}
 
-		if ( !mw.libs.advancedSearch.util.arrayEquals( [], namespaces ) ) {
+		if ( namespaces.length ) {
 			this.namespaces = namespaces;
 		} else {
 			this.namespaces = [ mw.libs.advancedSearch.dm.SearchModel.MAIN_NAMESPACE ];
 		}
 
-		if ( !mw.libs.advancedSearch.util.arrayEquals( previousNamespaces, this.namespaces ) ) {
+		if ( !OO.compare( previousNamespaces, this.namespaces ) ) {
 			this.emitUpdate();
 		}
 	};
