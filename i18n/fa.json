@@ -1,9 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mahdy Saffar"
+			"Mahdy Saffar",
+			"Alirezaaa"
 		]
 	},
+	"advancedsearch-desc": "دسترسی آسان به قابلیت‌های جستجوی پیشرفته در [[Special:Search]]",
+	"advancedsearch-options-pane-head": "پارامترهای پیشرفته:",
+	"advancedsearch-optgroup-text": "جستجو در متن صفحه",
+	"advancedsearch-optgroup-structure": "ساختار",
+	"advancedsearch-optgroup-files": "پرونده‌ها و تصاویر",
 	"advancedsearch-field-plain": "این واژه:",
 	"advancedsearch-field-phrase": "دقیقاً این متن:",
 	"advancedsearch-field-or": "یکی از این واژگان:",
@@ -27,6 +33,7 @@
 	"advancedsearch-filetype-video": "ویدئو",
 	"advancedsearch-filetype-multimedia": "چندرسانه‌ای",
 	"advancedsearch-filetype-document": "سند",
+	"advancedsearch-filetype-document-office": "دفتر",
 	"advancedSearch-filesize-equals": "یکسان با",
 	"advancedSearch-filesize-greater-than": "بزرگتر از",
 	"advancedSearch-filesize-smaller-than": "کوچکتر از",
@@ -34,5 +41,5 @@
 	"advancedSearch-namespaces-search-in": "جستجو در:",
 	"advancedSearch-namespaces-preset-all": "همه",
 	"advancedSearch-beta-feature-message": "رابط جستجوی پیشرفته",
-	"advancedSearch-beta-feature-description": "دسترسی آسان به قابلیت‌های جستجوی پیشرفته با [[ویژه:جستجو]]"
+	"advancedSearch-beta-feature-description": "دسترسی آسان به قابلیت‌های جستجوی پیشرفته با [[Special:Search]]"
 }
