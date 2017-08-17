@@ -79,14 +79,12 @@
 				"oojs-ui.styles.icons-user",
 				"oojs-ui.styles.icons-wikimedia",
 				"ext.advancedSearch.util",
-				"ext.advancedSearch.dm.MenuDataModel",
 				"ext.advancedSearch.dm.SearchModel",
 				"ext.advancedSearch.ui.ArbitraryWordInput",
 				"ext.advancedSearch.ui.FileTypeSelection",
 				"ext.advancedSearch.ui.FormState",
 				"ext.advancedSearch.ui.ExpandablePane",
 				"ext.advancedSearch.ui.ImageDimensionInput",
-				"ext.advancedSearch.ui.MenuedInput",
 				"ext.advancedSearch.ui.NamespaceFilters",
 				"ext.advancedSearch.ui.NamespacePresets",
 				"ext.advancedSearch.ui.OptionalElementLayout",
@@ -161,15 +159,6 @@
 				"advancedSearch-filesize-smaller-than"
 			]
 		},
-		"ext.advancedSearch.ui.MenuedInput": {
-			"scripts": [
-				"modules/ui/ext.advancedSearch.MenuedInput.js"
-			],
-			"dependencies": [
-				"ext.advancedSearch.util",
-				"oojs-ui"
-			]
-		},
 		"ext.advancedSearch.ui.NamespaceFilters": {
 			"scripts": [
 				"modules/ui/ext.advancedSearch.NamespaceFilters.js"
@@ -223,14 +212,6 @@
 			"dependencies": [
 				"oojs-ui",
 				"ext.advancedSearch.util"
-			]
-		},
-		"ext.advancedSearch.dm.MenuDataModel": {
-			"scripts": [
-				"modules/dm/ext.advancedSearch.MenuDataModel.js"
-			],
-			"dependencies": [
-				"oojs-ui"
 			]
 		},
 		"ext.advancedSearch.util": {
