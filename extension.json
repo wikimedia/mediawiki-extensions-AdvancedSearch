@@ -192,9 +192,9 @@
 				"oojs-ui"
 			],
 			"messages": [
-				"advancedSearch-filesize-equals",
-				"advancedSearch-filesize-greater-than",
-				"advancedSearch-filesize-smaller-than"
+				"advancedSearch-filesize-equals-symbol",
+				"advancedSearch-filesize-greater-than-symbol",
+				"advancedSearch-filesize-smaller-than-symbol"
 			]
 		},
 		"ext.advancedSearch.ui.TextInput": {
