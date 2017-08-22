@@ -25,7 +25,9 @@
 
 	QUnit.module( 'ext.advancedSearch.ui.TemplateSearch' );
 
-	QUnit.test( 'Store data subscribed to and synced initially', 4, function ( assert ) {
+	QUnit.test( 'Store data subscribed to and synced initially', function ( assert ) {
+		assert.expect( 4 );
+
 		var setValueSpy = sandbox.spy( TemplateSearch.prototype, 'setValue' );
 		store.getOption.withArgs( 'hastemplate' ).returns( [ 'Burg' ] );
 
@@ -37,7 +39,9 @@
 		assert.deepEqual( templateSearch.getValue(), [ 'Burg' ] );
 	} );
 
-	QUnit.test( 'Store update is applied', 1, function ( assert ) {
+	QUnit.test( 'Store update is applied', function ( assert ) {
+		assert.expect( 1 );
+
 		store.getOption.withArgs( 'hastemplate' ).returns( [ 'from', 'beyond' ] );
 
 		var templateSearch = new TemplateSearch( store, config );
@@ -47,12 +51,16 @@
 		assert.deepEqual( templateSearch.getValue(), [ 'from', 'beyond' ] );
 	} );
 
-	QUnit.test( 'Mixin method overridden to prevent problems', 1, function ( assert ) {
+	QUnit.test( 'Mixin method overridden to prevent problems', function ( assert ) {
+		assert.expect( 1 );
+
 		var templateSearch = new TemplateSearch( store, config );
 		assert.notOk( templateSearch.isReadOnly() );
 	} );
 
-	QUnit.test( 'API response processed correctly', 8, function ( assert ) {
+	QUnit.test( 'API response processed correctly', function ( assert ) {
+		assert.expect( 8 );
+
 		var templateSearch = new TemplateSearch( store, config );
 
 		var apiData = [
@@ -88,7 +96,9 @@
 		assert.equal( result[ 2 ].getData(), 'Johannes' );
 	} );
 
-	QUnit.test( 'Items already selected are not suggested', 4, function ( assert ) {
+	QUnit.test( 'Items already selected are not suggested', function ( assert ) {
+		assert.expect( 4 );
+
 		var templateSearch = new TemplateSearch( store, config );
 		templateSearch.setValue( [ 'Jochen', 'Johannes' ] );
 		var apiData = [
@@ -118,13 +128,17 @@
 		assert.equal( result[ 0 ].getData(), 'Jens' );
 	} );
 
-	QUnit.test( 'Page titles post-processes nicely', 2, function ( assert ) {
+	QUnit.test( 'Page titles post-processes nicely', function ( assert ) {
+		assert.expect( 2 );
+
 		var templateSearch = new TemplateSearch( store, config );
 		assert.equal( templateSearch.removeNamespace( 'Test' ), 'Test' );
 		assert.equal( templateSearch.removeNamespace( 'Template:Test' ), 'Test' );
 	} );
 
-	QUnit.test( 'Value picked from menu is added to tags and stored', 6, function ( assert ) {
+	QUnit.test( 'Value picked from menu is added to tags and stored', function ( assert ) {
+		assert.expect( 6 );
+
 		var templateSearch = new TemplateSearch( store, config );
 		templateSearch.addTag( 'Preexisting' );
 		templateSearch.input.setValue( 'My Templ' );
@@ -147,13 +161,17 @@
 		assert.equal( templateSearch.input.getValue(), '' );
 	} );
 
-	QUnit.test( 'Native browser autocomplete is not used', 1, function ( assert ) {
+	QUnit.test( 'Native browser autocomplete is not used', function ( assert ) {
+		assert.expect( 1 );
+
 		var templateSearch = new TemplateSearch( store, config );
 
 		assert.equal( $( templateSearch.$input ).attr( 'autocomplete' ), 'off' );
 	} );
 
-	QUnit.test( 'Well-formed API request yields result', 4, function ( assert ) {
+	QUnit.test( 'Well-formed API request yields result', function ( assert ) {
+		assert.expect( 4 );
+
 		config.api = new mw.Api();
 		var getStub = sandbox.stub( config.api, 'get' ).withArgs( {
 			action: 'opensearch',
@@ -186,7 +204,9 @@
 		} );
 	} );
 
-	QUnit.test( 'Empty query does not trigger API request', 3, function ( assert ) {
+	QUnit.test( 'Empty query does not trigger API request', function ( assert ) {
+		assert.expect( 3 );
+
 		config.api = new mw.Api();
 		var getStub = sandbox.stub( config.api, 'get' );
 

@@ -12,6 +12,8 @@
 	}
 
 	QUnit.test( 'Selecting namespace adds its preset', function ( assert ) {
+		assert.expect( 1 );
+
 		var model = new Model(),
 			presets = new NamespacePresets( model, {
 				presets: {
@@ -26,6 +28,8 @@
 	} );
 
 	QUnit.test( 'Unselecting namespace removes its preset', function ( assert ) {
+		assert.expect( 1 );
+
 		var model = new Model(),
 			presets = new NamespacePresets( model, {
 				presets: {
@@ -41,6 +45,8 @@
 	} );
 
 	QUnit.test( 'Changing the store namespaces to the preset namespaces, selects preset irrespective of order', function ( assert ) {
+		assert.expect( 4 );
+
 		var model = new Model(),
 			presets = new NamespacePresets( model, {
 				presets: {

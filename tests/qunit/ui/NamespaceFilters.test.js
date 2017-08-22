@@ -5,12 +5,16 @@
 	QUnit.module( 'ext.advancedSearch.ui.NamespaceFilters' );
 
 	QUnit.test( 'User namespace icons are set by default', function ( assert ) {
+		assert.expect( 2 );
+
 		var filter = new NamespaceFilters( new Model(), {} );
 		assert.equal( filter.getNamespaceIcon( 2 ), 'userAvatar' );
 		assert.equal( filter.getNamespaceIcon( 3 ), 'userTalk' );
 	} );
 
 	QUnit.test( 'When namespace icons are not set, default icons are returned', function ( assert ) {
+		assert.expect( 2 );
+
 		var filter = new NamespaceFilters( new Model(), {
 			namespaceIcons: {}
 		} );
@@ -19,6 +23,8 @@
 	} );
 
 	QUnit.test( 'Namespace object key-value-pairs are appended to menu options', function ( assert ) {
+		assert.expect( 5 );
+
 		var filter = new NamespaceFilters( new Model(), {
 				options: [ {
 					data: 'test',
@@ -43,6 +49,8 @@
 	} );
 
 	QUnit.test( 'Namespaces without labels are skipped', function ( assert ) {
+		assert.expect( 3 );
+
 		var filter = new NamespaceFilters( new Model(), {
 				namespaces: {
 					0: '',
@@ -66,6 +74,8 @@
 	};
 
 	QUnit.test( 'StoreUpdate event handler updates hidden namespace fields', function ( assert ) {
+		assert.expect( 2 );
+
 		var model = new Model(),
 			filter = new NamespaceFilters( model, {
 				namespaces: {
@@ -81,7 +91,9 @@
 		assert.namespaceElementsPresent( filter.$namespaceContainer, [ '1', '3' ] );
 	} );
 
-	QUnit.test( 'Lonely namespace can not be removed', 1, function ( assert ) {
+	QUnit.test( 'Lonely namespace can not be removed', function ( assert ) {
+		assert.expect( 1 );
+
 		var model = new Model(),
 			filter = new NamespaceFilters( model, {
 				namespaces: {
@@ -96,7 +108,9 @@
 		assert.equal( filter.getItems()[ 0 ].isDisabled(), true );
 	} );
 
-	QUnit.test( 'On multiple namespaces either one can be removed', 3, function ( assert ) {
+	QUnit.test( 'On multiple namespaces either one can be removed', function ( assert ) {
+		assert.expect( 3 );
+
 		var model = new Model(),
 			filter = new NamespaceFilters( model, {
 				namespaces: {
@@ -113,7 +127,9 @@
 		assert.equal( filter.getItems()[ 2 ].isDisabled(), false );
 	} );
 
-	QUnit.test( 'Value update propagates to model', 1, function ( assert ) {
+	QUnit.test( 'Value update propagates to model', function ( assert ) {
+		assert.expect( 1 );
+
 		var model = new Model(),
 			filter = new NamespaceFilters( model, {
 				namespaces: {

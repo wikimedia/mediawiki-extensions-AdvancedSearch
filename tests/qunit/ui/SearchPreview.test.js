@@ -23,7 +23,9 @@
 
 	QUnit.module( 'ext.advancedSearch.ui.SearchPreview' );
 
-	QUnit.test( 'Label gets setup', 1, function ( assert ) {
+	QUnit.test( 'Label gets setup', function ( assert ) {
+		assert.expect( 1 );
+
 		config = {
 			label: 'something'
 		};
@@ -32,7 +34,9 @@
 		assert.equal( 'something', searchPreview.label.getLabel() );
 	} );
 
-	QUnit.test( 'Store data subscribed to and synced initially', 3, function ( assert ) {
+	QUnit.test( 'Store data subscribed to and synced initially', function ( assert ) {
+		assert.expect( 3 );
+
 		var updatePreviewSpy = sandbox.spy( SearchPreview.prototype, 'updatePreview' );
 
 		var searchPreview = new SearchPreview( store, config );
@@ -42,7 +46,9 @@
 		assert.ok( updatePreviewSpy.calledOnce );
 	} );
 
-	QUnit.test( 'Store state is reflected in preview', 5, function ( assert ) {
+	QUnit.test( 'Store state is reflected in preview', function ( assert ) {
+		assert.expect( 5 );
+
 		var generateTagSpy = sandbox.spy( SearchPreview.prototype, 'generateTag' );
 
 		store.getOption.withArgs( 'somename' ).returns( 'field one value' );
@@ -62,7 +68,9 @@
 		assert.ok( generateTagSpy.withArgs( 'another', 'field two value' ).calledOnce );
 	} );
 
-	QUnit.test( 'Options are correctly selected for preview', 16, function ( assert ) {
+	QUnit.test( 'Options are correctly selected for preview', function ( assert ) {
+		assert.expect( 16 );
+
 		var searchPreview = new SearchPreview( store, config );
 
 		assert.notOk( searchPreview.skipOptionInPreview( 'plain', 'searchme' ) );
@@ -85,7 +93,9 @@
 		assert.ok( searchPreview.skipOptionInPreview( 'filew', [ '>', null ] ) );
 	} );
 
-	QUnit.test( 'Tag is generated', 5, function ( assert ) {
+	QUnit.test( 'Tag is generated', function ( assert ) {
+		assert.expect( 5 );
+
 		var messageStub = sandbox.stub( mw, 'msg' ).withArgs( 'advancedsearch-field-somename' ).returns( 'my label:' );
 		var searchPreview = new SearchPreview( store, config );
 		var tag = searchPreview.generateTag( 'somename', 'my field value' );
@@ -100,7 +110,9 @@
 		assert.equal( $( '.oo-ui-labelElement-label', element ).html(), 'my label:' );
 	} );
 
-	QUnit.test( 'Tag content is HTML-safe', 1, function ( assert ) {
+	QUnit.test( 'Tag content is HTML-safe', function ( assert ) {
+		assert.expect( 1 );
+
 		var searchPreview = new SearchPreview( store, config );
 		var tag = searchPreview.generateTag( 'whatever', '<script>alert("evil");</script>' );
 
@@ -109,7 +121,9 @@
 		assert.equal( $( '.content', element ).html(), '<bdi>&lt;script&gt;alert("evil");&lt;/script&gt;</bdi>' );
 	} );
 
-	QUnit.test( 'Tag label is HTML-safe', 1, function ( assert ) {
+	QUnit.test( 'Tag label is HTML-safe', function ( assert ) {
+		assert.expect( 1 );
+
 		sandbox.stub( mw, 'msg' ).withArgs( 'advancedsearch-field-whatever' ).returns( '<div>block</div>' );
 		var searchPreview = new SearchPreview( store, config );
 		var tag = searchPreview.generateTag( 'whatever', 'lorem' );
@@ -119,7 +133,9 @@
 		assert.equal( $( '.oo-ui-labelElement-label', element ).html(), '&lt;div&gt;block&lt;/div&gt;' );
 	} );
 
-	QUnit.test( 'Tag removals clears store', 1, function ( assert ) {
+	QUnit.test( 'Tag removals clears store', function ( assert ) {
+		assert.expect( 1 );
+
 		var searchPreview = new SearchPreview( store, config );
 		var tag = searchPreview.generateTag( 'somename', 'my field value' );
 
@@ -127,7 +143,9 @@
 		assert.ok( store.removeOption.withArgs( 'somename' ).calledOnce );
 	} );
 
-	QUnit.test( 'Showing renders pills', 1, function ( assert ) {
+	QUnit.test( 'Showing renders pills', function ( assert ) {
+		assert.expect( 1 );
+
 		config.previewOptions = [ 'one', 'two' ];
 
 		store.getOption.withArgs( 'one' ).returns( 'field one value' );
@@ -139,7 +157,9 @@
 		assert.equal( searchPreview.$element.find( '.mw-advancedSearch-searchPreview-previewPill' ).length, 2 );
 	} );
 
-	QUnit.test( 'Hiding removes pills', 1, function ( assert ) {
+	QUnit.test( 'Hiding removes pills', function ( assert ) {
+		assert.expect( 1 );
+
 		config.previewOptions = [ 'one', 'two' ];
 
 		var searchPreview = new SearchPreview( store, config );
@@ -148,7 +168,9 @@
 		assert.equal( searchPreview.$element.find( '.mw-advancedSearch-searchPreview-previewPill' ).length, 0 );
 	} );
 
-	QUnit.test( 'Scalar values get formatted well', 3, function ( assert ) {
+	QUnit.test( 'Scalar values get formatted well', function ( assert ) {
+		assert.expect( 3 );
+
 		var searchPreview = new SearchPreview( store, config );
 
 		assert.equal( searchPreview.formatValue( 'someOption', '' ), '' );
@@ -156,7 +178,9 @@
 		assert.equal( searchPreview.formatValue( 'someOption', ' stray whitespace  ' ), 'stray whitespace' );
 	} );
 
-	QUnit.test( 'Array values get formatted well', 3, function ( assert ) {
+	QUnit.test( 'Array values get formatted well', function ( assert ) {
+		assert.expect( 3 );
+
 		var searchPreview = new SearchPreview( store, config );
 
 		assert.equal( searchPreview.formatValue( 'someOption', [ 'some', 'words', 'in', 'combination' ] ), 'some, words, in, combination' );
@@ -164,7 +188,9 @@
 		assert.equal( searchPreview.formatValue( 'someOption', [ '', ' stray', 'whitespace  ' ] ), 'stray, whitespace' );
 	} );
 
-	QUnit.test( 'Dimension values get formatted well', 5, function ( assert ) {
+	QUnit.test( 'Dimension values get formatted well', function ( assert ) {
+		assert.expect( 5 );
+
 		var searchPreview = new SearchPreview( store, config );
 		var translationStub = sandbox.stub( mw, 'msg' );
 		translationStub.withArgs( 'advancedSearch-filesize-equals-symbol' ).returns( '=' );
