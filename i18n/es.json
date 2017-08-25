@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe"
+			"Macofe",
+			"Fitoschido"
 		]
 	},
 	"advancedsearch-options-pane-head": "Parámetros avanzados:",
@@ -18,7 +19,7 @@
 	"advancedsearch-field-hastemplate": "Solo páginas con esta plantilla:",
 	"advancedsearch-field-insource": "El wikitexto contiene:",
 	"advancedsearch-field-filetype": "Tipo de archivo:",
-	"advancedsearch-field-filew": "Ancho de archivo en píxeles:",
+	"advancedsearch-field-filew": "Anchura del archivo en píxeles:",
 	"advancedsearch-field-fileh": "Altura de archivo en píxeles:",
 	"advancedsearch-filetype-section-types": "Tipo de archivo general",
 	"advancedsearch-filetype-section-image": "Formato de imagen",
