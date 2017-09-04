@@ -43,7 +43,7 @@
 	"advancedsearch-filetype-document-office": "Label for Office file/mime type\n{{Identical|Office}}",
 	"advancedsearch-filetype-document-pdf": "Label for PDF file/mime type",
 	"advancedSearch-filesize-equals": "Label for the file width/height 'equals' comparator selection",
-	"advancedSearch-filesize-equals-symbol": "Label for the file width/height 'equals' comparator selection as shorthand symbol",
+	"advancedSearch-filesize-equals-symbol": "Label for the file width/height 'equals' comparator selection as shorthand symbol. Could be left empty.",
 	"advancedSearch-filesize-greater-than": "Label for the file width/height 'greater than' comparator selection",
 	"advancedSearch-filesize-greater-than-symbol": "Label for the file width/height 'greater than' comparator selection as shorthand symbol",
 	"advancedSearch-filesize-smaller-than": "Label for the file width/height 'smaller than' comparator selection",
