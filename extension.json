@@ -66,7 +66,16 @@
 				"advancedsearch-field-insource",
 				"advancedsearch-field-filetype",
 				"advancedsearch-field-filew",
-				"advancedsearch-field-fileh"
+				"advancedsearch-field-fileh",
+				"advancedsearch-help-plain",
+				"advancedsearch-help-phrase",
+				"advancedsearch-help-or",
+				"advancedsearch-help-not",
+				"advancedsearch-help-hastemplate",
+				"advancedsearch-help-insource",
+				"advancedsearch-help-filetype",
+				"advancedsearch-help-filew",
+				"advancedsearch-help-fileh"
 			],
 			"dependencies": [
 				"mediawiki.util",

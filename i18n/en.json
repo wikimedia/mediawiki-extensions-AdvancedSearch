@@ -24,6 +24,16 @@
 	"advancedsearch-field-filew": "File width in pixels:",
 	"advancedsearch-field-fileh": "File height in pixels:",
 
+	"advancedsearch-help-plain": "searches for these words in the title or text.",
+	"advancedsearch-help-phrase": "searches for a specific sequence of characters. Punctuation marks are ignored.",
+	"advancedsearch-help-or": "excludes pages containing these words from the search.",
+	"advancedsearch-help-not": "at least one of the search terms has to be included in the page.",
+	"advancedsearch-help-hastemplate": "searches for pages that contain exactly this template.",
+	"advancedsearch-help-insource": "only looks for the search term in the source code.",
+	"advancedsearch-help-filetype": "searches only for files of the selected type",
+	"advancedsearch-help-filew": "searches only for files with the specified width",
+	"advancedsearch-help-fileh": "searches only for files with the specified height",
+
 	"advancedsearch-filetype-section-types": "General file type",
 	"advancedsearch-filetype-section-image": "Image format",
 	"advancedsearch-filetype-section-video": "Video format",

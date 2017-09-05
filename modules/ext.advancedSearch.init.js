@@ -90,6 +90,15 @@
 		};
 	}
 
+	function getMessageOrFalse( messageKey ) {
+		var message = mw.message( messageKey );
+		return message.exists() ? message.toString() : false;
+	}
+
+	function getOptionHelpMessageOrFalse( option ) {
+		return getMessageOrFalse( 'advancedsearch-help-' + option.id );
+	}
+
 	function createOptionalFieldLayout( widget, option ) {
 		return new mw.libs.advancedSearch.ui.OptionalElementLayout(
 			state,
@@ -99,7 +108,8 @@
 				align: 'right',
 				checkVisibility: function () {
 					return state.filetypeSupportsDimensions();
-				}
+				},
+				help: getOptionHelpMessageOrFalse( option )
 			}
 		);
 	}
@@ -361,7 +371,7 @@
 		return widget;
 	}
 
-	function createLayout( option, widget ) {
+	function createLayout( widget, option ) {
 		if ( option.layout ) {
 			return option.layout( widget, option );
 		}
@@ -370,7 +380,8 @@
 			widget,
 			{
 				label: mw.msg( 'advancedsearch-field-' + option.id ),
-				align: 'right'
+				align: 'right',
+				help: getOptionHelpMessageOrFalse( option )
 			}
 		);
 	}
@@ -387,7 +398,7 @@
 		}
 
 		optionSets[ option.group ].addItems( [
-			createLayout( option, createWidget( option ) )
+			createLayout( createWidget( option ), option )
 		] );
 	} );
 
