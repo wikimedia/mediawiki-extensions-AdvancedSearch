@@ -340,23 +340,44 @@
 
 	$searchField.val( mw.util.getParamValue( 'advancedSearchOption-original' ) );
 
-	advancedOptions.forEach( function ( option ) {
-		if ( option.enabled && !option.enabled() ) {
-			return;
-		}
+	function createWidget( option ) {
+		var initializationFunction = option.init ||
+			function () {
+				return new mw.libs.advancedSearch.ui.TextInput(
+					state,
+					{
+						id: 'advancedSearchOption-' + option.id,
+						optionId: option.id
+					}
+				);
+			};
 
-		var paramName = 'advancedSearchOption-' + option.id;
-
-		var widgetInit = option.init || function () {
-				return new mw.libs.advancedSearch.ui.TextInput( state, {
-					id: paramName,
-					optionId: option.id
-				} );
-			},
-			widget = widgetInit();
+		var widget = initializationFunction();
 
 		if ( !option.customEventHandling ) {
 			widget.on( 'change', createMultiSelectChangeHandler( option.id ) );
+		}
+
+		return widget;
+	}
+
+	function createLayout( option, widget ) {
+		if ( option.layout ) {
+			return option.layout( widget, option );
+		}
+
+		return new OO.ui.FieldLayout(
+			widget,
+			{
+				label: mw.msg( 'advancedsearch-field-' + option.id ),
+				align: 'right'
+			}
+		);
+	}
+
+	advancedOptions.forEach( function ( option ) {
+		if ( option.enabled && !option.enabled() ) {
+			return;
 		}
 
 		if ( !optionSets[ option.group ] ) {
@@ -365,16 +386,9 @@
 			} );
 		}
 
-		var layout;
-		if ( option.layout ) {
-			layout = option.layout( widget, option );
-		} else {
-			layout = new OO.ui.FieldLayout( widget, {
-				label: mw.msg( 'advancedsearch-field-' + option.id ),
-				align: 'right'
-			} );
-		}
-		optionSets[ option.group ].addItems( [ layout ] );
+		optionSets[ option.group ].addItems( [
+			createLayout( option, createWidget( option ) )
+		] );
 	} );
 
 	var $allOptions = $( '<div>' ).prop( { 'class': 'mw-advancedSearch-fieldContainer' } );
