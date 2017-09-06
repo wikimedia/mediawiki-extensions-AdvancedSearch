@@ -30,6 +30,12 @@ class Hooks {
 		if ( $special->getName() === 'Search' ) {
 			$special->getOutput()->addModules( 'ext.advancedSearch.init' );
 			$special->getOutput()->addModuleStyles( 'ext.advancedSearch.initialstyles' );
+
+			$special->getOutput()->addJsConfigVars(
+				'advancedSearch.mimeTypes',
+				( new MimeTypeConfigurator( MediaWikiServices::getInstance()->getMimeAnalyzer() ) )
+					->getMimeTypes( $special->getConfig()->get( 'FileExtensions' ) )
+			);
 		}
 	}
 
@@ -80,7 +86,8 @@ class Hooks {
 				'tests/qunit/ui/NamespacePresets.test.js',
 				'tests/qunit/ui/SearchPreview.test.js',
 				'tests/qunit/ui/TemplateSearch.test.js',
-				'tests/qunit/dm/SearchModel.test.js'
+				'tests/qunit/dm/SearchModel.test.js',
+				'tests/qunit/dm/FileTypeOptionProvider.test.js'
 			],
 			'dependencies' => [
 				'ext.advancedSearch.ui.NamespaceFilters',
@@ -88,6 +95,7 @@ class Hooks {
 				'ext.advancedSearch.ui.SearchPreview',
 				'ext.advancedSearch.ui.TemplateSearch',
 				'ext.advancedSearch.dm.SearchModel',
+				'ext.advancedSearch.dm.FileTypeOptionProvider',
 				'oojs-ui'
 			],
 			'localBasePath' => __DIR__,

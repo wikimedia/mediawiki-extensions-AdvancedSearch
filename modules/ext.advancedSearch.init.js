@@ -228,36 +228,21 @@
 				switch ( val ) {
 
 					case 'bitmap':
+					case 'vector':
 					case 'audio':
 					case 'drawing':
 					case 'multimedia':
 					case 'office':
 					case 'video':
 						return 'filetype:' + val;
-
-					// Individual MIME types
-					case 'flac':
-					case 'mid':
-					case 'wav':
-						return 'filemime:audio/' + val;
-
-					case 'jpeg':
-					case 'tiff':
-						return 'filemime:image/' + val;
-
-					case 'svg':
-						return 'filemime:xml/svg';
-
-					// Other known MIME types
-					case 'ogg':
-					case 'pdf':
-						return 'filemime:application/' + val;
+					default:
+						return 'filemime:' + val;
 				}
-				return '';
 			},
 			init: function () {
 				return new mw.libs.advancedSearch.ui.FileTypeSelection(
 					state,
+					new mw.libs.advancedSearch.dm.FileTypeOptionProvider( mw.config.get( 'advancedSearch.mimeTypes' ) ),
 					{
 						optionId: 'filetype',
 						name: 'advancedSearchOption-filetype'
