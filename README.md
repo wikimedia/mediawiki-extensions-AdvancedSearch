@@ -25,3 +25,9 @@ _can_ be used to ease installation.
 ### Run Linting
 
     docker-compose run --rm js-build grunt
+
+### Running the QUnit tests
+
+Run MediaWiki and then hit this page in your browser:
+
+    index.php?title=Special%3AJavaScriptTest%2Fqunit%2Fplain&filter=ext.advancedSearch
