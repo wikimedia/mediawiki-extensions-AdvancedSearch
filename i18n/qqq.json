@@ -6,7 +6,7 @@
 			"Liuxinyu970226"
 		]
 	},
-	"advancedsearch-desc": "{{desc|name=AdvancedSearch|url=https://www.mediawiki.org/wiki/Extension:AdvancedSearch}}",
+	"advancedsearch-desc": "{{desc|name=AdvancedSearch|url=https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:AdvancedSearch}}",
 	"advancedsearch-options-pane-head": "Label for the introduction of advanced search. It is used both as a header for the expanded pane and as a label for the following options when the pane is collapsed.",
 	"advancedsearch-optgroup-text": "Label for the option group that contains search fields that refer to page content",
 	"advancedsearch-optgroup-structure": "Label for the option group that contains search fields that are specialized and/or more structural like templates, subpages and catgeories\n{{Identical|Structure}}",
@@ -29,7 +29,7 @@
 	"advancedsearch-help-not": "Help text shown in a dialog for the field for excluded words in search",
 	"advancedsearch-help-hastemplate": "Help text shown in a dialog for the field for for searching pages with a template",
 	"advancedsearch-help-insource": "Help text shown in a dialog for the field for wikitext search",
-	"advancedsearch-help-filetype": "Help text shown in a dialog for the field for file type\n{{Identical|File type}}",
+	"advancedsearch-help-filetype": "Help text shown in a dialog for the field for file type",
 	"advancedsearch-help-filew": "Help text shown in a dialog for the field for file width in pixels",
 	"advancedsearch-help-fileh": "Help text shown in a dialog for the field for file height in pixels",
 	"advancedsearch-filetype-section-types": "Label for the file type section",
@@ -59,7 +59,7 @@
 	"advancedSearch-filesize-smaller-than-symbol": "Label for the file width/height 'smaller than' comparator selection as shorthand symbol",
 	"advancedSearch-namespaces-articles": "Label for the 'Articles' namespace (usually with a an empty translated namespace label)\n{{Identical|Article}}",
 	"advancedSearch-namespaces-search-in": "Label for the 'Search in' section heading of the namespace section",
-	"advancedSearch-namespaces-preset-all": "Label for the namespace preset 'All namespaces'",
+	"advancedSearch-namespaces-preset-all": "Label for the namespace preset 'All namespaces'\n{{Identical|All}}",
 	"advancedSearch-beta-feature-message": "Label for the AdvancedSearch Beta Feature.",
 	"advancedSearch-beta-feature-description": "Description for the AdvancedSearch Beta Feature, describing the feature that will be enabled."
 }
