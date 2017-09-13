@@ -10,7 +10,8 @@
 	"license-name": "GPL-2.0+",
 	"type": "other",
 	"AutoloadClasses": {
-		"AdvancedSearch\\Hooks": "AdvancedSearch.hooks.php"
+		"AdvancedSearch\\Hooks": "AdvancedSearch.hooks.php",
+		"AdvancedSearch\\MimeTypeConfigurator": "includes/MimeTypeConfigurator.php"
 	},
 	"Hooks": {
 		"GetBetaFeaturePreferences": [
@@ -89,6 +90,7 @@
 				"oojs-ui.styles.icons-wikimedia",
 				"ext.advancedSearch.util",
 				"ext.advancedSearch.dm.SearchModel",
+				"ext.advancedSearch.dm.FileTypeOptionProvider",
 				"ext.advancedSearch.ui.ArbitraryWordInput",
 				"ext.advancedSearch.ui.FileTypeSelection",
 				"ext.advancedSearch.ui.FormState",
@@ -130,22 +132,15 @@
 				"advancedsearch-filetype-section-types",
 				"advancedsearch-filetype-section-image",
 				"advancedsearch-filetype-section-video",
-				"advancedsearch-filetype-section-sound",
+				"advancedsearch-filetype-section-audio",
 				"advancedsearch-filetype-section-document",
+				"advancedsearch-filetype-section-other",
 				"advancedsearch-filetype-bitmap",
 				"advancedsearch-filetype-vector",
 				"advancedsearch-filetype-audio",
 				"advancedsearch-filetype-video",
 				"advancedsearch-filetype-multimedia",
-				"advancedsearch-filetype-document",
-				"advancedsearch-filetype-bitmap-jpeg",
-				"advancedsearch-filetype-bitmap-tiff",
-				"advancedsearch-filetype-vector-svg",
-				"advancedsearch-filetype-audio-midi",
-				"advancedsearch-filetype-audio-wav",
-				"advancedsearch-filetype-audio-flac",
-				"advancedsearch-filetype-document-office",
-				"advancedsearch-filetype-document-pdf"
+				"advancedsearch-filetype-office"
 			]
 		},
 		"ext.advancedSearch.ui.ExpandablePane": {
@@ -226,6 +221,15 @@
 		"ext.advancedSearch.dm.SearchModel": {
 			"scripts": [
 				"modules/dm/ext.advancedSearch.SearchModel.js"
+			],
+			"dependencies": [
+				"oojs-ui",
+				"ext.advancedSearch.util"
+			]
+		},
+		"ext.advancedSearch.dm.FileTypeOptionProvider": {
+			"scripts": [
+				"modules/dm/ext.advancedSearch.FileTypeOptionProvider.js"
 			],
 			"dependencies": [
 				"oojs-ui",
