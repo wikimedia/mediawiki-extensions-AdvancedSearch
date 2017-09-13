@@ -28,6 +28,7 @@
 	"advancedsearch-help-phrase": "searches for a specific sequence of characters. Punctuation marks are ignored.",
 	"advancedsearch-help-or": "excludes pages containing these words from the search.",
 	"advancedsearch-help-not": "at least one of the search terms has to be included in the page.",
+	"advancedsearch-help-intitle": "searches for pages with titles that start with this word.",
 	"advancedsearch-help-hastemplate": "searches for pages that contain exactly this template.",
 	"advancedsearch-help-insource": "only looks for the search term in the source code.",
 	"advancedsearch-help-filetype": "searches only for files of the selected type",
