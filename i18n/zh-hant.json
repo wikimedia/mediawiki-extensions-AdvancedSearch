@@ -9,12 +9,14 @@
 	"advancedsearch-field-subpage": "此頁面的子頁面：",
 	"advancedsearch-filetype-section-types": "一般檔案類型",
 	"advancedsearch-filetype-section-image": "圖片格式",
+	"advancedsearch-filetype-section-sound": "音訊格式",
 	"advancedsearch-filetype-section-document": "文件格式",
 	"advancedsearch-filetype-bitmap": "圖片",
 	"advancedsearch-filetype-audio": "音訊",
 	"advancedsearch-filetype-video": "影片",
 	"advancedsearch-filetype-multimedia": "多媒體",
 	"advancedsearch-filetype-document": "文件",
+	"advancedsearch-filetype-document-office": "辦公室",
 	"advancedSearch-filesize-equals": "等於",
 	"advancedSearch-filesize-greater-than": "大於"
 }
