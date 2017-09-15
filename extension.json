@@ -11,7 +11,8 @@
 	"type": "other",
 	"AutoloadClasses": {
 		"AdvancedSearch\\Hooks": "AdvancedSearch.hooks.php",
-		"AdvancedSearch\\MimeTypeConfigurator": "includes/MimeTypeConfigurator.php"
+		"AdvancedSearch\\MimeTypeConfigurator": "includes/MimeTypeConfigurator.php",
+		"AdvancedSearch\\TooltipGenerator": "includes/TooltipGenerator.php"
 	},
 	"Hooks": {
 		"GetBetaFeaturePreferences": [
@@ -67,19 +68,10 @@
 				"advancedsearch-field-insource",
 				"advancedsearch-field-filetype",
 				"advancedsearch-field-filew",
-				"advancedsearch-field-fileh",
-				"advancedsearch-help-plain",
-				"advancedsearch-help-phrase",
-				"advancedsearch-help-or",
-				"advancedsearch-help-not",
-				"advancedsearch-help-hastemplate",
-				"advancedsearch-help-intitle",
-				"advancedsearch-help-insource",
-				"advancedsearch-help-filetype",
-				"advancedsearch-help-filew",
-				"advancedsearch-help-fileh"
+				"advancedsearch-field-fileh"
 			],
 			"dependencies": [
+				"mediawiki.jqueryMsg",
 				"mediawiki.util",
 				"oojs-ui",
 				"oojs-ui.styles.icons-content",

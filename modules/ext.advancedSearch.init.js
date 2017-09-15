@@ -91,12 +91,19 @@
 	}
 
 	function getMessageOrFalse( messageKey ) {
-		var message = mw.message( messageKey );
-		return message.exists() ? message.toString() : false;
+		// use prepared tooltip because of mw.message deficiencies
+		var tooltips = mw.config.get( 'advancedSearch.tooltips' );
+		return tooltips[ messageKey ] || false;
 	}
 
 	function getOptionHelpMessageOrFalse( option ) {
-		return getMessageOrFalse( 'advancedsearch-help-' + option.id );
+		var message = getMessageOrFalse( 'advancedsearch-help-' + option.id );
+		var head = mw.msg( 'advancedsearch-field-' + option.id );
+		if ( !message || !head ) {
+			return false;
+		}
+
+		return new OO.ui.HtmlSnippet( '<h6 class="mw-advancedSearch-tooltip-head">' + head + '</h6>' + message );
 	}
 
 	function createOptionalFieldLayout( widget, option ) {

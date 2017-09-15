@@ -165,3 +165,8 @@
 .mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-handle {
 	border-top: 0;
 }
+
+.oo-ui-popupWidget-popup .mw-advancedSearch-tooltip-head {
+	font-size: 110%;
+	color: #999;
+}

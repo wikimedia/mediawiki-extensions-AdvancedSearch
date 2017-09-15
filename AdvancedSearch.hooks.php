@@ -36,6 +36,7 @@ class Hooks {
 				( new MimeTypeConfigurator( MediaWikiServices::getInstance()->getMimeAnalyzer() ) )
 					->getMimeTypes( $special->getConfig()->get( 'FileExtensions' ) )
 			);
+			$special->getOutput()->addJsConfigVars( 'advancedSearch.tooltips', TooltipGenerator::generateToolTips() );
 		}
 	}
 
