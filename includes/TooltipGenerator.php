@@ -15,7 +15,7 @@ namespace AdvancedSearch;
 class TooltipGenerator {
 
 	public static function generateToolTips( ) {
-		
+
 		$messageKeys = [
 			'advancedsearch-help-plain',
 			'advancedsearch-help-phrase',
@@ -28,7 +28,7 @@ class TooltipGenerator {
 			'advancedsearch-help-filew',
 			'advancedsearch-help-fileh'
 		];
-		
+
 		return array_combine(
 			$messageKeys,
 			array_map( function( $messageKey ) {
@@ -38,3 +38,4 @@ class TooltipGenerator {
 	}
 
 }
+
