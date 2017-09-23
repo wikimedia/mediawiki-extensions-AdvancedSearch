@@ -21,7 +21,7 @@
 	"advancedsearch-field-filetype": "Typ vu Fichier:",
 	"advancedsearch-field-filew": "Breet vum Fichier a Pixel",
 	"advancedsearch-field-fileh": "Héicht vum Fichier a Pixel:",
-	"advancedsearch-help-plain": "sicht no dëse Wierder am Titel oder am Text.",
+	"advancedsearch-help-plain": "<dl> <dt>Beschreiwung:</dt><dd>sicht no dëse Wierder am Titel oder am Text.</dd> <dt>Denktheirun:</dt><dd>\n<ul>\n <li>Méi Wierder kënnen hei agi ginn.</li>\n <li>Sazzeechen an aner net-alphanumeresch Zeechen (mat Ausnam vum Doppelpunkt a vum Komma) ginn gnoréiert.</li>\n <li>Et kënne Resultater ginn, ann deenen een oder méi vun Äre Sichbegrëffer net dra sinn.</li>\n <li>Wuertofbstamung gëtt net applizéiert. Beispill: Wann <em>Auto</em> agi gëtt, fënnt d'Sich och <em>Autoen</em>. D'Wuertofbstamung ass sproochspezifesch.</li>\n</ul></dd>\n <dt>Hëllefesäit:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search Volltextsuche] <dt>Syntaxgläichwerteg an der normaler Sich:</dt><dd><code>Sesam Strooss Auto</code></dd> </dl>",
 	"advancedsearch-help-phrase": "sicht no enger spezifescher Sequenz vun Zeechen. Sazzeeche ginn ignoréiert.",
 	"advancedsearch-help-or": "schléisst Säiten an deenen dës Wierder dra sinn aus dem Sichen aus.",
 	"advancedsearch-help-not": "mindestens ee vun de gesichte Begrëffer muss an der Säit dra sinn.",
