@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Pmt"
+			"Pmt",
+			"Jon Harald Søby"
 		]
 	},
-	"advancedsearch-filetype-section-sound": "Lydformat",
+	"advancedsearch-filetype-section-audio": "Lydformat",
+	"advancedsearch-filetype-section-other": "Andre formater",
 	"advancedSearch-namespaces-articles": "Artikler"
 }
