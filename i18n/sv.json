@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Bengtsson96"
 		]
 	},
 	"advancedsearch-desc": "Enkel åtkomst till avancerade sökförmågor på [[Special:Search]]",
@@ -24,15 +25,15 @@
 	"advancedsearch-filetype-section-types": "Allmän filtyp",
 	"advancedsearch-filetype-section-image": "Bildformat",
 	"advancedsearch-filetype-section-video": "Videoformat",
-	"advancedsearch-filetype-section-sound": "Ljudformat",
+	"advancedsearch-filetype-section-audio": "Ljudformat",
 	"advancedsearch-filetype-section-document": "Dokumentformat",
+	"advancedsearch-filetype-section-other": "Övriga format",
 	"advancedsearch-filetype-bitmap": "Bild",
 	"advancedsearch-filetype-vector": "Teckning",
 	"advancedsearch-filetype-audio": "Ljud",
 	"advancedsearch-filetype-video": "Video",
 	"advancedsearch-filetype-multimedia": "Multimedia",
-	"advancedsearch-filetype-document": "Dokument",
-	"advancedsearch-filetype-document-office": "Office",
+	"advancedsearch-filetype-office": "Office",
 	"advancedSearch-filesize-equals": "likadant som",
 	"advancedSearch-filesize-greater-than": "större än",
 	"advancedSearch-filesize-smaller-than": "mindre än",
