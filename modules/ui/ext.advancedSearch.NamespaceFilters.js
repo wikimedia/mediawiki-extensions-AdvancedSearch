@@ -184,4 +184,14 @@
 		}
 	};
 
+	/**
+	 * Respond to menu choose event by clearing the input field
+	 *
+	 * @param {OO.ui.OptionWidget} menuItem Chosen menu item
+	 */
+	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.onMenuChoose = function ( menuItem ) {
+		mw.libs.advancedSearch.ui.NamespaceFilters.parent.prototype.onMenuChoose.call( this, menuItem );
+		this.clearInput();
+	};
+
 }( mediaWiki, jQuery ) );

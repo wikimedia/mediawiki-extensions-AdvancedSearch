@@ -184,4 +184,21 @@
 		assert.equal( filter.getMenu().getItems()[ 0 ].isDisabled(), false );
 	} );
 
+	QUnit.test( 'Choosing a namespace from the menu clears the input field', function ( assert ) {
+		var model = new Model(),
+			filter = new NamespaceFilters( model, {
+				namespaces: {
+					0: 'Article',
+					1: 'Talk',
+					2: 'User',
+					3: 'UserTalk'
+				}
+			} );
+
+		model.setNamespaces( [ '0' ] );
+		filter.input.setValue( 'Use' );
+		filter.getMenu().chooseItem( filter.getMenu().getItems()[ 0 ] );
+		assert.equal( filter.input.getValue(), '' );
+	} );
+
 }( mediaWiki ) );
