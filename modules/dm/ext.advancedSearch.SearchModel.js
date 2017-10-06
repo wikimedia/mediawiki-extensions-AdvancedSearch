@@ -8,9 +8,9 @@
 	// Internal constants
 	var FILETYPES_WITH_DIMENSIONS = [
 		'bitmap',
-		'video',
-		'jpeg',
-		'tiff'
+		'vector',
+		'image',
+		'video'
 	];
 
 	/**
@@ -190,7 +190,12 @@
 	 * @return {boolean}
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.filetypeSupportsDimensions = function () {
-		return FILETYPES_WITH_DIMENSIONS.indexOf( this.getOption( 'filetype' ) ) > -1;
+		var fileType = this.getOption( 'filetype' );
+		if ( !fileType ) {
+			return false;
+		}
+		var generalFileType = this.getOption( 'filetype' ).replace( /\/.*/, '' );
+		return FILETYPES_WITH_DIMENSIONS.indexOf( generalFileType ) !== -1;
 	};
 
 	/**

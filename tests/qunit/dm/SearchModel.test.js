@@ -145,24 +145,38 @@
 		assert.deepEqual( model.getOption( 'fileh' ), [ '>', '' ] );
 	} );
 
-	QUnit.test( 'File types support dimensions configured', function ( assert ) {
-		assert.expect( 5 );
+	QUnit.test( 'Image and Video file types support dimensions', function ( assert ) {
+		assert.expect( 10 );
 
 		var model = new SearchModel();
 
-		model.storeOption( 'filetype', 'bitmap' );
-		assert.ok( model.filetypeSupportsDimensions() );
+		assert.notOk( model.filetypeSupportsDimensions(), 'Images are not supported when filetype is not set' );
+
+		model.storeOption( 'filetype', 'image' );
+		assert.ok( model.filetypeSupportsDimensions(), 'General image type must be supported' );
 
 		model.storeOption( 'filetype', 'video' );
+		assert.ok( model.filetypeSupportsDimensions(), 'General video type must be supported' );
+
+		model.storeOption( 'filetype', 'bitmap' );
+		assert.ok( model.filetypeSupportsDimensions(), 'File type of bitmap must be supported' );
+
+		model.storeOption( 'filetype', 'vector' );
+		assert.ok( model.filetypeSupportsDimensions(), 'File type of vector (drawing) must be supported' );
+
+		model.storeOption( 'filetype', 'image/jpeg' );
+		assert.ok( model.filetypeSupportsDimensions(), 'Image MIME type must be supported' );
+
+		model.storeOption( 'filetype', 'image/svg+xml', 'Complex image MIME types must be supported' );
 		assert.ok( model.filetypeSupportsDimensions() );
 
-		model.storeOption( 'filetype', 'jpeg' );
+		model.storeOption( 'filetype', 'video/ogg', 'Video MIME types must be supported' );
 		assert.ok( model.filetypeSupportsDimensions() );
 
-		model.storeOption( 'filetype', 'tiff' );
-		assert.ok( model.filetypeSupportsDimensions() );
+		model.storeOption( 'filetype', 'audio', 'Audio must not support dimensions' );
+		assert.notOk( model.filetypeSupportsDimensions() );
 
-		model.storeOption( 'filetype', 'random' );
+		model.storeOption( 'filetype', 'audio/wav', 'Audio MIME types must not support dimensions' );
 		assert.notOk( model.filetypeSupportsDimensions() );
 	} );
 
