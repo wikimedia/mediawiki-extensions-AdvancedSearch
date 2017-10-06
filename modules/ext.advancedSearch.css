@@ -1,3 +1,9 @@
+.mw-advancedSearch-container textarea,
+.mw-advancedSearch-container input {
+	/* This will flip with CSSJanus */
+	direction: ltr;
+}
+
 .mw-advancedSearch-searchPreview-label {
 	font-weight: bold;
 	margin-right: 0.3125em;
