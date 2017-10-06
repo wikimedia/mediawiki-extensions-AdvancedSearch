@@ -150,4 +150,38 @@
 		filter.onValueUpdate();
 	} );
 
+	QUnit.test( 'Selected namespaces are disabled in menu', function ( assert ) {
+		assert.expect( 1 );
+
+		var model = new Model(),
+			filter = new NamespaceFilters( model, {
+				namespaces: {
+					0: 'Article',
+					1: 'Talk',
+					2: 'User',
+					3: 'UserTalk'
+				}
+			} );
+
+		model.setNamespaces( [ '1' ] );
+		assert.equal( filter.getMenu().getItems()[ 1 ].isDisabled(), true );
+	} );
+
+	QUnit.test( 'Unselected namespaces are not disabled in menu', function ( assert ) {
+		assert.expect( 1 );
+
+		var model = new Model(),
+			filter = new NamespaceFilters( model, {
+				namespaces: {
+					0: 'Article',
+					1: 'Talk',
+					2: 'User',
+					3: 'UserTalk'
+				}
+			} );
+
+		model.setNamespaces( [ '1', '2', '3' ] );
+		assert.equal( filter.getMenu().getItems()[ 0 ].isDisabled(), false );
+	} );
+
 }( mediaWiki ) );

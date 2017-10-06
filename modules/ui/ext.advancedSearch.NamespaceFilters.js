@@ -169,12 +169,18 @@
 	 * Overrides OO.ui.TagMultiselectWidget.prototype.onChangeTags default behaviour to add GUI effect
 	 */
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.onChangeTags = function () {
-		var items = this.getItems();
+		var self = this,
+			tagItems = this.getItems(),
+			menuItems = this.getMenu().getItems();
 
 		mw.libs.advancedSearch.ui.NamespaceFilters.parent.prototype.onChangeTags.call( this );
 
-		if ( items.length > 0 ) {
-			items[ 0 ].setDisabled( items.length === 1 );
+		$.each( menuItems, function ( index, menuItem ) {
+			menuItem.setDisabled( !!self.getItemFromData( menuItem.getData() ) );
+		} );
+
+		if ( tagItems.length > 0 ) {
+			tagItems[ 0 ].setDisabled( tagItems.length === 1 );
 		}
 	};
 
