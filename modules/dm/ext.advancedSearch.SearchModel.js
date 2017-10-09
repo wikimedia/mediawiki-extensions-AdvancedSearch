@@ -194,7 +194,7 @@
 		if ( !fileType ) {
 			return false;
 		}
-		var generalFileType = this.getOption( 'filetype' ).replace( /\/.*/, '' );
+		var generalFileType = fileType.replace( /\/.*/, '' );
 		return FILETYPES_WITH_DIMENSIONS.indexOf( generalFileType ) !== -1;
 	};
 
