@@ -337,8 +337,11 @@
 	}
 
 	var $search = $( 'form#search, form#powersearch' ),
+		$advancedSearch = $( '<div>' ).addClass( 'mw-advancedSearch-container' ),
 		$searchField = $search.find( 'input[name="search"]' ),
 		optionSets = {};
+
+	$search.append( $advancedSearch );
 
 	$searchField.val( mw.util.getParamValue( 'advancedSearchOption-original' ) );
 
@@ -418,7 +421,7 @@
 			searchPreview.showPreview();
 		}
 	} );
-	$( '.mw-search-profile-tabs' ).before( pane.$element );
+	$advancedSearch.append( pane.$element );
 
 	$search.on( 'submit', function () {
 		var compiledQuery = $.trim( $searchField.val() + ' ' + formatSearchOptions().join( ' ' ) ),
@@ -435,7 +438,7 @@
 		name: 'advancedSearch-current'
 	} );
 
-	$search.append( currentSearch.$element );
+	$advancedSearch.append( currentSearch.$element );
 
 	var namespaceSelection = new mw.libs.advancedSearch.ui.NamespaceFilters( state, {
 			namespaces: prepareNamespaces()
@@ -451,7 +454,7 @@
 		} ),
 		namespaceSelectionPreview = $( '<div class="mw-advancedSearch-namespace-selection"></div>' );
 
-	$( '.mw-search-profile-tabs' ).after( namespaceSelectionPreview );
+	$advancedSearch.append( namespaceSelectionPreview );
 	namespaceSelectionPreview
 		.after( namespaceSelection.$element )
 		.append( $( '<strong></strong>' ).text( mw.msg( 'advancedSearch-namespaces-search-in' ) ) )
