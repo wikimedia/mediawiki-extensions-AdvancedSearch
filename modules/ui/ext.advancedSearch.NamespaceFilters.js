@@ -163,21 +163,25 @@
 		} );
 	};
 
+	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.disableSelectedNamespacesInMenu = function () {
+		var self = this;
+
+		$.each( this.getMenu().getItems(), function ( index, menuItem ) {
+			menuItem.setDisabled( !!self.getItemFromData( menuItem.getData() ) );
+		} );
+	};
+
 	/**
 	 * Respond to change event, where items were added, removed, or cleared.
 	 *
 	 * Overrides OO.ui.TagMultiselectWidget.prototype.onChangeTags default behaviour to add GUI effect
 	 */
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.onChangeTags = function () {
-		var self = this,
-			tagItems = this.getItems(),
-			menuItems = this.getMenu().getItems();
-
 		mw.libs.advancedSearch.ui.NamespaceFilters.parent.prototype.onChangeTags.call( this );
 
-		$.each( menuItems, function ( index, menuItem ) {
-			menuItem.setDisabled( !!self.getItemFromData( menuItem.getData() ) );
-		} );
+		this.disableSelectedNamespacesInMenu();
+
+		var tagItems = this.getItems();
 
 		if ( tagItems.length > 0 ) {
 			tagItems[ 0 ].setDisabled( tagItems.length === 1 );
