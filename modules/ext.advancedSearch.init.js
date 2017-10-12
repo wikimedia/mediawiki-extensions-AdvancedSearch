@@ -138,7 +138,6 @@
 		{
 			group: 'text',
 			id: 'plain',
-			placeholder: '…',
 			formatter: function ( val ) {
 				return val;
 			}
@@ -146,7 +145,6 @@
 		{
 			group: 'text',
 			id: 'phrase',
-			placeholder: '"…"',
 			formatter: function ( val ) {
 				if ( Array.isArray( val ) ) {
 					return $.map( val, enforceQuotes ).join( ' ' );
@@ -163,7 +161,6 @@
 		{
 			group: 'text',
 			id: 'not',
-			placeholder: '-…',
 			formatter: function ( val ) {
 				return '-' + optionalQuotes( val );
 			}
@@ -171,7 +168,6 @@
 		{
 			group: 'text',
 			id: 'or',
-			placeholder: '…OR',
 			formatter: function ( val ) {
 				if ( Array.isArray( val ) ) {
 					return $.map( val, optionalQuotes ).join( ' OR ' );
@@ -189,7 +185,6 @@
 		{
 			group: 'structure',
 			id: 'intitle',
-			placeholder: 'intitle:…',
 			formatter: function ( val ) {
 				return 'intitle:' + optionalQuotes( val );
 			}
@@ -198,7 +193,6 @@
 		{
 			group: 'structure',
 			id: 'hastemplate',
-			placeholder: 'hastemplate:…',
 			formatter: function ( val ) {
 				if ( Array.isArray( val ) ) {
 					return $.map( val, function ( templateItem ) {
@@ -218,7 +212,6 @@
 		{
 			group: 'structure',
 			id: 'insource',
-			placeholder: 'insource:…',
 			formatter: function ( val ) {
 				return 'insource:' + ( /^\/.*\/$/.test( val ) ? val : optionalQuotes( val ) );
 			}
@@ -230,7 +223,6 @@
 		{
 			group: 'files',
 			id: 'filetype',
-			placeholder: 'filetype:…',
 			formatter: function ( val ) {
 				switch ( val ) {
 
@@ -261,7 +253,6 @@
 		{
 			group: 'files',
 			id: 'filew',
-			placeholder: 'filew:…',
 			formatter: function ( val ) {
 				return formatSizeConstraint( 'filew:', val );
 			},
@@ -279,7 +270,6 @@
 		{
 			group: 'files',
 			id: 'fileh',
-			placeholder: 'fileh:…',
 			formatter: function ( val ) {
 				return formatSizeConstraint( 'fileh:', val );
 			},
