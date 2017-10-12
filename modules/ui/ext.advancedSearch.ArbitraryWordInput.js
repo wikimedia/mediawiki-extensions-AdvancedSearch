@@ -14,18 +14,46 @@
 	 * @param  {Object} config
 	 */
 	mw.libs.advancedSearch.ui.ArbitraryWordInput = function ( store, config ) {
-		var myConfig = $.extend( { allowArbitrary: true }, config || {} );
 		this.store = store;
 		this.optionId = config.optionId;
 
 		this.store.connect( this, { update: 'onStoreUpdate' } );
 
-		mw.libs.advancedSearch.ui.ArbitraryWordInput.parent.call( this, myConfig );
+		mw.libs.advancedSearch.ui.ArbitraryWordInput.parent.call(
+			this,
+			$.extend( { allowArbitrary: true }, config || {} )
+		);
 
 		this.populateFromStore();
 	};
 
 	OO.inheritClass( mw.libs.advancedSearch.ui.ArbitraryWordInput, OO.ui.TagMultiselectWidget );
+
+	// TODO move to util module
+	function arrayEquals( a1, a2 ) {
+		var i = a1.length;
+		if ( a1.length !== a2.length ) {
+			return false;
+		}
+		while ( i-- ) {
+			if ( a1[ i ] !== a2[ i ] ) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	mw.libs.advancedSearch.ui.ArbitraryWordInput.prototype.populateFromStore = function () {
+		var val = this.store.getOption( this.optionId ) || [];
+		if ( arrayEquals( this.getValue(), val ) ) {
+			return;
+		}
+		this.setValue( val );
+	};
+
+	mw.libs.advancedSearch.ui.ArbitraryWordInput.prototype.onStoreUpdate = function () {
+		this.populateFromStore();
+	};
 
 	/**
 	 * @inheritdoc
@@ -45,32 +73,6 @@
 			this.addTagFromInput();
 		}
 		return mw.libs.advancedSearch.ui.ArbitraryWordInput.parent.prototype.onInputBlur.call( this );
-	};
-
-	// TODO move to util module
-	function arrayEquals( a1, a2 ) {
-		var i = a1.length;
-		if ( a1.length !== a2.length ) {
-			return false;
-		}
-		while ( i-- ) {
-			if ( a1[ i ] !== a2[ i ] ) {
-				return false;
-			}
-		}
-		return true;
-	}
-
-	mw.libs.advancedSearch.ui.ArbitraryWordInput.prototype.onStoreUpdate = function () {
-		this.populateFromStore();
-	};
-
-	mw.libs.advancedSearch.ui.ArbitraryWordInput.prototype.populateFromStore = function () {
-		var val = this.store.getOption( this.optionId ) || [];
-		if ( arrayEquals( this.getValue(), val ) ) {
-			return;
-		}
-		this.setValue( val );
 	};
 
 }( mediaWiki, jQuery ) );
