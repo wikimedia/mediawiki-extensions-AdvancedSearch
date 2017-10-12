@@ -154,7 +154,10 @@
 			init: function () {
 				return new mw.libs.advancedSearch.ui.ArbitraryWordInput(
 					state,
-					{ optionId: 'phrase' }
+					{
+						optionId: 'phrase',
+						placeholder: mw.msg( 'advancedSearch-placeholder-commas' )
+					}
 				);
 			}
 		},
@@ -177,7 +180,10 @@
 			init: function () {
 				return new mw.libs.advancedSearch.ui.ArbitraryWordInput(
 					state,
-					{ optionId: 'or' }
+					{
+						optionId: 'or',
+						placeholder: mw.msg( 'advancedSearch-placeholder-commas' )
+					}
 				);
 			}
 		},

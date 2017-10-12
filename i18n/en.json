@@ -35,6 +35,8 @@
 	"advancedsearch-help-filew": "<dl><dt>Description:</dt><dd> These fields allow you to specify the width of the file.</dd> <dt>Be aware of the following: </dt> <dd>this is only applicable to file types that have width and height, like videos and images.</dd> <dt>Help page:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]</dd> <dt>Syntax-Equivalent in the normal search:</dt><dd>numbers with <code>filew</code> before them like <code>filew:>800</code></dd></dl>",
 	"advancedsearch-help-fileh": "<dl><dt>Description:</dt><dd> These fields allow you to specify the hieght of the file.</dd> <dt>Be aware of the following: </dt> <dd>this is only applicable to file types that have width and height, like videos and images.</dd> <dt>Help page:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]</dd> <dt>Syntax-Equivalent in the normal search:</dt><dd>numbers with <code>fileh</code> before them like <code>fileh:>600</code></dd></dl>",
 
+	"advancedSearch-placeholder-commas": "Type words separated by comma e.g. cats, kittens, ...",
+
 	"advancedsearch-filetype-section-types": "General file type",
 	"advancedsearch-filetype-section-image": "Image format",
 	"advancedsearch-filetype-section-video": "Video format",
@@ -53,9 +55,11 @@
 	"advancedSearch-filesize-greater-than-symbol": ">",
 	"advancedSearch-filesize-smaller-than": "lower than",
 	"advancedSearch-filesize-smaller-than-symbol": "<",
+
 	"advancedSearch-namespaces-articles": "Articles",
 	"advancedSearch-namespaces-search-in": "Search in:",
 	"advancedSearch-namespaces-preset-all": "All",
+
 	"advancedSearch-beta-feature-message": "Advanced Search Interface",
 	"advancedSearch-beta-feature-description": "Easy access to advanced search capabilities on [[Special:Search]]."
 }
