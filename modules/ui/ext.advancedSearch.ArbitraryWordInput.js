@@ -25,7 +25,7 @@
 			$.extend( { allowArbitrary: true }, config || {} )
 		);
 
-		this.input.$input.on( 'input', this.onInput.bind( this ) );
+		this.input.$input.on( 'input', this.buildTagsFromInput.bind( this ) );
 		this.on( 'change', this.updatePlaceholder.bind( this ) );
 
 		this.populateFromStore();
@@ -59,7 +59,7 @@
 		this.populateFromStore();
 	};
 
-	mw.libs.advancedSearch.ui.ArbitraryWordInput.prototype.onInput = function () {
+	mw.libs.advancedSearch.ui.ArbitraryWordInput.prototype.buildTagsFromInput = function () {
 		var segments = this.input.getValue().split( ',' );
 
 		if ( segments.length > 1 ) {
@@ -87,8 +87,17 @@
 		return mw.libs.advancedSearch.ui.ArbitraryWordInput.parent.prototype.isAllowedData.call( this, data );
 	};
 
+	mw.libs.advancedSearch.ui.ArbitraryWordInput.prototype.setPlaceholder = function ( placeholderText ) {
+		var currentText = this.input.$input.attr( 'placeholder' );
+
+		if ( currentText !== placeholderText ) {
+			this.contentWidthWithPlaceholder = undefined;
+			this.input.$input.attr( 'placeholder', placeholderText );
+		}
+	};
+
 	mw.libs.advancedSearch.ui.ArbitraryWordInput.prototype.updatePlaceholder = function () {
-		this.input.$input.attr( 'placeholder', this.getTextForPlaceholder() );
+		this.setPlaceholder( this.getTextForPlaceholder() );
 	};
 
 	mw.libs.advancedSearch.ui.ArbitraryWordInput.prototype.getTextForPlaceholder = function () {
