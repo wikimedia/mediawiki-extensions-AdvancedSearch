@@ -12,6 +12,7 @@
 	"advancedsearch-field-intitle": "Tytuł strony zawiera:",
 	"advancedsearch-field-deepcat": "Strony w tej kategorii:",
 	"advancedsearch-field-insource": "Wikitekst zawiera:",
+	"advancedSearch-placeholder-commas": "Wpisz słowa oddzielone przecinkami np. koty, kocięta, ...",
 	"advancedsearch-filetype-section-types": "Generalny typ pliku",
 	"advancedsearch-filetype-section-image": "Format obrazu",
 	"advancedsearch-filetype-section-video": "Format video",

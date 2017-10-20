@@ -19,6 +19,7 @@
 	"advancedsearch-field-insource": "Il wikitesto contiene:",
 	"advancedsearch-field-filetype": "Tipo di file:",
 	"advancedsearch-help-intitle": "cerca le pagine con i titoli che iniziano con questa parola.",
+	"advancedSearch-placeholder-commas": "Scrivi parole separate da virgola, ad esempio: gatti, gattini, ...",
 	"advancedsearch-filetype-section-types": "Tipo di file generale",
 	"advancedsearch-filetype-section-image": "Formato immagine",
 	"advancedsearch-filetype-section-video": "Formato video",
