@@ -53,6 +53,8 @@
 		this.$btn.addClass( 'oo-ui-buttonElement-framed' );
 		this.$element.addClass( 'mw-advancedSearch-expandablePane' );
 		this.$element.append( this.$btn, this.$dependentPane );
+
+		this.notifyChildInputVisibility( myConfig.data === this.STATE_OPEN );
 	};
 
 	OO.inheritClass( mw.libs.advancedSearch.ui.ExpandablePane, OO.ui.Widget );
@@ -65,12 +67,18 @@
 		if ( this.data === this.STATE_OPEN ) {
 			this.data = this.STATE_CLOSED;
 			this.$dependentPane.hide();
+			this.notifyChildInputVisibility( false );
 		} else {
 			this.data = this.STATE_OPEN;
 			this.$dependentPane.show();
+			this.notifyChildInputVisibility( true );
 		}
 		this.setIndicator( getIndicatorNameForState( this.data ) );
 		this.emit( 'change', this.data );
+	};
+
+	mw.libs.advancedSearch.ui.ExpandablePane.prototype.notifyChildInputVisibility = function ( visible ) {
+		$( 'input', this.$dependentPane ).trigger( visible === true ? 'visible' : 'hidden' );
 	};
 
 	/**
