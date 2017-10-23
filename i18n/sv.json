@@ -22,6 +22,7 @@
 	"advancedsearch-field-filetype": "Filtyp:",
 	"advancedsearch-field-filew": "Filbredd i bildpunkter:",
 	"advancedsearch-field-fileh": "Filhöjd i bildpunkter:",
+	"advancedSearch-placeholder-commas": "Skriv ord separerade med komma, t.ex. katter, kattungar, ...",
 	"advancedsearch-filetype-section-types": "Allmän filtyp",
 	"advancedsearch-filetype-section-image": "Bildformat",
 	"advancedsearch-filetype-section-video": "Videoformat",
