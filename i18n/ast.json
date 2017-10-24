@@ -21,6 +21,8 @@
 	"advancedsearch-field-filetype": "Tipu de ficheru:",
 	"advancedsearch-field-filew": "Anchor del ficheru en pixels:",
 	"advancedsearch-field-fileh": "Altor del ficheru en pixels:",
+	"advancedsearch-help-plain": "<dl> <dt>Descripción:</dt><dd>busca estes palabres nel títulu o nel testu.</dd> <dt>Ten presente lo siguiente:</dt><dd><ul> <li>equí pueden escribise múltiples palabres.</li> <li>los signos de puntuación y otros caráuteres non-alfanumbéricos (sacante los dos puntos y la coma) van inorase.</li> <li>puede haber resultaos que nun contengan un términu o más de la gueta.</li> <li>aplíquense los lexemes de palabres. Exemplu: Si s'escribe <em>bon</em>, la gueta considerará <em>bones</em>. Los lexemes son específicos pa cada llingua.</li></ul></dd> <dt>Páxina d'ayuda:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search Gueta de testu completu] <dt>Sintaxis equivaliente na gueta normal:</dt><dd><code>barriu sésamu coche</code></dd> </dl>",
+	"advancedSearch-placeholder-commas": "Escribi palabres separaes con comes; p.ex. gatos, muxinos, ...",
 	"advancedsearch-filetype-section-types": "Tipu de ficheru xenéricu",
 	"advancedsearch-filetype-section-image": "Formatu d'imaxe",
 	"advancedsearch-filetype-section-video": "Formatu de videu",
