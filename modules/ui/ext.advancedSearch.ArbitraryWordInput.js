@@ -28,6 +28,11 @@
 		this.input.$input.on( 'input', this.buildTagsFromInput.bind( this ) );
 		this.on( 'change', this.updatePlaceholder.bind( this ) );
 
+		// run initial size calculation after off-canvas construction (hidden parent node)
+		this.input.$input.on( 'visible', function () {
+			this.updateInputSize();
+		}.bind( this ) );
+
 		this.populateFromStore();
 	};
 
@@ -87,21 +92,14 @@
 		return mw.libs.advancedSearch.ui.ArbitraryWordInput.parent.prototype.isAllowedData.call( this, data );
 	};
 
-	mw.libs.advancedSearch.ui.ArbitraryWordInput.prototype.setPlaceholder = function ( placeholderText ) {
-		var currentText = this.input.$input.attr( 'placeholder' );
-
-		if ( currentText !== placeholderText ) {
-			this.contentWidthWithPlaceholder = undefined;
-			this.input.$input.attr( 'placeholder', placeholderText );
-		}
-	};
-
 	mw.libs.advancedSearch.ui.ArbitraryWordInput.prototype.updatePlaceholder = function () {
-		this.setPlaceholder( this.getTextForPlaceholder() );
+		// bust cached width so placeholder remains changeable
+		this.contentWidthWithPlaceholder = undefined;
+		this.input.$input.attr( 'placeholder', this.getTextForPlaceholder() );
 	};
 
 	mw.libs.advancedSearch.ui.ArbitraryWordInput.prototype.getTextForPlaceholder = function () {
-		if ( this.input.getValue() !== '' || this.getValue().length > 0 ) {
+		if ( this.getValue().length > 0 ) {
 			return '';
 		}
 
