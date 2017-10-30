@@ -71,8 +71,10 @@
 			var self = this;
 
 			segments.map( function ( segment ) {
-				if ( self.isAllowedData( segment ) ) {
-					self.addTag( segment );
+				var trimmedSegment = segment.trim();
+
+				if ( self.isAllowedData( trimmedSegment ) ) {
+					self.addTag( trimmedSegment );
 				}
 			} );
 
