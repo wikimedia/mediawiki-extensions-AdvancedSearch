@@ -188,6 +188,7 @@
 			}
 		},
 
+		// Structure
 		{
 			group: 'structure',
 			id: 'intitle',
@@ -195,7 +196,6 @@
 				return 'intitle:' + optionalQuotes( val );
 			}
 		},
-
 		{
 			group: 'structure',
 			id: 'hastemplate',
@@ -215,17 +215,8 @@
 			},
 			customEventHandling: true
 		},
-		{
-			group: 'structure',
-			id: 'insource',
-			formatter: function ( val ) {
-				return 'insource:' + ( /^\/.*\/$/.test( val ) ? val : optionalQuotes( val ) );
-			}
-		},
 
 		// Files
-		// filebits:…
-		// filesize:…
 		{
 			group: 'files',
 			id: 'filetype',
@@ -291,14 +282,9 @@
 			layout: createOptionalFieldLayout
 		}
 
-		// Ordering
-		// prefer-recent:…
-		// boost-templates:…
-
-		// Meta
-		// linksto:…
-		// neartitle:…
-		// morelike:…
+		// Ideas for Version 2.0:
+		// * Ordering ( prefer-recent:,  boost-templates: )
+		// * Meta ( linksto:, neartitle:, morelike: )
 	];
 
 	/**
