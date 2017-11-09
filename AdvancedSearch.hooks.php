@@ -19,7 +19,8 @@ class Hooks {
 	 */
 	public static function onSpecialPageBeforeExecute( SpecialPage $special, $subpage ) {
 		/**
-		 * If the BetaFeatures extension is loaded then require the current user to have the feature enabled.
+		 * If the BetaFeatures extension is loaded then require the current user
+		 * to have the feature enabled.
 		 */
 		if (
 			class_exists( BetaFeatures::class ) &&
@@ -36,7 +37,9 @@ class Hooks {
 				( new MimeTypeConfigurator( MediaWikiServices::getInstance()->getMimeAnalyzer() ) )
 					->getMimeTypes( $special->getConfig()->get( 'FileExtensions' ) )
 			);
-			$special->getOutput()->addJsConfigVars( 'advancedSearch.tooltips', TooltipGenerator::generateToolTips() );
+			$special->getOutput()->addJsConfigVars(
+				'advancedSearch.tooltips', TooltipGenerator::generateToolTips()
+			);
 		}
 	}
 
