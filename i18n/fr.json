@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Wladek92",
-			"Gomoko"
+			"Gomoko",
+			"DePlusJean"
 		]
 	},
 	"advancedsearch-desc": "Accès facile aux possibilités de recherche avancée sur [[Special:Search]]",
@@ -10,7 +11,7 @@
 	"advancedsearch-optgroup-text": "Rechercher dans le texte de la page",
 	"advancedsearch-optgroup-structure": "Structure",
 	"advancedsearch-optgroup-files": "Fichiers et images",
-	"advancedsearch-field-plain": "Ce mot :",
+	"advancedsearch-field-plain": "Ces mots :",
 	"advancedsearch-field-phrase": "Ce texte exactement :",
 	"advancedsearch-field-or": "Une de ces mots :",
 	"advancedsearch-field-not": "Pas ce mot :",
@@ -18,7 +19,6 @@
 	"advancedsearch-field-intitle": "Le titre de la page contient :",
 	"advancedsearch-field-deepcat": "Page dans cette catégorie :",
 	"advancedsearch-field-hastemplate": "Seulement les pages avec ce modèle :",
-	"advancedsearch-field-insource": "Le texte Wiki contient :",
 	"advancedsearch-field-filetype": "Type de fichier :",
 	"advancedsearch-field-filew": "Largeur du fichier en pixels :",
 	"advancedsearch-field-fileh": "Hauteur du fichier en pixels :",
@@ -28,8 +28,7 @@
 	"advancedsearch-help-not": "<dl> <dt>Description :</dt><dd> exclut les pages contenant ces mots de la recherche.</dd> <dt>Page d’aide :</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Mots, phrases et modificateurs]</dd> <dt>L’équivalent syntaxique en recherche normale est :</dt><dd>Des mots avec <code>-</code> devant eux, par exemple <code>-éléphant</code></dd></dl>",
 	"advancedsearch-help-intitle": "<dl><dt>Description :</dt><dd> recherche les pages dont le titre commence par ce mot</dd> <dt>Soyez attentifs aux points suivants : </dt><dd><ul> <li>La recherche inclut les redirections <li>La recherche de radical des mots est appliquée. Exemple : Si <em>car</em> est entré, la recherche prendra aussi en compte <em>cars</em>. La recherche de radical est spécifique à chaque langue.</li> </ul></dd> <dt>Help page:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#Intitle_and_incategory Dans le titre et dans la catégorie]</dd> <dt>L’équivalent syntaxique en recherche normale est :</dt><dd>des mots avec <code>intitle:</code> devant eux, comme <code>intitle:reine</code></dd></dl>",
 	"advancedsearch-help-hastemplate": "<dl><dt>Description :</dt><dd>cherche les pages qui contiennent exactement ce modèle.</dd> <dt>Soyez attentifs aux points suivants :</dt><dd>vous ne pouvez chercher que pour un modèle à la fois</dd> <dt>Page d’aide :</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#Hastemplate Hastemplate]</dd> <dt>L’équivalent syntaxique en recherche normale est :</dt><dd>mots entre guillemets avec <code>hastemplate:</code> devant eux, comme <code>hastemplate:\"information manquante\"</code></dd></dl>",
-	"advancedsearch-help-insource": "<dl><dt>Description :</dt><dd>ne cherche que le terme dans le code source.</dd> <dt>Faites attention aux points suivants : </dt><dd><ul> <li>à l’inverse des autres recherches de champs, les caractères non alphanumériques comme <code>`</code> et <code>[</code> seront pris en compte par la recherche. </li> <li>La recherche de radical des mots est appliquée. Exemple : Si <em>car</em> est saisi, la recherche prendra aussi en compte <em>cars</em>. La recherche de radical est spécifique à chaque langue.</li></ul></dd> <dt>Page d’aide :</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#Regular_expression_searches Recherches d’expression régulière]</dd> <dt>L’&quivalent syntaxique en recherche normale est :</dt><dd>des mots avec <code>insource:</code> devant, comme <code>insource:thumb</code></dd></dl>",
-	"advancedsearch-help-filetype": "<dl><dt>Description :</dt><dd> ne cherche que les fichiers du type sélectionné</dd> <dt>Faites attention aux points suivants : </dt><dd><ul> <li>vous ne pouvez chercher qu’un seul type de fichier</li> <li>vous pouvez sélectionner seulement les types de fichier fournis dans la liste déroulante</li></ul></dd> <dt>Pages d’aide :</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype Type de fichier] et [https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime Mime de fichier]</dd> <dt>L’équivalent syntaxique en recherche normale est :</dt><dd> des mots avec <code>filetype:</code> devant eux, comme <code>filetype:ogg</code></dd></dl>",
+	"advancedsearch-help-filetype": "<dl><dt>Description :</dt><dd>Recherche uniquement les fichiers du fichier sélectionné</dd> <dt>Faites attention aux points suivants : </dt><dd><ul> <li>Vous ne pouvez rechercher qu’un seul type de fichier.</li> <li>Vous pouvez sélectionner seulement les types de fichier fournis dans la liste déroulante</li></ul></dd> <dt>Pages d’aide :</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype Type de fichier] et [https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime type MIME]</dd> <dt>L’équivalent syntaxique en recherche normale est :</dt><dd> des mots avec <code>filetype:</code> devant eux, comme <code>filetype:ogg</code></dd></dl>",
 	"advancedsearch-help-filew": "<dl><dt>Description :</dt><dd> Ces champs vous permettent de spécifier la largeur du fichier.</dd> <dt>Faites attention aux points suivants : </dt> <dd>cela ne s’applique qu’aux types de fichier qui ont une largeur et une hauteur, comme les vidéos et  les images.</dd> <dt>Page d’aide :</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Mesures de fichier]</dd> <dt>L’équivalent syntaxique en recherche normale est :</dt><dd>des nombres avec <code>filew</code> devant eux, comme <code>filew:>800</code></dd></dl>",
 	"advancedsearch-help-fileh": "<dl><dt>Description :</dt><dd> Ces champs vous permettent de spécifier la hauteur du fichier.</dd> <dt>Faites attention aux points suivants : </dt> <dd>cela ne s’applique qu’aux types de fichier qui ont une largeur et une hauteur, comme les vidéos et les images.</dd> <dt>Page d’aide :</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Mesures de fichier]</dd> <dt>L’équivalent syntaxique en recherche normale est :</dt><dd>des nombres avec <code>fileh</code> devant eux, comme <code>fileh:>600</code></dd></dl>",
 	"advancedSearch-placeholder-commas": "Saisir des mots séparés par des virgules, par ex. chats, chatons, …",

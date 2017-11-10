@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"زكريا"
+			"زكريا",
+			"Meno25"
 		]
 	},
 	"advancedsearch-desc": "استعمال البحث المتقدم في [[Special:Search]]",
@@ -9,19 +10,27 @@
 	"advancedsearch-optgroup-text": "البحث في الصفحة",
 	"advancedsearch-optgroup-structure": "التهيئة",
 	"advancedsearch-optgroup-files": "الملفات والصور",
-	"advancedsearch-field-plain": "هذه الكلمة:",
+	"advancedsearch-field-plain": "هذه الكلمات:",
 	"advancedsearch-field-phrase": "هذا النص بعينه:",
 	"advancedsearch-field-or": "إحدى هذه الكلمات:",
-	"advancedsearch-field-not": "دون هذه الكلمة:",
+	"advancedsearch-field-not": "دون هذه الكلمات:",
 	"advancedsearch-field-subpage": "الصفحات الفرعية من هذه الصفحة:",
 	"advancedsearch-field-intitle": "عنوان الصفحة فيه:",
 	"advancedsearch-field-deepcat": "صفحة من هذا التصنيف:",
 	"advancedsearch-field-hastemplate": "الصفحات المستعمل فيها هذا القالب:",
-	"advancedsearch-field-insource": "النص الخام فيه:",
 	"advancedsearch-field-filetype": "صيغة الملف:",
 	"advancedsearch-field-filew": "عرض الملف بالبكسل:",
 	"advancedsearch-field-fileh": "طول الملف بالبكسل:",
 	"advancedsearch-help-plain": "<dl> <dtشرح:</dt><dd>نتائج البحث عن هذه الكلمات في العناوين والنصوص.</dd> <dt>:اعلم</dt><dd><ul> <li>أن البحث ممكن عن عدة كلمات.</li> <li>ما سوى الحروف والأرقام والنقطة والفاصلة لا يدخل في البحث.</li> <li>لا ترد في بعض النتائج كلمة من الكلمات البحث أو أكثر.</li> <li>البحث يراعي أصول الكلمات، مثلا البحث عن <em>سيارة</em> يشمل أيضا <em>سيارات</em>.</li></ul></dd> <dt>صفحة المسعدة:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search Full text search] <dt>المعادل في البحث العادي:</dt><dd><code>سيارة سريعة للأطفال</code></dd> </dl>",
+	"advancedsearch-help-phrase": "<dl><dt>وصف:</dt><dd>عمليات بحث عن تتابع معين من الحروف. علامات الترقيم يتم تجاهلها.</dd> <dt>كن على علم بالتالي: </dt><dd><ul> <li>البحث ليس حساسا لحالة الحروف.</li> <li>علامات الترقيم (باستثناء الفاصلة) سيتم تجاهلها.</li> <li>منابع الكلمات لا تعمل هنا.</li></ul></dd> <dt>صفحة المساعدة:<dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers الكلمات والجمل والمعدلات]</dd> <dt>الصياغة المعادلة في البحث العادي:</dt><dd> الكلمات في <code>\" \"</code>، كمثال <code>\"Begin at the beginning\".</code></dd> </dl>",
+	"advancedsearch-help-or": "<dl><dt>وصف:</dt><dd>على الأقل واحدة من مصطلحات البحث ينبغي تضمينها في الصفحة.</dd> <dt>صفحة المساعدة:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers الكلمات والجمل والمعدلات]</dd> <dt>الصياغة المكافئة في البحث العادي:</dt><dd> الكلمات ب <code>OR</code> فيما بينها مثل <code>Laptop OR Notebook</code>.</dd></dl>",
+	"advancedsearch-help-not": "<dl><dt>وصف:</dt><dd>يستثني الصفحات المحتوية على هذه الكلمات من البحث.</dd> <dt>كن على علم بالتالي: </dt><dd><ul> <li>منابع الكلمات يتم تطبيقها. مثال: لو تم إدخال <em>car</em>، فالبحث أيضا سيشمل <em>cars</em>. منابع الكلمات معتمدة على اللغة.</li> </ul></dd> <dt>صفحة المساعدة:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers الكلمات والجمل والمعدلات]</dd> <dt>الصياغة المكافئة في البحث العادي:</dt><dd>الكلمات ب <code>-</code> قبلها، كمثال <code>-elephant</code>.</dd></dl>",
+	"advancedsearch-help-intitle": "<dl><dt>وصف:</dt><dd>عمليات البحث عن الصفحات بعناين تبدأ بهذه الكلمة.</dd> <dt>كن على علم بالتالي: </dt><dd><ul> <li>البحث يشمل التحويلات.</li> <li>منابع الكلمات يتم تطبيقها. مثال: لو تم إدخال <em>car</em>، فالبحث سيشمل أيضا <em>cars</em>. منابع الكلمات معمدة على اللغة.</li> </ul></dd> <dt>صفحة المساعدة:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#Intitle_and_incategory في العنوان وفي التصنيف]</dd> <dt>الصياغة المكافئة في البحث العادي:</dt><dd>الكلمات ب <code>intitle:</code> قبلها مثل <code>intitle:queen</code>.</dd></dl>",
+	"advancedsearch-help-hastemplate": "<dl><dt>وصف:</dt><dd>البحث عن الصفحات التي تحتوي على هذا القالب.</dd> <dt>كن على علم بالتالي:</dt><dd><ul> <li>يمكنك البحث عن قالب واحد فقط في المرة.</li> </ul></dd> <dt>صفحة المساعدة:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#Hastemplate لديه قالب]</dd> <dt>الصياغة المكافئة في البحث العادي:</dt><dd>الكلمات بعلامات تنصيص مع <code>hastemplate:</code> قبلها مثل <code>hastemplate:\"missing information\"</code>.</dd></dl>",
+	"advancedsearch-help-filetype": "<dl><dt>وصف:</dt><dd>عمليات البحث فقط عن الملفات بالنوع المختار.</dd> <dt>كن على علم بالتالي: </dt><dd><ul> <li>يمكنك فقط البحث عن نوع ملف واحد.</li> <li>يمكنك فقط اختيار أنواع الملفات المعطاة من القائمة المنسدلة.</li></ul></dd> <dt>صفحات المساعدة:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype نوع الملف] و [https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime ميم الملف]</dd> <dt>الصياغة المكافئة في البحث العادي:</dt><dd>الكلمات ب <code>filetype:</code>قبلها مثل <code>filetype:ogg</code>.</dd></dl>",
+	"advancedsearch-help-filew": "<dl><dt>وصف:</dt><dd>هذه الحقول تسمح لك بتحديد عرض الملف.</dd> <dt>كن على علم بالتالي: </dt><dd><ul> <li>هذا مطبق فقط على أنواع الملفات التي لديها عرض وارتفاع، مثل الفيديو والصور.</li></ul></dd> <dt>صفحة المساعدة:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures مقاييس الملف]</dd> <dt>الصياغة المكافئة في البحث العادي:</dt><dd>الأرقام ب <code>filew</code> قبلها مثل <code>filew:>800</code>.</dd></dl>",
+	"advancedsearch-help-fileh": "<dl><dt>وصف:</dt><dd>هذه الحقول تسمح لك بتحديد ارتفاع الملف.</dd> <dt>كن على علم بالتالي: </dt><dd><ul> <li>هذا مطبق فقط على أنواع الملفات التي لديها عرض وارتفاع، مثل الفيديو والصور.</li></ul></dd> <dt>صفحة المساعدة:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures مقاييس الملف]</dd> <dt>الصياغة المكافئة في البحث العادي:</dt><dd>الأرقام ب <code>fileh</code> قبلها مثل <code>fileh:>600</code>.</dd></dl>",
+	"advancedSearch-placeholder-commas": "اكتب الكلمات مفصلة بفاصلة مثال قطط, عنزات, ...",
 	"advancedsearch-filetype-section-types": "صيغة الملف",
 	"advancedsearch-filetype-section-image": "صيغة الصورة",
 	"advancedsearch-filetype-section-video": "صيغة الفيديو",
