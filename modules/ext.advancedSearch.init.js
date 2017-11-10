@@ -318,6 +318,16 @@
 		return queryElements;
 	}
 
+	/**
+	 * @return {string}
+	 */
+	function getSearchOriginal() {
+		var searchFieldOriginal = mw.util.getParamValue( 'search' ),
+			advancedSearchOriginal = mw.util.getParamValue( 'advancedSearchOption-original' );
+
+		return advancedSearchOriginal === null ? searchFieldOriginal : advancedSearchOriginal;
+	}
+
 	var $search = $( 'form#search, form#powersearch' ),
 		$advancedSearch = $( '<div>' ).addClass( 'mw-advancedSearch-container' ),
 		$searchField = $search.find( 'input[name="search"]' ),
@@ -325,7 +335,7 @@
 
 	$search.append( $advancedSearch );
 
-	$searchField.val( mw.util.getParamValue( 'advancedSearchOption-original' ) );
+	$searchField.val( getSearchOriginal() );
 
 	function createWidget( option ) {
 		var initializationFunction = option.init ||
