@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"KATRINE1992"
+		]
+	},
+	"advancedsearch-field-plain": "Αυτές οι λέξεις:",
+	"advancedsearch-field-not": "Οχι αυτές οι λέξεις:",
+	"advancedsearch-help-not": "<dl><dt>Περιγραφή:</dt><dd>Eμποδίζει την εμφάνιση των σελίδων που περιέχουν αυτές τις λέξεις από την αναζήτηση.</dd> <dt>Έχετε υπόψη τα ακόλουθα: </dt><dd><ul> <li>Ισχύει το παράγωγο της λέξης. Παράδειγμα: Αν εισαχθεί το <em>car</em>, η αναζήτηση θα περιέχει το <em>cars</em>. Η λέξη παράγωγο είναι εξειδικευμένη γλώσσα.</li> </ul></dd> <dt>Help page:</dt><dd>[https://www.mediawiki.org/wiki/Βοήθεια:CirrusSearch#Words.2C_phrases.2C_and_modifiers Λέξεις, φράσεις και τροποποιήσεις ]</dd> <dt>Σύνταξη που ισοδυναμεί με την κανονική αναζήτηση-:</dt><dd>Λέξεις με<code>-</code> πριν από αυτές, για παράδειγμα  <code>-elephant</code>.</dd></dl>"
+}
