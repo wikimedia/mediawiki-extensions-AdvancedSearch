@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Elisardojm"
+			"Elisardojm",
+			"Banjo"
 		]
 	},
 	"advancedsearch-desc": "Acceso sinxelo a capacidades de busca avanzadas en [[Special:Search]]",
@@ -9,10 +10,10 @@
 	"advancedsearch-optgroup-text": "Buscar no texto da páxina",
 	"advancedsearch-optgroup-structure": "Estrutura",
 	"advancedsearch-optgroup-files": "Ficheiros e imaxes",
-	"advancedsearch-field-plain": "Esta palabra:",
+	"advancedsearch-field-plain": "Estas palabras:",
 	"advancedsearch-field-phrase": "Exactamente este texto:",
 	"advancedsearch-field-or": "Unha destas palabrasː",
-	"advancedsearch-field-not": "Sen esta palabraː",
+	"advancedsearch-field-not": "Sen estas palabras:",
 	"advancedsearch-field-subpage": "Subpáxinas desta páxinaː",
 	"advancedsearch-field-intitle": "O título da páxina conténː",
 	"advancedsearch-field-deepcat": "Páxina nesta categoríaː",
