@@ -7,11 +7,12 @@
 	"advancedsearch-optgroup-text": "Meklēt lapas tekstā",
 	"advancedsearch-optgroup-structure": "Struktūra",
 	"advancedsearch-optgroup-files": "Faili un attēli",
+	"advancedsearch-field-plain": "Šie vārdi:",
+	"advancedsearch-field-not": "Bez šiem vārdiem:",
 	"advancedsearch-filetype-section-image": "Attēla formāts",
 	"advancedsearch-filetype-section-video": "Video formāts",
 	"advancedsearch-filetype-bitmap": "Attēls",
 	"advancedsearch-filetype-vector": "Zīmējums",
 	"advancedsearch-filetype-audio": "Audio",
-	"advancedsearch-filetype-video": "Video",
-	"advancedsearch-filetype-document": "Dokuments"
+	"advancedsearch-filetype-video": "Video"
 }
