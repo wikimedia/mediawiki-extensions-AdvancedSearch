@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Alexey zakharenkov",
-			"Kareyac"
+			"Kareyac",
+			"Wirbel78"
 		]
 	},
+	"advancedsearch-field-plain": "Эти слова:",
 	"advancedsearch-field-or": "Одно из этих слов:",
-	"advancedsearch-field-not": "Исключая это слово:",
+	"advancedsearch-field-not": "Не эти слова:",
 	"advancedsearch-field-subpage": "Подстраницы данной страницы:",
 	"advancedsearch-field-intitle": "Заголовок страницы содержит:",
-	"advancedsearch-filetype-bitmap": "Изображение",
-	"advancedsearch-filetype-document": "Документ"
+	"advancedsearch-filetype-bitmap": "Изображение"
 }

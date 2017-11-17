@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Muhammad Shuaib",
+			"Zainab Meher"
+		]
+	},
+	"advancedsearch-options-pane-head": "اضافی پیرامیٹر:",
+	"advancedsearch-optgroup-structure": "ساخت",
+	"advancedsearch-optgroup-files": "فائلیں اور تصویریں",
+	"advancedsearch-field-plain": "یہ الفاظ:",
+	"advancedsearch-field-not": "یہ الفاظ نہیں",
+	"advancedSearch-placeholder-commas": "وہ الفاظ درج کریں جنہیں سکتہ لگا کر الگ کیا گیاہے مثلاً۔بلیاں،بکریاں،۔۔۔",
+	"advancedsearch-filetype-bitmap": "تصویر",
+	"advancedSearch-namespaces-preset-all": "تمام"
+}
