@@ -2,15 +2,45 @@
 	"@metadata": {
 		"authors": [
 			"Muhammad Shuaib",
-			"Zainab Meher"
+			"Zainab Meher",
+			"BukhariSaeed"
 		]
 	},
+	"advancedsearch-desc": "[[Special:Search|خاص:تلاش]] پر ایڈوانس تلاش صلاحیتوں تک آسان رسائی",
 	"advancedsearch-options-pane-head": "اضافی پیرامیٹر:",
+	"advancedsearch-optgroup-text": "صفحے کے متن میں تلاش",
 	"advancedsearch-optgroup-structure": "ساخت",
 	"advancedsearch-optgroup-files": "فائلیں اور تصویریں",
 	"advancedsearch-field-plain": "یہ الفاظ:",
+	"advancedsearch-field-phrase": "ہوبہو یہی متن:",
+	"advancedsearch-field-or": "ان الفاظ میں سے ایک:",
 	"advancedsearch-field-not": "یہ الفاظ نہیں",
+	"advancedsearch-field-subpage": "اس صفحے کے ذیلی صفحات:",
+	"advancedsearch-field-intitle": "صفحہ کا عنوان مشتمل ہے:",
+	"advancedsearch-field-deepcat": "اس زمرے میں صفحہ:",
+	"advancedsearch-field-hastemplate": "اس سانچے کا استعمال کرنے والے صفحات:",
+	"advancedsearch-field-filetype": "فائل کی قسم:",
+	"advancedsearch-field-filew": "پکسلز میں فائل کی چوڑائی:",
+	"advancedsearch-field-fileh": "پکسلز میں فائل کی اونچائی:",
 	"advancedSearch-placeholder-commas": "وہ الفاظ درج کریں جنہیں سکتہ لگا کر الگ کیا گیاہے مثلاً۔بلیاں،بکریاں،۔۔۔",
+	"advancedsearch-filetype-section-types": "عمومی فائل کی قسم",
+	"advancedsearch-filetype-section-image": "تصویر فارمیٹ",
+	"advancedsearch-filetype-section-video": "وڈیو فارمیٹ",
+	"advancedsearch-filetype-section-audio": "آڈیو فارمیٹ",
+	"advancedsearch-filetype-section-document": "دستاویز فارمیٹ",
+	"advancedsearch-filetype-section-other": "دیگر فارمیٹس",
 	"advancedsearch-filetype-bitmap": "تصویر",
-	"advancedSearch-namespaces-preset-all": "تمام"
+	"advancedsearch-filetype-vector": "ڈرائنگ",
+	"advancedsearch-filetype-audio": "آڈیو",
+	"advancedsearch-filetype-video": "وڈیو",
+	"advancedsearch-filetype-multimedia": "ملٹی میڈیا",
+	"advancedsearch-filetype-office": "آفس",
+	"advancedSearch-filesize-equals": "کے برابر",
+	"advancedSearch-filesize-greater-than": "سے برتر",
+	"advancedSearch-filesize-smaller-than": "سے کم تر",
+	"advancedSearch-namespaces-articles": "مضامین",
+	"advancedSearch-namespaces-search-in": "تلاش در:",
+	"advancedSearch-namespaces-preset-all": "تمام",
+	"advancedSearch-beta-feature-message": "ایڈوانس تلاش انٹرفیس",
+	"advancedSearch-beta-feature-description": "[[Special:Search|خاص:تلاش]] پر ایڈوانس تلاش صلاحیتوں تک آسان رسائی۔"
 }

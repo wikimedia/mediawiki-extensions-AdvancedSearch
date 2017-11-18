@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Tokoabibi"
+			"Tokoabibi",
+			"Bunukwiki"
 		]
 	},
-	"advancedsearch-filetype-multimedia": "kayadah-myiti"
+	"advancedsearch-filetype-bitmap": "zunga",
+	"advancedsearch-filetype-multimedia": "kayadah-myiti",
+	"advancedSearch-namespaces-preset-all": "hamin"
 }
