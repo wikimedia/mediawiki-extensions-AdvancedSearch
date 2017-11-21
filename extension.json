@@ -24,9 +24,6 @@
 		"SpecialPageBeforeExecute": [
 			"AdvancedSearch\\Hooks::onSpecialPageBeforeExecute"
 		],
-		"SpecialSearchPowerBox": [
-			"AdvancedSearch\\Hooks::onSpecialSearchPowerBox"
-		],
 		"SpecialSearchProfiles": [
 			"AdvancedSearch\\Hooks::onSpecialSearchProfiles"
 		]
