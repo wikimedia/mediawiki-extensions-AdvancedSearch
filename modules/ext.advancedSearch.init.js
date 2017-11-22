@@ -404,7 +404,8 @@
 
 	var pane = new mw.libs.advancedSearch.ui.ExpandablePane( {
 		$paneContent: $allOptions,
-		$buttonLabel: searchPreview.$element
+		$buttonLabel: searchPreview.$element,
+		tabIndex: 0
 	} );
 	pane.on( 'change', function () {
 		if ( pane.isOpen() ) {

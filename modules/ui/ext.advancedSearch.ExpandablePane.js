@@ -35,10 +35,30 @@
 		this.$btn = $( '<div></div>' )
 			.addClass( 'oo-ui-buttonElement-button' )
 			.addClass( 'mw-advancedSearch-expandablePane-button' )
-			.on( 'click', function () { self.onButtonClick(); } );
+			.on( 'click keypress', function ( e ) {
+				var code = e.keyCode || e.which;
+				if (
+					code === 13 || // enter
+					code === 108 || // numpad enter
+					code === 32 || // space
+					code === 33 || // page up
+					code === 34 || // page down
+					code === 38 || // arrow up
+					code === 40 || // arrow down
+					code === 1 // left mouse
+				) {
+					// will avoid scrolling with space, arrows and page keys
+					e.preventDefault();
+					self.onButtonClick();
+				}
+			} );
 
 		this.$dependentPane = $( '<div></div>' )
 			.addClass( 'mw-advancedSearch-expandablePane-pane' );
+
+		if ( config.hasOwnProperty( 'tabIndex' ) ) {
+			this.$btn.prop( 'tabindex', parseInt( config.tabIndex ) );
+		}
 
 		if ( config.$buttonLabel ) {
 			this.$btn.append( config.$buttonLabel );
