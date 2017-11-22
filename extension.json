@@ -46,6 +46,11 @@
 			"styles": [
 				"modules/ext.advancedSearch.css"
 			],
+			"skinStyles": {
+				"timeless": [
+					"modules/ext.advancedSearch.timeless.css"
+				]
+			},
 			"messages": [
 				"advancedsearch-options-pane-head",
 				"advancedsearch-optgroup-text",

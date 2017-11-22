@@ -1,0 +1,9 @@
+/* Overwrite timeless padding to OO default to fit general layout */
+.mw-advancedSearch-container input {
+	padding: 0.625em 0.625em 0.546875em;
+}
+
+/* Disable overflow to fully show search forms */
+.mw-advancedSearch-fieldContainer fieldset {
+	overflow: inherit;
+}
