@@ -120,8 +120,8 @@
 
 		model.storeOption( 'filetype', 'random' );
 
-		assert.deepEqual( model.getOption( 'filew' ), [ '>', '' ] );
-		assert.deepEqual( model.getOption( 'fileh' ), [ '>', '' ] );
+		assert.deepEqual( model.getOption( 'filew' ), undefined );
+		assert.deepEqual( model.getOption( 'fileh' ), undefined );
 	} );
 
 	QUnit.test( 'File dimension data containers reset on filetype remove', function ( assert ) {
@@ -134,8 +134,8 @@
 
 		model.removeOption( 'filetype' );
 
-		assert.deepEqual( model.getOption( 'filew' ), [ '>', '' ] );
-		assert.deepEqual( model.getOption( 'fileh' ), [ '>', '' ] );
+		assert.deepEqual( model.getOption( 'filew' ), undefined );
+		assert.deepEqual( model.getOption( 'fileh' ), undefined );
 	} );
 
 	QUnit.test( 'Image and Video file types support dimensions', function ( assert ) {
