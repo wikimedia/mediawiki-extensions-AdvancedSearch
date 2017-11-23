@@ -23,9 +23,6 @@
 		],
 		"SpecialPageBeforeExecute": [
 			"AdvancedSearch\\Hooks::onSpecialPageBeforeExecute"
-		],
-		"SpecialSearchProfiles": [
-			"AdvancedSearch\\Hooks::onSpecialSearchProfiles"
 		]
 	},
 	"MessagesDirs": {
