@@ -47,9 +47,11 @@ class Hooks {
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SpecialSearchProfiles
 	 *
 	 * @param array[] &$profiles
+	 * @return bool
 	 */
 	public static function onSpecialSearchProfiles( array &$profiles ) {
 		$profiles = [];
+		return false;
 	}
 
 	/**
