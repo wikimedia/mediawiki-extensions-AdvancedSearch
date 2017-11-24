@@ -58,8 +58,8 @@ class Hooks {
 				'ltr' => "$extensionAssetsPath/AdvancedSearch/resources/AdvancedSearch-beta-features-ltr.svg",
 				'rtl' => "$extensionAssetsPath/AdvancedSearch/resources/AdvancedSearch-beta-features-rtl.svg",
 			],
-			'info-link' => 'https://www.mediawiki.org/wiki/Help:AdvancedSearch',
-			'discussion-link' => 'https://www.mediawiki.org/wiki/Help_talk:AdvancedSearch',
+			'info-link' => 'https://www.mediawiki.org/wiki/Help:Extension:AdvancedSearch',
+			'discussion-link' => 'https://www.mediawiki.org/wiki/Help_talk:Extension:AdvancedSearch',
 		];
 	}
 
