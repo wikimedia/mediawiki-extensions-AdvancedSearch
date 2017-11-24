@@ -336,6 +336,7 @@
 	$search.append( $advancedSearch );
 
 	$searchField.val( getSearchOriginal() );
+	$searchField.focus();
 
 	function createWidget( option ) {
 		var initializationFunction = option.init ||
