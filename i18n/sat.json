@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ramjit Tudu"
+		]
+	},
+	"advancedsearch-optgroup-text": "ᱥᱟᱦᱴᱟ ᱚᱞ ᱨᱮ ᱥᱮᱸᱫᱽᱨᱟ",
+	"advancedsearch-field-plain": "ᱱᱩᱠᱩ ᱟᱹᱲᱟᱹᱠᱚ:",
+	"advancedsearch-field-phrase": "ᱱᱚᱶᱟ ᱚᱞ ᱩᱛᱟᱹᱨᱜᱮ:",
+	"advancedsearch-field-or": "ᱱᱩᱠᱩ ᱟᱹᱲᱟᱹ ᱠᱷᱚᱱ ᱢᱤᱫᱴᱟᱝ",
+	"advancedsearch-field-not": "ᱱᱩᱠᱩ ᱟᱹᱲᱟᱹᱫᱚ ᱵᱟᱝ:",
+	"advancedsearch-field-filetype": "ᱨᱮᱫ ᱞᱮᱠᱟᱱᱟᱜ:",
+	"advancedsearch-filetype-multimedia": "ᱢᱚᱞᱴᱤᱢᱮᱰᱤᱭᱟ",
+	"advancedsearch-filetype-office": "ᱩᱯᱤᱥ",
+	"advancedSearch-filesize-equals": "ᱥᱚᱢᱟᱱ",
+	"advancedSearch-filesize-greater-than": "ᱠᱷᱚᱱ ᱢᱟᱨᱟᱝ",
+	"advancedSearch-filesize-smaller-than": "ᱠᱷᱚᱱ ᱦᱩᱰᱤᱧ",
+	"advancedSearch-namespaces-articles": "ᱚᱱᱚᱞᱠᱚ",
+	"advancedSearch-namespaces-search-in": "ᱥᱮᱸᱫᱽᱨᱟ ᱨᱮ:",
+	"advancedSearch-namespaces-preset-all": "ᱡᱚᱛᱚ",
+	"advancedSearch-beta-feature-message": "ᱵᱟᱹᱲᱛᱤ ᱥᱮᱸᱫᱽᱨᱟ ᱟᱹᱱᱟᱹᱨᱩ"
+}
