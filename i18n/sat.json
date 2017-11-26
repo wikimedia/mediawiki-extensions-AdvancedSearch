@@ -5,11 +5,13 @@
 		]
 	},
 	"advancedsearch-optgroup-text": "ᱥᱟᱦᱴᱟ ᱚᱞ ᱨᱮ ᱥᱮᱸᱫᱽᱨᱟ",
+	"advancedsearch-optgroup-files": "ᱨᱮᱫᱠᱚ ᱟᱨ ᱪᱩᱛᱟᱹᱨᱠᱚ",
 	"advancedsearch-field-plain": "ᱱᱩᱠᱩ ᱟᱹᱲᱟᱹᱠᱚ:",
 	"advancedsearch-field-phrase": "ᱱᱚᱶᱟ ᱚᱞ ᱩᱛᱟᱹᱨᱜᱮ:",
 	"advancedsearch-field-or": "ᱱᱩᱠᱩ ᱟᱹᱲᱟᱹ ᱠᱷᱚᱱ ᱢᱤᱫᱴᱟᱝ",
 	"advancedsearch-field-not": "ᱱᱩᱠᱩ ᱟᱹᱲᱟᱹᱫᱚ ᱵᱟᱝ:",
 	"advancedsearch-field-filetype": "ᱨᱮᱫ ᱞᱮᱠᱟᱱᱟᱜ:",
+	"advancedsearch-field-filew": "ᱨᱮᱫ ᱚᱥᱟᱨ ᱯᱤᱠᱥᱮᱞᱨᱮ:",
 	"advancedsearch-filetype-multimedia": "ᱢᱚᱞᱴᱤᱢᱮᱰᱤᱭᱟ",
 	"advancedsearch-filetype-office": "ᱩᱯᱤᱥ",
 	"advancedSearch-filesize-equals": "ᱥᱚᱢᱟᱱ",
