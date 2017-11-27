@@ -83,6 +83,7 @@
 				"ext.advancedSearch.util",
 				"ext.advancedSearch.dm.SearchModel",
 				"ext.advancedSearch.dm.FileTypeOptionProvider",
+				"ext.advancedSearch.dm.trackingEvents.SearchRequest",
 				"ext.advancedSearch.ui.ArbitraryWordInput",
 				"ext.advancedSearch.ui.FileTypeSelection",
 				"ext.advancedSearch.ui.FormState",
@@ -228,11 +229,22 @@
 				"ext.advancedSearch.util"
 			]
 		},
+		"ext.advancedSearch.dm.trackingEvents.SearchRequest": {
+			"scripts": [
+				"modules/dm/trackingEvents/ext.advancedSearch.SearchRequest.js"
+			],
+			"dependencies": [
+				"oojs-ui"
+			]
+		},
 		"ext.advancedSearch.util": {
 			"scripts": [
 				"modules/ext.advancedSearch.util.js"
 			]
 		}
+	},
+	"EventLoggingSchemas": {
+		"AdvancedSearchRequest": 17379859
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",

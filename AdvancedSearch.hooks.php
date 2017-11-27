@@ -72,7 +72,8 @@ class Hooks {
 				'tests/qunit/ui/SearchPreview.test.js',
 				'tests/qunit/ui/TemplateSearch.test.js',
 				'tests/qunit/dm/SearchModel.test.js',
-				'tests/qunit/dm/FileTypeOptionProvider.test.js'
+				'tests/qunit/dm/FileTypeOptionProvider.test.js',
+				'tests/qunit/dm/trackingEvents/SearchRequest.test.js'
 			],
 			'dependencies' => [
 				'ext.advancedSearch.ui.ArbitraryWordInput',
@@ -82,6 +83,7 @@ class Hooks {
 				'ext.advancedSearch.ui.TemplateSearch',
 				'ext.advancedSearch.dm.SearchModel',
 				'ext.advancedSearch.dm.FileTypeOptionProvider',
+				'ext.advancedSearch.dm.trackingEvents.SearchRequest',
 				'oojs-ui'
 			],
 			'localBasePath' => __DIR__,

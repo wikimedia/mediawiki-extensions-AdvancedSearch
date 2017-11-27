@@ -337,6 +337,12 @@
 
 	$searchField.val( getSearchOriginal() );
 
+	$search.on( 'submit', function () {
+		var trackingEvent = new mw.libs.advancedSearch.dm.trackingEvents.SearchRequest();
+		trackingEvent.populateFromStoreOptions( state.getOptions() );
+		mw.track( 'event.' + trackingEvent.getEventName(), trackingEvent.getEventData() );
+	} );
+
 	function createWidget( option ) {
 		var initializationFunction = option.init ||
 			function () {
