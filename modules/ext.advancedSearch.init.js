@@ -336,6 +336,7 @@
 	$search.append( $advancedSearch );
 
 	$searchField.val( getSearchOriginal() );
+	$searchField.focus();
 
 	$search.on( 'submit', function () {
 		var trackingEvent = new mw.libs.advancedSearch.dm.trackingEvents.SearchRequest();
