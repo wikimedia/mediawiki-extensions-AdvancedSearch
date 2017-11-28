@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hinaloe"
+		]
+	},
+	"advancedsearch-optgroup-structure": "書式",
+	"advancedsearch-optgroup-files": "ファイルと画像",
+	"advancedsearch-field-filetype": "ファイル形式:",
+	"advancedsearch-filetype-section-image": "画像",
+	"advancedsearch-filetype-section-video": "動画",
+	"advancedsearch-filetype-section-audio": "音声",
+	"advancedsearch-filetype-bitmap": "画像",
+	"advancedsearch-filetype-audio": "音声",
+	"advancedsearch-filetype-video": "動画",
+	"advancedsearch-filetype-multimedia": "マルチメディア",
+	"advancedsearch-filetype-office": "オフィス",
+	"advancedSearch-filesize-equals": "等しい",
+	"advancedSearch-filesize-smaller-than": "未満",
+	"advancedSearch-namespaces-articles": "記事",
+	"advancedSearch-namespaces-preset-all": "すべて",
+	"advancedSearch-beta-feature-message": "高度な検索インタフェース"
+}

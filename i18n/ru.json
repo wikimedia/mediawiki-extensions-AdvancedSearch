@@ -3,7 +3,8 @@
 		"authors": [
 			"Alexey zakharenkov",
 			"Kareyac",
-			"Wirbel78"
+			"Wirbel78",
+			"4elovek12345"
 		]
 	},
 	"advancedsearch-field-plain": "Эти слова:",
@@ -11,5 +12,9 @@
 	"advancedsearch-field-not": "Не эти слова:",
 	"advancedsearch-field-subpage": "Подстраницы данной страницы:",
 	"advancedsearch-field-intitle": "Заголовок страницы содержит:",
+	"advancedsearch-filetype-section-types": "Типы внешних файлов:",
+	"advancedsearch-filetype-section-video": "Форматы видео-файлов",
+	"advancedsearch-filetype-section-audio": "Форматы аудио-файлов",
+	"advancedsearch-filetype-section-document": "Форматы документов",
 	"advancedsearch-filetype-bitmap": "Изображение"
 }

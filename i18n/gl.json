@@ -21,6 +21,7 @@
 	"advancedsearch-field-filetype": "Tipo de ficheiroː",
 	"advancedsearch-field-filew": "Ancho do ficheiro en pixelsː",
 	"advancedsearch-field-fileh": "Alto do ficheiro en pixelsː",
+	"advancedSearch-placeholder-commas": "Escriba palabras separadas por comas: p. ex., gatos, cabras…",
 	"advancedsearch-filetype-section-types": "Tipo de ficheiro xenérico",
 	"advancedsearch-filetype-section-image": "Formato de imaxe",
 	"advancedsearch-filetype-section-video": "Formato de vídeo",

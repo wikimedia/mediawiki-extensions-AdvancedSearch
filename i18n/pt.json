@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"MokaAkashiyaPT"
 		]
 	},
 	"advancedsearch-desc": "Acesso fácil a capacidades de pesquisa avançada em [[Special:Search]]",
@@ -9,10 +10,10 @@
 	"advancedsearch-optgroup-text": "Pesquisar no texto da página",
 	"advancedsearch-optgroup-structure": "Estrutura",
 	"advancedsearch-optgroup-files": "Ficheiros e imagens",
-	"advancedsearch-field-plain": "Esta palavra:",
+	"advancedsearch-field-plain": "Estas palavras:",
 	"advancedsearch-field-phrase": "Este texto exato:",
 	"advancedsearch-field-or": "Uma destas palavras:",
-	"advancedsearch-field-not": "Sem esta palavra:",
+	"advancedsearch-field-not": "Sem estas palavras:",
 	"advancedsearch-field-subpage": "Subpáginas desta página:",
 	"advancedsearch-field-intitle": "O título da página contém:",
 	"advancedsearch-field-deepcat": "Página nesta categoria:",

@@ -2,22 +2,23 @@
 	"@metadata": {
 		"authors": [
 			"Liuxinyu970226",
-			"NeverBehave"
+			"NeverBehave",
+			"Yfdyh000"
 		]
 	},
-	"advancedsearch-desc": "在[[Special:Search]]简易访问高级搜索功能",
+	"advancedsearch-desc": "在[[Special:Search]]提供高级搜索功能的轻松访问",
 	"advancedsearch-options-pane-head": "高级参数：",
 	"advancedsearch-optgroup-text": "在页面文本中搜索",
 	"advancedsearch-optgroup-structure": "结构",
 	"advancedsearch-optgroup-files": "文件和图片",
 	"advancedsearch-field-plain": "这些词：",
-	"advancedsearch-field-phrase": "恰好是此词：",
+	"advancedsearch-field-phrase": "精确匹配这些词：",
 	"advancedsearch-field-or": "这些词之一：",
-	"advancedsearch-field-not": "不是这些词：",
+	"advancedsearch-field-not": "不含这些词：",
 	"advancedsearch-field-subpage": "此页面的子页面：",
 	"advancedsearch-field-intitle": "页面标题包含：",
 	"advancedsearch-field-deepcat": "此分类中的页面：",
-	"advancedsearch-field-hastemplate": "有此模板的唯一页面：",
+	"advancedsearch-field-hastemplate": "含此模板的页面：",
 	"advancedsearch-field-filetype": "文件格式：",
 	"advancedsearch-field-filew": "文件宽度（像素）：",
 	"advancedsearch-field-fileh": "文件高度（像素）：",
@@ -30,7 +31,7 @@
 	"advancedsearch-help-filetype": "<dl><dt>描述：</dt><dd>只搜索选定类型的文件。</dd> <dt>请注意以下说明：</dt><dd><ul> <li>您只可以搜索一个文件类型。</li> <li>您只可以选择下拉菜单中指定的文件类型。</li></ul></dd> <dt>帮助页面：</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype 文件类型]和[https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime 文件mime]</dd> <dt>在普通搜索中具有相同功能的语法：</dt><dd>词前包含<code>filetype:</code>的词，例如<code>filetype:ogg</code>。</dd></dl>",
 	"advancedsearch-help-filew": "<dl><dt>描述：</dt><dd>这些字段允许您指定文件宽度。</dd> <dt>请注意以下说明：</dt><dd><ul> <li>这只应用到有宽和高的文件类型，例如视频和图片。</li></ul></dd> <dt>帮助页面：</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures 文件度量]</dd> <dt>在普通搜索中具有相同功能的语法：</dt><dd>前面带<code>filew</code>的数字，例如<code>filew:>800</code>。</dd></dl>",
 	"advancedsearch-help-fileh": "<dl><dt>描述：</dt><dd>这些字段允许您指定文件高度。</dd> <dt>请注意以下说明：</dt><dd><ul> <li>这只应用到有宽和高的文件类型，例如视频和图片。</li></ul></dd> <dt>帮助页面：</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures 文件度量]</dd> <dt>在普通搜索中具有相同功能的语法：</dt><dd>前面带<code>filew</code>的数字，例如<code>filew:>800</code>。</dd></dl>",
-	"advancedSearch-placeholder-commas": "用逗号分割单词，例如：猫，山羊...",
+	"advancedSearch-placeholder-commas": "用英文逗号分隔字词，例如：猫, 山羊, ...",
 	"advancedsearch-filetype-section-types": "一般文件类型",
 	"advancedsearch-filetype-section-image": "图片格式",
 	"advancedsearch-filetype-section-video": "视频格式",
@@ -50,5 +51,5 @@
 	"advancedSearch-namespaces-search-in": "在此名字空间中搜索：",
 	"advancedSearch-namespaces-preset-all": "全部",
 	"advancedSearch-beta-feature-message": "高级搜索界面",
-	"advancedSearch-beta-feature-description": "在[[Special:Search]]简易访问高级搜索功能。"
+	"advancedSearch-beta-feature-description": "在[[Special:Search]]提供高级搜索功能的轻松访问。"
 }
