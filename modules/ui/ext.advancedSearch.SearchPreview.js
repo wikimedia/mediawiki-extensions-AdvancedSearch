@@ -33,16 +33,16 @@
 	 * @param  {Object} config
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview = function ( store, config ) {
-		var myConfig = $.extend( {
+		config = $.extend( {
 			previewOptions: [],
 			data: true
-		}, config || {} );
+		}, config );
 		this.store = store;
-		this.previewOptions = myConfig.previewOptions;
+		this.previewOptions = config.previewOptions;
 
 		store.connect( this, { update: 'onStoreUpdate' } );
 
-		mw.libs.advancedSearch.ui.SearchPreview.parent.call( this, myConfig );
+		mw.libs.advancedSearch.ui.SearchPreview.parent.call( this, config );
 
 		this.label = new OO.ui.LabelWidget( {
 			label: config.label,

@@ -34,17 +34,17 @@
 	 * @param  {Object} config
 	 */
 	mw.libs.advancedSearch.ui.NamespacePresets = function ( store, config ) {
-		var myConfig = $.extend( {
+		config = $.extend( {
 			presets: {}
-		}, config || {} );
+		}, config );
 		config.presets = groomPresets( config.presets );
 
-		myConfig.options = prepareOptions( config.presets );
+		config.options = prepareOptions( config.presets );
 		this.store = store;
 
-		this.presets = myConfig.presets;
+		this.presets = config.presets;
 
-		mw.libs.advancedSearch.ui.NamespacePresets.parent.call( this, myConfig );
+		mw.libs.advancedSearch.ui.NamespacePresets.parent.call( this, config );
 
 		// Using undocumented internals because this.on does not work, see https://phabricator.wikimedia.org/T168735
 		this.checkboxMultiselectWidget.on( 'change', this.updateStoreFromPresets, [], this );

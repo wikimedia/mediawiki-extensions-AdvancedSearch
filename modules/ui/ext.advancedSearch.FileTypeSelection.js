@@ -21,12 +21,12 @@
 	 * @param  {Object} config
 	 */
 	mw.libs.advancedSearch.ui.FileTypeSelection = function ( store, optionProvider, config ) {
-		var myConfig = $.extend( { options: getOptions( optionProvider ) }, config );
+		config = $.extend( { options: getOptions( optionProvider ) }, config );
 		this.store = store;
 		this.optionId = config.optionId;
 
 		// Parent constructor
-		mw.libs.advancedSearch.ui.FileTypeSelection.parent.call( this, myConfig );
+		mw.libs.advancedSearch.ui.FileTypeSelection.parent.call( this, config );
 
 		store.connect( this, { update: 'onStoreUpdate' } );
 

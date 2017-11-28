@@ -14,13 +14,13 @@
 	 * @param  {Object} config
 	 */
 	mw.libs.advancedSearch.ui.TextInput = function ( store, config ) {
-		var myConfig = $.extend( {}, config || {} );
+		config = $.extend( {}, config );
 		this.store = store;
 		this.optionId = config.optionId;
 
 		this.store.connect( this, { update: 'onStoreUpdate' } );
 
-		mw.libs.advancedSearch.ui.TextInput.parent.call( this, myConfig );
+		mw.libs.advancedSearch.ui.TextInput.parent.call( this, config );
 
 		this.populateFromStore();
 	};
