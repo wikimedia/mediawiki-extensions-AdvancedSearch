@@ -32,7 +32,7 @@
 		OO.ui.mixin.IndicatorElement.call( this, { indicator: getIndicatorNameForState( myConfig.data ) } );
 
 		var self = this;
-		this.$btn = $( '<div></div>' )
+		this.$btn = $( '<div>' )
 			.addClass( 'oo-ui-buttonElement-button' )
 			.addClass( 'mw-advancedSearch-expandablePane-button' )
 			.on( 'click keypress', function ( e ) {
@@ -53,7 +53,7 @@
 				}
 			} );
 
-		this.$dependentPane = $( '<div></div>' )
+		this.$dependentPane = $( '<div>' )
 			.addClass( 'mw-advancedSearch-expandablePane-pane' );
 
 		if ( config.hasOwnProperty( 'tabIndex' ) ) {

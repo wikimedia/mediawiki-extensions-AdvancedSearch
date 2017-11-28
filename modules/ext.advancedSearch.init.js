@@ -396,7 +396,7 @@
 		] );
 	} );
 
-	var $allOptions = $( '<div>' ).prop( { 'class': 'mw-advancedSearch-fieldContainer' } );
+	var $allOptions = $( '<div>' ).addClass( 'mw-advancedSearch-fieldContainer' );
 
 	for ( var group in optionSets ) {
 		$allOptions.append( optionSets[ group ].$element );
@@ -452,12 +452,12 @@
 				}
 			}
 		} ),
-		namespaceSelectionPreview = $( '<div class="mw-advancedSearch-namespace-selection"></div>' );
+		namespaceSelectionPreview = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection' );
 
 	$advancedSearch.append( namespaceSelectionPreview );
 	namespaceSelectionPreview
 		.after( namespaceSelection.$element )
-		.append( $( '<strong></strong>' ).text( mw.msg( 'advancedSearch-namespaces-search-in' ) ) )
+		.append( $( '<strong>' ).text( mw.msg( 'advancedSearch-namespaces-search-in' ) ) )
 		.append( namespacePresets.$element );
 
 	// remove old namespace selection item to avoid double ns parameters
