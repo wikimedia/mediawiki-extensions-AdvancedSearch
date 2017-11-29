@@ -34,7 +34,7 @@
 	"advancedsearch-help-filew": "<dl><dt>Description :</dt><dd> Ces champs vous permettent de spécifier la largeur du fichier.</dd> <dt>Faites attention aux points suivants : </dt> <dd><ul><li>Cela ne s’applique qu’aux types de fichier qui ont une largeur et une hauteur, comme les vidéos et  les images.</li></ul></dd> <dt>Page d’aide :</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Mesures de fichier]</dd> <dt>L’équivalent syntaxique en recherche normale est :</dt><dd>Des nombres avec <code>filew</code> devant eux, comme <code>filew:>800</code>.</dd></dl>",
 	"advancedsearch-help-fileh": "<dl><dt>Description :</dt><dd> Ces champs vous permettent de spécifier la hauteur du fichier.</dd> <dt>Faites attention aux points suivants : </dt> <dd><ul><li>Cela ne s’applique qu’aux types de fichier qui ont une largeur et une hauteur, comme les vidéos et les images.</li></ul></dd> <dt>Page d’aide :</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Mesures de fichier]</dd> <dt>L’équivalent syntaxique en recherche normale est :</dt><dd>Des nombres avec <code>fileh</code> devant eux, comme <code>fileh:>600</code>.</dd></dl>",
 	"advancedSearch-placeholder-commas": "Saisir les mots séparés par des virgules, par exemple : chats, chèvres, …",
-	"advancedsearch-filetype-section-types": "Type général de fichier",
+	"advancedsearch-filetype-section-types": "Types généraux de fichier",
 	"advancedsearch-filetype-section-image": "Formats d'image",
 	"advancedsearch-filetype-section-video": "Formats vidéo",
 	"advancedsearch-filetype-section-audio": "Formats audio",
