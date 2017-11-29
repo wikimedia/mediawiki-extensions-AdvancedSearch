@@ -24,7 +24,7 @@
 			this.data = [ '>', '' ];
 		}
 
-		this.$element.addClass( 'advancedSearch-filesize' );
+		this.$element.addClass( 'mw-advancedSearch-filesize' );
 
 		this.operatorInput = new OO.ui.DropdownInputWidget( {
 			options: [
