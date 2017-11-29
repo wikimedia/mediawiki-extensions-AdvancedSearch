@@ -72,7 +72,7 @@
 			"dependencies": [
 				"mediawiki.jqueryMsg",
 				"mediawiki.util",
-				"oojs-ui",
+				"oojs-ui-widgets",
 				"oojs-ui.styles.icons-content",
 				"oojs-ui.styles.icons-editing-advanced",
 				"oojs-ui.styles.icons-interactions",
@@ -103,7 +103,7 @@
 				"modules/ui/ext.advancedSearch.ArbitraryWordInput.js"
 			],
 			"dependencies": [
-				"oojs-ui"
+				"oojs-ui-widgets"
 			]
 		},
 		"ext.advancedSearch.ui.FormState": {
@@ -111,7 +111,7 @@
 				"modules/ui/ext.advancedSearch.FormState.js"
 			],
 			"dependencies": [
-				"oojs-ui"
+				"oojs-ui-widgets"
 			]
 		},
 		"ext.advancedSearch.ui.FileTypeSelection": {
@@ -119,7 +119,7 @@
 				"modules/ui/ext.advancedSearch.FileTypeSelection.js"
 			],
 			"dependencies": [
-				"oojs-ui"
+				"oojs-ui-widgets"
 			],
 			"messages": [
 				"advancedsearch-filetype-section-types",
@@ -141,7 +141,7 @@
 				"modules/ui/ext.advancedSearch.ExpandablePane.js"
 			],
 			"dependencies": [
-				"oojs-ui"
+				"oojs-ui-widgets"
 			]
 		},
 		"ext.advancedSearch.ui.ImageDimensionInput": {
@@ -149,7 +149,7 @@
 				"modules/ui/ext.advancedSearch.ImageDimensionInput.js"
 			],
 			"dependencies": [
-				"oojs-ui"
+				"oojs-ui-widgets"
 			],
 			"messages": [
 				"advancedSearch-filesize-equals",
@@ -163,7 +163,7 @@
 			],
 			"dependencies": [
 				"ext.advancedSearch.util",
-				"oojs-ui"
+				"oojs-ui-widgets"
 			]
 		},
 		"ext.advancedSearch.ui.NamespacePresets": {
@@ -171,7 +171,7 @@
 				"modules/ui/ext.advancedSearch.NamespacePresets.js"
 			],
 			"dependencies": [
-				"oojs-ui"
+				"oojs-ui-widgets"
 			]
 		},
 		"ext.advancedSearch.ui.OptionalElementLayout": {
@@ -179,7 +179,7 @@
 				"modules/ui/ext.advancedSearch.OptionalElementLayout.js"
 			],
 			"dependencies": [
-				"oojs-ui"
+				"oojs-ui-widgets"
 			]
 		},
 		"ext.advancedSearch.ui.SearchPreview": {
@@ -187,7 +187,7 @@
 				"modules/ui/ext.advancedSearch.SearchPreview.js"
 			],
 			"dependencies": [
-				"oojs-ui"
+				"oojs-ui-widgets"
 			],
 			"messages": [
 				"advancedSearch-filesize-equals-symbol",
@@ -200,7 +200,7 @@
 				"modules/ui/ext.advancedSearch.TemplateSearch.js"
 			],
 			"dependencies": [
-				"oojs-ui"
+				"oojs-ui-widgets"
 			]
 		},
 		"ext.advancedSearch.ui.TextInput": {
@@ -208,7 +208,7 @@
 				"modules/ui/ext.advancedSearch.TextInput.js"
 			],
 			"dependencies": [
-				"oojs-ui"
+				"oojs-ui-widgets"
 			]
 		},
 		"ext.advancedSearch.dm.SearchModel": {
@@ -216,7 +216,7 @@
 				"modules/dm/ext.advancedSearch.SearchModel.js"
 			],
 			"dependencies": [
-				"oojs-ui",
+				"oojs-ui-widgets",
 				"ext.advancedSearch.util"
 			]
 		},
@@ -225,7 +225,7 @@
 				"modules/dm/ext.advancedSearch.FileTypeOptionProvider.js"
 			],
 			"dependencies": [
-				"oojs-ui",
+				"oojs-ui-widgets",
 				"ext.advancedSearch.util"
 			]
 		},
@@ -234,7 +234,7 @@
 				"modules/dm/trackingEvents/ext.advancedSearch.SearchRequest.js"
 			],
 			"dependencies": [
-				"oojs-ui"
+				"oojs-ui-widgets"
 			]
 		},
 		"ext.advancedSearch.util": {
