@@ -38,7 +38,7 @@
 
 		mw.libs.advancedSearch.ui.NamespaceFilters.parent.call( this, myConfig );
 
-		this.$namespaceContainer = $( '<span class="mw-advancedSearch-namespaceContainer"></span>' );
+		this.$namespaceContainer = $( '<span>' ).addClass( 'mw-advancedSearch-namespaceContainer' );
 		this.$element.append( this.$namespaceContainer );
 
 		this.store = store;
@@ -123,7 +123,13 @@
 			namespaces = this.store.getNamespaces();
 		this.$namespaceContainer.empty();
 		$.each( namespaces, function ( idx, key ) {
-			self.$namespaceContainer.append( $( '<input type="hidden" value=1>' ).prop( 'name', 'ns' + key ) );
+			self.$namespaceContainer.append(
+				$( '<input>' ).attr( {
+					type: 'hidden',
+					value: '1',
+					name: 'ns' + key
+				} )
+			);
 		} );
 	};
 

@@ -40,8 +40,12 @@
 		this.operatorInput.connect( this, { change: 'onInputChange' } );
 		this.valueInput.connect( this, { change: 'onInputChange' } );
 
-		this.$element.append( this.operatorInput.$element.wrap( '<div class="operator-container"></div>' ).parent() );
-		this.$element.append( this.valueInput.$element.wrap( '<div class="value-container"></div>' ).parent() );
+		this.$element.append(
+			$( '<div>' ).addClass( 'operator-container' ).append( this.operatorInput.$element )
+		);
+		this.$element.append(
+			$( '<div>' ).addClass( 'value-container' ).append( this.valueInput.$element )
+		);
 
 		this.operatorInput.setValue( '>' ); // Workaround for broken default value, see https://phabricator.wikimedia.org/T166783
 		this.setValuesFromStore();
