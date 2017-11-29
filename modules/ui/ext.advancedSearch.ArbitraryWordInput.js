@@ -41,22 +41,8 @@
 	OO.inheritClass( mw.libs.advancedSearch.ui.ArbitraryWordInput, OO.ui.TagMultiselectWidget );
 
 	mw.libs.advancedSearch.ui.ArbitraryWordInput.prototype.populateFromStore = function () {
-		// TODO move to util module
-		function arrayEquals( a1, a2 ) {
-			var i = a1.length;
-			if ( a1.length !== a2.length ) {
-				return false;
-			}
-			while ( i-- ) {
-				if ( a1[ i ] !== a2[ i ] ) {
-					return false;
-				}
-			}
-			return true;
-		}
-
 		var val = this.store.getOption( this.optionId ) || [];
-		if ( arrayEquals( this.getValue(), val ) ) {
+		if ( mw.libs.advancedSearch.util.arrayEquals( this.getValue(), val ) ) {
 			return;
 		}
 		this.setValue( val );

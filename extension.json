@@ -80,7 +80,6 @@
 				"oojs-ui.styles.icons-media",
 				"oojs-ui.styles.icons-user",
 				"oojs-ui.styles.icons-wikimedia",
-				"ext.advancedSearch.util",
 				"ext.advancedSearch.dm.SearchModel",
 				"ext.advancedSearch.dm.FileTypeOptionProvider",
 				"ext.advancedSearch.dm.trackingEvents.SearchRequest",
@@ -103,6 +102,7 @@
 				"modules/ui/ext.advancedSearch.ArbitraryWordInput.js"
 			],
 			"dependencies": [
+				"ext.advancedSearch.util",
 				"oojs-ui-widgets"
 			]
 		},
@@ -162,7 +162,6 @@
 				"modules/ui/ext.advancedSearch.NamespaceFilters.js"
 			],
 			"dependencies": [
-				"ext.advancedSearch.util",
 				"oojs-ui-widgets"
 			]
 		},
@@ -171,6 +170,7 @@
 				"modules/ui/ext.advancedSearch.NamespacePresets.js"
 			],
 			"dependencies": [
+				"ext.advancedSearch.util",
 				"oojs-ui-widgets"
 			]
 		},
@@ -216,8 +216,7 @@
 				"modules/dm/ext.advancedSearch.SearchModel.js"
 			],
 			"dependencies": [
-				"oojs-ui-widgets",
-				"ext.advancedSearch.util"
+				"oojs-ui-widgets"
 			]
 		},
 		"ext.advancedSearch.dm.FileTypeOptionProvider": {
@@ -225,8 +224,7 @@
 				"modules/dm/ext.advancedSearch.FileTypeOptionProvider.js"
 			],
 			"dependencies": [
-				"oojs-ui-widgets",
-				"ext.advancedSearch.util"
+				"oojs-ui-widgets"
 			]
 		},
 		"ext.advancedSearch.dm.trackingEvents.SearchRequest": {
