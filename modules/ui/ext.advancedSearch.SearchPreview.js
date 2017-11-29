@@ -8,8 +8,6 @@
 	/**
 	 * Get the message associated with a file dimension comparator value
 	 *
-	 * @tutorial
-	 *
 	 * @param {string} comparator
 	 * @return {string}
 	 */
@@ -96,7 +94,7 @@
 		if ( $.isArray( value ) && value.length === 0 ) {
 			return true;
 		}
-		if ( optionId.match( '^file[hw]$' ) && $.isArray( value ) && !value[ 1 ] ) {
+		if ( optionId.match( /^file[hw]$/ ) && $.isArray( value ) && !value[ 1 ] ) {
 			return true;
 		}
 
@@ -148,7 +146,7 @@
 	 * @return {string}
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview.prototype.formatValue = function ( optionId, value ) {
-		if ( optionId.match( '^file[hw]$' ) && $.isArray( value ) ) {
+		if ( optionId.match( /^file[hw]$/ ) && $.isArray( value ) ) {
 			return mw.msg( fileComparatorToMessage( value[ 0 ] ) ) + ' ' + value[ 1 ];
 		}
 		if ( $.isArray( value ) ) {

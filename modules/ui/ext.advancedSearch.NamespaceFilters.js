@@ -74,7 +74,6 @@
 	};
 
 	/**
-	 *
 	 * @param  {Object} icons Namespace id => icon name
 	 */
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.setNamespaceIcons = function ( icons ) {

@@ -38,14 +38,14 @@
 			.on( 'click keypress', function ( e ) {
 				var code = e.keyCode || e.which;
 				if (
-					code === 13 || // enter
+					code === OO.ui.Keys.ENTER ||
 					code === 108 || // numpad enter
-					code === 32 || // space
-					code === 33 || // page up
-					code === 34 || // page down
-					code === 38 || // arrow up
-					code === 40 || // arrow down
-					code === 1 // left mouse
+					code === OO.ui.Keys.SPACE ||
+					code === OO.ui.Keys.PAGEUP ||
+					code === OO.ui.Keys.PAGEDOWN ||
+					code === OO.ui.Keys.UP ||
+					code === OO.ui.Keys.DOWN ||
+					code === OO.ui.MouseButtons.LEFT
 				) {
 					// will avoid scrolling with space, arrows and page keys
 					e.preventDefault();
