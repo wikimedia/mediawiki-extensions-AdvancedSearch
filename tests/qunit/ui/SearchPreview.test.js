@@ -106,8 +106,8 @@
 		assert.equal( element.title, 'my field value' );
 		// https://phabricator.wikimedia.org/T172781 prevents a semantic way to check for draggable
 		assert.ok( $( element ).hasClass( 'oo-ui-draggableElement-undraggable' ) );
-		assert.equal( $( '.content', element ).html(), '<bdi>my field value</bdi>' );
-		assert.equal( $( '.oo-ui-labelElement-label', element ).html(), 'my label:' );
+		assert.equal( $( '.mw-advancedSearch-searchPreview-content', element ).html(), '<bdi>my field value</bdi>' );
+		assert.equal( $( '.oo-ui-labelElement-label span', element ).html(), 'my label:' );
 	} );
 
 	QUnit.test( 'Tag content is HTML-safe', function ( assert ) {
@@ -118,7 +118,7 @@
 
 		var element = tag.$element[ 0 ];
 
-		assert.equal( $( '.content', element ).html(), '<bdi>&lt;script&gt;alert("evil");&lt;/script&gt;</bdi>' );
+		assert.equal( $( '.mw-advancedSearch-searchPreview-content', element ).html(), '<bdi>&lt;script&gt;alert("evil");&lt;/script&gt;</bdi>' );
 	} );
 
 	QUnit.test( 'Tag label is HTML-safe', function ( assert ) {
@@ -130,7 +130,7 @@
 
 		var element = tag.$element[ 0 ];
 
-		assert.equal( $( '.oo-ui-labelElement-label', element ).html(), '&lt;div&gt;block&lt;/div&gt;' );
+		assert.equal( $( '.oo-ui-labelElement-label span', element ).html(), '&lt;div&gt;block&lt;/div&gt;' );
 	} );
 
 	QUnit.test( 'Tag removals clears store', function ( assert ) {

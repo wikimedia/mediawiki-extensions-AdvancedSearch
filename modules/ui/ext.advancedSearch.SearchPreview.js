@@ -111,16 +111,12 @@
 	mw.libs.advancedSearch.ui.SearchPreview.prototype.generateTag = function ( optionId, value ) {
 		var formattedValue = this.formatValue( optionId, value ),
 			tag = new OO.ui.TagItemWidget( {
-				label: mw.msg( 'advancedsearch-field-' + optionId ),
-				content: [
-					new OO.ui.HtmlSnippet(
-						$( '<span>' )	// redundant span to cover browsers without support for bdi tag
-							.addClass( 'content' )
-							.append(
-								$( '<bdi>' ).text( formattedValue )
-							)
-					)
-				]
+				label: $()
+					.add( $( '<span>' ).text( mw.msg( 'advancedsearch-field-' + optionId ) ) )
+					// redundant span to cover browsers without support for bdi tag
+					.add( $( '<span>' ).addClass( 'mw-advancedSearch-searchPreview-content' ).append(
+						$( '<bdi>' ).text( formattedValue )
+					) )
 			} );
 
 		tag.toggleDraggable( false ); // constructor config has no effect; https://phabricator.wikimedia.org/T172781
