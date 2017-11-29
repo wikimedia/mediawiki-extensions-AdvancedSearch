@@ -14,7 +14,7 @@
 	 * @param  {Object} config
 	 */
 	mw.libs.advancedSearch.ui.TemplateSearch = function ( store, config ) {
-		var myConfig = $.extend( {}, config || {}, {
+		config = $.extend( {}, config, {
 			allowArbitrary: true,
 			input: {
 				autocomplete: false
@@ -26,14 +26,14 @@
 
 		this.store.connect( this, { update: 'onStoreUpdate' } );
 
-		mw.libs.advancedSearch.ui.TemplateSearch.parent.call( this, myConfig );
+		mw.libs.advancedSearch.ui.TemplateSearch.parent.call( this, config );
 
 		this.$input = this.input.$input;
 
 		this.input.connect( this, { change: 'onLookupInputChange' } );
 
 		// Mixin constructor
-		OO.ui.mixin.LookupElement.call( this, myConfig );
+		OO.ui.mixin.LookupElement.call( this, config );
 
 		this.populateFromStore();
 

@@ -16,7 +16,7 @@
 	 * @cfg {Object} [namespaces] Namespace id => Namespace label (similar to mw.config.get( 'wgFormattedNamespaces' ) )
 	 */
 	mw.libs.advancedSearch.ui.NamespaceFilters = function ( store, config ) {
-		var myConfig = $.extend( {
+		config = $.extend( {
 			namespaces: {},
 			namespaceIcons: {
 				2: 'userAvatar',
@@ -29,14 +29,14 @@
 			},
 			options: [],
 			classes: []
-		}, config || {} );
+		}, config );
 
-		this.namespaces = myConfig.namespaces;
-		myConfig.options = myConfig.options.concat( this.createNamespaceOptions( this.namespaces ) );
-		myConfig.classes.push( 'mw-advancedSearch-namespaceFilter' );
-		this.setNamespaceIcons( myConfig.namespaceIcons );
+		this.namespaces = config.namespaces;
+		config.options = config.options.concat( this.createNamespaceOptions( this.namespaces ) );
+		config.classes.push( 'mw-advancedSearch-namespaceFilter' );
+		this.setNamespaceIcons( config.namespaceIcons );
 
-		mw.libs.advancedSearch.ui.NamespaceFilters.parent.call( this, myConfig );
+		mw.libs.advancedSearch.ui.NamespaceFilters.parent.call( this, config );
 
 		this.$namespaceContainer = $( '<span>' ).addClass( 'mw-advancedSearch-namespaceContainer' );
 		this.$element.append( this.$namespaceContainer );

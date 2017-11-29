@@ -14,6 +14,8 @@
 	 * @param  {Object} config
 	 */
 	mw.libs.advancedSearch.ui.ArbitraryWordInput = function ( store, config ) {
+		config = $.extend( {}, config );
+
 		this.store = store;
 		this.optionId = config.optionId;
 		this.placeholderText = config.placeholder || '';
@@ -22,7 +24,7 @@
 
 		mw.libs.advancedSearch.ui.ArbitraryWordInput.parent.call(
 			this,
-			$.extend( { allowArbitrary: true }, config || {} )
+			$.extend( { allowArbitrary: true }, config )
 		);
 
 		this.input.$input.on( 'input', this.buildTagsFromInput.bind( this ) );

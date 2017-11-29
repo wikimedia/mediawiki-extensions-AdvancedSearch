@@ -26,10 +26,10 @@
 	 * @param  {Object} config
 	 */
 	mw.libs.advancedSearch.ui.ExpandablePane = function ( config ) {
-		var myConfig = $.extend( { data: this.STATE_CLOSED }, config );
+		config = $.extend( { data: this.STATE_CLOSED }, config );
 
-		mw.libs.advancedSearch.ui.ExpandablePane.parent.call( this, myConfig );
-		OO.ui.mixin.IndicatorElement.call( this, { indicator: getIndicatorNameForState( myConfig.data ) } );
+		mw.libs.advancedSearch.ui.ExpandablePane.parent.call( this, config );
+		OO.ui.mixin.IndicatorElement.call( this, { indicator: getIndicatorNameForState( config.data ) } );
 
 		var self = this;
 		this.$btn = $( '<div>' )
@@ -56,8 +56,8 @@
 		this.$dependentPane = $( '<div>' )
 			.addClass( 'mw-advancedSearch-expandablePane-pane' );
 
-		if ( config.hasOwnProperty( 'tabIndex' ) ) {
-			this.$btn.prop( 'tabindex', parseInt( config.tabIndex ) );
+		if ( config.tabIndex !== undefined ) {
+			this.$btn.prop( 'tabindex', Number( config.tabIndex ) );
 		}
 
 		if ( config.$buttonLabel ) {
@@ -74,7 +74,7 @@
 		this.$element.addClass( 'mw-advancedSearch-expandablePane' );
 		this.$element.append( this.$btn, this.$dependentPane );
 
-		this.notifyChildInputVisibility( myConfig.data === this.STATE_OPEN );
+		this.notifyChildInputVisibility( config.data === this.STATE_OPEN );
 	};
 
 	OO.inheritClass( mw.libs.advancedSearch.ui.ExpandablePane, OO.ui.Widget );
