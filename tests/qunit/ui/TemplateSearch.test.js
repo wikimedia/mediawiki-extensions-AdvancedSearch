@@ -83,7 +83,7 @@
 		];
 
 		var result = templateSearch.getLookupMenuOptionsFromData( apiData );
-		assert.ok( $.isArray( result ) );
+		assert.ok( Array.isArray( result ) );
 		assert.equal( result.length, 3 );
 
 		assert.equal( result[ 0 ].getLabel(), 'Jochen' );
@@ -121,7 +121,7 @@
 		];
 
 		var result = templateSearch.getLookupMenuOptionsFromData( apiData );
-		assert.ok( $.isArray( result ) );
+		assert.ok( Array.isArray( result ) );
 		assert.equal( result.length, 1 );
 
 		assert.equal( result[ 0 ].getLabel(), 'Jens' );
@@ -151,7 +151,7 @@
 		templateSearch.onLookupMenuItemChoose( item );
 
 		var tags = templateSearch.getItems();
-		assert.ok( $.isArray( tags ) );
+		assert.ok( Array.isArray( tags ) );
 		assert.equal( tags.length, 2 );
 		assert.equal( tags[ 0 ].getData(), 'Preexisting' );
 		assert.equal( tags[ 1 ].getData(), 'My Template' );

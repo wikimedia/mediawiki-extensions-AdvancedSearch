@@ -175,7 +175,7 @@
 			}
 			valuesChanged = true;
 		}
-		if ( $.isArray( unserialized.namespaces ) ) {
+		if ( Array.isArray( unserialized.namespaces ) ) {
 			this.namespaces = unserialized.namespaces;
 			valuesChanged = true;
 		}

@@ -91,10 +91,10 @@
 		if ( !value ) {
 			return true;
 		}
-		if ( $.isArray( value ) && value.length === 0 ) {
+		if ( Array.isArray( value ) && value.length === 0 ) {
 			return true;
 		}
-		if ( optionId.match( /^file[hw]$/ ) && $.isArray( value ) && !value[ 1 ] ) {
+		if ( /^file[hw]$/.test( optionId ) && Array.isArray( value ) && !value[ 1 ] ) {
 			return true;
 		}
 
@@ -146,10 +146,10 @@
 	 * @return {string}
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview.prototype.formatValue = function ( optionId, value ) {
-		if ( optionId.match( /^file[hw]$/ ) && $.isArray( value ) ) {
+		if ( /^file[hw]$/.test( optionId ) && Array.isArray( value ) ) {
 			return mw.msg( fileComparatorToMessage( value[ 0 ] ) ) + ' ' + value[ 1 ];
 		}
-		if ( $.isArray( value ) ) {
+		if ( Array.isArray( value ) ) {
 			return $.grep(
 				$.map( value, function ( v ) {
 					return String( v ).trim();

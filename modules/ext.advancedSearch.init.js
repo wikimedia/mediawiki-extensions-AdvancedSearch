@@ -63,7 +63,7 @@
 	 * @return {string}
 	 */
 	function formatSizeConstraint( prefix, val ) {
-		if ( !$.isArray( val ) || val.length < 2 || $.trim( val[ 1 ] ) === '' ) {
+		if ( !Array.isArray( val ) || val.length < 2 || $.trim( val[ 1 ] ) === '' ) {
 			return '';
 		}
 		return prefix + val.join( '' );

@@ -20,7 +20,7 @@
 
 		mw.libs.advancedSearch.ui.ImageDimensionInput.parent.call( this, config );
 
-		if ( !$.isArray( this.data ) ) {
+		if ( !Array.isArray( this.data ) ) {
 			this.data = [ '>', '' ];
 		}
 
