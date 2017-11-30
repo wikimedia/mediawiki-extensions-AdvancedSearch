@@ -14,6 +14,10 @@
 		"AdvancedSearch\\MimeTypeConfigurator": "includes/MimeTypeConfigurator.php",
 		"AdvancedSearch\\TooltipGenerator": "includes/TooltipGenerator.php"
 	},
+	"config": {
+		"@AdvancedSearchBetaFeature": "Make the AdvancedSearch feature a BetaFeature. Setting this requires the BetaFeature extension and requires each user to enable the BetaFeature.",
+		"AdvancedSearchBetaFeature": true
+	},
 	"Hooks": {
 		"GetBetaFeaturePreferences": [
 			"AdvancedSearch\\Hooks::getBetaFeaturePreferences"

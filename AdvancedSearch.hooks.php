@@ -18,11 +18,14 @@ class Hooks {
 	 * @return boolean
 	 */
 	public static function onSpecialPageBeforeExecute( SpecialPage $special, $subpage ) {
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+
 		/**
 		 * If the BetaFeatures extension is loaded then require the current user
 		 * to have the feature enabled.
 		 */
 		if (
+			$config->get( 'AdvancedSearchBetaFeature' ) &&
 			class_exists( BetaFeatures::class ) &&
 			!BetaFeatures::isFeatureEnabled( $special->getUser(), 'advancedsearch' )
 		) {
@@ -49,6 +52,15 @@ class Hooks {
 	 */
 	public static function getBetaFeaturePreferences( User $user, array &$prefs ) {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
+
+		/**
+		 * If the BetaFeatures extension is loaded then require the current user
+		 * to have the feature enabled.
+		 */
+		if ( !$config->get( 'AdvancedSearchBetaFeature' ) ) {
+			return;
+		}
+
 		$extensionAssetsPath = $config->get( 'ExtensionAssetsPath' );
 
 		$prefs['advancedsearch'] = [
