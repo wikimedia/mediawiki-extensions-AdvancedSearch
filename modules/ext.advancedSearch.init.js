@@ -331,12 +331,15 @@
 	var $search = $( 'form#search, form#powersearch' ),
 		$advancedSearch = $( '<div>' ).addClass( 'mw-advancedSearch-container' ),
 		$searchField = $search.find( 'input[name="search"]' ),
+		$profileField = $search.find( 'input[name="profile"]' ),
 		optionSets = {};
 
 	$search.append( $advancedSearch );
 
 	$searchField.val( getSearchOriginal() );
 	$searchField.focus();
+
+	$profileField.val( 'advanced' );
 
 	$search.on( 'submit', function () {
 		var trackingEvent = new mw.libs.advancedSearch.dm.trackingEvents.SearchRequest();
