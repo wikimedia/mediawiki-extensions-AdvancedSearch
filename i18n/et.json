@@ -1,0 +1,43 @@
+{
+	"@metadata": {
+		"authors": [
+			"Pikne"
+		]
+	},
+	"advancedsearch-desc": "Lihtne juurdepääs täpsematele otsivõimalustele leheküljel [[Special:Search]]",
+	"advancedsearch-options-pane-head": "Täpsemad parameetrid:",
+	"advancedsearch-optgroup-text": "Otsimine lehekülje tekstist",
+	"advancedsearch-optgroup-structure": "Osised",
+	"advancedsearch-optgroup-files": "Pildid ja muud failid",
+	"advancedsearch-field-plain": "Need sõnad:",
+	"advancedsearch-field-phrase": "Täpselt see tekst:",
+	"advancedsearch-field-or": "Mõni neist sõnadest:",
+	"advancedsearch-field-not": "Mitte need sõnad:",
+	"advancedsearch-field-intitle": "Lehekülje pealkiri sisaldab:",
+	"advancedsearch-field-hastemplate": "Ainult selle malliga leheküljed:",
+	"advancedsearch-field-filetype": "Failitüüp:",
+	"advancedsearch-help-plain": ";Kirjeldus\n:Otsitakse neid sõnu pealkirjast või tekstist.\n;Silmaspidamiseks\n:* Siia saab sisestada mitu sõna.\n:* Eiratakse kirjavahemärke (välja arvatud koolon ja koma) ning muid märke, mis pole numbrid ega tähed.\n:* Võimalikud on tulemused, mis ei sisalda mõnd otsisõnadest.\n:* Tüvekasutus on lubatud. Näide: kui sisestada ''auto'', vastab sellele ka ''autod''. Tüvekasutus on eri keeltes erinev.\n;Abilehekülg\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search Täistekstiotsing]\n;Vaste harilikus otsisüntaksis\n:<code>seesam tänav auto</code>",
+	"advancedsearch-help-phrase": ";Kirjeldus\n:Otsitakse kindlas järjestus märke. Kirjavahemärke eiratakse.\n;Silmaspidamiseks\n:* Otsing ei ole tõstutundlik.\n:* Eiratakse kirjavahemärke (välja arvatud koolon ja koma) ning muid märke, mis pole numbrid ega tähed.\n:* Tüvekasutus ei tööta.\n;Abilehekülg\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Sõnad, väljendid ja muutemärgid]\n;Vaste harilikus otsisüntaksis\n:Sõnad jutumärkide vahel, nt <code>\"Alusta algusest\"</code>",
+	"advancedsearch-help-or": ";Kirjeldus\n:Leheküljel peab olema vähemalt üks neist otsisõnadest.\n;Abilehekülg\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Sõnad, väljendid ja muutemärgid]\n;Vaste harilikus otsisüntaksis\n:Sõnad, mille vahel on <code>OR</code>, nt <code>sülearvuti OR tahvelarvuti</code>",
+	"advancedsearch-help-not": ";Kirjeldus\n:Otsingust jäetakse välja leheküljed, mis sisaldavad neid sõnu.\n;Silmaspidamiseks\n:* Tüvekasutus on lubatud. Näide: kui sisestada ''auto'', vastab sellele ka ''autod''. Tüvekasutus on eri keeltes erinev.\n;Abilehekülg\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Sõnad, väljendid ja muutemärgid]\n;Vaste harilikus otsisüntaksis\n:Sõnad, mille ees on sidekriips-miinus, nt <code>-elevant</code>",
+	"advancedsearch-help-intitle": ";Kirjeldus\n:Otsitakse lehekülgi, mille pealkiri algab selle sõnaga.\n;Silmaspidamiseks\n:* Otsitulemused sisaldavad ümbersuunamislehekülgi.\n:* Tüvekasutus on lubatud. Näide: kui sisestada ''auto'', vastab sellele ka ''autod''. Tüvekasutus on eri keeltes erinev.\n;Abilehekülg\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Intitle_and_incategory \"intitle\" ja \"incategory\"]\n;Vaste harilikus otsisüntaksis\n:Sõnad, mille ees on <code>intitle:</code>, nt <code>intitle:kuninganna</code>",
+	"advancedsearch-help-hastemplate": ";Kirjeldus\n:Otsitakse lehekülgi, kus on kasutusel see mall.\n;Silmaspidamiseks\n:* Korraga saab otsida üht malli.\n;Abilehekülg\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Hastemplate \"hastemplate\"]\n;Vaste harilikus otsisüntaksis\n:Jutumärkides sõnad, mille ees on <code>hastemplate:</code>, nt <code>hastemplate:\"lisa viide\"</code>",
+	"advancedsearch-help-filetype": ";Kirjeldus\n:Otsitakse ainult valitud tüüpi faile.\n;Silmaspidamiseks\n:* Saad otsida ainult üht tüüpi faile.\n:* Saad valida ainult rippmenüüs pakutud failitüüpe.\n;Abilehekülg\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype \"filetype\"] ja [https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime \"filemime\"]\n;Vaste harilikus otsisüntaksis\n:Sõnad, mille ees on <code>filetype:</code>, nt <code>filetype:ogg</code>",
+	"advancedSearch-placeholder-commas": "Sisesta komaga eraldatud sõnad, nt. kassid, kitsed, ...",
+	"advancedsearch-filetype-section-types": "Üldised failitüübid",
+	"advancedsearch-filetype-section-image": "Pildivormingud",
+	"advancedsearch-filetype-section-video": "Videovormingud",
+	"advancedsearch-filetype-section-audio": "Helivormingud",
+	"advancedsearch-filetype-section-document": "Dokumendivormingud",
+	"advancedsearch-filetype-section-other": "Muud vormingud",
+	"advancedsearch-filetype-bitmap": "Pilt",
+	"advancedsearch-filetype-vector": "Joonistus",
+	"advancedsearch-filetype-audio": "Heli",
+	"advancedsearch-filetype-multimedia": "Multimeedium",
+	"advancedsearch-filetype-office": "Kontor",
+	"advancedSearch-namespaces-articles": "Artiklid",
+	"advancedSearch-namespaces-search-in": "Otsi neist nimeruumidest:",
+	"advancedSearch-namespaces-preset-all": "Kõik",
+	"advancedSearch-beta-feature-message": "Täpsem otsiliides",
+	"advancedSearch-beta-feature-description": "Lihtne juurdepääs täpsematele otsivõimalustele leheküljel [[Special:Search]]"
+}

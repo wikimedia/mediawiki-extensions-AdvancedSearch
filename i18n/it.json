@@ -17,7 +17,7 @@
 	"advancedsearch-field-deepcat": "Pagine in questa categoria:",
 	"advancedsearch-field-hastemplate": "Solo pagine con questo template:",
 	"advancedsearch-field-filetype": "Tipo di file:",
-	"advancedsearch-help-intitle": "<dl><dt>Descrizione:</dt><dd>cerca le pagine con i titoli che iniziano con questa parola.</dd> <dt>Ricorda quanto segue: </dt><dd><ul> <li>La ricerca include i reindirizzamenti.</li> <li>Viene applicato lo stemming alle parole. Esempio: se è inserito <em>car</em>, la ricerca considera anche <em>cars</em>. Lo stemming alle parole è specifico della lingua.</li> </ul></dd> <dt>Pagina di aiuto:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch/it#Intitle_and_incategory Intitle e incategory]</dd> <dt>Sintassi equivalente nella ricerca normale:</dt><dd>Parole precedute da <code>intitle:</code> come <code>intitle:queen</code>.</dd></dl>",
+	"advancedsearch-help-intitle": ";Descrizione\n:cerca le pagine con i titoli che iniziano con questa parola\n;Ricorda quanto segue\n:* La ricerca include i reindirizzamenti.\n:* Viene applicato lo stemming alle parole. Esempio: se è inserito ''car'', la ricerca considera anche ''cars''. Lo stemming alle parole è specifico della lingua.\n;Pagina di aiuto\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch/it#Intitle_and_incategory Intitle e incategory]\n;Sintassi equivalente nella ricerca normale\n:Parole precedute da <code>intitle:</code> come <code>intitle:queen</code>.",
 	"advancedSearch-placeholder-commas": "Scrivi parole separate da virgola, ad esempio: gatti, capre, ...",
 	"advancedsearch-filetype-section-types": "Tipi di file generale",
 	"advancedsearch-filetype-section-image": "Formati immagine",
