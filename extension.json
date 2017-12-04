@@ -50,6 +50,9 @@
 			"skinStyles": {
 				"timeless": [
 					"modules/ext.advancedSearch.timeless.css"
+				],
+				"monobook": [
+					"modules/ext.advancedSearch.monobook.css"
 				]
 			},
 			"messages": [
