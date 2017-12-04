@@ -29,50 +29,26 @@
 		config = $.extend( { data: this.STATE_CLOSED }, config );
 
 		mw.libs.advancedSearch.ui.ExpandablePane.parent.call( this, config );
-		OO.ui.mixin.IndicatorElement.call( this, { indicator: getIndicatorNameForState( config.data ) } );
 
-		var self = this;
-		this.$btn = $( '<div>' )
-			.addClass( 'oo-ui-buttonElement-button' )
-			.addClass( 'mw-advancedSearch-expandablePane-button' )
-			.on( 'click keypress', function ( e ) {
-				var code = e.keyCode || e.which;
-				if (
-					code === OO.ui.Keys.ENTER ||
-					code === 108 || // numpad enter
-					code === OO.ui.Keys.SPACE ||
-					code === OO.ui.Keys.PAGEUP ||
-					code === OO.ui.Keys.PAGEDOWN ||
-					code === OO.ui.Keys.UP ||
-					code === OO.ui.Keys.DOWN ||
-					code === OO.ui.MouseButtons.LEFT
-				) {
-					// will avoid scrolling with space, arrows and page keys
-					e.preventDefault();
-					self.onButtonClick();
-				}
-			} );
+		this.button = new OO.ui.ButtonWidget( {
+			classes: [ 'mw-advancedSearch-expandablePane-button' ],
+			framed: true,
+			tabIndex: config.tabIndex,
+			label: config.$buttonLabel,
+			indicator: getIndicatorNameForState( config.data )
+		} );
+		this.button.connect( this, {
+			click: 'onButtonClick'
+		} );
 
 		this.$dependentPane = $( '<div>' )
 			.addClass( 'mw-advancedSearch-expandablePane-pane' );
-
-		if ( config.tabIndex !== undefined ) {
-			this.$btn.prop( 'tabindex', Number( config.tabIndex ) );
-		}
-
-		if ( config.$buttonLabel ) {
-			this.$btn.append( config.$buttonLabel );
-		}
-
-		this.$btn.append( this.$indicator );
-
 		if ( config.$paneContent ) {
 			this.$dependentPane.append( config.$paneContent );
 		}
 
-		this.$btn.addClass( 'oo-ui-buttonElement-framed' );
 		this.$element.addClass( 'mw-advancedSearch-expandablePane' );
-		this.$element.append( this.$btn, this.$dependentPane );
+		this.$element.append( this.button.$element, this.$dependentPane );
 
 		this.notifyChildInputVisibility( config.data === this.STATE_OPEN );
 	};
@@ -93,7 +69,7 @@
 			this.$dependentPane.show();
 			this.notifyChildInputVisibility( true );
 		}
-		this.setIndicator( getIndicatorNameForState( this.data ) );
+		this.button.setIndicator( getIndicatorNameForState( this.data ) );
 		this.emit( 'change', this.data );
 	};
 

@@ -70,14 +70,24 @@
 	padding-top: 0.3em;
 }
 
-.mw-advancedSearch-expandablePane-button {
+.mw-advancedSearch-expandablePane-button,
+.mw-advancedSearch-expandablePane-button > .oo-ui-buttonElement-button {
+	width: 100%;
+}
+
+.mw-advancedSearch-expandablePane-button > .oo-ui-buttonElement-button {
+	text-align: left;
+	font-weight: normal;
+	white-space: normal;
+}
+
+.mw-advancedSearch-expandablePane-button.oo-ui-widget-enabled.oo-ui-buttonWidget.oo-ui-buttonElement-pressed > .oo-ui-buttonElement-button {
+	background-color: #f8f9fa;
+}
+
+.mw-advancedSearch-expandablePane-button.oo-ui-widget-enabled.oo-ui-buttonWidget > .oo-ui-buttonElement-button:hover {
 	background-color: #f8f9fa;
 	color: #222;
-	border: solid 1px #a2a9b1;
-	padding: 0.625em 2.5em 0.625em 0.9375em;
-	line-height: 1;
-	position: relative;
-	text-align: left;
 }
 
 .mw-advancedSearch-expandablePane-pane {
