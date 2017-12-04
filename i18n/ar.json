@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"زكريا",
-			"Meno25"
+			"Meno25",
+			"علاء"
 		]
 	},
 	"advancedsearch-desc": "استعمال البحث المتقدم في [[Special:Search]]",
@@ -50,5 +51,5 @@
 	"advancedSearch-namespaces-search-in": "البحث في:",
 	"advancedSearch-namespaces-preset-all": "الكل",
 	"advancedSearch-beta-feature-message": "واجهة البحث المتقدم",
-	"advancedSearch-beta-feature-description": "استعمال خاصيات البحث المطور في [[Special:Search]]"
+	"advancedSearch-beta-feature-description": "وصول سهل لقدرات البحث المطور في [[خاص:بحث]]."
 }
