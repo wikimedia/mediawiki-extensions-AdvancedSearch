@@ -23,7 +23,7 @@
 	"advancedsearch-help-intitle": ";Kirjeldus\n:Otsitakse lehekülgi, mille pealkiri algab selle sõnaga.\n;Silmaspidamiseks\n:* Otsitulemused sisaldavad ümbersuunamislehekülgi.\n:* Tüvekasutus on lubatud. Näide: kui sisestada ''auto'', vastab sellele ka ''autod''. Tüvekasutus on eri keeltes erinev.\n;Abilehekülg\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Intitle_and_incategory \"intitle\" ja \"incategory\"]\n;Vaste harilikus otsisüntaksis\n:Sõnad, mille ees on <code>intitle:</code>, nt <code>intitle:kuninganna</code>",
 	"advancedsearch-help-hastemplate": ";Kirjeldus\n:Otsitakse lehekülgi, kus on kasutusel see mall.\n;Silmaspidamiseks\n:* Korraga saab otsida üht malli.\n;Abilehekülg\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Hastemplate \"hastemplate\"]\n;Vaste harilikus otsisüntaksis\n:Jutumärkides sõnad, mille ees on <code>hastemplate:</code>, nt <code>hastemplate:\"lisa viide\"</code>",
 	"advancedsearch-help-filetype": ";Kirjeldus\n:Otsitakse ainult valitud tüüpi faile.\n;Silmaspidamiseks\n:* Saad otsida ainult üht tüüpi faile.\n:* Saad valida ainult rippmenüüs pakutud failitüüpe.\n;Abilehekülg\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype \"filetype\"] ja [https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime \"filemime\"]\n;Vaste harilikus otsisüntaksis\n:Sõnad, mille ees on <code>filetype:</code>, nt <code>filetype:ogg</code>",
-	"advancedSearch-placeholder-commas": "Sisesta komaga eraldatud sõnad, nt. kassid, kitsed, ...",
+	"advancedSearch-placeholder-commas": "Sisesta komaga eraldatud sõnad, nt kassid, kitsed, ...",
 	"advancedsearch-filetype-section-types": "Üldised failitüübid",
 	"advancedsearch-filetype-section-image": "Pildivormingud",
 	"advancedsearch-filetype-section-video": "Videovormingud",
