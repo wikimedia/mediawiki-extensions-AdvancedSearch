@@ -17,6 +17,7 @@
 	 */
 	mw.libs.advancedSearch.ui.NamespaceFilters = function ( store, config ) {
 		config = $.extend( {
+			indicator: 'down',
 			namespaces: {},
 			namespaceIcons: {
 				2: 'userAvatar',
