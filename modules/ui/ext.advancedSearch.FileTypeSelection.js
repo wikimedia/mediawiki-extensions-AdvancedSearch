@@ -41,7 +41,7 @@
 
 	mw.libs.advancedSearch.ui.FileTypeSelection.prototype.setValueFromStore = function () {
 		var storeValue = this.store.getOption( this.optionId ),
-			selectedItem = this.dropdownWidget.getMenu().getItemFromData( storeValue );
+			selectedItem = this.dropdownWidget.getMenu().findItemFromData( storeValue );
 		// avoid setting invalid values and re-triggering
 		if ( selectedItem === null || this.getValue() === storeValue ) {
 			return;

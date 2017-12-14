@@ -40,8 +40,8 @@
 			menu = filter.getMenu();
 		assert.equal( menu.getItemCount(), 5 );
 
-		var firstItem = menu.getItemFromData( 'test' ),
-			lastItem = menu.getItemFromData( '3' );
+		var firstItem = menu.findItemFromData( 'test' ),
+			lastItem = menu.findItemFromData( '3' );
 		assert.ok( firstItem );
 		assert.ok( lastItem );
 		assert.equal( menu.getItemIndex( firstItem ), 0 );
@@ -61,8 +61,8 @@
 			} ),
 			menu = filter.getMenu();
 		assert.equal( menu.getItemCount(), 2 );
-		assert.notOk( menu.getItemFromData( '0' ) );
-		assert.notOk( menu.getItemFromData( '1' ) );
+		assert.notOk( menu.findItemFromData( '0' ) );
+		assert.notOk( menu.findItemFromData( '1' ) );
 	} );
 
 	QUnit.assert.namespaceElementsPresent = function ( element, expectedNamespaces, message ) {

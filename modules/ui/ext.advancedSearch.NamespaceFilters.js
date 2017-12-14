@@ -173,7 +173,7 @@
 		var self = this;
 
 		$.each( this.getMenu().getItems(), function ( index, menuItem ) {
-			menuItem.setDisabled( !!self.getItemFromData( menuItem.getData() ) );
+			menuItem.setDisabled( !!self.findItemFromData( menuItem.getData() ) );
 		} );
 	};
 

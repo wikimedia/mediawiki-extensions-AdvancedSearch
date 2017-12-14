@@ -76,7 +76,7 @@
 		} );
 		this.checkboxMultiselectWidget.off( 'change', this.updateStoreFromPresets, this );
 		$.each( selectedPresets, function ( key, isSelected ) {
-			var presetWidget = self.checkboxMultiselectWidget.getItemFromData( key );
+			var presetWidget = self.checkboxMultiselectWidget.findItemFromData( key );
 			if ( presetWidget.isSelected() !== isSelected ) {
 				presetWidget.setSelected( isSelected );
 			}
