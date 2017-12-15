@@ -98,7 +98,7 @@ class Hooks {
 				'ext.advancedSearch.dm.trackingEvents.SearchRequest',
 				'oojs-ui'
 			],
-			'localBasePath' => __DIR__,
+			'localBasePath' => dirname( __DIR__ ),
 			'remoteExtPath' => 'AdvancedSearch',
 		];
 	}

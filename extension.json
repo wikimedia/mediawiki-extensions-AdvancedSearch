@@ -9,10 +9,11 @@
 	"descriptionmsg": "advancedsearch-desc",
 	"license-name": "GPL-2.0+",
 	"type": "other",
-	"AutoloadClasses": {
-		"AdvancedSearch\\Hooks": "AdvancedSearch.hooks.php",
-		"AdvancedSearch\\MimeTypeConfigurator": "includes/MimeTypeConfigurator.php",
-		"AdvancedSearch\\TooltipGenerator": "includes/TooltipGenerator.php"
+	"requires": {
+		"MediaWiki": ">= 1.31.0"
+	},
+	"AutoloadNamespaces": {
+		"AdvancedSearch\\": "includes/"
 	},
 	"config": {
 		"@AdvancedSearchBetaFeature": "Make the AdvancedSearch feature a BetaFeature. Setting this requires the BetaFeature extension and requires each user to enable the BetaFeature.",
