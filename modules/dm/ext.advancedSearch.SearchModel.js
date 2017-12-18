@@ -207,6 +207,28 @@
 
 	/**
 	 * @param {Array} namespaces
+	 * @return {Array}
+	 */
+	mw.libs.advancedSearch.dm.SearchModel.prototype.sortNamespacesByNumber = function ( namespaces ) {
+		var sortedNamespaces;
+
+		sortedNamespaces = namespaces.sort( function ( a, b ) {
+			a = parseInt( a, 10 );
+			b = parseInt( b, 10 );
+			if ( a < b ) {
+				return -1;
+			}
+			if ( a > b ) {
+				return 1;
+			}
+			return 0;
+		} );
+
+		return sortedNamespaces;
+	};
+
+	/**
+	 * @param {Array} namespaces
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.setNamespaces = function ( namespaces ) {
 		var previousNamespaces = this.namespaces.slice( 0 );
@@ -215,7 +237,7 @@
 		}
 
 		if ( namespaces.length ) {
-			this.namespaces = namespaces;
+			this.namespaces = this.sortNamespacesByNumber( namespaces );
 		} else {
 			this.namespaces = [ mw.libs.advancedSearch.dm.SearchModel.MAIN_NAMESPACE ];
 		}
