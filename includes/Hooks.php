@@ -3,6 +3,7 @@
 namespace AdvancedSearch;
 
 use BetaFeatures;
+use ExtensionRegistry;
 use MediaWiki\MediaWikiServices;
 use ResourceLoader;
 use SpecialPage;
@@ -26,7 +27,7 @@ class Hooks {
 		 */
 		if (
 			$config->get( 'AdvancedSearchBetaFeature' ) &&
-			class_exists( BetaFeatures::class ) &&
+			ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) &&
 			!BetaFeatures::isFeatureEnabled( $special->getUser(), 'advancedsearch' )
 		) {
 			return;
