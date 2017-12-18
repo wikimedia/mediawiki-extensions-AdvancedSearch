@@ -444,7 +444,8 @@
 	$advancedSearch.append( currentSearch.$element );
 
 	var namespaceSelection = new mw.libs.advancedSearch.ui.NamespaceFilters( state, {
-			namespaces: prepareNamespaces()
+			namespaces: prepareNamespaces(),
+			placeholder: mw.msg( 'advancedSearch-namespaces-placeholder' )
 		} ),
 		namespacePresets = new mw.libs.advancedSearch.ui.NamespacePresets( state, {
 			classes: [ 'mw-advancedSearch-namespacePresets' ],
