@@ -34,5 +34,6 @@
 	"advancedSearch-filesize-smaller-than": "minore di",
 	"advancedSearch-namespaces-articles": "Voci",
 	"advancedSearch-namespaces-search-in": "Cerca in:",
-	"advancedSearch-namespaces-preset-all": "Tutti"
+	"advancedSearch-namespaces-preset-all": "Tutti",
+	"advancedSearch-namespaces-placeholder": "Aggiungi namespace"
 }
