@@ -383,6 +383,12 @@
 		);
 	}
 
+	function updateSearchResultLinks( currentState ) {
+		$( '.mw-prevlink, .mw-nextlink, .mw-numlink' ).attr( 'href', function ( i, href ) {
+			return href + '&advancedSearch-current=' + currentState.toJSON();
+		} );
+	}
+
 	advancedOptions.forEach( function ( option ) {
 		if ( option.enabled && !option.enabled() ) {
 			return;
@@ -436,6 +442,8 @@
 		$searchField.prop( 'name', 'advancedSearchOption-original' )
 			.after( $compiledSearchField );
 	} );
+
+	updateSearchResultLinks( state );
 
 	var currentSearch = new mw.libs.advancedSearch.ui.FormState( state, {
 		name: 'advancedSearch-current'
