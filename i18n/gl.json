@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Elisardojm",
-			"Banjo"
+			"Banjo",
+			"Athena in Wonderland"
 		]
 	},
 	"advancedsearch-desc": "Acceso sinxelo a capacidades de busca avanzadas en [[Special:Search]]",
@@ -40,6 +41,7 @@
 	"advancedSearch-namespaces-articles": "Artigos",
 	"advancedSearch-namespaces-search-in": "Procurar en:",
 	"advancedSearch-namespaces-preset-all": "Todos",
+	"advancedSearch-namespaces-placeholder": "Engadir espazos de nomes",
 	"advancedSearch-beta-feature-message": "Interface de busca avanzada",
 	"advancedSearch-beta-feature-description": "Acceso sinxelo a capacidades de busca avanzada en [[Special:Search]]."
 }
