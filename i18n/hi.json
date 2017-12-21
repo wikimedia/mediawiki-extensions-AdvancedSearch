@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sfic"
+			"Sfic",
+			"Rajatkatiyar10"
 		]
 	},
 	"advancedsearch-field-filetype": "फ़ाइल का प्रकार:",
@@ -12,5 +13,6 @@
 	"advancedsearch-filetype-video": "वीडियो",
 	"advancedsearch-filetype-multimedia": "मल्टीमीडिया",
 	"advancedsearch-filetype-office": "कार्यालय",
-	"advancedSearch-namespaces-preset-all": "सभी"
+	"advancedSearch-namespaces-preset-all": "सभी",
+	"advancedSearch-namespaces-placeholder": "नामस्थान जोड़ें"
 }
