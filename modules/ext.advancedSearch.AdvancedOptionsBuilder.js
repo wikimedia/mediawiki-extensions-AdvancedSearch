@@ -78,6 +78,11 @@
 		state: null,
 
 		/**
+		 * @type {Array.<Object>}
+		 */
+		options: null,
+
+		/**
 		 * @param {OO.ui.Widget} widget
 		 * @param {string} option
 		 * @param {ext.libs.advancedSearch.dm.SearchModel} state
@@ -172,8 +177,12 @@
 		 * @return {Array.<Object>}
 		 */
 		getOptions: function () {
+			if ( this.options !== null ) {
+				return this.options;
+			}
+
 			var self = this;
-			return [
+			this.options = [
 				// Text
 				{
 					group: 'text',
@@ -326,6 +335,37 @@
 				// * Ordering ( prefer-recent:,  boost-templates: )
 				// * Meta ( linksto:, neartitle:, morelike: )
 			];
+
+			return this.options;
+		},
+
+		buildAllOptionsElement: function () {
+			var advancedOptions = this.getOptions(),
+				$allOptions = $( '<div>' ).addClass( 'mw-advancedSearch-fieldContainer' ),
+				optionSets = {},
+				self = this;
+
+			advancedOptions.forEach( function ( option ) {
+				if ( option.enabled && !option.enabled() ) {
+					return;
+				}
+
+				if ( !optionSets[ option.group ] ) {
+					optionSets[ option.group ] = new OO.ui.FieldsetLayout( {
+						label: mw.msg( 'advancedsearch-optgroup-' + option.group )
+					} );
+				}
+
+				optionSets[ option.group ].addItems( [
+					self.createLayout( self.createWidget( option ), option )
+				] );
+			} );
+
+			for ( var group in optionSets ) {
+				$allOptions.append( optionSets[ group ].$element );
+			}
+
+			return $allOptions;
 		}
 	} );
 }( mediaWiki, jQuery ) );
