@@ -64,19 +64,7 @@
 				"advancedSearch-namespaces-articles",
 				"advancedSearch-namespaces-preset-all",
 				"advancedSearch-namespaces-search-in",
-				"advancedSearch-namespaces-placeholder",
-				"advancedSearch-placeholder-commas",
-				"advancedsearch-field-plain",
-				"advancedsearch-field-phrase",
-				"advancedsearch-field-or",
-				"advancedsearch-field-not",
-				"advancedsearch-field-subpage",
-				"advancedsearch-field-intitle",
-				"advancedsearch-field-deepcat",
-				"advancedsearch-field-hastemplate",
-				"advancedsearch-field-filetype",
-				"advancedsearch-field-filew",
-				"advancedsearch-field-fileh"
+				"advancedSearch-namespaces-placeholder"
 			],
 			"dependencies": [
 				"mediawiki.jqueryMsg",
@@ -89,10 +77,10 @@
 				"oojs-ui.styles.icons-media",
 				"oojs-ui.styles.icons-user",
 				"oojs-ui.styles.icons-wikimedia",
+				"ext.advancedSearch.AdvancedOptionsBuilder",
 				"ext.advancedSearch.dm.SearchModel",
 				"ext.advancedSearch.dm.FileTypeOptionProvider",
 				"ext.advancedSearch.dm.trackingEvents.SearchRequest",
-				"ext.advancedSearch.ui.ArbitraryWordInput",
 				"ext.advancedSearch.ui.FileTypeSelection",
 				"ext.advancedSearch.ui.FormState",
 				"ext.advancedSearch.ui.ExpandablePane",
@@ -104,6 +92,28 @@
 				"ext.advancedSearch.ui.SearchPreview",
 				"ext.advancedSearch.ui.TemplateSearch",
 				"ext.advancedSearch.ui.TextInput"
+			]
+		},
+		"ext.advancedSearch.AdvancedOptionsBuilder": {
+			"scripts": [
+				"modules/ext.advancedSearch.AdvancedOptionsBuilder.js"
+			],
+			"messages": [
+				"advancedsearch-field-plain",
+				"advancedsearch-field-phrase",
+				"advancedsearch-field-or",
+				"advancedsearch-field-not",
+				"advancedsearch-field-subpage",
+				"advancedsearch-field-intitle",
+				"advancedsearch-field-deepcat",
+				"advancedsearch-field-hastemplate",
+				"advancedsearch-field-filetype",
+				"advancedsearch-field-filew",
+				"advancedsearch-field-fileh",
+				"advancedSearch-placeholder-commas"
+			],
+			"dependencies": [
+				"ext.advancedSearch.ui.ArbitraryWordInput"
 			]
 		},
 		"ext.advancedSearch.ui.ArbitraryWordInput": {
@@ -201,7 +211,18 @@
 			"messages": [
 				"advancedSearch-filesize-equals-symbol",
 				"advancedSearch-filesize-greater-than-symbol",
-				"advancedSearch-filesize-smaller-than-symbol"
+				"advancedSearch-filesize-smaller-than-symbol",
+				"advancedsearch-field-plain",
+				"advancedsearch-field-phrase",
+				"advancedsearch-field-or",
+				"advancedsearch-field-not",
+				"advancedsearch-field-subpage",
+				"advancedsearch-field-intitle",
+				"advancedsearch-field-deepcat",
+				"advancedsearch-field-hastemplate",
+				"advancedsearch-field-filetype",
+				"advancedsearch-field-filew",
+				"advancedsearch-field-fileh"
 			]
 		},
 		"ext.advancedSearch.ui.TemplateSearch": {
