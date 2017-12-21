@@ -18,6 +18,7 @@
 			not: false,
 			or: false,
 			intitle: false,
+			filetype: false,
 			hastemplate: false
 		};
 	};
