@@ -22,9 +22,6 @@
 		return;
 	}
 
-	var state = new mw.libs.advancedSearch.dm.SearchModel();
-	state.setAllFromJSON( mw.util.getParamValue( 'advancedSearch-current' ) || '' );
-
 	if ( mw.config.get( 'wgCanonicalSpecialPageName' ) !== 'Search' ) {
 		return;
 	}
@@ -41,13 +38,12 @@
 		return namespaces;
 	}
 
-	var advancedOptionsBuilder = new mw.libs.advancedSearch.AdvancedOptionsBuilder( state ),
-		advancedOptions = advancedOptionsBuilder.getOptions();
-
 	/**
+	 * @param {ext.libs.advancedSearch.dm.SearchModel} state
+	 * @param {Array.<Object>} advancedOptions
 	 * @return {string[]}
 	 */
-	function formatSearchOptions() {
+	function formatSearchOptions( state, advancedOptions ) {
 		var queryElements = [],
 			greedyQuery = null;
 
@@ -84,11 +80,71 @@
 		return advancedSearchOriginal === null ? searchFieldOriginal : advancedSearchOriginal;
 	}
 
+	function setTrackingEvents( $search, state ) {
+		$search.on( 'submit', function () {
+			var trackingEvent = new mw.libs.advancedSearch.dm.trackingEvents.SearchRequest();
+			trackingEvent.populateFromStoreOptions( state.getOptions() );
+			mw.track( 'event.' + trackingEvent.getEventName(), trackingEvent.getEventData() );
+		} );
+	}
+
+	function setSearchSubmitTrigger( $search, $searchField, state, advancedOptionsBuilder ) {
+		$search.on( 'submit', function () {
+			var compiledQuery = $.trim( $searchField.val() + ' ' + formatSearchOptions( state, advancedOptionsBuilder.getOptions() ).join( ' ' ) ),
+				$compiledSearchField = $( '<input>' ).prop( {
+					name: $searchField.prop( 'name' ),
+					type: 'hidden'
+				} ).val( compiledQuery );
+
+			$searchField.prop( 'name', 'advancedSearchOption-original' )
+				.after( $compiledSearchField );
+		} );
+	}
+
+	function updateSearchResultLinks( currentState ) {
+		$( '.mw-prevlink, .mw-nextlink, .mw-numlink' ).attr( 'href', function ( i, href ) {
+			return href + '&advancedSearch-current=' + currentState.toJSON();
+		} );
+	}
+
+	function buildPaneElement( state, advancedOptionsBuilder ) {
+		var searchPreview = new mw.libs.advancedSearch.ui.SearchPreview( state, {
+			label: mw.msg( 'advancedsearch-options-pane-head' ),
+			previewOptions: $.map( advancedOptionsBuilder.getOptions(), function ( option ) {
+				return option.id;
+			} )
+		} );
+
+		var pane = new mw.libs.advancedSearch.ui.ExpandablePane( {
+			$paneContent: advancedOptionsBuilder.buildAllOptionsElement(),
+			$buttonLabel: searchPreview.$element,
+			tabIndex: 0
+		} );
+		pane.on( 'change', function () {
+			if ( pane.isOpen() ) {
+				searchPreview.hidePreview();
+			} else {
+				searchPreview.showPreview();
+			}
+		} );
+
+		return pane.$element;
+	}
+
+	function initState() {
+		var state = new mw.libs.advancedSearch.dm.SearchModel();
+		state.setAllFromJSON( mw.util.getParamValue( 'advancedSearch-current' ) || '' );
+
+		return state;
+	}
+
+	var state = initState(),
+		advancedOptionsBuilder = new mw.libs.advancedSearch.AdvancedOptionsBuilder( state );
+
 	var $search = $( 'form#search, form#powersearch' ),
 		$advancedSearch = $( '<div>' ).addClass( 'mw-advancedSearch-container' ),
 		$searchField = $search.find( 'input[name="search"]' ),
-		$profileField = $search.find( 'input[name="profile"]' ),
-		optionSets = {};
+		$profileField = $search.find( 'input[name="profile"]' );
 
 	$search.append( $advancedSearch );
 
@@ -97,71 +153,10 @@
 
 	$profileField.val( 'advanced' );
 
-	$search.on( 'submit', function () {
-		var trackingEvent = new mw.libs.advancedSearch.dm.trackingEvents.SearchRequest();
-		trackingEvent.populateFromStoreOptions( state.getOptions() );
-		mw.track( 'event.' + trackingEvent.getEventName(), trackingEvent.getEventData() );
-	} );
+	setTrackingEvents( $search, state );
+	setSearchSubmitTrigger( $search, $searchField, state, advancedOptionsBuilder );
 
-	function updateSearchResultLinks( currentState ) {
-		$( '.mw-prevlink, .mw-nextlink, .mw-numlink' ).attr( 'href', function ( i, href ) {
-			return href + '&advancedSearch-current=' + currentState.toJSON();
-		} );
-	}
-
-	advancedOptions.forEach( function ( option ) {
-		if ( option.enabled && !option.enabled() ) {
-			return;
-		}
-
-		if ( !optionSets[ option.group ] ) {
-			optionSets[ option.group ] = new OO.ui.FieldsetLayout( {
-				label: mw.msg( 'advancedsearch-optgroup-' + option.group )
-			} );
-		}
-
-		optionSets[ option.group ].addItems( [
-			advancedOptionsBuilder.createLayout( advancedOptionsBuilder.createWidget( option ), option )
-		] );
-	} );
-
-	var $allOptions = $( '<div>' ).addClass( 'mw-advancedSearch-fieldContainer' );
-
-	for ( var group in optionSets ) {
-		$allOptions.append( optionSets[ group ].$element );
-	}
-
-	var searchPreview = new mw.libs.advancedSearch.ui.SearchPreview( state, {
-		label: mw.msg( 'advancedsearch-options-pane-head' ),
-		previewOptions: $.map( advancedOptions, function ( option ) {
-			return option.id;
-		} )
-	} );
-
-	var pane = new mw.libs.advancedSearch.ui.ExpandablePane( {
-		$paneContent: $allOptions,
-		$buttonLabel: searchPreview.$element,
-		tabIndex: 0
-	} );
-	pane.on( 'change', function () {
-		if ( pane.isOpen() ) {
-			searchPreview.hidePreview();
-		} else {
-			searchPreview.showPreview();
-		}
-	} );
-	$advancedSearch.append( pane.$element );
-
-	$search.on( 'submit', function () {
-		var compiledQuery = $.trim( $searchField.val() + ' ' + formatSearchOptions().join( ' ' ) ),
-			$compiledSearchField = $( '<input>' ).prop( {
-				name: $searchField.prop( 'name' ),
-				type: 'hidden'
-			} ).val( compiledQuery );
-
-		$searchField.prop( 'name', 'advancedSearchOption-original' )
-			.after( $compiledSearchField );
-	} );
+	$advancedSearch.append( buildPaneElement( state, advancedOptionsBuilder ) );
 
 	updateSearchResultLinks( state );
 
