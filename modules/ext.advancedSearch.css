@@ -146,6 +146,11 @@
 	border-top: 0;
 }
 
+/* FIXME: Might be removed when indicator alignment is unified in OOjs UI */
+.mw-advancedSearch-namespaceFilter.oo-ui-indicatorElement .oo-ui-tagMultiselectWidget-handle .oo-ui-indicatorElement-indicator {
+	margin: 0 0.9375em;
+}
+
 .oo-ui-popupWidget-popup .mw-advancedSearch-tooltip-head {
 	font-size: 110%;
 	color: #999;
