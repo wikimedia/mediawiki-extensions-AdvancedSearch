@@ -103,7 +103,7 @@
 
 .mw-advancedSearch-filetype-presets .oo-ui-multioptionWidget {
 	display: inline-block;
-	margin-right: 1em; /* TODO margin-left for LTR? */
+	margin-right: 1em;
 }
 
 .mw-advancedSearch-filesize .operator-container,
