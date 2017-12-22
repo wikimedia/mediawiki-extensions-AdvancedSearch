@@ -94,13 +94,6 @@
 	display: none;
 }
 
-.mw-advancedSearch-expandablePane-button .oo-ui-indicatorElement-indicator {
-	position: absolute;
-	top: 0;
-	height: 100%;
-	right: 0.9375em;
-}
-
 .mw-advancedSearch-filetype-presets .oo-ui-multioptionWidget {
 	display: inline-block;
 	margin-right: 1em;
