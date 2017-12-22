@@ -6,6 +6,7 @@
 			"KATRINE1992"
 		]
 	},
+	"advancedsearch-desc": "Acceso sencillo a las prestaciones de búsqueda avanzadas de [[Special:Search]]",
 	"advancedsearch-options-pane-head": "Parámetros avanzados:",
 	"advancedsearch-optgroup-text": "Buscar en el texto de la página",
 	"advancedsearch-optgroup-structure": "Estructura",
@@ -21,8 +22,9 @@
 	"advancedsearch-field-filetype": "Tipo de archivo:",
 	"advancedsearch-field-filew": "Anchura del archivo en píxeles:",
 	"advancedsearch-field-fileh": "Altura de archivo en píxeles:",
-	"advancedsearch-help-plain": "; Descripcion\n: Busca para esas palabras en el titulo o texto.\n: Tomar en cuenta los siguientes\n-Muchas palabras pueden ser introducido aqui.\n-La punctuacion  y otros caracteres no alfa-numericos (excepto la colona y el coma)pueden ser ignorados.\n-Hay a veces resultados que no incluyen uno o mas terminos de busqueda.\n: El raiz de palabras es aplicado. Ejemplo: Si ''car'' ha sido introducido, la busqueda va tambien considerar ''cars'' (=''autos/maquinas''.). El raiz de palabras es concreto.\n: Pagina de ayuda\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search Full text search]\n; La redaccion es segun la busqueda normal\n:<code>sesame maquina de calle </code>",
-	"advancedsearch-help-or": "<dl><dt>Descripcion:</dt><dd>Al menos un terme de busqueda debe ser incluso en la pagina.</dd> <dt>Pagina de ayuda:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Words, phrases, and modifiers]</dd> <dt>Syntax Equivalente en la busqueda normal-:</dt><dd> Words with <code>OR</code> entre ellos <code>Laptop OR Notebook</code>.</dd></dl>",
+	"advancedsearch-help-plain": ";Descripción\n:Busca estas palabras en el título o el texto.\n;Presta atención a lo siguiente\n:* Se pueden proporcionar varias palabras aquí.\n:* Se pasarán por alto los signos de puntuación y otros caracteres no alfanuméricos (con la excepción de los dos puntos y la coma).\n:* Puede que haya resultados que no contengan uno o más de tus términos de búsqueda.\n:* Se aplica la derivación de palabras. Ejemplo: si se escribe ''auto'', la búsqueda también considerará ''autos''. La derivación de palabras es específica de cada idioma.\n;Página de ayuda\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search Búsqueda de texto completo]\n;Equivalente sintáctico en la búsqueda normal\n:<code>sesame street car</code>",
+	"advancedsearch-help-phrase": ";Descripción\n:Busca una secuencia de caracteres específica. Se pasan por alto los signos de puntuación.\n;Presta atención a lo siguiente\n:* La búsqueda NO distingue entre mayúsculas y minúsculas.\n:* Se pasarán por alto los signos de puntuación y otros caracteres no alfanuméricos (con la excepción de los dos puntos y la coma).\n:* La derivación de palabras no funciona aquí.\n;Página de ayuda\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Palabras, frases y modificadores]\n;Equivalente sintáctico en la búsqueda normal\n:Palabras rodeadas por <code>\" \"</code>; por ejemplo: <code>\"Empezar por el principio\"</code>.",
+	"advancedsearch-help-or": ";Descripción\n:Por lo menos uno de los términos de búsqueda debe incluirse en la página.\n;Página de ayuda\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Palabras, frases y modificadores]\n;Equivalente sintáctico en la búsqueda normal\n:Palabras con <code>OR</code> entre ellas, como <code>Computadora OR Ordenador</code>.",
 	"advancedsearch-help-filetype": "<dl><dt>Descripción:</dt><dd>Busca archivos del tipo seleccionado únicamente.</dd> <dt>Presta atención a lo siguiente: </dt><dd><ul> <li>Solo puedes buscar un tipo de archivo a la vez.</li> <li>Solo puedes seleccionar los tipos de archivo incluidos en el menú desplegable.</li></ul></dd> <dt>Páginas de ayuda:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype filetype] y [https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime filemime]</dd> <dt>El equivalente sintáctico en las búsquedas normales es:</dt><dd>Términos con <code>filetype:</code> antepuesto, como <code>filetype:ogg</code>.</dd></dl>",
 	"advancedsearch-help-filew": ": Descripcion\n: Estos campos le permiten de especificar la largura del fichero.\n: Tome en cuenta los siguientes\nEsto es solamente aplicado en los ficheros que son largos y altos, como videos e imagenes\n: Pagina de ayuda\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]\nSintax que corrsponde a una busqueda normal\n: Numeros con  <code>filew</code> antes ellos como <code>filew:>800</code>.",
 	"advancedsearch-help-fileh": "<dl><dt>Descripción:</dt><dd>Estos campos te permiten especificar la altura del archivo.</dd> <dt>Presta atención a lo siguiente: </dt><dd><ul> <li>Esto solo se aplica a los tipos de archivo que tengan anchura y altura, como los vídeos y las imágenes.</li></ul></dd> <dt>Página de ayuda:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Medidas de archivos]</dd> <dt>Equivalencia sintáctica en búsquedas normales:</dt><dd>Números con <code>fileh</code> antepuesto, como <code>fileh:>600</code>.</dd></dl>",
@@ -38,7 +40,7 @@
 	"advancedsearch-filetype-audio": "Audio",
 	"advancedsearch-filetype-video": "Vídeo",
 	"advancedsearch-filetype-multimedia": "Multimedia",
-	"advancedsearch-filetype-office": "Oficina",
+	"advancedsearch-filetype-office": "Documentos",
 	"advancedSearch-filesize-equals": "igual a",
 	"advancedSearch-filesize-greater-than": "mayor que",
 	"advancedSearch-filesize-smaller-than": "menor que",
@@ -46,5 +48,6 @@
 	"advancedSearch-namespaces-search-in": "Buscar en:",
 	"advancedSearch-namespaces-preset-all": "Todos",
 	"advancedSearch-namespaces-placeholder": "Añadir espacios de nombres",
-	"advancedSearch-beta-feature-message": "Interfaz de búsqueda avanzada"
+	"advancedSearch-beta-feature-message": "Interfaz de búsqueda avanzada",
+	"advancedSearch-beta-feature-description": "Acceso sencillo a las prestaciones de búsqueda avanzadas de [[Special:Search]]."
 }
