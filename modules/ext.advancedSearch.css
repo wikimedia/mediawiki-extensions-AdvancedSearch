@@ -33,8 +33,7 @@
 	margin-top: 0.3em;
 }
 
-/* FIXME: Why is this border set on a "label" element and not on the <fieldset>? */
-.mw-advancedSearch-fieldContainer fieldset.oo-ui-labelElement {
+.mw-advancedSearch-fieldContainer fieldset {
 	border: 0;
 	border-top: solid 1px #c8ccd1;
 	margin-top: 1em;
