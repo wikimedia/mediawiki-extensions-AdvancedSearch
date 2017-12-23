@@ -138,56 +138,57 @@
 		return state;
 	}
 
-	var state = initState(),
-		advancedOptionsBuilder = new mw.libs.advancedSearch.AdvancedOptionsBuilder( state );
+	$( function () {
+		var state = initState(),
+			advancedOptionsBuilder = new mw.libs.advancedSearch.AdvancedOptionsBuilder( state );
 
-	var $search = $( 'form#search, form#powersearch' ),
-		$advancedSearch = $( '<div>' ).addClass( 'mw-advancedSearch-container' ),
-		$searchField = $search.find( 'input[name="search"]' ),
-		$profileField = $search.find( 'input[name="profile"]' );
+		var $search = $( 'form#search, form#powersearch' ),
+			$advancedSearch = $( '<div>' ).addClass( 'mw-advancedSearch-container' ),
+			$searchField = $search.find( 'input[name="search"]' ),
+			$profileField = $search.find( 'input[name="profile"]' );
 
-	$search.append( $advancedSearch );
+		$search.append( $advancedSearch );
 
-	$searchField.val( getSearchOriginal() );
-	$searchField.focus();
+		$searchField.val( getSearchOriginal() );
+		$searchField.focus();
 
-	$profileField.val( 'advanced' );
+		$profileField.val( 'advanced' );
 
-	setTrackingEvents( $search, state );
-	setSearchSubmitTrigger( $search, $searchField, state, advancedOptionsBuilder );
+		setTrackingEvents( $search, state );
+		setSearchSubmitTrigger( $search, $searchField, state, advancedOptionsBuilder );
 
-	$advancedSearch.append( buildPaneElement( state, advancedOptionsBuilder ) );
+		$advancedSearch.append( buildPaneElement( state, advancedOptionsBuilder ) );
 
-	updateSearchResultLinks( state );
+		updateSearchResultLinks( state );
 
-	var currentSearch = new mw.libs.advancedSearch.ui.FormState( state, {
-		name: 'advancedSearch-current'
-	} );
+		var currentSearch = new mw.libs.advancedSearch.ui.FormState( state, {
+			name: 'advancedSearch-current'
+		} );
 
-	$advancedSearch.append( currentSearch.$element );
+		$advancedSearch.append( currentSearch.$element );
 
-	var namespaceSelection = new mw.libs.advancedSearch.ui.NamespaceFilters( state, {
-			namespaces: prepareNamespaces(),
-			placeholder: mw.msg( 'advancedSearch-namespaces-placeholder' )
-		} ),
-		namespacePresets = new mw.libs.advancedSearch.ui.NamespacePresets( state, {
-			classes: [ 'mw-advancedSearch-namespacePresets' ],
-			presets: {
-				all: {
-					namespaces: Object.keys( prepareNamespaces() ),
-					label: mw.msg( 'advancedSearch-namespaces-preset-all' )
+		var namespaceSelection = new mw.libs.advancedSearch.ui.NamespaceFilters( state, {
+				namespaces: prepareNamespaces(),
+				placeholder: mw.msg( 'advancedSearch-namespaces-placeholder' )
+			} ),
+			namespacePresets = new mw.libs.advancedSearch.ui.NamespacePresets( state, {
+				classes: [ 'mw-advancedSearch-namespacePresets' ],
+				presets: {
+					all: {
+						namespaces: Object.keys( prepareNamespaces() ),
+						label: mw.msg( 'advancedSearch-namespaces-preset-all' )
+					}
 				}
-			}
-		} ),
-		namespaceSelectionPreview = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection' );
+			} ),
+			namespaceSelectionPreview = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection' );
 
-	$advancedSearch.append( namespaceSelectionPreview );
-	namespaceSelectionPreview
-		.after( namespaceSelection.$element )
-		.append( $( '<strong>' ).text( mw.msg( 'advancedSearch-namespaces-search-in' ) ) )
-		.append( namespacePresets.$element );
+		$advancedSearch.append( namespaceSelectionPreview );
+		namespaceSelectionPreview
+			.after( namespaceSelection.$element )
+			.append( $( '<strong>' ).text( mw.msg( 'advancedSearch-namespaces-search-in' ) ) )
+			.append( namespacePresets.$element );
 
-	// remove old namespace selection item to avoid double ns parameters
-	$( '#mw-searchoptions' ).remove();
-
+		// remove old namespace selection item to avoid double ns parameters
+		$( '#mw-searchoptions' ).remove();
+	} );
 }( mediaWiki, jQuery ) );
