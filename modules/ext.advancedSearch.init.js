@@ -27,14 +27,15 @@
 	}
 
 	function prepareNamespaces() {
-		var namespaces = mw.config.get( 'wgFormattedNamespaces' );
+		var rawNamespaces = mw.config.get( 'wgFormattedNamespaces' ),
+			namespaces = {};
 		// Article namespace has no name by default
-		namespaces[ '0' ] = mw.msg( 'advancedSearch-namespaces-articles' );
-		$.each( Object.keys( namespaces ), function ( _, key ) {
-			if ( parseInt( key, 10 ) < 0 ) {
-				delete namespaces[ key ];
+		$.each( Object.keys( rawNamespaces ), function ( _, key ) {
+			if ( parseInt( key, 10 ) >= 0 ) {
+				namespaces[ key ] = rawNamespaces[ key ];
 			}
 		} );
+		namespaces[ '0' ] = mw.msg( 'advancedSearch-namespaces-articles' );
 		return namespaces;
 	}
 
