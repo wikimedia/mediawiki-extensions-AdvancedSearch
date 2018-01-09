@@ -204,4 +204,14 @@
 		this.clearInput();
 	};
 
+	/**
+	 * Respond to menu toggle event by changing the indicator
+	 *
+	 * @param {boolean} isVisible
+	 */
+	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.onMenuToggle = function ( isVisible ) {
+		mw.libs.advancedSearch.ui.NamespaceFilters.parent.prototype.onMenuToggle.call( this, isVisible );
+		this.setIndicator( isVisible ? 'up' : 'down' );
+	};
+
 }( mediaWiki, jQuery ) );
