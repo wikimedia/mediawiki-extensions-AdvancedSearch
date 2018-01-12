@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Piramidion",
-			"SimondR"
+			"SimondR",
+			"Avatar6"
 		]
 	},
 	"advancedsearch-desc": "Легкий доступ до можливостей розширеного пошуку на сторінці [[Special:Search|Спеціальна:Пошук]]",
@@ -10,10 +11,10 @@
 	"advancedsearch-optgroup-text": "Пошук у тексті сторінки",
 	"advancedsearch-optgroup-structure": "Структура",
 	"advancedsearch-optgroup-files": "Файли та зображення",
-	"advancedsearch-field-plain": "Це слово:",
+	"advancedsearch-field-plain": "Ці слова:",
 	"advancedsearch-field-phrase": "Точний пошук тексту:",
 	"advancedsearch-field-or": "Одне з цих слів:",
-	"advancedsearch-field-not": "Крім цього слова:",
+	"advancedsearch-field-not": "Крім цих слів:",
 	"advancedsearch-field-subpage": "Підсторінки цієї сторінки:",
 	"advancedsearch-field-intitle": "Назва сторінки містить:",
 	"advancedsearch-field-deepcat": "Сторінка в цій категорії:",
@@ -33,9 +34,9 @@
 	"advancedSearch-placeholder-commas": "Введіть слова, відокремлені комами, напр., кішки, кошенята, ...",
 	"advancedsearch-filetype-section-types": "Загальний тип файлу",
 	"advancedsearch-filetype-section-image": "Формат зображення",
-	"advancedsearch-filetype-section-video": "Відеоформат",
-	"advancedsearch-filetype-section-audio": "Аудіоформат",
-	"advancedsearch-filetype-section-document": "Формат документу",
+	"advancedsearch-filetype-section-video": "Відеоформати",
+	"advancedsearch-filetype-section-audio": "Аудіоформати",
+	"advancedsearch-filetype-section-document": "Формати документів",
 	"advancedsearch-filetype-section-other": "Інші формати",
 	"advancedsearch-filetype-bitmap": "Зображення",
 	"advancedsearch-filetype-vector": "Рисунок",
@@ -49,6 +50,7 @@
 	"advancedSearch-namespaces-articles": "Статті",
 	"advancedSearch-namespaces-search-in": "Шукати у:",
 	"advancedSearch-namespaces-preset-all": "Усі",
+	"advancedSearch-namespaces-placeholder": "Додати простори назв",
 	"advancedSearch-beta-feature-message": "Інтерфейс розширеного пошуку",
 	"advancedSearch-beta-feature-description": "Легкий доступ до можливостей розширеного пошуку на сторінці [[Special:Search|Спеціальна:Пошук]]."
 }
