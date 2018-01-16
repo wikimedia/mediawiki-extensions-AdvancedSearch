@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bencemac"
+			"Bencemac",
+			"Tacsipacsi"
 		]
 	},
 	"advancedsearch-desc": "Egyszerű hozzáférés a haladó keresési lehetőségekhez a [[Special:Search]] oldalon.",
@@ -44,6 +45,7 @@
 	"advancedSearch-namespaces-articles": "Szócikkek",
 	"advancedSearch-namespaces-search-in": "Keresés itt:",
 	"advancedSearch-namespaces-preset-all": "Minden névtér",
+	"advancedSearch-namespaces-placeholder": "Névterek hozzáadása",
 	"advancedSearch-beta-feature-message": "Fejlett keresési felület",
 	"advancedSearch-beta-feature-description": "Egyszerű hozzáférés a haladó keresési lehetőségekhez a [[Special:Search]] oldalon."
 }
