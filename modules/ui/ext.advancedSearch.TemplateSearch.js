@@ -147,7 +147,7 @@
 	/**
 	 * Implemented because OO.ui.mixin.LookupElement expects it.
 	 *
-	 * @returns {boolean}
+	 * @return {boolean}
 	 */
 	mw.libs.advancedSearch.ui.TemplateSearch.prototype.isReadOnly = function () {
 		return false;
