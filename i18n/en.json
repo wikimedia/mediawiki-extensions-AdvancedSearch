@@ -33,7 +33,7 @@
 	"advancedsearch-help-filew": ";Description\n:These fields allow you to specify the width of the file.\n;Be aware of the following\n:* This is only applicable to file types that have width and height, like videos and images.\n;Help page\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]\n;Syntax-equivalent in the normal search\n:Numbers with <code>filew</code> before them like <code>filew:>800</code>.",
 	"advancedsearch-help-fileh": ";Description\n:These fields allow you to specify the height of the file.\n;Be aware of the following\n:* This is only applicable to file types that have width and height, like videos and images.\n;Help page\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]\n;Syntax-equivalent in the normal search\n:Numbers with <code>fileh</code> before them like <code>fileh:>600</code>.",
 
-	"advancedSearch-placeholder-commas": "Type words separated by comma e.g. cats, goats, ...",
+	"advancedSearch-placeholder-exact-text": "Put exact words in quotes: \"cat loves goat\"",
 
 	"advancedsearch-filetype-section-types": "General file types",
 	"advancedsearch-filetype-section-image": "Image formats",

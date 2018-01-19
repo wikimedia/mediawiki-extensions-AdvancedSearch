@@ -188,33 +188,58 @@
 					group: 'text',
 					id: 'plain',
 					formatter: function ( val ) {
-						return val;
-					}
-				},
-				{
-					group: 'text',
-					id: 'phrase',
-					formatter: function ( val ) {
 						if ( Array.isArray( val ) ) {
-							return $.map( val, enforceQuotes ).join( ' ' );
+							return val.join( ' ' );
 						}
-						return enforceQuotes( val );
+						return val;
 					},
 					init: function () {
 						return new mw.libs.advancedSearch.ui.ArbitraryWordInput(
 							self.state,
 							{
-								optionId: 'phrase',
-								placeholder: mw.msg( 'advancedSearch-placeholder-commas' )
+								optionId: 'plain',
+								id: 'advancedSearchOption-plain'
 							}
 						);
 					}
 				},
 				{
 					group: 'text',
+					id: 'phrase',
+					formatter: function ( val ) {
+						return val;
+					},
+					init: function () {
+						return new mw.libs.advancedSearch.ui.TextInput(
+							self.state,
+							{
+								id: 'advancedSearchOption-phrase',
+								optionId: 'phrase',
+								placeholder: mw.msg( 'advancedSearch-placeholder-exact-text' )
+							}
+						);
+					}
+
+				},
+				{
+					group: 'text',
 					id: 'not',
 					formatter: function ( val ) {
-						return '-' + optionalQuotes( val );
+						if ( Array.isArray( val ) ) {
+							return val.map( function ( el ) {
+								return '-' + el;
+							} ).join( ' ' );
+						}
+						return '-' + val;
+					},
+					init: function () {
+						return new mw.libs.advancedSearch.ui.ArbitraryWordInput(
+							self.state,
+							{
+								optionId: 'not',
+								id: 'advancedSearchOption-not'
+							}
+						);
 					}
 				},
 				{
@@ -231,7 +256,7 @@
 							self.state,
 							{
 								optionId: 'or',
-								placeholder: mw.msg( 'advancedSearch-placeholder-commas' )
+								id: 'advancedSearchOption-or'
 							}
 						);
 					}
@@ -259,7 +284,10 @@
 					init: function () {
 						return new mw.libs.advancedSearch.ui.TemplateSearch(
 							self.state,
-							{ optionId: 'hastemplate' }
+							{
+								optionId: 'hastemplate',
+								id: 'advancedSearchOption-hastemplate'
+							}
 						);
 					},
 					customEventHandling: true
@@ -290,6 +318,7 @@
 							new mw.libs.advancedSearch.dm.FileTypeOptionProvider( mw.config.get( 'advancedSearch.mimeTypes' ) ),
 							{
 								optionId: 'filetype',
+								id: 'advancedSearchOption-filetype',
 								name: 'advancedSearchOption-filetype'
 							}
 						);
@@ -307,7 +336,8 @@
 						return new mw.libs.advancedSearch.ui.ImageDimensionInput(
 							self.state,
 							{
-								optionId: 'filew'
+								optionId: 'filew',
+								id: 'advancedSearchOption-filew'
 							}
 						);
 					},
@@ -324,7 +354,8 @@
 						return new mw.libs.advancedSearch.ui.ImageDimensionInput(
 							self.state,
 							{
-								optionId: 'fileh'
+								optionId: 'fileh',
+								id: 'advancedSearchOption-fileh'
 							}
 						);
 					},

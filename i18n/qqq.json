@@ -33,7 +33,7 @@
 	"advancedsearch-help-filetype": "Help text shown in a dialog for the field for file type",
 	"advancedsearch-help-filew": "Help text shown in a dialog for the field for file width in pixels",
 	"advancedsearch-help-fileh": "Help text shown in a dialog for the field for file height in pixels",
-	"advancedSearch-placeholder-commas": "Placeholder text shown in fields that accept multiple values separated by commas",
+	"advancedSearch-placeholder-exact-text": "Placeholder that is shown for the field exact words",
 	"advancedsearch-filetype-section-types": "Label for the file type section",
 	"advancedsearch-filetype-section-image": "Label for the image format section",
 	"advancedsearch-filetype-section-video": "Label for the video format section",

@@ -79,31 +79,33 @@
 		assert.equal( input.getTextForPlaceholder(), '' );
 	} );
 
-	QUnit.test( 'Text with commas gets turned into tags', function ( assert ) {
+	QUnit.test( 'Text with commas and spaces gets turned into tags', function ( assert ) {
 		var input = new ArbitraryWordInput( new Model(), {} );
-		input.input.setValue( 'initial, comma separated, values' );
+		input.input.setValue( 'initial,comma,separated values' );
 		input.buildTagsFromInput();
 
 		assert.deepEqual(
 			input.getValue(),
 			[
 				'initial',
-				'comma separated',
+				'comma',
+				'separated',
 				'values'
 			]
 		);
 	} );
 
-	QUnit.test( 'Extra commas do not cause empty tag creation', function ( assert ) {
+	QUnit.test( 'Extra commas and spaces do not cause empty tag creation', function ( assert ) {
 		var input = new ArbitraryWordInput( new Model(), {} );
-		input.input.setValue( ',initial,, comma separated, values,,' );
+		input.input.setValue( ',initial,, comma   separated, values,,' );
 		input.buildTagsFromInput();
 
 		assert.deepEqual(
 			input.getValue(),
 			[
 				'initial',
-				'comma separated',
+				'comma',
+				'separated',
 				'values'
 			]
 		);
