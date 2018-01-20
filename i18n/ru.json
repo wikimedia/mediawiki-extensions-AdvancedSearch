@@ -4,7 +4,8 @@
 			"Alexey zakharenkov",
 			"Kareyac",
 			"Wirbel78",
-			"4elovek12345"
+			"4elovek12345",
+			"Okras"
 		]
 	},
 	"advancedsearch-field-plain": "Эти слова:",
@@ -12,9 +13,17 @@
 	"advancedsearch-field-not": "Не эти слова:",
 	"advancedsearch-field-subpage": "Подстраницы данной страницы:",
 	"advancedsearch-field-intitle": "Заголовок страницы содержит:",
+	"advancedsearch-field-deepcat": "Страница в этой категории:",
+	"advancedsearch-field-hastemplate": "Только страницы с этим шаблоном:",
+	"advancedsearch-field-filetype": "Тип файла:",
 	"advancedsearch-filetype-section-types": "Типы внешних файлов:",
 	"advancedsearch-filetype-section-video": "Форматы видео-файлов",
 	"advancedsearch-filetype-section-audio": "Форматы аудио-файлов",
 	"advancedsearch-filetype-section-document": "Форматы документов",
-	"advancedsearch-filetype-bitmap": "Изображение"
+	"advancedsearch-filetype-section-other": "Другие форматы",
+	"advancedsearch-filetype-bitmap": "Изображение",
+	"advancedsearch-filetype-audio": "Звук",
+	"advancedsearch-filetype-video": "Видео",
+	"advancedsearch-filetype-multimedia": "Мультимедиа",
+	"advancedSearch-namespaces-placeholder": "Добавить пространства имён"
 }

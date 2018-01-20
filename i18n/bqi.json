@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mogoeilor"
+		]
+	},
+	"advancedsearch-filetype-bitmap": "ٱسگ",
+	"advancedsearch-filetype-vector": "کاٛشیاری کردن",
+	"advancedsearch-filetype-audio": "بونگ",
+	"advancedsearch-filetype-video": "ۋیدیو",
+	"advancedsearch-filetype-multimedia": "ۋارسگر خٱلکمند",
+	"advancedsearch-filetype-office": "دیۋۊن",
+	"advancedSearch-filesize-equals": "هومبراۋراٛ ۋا",
+	"advancedSearch-filesize-greater-than": "گٱپتراٛ ز",
+	"advancedSearch-filesize-smaller-than": "کۊچیرتراٛ ز",
+	"advancedSearch-namespaces-articles": "گوتارا",
+	"advancedSearch-namespaces-search-in": "ماٛن بگرد:",
+	"advancedSearch-namespaces-preset-all": "همٱ"
+}
