@@ -28,7 +28,6 @@
 	"advancedsearch-help-filetype": "선택된 유형의 파일만 검색합니다",
 	"advancedsearch-help-filew": "지정된 너비에 해당하는 파일만 검색합니다",
 	"advancedsearch-help-fileh": "지정된 높이에 해당하는 파일만 검색합니다",
-	"advancedSearch-placeholder-commas": "\"고양이, 염소\"처럼 쉼표로 구분하여 단어를 입력하세요...",
 	"advancedsearch-filetype-section-types": "일반 파일 유형",
 	"advancedsearch-filetype-section-image": "그림 형식",
 	"advancedsearch-filetype-section-video": "동영상 형식",

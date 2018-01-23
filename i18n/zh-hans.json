@@ -31,7 +31,6 @@
 	"advancedsearch-help-filetype": ";描述\n:只搜索选定类型的文件。\n;请注意以下说明\n:* 您只可以搜索一个文件类型。\n:* 您只可以选择下拉菜单中指定的文件类型。\n;帮助页面\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch/zh#文件类型 文件类型]和[https://www.mediawiki.org/wiki/Help:CirrusSearch/zh#文件mime 文件mime]\n;在普通搜索中具有相同功能的语法\n:词前包含<code>filetype:</code>的词，例如<code>filetype:ogg</code>。",
 	"advancedsearch-help-filew": ";描述\n:这些字段允许您指定文件宽度。\n;请注意以下说明\n:* 这只应用到有宽和高的文件类型，例如视频和图片。\n;帮助页面\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch/zh#文件度量 文件度量]\n;在普通搜索中具有相同功能的语法\n:前面带<code>filew</code>的数字，例如<code>filew:>800</code>。",
 	"advancedsearch-help-fileh": ";描述\n:这些字段允许您指定文件高度。\n;请注意以下说明\n:* 这只应用到有宽和高的文件类型，例如视频和图片。\n;帮助页面\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch/zh#文件度量 文件度量]\n;在普通搜索中具有相同功能的语法\n:前面带<code>filew</code>的数字，例如<code>filew:>800</code>。",
-	"advancedSearch-placeholder-commas": "用英文逗号分隔字词，例如：猫, 山羊, ...",
 	"advancedsearch-filetype-section-types": "一般文件类型",
 	"advancedsearch-filetype-section-image": "图片格式",
 	"advancedsearch-filetype-section-video": "视频格式",

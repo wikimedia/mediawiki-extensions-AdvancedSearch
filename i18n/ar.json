@@ -31,7 +31,6 @@
 	"advancedsearch-help-filetype": ";الوصف\n:عمليات البحث فقط عن الملفات بالنوع المختار.\n;كن على علم بالتالي\n:* يمكنك فقط البحث عن نوع ملف واحد.\n:* يمكنك فقط اختيار أنواع الملفات المعطاة من القائمة المنسدلة.\n;صفحات المساعدة\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype نوع الملف] و [https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime ميم الملف]\n;الصياغة المكافئة في البحث العادي\n:</dt><dd>الكلمات ب <code>filetype:</code>قبلها مثل <code>filetype:ogg</code>.",
 	"advancedsearch-help-filew": ";الوصف\n:هذه الحقول تسمح لك بتحديد عرض الملف.\n;كن على علم بالتالي\n:* هذا مطبق فقط على أنواع الملفات التي لديها عرض وارتفاع، مثل الفيديو والصور.\n;صفحة المساعدة\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures مقاييس الملف]\n;الصياغة المكافئة في البحث العادي\n:الأرقام ب <code>filew</code> قبلها مثل <code>filew:>800</code>.",
 	"advancedsearch-help-fileh": ";الوصف\n:هذه الحقول تسمح لك بتحديد ارتفاع الملف.\n;كن على علم بالتالي\n:* هذا مطبق فقط على أنواع الملفات التي لديها عرض وارتفاع، مثل الفيديو والصور.\n;صفحة المساعدة\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures مقاييس الملف]\n;الصياغة المكافئة في البحث العادي\n:الأرقام ب <code>fileh</code> قبلها مثل <code>fileh:>600</code>.",
-	"advancedSearch-placeholder-commas": "اكتب الكلمات مفصلة بفاصلة مثال قطط, عنزات, ...",
 	"advancedsearch-filetype-section-types": "أنواع الملفات العامة",
 	"advancedsearch-filetype-section-image": "صيغ الصور",
 	"advancedsearch-filetype-section-video": "صيغ الفيديو",
