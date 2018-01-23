@@ -6,6 +6,9 @@ use MimeAnalyzer;
 use PHPUnit\Framework\TestCase;
 use PHPUnit_Framework_MockObject_MockObject;
 
+/**
+ * @covers \AdvancedSearch\MimeTypeConfigurator
+ */
 class MimeTypeConfiguratorTest extends TestCase {
 
 	const EXT_SINGLE_MIMETYPE = 'singletype';
