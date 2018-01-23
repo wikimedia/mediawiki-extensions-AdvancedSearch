@@ -59,6 +59,7 @@
 		return new OO.ui.MenuOptionWidget( {
 			data: data,
 			label: label || data,
+			classes: [ 'mw-advancedSearch-namespace-' + data ],
 			icon: this.getNamespaceIcon( data )
 		} );
 	};
