@@ -53,7 +53,7 @@
 	};
 
 	mw.libs.advancedSearch.ui.ArbitraryWordInput.prototype.buildTagsFromInput = function () {
-		var segments = this.input.getValue().split( ',' );
+		var segments = this.input.getValue().split( /[, ]/ );
 
 		if ( segments.length > 1 ) {
 			var self = this;
