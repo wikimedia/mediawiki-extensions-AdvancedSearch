@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"HalanTul"
+		]
+	},
+	"advancedsearch-optgroup-structure": "Тутула",
+	"advancedsearch-field-plain": "Бу тыллар:",
+	"advancedsearch-field-or": "Бу тыллартан биирдэстэрэ:",
+	"advancedsearch-field-not": "Балартан ураты:",
+	"advancedsearch-field-subpage": "Бу сирэй үөдүҥнэрэ:",
+	"advancedsearch-field-intitle": "Сирэй аатыгар баар:",
+	"advancedsearch-field-deepcat": "Бу категория сирэйэ:",
+	"advancedsearch-field-hastemplate": "Маннык халыыптаах сирэйдэри эрэ:",
+	"advancedsearch-field-filetype": "Билэ көрүҥэ:",
+	"advancedsearch-filetype-section-types": "Тас билэлэр көрүҥнэрэ:",
+	"advancedsearch-filetype-section-image": "Ойуу формааттара",
+	"advancedsearch-filetype-section-document": "Докумуоннар формааттара",
+	"advancedsearch-filetype-section-other": "Атын формааттар",
+	"advancedsearch-filetype-bitmap": "Ойуу",
+	"advancedsearch-filetype-vector": "Уруһуй"
+}

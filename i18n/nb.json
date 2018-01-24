@@ -30,6 +30,7 @@
 	"advancedsearch-help-filetype": ";Beskrivelse\n:Søker kun etter filer av den valgte typen.\n;Vær obs på følgende\n:* Du kan bare søke etter én filtype.\n:* Du kan bare velge filtypene fra nedtrekksmenyen.\n;Hjelpesider\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype filetype] og [https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime filemime]\n;Tilsvarende syntaks i vanlig søk\n:Ord med <code>filetype:</code> foran, som <code>filetype:ogg</code>.",
 	"advancedsearch-help-filew": ";Beskrivelse\n:Disse feltene lar deg angi bredden til filen.\n;Vær obs på følgende\n:* Dette gjelder kun filtyper som har bredde og høyde, som videoer og bilder.\n;Hjelpeside\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Fildimensjoner]\n;Tilsvarende syntaks i vanlig søk\n:Tall med <code>filew</code> foran, som <code>filew:>800</code>.",
 	"advancedsearch-help-fileh": ";Beskrivelse\n:Disse feltene lar deg angi høyden til filen.\n;Vær obs på følgende\n:* Dette gjelder kun filtyper som har bredde og høyde, som videoer og bilder.\n;Hjelpeside\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Fildimensjoner]\n;Tilsvarende syntaks i vanlig søk\n:Tall med <code>fileh</code> foran, som <code>fileh:>600</code>.",
+	"advancedSearch-placeholder-exact-text": "Sett de eksakte ordene i sitattegn: \"katt elsker geit\"",
 	"advancedsearch-filetype-section-types": "Generelle filtyper",
 	"advancedsearch-filetype-section-image": "Bildeformater",
 	"advancedsearch-filetype-section-video": "Videoformater",
