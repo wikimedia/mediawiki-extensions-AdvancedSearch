@@ -170,7 +170,8 @@
 
 		var namespaceSelection = new mw.libs.advancedSearch.ui.NamespaceFilters( state, {
 				namespaces: prepareNamespaces(),
-				placeholder: mw.msg( 'advancedSearch-namespaces-placeholder' )
+				placeholder: mw.msg( 'advancedSearch-namespaces-placeholder' ),
+				$overlay: true
 			} ),
 			namespacePresets = new mw.libs.advancedSearch.ui.NamespacePresets( state, {
 				classes: [ 'mw-advancedSearch-namespacePresets' ],
