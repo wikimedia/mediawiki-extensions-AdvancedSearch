@@ -11,7 +11,8 @@ class SearchPage extends Page {
 	get searchNotTheseWordsTagLabel() { return browser.element( '#advancedSearchOption-not .oo-ui-tagItemWidget > .oo-ui-labelElement-label' ); }
 	get searchOneWord() { return browser.element( '#advancedSearchOption-or' ); }
 	get searchOneWordTagLabel() { return browser.element( '#advancedSearchOption-or .oo-ui-tagItemWidget > .oo-ui-labelElement-label' ); }
-	get searchExpandablePane() { return browser.element( '.mw-advancedSearch-expandablePane-button' ); }
+	get searchExpandablePane() { return browser.element( '.mw-advancedSearch-expandablePane' ); }
+	get searchPaginationLinks() { return browser.elements( '.mw-search-pager-bottom a' ); }
 	get searchPreview() { return browser.element( '.mw-advancedSearch-searchPreview' ); }
 	get searchPreviewItems() { return browser.elements( '.mw-advancedSearch-searchPreview .mw-advancedSearch-searchPreview-previewPill' ); }
 
