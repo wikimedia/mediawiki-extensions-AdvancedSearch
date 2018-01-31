@@ -27,6 +27,7 @@
 	"advancedsearch-help-filetype": ";Kirjeldus\n:Otsitakse ainult valitud tüüpi faile.\n;Silmaspidamiseks\n:* Saad otsida ainult üht tüüpi faile.\n:* Saad valida ainult rippmenüüs pakutud failitüüpe.\n;Abilehekülg\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype \"filetype\"] ja [https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime \"filemime\"]\n;Vaste harilikus otsisüntaksis\n:Sõnad, mille ees on <code>filetype:</code>, nt <code>filetype:ogg</code>",
 	"advancedsearch-help-filew": ";Kirjeldus\n:Need väljad võimaldavad määrata faili laiust.\n;Silmaspidamiseks\n:* See on rakendatav ainult pikkuse ja laiusega failitüüpide suhtes nagu videod ja pildid.\n;Abilehekülg\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Faili mõõtmed]\n;Vaste harilikus otsisüntaksis\n:Numbrid, mille ees on <code>filew</code>, nt <code>filew:>800</code>",
 	"advancedsearch-help-fileh": ";Kirjeldus\n:Need väljad võimaldavad määrata faili kõrgust.\n;Silmaspidamiseks\n:* See on rakendatav ainult pikkuse ja laiusega failitüüpide suhtes nagu videod ja pildid.\n;Abilehekülg\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Faili mõõtmed]\n;Vaste harilikus otsisüntaksis\n:Numbrid, mille ees on <code>fileh</code>, nt <code>fileh:>600</code>",
+	"advancedSearch-placeholder-exact-text": "Pane sõnad jutumärkidesse: \"kassile meeldib kits\"",
 	"advancedsearch-filetype-section-types": "Üldised failitüübid",
 	"advancedsearch-filetype-section-image": "Pildivormingud",
 	"advancedsearch-filetype-section-video": "Videovormingud",
