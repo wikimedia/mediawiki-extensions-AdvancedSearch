@@ -6,13 +6,8 @@ var SearchPage = require( '../pageobjects/search.page' );
 
 describe( 'Advanced Search', function () {
 
-	function waitForAdvancedSearchToLoad() {
-		browser.waitForVisible( '.mw-advancedSearch-container', 5000 );
-	}
-
 	function testPillCreation( pillField, pillFieldLabels, input, expectedLabels ) {
 		SearchPage.open();
-		waitForAdvancedSearchToLoad();
 
 		SearchPage.searchExpandablePane.click();
 		pillField.click();
@@ -34,14 +29,12 @@ describe( 'Advanced Search', function () {
 	it( 'inserts advanced search elements on search page', function () {
 
 		SearchPage.open();
-		waitForAdvancedSearchToLoad();
 		assert( SearchPage.searchContainer.isVisible() );
 	} );
 
 	it( 'finds no placeholders for "These words" "None of these words" and "One of these words"', function () {
 
 		SearchPage.open();
-		waitForAdvancedSearchToLoad();
 
 		assert( SearchPage.searchTheseWords.element( 'input' ).getAttribute( 'placeholder' ) === '' );
 		assert( SearchPage.searchNotTheseWords.element( 'input' ).getAttribute( 'placeholder' ) === '' );
@@ -52,7 +45,6 @@ describe( 'Advanced Search', function () {
 	it( 'finds placeholder for "Exactly this text".', function () {
 
 		SearchPage.open();
-		waitForAdvancedSearchToLoad();
 		assert( SearchPage.searchExactText.getAttribute( 'placeholder' ) !== '' );
 
 	} );
@@ -77,7 +69,6 @@ describe( 'Advanced Search', function () {
 
 	it( 'submits the search on enter when there is no text in "These Words" field', function () {
 		SearchPage.open();
-		waitForAdvancedSearchToLoad();
 
 		SearchPage.searchExpandablePane.click();
 		SearchPage.searchTheseWords.click();
@@ -88,7 +79,6 @@ describe( 'Advanced Search', function () {
 
 	it( 'does not submit the search on enter when there is text in "These Words" field', function () {
 		SearchPage.open();
-		waitForAdvancedSearchToLoad();
 
 		SearchPage.searchExpandablePane.click();
 		SearchPage.searchTheseWords.click();
@@ -99,7 +89,6 @@ describe( 'Advanced Search', function () {
 
 	it( 'submits the search on double enter when there is text in "These Words" field', function () {
 		SearchPage.open();
-		waitForAdvancedSearchToLoad();
 
 		SearchPage.searchExpandablePane.click();
 		SearchPage.searchTheseWords.click();
@@ -110,7 +99,6 @@ describe( 'Advanced Search', function () {
 
 	it( 'submits the search with the correct search terms from all the pill fields', function () {
 		SearchPage.open();
-		waitForAdvancedSearchToLoad();
 
 		SearchPage.searchExpandablePane.click();
 		SearchPage.searchTheseWords.click();
