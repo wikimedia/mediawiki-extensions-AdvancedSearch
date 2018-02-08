@@ -41,5 +41,9 @@ class SearchPage extends Page {
 		browser.element( '#mw-search-top-table button' ).click();
 		this.waitForAdvancedSearchToLoad();
 	}
+
+	toggleInputFields() {
+		browser.element( '.mw-advancedSearch-expandablePane-button .oo-ui-indicatorElement-indicator' ).click();
+	}
 }
 module.exports = new SearchPage();

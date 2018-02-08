@@ -7,7 +7,7 @@ describe( 'Advanced Search submit', function () {
 
 	it( 'no search preview is shown in expanded state', function () {
 		SearchPage.open();
-		SearchPage.searchExpandablePane.click();
+		SearchPage.toggleInputFields();
 		SearchPage.searchTheseWords.click();
 		browser.keys( 'test,' );
 		SearchPage.searchNotTheseWords.click();
@@ -22,7 +22,7 @@ describe( 'Advanced Search submit', function () {
 
 	it( 'shows search preview in collapsed state', function () {
 		SearchPage.open();
-		SearchPage.searchExpandablePane.click();
+		SearchPage.toggleInputFields();
 		SearchPage.searchTheseWords.click();
 		browser.keys( 'test,' );
 		SearchPage.searchNotTheseWords.click();
@@ -30,7 +30,7 @@ describe( 'Advanced Search submit', function () {
 		SearchPage.searchOneWord.click();
 		browser.keys( 'test4 test5' );
 		SearchPage.searchExactText.setValue( '"test1 test2"' );
-		SearchPage.searchExpandablePane.click();
+		SearchPage.toggleInputFields();
 		browser.waitUntil( SearchPage.advancedSearchIsCollapsed, 5000 );
 
 		assert( SearchPage.searchPreviewItems.isExisting(), 'Preview pills should be shown' );
@@ -40,7 +40,7 @@ describe( 'Advanced Search submit', function () {
 	it( 'collapses search preview after submission', function () {
 
 		SearchPage.open();
-		SearchPage.searchExpandablePane.click();
+		SearchPage.toggleInputFields();
 		SearchPage.searchTheseWords.click();
 		browser.keys( 'test,' );
 		SearchPage.submitForm();
