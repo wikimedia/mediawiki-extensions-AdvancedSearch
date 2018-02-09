@@ -12,6 +12,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchExpandablePane.click();
 		pillField.click();
 		browser.keys( input );
+
 		pillFieldLabels.getText().map( function ( text, idx ) {
 			assert( text === expectedLabels[ idx ] );
 		} );
@@ -29,6 +30,7 @@ describe( 'Advanced Search', function () {
 	it( 'inserts advanced search elements on search page', function () {
 
 		SearchPage.open();
+
 		assert( SearchPage.searchContainer.isVisible() );
 	} );
 
@@ -45,6 +47,7 @@ describe( 'Advanced Search', function () {
 	it( 'finds placeholder for "Exactly this text".', function () {
 
 		SearchPage.open();
+
 		assert( SearchPage.searchExactText.getAttribute( 'placeholder' ) !== '' );
 
 	} );
@@ -73,6 +76,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchExpandablePane.click();
 		SearchPage.searchTheseWords.click();
 		browser.keys( '\uE007' );
+
 		assert( SearchPage.formWasSubmitted() );
 
 	} );
@@ -83,6 +87,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchExpandablePane.click();
 		SearchPage.searchTheseWords.click();
 		browser.keys( 'test\uE007' );
+
 		assert( !SearchPage.formWasSubmitted() );
 
 	} );
@@ -93,6 +98,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchExpandablePane.click();
 		SearchPage.searchTheseWords.click();
 		browser.keys( 'test\uE007\uE007' );
+
 		assert( SearchPage.formWasSubmitted() );
 
 	} );

@@ -1,4 +1,5 @@
 'use strict';
+
 const Page = require( '../../../../../tests/selenium/pageobjects/page' );
 
 class SpecialPage extends Page {
