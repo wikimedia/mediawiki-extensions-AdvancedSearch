@@ -9,7 +9,7 @@ describe( 'Advanced Search', function () {
 	function testPillCreation( pillField, pillFieldLabels, input, expectedLabels ) {
 		SearchPage.open();
 
-		SearchPage.searchExpandablePane.click();
+		SearchPage.toggleInputFields();
 		pillField.click();
 		browser.keys( input );
 
@@ -73,7 +73,7 @@ describe( 'Advanced Search', function () {
 	it( 'submits the search on enter when there is no text in "These Words" field', function () {
 		SearchPage.open();
 
-		SearchPage.searchExpandablePane.click();
+		SearchPage.toggleInputFields();
 		SearchPage.searchTheseWords.click();
 		browser.keys( '\uE007' );
 
@@ -84,7 +84,7 @@ describe( 'Advanced Search', function () {
 	it( 'does not submit the search on enter when there is text in "These Words" field', function () {
 		SearchPage.open();
 
-		SearchPage.searchExpandablePane.click();
+		SearchPage.toggleInputFields();
 		SearchPage.searchTheseWords.click();
 		browser.keys( 'test\uE007' );
 
@@ -95,7 +95,7 @@ describe( 'Advanced Search', function () {
 	it( 'submits the search on double enter when there is text in "These Words" field', function () {
 		SearchPage.open();
 
-		SearchPage.searchExpandablePane.click();
+		SearchPage.toggleInputFields();
 		SearchPage.searchTheseWords.click();
 		browser.keys( 'test\uE007\uE007' );
 
@@ -106,7 +106,7 @@ describe( 'Advanced Search', function () {
 	it( 'submits the search with the correct search terms from all the pill fields', function () {
 		SearchPage.open();
 
-		SearchPage.searchExpandablePane.click();
+		SearchPage.toggleInputFields();
 		SearchPage.searchTheseWords.click();
 		browser.keys( 'test,' );
 		SearchPage.searchNotTheseWords.click();
