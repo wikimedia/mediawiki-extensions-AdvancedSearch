@@ -1,9 +1,32 @@
 {
 	"@metadata": {
 		"authors": [
-			"StanProg"
+			"StanProg",
+			"ShockD"
 		]
 	},
+	"advancedsearch-optgroup-text": "Търсене в текста на страницата",
+	"advancedsearch-optgroup-structure": "Структура",
+	"advancedsearch-optgroup-files": "Файлове и изображения",
+	"advancedsearch-field-plain": "Тези думи:",
+	"advancedsearch-field-phrase": "Точно този текст:",
+	"advancedsearch-field-or": "Една от тези думи:",
+	"advancedsearch-field-not": "Никоя от тези думи:",
+	"advancedsearch-field-subpage": "Подстраници на тази страница:",
 	"advancedsearch-field-intitle": "Заглавието на страницата съдържа:",
-	"advancedsearch-field-filetype": "Тип на файла:"
+	"advancedsearch-field-deepcat": "Страница в тази категория:",
+	"advancedsearch-field-hastemplate": "Само страници с този шаблон:",
+	"advancedsearch-field-filetype": "Тип на файла:",
+	"advancedsearch-field-filew": "Ширина на файла в пиксели:",
+	"advancedsearch-field-fileh": "Височина на файла в пиксели:",
+	"advancedsearch-filetype-section-types": "Общи типове файлове",
+	"advancedsearch-filetype-bitmap": "Изображение",
+	"advancedsearch-filetype-vector": "Чертеж",
+	"advancedsearch-filetype-audio": "Аудио",
+	"advancedsearch-filetype-video": "Видео",
+	"advancedsearch-filetype-multimedia": "Мултимедия",
+	"advancedSearch-namespaces-articles": "Статии",
+	"advancedSearch-namespaces-search-in": "Търсене в:",
+	"advancedSearch-namespaces-preset-all": "Всички",
+	"advancedSearch-namespaces-placeholder": "Добавяне на именни пространства"
 }
