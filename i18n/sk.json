@@ -1,8 +1,46 @@
 {
 	"@metadata": {
 		"authors": [
-			"Pmikolas44"
+			"Pmikolas44",
+			"TomášPolonec"
 		]
 	},
-	"advancedSearch-placeholder-commas": "Zadajte slová oddelené čiarkou, napr. mačky, mačiatka, ..."
+	"advancedsearch-desc": "Jednoduchý prístup k pokročilým možnostiam vyhľadávania na stránke [[Special:Search]]",
+	"advancedsearch-options-pane-head": "Pokročilé parametre:",
+	"advancedsearch-optgroup-text": "Hľadať v texte stránky",
+	"advancedsearch-optgroup-structure": "Štruktúra",
+	"advancedsearch-optgroup-files": "Súbory a obrázky",
+	"advancedsearch-field-plain": "Tieto slová:",
+	"advancedsearch-field-phrase": "Presne tento text:",
+	"advancedsearch-field-or": "Jedno z týchto slov:",
+	"advancedsearch-field-not": "Bez týchto slov:",
+	"advancedsearch-field-subpage": "Podstránky tejto stránky:",
+	"advancedsearch-field-intitle": "Názov stránky obsahuje:",
+	"advancedsearch-field-deepcat": "Stránka v tejto kategórii:",
+	"advancedsearch-field-hastemplate": "Len stránky s touto šablónou:",
+	"advancedsearch-field-filetype": "Typ súboru:",
+	"advancedsearch-field-filew": "Šírka súboru v pixeloch:",
+	"advancedsearch-field-fileh": "Výška súboru v pixeloch:",
+	"advancedSearch-placeholder-exact-text": "Vložte presnú formuláciu do úvodzoviek: \"mačka miluje kozu\"",
+	"advancedsearch-filetype-section-types": "Všeobecné typy súborov",
+	"advancedsearch-filetype-section-image": "Formáty obrázkov",
+	"advancedsearch-filetype-section-video": "Formáty videí",
+	"advancedsearch-filetype-section-audio": "Formáty zvukových súborov",
+	"advancedsearch-filetype-section-document": "Formáty dokumentov",
+	"advancedsearch-filetype-section-other": "Iné formáty",
+	"advancedsearch-filetype-bitmap": "Obrázok",
+	"advancedsearch-filetype-vector": "Kresba",
+	"advancedsearch-filetype-audio": "Zvuk",
+	"advancedsearch-filetype-video": "Video",
+	"advancedsearch-filetype-multimedia": "Multimédiá",
+	"advancedsearch-filetype-office": "Kancelárske súbory",
+	"advancedSearch-filesize-equals": "rovná",
+	"advancedSearch-filesize-greater-than": "väčšia ako",
+	"advancedSearch-filesize-smaller-than": "menšia ako",
+	"advancedSearch-namespaces-articles": "Články",
+	"advancedSearch-namespaces-search-in": "Prehľadávať:",
+	"advancedSearch-namespaces-preset-all": "Všetko",
+	"advancedSearch-namespaces-placeholder": "Pridať menné priestory",
+	"advancedSearch-beta-feature-message": "Rozhranie pokročilého vyhľadávania",
+	"advancedSearch-beta-feature-description": "Jednoduchý prístup k pokročilým možnostiam vyhľadávania na stránke [[Special:Search]]."
 }

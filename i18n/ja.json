@@ -1,11 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hinaloe"
+			"Hinaloe",
+			"Yusuke1109"
 		]
 	},
+	"advancedsearch-desc": "[[Special:Search]]の高度な検索機能への簡単なアクセス",
+	"advancedsearch-options-pane-head": "高度なパラメータ:",
+	"advancedsearch-optgroup-text": "ページ内のテキストで検索",
 	"advancedsearch-optgroup-structure": "書式",
 	"advancedsearch-optgroup-files": "ファイルと画像",
+	"advancedsearch-field-subpage": "このページのサブページ:",
+	"advancedsearch-field-intitle": "ページタイトルに含まれるもの:",
 	"advancedsearch-field-filetype": "ファイル形式:",
 	"advancedsearch-filetype-section-image": "画像",
 	"advancedsearch-filetype-section-video": "動画",
@@ -19,5 +25,6 @@
 	"advancedSearch-filesize-smaller-than": "未満",
 	"advancedSearch-namespaces-articles": "記事",
 	"advancedSearch-namespaces-preset-all": "すべて",
+	"advancedSearch-namespaces-placeholder": "名前空間を追加",
 	"advancedSearch-beta-feature-message": "高度な検索インタフェース"
 }
