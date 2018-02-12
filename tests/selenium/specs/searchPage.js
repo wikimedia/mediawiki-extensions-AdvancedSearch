@@ -91,20 +91,20 @@ describe( 'Search in page text block functions properly', function () {
 
 	} );
 
-	it( 'selects all namespaces when clicking checkbox "All"', function () {
+	it( 'selects all namespaces when clicking "All" preset', function () {
 
 		SearchPage.open();
 
 		SearchPage.namespacesExpandablePane.click();
 		let tags = SearchPage.getAllNamespaceNames();
 		SearchPage.fileNamespaceTag.click(); // an option has to be chosen in order for the pane to close
-		SearchPage.multiSelectAll.click();
+		SearchPage.allNamespacesPreset.click();
 
 		assert( assertNamespaceSelection( tags ) );
 
 	} );
 
-	it( 'can\'t select namespaces from the dropdown which have already been selected', function () {
+	it( 'can\'t select namespaces from the dropdown which are already present as tags', function () {
 
 		SearchPage.open();
 
@@ -118,30 +118,28 @@ describe( 'Search in page text block functions properly', function () {
 
 	} );
 
-	it( 'unselects all after a single namespace has been unselected after all had been clicked', function () {
+	it( 'unselects "All" preset when a single namespace is unselected after preset had been clicked', function () {
 
 		SearchPage.open();
 
-		SearchPage.multiSelectAll.click();
+		SearchPage.allNamespacesPreset.click();
 		SearchPage.fileNamespaceTagClose.click();
 
-		assert( !SearchPage.multiSelectAll.isSelected() );
+		assert( !SearchPage.allNamespacesPreset.isSelected() );
 	} );
 
-	it( 'automatically selects all when adding a namespace to complete the list of all namespaces', function () {
+	it( 'automatically selects "All" preset when selecting all namespaces from the list of all namespaces', function () {
 
 		SearchPage.open();
 
 		SearchPage.namespacesExpandablePane.click();
 		const FIRST_UNSELECTED_NAMESPACE_ITEM = 1;
-		for ( let i = FIRST_UNSELECTED_NAMESPACE_ITEM; i < SearchPage.dropdownNamespaceTags.value.length; i++ ) {
-			SearchPage.dropdownNamespaceTags.value[ i ].click();
-			if ( i !== SearchPage.dropdownNamespaceTags.value.length - 1 ) {
-				SearchPage.namespacesExpandablePane.click(); // every time a namespace is chosen the selection list closes, so it has to be opened again to choose the next one
-			}
+		const tags = SearchPage.dropdownNamespaceTags.value;
+		for ( let i = FIRST_UNSELECTED_NAMESPACE_ITEM; i < tags.length; i++ ) {
+			SearchPage.selectNamespaceMenuItem( i );
 		}
 
-		assert( SearchPage.multiSelectAll.isSelected() );
+		assert( SearchPage.allNamespacesPreset.isSelected() );
 
 	} );
 

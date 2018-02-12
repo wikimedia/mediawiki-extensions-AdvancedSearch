@@ -29,7 +29,8 @@
 				828: 'puzzle'
 			},
 			options: [],
-			classes: []
+			classes: [],
+			menu: { hideOnChoose: false }
 		}, config );
 
 		this.namespaces = config.namespaces;

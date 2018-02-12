@@ -32,7 +32,7 @@ class SearchPage extends Page {
 	get fileTypeAudio() { return browser.element( '.mw-advancedSearch-filetype-audio' ); }
 	get searchButton() { return browser.element( '.oo-ui-fieldLayout-body button' ); }
 	get namespaceTags() { return browser.elements( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-group span' ); }
-	get multiSelectAll() { return browser.element( '.mw-advancedSearch-namespace-selection input' ); }
+	get allNamespacesPreset() { return browser.element( '.mw-advancedSearch-namespace-selection input[value="all"]' ); }
 	get namespaceOptionsInMenu() { return browser.elements( '.mw-advancedSearch-namespaceFilter .oo-ui-menuSelectWidget[role="listbox"] > div > span:nth-child(2)' ); }
 	get namespacesExpandablePane() { return browser.element( '.oo-ui-menuTagMultiselectWidget .oo-ui-indicator-down' ); }
 	get fileNamespaceTag() { return browser.element( '.oo-ui-menuSelectWidget .mw-advancedSearch-namespace-6' ); }
@@ -71,6 +71,12 @@ class SearchPage extends Page {
 				return acc;
 			}, [] );
 		return disabledNamespaces;
+	}
+
+	selectNamespaceMenuItem( index ) {
+		const tag = this.dropdownNamespaceTags.value[ index ];
+		browser.execute( 'arguments[0].scrollIntoView(true);', tag );
+		tag.click();
 	}
 
 	open() {
