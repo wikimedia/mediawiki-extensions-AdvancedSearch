@@ -22,6 +22,7 @@
 	"advancedsearch-field-filetype": "فائل کی قسم:",
 	"advancedsearch-field-filew": "پکسلز میں فائل کی چوڑائی:",
 	"advancedsearch-field-fileh": "پکسلز میں فائل کی اونچائی:",
+	"advancedsearch-help-plain": ";وضاحت\n:عنوان یا متن میں ان الفاظ کے لیے تلاش\n;مندرجہ ذیل سے آگاہ رہیں۔\n:* متعدد الفاظ یہاں درج کیے جا سکتے ہیں۔\n:* علامات وقف اور دوسرے غیر حرفی ہندسی نشانات (سوائے وقف توضیحی اور کوما کے) نظر انداز ہوں گے۔\n:* ممکن ہے کہ آپ کے تلاش کرنے سے ایسے نتائج سامنے آئیں جس میں آپ کی ایک یا زائد اصطلاحات نہ ہوں۔\n;صفحہ معاونت\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search مکمل متن تلاش]",
 	"advancedsearch-filetype-section-types": "عمومی فائل کی اقسام",
 	"advancedsearch-filetype-section-image": "تصویر کے فارمیٹ",
 	"advancedsearch-filetype-section-video": "وڈیو فارمیٹ",
