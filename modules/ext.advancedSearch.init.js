@@ -144,12 +144,16 @@
 			advancedOptionsBuilder = new mw.libs.advancedSearch.AdvancedOptionsBuilder( state );
 
 		var $search = $( 'form#search, form#powersearch' ),
+			$title = $( 'h1#firstHeading' ),
 			$advancedSearch = $( '<div>' ).addClass( 'mw-advancedSearch-container' ),
 			$searchField = $search.find( 'input[name="search"]' ),
 			$profileField = $search.find( 'input[name="profile"]' );
 
-		$search.append( $advancedSearch );
+		var feedbackMessage = mw.message( 'advancedSearch-ask-feedback', 'https://www.mediawiki.org/wiki/Help_talk:Extension:AdvancedSearch' ).parse();
 
+		$search.append( $advancedSearch );
+		$title.after( '<span class="feedback">' + feedbackMessage + '</span>' );
+		$( '.feedback a' ).attr( 'target', '_blank' );
 		$searchField.val( getSearchOriginal() );
 		$searchField.focus();
 
