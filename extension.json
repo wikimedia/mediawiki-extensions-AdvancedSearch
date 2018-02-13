@@ -76,6 +76,7 @@
 				"oojs-ui.styles.icons-user",
 				"oojs-ui.styles.icons-wikimedia",
 				"ext.advancedSearch.AdvancedOptionsBuilder",
+				"ext.advancedSearch.dm.getDefaultNamespaces",
 				"ext.advancedSearch.dm.SearchModel",
 				"ext.advancedSearch.dm.FileTypeOptionProvider",
 				"ext.advancedSearch.dm.trackingEvents.SearchRequest",
@@ -240,6 +241,11 @@
 			],
 			"dependencies": [
 				"oojs-ui-widgets"
+			]
+		},
+		"ext.advancedSearch.dm.getDefaultNamespaces": {
+			"scripts": [
+				"modules/dm/ext.advancedSearch.getDefaultNamespaces.js"
 			]
 		},
 		"ext.advancedSearch.dm.SearchModel": {

@@ -54,24 +54,37 @@ class SearchPage extends Page {
 	}
 
 	getAllNamespaceNames() {
-		let namespaces = this.namespaceOptionsInMenu.value.reduce(
+		return this.namespaceOptionsInMenu.value.reduce(
 			function ( acc, tag ) {
 				acc.push( tag.getText() );
 				return acc;
 			},
 			[] );
-		return namespaces;
 	}
 
 	getDisabledNamespaceNames() {
-		let disabledNamespaces = this.namespaceOptionsInMenu.value.reduce(
+		return this.namespaceOptionsInMenu.value.reduce(
 			function ( acc, tag ) {
 				if ( tag.isEnabled() ) {
 					acc.push( tag.getText() );
 				}
 				return acc;
 			}, [] );
-		return disabledNamespaces;
+	}
+
+	getSelectedNamespaceIDs() {
+		return browser.elements( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-group .oo-ui-tagItemWidget' ).value.reduce( ( acc, widget ) => {
+			const widgetClass = widget.getAttribute( 'class' );
+			let classMatches;
+			if ( !widgetClass ) {
+				return acc;
+			}
+			classMatches = widgetClass.match( /(?:^| )mw-advancedSearch-namespace-(\d+)(?:$| )/ );
+			if ( classMatches ) {
+				acc.push( classMatches[ 1 ] );
+			}
+			return acc;
+		}, [] );
 	}
 
 	selectNamespaceMenuItem( index ) {

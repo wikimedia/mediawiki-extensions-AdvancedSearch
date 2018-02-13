@@ -17,10 +17,11 @@
 	 * @class
 	 * @constructor
 	 * @mixins OO.EventEmitter
+	 * @param {Array.<string>} defaultNamespaces The namespaces selected by default (for new searches)
 	 */
-	mw.libs.advancedSearch.dm.SearchModel = function () {
+	mw.libs.advancedSearch.dm.SearchModel = function ( defaultNamespaces ) {
 		this.searchOptions = {};
-		this.namespaces = [ '0' ]; // Always start with Article namespace
+		this.namespaces = defaultNamespaces || [ mw.libs.advancedSearch.dm.SearchModel.MAIN_NAMESPACE ];
 
 		// Mixin constructor
 		OO.EventEmitter.call( this );

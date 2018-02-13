@@ -133,7 +133,9 @@
 	}
 
 	function initState() {
-		var state = new mw.libs.advancedSearch.dm.SearchModel();
+		var state = new mw.libs.advancedSearch.dm.SearchModel(
+			mw.libs.advancedSearch.dm.getDefaultNamespaces( mw.user.options.values )
+		);
 		state.setAllFromJSON( mw.util.getParamValue( 'advancedSearch-current' ) || '' );
 
 		return state;
