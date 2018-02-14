@@ -10,7 +10,7 @@
 		]
 	},
 	"advancedsearch-desc": "{{desc|name=AdvancedSearch|url=https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:AdvancedSearch}}",
-	"advancedSearch-ask-feedback":"Text asking for feedback on the advanced search beta feature.",
+	"advancedSearch-ask-feedback": "Text asking for feedback on the advanced search beta feature.",
 	"advancedsearch-options-pane-head": "Label for the introduction of advanced search. It is used both as a header for the expanded pane and as a label for the following options when the pane is collapsed.",
 	"advancedsearch-optgroup-text": "Label for the option group that contains search fields that refer to page content",
 	"advancedsearch-optgroup-structure": "Label for the option group that contains search fields that are specialized and/or more structural like templates, subpages and categories\n{{Identical|Structure}}",
