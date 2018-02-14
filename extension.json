@@ -61,7 +61,8 @@
 				"advancedSearch-namespaces-articles",
 				"advancedSearch-namespaces-preset-all",
 				"advancedSearch-namespaces-search-in",
-				"advancedSearch-namespaces-placeholder"
+				"advancedSearch-namespaces-placeholder",
+				"advancedSearch-ask-feedback"
 			],
 			"dependencies": [
 				"mediawiki.jqueryMsg",
