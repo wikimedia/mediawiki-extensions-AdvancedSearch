@@ -3,10 +3,12 @@
 		"authors": [
 			"Macofe",
 			"Fitoschido",
-			"KATRINE1992"
+			"KATRINE1992",
+			"MarcoAurelio"
 		]
 	},
 	"advancedsearch-desc": "Acceso sencillo a las prestaciones de búsqueda avanzadas de [[Special:Search]]",
+	"advancedSearch-ask-feedback": "¿Cómo te está funcionando la nueva interfaz? Por favor envíanos tus [$1 comentarios] (se abre en una nueva pestaña)",
 	"advancedsearch-options-pane-head": "Parámetros avanzados:",
 	"advancedsearch-optgroup-text": "Buscar en el texto de la página",
 	"advancedsearch-optgroup-structure": "Estructura",
@@ -28,6 +30,7 @@
 	"advancedsearch-help-filetype": "<dl><dt>Descripción:</dt><dd>Busca archivos del tipo seleccionado únicamente.</dd> <dt>Presta atención a lo siguiente: </dt><dd><ul> <li>Solo puedes buscar un tipo de archivo a la vez.</li> <li>Solo puedes seleccionar los tipos de archivo incluidos en el menú desplegable.</li></ul></dd> <dt>Páginas de ayuda:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype filetype] y [https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime filemime]</dd> <dt>El equivalente sintáctico en las búsquedas normales es:</dt><dd>Términos con <code>filetype:</code> antepuesto, como <code>filetype:ogg</code>.</dd></dl>",
 	"advancedsearch-help-filew": ": Descripcion\n: Estos campos le permiten de especificar la largura del fichero.\n: Tome en cuenta los siguientes\nEsto es solamente aplicado en los ficheros que son largos y altos, como videos e imagenes\n: Pagina de ayuda\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]\nSintax que corrsponde a una busqueda normal\n: Numeros con  <code>filew</code> antes ellos como <code>filew:>800</code>.",
 	"advancedsearch-help-fileh": "<dl><dt>Descripción:</dt><dd>Estos campos te permiten especificar la altura del archivo.</dd> <dt>Presta atención a lo siguiente: </dt><dd><ul> <li>Esto solo se aplica a los tipos de archivo que tengan anchura y altura, como los vídeos y las imágenes.</li></ul></dd> <dt>Página de ayuda:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Medidas de archivos]</dd> <dt>Equivalencia sintáctica en búsquedas normales:</dt><dd>Números con <code>fileh</code> antepuesto, como <code>fileh:>600</code>.</dd></dl>",
+	"advancedSearch-placeholder-exact-text": "Pon las palabras exactas con comillas: \"al gato le gusta dormir\"",
 	"advancedsearch-filetype-section-types": "Tipos de archivo generales",
 	"advancedsearch-filetype-section-image": "Formatos de imagen",
 	"advancedsearch-filetype-section-video": "Formatos de vídeo",

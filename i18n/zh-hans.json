@@ -7,7 +7,7 @@
 		]
 	},
 	"advancedsearch-desc": "在[[Special:Search]]提供高级搜索功能的轻松访问",
-	"advancedSearch-ask-feedback": "您对新的界面感觉如何？请向我们提供[$1 反馈]（在新标签打开）。",
+	"advancedSearch-ask-feedback": "您对新的界面感觉如何？请向我们提供[$1 反馈]（在新标签打开）",
 	"advancedsearch-options-pane-head": "高级参数：",
 	"advancedsearch-optgroup-text": "在页面文本中搜索",
 	"advancedsearch-optgroup-structure": "结构",

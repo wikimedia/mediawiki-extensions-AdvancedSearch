@@ -5,6 +5,7 @@
 		]
 	},
 	"advancedsearch-desc": "גישה קלה ליכולות חיפוש מתקדמות בדף [[Special:Search|מיוחד:חיפוש]]",
+	"advancedSearch-ask-feedback": "איך הממשק הזה עובד בשבילך? אנא שלחו אלינו [$1 משוב] (ייפתח בלשונית חדשה)",
 	"advancedsearch-options-pane-head": "פרמטרים מתקדמים:",
 	"advancedsearch-optgroup-text": "חיפוש בטקסט הדף",
 	"advancedsearch-optgroup-structure": "מבנה",
