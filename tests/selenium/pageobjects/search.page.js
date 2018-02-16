@@ -28,6 +28,7 @@ class SearchPage extends Page {
 	get infoPopup() { return browser.elements( '.oo-ui-popupWidget-popup' ); }
 
 	get searchTitle() { return browser.element( '#advancedSearchOption-intitle input' ); }
+	get searchSubpageof() { return browser.element( '#advancedSearchOption-subpageof input' ); }
 	get searchTemplate() { return browser.element( '#advancedSearchOption-hastemplate input' ); }
 	get searchFileType() { return browser.element( '#advancedSearchOption-filetype .oo-ui-indicator-down' ); }
 	get searchImageWidth() { return browser.element( '#advancedSearchOption-filew input' ); }

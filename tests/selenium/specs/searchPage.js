@@ -43,7 +43,7 @@ describe( 'Search in page text block functions properly', function () {
 
 		SearchPage.open();
 
-		SearchPage.searchExpandablePane.click();
+		SearchPage.toggleInputFields();
 		SearchPage.searchTheseWords.click();
 		browser.keys( 'old,' );
 		SearchPage.searchNotTheseWords.click();
@@ -51,6 +51,7 @@ describe( 'Search in page text block functions properly', function () {
 		SearchPage.searchOneWord.click();
 		browser.keys( 'big enormous giant' );
 		SearchPage.searchTitle.setValue( 'house' );
+		SearchPage.searchSubpageof.setValue( 'Wikimedia' );
 		SearchPage.searchTemplate.setValue( 'Main Page\uE007' );
 		SearchPage.searchFileType.click();
 		SearchPage.fileTypeImage.click(); // selects option gif from the dropdown
@@ -61,7 +62,7 @@ describe( 'Search in page text block functions properly', function () {
 
 		SearchPage.searchButton.click();
 
-		assert.equal( SearchPage.getSearchQueryFromUrl(), 'old -new big OR enormous OR giant intitle:house hastemplate:"Main Page" filemime:image/gif filew:>40 fileh:>40' );
+		assert.equal( SearchPage.getSearchQueryFromUrl(), 'old -new big OR enormous OR giant intitle:house subpageof:Wikimedia hastemplate:"Main Page" filemime:image/gif filew:>40 fileh:>40' );
 	} );
 
 	it( 'adds the namespace "File" and dimension fields are visible when searching for files of type image', function () {
