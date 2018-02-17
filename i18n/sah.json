@@ -18,5 +18,9 @@
 	"advancedsearch-filetype-section-document": "Докумуоннар формааттара",
 	"advancedsearch-filetype-section-other": "Атын формааттар",
 	"advancedsearch-filetype-bitmap": "Ойуу",
-	"advancedsearch-filetype-vector": "Уруһуй"
+	"advancedsearch-filetype-vector": "Уруһуй",
+	"advancedSearch-namespaces-articles": "Ыстатыйалар",
+	"advancedSearch-namespaces-search-in": "Манна көрдөт:",
+	"advancedSearch-namespaces-preset-all": "Бары",
+	"advancedSearch-namespaces-placeholder": "Аат далын эбии"
 }
