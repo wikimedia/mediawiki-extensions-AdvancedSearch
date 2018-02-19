@@ -115,7 +115,7 @@ describe( 'Advanced Search', function () {
 		browser.keys( 'test4 test5' );
 		SearchPage.searchExactText.setValue( '"test1 test2"\uE007' );
 
-		assert( SearchPage.getSearchURL() === 'search=test+"test1+test2"+-test3+test4+OR+test5' );
+		assert.equal( SearchPage.getSearchQueryFromUrl(), 'test "test1 test2" -test3 test4 OR test5' );
 
 	} );
 
