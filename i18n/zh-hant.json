@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Corainn",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Hello903hello"
 		]
 	},
-	"advancedsearch-field-not": "非此詞：",
+	"advancedsearch-field-not": "不含這些詞：",
 	"advancedsearch-field-subpage": "此頁面的子頁面：",
 	"advancedSearch-placeholder-exact-text": "鍵入精確詞并加引號，例如：「貓喜歡山羊」",
 	"advancedsearch-filetype-section-types": "一般檔案類型",
