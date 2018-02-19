@@ -1,15 +1,14 @@
 'use strict';
 
-var assert = require( 'assert' );
-var url = require( 'url' );
-var querystring = require( 'querystring' );
-var SearchPage = require( '../pageobjects/search.page' );
+const assert = require( 'assert' );
+const url = require( 'url' );
+const querystring = require( 'querystring' );
+const SearchPage = require( '../pageobjects/search.page' );
 
 describe( 'Advanced Search', function () {
 
 	function addExamplePages( numPages ) {
-		var url = require( 'url' ), // https://nodejs.org/docs/latest/api/url.html
-			baseUrl = url.parse( browser.options.baseUrl ), // http://webdriver.io/guide/testrunner/browserobject.html
+		const baseUrl = url.parse( browser.options.baseUrl ), // http://webdriver.io/guide/testrunner/browserobject.html
 			Bot = require( 'nodemw' ), // https://github.com/macbre/nodemw
 			client = new Bot( {
 				protocol: baseUrl.protocol,
@@ -23,8 +22,8 @@ describe( 'Advanced Search', function () {
 			animals = [ 'cat', 'goat' ];
 
 		return new Promise( function ( resolve, reject ) {
-			var editPage = function ( pageNumber ) {
-				var content = 'The big brown ' + animals[ pageNumber % 2 ] + ' jumped over the lazy dog.';
+			const editPage = function ( pageNumber ) {
+				const content = 'The big brown ' + animals[ pageNumber % 2 ] + ' jumped over the lazy dog.';
 				client.edit(
 					'Search Test Page ' + ( pageNumber + 1 ),
 					content,
@@ -50,7 +49,7 @@ describe( 'Advanced Search', function () {
 	}
 
 	function assertURLContainsAdvancedSearchState( urlStr ) {
-		var urlparts = url.parse( urlStr ),
+		const urlparts = url.parse( urlStr ),
 			searchParams = querystring.parse( urlparts.query );
 		assert( typeof searchParams[ 'advancedSearch-current' ] !== 'undefined' );
 		assert( typeof JSON.parse( searchParams[ 'advancedSearch-current' ] ) === 'object' );

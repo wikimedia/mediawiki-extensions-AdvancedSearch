@@ -1,8 +1,8 @@
 'use strict';
 
-var assert = require( 'assert' );
-var SpecialPage = require( '../pageobjects/special.page' );
-var SearchPage = require( '../pageobjects/search.page' );
+const assert = require( 'assert' );
+const SpecialPage = require( '../pageobjects/special.page' );
+const SearchPage = require( '../pageobjects/search.page' );
 
 describe( 'Advanced Search', function () {
 
