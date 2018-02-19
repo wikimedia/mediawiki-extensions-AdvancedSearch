@@ -58,8 +58,10 @@ describe( 'Search in page text block functions properly', function () {
 		browser.keys( '40' );
 		SearchPage.searchImageHeight.click();
 		browser.keys( '40' );
+
 		SearchPage.searchButton.click();
-		assert( SearchPage.getSearchURL() === 'search=old+-new+big+OR+enormous+OR+giant+intitle:house+hastemplate:"Main+Page"+filemime:image/gif+filew:>40+fileh:>40' );
+
+		assert.equal( SearchPage.getSearchQueryFromUrl(), 'old -new big OR enormous OR giant intitle:house hastemplate:"Main Page" filemime:image/gif filew:>40 fileh:>40' );
 	} );
 
 	it( 'adds the namespace "File" and dimension fields are visible when searching for files of type image', function () {

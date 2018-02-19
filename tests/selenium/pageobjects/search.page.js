@@ -1,5 +1,6 @@
 'use strict';
 const Page = require( '../../../../../tests/selenium/pageobjects/page' );
+const url = require( 'url' );
 
 class SearchPage extends Page {
 
@@ -16,7 +17,9 @@ class SearchPage extends Page {
 	get searchPreview() { return browser.element( '.mw-advancedSearch-searchPreview' ); }
 	get searchPreviewItems() { return browser.elements( '.mw-advancedSearch-searchPreview .mw-advancedSearch-searchPreview-previewPill' ); }
 
-	formWasSubmitted() { return browser.getUrl().match( /\?advancedSearchOption-original=/ ) !== null; }
+	formWasSubmitted() {
+		return Object.prototype.hasOwnProperty.call( this.getQueryFromUrl(), 'advancedSearchOption-original' );
+	}
 
 	advancedSearchIsCollapsed() {
 		return browser.element( '.mw-advancedSearch-expandablePane > .oo-ui-indicatorElement .oo-ui-indicatorElement-indicator.oo-ui-indicator-down' ).isExisting();
@@ -42,11 +45,12 @@ class SearchPage extends Page {
 		return browser.element( '.oo-ui-tagMultiselectWidget-group > div:nth-child(7) > span:nth-child(2)' );
 	}
 
-	getSearchURL() {
-		let search = browser.getUrl().split( '&' ).filter( function ( part ) {
-			return part.match( /^search=/ );
-		} );
-		return decodeURIComponent( search[ 0 ] );
+	getSearchQueryFromUrl() {
+		return this.getQueryFromUrl().search;
+	}
+
+	getQueryFromUrl() {
+		return url.parse( browser.getUrl(), true ).query;
 	}
 
 	getInfoPopupContent( popup ) {
