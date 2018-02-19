@@ -180,6 +180,14 @@
 			namespacePresets = new mw.libs.advancedSearch.ui.NamespacePresets( state, {
 				classes: [ 'mw-advancedSearch-namespacePresets' ],
 				presets: {
+					discussion: {
+						namespaces: [ '3', '5', '7', '9', '11', '13', '711' ],
+						label: mw.msg( 'advancedSearch-namespaces-preset-discussion' )
+					},
+					generalHelp: {
+						namespaces: [ '4', '12' ],
+						label: mw.msg( 'advancedSearch-namespaces-preset-general-help' )
+					},
 					all: {
 						namespaces: Object.keys( prepareNamespaces() ),
 						label: mw.msg( 'advancedSearch-namespaces-preset-all' )

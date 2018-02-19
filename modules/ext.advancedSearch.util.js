@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function ( mw, $ ) {
 	'use strict';
 
 	mw.libs = mw.libs || {};
@@ -18,4 +18,14 @@
 		return true;
 	};
 
-}( mediaWiki ) );
+	mw.libs.advancedSearch.util.arrayContains = function ( a1, a2 ) {
+		return $( a1 ).filter( a2 ).length === a2.length;
+	};
+
+	mw.libs.advancedSearch.util.arrayConcatUnique = function ( a1, a2 ) {
+		return a1.concat( a2.filter( function ( item ) {
+			return a1.indexOf( item ) === -1;
+		} ) );
+	};
+
+}( mediaWiki, jQuery ) );
