@@ -1,7 +1,7 @@
 'use strict';
 
-var assert = require( 'assert' );
-var SearchPage = require( '../pageobjects/search.page' );
+const assert = require( 'assert' );
+const SearchPage = require( '../pageobjects/search.page' );
 
 describe( 'Advanced Search submit', function () {
 
