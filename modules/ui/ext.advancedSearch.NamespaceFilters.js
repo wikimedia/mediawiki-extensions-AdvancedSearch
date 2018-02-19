@@ -167,7 +167,8 @@
 		return new OO.ui.TagItemWidget( {
 			data: data,
 			label: label,
-			draggable: false
+			draggable: false,
+			classes: [ 'mw-advancedSearch-namespace-' + data ]
 		} );
 	};
 
