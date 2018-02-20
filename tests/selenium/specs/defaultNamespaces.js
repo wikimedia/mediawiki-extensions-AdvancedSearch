@@ -15,8 +15,7 @@ describe( 'Advanced Search', function () {
 			port: baseUrl.port,
 			path: baseUrl.path,
 			username: browser.options.username,
-			password: browser.options.password,
-			debug: true
+			password: browser.options.password
 		} );
 
 	function setSearchNamespaceOptions( namespaceIds ) {
