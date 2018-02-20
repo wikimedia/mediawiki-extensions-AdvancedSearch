@@ -6,19 +6,6 @@ const SearchPage = require( '../pageobjects/search.page' );
 
 describe( 'Advanced Search', function () {
 
-	function testPillCreation( pillField, pillFieldLabels, input, expectedLabels ) {
-		SearchPage.open();
-
-		SearchPage.toggleInputFields();
-		pillField.click();
-		browser.keys( input );
-
-		pillFieldLabels.getText().map( function ( text, idx ) {
-			assert( text === expectedLabels[ idx ] );
-		} );
-
-	}
-
 	it( 'has the advanced search extension installed', function () {
 
 		SpecialPage.open();
@@ -38,9 +25,9 @@ describe( 'Advanced Search', function () {
 
 		SearchPage.open();
 
-		assert( SearchPage.searchTheseWords.element( 'input' ).getAttribute( 'placeholder' ) === '' );
-		assert( SearchPage.searchNotTheseWords.element( 'input' ).getAttribute( 'placeholder' ) === '' );
-		assert( SearchPage.searchOneWord.element( 'input' ).getAttribute( 'placeholder' ) === '' );
+		assert( SearchPage.searchTheseWords.getPlaceholderText() === '' );
+		assert( SearchPage.searchNotTheseWords.getPlaceholderText() === '' );
+		assert( SearchPage.searchOneWord.getPlaceholderText() === '' );
 
 	} );
 
@@ -48,34 +35,39 @@ describe( 'Advanced Search', function () {
 
 		SearchPage.open();
 
-		assert( SearchPage.searchExactText.getAttribute( 'placeholder' ) !== '' );
+		assert( SearchPage.searchExactText.getPlaceholderText() !== '' );
 
 	} );
 
 	it( 'displays "These words" as a pill field ', function () {
+		SearchPage.open();
+		SearchPage.toggleInputFields();
+		SearchPage.searchTheseWords.put( 'test test2,' );
 
-		testPillCreation( SearchPage.searchTheseWords, SearchPage.searchTheseWordsTagLabel, 'test test2,', [ 'test', 'test2' ] );
-
+		assert.deepEqual( SearchPage.searchTheseWords.getTagLabels(), [ 'test', 'test2' ] );
 	} );
 
 	it( 'displays "One of these words" as a pill field', function () {
+		SearchPage.open();
+		SearchPage.toggleInputFields();
+		SearchPage.searchOneWord.put( 'testäöü test2äß, testme3\uE007' );
 
-		testPillCreation( SearchPage.searchOneWord, SearchPage.searchOneWordTagLabel, 'testäöü test2äß, testme3\uE007', [ 'testäöü', 'test2äß', 'testme3' ] );
-
+		assert.deepEqual( SearchPage.searchOneWord.getTagLabels(), [ 'testäöü', 'test2äß', 'testme3' ] );
 	} );
 
 	it( 'displays "None of these words" as a pill field', function () {
+		SearchPage.open();
+		SearchPage.toggleInputFields();
+		SearchPage.searchNotTheseWords.put( 'test test2,' );
 
-		testPillCreation( SearchPage.searchNotTheseWords, SearchPage.searchNotTheseWordsTagLabel, 'test, test2,', [ 'test', 'test2' ] );
-
+		assert.deepEqual( SearchPage.searchNotTheseWords.getTagLabels(), [ 'test', 'test2' ] );
 	} );
 
 	it( 'submits the search on enter when there is no text in "These Words" field', function () {
 		SearchPage.open();
 
 		SearchPage.toggleInputFields();
-		SearchPage.searchTheseWords.click();
-		browser.keys( '\uE007' );
+		SearchPage.searchTheseWords.put( '\uE007' );
 
 		assert( SearchPage.formWasSubmitted() );
 
@@ -85,8 +77,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.open();
 
 		SearchPage.toggleInputFields();
-		SearchPage.searchTheseWords.click();
-		browser.keys( 'test\uE007' );
+		SearchPage.searchTheseWords.put( 'test\uE007' );
 
 		assert( !SearchPage.formWasSubmitted() );
 
@@ -96,8 +87,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.open();
 
 		SearchPage.toggleInputFields();
-		SearchPage.searchTheseWords.click();
-		browser.keys( 'test\uE007\uE007' );
+		SearchPage.searchTheseWords.put( 'test\uE007\uE007' );
 
 		assert( SearchPage.formWasSubmitted() );
 
@@ -107,13 +97,11 @@ describe( 'Advanced Search', function () {
 		SearchPage.open();
 
 		SearchPage.toggleInputFields();
-		SearchPage.searchTheseWords.click();
-		browser.keys( 'test,' );
-		SearchPage.searchNotTheseWords.click();
-		browser.keys( 'test3 ' );
-		SearchPage.searchOneWord.click();
-		browser.keys( 'test4 test5' );
-		SearchPage.searchExactText.setValue( '"test1 test2"\uE007' );
+		SearchPage.searchTheseWords.put( 'test,' );
+		SearchPage.searchNotTheseWords.put( 'test3 ' );
+		SearchPage.searchOneWord.put( 'test4 test5' );
+		SearchPage.searchExactText.put( '"test1 test2"' );
+		SearchPage.submitForm();
 
 		assert.equal( SearchPage.getSearchQueryFromUrl(), 'test "test1 test2" -test3 test4 OR test5' );
 
