@@ -272,6 +272,13 @@
 				},
 				{
 					group: 'structure',
+					id: 'subpageof',
+					formatter: function ( val ) {
+						return 'subpageof:' + optionalQuotes( val );
+					}
+				},
+				{
+					group: 'structure',
 					id: 'hastemplate',
 					formatter: function ( val ) {
 						if ( Array.isArray( val ) ) {
