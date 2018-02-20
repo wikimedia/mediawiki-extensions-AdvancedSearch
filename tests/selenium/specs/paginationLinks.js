@@ -16,8 +16,7 @@ describe( 'Advanced Search', function () {
 				port: baseUrl.port,
 				path: baseUrl.path,
 				username: browser.options.username,
-				password: browser.options.password,
-				debug: false
+				password: browser.options.password
 			} ),
 			animals = [ 'cat', 'goat' ];
 
