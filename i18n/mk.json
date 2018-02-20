@@ -13,7 +13,7 @@
 	"advancedsearch-field-phrase": "Точно овој текст:",
 	"advancedsearch-field-or": "Еден од овие зборови:",
 	"advancedsearch-field-not": "Не овие зборови:",
-	"advancedsearch-field-subpage": "Потстраници на оваа страница:",
+	"advancedsearch-field-subpageof": "Потстраници на оваа страница:",
 	"advancedsearch-field-intitle": "Насловот на страницата содржи:",
 	"advancedsearch-field-deepcat": "Страница во оваа категорија:",
 	"advancedsearch-field-hastemplate": "Само страници со овој шаблон:",

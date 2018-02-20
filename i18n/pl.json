@@ -15,7 +15,7 @@
 	"advancedsearch-field-phrase": "Dokładnie ten tekst:",
 	"advancedsearch-field-or": "Jedno z tych słów:",
 	"advancedsearch-field-not": "Żadne z tych słów:",
-	"advancedsearch-field-subpage": "Podstrony tej strony:",
+	"advancedsearch-field-subpageof": "Podstrony tej strony:",
 	"advancedsearch-field-intitle": "Tytuł strony zawiera:",
 	"advancedsearch-field-deepcat": "Strony w tej kategorii:",
 	"advancedsearch-field-hastemplate": "Tylko strony z tym szablonem:",

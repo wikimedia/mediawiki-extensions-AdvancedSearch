@@ -13,7 +13,7 @@
 	"advancedsearch-field-phrase": "Tačno ovaj tekst:",
 	"advancedsearch-field-or": "Jednu od ovih riječi:",
 	"advancedsearch-field-not": "Ne ove riječi:",
-	"advancedsearch-field-subpage": "Podstranice ove stranice:",
+	"advancedsearch-field-subpageof": "Podstranice ove stranice:",
 	"advancedsearch-field-intitle": "Naslov stranice sadrži:",
 	"advancedsearch-field-deepcat": "Stranica u ovoj kategoriji:",
 	"advancedsearch-field-hastemplate": "Samo stranice s ovim šablonom:",

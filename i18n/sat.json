@@ -12,6 +12,7 @@
 	"advancedsearch-field-not": "ᱱᱩᱠᱩ ᱟᱹᱲᱟᱹᱫᱚ ᱵᱟᱝ:",
 	"advancedsearch-field-filetype": "ᱨᱮᱫ ᱞᱮᱠᱟᱱᱟᱜ:",
 	"advancedsearch-field-filew": "ᱨᱮᱫ ᱚᱥᱟᱨ ᱯᱤᱠᱥᱮᱞᱨᱮ:",
+	"advancedsearch-field-fileh": "ᱨᱮᱫ ᱩᱥᱩᱞ ᱯᱩᱠᱥᱮᱞ ᱛᱮ:",
 	"advancedsearch-filetype-bitmap": "ᱪᱤᱛᱟᱹᱨ",
 	"advancedsearch-filetype-multimedia": "ᱢᱚᱞᱴᱤᱢᱮᱰᱤᱭᱟ",
 	"advancedsearch-filetype-office": "ᱩᱯᱤᱥ",
@@ -21,5 +22,6 @@
 	"advancedSearch-namespaces-articles": "ᱚᱱᱚᱞᱠᱚ",
 	"advancedSearch-namespaces-search-in": "ᱥᱮᱸᱫᱽᱨᱟ ᱨᱮ:",
 	"advancedSearch-namespaces-preset-all": "ᱡᱚᱛᱚ",
+	"advancedSearch-namespaces-placeholder": "ᱨᱟᱠᱷᱟ ᱧᱩᱛᱩᱢ ᱥᱮᱞᱮᱫ",
 	"advancedSearch-beta-feature-message": "ᱵᱟᱹᱲᱛᱤ ᱥᱮᱸᱫᱽᱨᱟ ᱟᱹᱱᱟᱹᱨᱩ"
 }

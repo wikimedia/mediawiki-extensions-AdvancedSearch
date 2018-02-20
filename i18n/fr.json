@@ -18,7 +18,7 @@
 	"advancedsearch-field-phrase": "Ce texte exactement :",
 	"advancedsearch-field-or": "Une de ces mots :",
 	"advancedsearch-field-not": "Pas ces mots :",
-	"advancedsearch-field-subpage": "Sous-pages de cette page :",
+	"advancedsearch-field-subpageof": "Sous-pages de cette page :",
 	"advancedsearch-field-intitle": "Le titre de la page contient :",
 	"advancedsearch-field-deepcat": "Page dans cette catégorie :",
 	"advancedsearch-field-hastemplate": "Seulement les pages avec ce modèle :",

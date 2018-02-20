@@ -14,7 +14,7 @@
 	"advancedsearch-field-phrase": "Exakt denna text:",
 	"advancedsearch-field-or": "Ett av dessa ord:",
 	"advancedsearch-field-not": "Inte dessa ord:",
-	"advancedsearch-field-subpage": "Undersidor för denna sida:",
+	"advancedsearch-field-subpageof": "Undersidor för denna sida:",
 	"advancedsearch-field-intitle": "Sidans titel innehåller:",
 	"advancedsearch-field-deepcat": "Sida i denna kategori;",
 	"advancedsearch-field-hastemplate": "Endast sidor med denna mall:",

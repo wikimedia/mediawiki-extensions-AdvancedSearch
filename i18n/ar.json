@@ -16,7 +16,7 @@
 	"advancedsearch-field-phrase": "هذا النص بعينه:",
 	"advancedsearch-field-or": "إحدى هذه الكلمات:",
 	"advancedsearch-field-not": "دون هذه الكلمات:",
-	"advancedsearch-field-subpage": "الصفحات الفرعية من هذه الصفحة:",
+	"advancedsearch-field-subpageof": "الصفحات الفرعية من هذه الصفحة:",
 	"advancedsearch-field-intitle": "عنوان الصفحة فيه:",
 	"advancedsearch-field-deepcat": "صفحة من هذا التصنيف:",
 	"advancedsearch-field-hastemplate": "الصفحات المستعمل فيها هذا القالب:",

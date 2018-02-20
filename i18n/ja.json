@@ -10,7 +10,7 @@
 	"advancedsearch-optgroup-text": "ページ内のテキストで検索",
 	"advancedsearch-optgroup-structure": "書式",
 	"advancedsearch-optgroup-files": "ファイルと画像",
-	"advancedsearch-field-subpage": "このページのサブページ:",
+	"advancedsearch-field-subpageof": "このページのサブページ:",
 	"advancedsearch-field-intitle": "ページタイトルに含まれるもの:",
 	"advancedsearch-field-filetype": "ファイル形式:",
 	"advancedsearch-filetype-section-image": "画像",

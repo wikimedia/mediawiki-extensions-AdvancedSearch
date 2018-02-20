@@ -12,7 +12,7 @@
 	"advancedsearch-field-phrase": "Точно този текст:",
 	"advancedsearch-field-or": "Една от тези думи:",
 	"advancedsearch-field-not": "Никоя от тези думи:",
-	"advancedsearch-field-subpage": "Подстраници на тази страница:",
+	"advancedsearch-field-subpageof": "Подстраници на тази страница:",
 	"advancedsearch-field-intitle": "Заглавието на страницата съдържа:",
 	"advancedsearch-field-deepcat": "Страница в тази категория:",
 	"advancedsearch-field-hastemplate": "Само страници с този шаблон:",

@@ -4,7 +4,8 @@
 			"Mahdy Saffar",
 			"Alirezaaa",
 			"Ladsgroup",
-			"Obzord"
+			"Obzord",
+			"Arian Ar"
 		]
 	},
 	"advancedsearch-desc": "دسترسی آسان به قابلیت‌های جستجوی پیشرفته در [[Special:Search]]",
@@ -16,7 +17,7 @@
 	"advancedsearch-field-phrase": "دقیقاً این متن:",
 	"advancedsearch-field-or": "یکی از این واژگان:",
 	"advancedsearch-field-not": "بدون این واژگان:",
-	"advancedsearch-field-subpage": "زیرصفحه‌های این صفحه:",
+	"advancedsearch-field-subpageof": "زیرصفحه‌های این صفحه:",
 	"advancedsearch-field-intitle": "عنوان صفحه شامل:",
 	"advancedsearch-field-deepcat": "صفحه در این رده:",
 	"advancedsearch-field-hastemplate": "تنها صفحات دارای این الگو:",
@@ -34,7 +35,7 @@
 	"advancedsearch-filetype-section-other": "فرمت دیگر",
 	"advancedsearch-filetype-bitmap": "تصویر",
 	"advancedsearch-filetype-vector": "نقاشی",
-	"advancedsearch-filetype-audio": "صوتی",
+	"advancedsearch-filetype-audio": "صوت",
 	"advancedsearch-filetype-video": "ویدئو",
 	"advancedsearch-filetype-multimedia": "چندرسانه‌ای",
 	"advancedsearch-filetype-office": "دفتر",

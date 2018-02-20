@@ -16,7 +16,7 @@
 	"advancedsearch-field-phrase": "Este texto exato:",
 	"advancedsearch-field-or": "Uma destas palavras:",
 	"advancedsearch-field-not": "Sem estas palavras:",
-	"advancedsearch-field-subpage": "Subpáginas desta página:",
+	"advancedsearch-field-subpageof": "Subpáginas desta página:",
 	"advancedsearch-field-intitle": "O título da página contém:",
 	"advancedsearch-field-deepcat": "Página nesta categoria:",
 	"advancedsearch-field-hastemplate": "Só páginas com esta predefinição:",

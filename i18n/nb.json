@@ -15,7 +15,7 @@
 	"advancedsearch-field-phrase": "Denne teksten eksakt:",
 	"advancedsearch-field-or": "Ett av disse ordene:",
 	"advancedsearch-field-not": "Ikke disse ordene:",
-	"advancedsearch-field-subpage": "Undersider av denne siden:",
+	"advancedsearch-field-subpageof": "Undersider av denne siden:",
 	"advancedsearch-field-intitle": "Sidetittelen inneholder:",
 	"advancedsearch-field-deepcat": "Side i denne kategorien:",
 	"advancedsearch-field-hastemplate": "Kun sider med denne malen:",

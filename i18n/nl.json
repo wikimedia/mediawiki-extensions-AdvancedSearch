@@ -13,7 +13,7 @@
 	"advancedsearch-field-phrase": "Precies deze tekst:",
 	"advancedsearch-field-or": "Een van deze woorden:",
 	"advancedsearch-field-not": "Niet deze woorden:",
-	"advancedsearch-field-subpage": "Subpagina's van deze pagina:",
+	"advancedsearch-field-subpageof": "Subpagina's van deze pagina:",
 	"advancedsearch-field-intitle": "Paginatitel bevat:",
 	"advancedsearch-field-deepcat": "Pagina in deze categorie:",
 	"advancedsearch-field-hastemplate": "Alleen pagina's met deze sjabloon:",

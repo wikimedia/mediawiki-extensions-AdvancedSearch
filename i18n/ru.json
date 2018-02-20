@@ -12,7 +12,7 @@
 	"advancedsearch-field-plain": "Эти слова:",
 	"advancedsearch-field-or": "Одно из этих слов:",
 	"advancedsearch-field-not": "Не эти слова:",
-	"advancedsearch-field-subpage": "Подстраницы данной страницы:",
+	"advancedsearch-field-subpageof": "Подстраницы данной страницы:",
 	"advancedsearch-field-intitle": "Заголовок страницы содержит:",
 	"advancedsearch-field-deepcat": "Страница в этой категории:",
 	"advancedsearch-field-hastemplate": "Только страницы с этим шаблоном:",

@@ -13,7 +13,7 @@
 	"advancedsearch-field-phrase": "이 문자와 정확히 일치:",
 	"advancedsearch-field-or": "이 단어 중 하나:",
 	"advancedsearch-field-not": "이 단어가 아님:",
-	"advancedsearch-field-subpage": "이 문서의 하위 문서:",
+	"advancedsearch-field-subpageof": "이 문서의 하위 문서:",
 	"advancedsearch-field-intitle": "문서 제목이 다음을 포함:",
 	"advancedsearch-field-deepcat": "이 분류 내 문서:",
 	"advancedsearch-field-hastemplate": "이 틀을 포함하는 문서만:",

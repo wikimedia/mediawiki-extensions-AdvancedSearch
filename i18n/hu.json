@@ -14,7 +14,7 @@
 	"advancedsearch-field-phrase": "Pontosan ezt a szöveget:",
 	"advancedsearch-field-or": "Az alábbi szavak közül:",
 	"advancedsearch-field-not": "Ne tartalmazza ezeket a szavakat:",
-	"advancedsearch-field-subpage": "Ezen oldal aloldalai:",
+	"advancedsearch-field-subpageof": "Ezen oldal aloldalai:",
 	"advancedsearch-field-intitle": "Az oldal címe tartalmazza ezt:",
 	"advancedsearch-field-deepcat": "Ezen kategória eleme:",
 	"advancedsearch-field-hastemplate": "Csak azok az oldalak, amelyek tartalmazzák ezt a sablont:",

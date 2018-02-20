@@ -7,7 +7,7 @@
 		]
 	},
 	"advancedsearch-field-not": "不含這些詞：",
-	"advancedsearch-field-subpage": "此頁面的子頁面：",
+	"advancedsearch-field-subpageof": "此頁面的子頁面：",
 	"advancedSearch-placeholder-exact-text": "鍵入精確詞并加引號，例如：「貓喜歡山羊」",
 	"advancedsearch-filetype-section-types": "一般檔案類型",
 	"advancedsearch-filetype-section-image": "圖片格式",

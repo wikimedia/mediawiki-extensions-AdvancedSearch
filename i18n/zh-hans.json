@@ -16,7 +16,7 @@
 	"advancedsearch-field-phrase": "精确匹配这些词：",
 	"advancedsearch-field-or": "这些词之一：",
 	"advancedsearch-field-not": "不含这些词：",
-	"advancedsearch-field-subpage": "此页面的子页面：",
+	"advancedsearch-field-subpageof": "此页面的子页面：",
 	"advancedsearch-field-intitle": "页面标题包含：",
 	"advancedsearch-field-deepcat": "此分类中的页面：",
 	"advancedsearch-field-hastemplate": "含此模板的页面：",

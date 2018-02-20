@@ -15,7 +15,7 @@
 	"advancedsearch-field-phrase": "Точний пошук тексту:",
 	"advancedsearch-field-or": "Одне з цих слів:",
 	"advancedsearch-field-not": "Крім цих слів:",
-	"advancedsearch-field-subpage": "Підсторінки цієї сторінки:",
+	"advancedsearch-field-subpageof": "Підсторінки цієї сторінки:",
 	"advancedsearch-field-intitle": "Назва сторінки містить:",
 	"advancedsearch-field-deepcat": "Сторінка в цій категорії:",
 	"advancedsearch-field-hastemplate": "Лише сторінки з цим шаблоном:",

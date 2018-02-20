@@ -12,7 +12,7 @@
 	"advancedsearch-field-phrase": "Esattamente questo testo:",
 	"advancedsearch-field-or": "Una di queste parole:",
 	"advancedsearch-field-not": "Non queste parole:",
-	"advancedsearch-field-subpage": "Sottopagine di questa pagina:",
+	"advancedsearch-field-subpageof": "Sottopagine di questa pagina:",
 	"advancedsearch-field-intitle": "Il titolo della pagina contiene:",
 	"advancedsearch-field-deepcat": "Pagine in questa categoria:",
 	"advancedsearch-field-hastemplate": "Solo pagine con questo template:",

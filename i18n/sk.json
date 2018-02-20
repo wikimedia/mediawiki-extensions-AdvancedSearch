@@ -14,7 +14,7 @@
 	"advancedsearch-field-phrase": "Presne tento text:",
 	"advancedsearch-field-or": "Jedno z týchto slov:",
 	"advancedsearch-field-not": "Bez týchto slov:",
-	"advancedsearch-field-subpage": "Podstránky tejto stránky:",
+	"advancedsearch-field-subpageof": "Podstránky tejto stránky:",
 	"advancedsearch-field-intitle": "Názov stránky obsahuje:",
 	"advancedsearch-field-deepcat": "Stránka v tejto kategórii:",
 	"advancedsearch-field-hastemplate": "Len stránky s touto šablónou:",
