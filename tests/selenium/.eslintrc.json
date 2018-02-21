@@ -7,8 +7,5 @@
 	},
 	"globals": {
 		"browser": false
-	},
-	"parserOptions": {
-		"ecmaVersion": 6
 	}
 }
