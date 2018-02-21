@@ -19,7 +19,8 @@
 			or: false,
 			intitle: false,
 			filetype: false,
-			hastemplate: false
+			hastemplate: false,
+			subpageof: false
 		};
 	};
 
