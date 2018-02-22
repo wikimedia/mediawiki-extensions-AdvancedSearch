@@ -1,6 +1,7 @@
 'use strict';
 const Page = require( '../../../../../tests/selenium/pageobjects/page' );
 const url = require( 'url' );
+const querystring = require( 'querystring' );
 
 class TextInputField {
 	constructor( selector ) {
@@ -162,8 +163,12 @@ class SearchPage extends Page {
 		}, [] );
 	}
 
-	open() {
-		super.open( 'Special:Search' );
+	open( params ) {
+		let pageName = 'Special:Search';
+		if ( typeof params === 'object' ) {
+			pageName += '&' + querystring.stringify( params );
+		}
+		super.open( pageName );
 		this.waitForAdvancedSearchToLoad();
 	}
 

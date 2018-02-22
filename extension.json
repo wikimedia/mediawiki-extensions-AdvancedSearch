@@ -91,6 +91,7 @@
 			],
 			"dependencies": [
 				"mediawiki.jqueryMsg",
+				"mediawiki.Uri",
 				"mediawiki.util",
 				"oojs-ui-widgets",
 				"oojs-ui.styles.icons-content",
