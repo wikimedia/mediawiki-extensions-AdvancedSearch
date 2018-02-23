@@ -6,6 +6,7 @@
 			"Hello903hello"
 		]
 	},
+	"advancedsearch-optgroup-structure": "結構",
 	"advancedsearch-field-not": "不含這些詞：",
 	"advancedsearch-field-subpageof": "此頁面的子頁面：",
 	"advancedSearch-placeholder-exact-text": "鍵入精確詞并加引號，例如：「貓喜歡山羊」",
@@ -19,5 +20,6 @@
 	"advancedsearch-filetype-multimedia": "多媒體",
 	"advancedsearch-filetype-office": "辦公室",
 	"advancedSearch-filesize-equals": "等於",
-	"advancedSearch-filesize-greater-than": "大於"
+	"advancedSearch-filesize-greater-than": "大於",
+	"advancedSearch-namespaces-preset-all": "全部"
 }
