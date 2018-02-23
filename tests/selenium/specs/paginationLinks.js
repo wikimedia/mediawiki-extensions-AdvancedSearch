@@ -61,11 +61,10 @@ describe( 'Advanced Search', function () {
 		} );
 
 		SearchPage.open();
-		browser.waitForVisible( '.mw-advancedSearch-container', 10000 );
-		SearchPage.searchExpandablePane.click();
-		SearchPage.searchTheseWords.click();
-		browser.keys( 'brown,' );
-		SearchPage.searchExactText.setValue( '"jumped over"\uE007' );
+		SearchPage.toggleInputFields();
+		SearchPage.searchTheseWords.put( 'brown,' );
+		SearchPage.searchExactText.put( '"jumped over"' );
+		SearchPage.submitForm();
 		browser.waitForVisible( '.mw-advancedSearch-container', 10000 );
 
 		assert( SearchPage.searchPaginationLinks.isExisting() );

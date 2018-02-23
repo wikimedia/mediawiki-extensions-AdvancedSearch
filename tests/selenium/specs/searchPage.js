@@ -3,20 +3,13 @@
 let assert = require( 'assert' );
 let SearchPage = require( '../pageobjects/search.page' );
 
-describe( 'Search in page text block functions properly', function () {
-
-	function assertNamespaceSelection( tags ) {
-		let matchingTags = SearchPage.namespaceTags.value.filter( function ( tag ) {
-			return tags.indexOf( tag.getText() ) !== -1;
-		} );
-		return matchingTags.length === tags.length;
-	}
+describe( 'AdvancedSearch', function () {
 
 	it( 'inserts advanced search icon elements', function () {
 
 		SearchPage.open();
 
-		SearchPage.searchExpandablePane.click();
+		SearchPage.toggleInputFields();
 
 		assert( SearchPage.searchInfoIcons.isVisible() );
 
@@ -26,7 +19,7 @@ describe( 'Search in page text block functions properly', function () {
 
 		SearchPage.open();
 
-		SearchPage.searchExpandablePane.click();
+		SearchPage.toggleInputFields();
 		SearchPage.searchInfoIcons.value.forEach( function ( popupIcon, idx ) {
 			popupIcon.click();
 			let popupContent = SearchPage.infoPopup.value[ idx ];
@@ -44,21 +37,15 @@ describe( 'Search in page text block functions properly', function () {
 		SearchPage.open();
 
 		SearchPage.toggleInputFields();
-		SearchPage.searchTheseWords.click();
-		browser.keys( 'old,' );
-		SearchPage.searchNotTheseWords.click();
-		browser.keys( 'new ' );
-		SearchPage.searchOneWord.click();
-		browser.keys( 'big enormous giant' );
-		SearchPage.searchTitle.setValue( 'house' );
-		SearchPage.searchSubpageof.setValue( 'Wikimedia' );
-		SearchPage.searchTemplate.setValue( 'Main Page\uE007' );
-		SearchPage.searchFileType.click();
-		SearchPage.fileTypeImage.click(); // selects option gif from the dropdown
-		SearchPage.searchImageWidth.click();
-		browser.keys( '40' );
-		SearchPage.searchImageHeight.click();
-		browser.keys( '40' );
+		SearchPage.searchTheseWords.put( 'old,' );
+		SearchPage.searchNotTheseWords.put( 'new ' );
+		SearchPage.searchOneWord.put( 'big enormous giant' );
+		SearchPage.searchTitle.put( 'house' );
+		SearchPage.searchSubpageof.put( 'Wikimedia' );
+		SearchPage.searchTemplate.put( 'Main Page\uE007' );
+		SearchPage.searchFileType.selectImageType();
+		SearchPage.searchImageWidth.put( '40' );
+		SearchPage.searchImageHeight.put( '40' );
 
 		SearchPage.searchButton.click();
 
@@ -69,9 +56,8 @@ describe( 'Search in page text block functions properly', function () {
 
 		SearchPage.open();
 
-		SearchPage.searchExpandablePane.click();
-		SearchPage.searchFileType.click();
-		SearchPage.fileTypeImage.click();
+		SearchPage.toggleInputFields();
+		SearchPage.searchFileType.selectImageType();
 		assert( SearchPage.namespaceTags.value.filter( function ( tag ) {
 			return tag.getText() === 'File';
 		} ).length !== 0 );
@@ -85,9 +71,8 @@ describe( 'Search in page text block functions properly', function () {
 
 		SearchPage.open();
 
-		SearchPage.searchExpandablePane.click();
-		SearchPage.searchFileType.click();
-		SearchPage.fileTypeAudio.click();
+		SearchPage.toggleInputFields();
+		SearchPage.searchFileType.selectAudioType();
 
 		assert( !SearchPage.searchImageWidth.isVisible() );
 		assert( !SearchPage.searchImageHeight.isVisible() );
@@ -98,12 +83,11 @@ describe( 'Search in page text block functions properly', function () {
 
 		SearchPage.open();
 
-		SearchPage.namespacesExpandablePane.click();
-		let tags = SearchPage.getAllNamespaceNames();
-		SearchPage.fileNamespaceTag.click(); // an option has to be chosen in order for the pane to close
 		SearchPage.allNamespacesPreset.click();
 
-		assert( assertNamespaceSelection( tags ) );
+		const allLabels = SearchPage.namespaces.getAllLabelsFromMenu();
+		const selectedNamespaceLabels = SearchPage.namespaces.getAllTagLabels();
+		assert.deepEqual( selectedNamespaceLabels, allLabels );
 
 	} );
 
@@ -111,13 +95,13 @@ describe( 'Search in page text block functions properly', function () {
 
 		SearchPage.open();
 
-		SearchPage.searchExpandablePane.click();
-		SearchPage.searchFileType.click();
-		SearchPage.fileTypeImage.click();
-		SearchPage.namespacesExpandablePane.click();
-		let tags = SearchPage.getDisabledNamespaceNames();
+		SearchPage.toggleInputFields();
+		SearchPage.searchFileType.selectImageType(); // make test more "interesting" by selecting image file type to force "File" namespace
+		SearchPage.toggleInputFields();
 
-		assert( assertNamespaceSelection( tags ) );
+		const disabledMenuLabels = SearchPage.namespaces.getAllLabelsForDisabledItemsInMenu().sort();
+		const selectedNamespaceLabels = SearchPage.namespaces.getAllTagLabels().sort();
+		assert.deepEqual( disabledMenuLabels, selectedNamespaceLabels );
 
 	} );
 
@@ -126,7 +110,7 @@ describe( 'Search in page text block functions properly', function () {
 		SearchPage.open();
 
 		SearchPage.allNamespacesPreset.click();
-		SearchPage.fileNamespaceTagClose.click();
+		SearchPage.namespaces.removeFileNamespace();
 
 		assert( !SearchPage.allNamespacesPreset.isSelected() );
 	} );
@@ -135,12 +119,7 @@ describe( 'Search in page text block functions properly', function () {
 
 		SearchPage.open();
 
-		SearchPage.namespacesExpandablePane.click();
-		const FIRST_UNSELECTED_NAMESPACE_ITEM = 1;
-		const tags = SearchPage.dropdownNamespaceTags.value;
-		for ( let i = FIRST_UNSELECTED_NAMESPACE_ITEM; i < tags.length; i++ ) {
-			SearchPage.selectNamespaceMenuItem( i );
-		}
+		SearchPage.namespaces.selectAll();
 
 		assert( SearchPage.allNamespacesPreset.isSelected() );
 
