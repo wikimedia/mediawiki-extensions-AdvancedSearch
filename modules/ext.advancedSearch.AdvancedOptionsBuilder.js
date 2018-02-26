@@ -299,6 +299,27 @@
 					},
 					customEventHandling: true
 				},
+				{
+					group: 'structure',
+					id: 'inlanguage',
+					formatter: function ( val ) {
+						return 'inlanguage:' + val;
+					},
+					init: function () {
+						return new mw.libs.advancedSearch.ui.LanguageSelection(
+							self.state,
+							new mw.libs.advancedSearch.dm.LanguageOptionProvider( mw.config.get( 'advancedSearch.languages' ) ),
+							{
+								optionId: 'inlanguage',
+								id: 'advancedSearchOption-inlanguage',
+								dropdown: { $overlay: true }
+							}
+						);
+					},
+					enabled: function () {
+						return mw.config.get( 'advancedSearch.languages' ) !== null;
+					}
+				},
 
 				// Files
 				{

@@ -8,6 +8,7 @@ use MediaWiki\MediaWikiServices;
 use ResourceLoader;
 use SpecialPage;
 use User;
+use Language;
 
 /**
  * @license GPL-2.0-or-later
@@ -47,6 +48,18 @@ class Hooks {
 				'advancedSearch.tooltips' => TooltipGenerator::generateToolTips(),
 				'advancedSearch.namespacePresets' => $config->get( 'AdvancedSearchNamespacePresets' )
 			] );
+			/**
+			 * checks if extension Translate is installed and enabled
+			 * https://github.com/wikimedia/mediawiki-extensions-Translate/blob/master/Translate.php#L351
+			 * this check is not performed with ExtensionRegistry
+			 * because Translate extension does not have extension.json
+			 */
+			if ( $config->has( 'EnablePageTranslation' ) &&
+				$config->get( 'EnablePageTranslation' ) === true ) {
+				$special->getOutput()->addJsConfigVars(
+					'advancedSearch.languages', Language::fetchLanguageNames()
+				);
+			}
 		}
 	}
 
@@ -93,6 +106,7 @@ class Hooks {
 				'tests/qunit/QueryCompiler.test.js',
 				'tests/qunit/ui/ArbitraryWordInput.test.js',
 				'tests/qunit/ui/FileTypeSelection.test.js',
+				'tests/qunit/ui/LanguageSelection.test.js',
 				'tests/qunit/ui/NamespaceFilters.test.js',
 				'tests/qunit/ui/NamespacePresets.test.js',
 				'tests/qunit/ui/SearchPreview.test.js',
@@ -102,6 +116,7 @@ class Hooks {
 				'tests/qunit/dm/SearchableNamespaces.test.js',
 				'tests/qunit/dm/SearchModel.test.js',
 				'tests/qunit/dm/FileTypeOptionProvider.test.js',
+				'tests/qunit/dm/LanguageOptionProvider.test.js',
 				'tests/qunit/dm/trackingEvents/SearchRequest.test.js',
 				'tests/qunit/util.test.js'
 			],
@@ -109,6 +124,9 @@ class Hooks {
 				'ext.advancedSearch.QueryCompiler',
 				'ext.advancedSearch.ui.ArbitraryWordInput',
 				'ext.advancedSearch.ui.FileTypeSelection',
+				'ext.advancedSearch.ui.LanguageSelection',
+				'ext.advancedSearch.ui.mixins.ClassesForDropdownOptions',
+				'ext.advancedSearch.ui.StoreListener',
 				'ext.advancedSearch.ui.NamespaceFilters',
 				'ext.advancedSearch.ui.NamespacePresets',
 				'ext.advancedSearch.ui.SearchPreview',
@@ -117,6 +135,7 @@ class Hooks {
 				'ext.advancedSearch.dm.getDefaultNamespaces',
 				'ext.advancedSearch.dm.SearchableNamespaces',
 				'ext.advancedSearch.dm.FileTypeOptionProvider',
+				'ext.advancedSearch.dm.LanguageOptionProvider',
 				'ext.advancedSearch.dm.NamespacePresetProviders',
 				'ext.advancedSearch.dm.trackingEvents.SearchRequest',
 				'oojs-ui'

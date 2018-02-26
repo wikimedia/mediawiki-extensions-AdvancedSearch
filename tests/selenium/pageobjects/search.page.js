@@ -40,6 +40,23 @@ class PillField {
 	}
 }
 
+class DropdownField {
+	constructor( selector ) {
+		this.selector = selector;
+	}
+
+	choose( option ) {
+		let optionElement = browser.element( '.mw-advancedSearch-inlanguage-' + option );
+		browser.element( this.selector ).click(); // open inlanguage dropdown
+		browser.execute( 'arguments[0].scrollIntoView(true);', optionElement.value ); // scroll to the option to get it into view
+		optionElement.click();
+	}
+
+	isVisible() {
+		return browser.element( this.selector ).isVisible();
+	}
+}
+
 class SearchPage extends Page {
 
 	constructor() {
@@ -50,8 +67,9 @@ class SearchPage extends Page {
 		this.searchOneWord = new PillField( '#advancedSearchOption-or' );
 
 		this.searchTitle = new TextInputField( '#advancedSearchOption-intitle' );
-		this.searchTemplate = new PillField( '#advancedSearchOption-hastemplate' );
 		this.searchSubpageof = new TextInputField( '#advancedSearchOption-subpageof' );
+		this.searchTemplate = new PillField( '#advancedSearchOption-hastemplate' );
+		this.searchInLanguage = new DropdownField( '#advancedSearchOption-inlanguage' );
 
 		this.searchImageWidth = new TextInputField( '#advancedSearchOption-filew' );
 		this.searchImageHeight = new TextInputField( '#advancedSearchOption-fileh' );

@@ -107,8 +107,12 @@
 				"ext.advancedSearch.dm.SearchableNamespaces",
 				"ext.advancedSearch.dm.SearchModel",
 				"ext.advancedSearch.dm.FileTypeOptionProvider",
+				"ext.advancedSearch.dm.LanguageOptionProvider",
 				"ext.advancedSearch.dm.trackingEvents.SearchRequest",
+				"ext.advancedSearch.ui.StoreListener",
+				"ext.advancedSearch.ui.mixins.ClassesForDropdownOptions",
 				"ext.advancedSearch.ui.FileTypeSelection",
+				"ext.advancedSearch.ui.LanguageSelection",
 				"ext.advancedSearch.ui.FormState",
 				"ext.advancedSearch.ui.ExpandablePane",
 				"ext.advancedSearch.ui.ImageDimensionInput",
@@ -134,13 +138,15 @@
 				"advancedsearch-field-intitle",
 				"advancedsearch-field-deepcat",
 				"advancedsearch-field-hastemplate",
+				"advancedsearch-field-inlanguage",
 				"advancedsearch-field-filetype",
 				"advancedsearch-field-filew",
 				"advancedsearch-field-fileh",
 				"advancedsearch-optgroup-text",
 				"advancedsearch-optgroup-structure",
 				"advancedsearch-optgroup-files",
-				"advancedsearch-placeholder-exact-text"
+				"advancedsearch-placeholder-exact-text",
+				"advancedsearch-inlanguage-default"
 			],
 			"dependencies": [
 				"ext.advancedSearch.ui.ArbitraryWordInput"
@@ -151,6 +157,14 @@
 				"modules/ext.advancedSearch.QueryCompiler.js"
 			]
 		} ,
+		"ext.advancedSearch.ui.mixins.ClassesForDropdownOptions": {
+			"scripts": [
+				"modules/ui/mixins/ext.advancedSearch.ClassesForDropdownOptions.js"
+			],
+			"dependencies": [
+				"oojs-ui-widgets"
+			]
+		},
 		"ext.advancedSearch.ui.ArbitraryWordInput": {
 			"scripts": [
 				"modules/ui/ext.advancedSearch.ArbitraryWordInput.js"
@@ -173,7 +187,9 @@
 				"modules/ui/ext.advancedSearch.FileTypeSelection.js"
 			],
 			"dependencies": [
-				"oojs-ui-widgets"
+				"oojs-ui-widgets",
+				"ext.advancedSearch.ui.StoreListener",
+				"ext.advancedSearch.ui.mixins.ClassesForDropdownOptions"
 			],
 			"messages": [
 				"advancedsearch-filetype-section-types",
@@ -188,6 +204,16 @@
 				"advancedsearch-filetype-audio",
 				"advancedsearch-filetype-video",
 				"advancedsearch-filetype-office"
+			]
+		},
+		"ext.advancedSearch.ui.LanguageSelection": {
+			"scripts": [
+				"modules/ui/ext.advancedSearch.LanguageSelection.js"
+			],
+			"dependencies": [
+				"oojs-ui-widgets",
+				"ext.advancedSearch.ui.StoreListener",
+				"ext.advancedSearch.ui.mixins.ClassesForDropdownOptions"
 			]
 		},
 		"ext.advancedSearch.ui.ExpandablePane": {
@@ -266,6 +292,14 @@
 				"advancedsearch-field-fileh"
 			]
 		},
+		"ext.advancedSearch.ui.StoreListener": {
+			"scripts": [
+				"modules/ui/ext.advancedSearch.StoreListener.js"
+			],
+			"dependencies": [
+				"oojs-ui-widgets"
+			]
+		},
 		"ext.advancedSearch.ui.TemplateSearch": {
 			"scripts": [
 				"modules/ui/ext.advancedSearch.TemplateSearch.js"
@@ -320,6 +354,14 @@
 				"oojs"
 			]
 		},
+		"ext.advancedSearch.dm.LanguageOptionProvider": {
+			"scripts": [
+				"modules/dm/ext.advancedSearch.LanguageOptionProvider.js"
+			],
+			"dependencies": [
+				"oojs-ui-widgets"
+			]
+		},
 		"ext.advancedSearch.dm.trackingEvents.SearchRequest": {
 			"scripts": [
 				"modules/dm/trackingEvents/ext.advancedSearch.SearchRequest.js"
@@ -337,7 +379,7 @@
 	"attributes": {
 		"EventLogging": {
 			"Schemas": {
-				"AdvancedSearchRequest": 17760635
+				"AdvancedSearchRequest": 17841562
 			}
 		}
 	},

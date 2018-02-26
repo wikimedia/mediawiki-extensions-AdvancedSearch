@@ -24,6 +24,7 @@ class TooltipGenerator {
 			'advancedsearch-help-or',
 			'advancedsearch-help-not',
 			'advancedsearch-help-hastemplate',
+			'advancedsearch-help-inlanguage',
 			'advancedsearch-help-intitle',
 			'advancedsearch-help-subpageof',
 			'advancedsearch-help-filetype',

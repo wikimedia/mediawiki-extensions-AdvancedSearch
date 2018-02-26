@@ -107,4 +107,38 @@ describe( 'Advanced Search', function () {
 
 	} );
 
+	it( 'inserts inlanguage field only when the translate extension is installed', function () {
+		SearchPage.open();
+
+		if ( SpecialPage.translateExtensionLink.isVisible() ) {
+			assert( SearchPage.searchInLanguage.isVisible() );
+		} else {
+			assert( !SearchPage.searchInLanguage.isVisible() );
+		}
+
+	} );
+
+	it( 'submits the search with the specific chosen language', function () {
+		SearchPage.open();
+		SearchPage.toggleInputFields();
+		SearchPage.searchTheseWords.put( 'goat,' );
+		SearchPage.searchInLanguage.choose( 'en' );
+		SearchPage.submitForm();
+
+		assert.equal( SearchPage.getSearchQueryFromUrl(), 'goat inlanguage:en' );
+
+	} );
+
+	it( 'submits the search without taking into consideration inlanguage if the default option is selected', function () {
+		SearchPage.open();
+		SearchPage.toggleInputFields();
+		SearchPage.searchTheseWords.put( 'goat,' );
+		SearchPage.searchInLanguage.choose( 'de' );
+		SearchPage.searchInLanguage.choose( '' );
+		SearchPage.submitForm();
+
+		assert.equal( SearchPage.getSearchQueryFromUrl(), 'goat' );
+
+	} );
+
 } );

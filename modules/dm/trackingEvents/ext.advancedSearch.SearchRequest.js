@@ -20,7 +20,8 @@
 			intitle: false,
 			filetype: false,
 			hastemplate: false,
-			subpageof: false
+			subpageof: false,
+			inlanguage: false
 		};
 	};
 
