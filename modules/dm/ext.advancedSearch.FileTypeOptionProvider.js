@@ -77,7 +77,6 @@
 			{ data: 'vector', label: mw.msg( 'advancedsearch-filetype-vector' ) },
 			{ data: 'video', label: mw.msg( 'advancedsearch-filetype-video' ) },
 			{ data: 'audio', label: mw.msg( 'advancedsearch-filetype-audio' ) },
-			{ data: 'multimedia', label: mw.msg( 'advancedsearch-filetype-multimedia' ) },
 			{ data: 'office', label: mw.msg( 'advancedsearch-filetype-office' ) }
 		];
 	};
