@@ -3,12 +3,27 @@
 		"authors": [
 			"Corainn",
 			"Liuxinyu970226",
-			"Hello903hello"
+			"Hello903hello",
+			"A2093064"
 		]
 	},
+	"advancedsearch-desc": "在[[Special:Search]]提供高級搜尋功能的輕鬆存取",
+	"advancedSearch-ask-feedback": "您對新的介面感覺如何？請向我們提供[$1 反饋]（在新頁籤打開）",
+	"advancedsearch-options-pane-head": "進階參數：",
+	"advancedsearch-optgroup-text": "在頁面文字中搜尋",
 	"advancedsearch-optgroup-structure": "結構",
+	"advancedsearch-optgroup-files": "檔案和圖片",
+	"advancedsearch-field-plain": "這些詞：",
+	"advancedsearch-field-phrase": "精確匹配這些詞：",
+	"advancedsearch-field-or": "這些詞之一：",
 	"advancedsearch-field-not": "不含這些詞：",
 	"advancedsearch-field-subpageof": "此頁面的子頁面：",
+	"advancedsearch-field-intitle": "頁面標題包含：",
+	"advancedsearch-field-deepcat": "此分類中的頁面：",
+	"advancedsearch-field-hastemplate": "包含此模板的頁面：",
+	"advancedsearch-field-filetype": "檔案類型：",
+	"advancedsearch-field-filew": "檔案寬度（像素）：",
+	"advancedsearch-field-fileh": "檔案高度（像素）：",
 	"advancedSearch-placeholder-exact-text": "鍵入精確詞并加引號，例如：「貓喜歡山羊」",
 	"advancedsearch-filetype-section-types": "一般檔案類型",
 	"advancedsearch-filetype-section-image": "圖片格式",
@@ -17,9 +32,9 @@
 	"advancedsearch-filetype-bitmap": "圖片",
 	"advancedsearch-filetype-audio": "音訊",
 	"advancedsearch-filetype-video": "影片",
-	"advancedsearch-filetype-multimedia": "多媒體",
 	"advancedsearch-filetype-office": "辦公室",
 	"advancedSearch-filesize-equals": "等於",
 	"advancedSearch-filesize-greater-than": "大於",
-	"advancedSearch-namespaces-preset-all": "全部"
+	"advancedSearch-namespaces-preset-all": "全部",
+	"advancedSearch-beta-feature-message": "高級搜尋介面"
 }
