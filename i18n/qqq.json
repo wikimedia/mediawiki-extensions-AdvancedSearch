@@ -47,7 +47,6 @@
 	"advancedsearch-filetype-vector": "Label for drawing file type\n{{Identical|Drawing}}",
 	"advancedsearch-filetype-audio": "Label for audio file type\n{{Identical|Audio}}",
 	"advancedsearch-filetype-video": "Label for video file type\n{{Identical|Video}}",
-	"advancedsearch-filetype-multimedia": "Label for multimedia file type\n{{Identical|Multimedia}}",
 	"advancedsearch-filetype-office": "Label for office file types\n{{Identical|Office}}",
 	"advancedSearch-filesize-equals": "Label for the file width/height 'equals' comparator selection",
 	"advancedSearch-filesize-equals-symbol": "Label for the file width/height 'equals' comparator selection as shorthand symbol",

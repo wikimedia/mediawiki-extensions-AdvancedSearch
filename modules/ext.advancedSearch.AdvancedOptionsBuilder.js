@@ -311,7 +311,6 @@
 							case 'vector':
 							case 'audio':
 							case 'drawing':
-							case 'multimedia':
 							case 'office':
 							case 'video':
 								return 'filetype:' + val;
