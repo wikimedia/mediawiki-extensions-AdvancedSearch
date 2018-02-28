@@ -27,6 +27,44 @@
 		assert.deepEqual( [ '0', '1', '2' ], model.getNamespaces() );
 	} );
 
+	QUnit.test( 'Added namespaces of a preset mark the preset as selected', function ( assert ) {
+		assert.expect( 1 );
+		var model = new Model(),
+			presets = new NamespacePresets( model, {
+				presets: {
+					discussions: {
+						namespaces: [ '3', '5', '7', '9', '11', '13', '711' ],
+						label: 'Discussion'
+					},
+					generalHelp: {
+						namespaces: [ '4', '12' ],
+						label: 'General Help'
+					}
+				}
+			} );
+		model.setNamespaces( [ '4', '12' ] );
+		assert.deepEqual( presets.getValue(), [ 'generalHelp' ] );
+	} );
+
+	QUnit.test( 'Added namespaces of two presets mark both presets as selected', function ( assert ) {
+		assert.expect( 1 );
+		var model = new Model(),
+			presets = new NamespacePresets( model, {
+				presets: {
+					discussions: {
+						namespaces: [ '3', '5', '7', '9', '11', '13', '711' ],
+						label: 'Discussion'
+					},
+					generalHelp: {
+						namespaces: [ '4', '12' ],
+						label: 'General Help'
+					}
+				}
+			} );
+		model.setNamespaces( [ '4', '12', '3', '5', '7', '9', '11', '13', '711' ] );
+		assert.deepEqual( presets.getValue(), [ 'discussions', 'generalHelp' ] );
+	} );
+
 	QUnit.test( 'Unselecting namespace removes its preset', function ( assert ) {
 		assert.expect( 1 );
 

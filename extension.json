@@ -28,6 +28,9 @@
 		],
 		"SpecialPageBeforeExecute": [
 			"AdvancedSearch\\Hooks::onSpecialPageBeforeExecute"
+		],
+		"ResourceLoaderGetConfigVars": [
+			"AdvancedSearch\\Hooks::onResourceLoaderGetConfigVars"
 		]
 	},
 	"MessagesDirs": {
@@ -59,7 +62,6 @@
 			"messages": [
 				"advancedsearch-options-pane-head",
 				"advancedSearch-namespaces-articles",
-				"advancedSearch-namespaces-preset-all",
 				"advancedSearch-namespaces-search-in",
 				"advancedSearch-namespaces-placeholder",
 				"advancedSearch-ask-feedback"
@@ -192,6 +194,11 @@
 			"dependencies": [
 				"ext.advancedSearch.util",
 				"oojs-ui-widgets"
+			],
+			"messages": [
+				"advancedSearch-namespaces-preset-all",
+				"advancedSearch-namespaces-preset-general-help",
+				"advancedSearch-namespaces-preset-discussion"
 			]
 		},
 		"ext.advancedSearch.ui.OptionalElementLayout": {

@@ -57,7 +57,10 @@
 	mw.libs.advancedSearch.ui.NamespacePresets.prototype.updateStoreFromPresets = function ( newValue ) {
 		var key = newValue.getData();
 		if ( newValue.selected ) {
-			this.store.setNamespaces( this.presets[ key ].namespaces );
+			this.store.setNamespaces( mw.libs.advancedSearch.util.arrayConcatUnique(
+				this.presets[ key ].namespaces,
+				this.store.getNamespaces() )
+			);
 		} else {
 			this.store.setNamespaces( this.store.getNamespaces().filter( function ( id ) {
 				return this.presets[ key ].namespaces.indexOf( id ) === -1;
@@ -67,11 +70,12 @@
 
 	mw.libs.advancedSearch.ui.NamespacePresets.prototype.updatePresetsFromStore = function () {
 		var selectedPresets = {},
-			self = this;
+			self = this,
+			storeNamespaces = self.store.getNamespaces();
 		$.each( this.presets, function ( key, presetConfig ) {
-			selectedPresets[ key ] = mw.libs.advancedSearch.util.arrayEquals(
-				presetConfig.namespaces,
-				self.store.getNamespaces().sort()
+			selectedPresets[ key ] = mw.libs.advancedSearch.util.arrayContains(
+				storeNamespaces,
+				presetConfig.namespaces
 			);
 		} );
 		this.checkboxMultiselectWidget.off( 'change', this.updateStoreFromPresets, this );

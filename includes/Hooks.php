@@ -87,7 +87,8 @@ class Hooks {
 				'tests/qunit/dm/getDefaultNamespaces.test.js',
 				'tests/qunit/dm/SearchModel.test.js',
 				'tests/qunit/dm/FileTypeOptionProvider.test.js',
-				'tests/qunit/dm/trackingEvents/SearchRequest.test.js'
+				'tests/qunit/dm/trackingEvents/SearchRequest.test.js',
+				'tests/qunit/util.test.js'
 			],
 			'dependencies' => [
 				'ext.advancedSearch.ui.ArbitraryWordInput',
@@ -105,4 +106,18 @@ class Hooks {
 			'remoteExtPath' => 'AdvancedSearch',
 		];
 	}
+
+	public static function onResourceLoaderGetConfigVars( array &$configs ) {
+		$configs['namespaces'] = [
+			'geenreal_help' => [
+				'help',
+				'project'
+			],
+			'discussion' => [
+				'project',
+				'talk'
+			],
+		];
+	}
+
 }
