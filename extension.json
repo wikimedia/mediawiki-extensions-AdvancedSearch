@@ -16,20 +16,28 @@
 		"AdvancedSearch\\": "includes/"
 	},
 	"config": {
-		"@AdvancedSearchBetaFeature": "Make the AdvancedSearch feature a BetaFeature. Setting this requires the BetaFeature extension and requires each user to enable the BetaFeature.",
-		"AdvancedSearchBetaFeature": true,
+		"AdvancedSearchBetaFeature": {
+			"description": "Make the AdvancedSearch feature a BetaFeature. Setting this requires the BetaFeature extension and requires each user to enable the BetaFeature.",
+			"value": true
+		},
 		"AdvancedSearchNamespacePresets": {
-			"discussion": {
-				"provider": "discussion",
-				"label": "advancedSearch-namespaces-preset-discussion"
-			},
-			"generalHelp": {
-				"namespaces": [ "4", "12" ],
-				"label": "advancedSearch-namespaces-preset-general-help"
-			},
-			"all": {
-				"provider": "all",
-				"label": "advancedSearch-namespaces-preset-all"
+			"description": "Groups of namespaces to offer as presets. Can be specified ('namespaces') or determined dynamically ('provider').",
+			"value": {
+				"discussion": {
+					"provider": "discussion",
+					"label": "advancedSearch-namespaces-preset-discussion"
+				},
+				"generalHelp": {
+					"namespaces": [
+						"4",
+						"12"
+					],
+					"label": "advancedSearch-namespaces-preset-general-help"
+				},
+				"all": {
+					"provider": "all",
+					"label": "advancedSearch-namespaces-preset-all"
+				}
 			}
 		}
 	},
@@ -301,12 +309,16 @@
 			]
 		}
 	},
-	"EventLoggingSchemas": {
-		"AdvancedSearchRequest": 17760635
+	"attributes": {
+		"EventLogging": {
+			"Schemas": {
+				"AdvancedSearchRequest": 17760635
+			}
+		}
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
 		"remoteExtPath": "AdvancedSearch"
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }
