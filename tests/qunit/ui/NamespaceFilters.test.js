@@ -48,7 +48,7 @@
 		assert.equal( menu.getItemIndex( lastItem ), 4 );
 	} );
 
-	QUnit.test( 'Namespaces without labels are skipped', function ( assert ) {
+	QUnit.test( 'SearchableNamespaces without labels are skipped', function ( assert ) {
 		assert.expect( 3 );
 
 		var filter = new NamespaceFilters( new Model(), {

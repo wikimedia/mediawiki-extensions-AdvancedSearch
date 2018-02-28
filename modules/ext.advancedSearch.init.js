@@ -30,22 +30,6 @@
 	}
 
 	/**
-	 * @return {Object}
-	 */
-	function prepareNamespaces() {
-		var rawNamespaces = mw.config.get( 'wgFormattedNamespaces' ),
-			namespaces = {};
-		// Article namespace has no name by default
-		$.each( Object.keys( rawNamespaces ), function ( _, key ) {
-			if ( parseInt( key, 10 ) >= 0 ) {
-				namespaces[ key ] = rawNamespaces[ key ];
-			}
-		} );
-		namespaces[ '0' ] = mw.msg( 'advancedsearch-namespaces-articles' );
-		return namespaces;
-	}
-
-	/**
 	 * @param {ext.libs.advancedSearch.dm.SearchModel} state
 	 * @param {Object[]} advancedOptions
 	 * @return {string[]}
@@ -157,12 +141,12 @@
 	}
 
 	/**
+	 * @param {object} allowedNamespaces Object returned from SearchableNamespaces.getNamespaces
 	 * @return {string[]}
 	 */
-	function getNamespacesFromUrl() {
+	function getNamespacesFromUrl( allowedNamespaces ) {
 		var url = new mw.Uri(),
-			namespaces = [],
-			allowedNamespaces = prepareNamespaces();
+			namespaces = [];
 		$.each( url.query, function ( param ) {
 			var nsMatch = param.match( /^ns(\d+)$/ );
 			if ( nsMatch && nsMatch[ 1 ] in allowedNamespaces ) {
@@ -173,13 +157,14 @@
 	}
 
 	/**
+	 * @param {mw.libs.advancedSearch.dm.SearchableNamespaces} searchableNamespaces
 	 * @return {mw.libs.advancedSearch.dm.SearchModel}
 	 */
-	function initState() {
+	function initState( searchableNamespaces ) {
 		var state = new mw.libs.advancedSearch.dm.SearchModel(
 				mw.libs.advancedSearch.dm.getDefaultNamespaces( mw.user.options.values )
 			),
-			namespacesFromUrl = getNamespacesFromUrl(),
+			namespacesFromUrl = getNamespacesFromUrl( searchableNamespaces.getNamespaces() ),
 			stateFromUrl = mw.util.getParamValue( 'advancedSearch-current' );
 
 		if ( namespacesFromUrl.length ) {
@@ -195,7 +180,8 @@
 	}
 
 	$( function () {
-		var state = initState(),
+		var searchableNamespaces = new mw.libs.advancedSearch.dm.SearchableNamespaces( mw.config.get( 'wgFormattedNamespaces' ) ),
+			state = initState( searchableNamespaces ),
 			advancedOptionsBuilder = new mw.libs.advancedSearch.AdvancedOptionsBuilder( state );
 
 		var $search = $( 'form#search, form#powersearch' ),
@@ -227,14 +213,18 @@
 
 		$advancedSearch.append( currentSearch.$element );
 		var namespaceSelection = new mw.libs.advancedSearch.ui.NamespaceFilters( state, {
-				namespaces: prepareNamespaces(),
+				namespaces: searchableNamespaces.getNamespaces(),
 				placeholder: mw.msg( 'advancedsearch-namespaces-placeholder' ),
 				$overlay: true
 			} ),
-			namespacePresets = new mw.libs.advancedSearch.ui.NamespacePresets( state, {
-				classes: [ 'mw-advancedSearch-namespacePresets' ],
-				presets: mw.config.get( 'advancedSearch.namespacePresets' )
-			} ),
+			namespacePresets = new mw.libs.advancedSearch.ui.NamespacePresets(
+				state,
+				new mw.libs.advancedSearch.dm.NamespacePresetProviders( searchableNamespaces ),
+				{
+					classes: [ 'mw-advancedSearch-namespacePresets' ],
+					presets: mw.config.get( 'advancedSearch.namespacePresets' )
+				}
+			),
 			namespaceSelectionPreview = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection' );
 
 		$advancedSearch.append( namespaceSelectionPreview );

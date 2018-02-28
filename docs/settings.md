@@ -37,3 +37,38 @@ $wgAdvancedSearchNamespacePresets = [
 	],
 ];
 ```
+
+#### Add a dynamic namespace preset
+If your wiki needs to determine namespaces at runtime or if you write an extension that can provide a dynamic namespace preset, you can use the `provider` setting instead of the `namespaces` setting.
+
+```
+// in your LocalSettings.php
+wfLoadExtension( 'AdvancedSearch' );
+$wgAdvancedSearchNamespacePresets = [
+	'my-custom-preset' => [
+		'enabled' => true, // indication that this preset should be shown to the user
+		'provider' => 'custom-talk', // unique provider id
+		'label' => 'my-custom-preset-label-id' // message id of the translation to use as a label for the preset checkbox
+	]
+];
+```
+
+```
+// in the Javascript initialization code of your extension or in the common.js of your wiki 
+function customTalkNamespaceProvider( namespaceIDs ) {
+	$.grep( namespaceIDs, function ( id ) {
+		var numericId = parseInt( id, 10 ); 
+		return numericId > 100 && numericId % 2;
+	} );
+}
+
+mw.hook( 'advancedSearch.initNamespacePresetProviders' ).add( 
+	function( namespaceProviders ) {
+		// use unique provider ID from PHP config as key
+		namespaceProviders[ 'custom-talk' ] = customTalkNamespaceProvider;
+	} 
+); 
+```
+
+The provider function `customTalkNamespaceProvider` will get an array of all supported namespaces IDs. If it returns unsupported namespace IDs, the preset will not be shown. 
+If the provider function returns an empty array, the preset is not shown. This is for creating presets that depend on the existence of certain namespaces. 

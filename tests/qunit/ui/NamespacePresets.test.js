@@ -1,13 +1,15 @@
 ( function ( mw ) {
 	var NamespacePresets = mw.libs.advancedSearch.ui.NamespacePresets,
 		Model = mw.libs.advancedSearch.dm.SearchModel,
-		sandbox
+		sandbox, presetProvider
 	;
 
 	QUnit.module( 'ext.advancedSearch.ui.NamespacePresets' );
 
 	QUnit.testStart( function () {
 		sandbox = sinon.sandbox.create();
+		presetProvider = sinon.createStubInstance( mw.libs.advancedSearch.dm.NamespacePresetProviders );
+		presetProvider.namespaceIdsAreValid.returns( true );
 	} );
 
 	QUnit.testDone( function () {
@@ -24,8 +26,10 @@
 	QUnit.test( 'Passing a provider function creates namespace presets from the provider', function ( assert ) {
 		assert.expect( 1 );
 
-		mw.libs.advancedSearch.dm.NamespacePresetProviders.justatest = function () { return [ '0', '1', '2' ]; };
-		var presets = new NamespacePresets( new Model(), {
+		presetProvider.hasProvider.returns( true );
+		presetProvider.getNamespaceIdsFromProvider.returns( [ '0', '1', '2' ] );
+
+		var presets = new NamespacePresets( new Model(), presetProvider, {
 			presets: {
 				justatest: {
 					enabled: true,
@@ -34,7 +38,6 @@
 				}
 			}
 		} );
-		delete mw.libs.advancedSearch.dm.NamespacePresetProviders.justatest;
 
 		assert.deepEqual( [ '0', '1', '2' ], presets.presets.justatest.namespaces );
 	} );
@@ -42,8 +45,9 @@
 	QUnit.test( 'Passing a nonexisting provider function creates no namespace preset', function ( assert ) {
 		assert.expect( 2 );
 
+		presetProvider.hasProvider.withArgs( 'blackhole' ).returns( false );
 		var warningLogger = sandbox.stub( mw.log, 'warn' );
-		var presets = new NamespacePresets( new Model(), {
+		var presets = new NamespacePresets( new Model(), presetProvider, {
 			presets: {
 				blackhole: {
 					enabled: true,
@@ -53,7 +57,7 @@
 			}
 		} );
 
-		assert.ok( warningLogger.calledWith( 'Provider function blackhole not found in mw.libs.advancedSearch.dm.NamespacePresetProviders' ) );
+		assert.ok( warningLogger.calledWith( 'Provider function blackhole not registered to mw.libs.advancedSearch.dm.NamespacePresetProviders' ) );
 		assert.notOk( presets.presets.hasOwnProperty( 'blackhole' ) );
 	} );
 
@@ -61,7 +65,7 @@
 		assert.expect( 2 );
 
 		var warningLogger = sandbox.stub( mw.log, 'warn' );
-		var presets = new NamespacePresets( new Model(), {
+		var presets = new NamespacePresets( new Model(), presetProvider, {
 			presets: {
 				borken: {
 					enabled: true,
@@ -77,7 +81,7 @@
 	QUnit.test( 'Passing a disabled preset config creates no namespace preset', function ( assert ) {
 		assert.expect( 1 );
 
-		var presets = new NamespacePresets( new Model(), {
+		var presets = new NamespacePresets( new Model(), presetProvider, {
 			presets: {
 				turnedoff: {
 					enabled: false,
@@ -93,7 +97,7 @@
 	QUnit.test( 'Passing a preset config omitting "enabled" creates no namespace preset', function ( assert ) {
 		assert.expect( 1 );
 
-		var presets = new NamespacePresets( new Model(), {
+		var presets = new NamespacePresets( new Model(), presetProvider, {
 			presets: {
 				undecided: {
 					namespaces: [ '2', '4', '6', '8' ],
@@ -109,7 +113,7 @@
 		assert.expect( 1 );
 
 		var model = new Model(),
-			presets = new NamespacePresets( model, {
+			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					all: {
 						enabled: true,
@@ -122,10 +126,49 @@
 		assert.deepEqual( [ '0', '1', '2' ], model.getNamespaces() );
 	} );
 
+	QUnit.test( 'Presets with empty namespace definitions log a warning', function ( assert ) {
+		assert.expect( 2 );
+
+		var warningLogger = sandbox.stub( mw.log, 'warn' ),
+			model = new Model(),
+			presets = new NamespacePresets( model, presetProvider, {
+				presets: {
+					emptypreset: {
+						enabled: true,
+						label: 'All',
+						namespaces: []
+					}
+				}
+			} );
+
+		assert.notOk( presets.presets.hasOwnProperty( 'emptypreset' ) );
+		assert.ok( warningLogger.calledWith( 'Empty namespaces for emptypreset in $wgAdvancedSearchNamespacePresets' ) );
+	} );
+
+	QUnit.test( 'Presets with invalid namespace definitions log a warning', function ( assert ) {
+		assert.expect( 2 );
+
+		presetProvider.namespaceIdsAreValid.returns( false );
+		var warningLogger = sandbox.stub( mw.log, 'warn' ),
+			model = new Model(),
+			presets = new NamespacePresets( model, presetProvider, {
+				presets: {
+					notvalid: {
+						enabled: true,
+						label: 'All',
+						namespaces: [ '1', '2' ]
+					}
+				}
+			} );
+
+		assert.notOk( presets.presets.hasOwnProperty( 'notvalid' ) );
+		assert.ok( warningLogger.calledWith( 'AdvancedSearch namespace preset "notvalid" contains unknown namespace ID' ) );
+	} );
+
 	QUnit.test( 'Added namespaces of a preset mark the preset as selected', function ( assert ) {
 		assert.expect( 1 );
 		var model = new Model(),
-			presets = new NamespacePresets( model, {
+			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					discussions: {
 						enabled: true,
@@ -146,7 +189,7 @@
 	QUnit.test( 'Added namespaces of two presets mark both presets as selected', function ( assert ) {
 		assert.expect( 1 );
 		var model = new Model(),
-			presets = new NamespacePresets( model, {
+			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					discussions: {
 						enabled: true,
@@ -168,7 +211,7 @@
 		assert.expect( 1 );
 
 		var model = new Model(),
-			presets = new NamespacePresets( model, {
+			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					all: {
 						enabled: true,
@@ -186,7 +229,7 @@
 		assert.expect( 4 );
 
 		var model = new Model(),
-			presets = new NamespacePresets( model, {
+			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					all: {
 						enabled: true,

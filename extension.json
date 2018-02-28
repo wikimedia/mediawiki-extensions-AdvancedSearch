@@ -85,7 +85,6 @@
 			},
 			"messages": [
 				"advancedsearch-options-pane-head",
-				"advancedsearch-namespaces-articles",
 				"advancedsearch-namespaces-search-in",
 				"advancedsearch-namespaces-placeholder",
 				"advancedsearch-ask-feedback"
@@ -104,6 +103,7 @@
 				"oojs-ui.styles.icons-wikimedia",
 				"ext.advancedSearch.AdvancedOptionsBuilder",
 				"ext.advancedSearch.dm.getDefaultNamespaces",
+				"ext.advancedSearch.dm.SearchableNamespaces",
 				"ext.advancedSearch.dm.SearchModel",
 				"ext.advancedSearch.dm.FileTypeOptionProvider",
 				"ext.advancedSearch.dm.trackingEvents.SearchRequest",
@@ -228,11 +228,6 @@
 				"advancedsearch-namespaces-preset-discussion"
 			]
 		},
-		"ext.advancedSearch.dm.NamespacePresetProviders": {
-			"scripts": [
-				"modules/dm/ext.advancedSearch.NamespacePresetProviders.js"
-			]
-		},
 		"ext.advancedSearch.ui.OptionalElementLayout": {
 			"scripts": [
 				"modules/ui/ext.advancedSearch.OptionalElementLayout.js"
@@ -286,12 +281,29 @@
 				"modules/dm/ext.advancedSearch.getDefaultNamespaces.js"
 			]
 		},
+		"ext.advancedSearch.dm.SearchableNamespaces": {
+			"scripts": [
+				"modules/dm/ext.advancedSearch.SearchableNamespaces.js"
+			],
+			"messages": [
+				"advancedsearch-namespaces-articles"
+			]
+		},
 		"ext.advancedSearch.dm.SearchModel": {
 			"scripts": [
 				"modules/dm/ext.advancedSearch.SearchModel.js"
 			],
 			"dependencies": [
 				"oojs"
+			]
+		},
+		"ext.advancedSearch.dm.NamespacePresetProviders": {
+			"scripts": [
+				"modules/dm/ext.advancedSearch.NamespacePresetProviders.js"
+			],
+			"dependencies": [
+				"oojs",
+				"ext.advancedSearch.util"
 			]
 		},
 		"ext.advancedSearch.dm.FileTypeOptionProvider": {

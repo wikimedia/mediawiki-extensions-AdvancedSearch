@@ -5,13 +5,26 @@
 	mw.libs.advancedSearch = mw.libs.advancedSearch || {};
 	mw.libs.advancedSearch.ui = mw.libs.advancedSearch.ui || {};
 
+	function validateNamespacePreset( presetProvider, namespaceIDs, presetName ) {
+		if ( !presetProvider.namespaceIdsAreValid( namespaceIDs ) ) {
+			mw.log.warn( 'AdvancedSearch namespace preset "' + presetName + '" contains unknown namespace ID' );
+			return false;
+		}
+		if ( namespaceIDs.length === 0 ) {
+			mw.log.warn( 'Empty namespaces for ' + presetName + ' in $wgAdvancedSearchNamespacePresets' );
+			return false;
+		}
+		return true;
+	}
+
 	/**
 	 * Prepare static namespace ID presets for improved performance during later processing
 	 *
 	 * @param {Object} presets
+	 * @param {ext.advancedSearch.dm.NamespacePresetProviders} presetProvider
 	 * @return {Object}
 	 */
-	function groomPresets( presets ) {
+	function groomPresets( presets, presetProvider ) {
 		var groomedPresets = {};
 		$.each( presets, function ( key, presetConfig ) {
 			var preset = { label: presetConfig.label };
@@ -21,13 +34,20 @@
 			}
 
 			if ( typeof presetConfig.provider !== 'undefined' ) {
-				if ( typeof mw.libs.advancedSearch.dm.NamespacePresetProviders[ presetConfig.provider ] === 'function' ) {
-					preset.namespaces = mw.libs.advancedSearch.dm.NamespacePresetProviders[ presetConfig.provider ]();
+				if ( presetProvider.hasProvider( presetConfig.provider ) ) {
+					preset.namespaces = presetProvider.getNamespaceIdsFromProvider( presetConfig.provider );
+					// Providers might return empty arrays to disable certain presets when preconditions are not fulfilled
+					if ( preset.namespaces.length === 0 ) {
+						return;
+					}
 				} else {
-					mw.log.warn( 'Provider function ' + presetConfig.provider + ' not found in mw.libs.advancedSearch.dm.NamespacePresetProviders' );
+					mw.log.warn( 'Provider function ' + presetConfig.provider + ' not registered to mw.libs.advancedSearch.dm.NamespacePresetProviders' );
 					return;
 				}
 			} else if ( Array.isArray( presetConfig.namespaces ) ) {
+				if ( !validateNamespacePreset( presetProvider, presetConfig.namespaces, key ) ) {
+					return;
+				}
 				preset.namespaces = presetConfig.namespaces;
 			} else {
 				mw.log.warn( 'No defined namespaces or provider function for ' + key + ' in $wgAdvancedSearchNamespacePresets' );
@@ -56,13 +76,14 @@
 	 * @constructor
 	 *
 	 * @param  {ext.advancedSearch.dm.SearchModel} store
+	 * @param  {ext.advancedSearch.dm.NamespacePresetProviders} presetProvider
 	 * @param  {Object} config
 	 */
-	mw.libs.advancedSearch.ui.NamespacePresets = function ( store, config ) {
+	mw.libs.advancedSearch.ui.NamespacePresets = function ( store, presetProvider, config ) {
 		config = $.extend( {
 			presets: {}
 		}, config );
-		config.presets = groomPresets( config.presets );
+		config.presets = groomPresets( config.presets, presetProvider );
 
 		config.options = prepareOptions( config.presets );
 		this.store = store;

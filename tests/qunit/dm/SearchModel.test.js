@@ -82,7 +82,7 @@
 		assert.deepEqual( model.getNamespaces(), [ '0', '2' ] );
 	} );
 
-	QUnit.test( 'Namespaces default to main namespace out of the box', function ( assert ) {
+	QUnit.test( 'SearchableNamespaces default to main namespace out of the box', function ( assert ) {
 		assert.expect( 1 );
 
 		var model = new SearchModel();
