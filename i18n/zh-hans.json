@@ -51,6 +51,8 @@
 	"advancedSearch-namespaces-articles": "条目",
 	"advancedSearch-namespaces-search-in": "在此名字空间中搜索：",
 	"advancedSearch-namespaces-preset-all": "全部",
+	"advancedSearch-namespaces-preset-general-help": "一般帮助",
+	"advancedSearch-namespaces-preset-discussion": "讨论",
 	"advancedSearch-namespaces-placeholder": "加入名字空间",
 	"advancedSearch-beta-feature-message": "高级搜索界面",
 	"advancedSearch-beta-feature-description": "在[[Special:Search]]提供高级搜索功能的轻松访问。"
