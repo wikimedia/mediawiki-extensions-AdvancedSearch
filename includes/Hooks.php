@@ -41,9 +41,10 @@ class Hooks {
 				( new MimeTypeConfigurator( MediaWikiServices::getInstance()->getMimeAnalyzer() ) )
 					->getMimeTypes( $special->getConfig()->get( 'FileExtensions' ) )
 			);
-			$special->getOutput()->addJsConfigVars(
-				'advancedSearch.tooltips', TooltipGenerator::generateToolTips()
-			);
+			$special->getOutput()->addJsConfigVars( [
+				'advancedSearch.tooltips' => TooltipGenerator::generateToolTips(),
+				'advancedSearch.namespacePresets' => $config->get( 'AdvancedSearchNamespacePresets' )
+			] );
 		}
 	}
 
@@ -99,24 +100,12 @@ class Hooks {
 				'ext.advancedSearch.dm.SearchModel',
 				'ext.advancedSearch.dm.getDefaultNamespaces',
 				'ext.advancedSearch.dm.FileTypeOptionProvider',
+				'ext.advancedSearch.dm.NamespacePresetProviders',
 				'ext.advancedSearch.dm.trackingEvents.SearchRequest',
 				'oojs-ui'
 			],
 			'localBasePath' => dirname( __DIR__ ),
 			'remoteExtPath' => 'AdvancedSearch',
-		];
-	}
-
-	public static function onResourceLoaderGetConfigVars( array &$configs ) {
-		$configs['namespaces'] = [
-			'geenreal_help' => [
-				'help',
-				'project'
-			],
-			'discussion' => [
-				'project',
-				'talk'
-			],
 		];
 	}
 

@@ -1,8 +1,18 @@
 ( function ( mw ) {
 	var NamespacePresets = mw.libs.advancedSearch.ui.NamespacePresets,
-		Model = mw.libs.advancedSearch.dm.SearchModel;
+		Model = mw.libs.advancedSearch.dm.SearchModel,
+		sandbox
+	;
 
 	QUnit.module( 'ext.advancedSearch.ui.NamespacePresets' );
+
+	QUnit.testStart( function () {
+		sandbox = sinon.sandbox.create();
+	} );
+
+	QUnit.testDone( function () {
+		sandbox.restore();
+	} );
 
 	function getDummyCheckbox( selected ) {
 		return {
@@ -10,6 +20,56 @@
 			selected: selected
 		};
 	}
+
+	QUnit.test( 'Passing a provider function creates namespace presets from the provider', function ( assert ) {
+		assert.expect( 1 );
+
+		mw.libs.advancedSearch.dm.NamespacePresetProviders.justatest = function () { return [ '0', '1', '2' ]; };
+		var presets = new NamespacePresets( new Model(), {
+			presets: {
+				justatest: {
+					label: 'testing a provider',
+					provider: 'justatest'
+				}
+			}
+		} );
+		delete mw.libs.advancedSearch.dm.NamespacePresetProviders.justatest;
+
+		assert.deepEqual( [ '0', '1', '2' ], presets.presets.justatest.namespaces );
+	} );
+
+	QUnit.test( 'Passing a nonexisting provider function creates no namespace preset', function ( assert ) {
+		assert.expect( 2 );
+
+		var warningLogger = sandbox.stub( mw.log, 'warn' );
+		var presets = new NamespacePresets( new Model(), {
+			presets: {
+				blackhole: {
+					label: 'testing a provider',
+					provider: 'blackhole'
+				}
+			}
+		} );
+
+		assert.ok( warningLogger.calledWith( 'Provider function blackhole not found in mw.libs.advancedSearch.dm.NamespacePresetProviders' ) );
+		assert.notOk( presets.presets.hasOwnProperty( 'blackhole' ) );
+	} );
+
+	QUnit.test( 'Passing a malformed preset config creates no namespace preset', function ( assert ) {
+		assert.expect( 2 );
+
+		var warningLogger = sandbox.stub( mw.log, 'warn' );
+		var presets = new NamespacePresets( new Model(), {
+			presets: {
+				borken: {
+					label: 'testing broken config'
+				}
+			}
+		} );
+
+		assert.ok( warningLogger.calledWith( 'No defined namespaces or provider function for borken in $wgAdvancedSearchNamespacePresets' ) );
+		assert.notOk( presets.presets.hasOwnProperty( 'borken' ) );
+	} );
 
 	QUnit.test( 'Selecting namespace adds its preset', function ( assert ) {
 		assert.expect( 1 );

@@ -6,22 +6,38 @@
 	mw.libs.advancedSearch.ui = mw.libs.advancedSearch.ui || {};
 
 	/**
-	 * Prepare presets for improved performance during later processing
+	 * Prepare static namespace ID presets for improved performance during later processing
 	 *
-	 * @param {Array} presets
-	 * @return {Array}
+	 * @param {Object} presets
+	 * @return {Object}
 	 */
 	function groomPresets( presets ) {
+		var groomedPresets = {};
 		$.each( presets, function ( key, presetConfig ) {
-			presetConfig.namespaces.sort();
+			var preset = { label: presetConfig.label };
+			if ( typeof presetConfig.provider !== 'undefined' ) {
+				if ( typeof mw.libs.advancedSearch.dm.NamespacePresetProviders[ presetConfig.provider ] === 'function' ) {
+					preset.namespaces = mw.libs.advancedSearch.dm.NamespacePresetProviders[ presetConfig.provider ]();
+				} else {
+					mw.log.warn( 'Provider function ' + presetConfig.provider + ' not found in mw.libs.advancedSearch.dm.NamespacePresetProviders' );
+					return;
+				}
+			} else if ( Array.isArray( presetConfig.namespaces ) ) {
+				preset.namespaces = presetConfig.namespaces;
+			} else {
+				mw.log.warn( 'No defined namespaces or provider function for ' + key + ' in $wgAdvancedSearchNamespacePresets' );
+				return;
+			}
+			preset.namespaces.sort();
+			groomedPresets[ key ] = preset;
 		} );
 
-		return presets;
+		return groomedPresets;
 	}
 
 	function prepareOptions( presets ) {
 		return $.map( presets, function ( preset, id ) {
-			return { data: id, label: preset.label };
+			return { data: id, label: mw.msg( preset.label ) };
 		} );
 	}
 

@@ -17,7 +17,21 @@
 	},
 	"config": {
 		"@AdvancedSearchBetaFeature": "Make the AdvancedSearch feature a BetaFeature. Setting this requires the BetaFeature extension and requires each user to enable the BetaFeature.",
-		"AdvancedSearchBetaFeature": true
+		"AdvancedSearchBetaFeature": true,
+		"AdvancedSearchNamespacePresets": {
+			"discussion": {
+				"provider": "discussion",
+				"label": "advancedSearch-namespaces-preset-discussion"
+			},
+			"generalHelp": {
+				"namespaces": [ "4", "12" ],
+				"label": "advancedSearch-namespaces-preset-general-help"
+			},
+			"all": {
+				"provider": "all",
+				"label": "advancedSearch-namespaces-preset-all"
+			}
+		}
 	},
 	"Hooks": {
 		"GetBetaFeaturePreferences": [
@@ -28,9 +42,6 @@
 		],
 		"SpecialPageBeforeExecute": [
 			"AdvancedSearch\\Hooks::onSpecialPageBeforeExecute"
-		],
-		"ResourceLoaderGetConfigVars": [
-			"AdvancedSearch\\Hooks::onResourceLoaderGetConfigVars"
 		]
 	},
 	"MessagesDirs": {
@@ -192,6 +203,7 @@
 				"modules/ui/ext.advancedSearch.NamespacePresets.js"
 			],
 			"dependencies": [
+				"ext.advancedSearch.dm.NamespacePresetProviders",
 				"ext.advancedSearch.util",
 				"oojs-ui-widgets"
 			],
@@ -199,6 +211,11 @@
 				"advancedSearch-namespaces-preset-all",
 				"advancedSearch-namespaces-preset-general-help",
 				"advancedSearch-namespaces-preset-discussion"
+			]
+		},
+		"ext.advancedSearch.dm.NamespacePresetProviders": {
+			"scripts": [
+				"modules/dm/ext.advancedSearch.NamespacePresetProviders.js"
 			]
 		},
 		"ext.advancedSearch.ui.OptionalElementLayout": {
