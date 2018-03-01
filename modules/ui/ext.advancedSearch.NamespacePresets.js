@@ -15,6 +15,11 @@
 		var groomedPresets = {};
 		$.each( presets, function ( key, presetConfig ) {
 			var preset = { label: presetConfig.label };
+
+			if ( !presetConfig.hasOwnProperty( 'enabled' ) || presetConfig.enabled !== true ) {
+				return;
+			}
+
 			if ( typeof presetConfig.provider !== 'undefined' ) {
 				if ( typeof mw.libs.advancedSearch.dm.NamespacePresetProviders[ presetConfig.provider ] === 'function' ) {
 					preset.namespaces = mw.libs.advancedSearch.dm.NamespacePresetProviders[ presetConfig.provider ]();

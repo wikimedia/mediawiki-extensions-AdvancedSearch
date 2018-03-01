@@ -28,6 +28,7 @@
 		var presets = new NamespacePresets( new Model(), {
 			presets: {
 				justatest: {
+					enabled: true,
 					label: 'testing a provider',
 					provider: 'justatest'
 				}
@@ -45,6 +46,7 @@
 		var presets = new NamespacePresets( new Model(), {
 			presets: {
 				blackhole: {
+					enabled: true,
 					label: 'testing a provider',
 					provider: 'blackhole'
 				}
@@ -62,6 +64,7 @@
 		var presets = new NamespacePresets( new Model(), {
 			presets: {
 				borken: {
+					enabled: true,
 					label: 'testing broken config'
 				}
 			}
@@ -71,6 +74,37 @@
 		assert.notOk( presets.presets.hasOwnProperty( 'borken' ) );
 	} );
 
+	QUnit.test( 'Passing a disabled preset config creates no namespace preset', function ( assert ) {
+		assert.expect( 1 );
+
+		var presets = new NamespacePresets( new Model(), {
+			presets: {
+				turnedoff: {
+					enabled: false,
+					namespaces: [ '0', '1', '2' ],
+					label: 'disabled config'
+				}
+			}
+		} );
+
+		assert.notOk( presets.presets.hasOwnProperty( 'turnedoff' ) );
+	} );
+
+	QUnit.test( 'Passing a preset config omitting "enabled" creates no namespace preset', function ( assert ) {
+		assert.expect( 1 );
+
+		var presets = new NamespacePresets( new Model(), {
+			presets: {
+				undecided: {
+					namespaces: [ '2', '4', '6', '8' ],
+					label: 'config skipping enabled'
+				}
+			}
+		} );
+
+		assert.notOk( presets.presets.hasOwnProperty( 'undecided' ) );
+	} );
+
 	QUnit.test( 'Selecting namespace adds its preset', function ( assert ) {
 		assert.expect( 1 );
 
@@ -78,6 +112,7 @@
 			presets = new NamespacePresets( model, {
 				presets: {
 					all: {
+						enabled: true,
 						label: 'All',
 						namespaces: [ '0', '1', '2' ]
 					}
@@ -93,10 +128,12 @@
 			presets = new NamespacePresets( model, {
 				presets: {
 					discussions: {
+						enabled: true,
 						namespaces: [ '3', '5', '7', '9', '11', '13', '711' ],
 						label: 'Discussion'
 					},
 					generalHelp: {
+						enabled: true,
 						namespaces: [ '4', '12' ],
 						label: 'General Help'
 					}
@@ -112,10 +149,12 @@
 			presets = new NamespacePresets( model, {
 				presets: {
 					discussions: {
+						enabled: true,
 						namespaces: [ '3', '5', '7', '9', '11', '13', '711' ],
 						label: 'Discussion'
 					},
 					generalHelp: {
+						enabled: true,
 						namespaces: [ '4', '12' ],
 						label: 'General Help'
 					}
@@ -132,6 +171,7 @@
 			presets = new NamespacePresets( model, {
 				presets: {
 					all: {
+						enabled: true,
 						label: 'All',
 						namespaces: [ '0', '1', '2' ]
 					}
@@ -149,6 +189,7 @@
 			presets = new NamespacePresets( model, {
 				presets: {
 					all: {
+						enabled: true,
 						label: 'All',
 						namespaces: [ '0', '1', '-1200' ]
 					}
