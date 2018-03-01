@@ -53,6 +53,8 @@
 	"advancedSearch-namespaces-articles": "Articles",
 	"advancedSearch-namespaces-search-in": "Rechercher dans :",
 	"advancedSearch-namespaces-preset-all": "Tous",
+	"advancedSearch-namespaces-preset-general-help": "Aide générale",
+	"advancedSearch-namespaces-preset-discussion": "Discussion",
 	"advancedSearch-namespaces-placeholder": "Ajouter des espaces de noms",
 	"advancedSearch-beta-feature-message": "Interface de recherche avancée",
 	"advancedSearch-beta-feature-description": "Accès facile aux possibilités avancées de recherche sur [[Special:Search]]."
