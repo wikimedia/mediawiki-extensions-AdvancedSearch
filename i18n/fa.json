@@ -5,7 +5,8 @@
 			"Alirezaaa",
 			"Ladsgroup",
 			"Obzord",
-			"Arian Ar"
+			"Arian Ar",
+			"Alifakoor"
 		]
 	},
 	"advancedsearch-desc": "دسترسی آسان به قابلیت‌های جستجوی پیشرفته در [[Special:Search]]",
@@ -44,6 +45,7 @@
 	"advancedSearch-namespaces-articles": "مقاله‌ها",
 	"advancedSearch-namespaces-search-in": "جستجو در:",
 	"advancedSearch-namespaces-preset-all": "همه",
+	"advancedSearch-namespaces-preset-discussion": "بحث",
 	"advancedSearch-namespaces-placeholder": "افزودن فضاهای نام",
 	"advancedSearch-beta-feature-message": "رابط جستجوی پیشرفته",
 	"advancedSearch-beta-feature-description": "دسترسی آسان به قابلیت‌های جستجوی پیشرفته با [[Special:Search]]"

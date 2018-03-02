@@ -50,6 +50,8 @@
 	"advancedSearch-namespaces-articles": "Artiklar",
 	"advancedSearch-namespaces-search-in": "Sök på:",
 	"advancedSearch-namespaces-preset-all": "Alla",
+	"advancedSearch-namespaces-preset-general-help": "Allmän hjälp",
+	"advancedSearch-namespaces-preset-discussion": "Diskussion",
 	"advancedSearch-namespaces-placeholder": "Lägg till namnrymder",
 	"advancedSearch-beta-feature-message": "Avancerat sökgränssnitt",
 	"advancedSearch-beta-feature-description": "Enkel åtkomst till avancerade sökförmågor på [[Special:Search]]."

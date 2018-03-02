@@ -44,6 +44,8 @@
 	"advancedSearch-namespaces-articles": "ערכים",
 	"advancedSearch-namespaces-search-in": "חיפוש ב־:",
 	"advancedSearch-namespaces-preset-all": "הכול",
+	"advancedSearch-namespaces-preset-general-help": "עזרה כללית",
+	"advancedSearch-namespaces-preset-discussion": "דיון",
 	"advancedSearch-namespaces-placeholder": "הוספת מרחבי שם",
 	"advancedSearch-beta-feature-message": "ממשק חיפוש מתקדם",
 	"advancedSearch-beta-feature-description": "גישה קלה ליכולות חיפוש מתקדמים בדף [[Special:Search|מיוחד:חיפוש]]."
