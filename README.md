@@ -11,6 +11,10 @@ Consequently its functionality is tested in integration with a mediawiki install
 The dependencies in `package.json` try to mimic up-to-date versions of these dependencies for e.g. IDE support, but will not
 actually be obeyed when using AdvancedSearch in a wiki.
 
+## Configuration
+
+For configuration options please see the [settings documentation](docs/settings.md).
+
 ## Development
 
 This project uses [npm](https://docs.npmjs.com/) and [grunt](https://gruntjs.com/) to run

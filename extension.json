@@ -24,10 +24,12 @@
 			"description": "Groups of namespaces to offer as presets. Can be specified ('namespaces') or determined dynamically ('provider').",
 			"value": {
 				"discussion": {
+					"enabled": true,
 					"provider": "discussion",
 					"label": "advancedSearch-namespaces-preset-discussion"
 				},
 				"generalHelp": {
+					"enabled": true,
 					"namespaces": [
 						"4",
 						"12"
@@ -35,10 +37,12 @@
 					"label": "advancedSearch-namespaces-preset-general-help"
 				},
 				"all": {
+					"enabled": true,
 					"provider": "all",
 					"label": "advancedSearch-namespaces-preset-all"
 				}
-			}
+			},
+			"merge_strategy": "array_plus_2d"
 		}
 	},
 	"Hooks": {
