@@ -1,11 +1,21 @@
 {
 	"@metadata": {
 		"authors": [
-			"KATRINE1992"
+			"KATRINE1992",
+			"Nikosgranturismogt"
 		]
 	},
+	"advancedsearch-options-pane-head": "Προχωρημένες παράμετροι:",
+	"advancedsearch-optgroup-text": "Αναζήτηση στο κείμενο σελίδας",
+	"advancedsearch-optgroup-structure": "Δομή",
+	"advancedsearch-optgroup-files": "Αρχεία και εικόνες",
 	"advancedsearch-field-plain": "Αυτές οι λέξεις:",
+	"advancedsearch-field-phrase": "Ακριβώς αυτό το κείμενο:",
+	"advancedsearch-field-or": "Μια από αυτές τις λέξεις:",
 	"advancedsearch-field-not": "Οχι αυτές οι λέξεις:",
+	"advancedsearch-field-subpageof": "Υποσελίδες αυτής της σελίδας:",
+	"advancedsearch-field-deepcat": "Σελίδα σε αυτή τη κατηγορία:",
+	"advancedsearch-field-filetype": "Τύπος αρχείου:",
 	"advancedsearch-help-plain": "<dl><dt>Περιγραφή:</dt><dd>Αναζητήσεις για αυτές τις λέξεις στον τίτλο ή κείμενο.</dd> <dt>Να έχετε υπόψη τα ακόλουθα:</dt><dd><ul> <li>Πολλές λέξεις μπορούν να εισαχθούν εδώ.</li> <li>Σημεία στίξεως και άλλοι μη αριθμητικοί χαρακτήρες (με εξαίρεση της στήλης και κόμμα )πρέπει να αγνοηθούν.</li> <li>Πιθανόν να υπάρχουν φράσεις που δεν περιέχουν έναν ή περισσότερους όρους που αναζητάτε. Ισχύουν τα παράγωγα των λέξεων.</li> <li>. Παράδειγμα: Αν έχει εισαχθεί το <em>car</em> η αναζήτηση θα λάβει υπόψη επίσης το <em>cars</em>Τα παράγωγα λέξεων έχουν ειδική γλώσσα. </li></ul></dd> <dt>Σελίδα βοηθείας:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search Full text search] <dt>Σύνταξη-Που αντιστοιχεί στην κανονική αναζήτηση:</dt><dd><code>sesame street car</code></dd> </dl>",
 	"advancedsearch-help-phrase": "<dl><dt>Περιγραφή:</dt><dd>Αναζητάει μια ειδική σειρά χαρακτήρων. Τα σημεία στίξεως αγνοούνται.</dd> <dt>Be aware of the following: </dt><dd><ul> <li>Η αναζήτηση ΔΕΝ είναι ειδική.</li> <li>Τα σημεία στίξεως και άλλοι αριθμητικοί χαρακτήρες (με εξαίρεση την στήλη και το κόμμα) δεν θα ληφθούν υπόψη</li> <li>Τα παράγωγα λέξεων δεν λειτουργούν εδώ.</li></ul></dd> <dt>Σελίδα βοήθειας:<dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Words, phrases, and modifiers]</dd> <dt>Σύνταξη-που Αντιστοιχεί στην κανονική αναζήτηση:</dt><dd> Words in <code>\" \"</code>, για παράδειγμα <code>\"Αρχίστε από την αρχή\".</code></dd> </dl>",
 	"advancedsearch-help-or": "<dl><dt>Περιγραφή:</dt><dd>Τουλάχιστον ένας από τους όρους αναζήτησης πρέπει να περιλαμβάνετε στην σελίδα..</dd> <dt>Σελίδα βοήθειας page:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Words, phrases, and modifiers]</dd> <dt>Σύνταξη που αντιστοιχεί στην κανονική αναζήτηση:</dt><dd> Λέξεις με  <code>OR</code> εν τω μεταξύ Η Μπλοκ Σημειώσεων <code>Laptop OR Notebook</code>.</dd></dl>",
@@ -14,5 +24,19 @@
 	"advancedsearch-help-hastemplate": "<dl><dt>Description:</dt><dd>Va chercher des pages qui incluent exactement ce modèle ci. </dd> <dt > Il faut savoir le suivant:</dt><dd><ul> <li>Vous ne pouvez chercher qu'un modèle a la fois. </li> </ul></dd> <dt>Page d'aide:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#Hastemplate Hastemplate]</dd> <dt>Syntaxe-Correspond a la recherche normale:</dt><dd>Des mots en guimets avec le code avant eux comme  <code>hastemplate:</code>  <code>hastemplate:\" information qui manque\"</code>.</dd></dl>",
 	"advancedsearch-help-filetype": "<dl><dt>Περιγραφή:</dt><dd>Αναζητήσεις μόνο φακέλλων του επιλεγμένου τύπο</dd> <dt>Έχετε υπόψη τα ακόλουθα: </dt><dd><ul> <li>Μπορείτε να αναζητήσετε τους συγκεκριμένους τύπους φακέλλων από τις επιλογές του μενού..</li> <li>You can only select the given file types from the drop-down menu.</li></ul></dd> <dt>Σελίδες βοήθειας:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype filetype] και [https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime filemime]</dd> <dt>Σύνταξη που αντιστοιχεί στην αναζήτηση:</dt><dd>Words με προηγούμενους κωδικούς <code>filetype:</code> before them like <code>filetype:ogg</code>.</dd></dl>",
 	"advancedsearch-help-filew": "<dl><dt>Περιγραφή:</dt><dd>Αυτά τα πεδία σας περιμένουν να ορίσετε το εύρος κάθε φακέλλου.</dd> <dt>Να έχετε υπόψη τα ακόλουθα: </dt><dd><ul> <li>Αυτό έχει εφαρμογή μόνο σε τύπους φακέλλων με το ίδιο εύρος που έχουν τα βίντεο και οι εικόνες.</li></ul></dd> <dt>Help page:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]</dd> <dt>Σύνταξη που αντιστοιχεί στην κανονική αναζήτηση-Equivalent in the normal search:</dt><dd>Αριθμοί κωδικών <code>filew</code> πριν από αυτούς li <code>filew:>800</code>.</dd></dl>",
-	"advancedsearch-help-fileh": "<dl><dt>Περιγραφή:</dt><dd>Αυτά τα πεδία σας επιτρέπουν να ορίσετε το ύψος του φακέλλου </dd> <dt>Να έχετε υπόψη σας τα ακόλουθα: </dt><dd><ul> <li>Αυτό ισχύει μόνο για φακέλλους που έχουν πλάτος και ύψος, όπως βίντεο και εικόνες .</li></ul></dd> <dt>Σελίδα βοήθειας:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]</dd> <dt>Σύνταξη που αντιστοιχεί στην κανονική αναζήτηση-:</dt><dd>Αριθμοί με <code>fileh</code> πριν από αυτούς <code>fileh:>600</code>.</dd></dl>"
+	"advancedsearch-help-fileh": "<dl><dt>Περιγραφή:</dt><dd>Αυτά τα πεδία σας επιτρέπουν να ορίσετε το ύψος του φακέλλου </dd> <dt>Να έχετε υπόψη σας τα ακόλουθα: </dt><dd><ul> <li>Αυτό ισχύει μόνο για φακέλλους που έχουν πλάτος και ύψος, όπως βίντεο και εικόνες .</li></ul></dd> <dt>Σελίδα βοήθειας:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]</dd> <dt>Σύνταξη που αντιστοιχεί στην κανονική αναζήτηση-:</dt><dd>Αριθμοί με <code>fileh</code> πριν από αυτούς <code>fileh:>600</code>.</dd></dl>",
+	"advancedsearch-filetype-bitmap": "Εικόνα",
+	"advancedsearch-filetype-vector": "Ζωγραφιά",
+	"advancedsearch-filetype-audio": "Ήχος",
+	"advancedsearch-filetype-video": "Βίντεο",
+	"advancedsearch-filetype-office": "Γραφείο",
+	"advancedSearch-filesize-equals": "ισοδύναμο σε",
+	"advancedSearch-filesize-greater-than": "μεγαλύτερο από",
+	"advancedSearch-filesize-smaller-than": "μικρότερο από",
+	"advancedSearch-namespaces-articles": "Λήμματα",
+	"advancedSearch-namespaces-search-in": "Αναζήτηση σε:",
+	"advancedSearch-namespaces-preset-all": "Όλα",
+	"advancedSearch-namespaces-preset-general-help": "Γενική βοήθεια",
+	"advancedSearch-namespaces-preset-discussion": "Συζήτηση",
+	"advancedSearch-namespaces-placeholder": "Πρόσθεση ονοματοχώρων:"
 }
