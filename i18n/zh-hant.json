@@ -4,7 +4,8 @@
 			"Corainn",
 			"Liuxinyu970226",
 			"Hello903hello",
-			"A2093064"
+			"A2093064",
+			"Laundry Machine"
 		]
 	},
 	"advancedsearch-desc": "在[[Special:Search]]提供高級搜尋功能的輕鬆存取",
@@ -27,14 +28,21 @@
 	"advancedSearch-placeholder-exact-text": "鍵入精確詞并加引號，例如：「貓喜歡山羊」",
 	"advancedsearch-filetype-section-types": "一般檔案類型",
 	"advancedsearch-filetype-section-image": "圖片格式",
+	"advancedsearch-filetype-section-video": "影像格式",
 	"advancedsearch-filetype-section-audio": "音訊格式",
 	"advancedsearch-filetype-section-document": "文件格式",
+	"advancedsearch-filetype-section-other": "其它格式",
 	"advancedsearch-filetype-bitmap": "圖片",
 	"advancedsearch-filetype-audio": "音訊",
 	"advancedsearch-filetype-video": "影片",
 	"advancedsearch-filetype-office": "辦公室",
 	"advancedSearch-filesize-equals": "等於",
 	"advancedSearch-filesize-greater-than": "大於",
+	"advancedSearch-filesize-smaller-than": "小於",
+	"advancedSearch-namespaces-articles": "條目",
 	"advancedSearch-namespaces-preset-all": "全部",
+	"advancedSearch-namespaces-preset-general-help": "一般幫助",
+	"advancedSearch-namespaces-preset-discussion": "討論",
+	"advancedSearch-namespaces-placeholder": "加入命名空間",
 	"advancedSearch-beta-feature-message": "高級搜尋介面"
 }

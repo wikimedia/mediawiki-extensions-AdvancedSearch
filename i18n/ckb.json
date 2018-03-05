@@ -1,0 +1,37 @@
+{
+	"@metadata": {
+		"authors": [
+			"Épine"
+		]
+	},
+	"advancedsearch-optgroup-files": "پەڕگە و وێنەکان",
+	"advancedsearch-field-plain": "ئەم وشانە:",
+	"advancedsearch-field-phrase": "دەقاودەق ئەم دەقە:",
+	"advancedsearch-field-or": "یەکێک لەم وشانە:",
+	"advancedsearch-field-not": "ئەم وشانە نا:",
+	"advancedsearch-field-subpageof": "ژێرپەڕەکانی ئەم پەڕەیە:",
+	"advancedsearch-field-deepcat": "پەڕە لەم پۆلەدا:",
+	"advancedsearch-field-hastemplate": "تەنیا ئەو پەڕانەی ئەم داڕێژەیە لەخۆ دەگرن:",
+	"advancedsearch-field-filetype": "جۆری پەڕگە:",
+	"advancedsearch-field-filew": "پانیی پەڕگە بە پیکسڵ:",
+	"advancedsearch-field-fileh": "بەرزیی پەڕگە بە پیکسڵ:",
+	"advancedSearch-placeholder-exact-text": "وشەکان دەقاودەق لە ھێمای وتەگێڕانەوەدا دابنێ: «پشیلەکە ئەوی خۆشدەوێ»",
+	"advancedsearch-filetype-section-types": "جۆرەکانی پەڕگەی گشتی",
+	"advancedsearch-filetype-section-image": "شێوازەکانی وێنە",
+	"advancedsearch-filetype-section-video": "شێوازەکانی ڤیدیۆ",
+	"advancedsearch-filetype-section-audio": "شێوازەکانی پەڕگەی دەنگی",
+	"advancedsearch-filetype-section-other": "شێوازی تر",
+	"advancedsearch-filetype-bitmap": "وێنە",
+	"advancedsearch-filetype-audio": "دەنگ",
+	"advancedsearch-filetype-video": "ڤیدیۆ",
+	"advancedsearch-filetype-office": "ئۆفیس",
+	"advancedSearch-filesize-equals": "یەکسانە بە",
+	"advancedSearch-filesize-greater-than": "گەورەترە لە",
+	"advancedSearch-filesize-smaller-than": "کەمترە لە",
+	"advancedSearch-namespaces-articles": "وتارەکان",
+	"advancedSearch-namespaces-search-in": "بگەڕێ لە:",
+	"advancedSearch-namespaces-preset-all": "ھەموو",
+	"advancedSearch-namespaces-preset-general-help": "یارمەتیی گشتی",
+	"advancedSearch-namespaces-preset-discussion": "وتووێژ",
+	"advancedSearch-namespaces-placeholder": "زیادکردنی بۆشایی ناو"
+}
