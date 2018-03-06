@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ooswesthoesbes"
+		]
+	},
+	"advancedsearch-desc": "Einveljigen tougank tot geavanceerde zeukmeugelikheje op [[Special:Search]]",
+	"advancedSearch-ask-feedback": "Vinjs se det de nuuj interface good wirk veur dich? Gaef ós estebleef [$1 trökkoppeling] (äöpent in e nuuj tabblaad)",
+	"advancedsearch-options-pane-head": "Geavanceerde paramaeters:",
+	"advancedsearch-optgroup-text": "Zeuk in paginateks",
+	"advancedsearch-optgroup-structure": "Struktuur",
+	"advancedsearch-optgroup-files": "Bestenj en plaetjes",
+	"advancedsearch-field-plain": "Dees wäörd:",
+	"advancedsearch-field-phrase": "Prónt dezen teks:",
+	"advancedsearch-field-or": "Ei van dees wäörd:",
+	"advancedsearch-field-not": "Gei van dees wäörd:",
+	"advancedsearch-field-subpageof": "Subpagina's van dees pagina:",
+	"advancedsearch-field-intitle": "Paginanaam bevatj:",
+	"advancedsearch-field-deepcat": "Pagina in dees categorie:",
+	"advancedsearch-field-hastemplate": "Allein pagina's mit dit sjabloon:",
+	"advancedsearch-field-filetype": "Bestandjstype:",
+	"advancedsearch-field-filew": "Bestandjsbrèdje in pixele:",
+	"advancedsearch-field-fileh": "Bestandjshuuegdje in pixele:"
+}
