@@ -43,6 +43,7 @@
 	"advancedsearch-filetype-section-audio": "Audio formats",
 	"advancedsearch-filetype-section-document": "Document formats",
 	"advancedsearch-filetype-section-other": "Other formats",
+	"advancedsearch-filetype-default": "Select file type",
 	"advancedsearch-filetype-bitmap": "Image",
 	"advancedsearch-filetype-vector": "Drawing",
 	"advancedsearch-filetype-audio": "Audio",
