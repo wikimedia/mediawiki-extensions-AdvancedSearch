@@ -84,7 +84,7 @@
 
 		/**
 		 * @param {OO.ui.Widget} widget
-		 * @param {string} option
+		 * @param {Object} option
 		 * @param {ext.libs.advancedSearch.dm.SearchModel} state
 		 * @return {ext.advancedSearch.ui.OptionalElementLayout}
 		 */
@@ -105,7 +105,7 @@
 
 		/**
 		 * @param {OO.ui.Widget} widget
-		 * @param {string} option
+		 * @param {Object} option
 		 * @return {OO.ui.FieldLayout|ext.advancedSearch.ui.OptionalElementLayout}
 		 */
 		createLayout: function ( widget, option ) {
@@ -146,7 +146,7 @@
 		},
 
 		/**
-		 * @param {string} option
+		 * @param {Object} option
 		 * @return {ext.libs.advancedSearch.ui.TextInput}
 		 */
 		createWidget: function ( option ) {
