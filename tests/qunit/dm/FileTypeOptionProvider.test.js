@@ -1,11 +1,10 @@
 ( function ( mw ) {
 	var FileTypeOptionProvider,
 		sandbox,
-		fakeMsg = function ( msg ) {
-			return msg;
-		},
 		stubMessage = function () {
-			sandbox.stub( mw, 'msg', fakeMsg );
+			sandbox.stub( mw, 'msg', function ( msg ) {
+				return msg;
+			} );
 		};
 
 	QUnit.testStart( function () {
