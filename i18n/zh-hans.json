@@ -40,6 +40,7 @@
 	"advancedsearch-filetype-section-audio": "音频格式",
 	"advancedsearch-filetype-section-document": "文档格式",
 	"advancedsearch-filetype-section-other": "其他格式",
+	"advancedsearch-filetype-default": "选择文件类型",
 	"advancedsearch-filetype-bitmap": "图片",
 	"advancedsearch-filetype-vector": "绘画",
 	"advancedsearch-filetype-audio": "音频",
