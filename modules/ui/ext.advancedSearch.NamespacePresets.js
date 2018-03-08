@@ -40,6 +40,10 @@
 		return groomedPresets;
 	}
 
+	/**
+	 * @param {Object} presets
+	 * @return {Object}
+	 */
 	function prepareOptions( presets ) {
 		return $.map( presets, function ( preset, id ) {
 			return { data: id, label: mw.msg( preset.label ) };
