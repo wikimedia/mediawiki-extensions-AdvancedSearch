@@ -4,15 +4,26 @@ namespace AdvancedSearch;
 
 use MimeAnalyzer;
 
+/**
+ * @license GPL-2.0-or-later
+ */
 class MimeTypeConfigurator {
 
 	private $mimeAnalyzer;
 
+	/**
+	 * @param MimeAnalyzer $mimeAnalyzer
+	 */
 	public function __construct( MimeAnalyzer $mimeAnalyzer ) {
 		$this->mimeAnalyzer = $mimeAnalyzer;
 	}
 
-	public function getMimeTypes( $fileExtensions ) {
+	/**
+	 * @param string[] $fileExtensions
+	 *
+	 * @return string[]
+	 */
+	public function getMimeTypes( array $fileExtensions ) {
 		$mimeTypes = [];
 
 		foreach ( $fileExtensions as $ext ) {
@@ -28,7 +39,7 @@ class MimeTypeConfigurator {
 	/**
 	 * Uses MimeAnalyzer to determine the mimetype of a given file extension
 	 *
-	 * @param $fileExtension
+	 * @param string $fileExtension
 	 * @return string First mime type associated with the given file extension
 	 */
 	private function getFirstMimeTypeByFileExtension( $fileExtension ) {

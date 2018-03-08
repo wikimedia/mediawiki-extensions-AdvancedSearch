@@ -9,6 +9,9 @@ use ResourceLoader;
 use SpecialPage;
 use User;
 
+/**
+ * @license GPL-2.0-or-later
+ */
 class Hooks {
 
 	/**
@@ -16,7 +19,6 @@ class Hooks {
 	 *
 	 * @param SpecialPage $special
 	 * @param string $subpage
-	 * @return boolean
 	 */
 	public static function onSpecialPageBeforeExecute( SpecialPage $special, $subpage ) {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
@@ -49,6 +51,8 @@ class Hooks {
 	}
 
 	/**
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/GetBetaFeaturePreferences
+	 *
 	 * @param User $user
 	 * @param array[] &$prefs
 	 */
@@ -77,6 +81,12 @@ class Hooks {
 		];
 	}
 
+	/**
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ResourceLoaderTestModules
+	 *
+	 * @param array[] &$testModules
+	 * @param ResourceLoader $rl
+	 */
 	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
 		$testModules['qunit']['ext.advancedSearch.tests'] = [
 			'scripts' => [
