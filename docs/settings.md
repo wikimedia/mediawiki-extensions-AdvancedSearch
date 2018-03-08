@@ -20,10 +20,10 @@ You can use `$wgAdvancedSearchNamespacePresets` to modify the default configurat
 wfLoadExtension( 'AdvancedSearch' );
 $wgAdvancedSearchNamespacePresets = [
 	'my-custom-preset' => [
-		'enabled': true, // indication that this preset should be shown to the user
+		'enabled' => true, // indication that this preset should be shown to the user
 		'namespaces' => [ '1', '11' ], // list of namespaces to include in this preset
 		'label' => 'my-custom-preset-label-id' // id of the translation to use to label the preset checkbox
-	]
+	],
 ];
 ```
 
@@ -33,7 +33,7 @@ $wgAdvancedSearchNamespacePresets = [
 wfLoadExtension( 'AdvancedSearch' );
 $wgAdvancedSearchNamespacePresets = [
 	'generalHelp' => [
-		'enabled' => false
-	]
+		'enabled' => false,
+	],
 ];
 ```
