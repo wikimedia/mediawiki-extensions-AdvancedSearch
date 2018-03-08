@@ -82,7 +82,7 @@
 	/**
 	 * Returns the general file type options
 	 *
-	 * @return {Array.<Object>}
+	 * @return {Object[]}
 	 */
 	mw.libs.advancedSearch.dm.FileTypeOptionProvider.prototype.getFileGroupOptions = function () {
 		return [
@@ -98,7 +98,7 @@
 	/**
 	 * Returns the file type options based on allowed mime types
 	 *
-	 * @return {Array.<Object>}
+	 * @return {Object[]}
 	 */
 	mw.libs.advancedSearch.dm.FileTypeOptionProvider.prototype.getAllowedFileTypeOptions = function () {
 		var options = [];

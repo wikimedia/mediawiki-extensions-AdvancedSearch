@@ -78,7 +78,7 @@
 		state: null,
 
 		/**
-		 * @type {Array.<Object>}
+		 * @type {Object[]}
 		 */
 		options: null,
 
@@ -174,7 +174,7 @@
 		/**
 		 * Returns the general file type options
 		 *
-		 * @return {Array.<Object>}
+		 * @return {Object[]}
 		 */
 		getOptions: function () {
 			if ( this.options !== null ) {
