@@ -17,7 +17,7 @@
 	 * @class
 	 * @constructor
 	 * @mixins OO.EventEmitter
-	 * @param {Array.<string>} defaultNamespaces The namespaces selected by default (for new searches)
+	 * @param {string[]} defaultNamespaces The namespaces selected by default (for new searches)
 	 */
 	mw.libs.advancedSearch.dm.SearchModel = function ( defaultNamespaces ) {
 		this.searchOptions = {};
@@ -200,15 +200,15 @@
 	};
 
 	/**
-	 * @return {Array}
+	 * @return {string[]}
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.getNamespaces = function () {
 		return this.namespaces;
 	};
 
 	/**
-	 * @param {Array} namespaces
-	 * @return {Array}
+	 * @param {string[]} namespaces
+	 * @return {string[]}
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.sortNamespacesByNumber = function ( namespaces ) {
 		var sortedNamespaces;
@@ -229,7 +229,7 @@
 	};
 
 	/**
-	 * @param {Array} namespaces
+	 * @param {string[]} namespaces
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.setNamespaces = function ( namespaces ) {
 		var previousNamespaces = this.namespaces.slice( 0 );

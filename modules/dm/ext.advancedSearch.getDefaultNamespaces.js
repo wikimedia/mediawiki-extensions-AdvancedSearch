@@ -9,7 +9,7 @@
 	 * Get the default search namespace IDs from user settings
 	 *
 	 * @param {Object} userSettings User settings like in mw.user.options.values
-	 * @return {Array.<string>} Namespace IDs
+	 * @return {string[]} Namespace IDs
 	 */
 	mw.libs.advancedSearch.dm.getDefaultNamespaces = function ( userSettings ) {
 		var defaultNamespaces = [];

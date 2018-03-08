@@ -41,7 +41,7 @@
 
 	/**
 	 * @param {ext.libs.advancedSearch.dm.SearchModel} state
-	 * @param {Array.<Object>} advancedOptions
+	 * @param {Object[]} advancedOptions
 	 * @return {string[]}
 	 */
 	function formatSearchOptions( state, advancedOptions ) {
