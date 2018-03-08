@@ -13,7 +13,8 @@
 		"MediaWiki": ">= 1.31.0"
 	},
 	"AutoloadNamespaces": {
-		"AdvancedSearch\\": "includes/"
+		"AdvancedSearch\\": "includes/",
+		"AdvancedSearch\\Tests\\": "tests/phpunit/"
 	},
 	"config": {
 		"AdvancedSearchBetaFeature": {
