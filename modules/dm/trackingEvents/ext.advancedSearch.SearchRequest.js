@@ -36,9 +36,7 @@
 	};
 
 	/**
-	 * Gets the event data
-	 *
-	 * @return {object}
+	 * @return {Object}
 	 */
 	mw.libs.advancedSearch.dm.trackingEvents.SearchRequest.prototype.getEventData = function () {
 		return this.eventData;

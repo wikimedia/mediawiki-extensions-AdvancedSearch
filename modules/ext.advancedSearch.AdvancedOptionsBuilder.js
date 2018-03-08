@@ -129,8 +129,8 @@
 		 */
 		createMultiSelectChangeHandler: function ( id ) {
 			var self = this;
-			return function ( newValue ) {
 
+			return function ( newValue ) {
 				if ( typeof newValue !== 'object' ) {
 					self.state.storeOption( id, newValue );
 					return;

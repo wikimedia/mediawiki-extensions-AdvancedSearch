@@ -87,7 +87,7 @@
 	 * Create an options array suitable for menu items
 	 *
 	 * @param {Object} namespaces namespace id => label
-	 * @return {Object}
+	 * @return {Object[]}
 	 */
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.createNamespaceOptions = function ( namespaces ) {
 		var options = [];

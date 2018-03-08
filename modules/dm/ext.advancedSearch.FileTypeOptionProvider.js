@@ -50,7 +50,7 @@
 	 * @class
 	 * @constructor
 	 *
-	 * @param {array} mimeTypes
+	 * @param {Object} mimeTypes File extension => MIME type
 	 */
 	mw.libs.advancedSearch.dm.FileTypeOptionProvider = function ( mimeTypes ) {
 		this.mimeTypes = mimeTypes;
