@@ -18,10 +18,19 @@
 		return KNOWN_DOCUMENT_TYPES.indexOf( fileExtension ) > -1;
 	};
 
+	/**
+	 * @param {string} mimeType
+	 * @return {string}
+	 */
 	var getTopLevelMimeType = function ( mimeType ) {
 		return mimeType.split( '/' )[ 0 ];
 	};
 
+	/**
+	 * @param {Object} options
+	 * @param {string} groupName
+	 * @param {Object} option
+	 */
 	var addFileOption = function ( options, groupName, option ) {
 		if ( options[ groupName ].length === 0 ) {
 			options[ groupName ] = [ { optgroup: mw.msg( 'advancedsearch-filetype-section-' + groupName ) } ];
@@ -29,6 +38,11 @@
 		options[ groupName ] = options[ groupName ].concat( option );
 	};
 
+	/**
+	 * @param {Object} options
+	 * @param {Object} allowedMimeTypes File extension => MIME type
+	 * @return {Object}
+	 */
 	var getFileOptions = function ( options, allowedMimeTypes ) {
 		$.each( allowedMimeTypes, function ( fileExtension, mimeType ) {
 			var groupName = 'other',

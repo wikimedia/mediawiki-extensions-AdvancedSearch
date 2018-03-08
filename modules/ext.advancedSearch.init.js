@@ -1,6 +1,9 @@
 ( function ( mw, $ ) {
 	'use strict';
 
+	/**
+	 * @return {boolean}
+	 */
 	function isLoaded() {
 		if ( !mw.libs ) {
 			mw.libs = {};
@@ -26,6 +29,9 @@
 		return;
 	}
 
+	/**
+	 * @return {Object}
+	 */
 	function prepareNamespaces() {
 		var rawNamespaces = mw.config.get( 'wgFormattedNamespaces' ),
 			namespaces = {};
@@ -81,6 +87,10 @@
 		return advancedSearchOriginal === null ? searchFieldOriginal : advancedSearchOriginal;
 	}
 
+	/**
+	 * @param {jQuery} $search
+	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
+	 */
 	function setTrackingEvents( $search, state ) {
 		$search.on( 'submit', function () {
 			var trackingEvent = new mw.libs.advancedSearch.dm.trackingEvents.SearchRequest();
@@ -89,6 +99,12 @@
 		} );
 	}
 
+	/**
+	 * @param {jQuery} $search
+	 * @param {jQuery} $searchField
+	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
+	 * @param {mw.libs.advancedSearch.AdvancedOptionsBuilder} advancedOptionsBuilder
+	 */
 	function setSearchSubmitTrigger( $search, $searchField, state, advancedOptionsBuilder ) {
 		$search.on( 'submit', function () {
 			var compiledQuery = $.trim( $searchField.val() + ' ' + formatSearchOptions( state, advancedOptionsBuilder.getOptions() ).join( ' ' ) ),
@@ -102,12 +118,20 @@
 		} );
 	}
 
+	/**
+	 * @param {mw.libs.advancedSearch.dm.SearchModel} currentState
+	 */
 	function updateSearchResultLinks( currentState ) {
 		$( '.mw-prevlink, .mw-nextlink, .mw-numlink' ).attr( 'href', function ( i, href ) {
 			return href + '&advancedSearch-current=' + currentState.toJSON();
 		} );
 	}
 
+	/**
+	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
+	 * @param {mw.libs.advancedSearch.AdvancedOptionsBuilder} advancedOptionsBuilder
+	 * @return {jQuery}
+	 */
 	function buildPaneElement( state, advancedOptionsBuilder ) {
 		var searchPreview = new mw.libs.advancedSearch.ui.SearchPreview( state, {
 			label: mw.msg( 'advancedsearch-options-pane-head' ),
@@ -132,6 +156,9 @@
 		return pane.$element;
 	}
 
+	/**
+	 * @return {mw.libs.advancedSearch.dm.SearchModel}
+	 */
 	function initState() {
 		var state = new mw.libs.advancedSearch.dm.SearchModel(
 			mw.libs.advancedSearch.dm.getDefaultNamespaces( mw.user.options.values )
