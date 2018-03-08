@@ -10,10 +10,13 @@ namespace AdvancedSearch;
  *
  * See https://phabricator.wikimedia.org/T27349
  *
- * @package AdvancedSearch
+ * @license GPL-2.0-or-later
  */
 class TooltipGenerator {
 
+	/**
+	 * @return string[]
+	 */
 	public static function generateToolTips() {
 		$messageKeys = [
 			'advancedsearch-help-plain',
