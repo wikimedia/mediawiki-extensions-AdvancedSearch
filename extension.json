@@ -262,6 +262,7 @@
 				"oojs-ui-widgets"
 			],
 			"messages": [
+				"advancedsearch-namespaces-remember",
 				"advancedsearch-namespaces-preset-all",
 				"advancedsearch-namespaces-preset-general-help",
 				"advancedsearch-namespaces-preset-discussion"

@@ -60,6 +60,7 @@
 	"advancedsearch-filesize-smaller-than-symbol": "Label for the file width/height 'smaller than' comparator selection as shorthand symbol",
 	"advancedsearch-namespaces-articles": "Label for the 'Articles' namespace (usually with an empty translated namespace label)\n{{Identical|Article}}",
 	"advancedsearch-namespaces-search-in": "Label for the 'Search in' section heading of the namespace section",
+	"advancedsearch-namespaces-remember": "Label for a checkbox to save namespace choice for advanced search to user preferences",
 	"advancedsearch-namespaces-preset-all": "Label for the namespace preset 'All namespaces'\n{{Identical|All}}",
 	"advancedsearch-namespaces-preset-general-help": "Label for namespace preset 'General Help'",
 	"advancedsearch-namespaces-preset-discussion": "Label for namespace preset 'Discussion'\n{{Identical|Discussion}}",

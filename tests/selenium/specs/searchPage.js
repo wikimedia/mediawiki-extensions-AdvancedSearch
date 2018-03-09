@@ -125,4 +125,16 @@ describe( 'AdvancedSearch', function () {
 
 	} );
 
+	it( 'remembers the selection of namespaces for future searches', function () {
+
+		SearchPage.open();
+		SearchPage.generalHelpPreset.click();
+		SearchPage.rememberSelection.click();
+		let cache = SearchPage.getSelectedNamespaceIDs();
+		SearchPage.submitForm();
+		let current = SearchPage.getSelectedNamespaceIDs();
+		assert.deepEqual( cache, current );
+
+	} );
+
 } );
