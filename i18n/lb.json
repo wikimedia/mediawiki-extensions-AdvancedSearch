@@ -35,6 +35,7 @@
 	"advancedsearch-filetype-section-audio": "Audioformater",
 	"advancedsearch-filetype-section-document": "Formater vum Dokument",
 	"advancedsearch-filetype-section-other": "Aner Formater",
+	"advancedsearch-filetype-default": "Typ vum Fichier eraussichen",
 	"advancedsearch-filetype-bitmap": "Bild",
 	"advancedsearch-filetype-vector": "Zeechnung",
 	"advancedsearch-filetype-audio": "Audio",

@@ -25,6 +25,7 @@
 	"advancedsearch-filetype-section-audio": "Formati audio",
 	"advancedsearch-filetype-section-document": "Formati documento",
 	"advancedsearch-filetype-section-other": "Altri formati",
+	"advancedsearch-filetype-default": "Seleziona il tipo di file",
 	"advancedsearch-filetype-bitmap": "Immagine",
 	"advancedsearch-filetype-audio": "Audio",
 	"advancedsearch-filetype-video": "Video",

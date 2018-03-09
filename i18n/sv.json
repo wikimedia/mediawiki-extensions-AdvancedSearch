@@ -39,6 +39,7 @@
 	"advancedsearch-filetype-section-audio": "Ljudformat",
 	"advancedsearch-filetype-section-document": "Dokumentformat",
 	"advancedsearch-filetype-section-other": "Övriga format",
+	"advancedsearch-filetype-default": "Välj filtyp",
 	"advancedsearch-filetype-bitmap": "Bild",
 	"advancedsearch-filetype-vector": "Teckning",
 	"advancedsearch-filetype-audio": "Ljud",
