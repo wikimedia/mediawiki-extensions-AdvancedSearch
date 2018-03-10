@@ -37,6 +37,7 @@
 	"advancedsearch-filetype-section-audio": "Formaty plików dźwiękowych",
 	"advancedsearch-filetype-section-document": "Formaty dokumentów",
 	"advancedsearch-filetype-section-other": "Inne formaty",
+	"advancedsearch-filetype-default": "Wybierz typ pliku",
 	"advancedsearch-filetype-bitmap": "Grafika",
 	"advancedsearch-filetype-vector": "Rysunek",
 	"advancedsearch-filetype-audio": "Dźwięk",

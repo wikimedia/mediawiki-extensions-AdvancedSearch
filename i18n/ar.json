@@ -3,7 +3,8 @@
 		"authors": [
 			"زكريا",
 			"Meno25",
-			"علاء"
+			"علاء",
+			"ديفيد"
 		]
 	},
 	"advancedsearch-desc": "استعمال البحث المتقدم في [[Special:Search]]",
@@ -40,6 +41,7 @@
 	"advancedsearch-filetype-section-audio": "صيغ الملفات الصوتية",
 	"advancedsearch-filetype-section-document": "صيغ المستندات",
 	"advancedsearch-filetype-section-other": "صيغ أخرى",
+	"advancedsearch-filetype-default": "حدد نوع الملف",
 	"advancedsearch-filetype-bitmap": "صورة",
 	"advancedsearch-filetype-vector": "رسم",
 	"advancedsearch-filetype-audio": "ملف صوتي",
