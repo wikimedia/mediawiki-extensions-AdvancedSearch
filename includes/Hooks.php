@@ -90,6 +90,7 @@ class Hooks {
 	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
 		$testModules['qunit']['ext.advancedSearch.tests'] = [
 			'scripts' => [
+				'tests/qunit/QueryCompiler.test.js',
 				'tests/qunit/ui/ArbitraryWordInput.test.js',
 				'tests/qunit/ui/FileTypeSelection.test.js',
 				'tests/qunit/ui/NamespaceFilters.test.js',
@@ -105,6 +106,7 @@ class Hooks {
 				'tests/qunit/util.test.js'
 			],
 			'dependencies' => [
+				'ext.advancedSearch.QueryCompiler',
 				'ext.advancedSearch.ui.ArbitraryWordInput',
 				'ext.advancedSearch.ui.FileTypeSelection',
 				'ext.advancedSearch.ui.NamespaceFilters',

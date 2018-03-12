@@ -102,6 +102,7 @@
 				"oojs-ui.styles.icons-user",
 				"oojs-ui.styles.icons-wikimedia",
 				"ext.advancedSearch.AdvancedOptionsBuilder",
+				"ext.advancedSearch.QueryCompiler",
 				"ext.advancedSearch.dm.getDefaultNamespaces",
 				"ext.advancedSearch.dm.SearchableNamespaces",
 				"ext.advancedSearch.dm.SearchModel",
@@ -145,6 +146,11 @@
 				"ext.advancedSearch.ui.ArbitraryWordInput"
 			]
 		},
+		"ext.advancedSearch.QueryCompiler": {
+			"scripts": [
+				"modules/ext.advancedSearch.QueryCompiler.js"
+			]
+		} ,
 		"ext.advancedSearch.ui.ArbitraryWordInput": {
 			"scripts": [
 				"modules/ui/ext.advancedSearch.ArbitraryWordInput.js"

@@ -30,49 +30,7 @@
 	}
 
 	/**
-	 * @param {ext.libs.advancedSearch.dm.SearchModel} state
-	 * @param {Object[]} advancedOptions
-	 * @return {string[]}
-	 */
-	function formatSearchOptions( state, advancedOptions ) {
-		var queryElements = [],
-			greedyQuery = null;
-
-		advancedOptions.forEach( function ( option ) {
-			var val = state.getOption( option.id ),
-				formattedQueryElement = val ? option.formatter( val ) : '';
-
-			if ( !formattedQueryElement ) {
-				return;
-			}
-
-			// FIXME: Should fail if there is more than one greedy option!
-			if ( option.greedy && !greedyQuery ) {
-				greedyQuery = option.formatter( val );
-			} else {
-				queryElements.push( formattedQueryElement );
-			}
-
-		} );
-		if ( greedyQuery ) {
-			queryElements.push( greedyQuery );
-		}
-
-		return queryElements;
-	}
-
-	/**
-	 * @return {string}
-	 */
-	function getSearchOriginal() {
-		var searchFieldOriginal = mw.util.getParamValue( 'search' ),
-			advancedSearchOriginal = mw.util.getParamValue( 'advancedSearchOption-original' );
-
-		return advancedSearchOriginal === null ? searchFieldOriginal : advancedSearchOriginal;
-	}
-
-	/**
-	 * @param {jQuery} $search
+	 * @param {jQuery} $search The search form element
 	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
 	 */
 	function setTrackingEvents( $search, state ) {
@@ -84,20 +42,20 @@
 	}
 
 	/**
-	 * @param {jQuery} $search
-	 * @param {jQuery} $searchField
+	 * @param {jQuery} $search The search form element
+	 * @param {jQuery} $searchField The search fields inside the forms
 	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
-	 * @param {mw.libs.advancedSearch.AdvancedOptionsBuilder} advancedOptionsBuilder
+	 * @param {mw.libs.advancedSearch.QueryCompiler} queryCompiler
 	 */
-	function setSearchSubmitTrigger( $search, $searchField, state, advancedOptionsBuilder ) {
+	function setSearchSubmitTrigger( $search, $searchField, state, queryCompiler ) {
 		$search.on( 'submit', function () {
-			var compiledQuery = $.trim( $searchField.val() + ' ' + formatSearchOptions( state, advancedOptionsBuilder.getOptions() ).join( ' ' ) ),
+			var compiledQuery = $.trim( $searchField.val() + ' ' + queryCompiler.compileSearchQuery( state ) ),
 				$compiledSearchField = $( '<input>' ).prop( {
 					name: $searchField.prop( 'name' ),
 					type: 'hidden'
 				} ).val( compiledQuery );
 
-			$searchField.prop( 'name', 'advancedSearchOption-original' )
+			$searchField.prop( 'name', '' )
 				.after( $compiledSearchField );
 		} );
 	}
@@ -182,7 +140,8 @@
 	$( function () {
 		var searchableNamespaces = new mw.libs.advancedSearch.dm.SearchableNamespaces( mw.config.get( 'wgFormattedNamespaces' ) ),
 			state = initState( searchableNamespaces ),
-			advancedOptionsBuilder = new mw.libs.advancedSearch.AdvancedOptionsBuilder( state );
+			advancedOptionsBuilder = new mw.libs.advancedSearch.AdvancedOptionsBuilder( state ),
+			queryCompiler = new mw.libs.advancedSearch.QueryCompiler( advancedOptionsBuilder.getOptions() );
 
 		var $search = $( 'form#search, form#powersearch' ),
 			$title = $( 'h1#firstHeading' ),
@@ -195,13 +154,13 @@
 		$search.append( $advancedSearch );
 		$title.after( '<span class="feedback">' + feedbackMessage + '</span>' );
 		$( '.feedback a' ).attr( 'target', '_blank' );
-		$searchField.val( getSearchOriginal() );
+		$searchField.val( queryCompiler.removeCompiledQueryFromSearch( $searchField.val(), state ) );
 		$searchField.focus();
 
 		$profileField.val( 'advanced' );
 
 		setTrackingEvents( $search, state );
-		setSearchSubmitTrigger( $search, $searchField, state, advancedOptionsBuilder );
+		setSearchSubmitTrigger( $search, $searchField, state, queryCompiler );
 
 		$advancedSearch.append( buildPaneElement( state, advancedOptionsBuilder ) );
 

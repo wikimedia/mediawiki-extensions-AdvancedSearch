@@ -129,7 +129,7 @@ class SearchPage extends Page {
 	get allNamespacesPreset() { return browser.element( '.mw-advancedSearch-namespace-selection input[value="all"]' ); }
 
 	formWasSubmitted() {
-		return Object.prototype.hasOwnProperty.call( this.getQueryFromUrl(), 'advancedSearchOption-original' );
+		return Object.prototype.hasOwnProperty.call( this.getQueryFromUrl(), 'advancedSearch-current' );
 	}
 
 	advancedSearchIsCollapsed() {
