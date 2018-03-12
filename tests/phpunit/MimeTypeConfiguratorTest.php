@@ -1,10 +1,10 @@
 <?php
 
-namespace AdvancedSearch;
+namespace AdvancedSearch\Tests;
 
+use AdvancedSearch\MimeTypeConfigurator;
 use MimeAnalyzer;
 use PHPUnit\Framework\TestCase;
-use PHPUnit_Framework_MockObject_MockObject;
 
 /**
  * @covers \AdvancedSearch\MimeTypeConfigurator
@@ -41,7 +41,7 @@ class MimeTypeConfiguratorTest extends TestCase {
 	}
 
 	/**
-	 * @return MimeAnalyzer|PHPUnit_Framework_MockObject_MockObject
+	 * @return MimeAnalyzer
 	 */
 	private function newMimeAnalyzerMock() {
 		$mock = $this->getMockBuilder( MimeAnalyzer::class )->disableOriginalConstructor()->getMock();
