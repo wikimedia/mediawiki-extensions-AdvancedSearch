@@ -25,6 +25,13 @@
 	"advancedsearch-help-filetype": "<dl><dt>Περιγραφή:</dt><dd>Αναζητήσεις μόνο φακέλλων του επιλεγμένου τύπο</dd> <dt>Έχετε υπόψη τα ακόλουθα: </dt><dd><ul> <li>Μπορείτε να αναζητήσετε τους συγκεκριμένους τύπους φακέλλων από τις επιλογές του μενού..</li> <li>You can only select the given file types from the drop-down menu.</li></ul></dd> <dt>Σελίδες βοήθειας:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype filetype] και [https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime filemime]</dd> <dt>Σύνταξη που αντιστοιχεί στην αναζήτηση:</dt><dd>Words με προηγούμενους κωδικούς <code>filetype:</code> before them like <code>filetype:ogg</code>.</dd></dl>",
 	"advancedsearch-help-filew": "<dl><dt>Περιγραφή:</dt><dd>Αυτά τα πεδία σας περιμένουν να ορίσετε το εύρος κάθε φακέλλου.</dd> <dt>Να έχετε υπόψη τα ακόλουθα: </dt><dd><ul> <li>Αυτό έχει εφαρμογή μόνο σε τύπους φακέλλων με το ίδιο εύρος που έχουν τα βίντεο και οι εικόνες.</li></ul></dd> <dt>Help page:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]</dd> <dt>Σύνταξη που αντιστοιχεί στην κανονική αναζήτηση-Equivalent in the normal search:</dt><dd>Αριθμοί κωδικών <code>filew</code> πριν από αυτούς li <code>filew:>800</code>.</dd></dl>",
 	"advancedsearch-help-fileh": "<dl><dt>Περιγραφή:</dt><dd>Αυτά τα πεδία σας επιτρέπουν να ορίσετε το ύψος του φακέλλου </dd> <dt>Να έχετε υπόψη σας τα ακόλουθα: </dt><dd><ul> <li>Αυτό ισχύει μόνο για φακέλλους που έχουν πλάτος και ύψος, όπως βίντεο και εικόνες .</li></ul></dd> <dt>Σελίδα βοήθειας:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]</dd> <dt>Σύνταξη που αντιστοιχεί στην κανονική αναζήτηση-:</dt><dd>Αριθμοί με <code>fileh</code> πριν από αυτούς <code>fileh:>600</code>.</dd></dl>",
+	"advancedsearch-filetype-section-types": "Γενικοί τύποι αρχείου",
+	"advancedsearch-filetype-section-image": "Μορφές εικόνας",
+	"advancedsearch-filetype-section-video": "Μορφές βίντεο",
+	"advancedsearch-filetype-section-audio": "Μορφές ήχου",
+	"advancedsearch-filetype-section-document": "Μορφές εγγράφου",
+	"advancedsearch-filetype-section-other": "Άλλες μορφές",
+	"advancedsearch-filetype-default": "Επιλογή τύπου αρχείου",
 	"advancedsearch-filetype-bitmap": "Εικόνα",
 	"advancedsearch-filetype-vector": "Ζωγραφιά",
 	"advancedsearch-filetype-audio": "Ήχος",
@@ -38,5 +45,6 @@
 	"advancedSearch-namespaces-preset-all": "Όλα",
 	"advancedSearch-namespaces-preset-general-help": "Γενική βοήθεια",
 	"advancedSearch-namespaces-preset-discussion": "Συζήτηση",
-	"advancedSearch-namespaces-placeholder": "Πρόσθεση ονοματοχώρων:"
+	"advancedSearch-namespaces-placeholder": "Πρόσθεση ονοματοχώρων:",
+	"advancedSearch-beta-feature-message": "Διεπαφή προχωρημένης αναζήτησης"
 }
