@@ -64,7 +64,7 @@
 	"ResourceModules": {
 		"ext.advancedSearch.initialstyles": {
 			"styles": [
-				"modules/ext.advancedSearch.init.css"
+				"modules/ext.advancedSearch.init.less"
 			]
 		},
 		"ext.advancedSearch.init": {
@@ -72,14 +72,14 @@
 				"modules/ext.advancedSearch.init.js"
 			],
 			"styles": [
-				"modules/ext.advancedSearch.css"
+				"modules/ext.advancedSearch.less"
 			],
 			"skinStyles": {
 				"timeless": [
-					"modules/ext.advancedSearch.timeless.css"
+					"modules/ext.advancedSearch.timeless.less"
 				],
 				"monobook": [
-					"modules/ext.advancedSearch.monobook.css"
+					"modules/ext.advancedSearch.monobook.less"
 				]
 			},
 			"messages": [

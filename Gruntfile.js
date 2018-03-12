@@ -15,6 +15,7 @@ module.exports = function ( grunt ) {
 		stylelint: {
 			all: [
 				'**/*.css',
+				'**/*.less',
 				'!node_modules/**',
 				'!vendor/**'
 			]
