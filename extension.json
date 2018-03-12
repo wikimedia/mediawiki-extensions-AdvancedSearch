@@ -289,7 +289,7 @@
 				"modules/dm/ext.advancedSearch.SearchModel.js"
 			],
 			"dependencies": [
-				"oojs-ui-widgets"
+				"oojs"
 			]
 		},
 		"ext.advancedSearch.dm.FileTypeOptionProvider": {
@@ -297,7 +297,7 @@
 				"modules/dm/ext.advancedSearch.FileTypeOptionProvider.js"
 			],
 			"dependencies": [
-				"oojs-ui-widgets"
+				"oojs"
 			]
 		},
 		"ext.advancedSearch.dm.trackingEvents.SearchRequest": {
@@ -305,7 +305,7 @@
 				"modules/dm/trackingEvents/ext.advancedSearch.SearchRequest.js"
 			],
 			"dependencies": [
-				"oojs-ui-widgets"
+				"oojs"
 			]
 		},
 		"ext.advancedSearch.util": {
