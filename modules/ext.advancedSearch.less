@@ -1,7 +1,9 @@
-.mw-advancedSearch-container textarea,
-.mw-advancedSearch-container input {
-	/* This will flip with CSSJanus */
-	direction: ltr;
+.mw-advancedSearch-container {
+	textarea,
+	input {
+		/* This will flip with CSSJanus */
+		direction: ltr;
+	}
 }
 
 .mw-advancedSearch-searchPreview-label {
@@ -27,38 +29,40 @@
 	margin-top: -1px;
 	max-width: 50em;
 	padding: 1em;
-}
 
-.mw-advancedSearch-fieldContainer .oo-ui-fieldLayout {
-	margin-top: 0.3em;
-}
+	fieldset {
+		border: 0;
+		border-top: solid 1px #c8ccd1;
+		margin-top: 1em;
+	}
 
-.mw-advancedSearch-fieldContainer fieldset {
-	border: 0;
-	border-top: solid 1px #c8ccd1;
-	margin-top: 1em;
-}
+	/* FIXME: Why does this try to mimic a <fieldset><legend> element instead of being an actual one? */
+	/* See https://phabricator.wikimedia.org/T151061 and https://gerrit.wikimedia.org/r/#/c/325243/  */
+	.oo-ui-labelElement > .oo-ui-fieldsetLayout-header > .oo-ui-labelElement-label {
+		background: #fff;
+		color: #666;
+		font-weight: normal;
+		font-size: 1em;
+		left: 1em;
+		line-height: 1;
+		padding: 0 0.2em;
+		position: relative;
+		top: -0.8em;
+	}
 
-/* FIXME: Why does this try to mimic a <fieldset><legend> element instead of being an actual one? */
-/* See https://phabricator.wikimedia.org/T151061 and https://gerrit.wikimedia.org/r/#/c/325243/  */
-.mw-advancedSearch-fieldContainer .oo-ui-labelElement > .oo-ui-fieldsetLayout-header > .oo-ui-labelElement-label {
-	background: #fff;
-	color: #666;
-	font-weight: normal;
-	font-size: 1em;
-	left: 1em;
-	line-height: 1;
-	padding: 0 0.2em;
-	position: relative;
-	top: -0.8em;
-}
+	.oo-ui-fieldLayout {
+		margin-top: 0.3em;
 
-.mw-advancedSearch-fieldContainer .oo-ui-fieldLayout.oo-ui-labelElement.oo-ui-fieldLayout-align-right > .oo-ui-fieldLayout-body > .oo-ui-fieldLayout-header {
-	margin-right: 1%;
-}
+		&.oo-ui-labelElement.oo-ui-fieldLayout-align-right > .oo-ui-fieldLayout-body {
+			> .oo-ui-fieldLayout-header {
+				margin-right: 1%;
+			}
 
-.mw-advancedSearch-fieldContainer .oo-ui-fieldLayout.oo-ui-labelElement.oo-ui-fieldLayout-align-right > .oo-ui-fieldLayout-body > .oo-ui-fieldLayout-help {
-	float: right;
+			> .oo-ui-fieldLayout-help {
+				float: right;
+			}
+		}
+	}
 }
 
 .mw-advancedSearch-expandablePane {
@@ -69,24 +73,26 @@
 	padding-top: 0.3em;
 }
 
-.mw-advancedSearch-expandablePane-button,
-.mw-advancedSearch-expandablePane-button > .oo-ui-buttonElement-button {
+.mw-advancedSearch-expandablePane-button {
 	width: 100%;
-}
 
-.mw-advancedSearch-expandablePane-button > .oo-ui-buttonElement-button {
-	text-align: left;
-	font-weight: normal;
-	white-space: normal;
-}
+	> .oo-ui-buttonElement-button {
+		text-align: left;
+		font-weight: normal;
+		white-space: normal;
+		width: 100%;
+	}
 
-.mw-advancedSearch-expandablePane-button.oo-ui-widget-enabled.oo-ui-buttonWidget.oo-ui-buttonElement-pressed > .oo-ui-buttonElement-button {
-	background-color: #f8f9fa;
-}
+	&.oo-ui-widget-enabled.oo-ui-buttonWidget {
+		&.oo-ui-buttonElement-pressed > .oo-ui-buttonElement-button {
+			background-color: #f8f9fa;
+		}
 
-.mw-advancedSearch-expandablePane-button.oo-ui-widget-enabled.oo-ui-buttonWidget > .oo-ui-buttonElement-button:hover {
-	background-color: #f8f9fa;
-	color: #222;
+		> .oo-ui-buttonElement-button:hover {
+			background-color: #f8f9fa;
+			color: #222;
+		}
+	}
 }
 
 .mw-advancedSearch-expandablePane-pane {
@@ -98,29 +104,26 @@
 	margin-right: 1em;
 }
 
-.mw-advancedSearch-filesize .operator-container,
-.mw-advancedSearch-filesize .value-container {
-	width: 50%;
-	float: left;
-	box-sizing: border-box;
-}
+.mw-advancedSearch-filesize {
+	.operator-container,
+	.value-container {
+		width: 50%;
+		float: left;
+		box-sizing: border-box;
+	}
 
-.mw-advancedSearch-filesize .operator-container {
-	padding-right: 1em;
+	.operator-container {
+		padding-right: 1em;
+	}
 }
 
 .mw-advancedSearch-namespacePresets {
 	float: right;
 	display: inline;
-}
 
-.mw-advancedSearch-namespacePresets > div {
-	display: inline-block;
-}
-
-.mw-advancedSearch-namespace-selection label {
-	display: inline;
-	margin-left: 0.3em;
+	> div {
+		display: inline-block;
+	}
 }
 
 .mw-advancedSearch-namespace-selection {
@@ -133,23 +136,28 @@
 	padding: 0.4em 0.9375em;
 	position: relative;
 	border-bottom: 0;
-}
 
-.mw-advancedSearch-namespace-selection label.oo-ui-checkboxMultioptionWidget {
-	padding: 0;
+	label {
+		display: inline;
+		margin-left: 0.3em;
+
+		&.oo-ui-checkboxMultioptionWidget {
+			padding: 0;
+		}
+	}
 }
 
 .mw-advancedSearch-namespaceFilter {
 	top: -2px;
-}
 
-.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-handle {
-	border-top: 0;
-}
+	.oo-ui-tagMultiselectWidget-handle {
+		border-top: 0;
+	}
 
-/* FIXME: Might be removed when indicator alignment is unified in OOjs UI */
-.mw-advancedSearch-namespaceFilter.oo-ui-indicatorElement .oo-ui-tagMultiselectWidget-handle .oo-ui-indicatorElement-indicator {
-	margin: 0 0.9375em;
+	/* FIXME: Might be removed when indicator alignment is unified in OOjs UI */
+	&.oo-ui-indicatorElement .oo-ui-tagMultiselectWidget-handle .oo-ui-indicatorElement-indicator {
+		margin: 0 0.9375em;
+	}
 }
 
 .oo-ui-popupWidget-popup .mw-advancedSearch-tooltip-head {
