@@ -6,7 +6,7 @@
 	},
 	"advancedsearch-desc": "Easy access to advanced search capabilities on [[Special:Search]]",
 
-	"advancedSearch-ask-feedback":"How does the new interface work for you? Please give us [$1 feedback] (opens in new tab)",
+	"advancedsearch-ask-feedback":"How does the new interface work for you? Please give us [$1 feedback] (opens in new tab)",
 	"advancedsearch-options-pane-head": "Advanced parameters:",
 	"advancedsearch-optgroup-text": "Search in page text",
 	"advancedsearch-optgroup-structure": "Structure",
@@ -35,7 +35,7 @@
 	"advancedsearch-help-filew": ";Description\n:These fields allow you to specify the width of the file.\n;Be aware of the following\n:* This is only applicable to file types that have width and height, like videos and images.\n;Help page\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]\n;Syntax-equivalent in the normal search\n:Numbers with <code>filew</code> before them like <code>filew:>800</code>.",
 	"advancedsearch-help-fileh": ";Description\n:These fields allow you to specify the height of the file.\n;Be aware of the following\n:* This is only applicable to file types that have width and height, like videos and images.\n;Help page\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]\n;Syntax-equivalent in the normal search\n:Numbers with <code>fileh</code> before them like <code>fileh:>600</code>.",
 
-	"advancedSearch-placeholder-exact-text": "Put exact words in quotes: \"cat loves goat\"",
+	"advancedsearch-placeholder-exact-text": "Put exact words in quotes: \"cat loves goat\"",
 
 	"advancedsearch-filetype-section-types": "General file types",
 	"advancedsearch-filetype-section-image": "Image formats",
@@ -49,20 +49,20 @@
 	"advancedsearch-filetype-audio": "Audio",
 	"advancedsearch-filetype-video": "Video",
 	"advancedsearch-filetype-office": "Office",
-	"advancedSearch-filesize-equals": "equal to",
-	"advancedSearch-filesize-equals-symbol": "=",
-	"advancedSearch-filesize-greater-than": "greater than",
-	"advancedSearch-filesize-greater-than-symbol": ">",
-	"advancedSearch-filesize-smaller-than": "lower than",
-	"advancedSearch-filesize-smaller-than-symbol": "<",
+	"advancedsearch-filesize-equals": "equal to",
+	"advancedsearch-filesize-equals-symbol": "=",
+	"advancedsearch-filesize-greater-than": "greater than",
+	"advancedsearch-filesize-greater-than-symbol": ">",
+	"advancedsearch-filesize-smaller-than": "lower than",
+	"advancedsearch-filesize-smaller-than-symbol": "<",
 
-	"advancedSearch-namespaces-articles": "Articles",
-	"advancedSearch-namespaces-search-in": "Search in:",
-	"advancedSearch-namespaces-preset-all": "All",
-	"advancedSearch-namespaces-preset-general-help": "General Help",
-	"advancedSearch-namespaces-preset-discussion": "Discussion",
-	"advancedSearch-namespaces-placeholder": "Add namespaces",
+	"advancedsearch-namespaces-articles": "Articles",
+	"advancedsearch-namespaces-search-in": "Search in:",
+	"advancedsearch-namespaces-preset-all": "All",
+	"advancedsearch-namespaces-preset-general-help": "General Help",
+	"advancedsearch-namespaces-preset-discussion": "Discussion",
+	"advancedsearch-namespaces-placeholder": "Add namespaces",
 
-	"advancedSearch-beta-feature-message": "Advanced Search Interface",
-	"advancedSearch-beta-feature-description": "Easy access to advanced search capabilities on [[Special:Search]]."
+	"advancedsearch-beta-feature-message": "Advanced Search Interface",
+	"advancedsearch-beta-feature-description": "Easy access to advanced search capabilities on [[Special:Search]]."
 }

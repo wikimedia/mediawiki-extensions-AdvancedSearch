@@ -41,7 +41,7 @@
 				namespaces[ key ] = rawNamespaces[ key ];
 			}
 		} );
-		namespaces[ '0' ] = mw.msg( 'advancedSearch-namespaces-articles' );
+		namespaces[ '0' ] = mw.msg( 'advancedsearch-namespaces-articles' );
 		return namespaces;
 	}
 
@@ -178,7 +178,7 @@
 			$searchField = $search.find( 'input[name="search"]' ),
 			$profileField = $search.find( 'input[name="profile"]' );
 
-		var feedbackMessage = mw.message( 'advancedSearch-ask-feedback', 'https://www.mediawiki.org/wiki/Help_talk:Extension:AdvancedSearch' ).parse();
+		var feedbackMessage = mw.message( 'advancedsearch-ask-feedback', 'https://www.mediawiki.org/wiki/Help_talk:Extension:AdvancedSearch' ).parse();
 
 		$search.append( $advancedSearch );
 		$title.after( '<span class="feedback">' + feedbackMessage + '</span>' );
@@ -202,7 +202,7 @@
 		$advancedSearch.append( currentSearch.$element );
 		var namespaceSelection = new mw.libs.advancedSearch.ui.NamespaceFilters( state, {
 				namespaces: prepareNamespaces(),
-				placeholder: mw.msg( 'advancedSearch-namespaces-placeholder' ),
+				placeholder: mw.msg( 'advancedsearch-namespaces-placeholder' ),
 				$overlay: true
 			} ),
 			namespacePresets = new mw.libs.advancedSearch.ui.NamespacePresets( state, {
@@ -214,7 +214,7 @@
 		$advancedSearch.append( namespaceSelectionPreview );
 		namespaceSelectionPreview
 			.after( namespaceSelection.$element )
-			.append( $( '<strong>' ).text( mw.msg( 'advancedSearch-namespaces-search-in' ) ) )
+			.append( $( '<strong>' ).text( mw.msg( 'advancedsearch-namespaces-search-in' ) ) )
 			.append( namespacePresets.$element );
 
 		// remove old namespace selection item to avoid double ns parameters

@@ -28,9 +28,9 @@
 
 		this.operatorInput = new OO.ui.DropdownInputWidget( {
 			options: [
-				{ data: '', label: mw.msg( 'advancedSearch-filesize-equals' ) },
-				{ data: '>', label: mw.msg( 'advancedSearch-filesize-greater-than' ) },
-				{ data: '<', label: mw.msg( 'advancedSearch-filesize-smaller-than' ) }
+				{ data: '', label: mw.msg( 'advancedsearch-filesize-equals' ) },
+				{ data: '>', label: mw.msg( 'advancedsearch-filesize-greater-than' ) },
+				{ data: '<', label: mw.msg( 'advancedsearch-filesize-smaller-than' ) }
 			],
 			value: '>'
 		} );

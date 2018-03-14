@@ -215,7 +215,7 @@
 							{
 								id: 'advancedSearchOption-phrase',
 								optionId: 'phrase',
-								placeholder: mw.msg( 'advancedSearch-placeholder-exact-text' )
+								placeholder: mw.msg( 'advancedsearch-placeholder-exact-text' )
 							}
 						);
 					}
