@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Милан Јелисавчић"
+			"Милан Јелисавчић",
+			"BadDog"
 		]
 	},
-	"advancedsearch-optgroup-structure": "Структура"
+	"advancedsearch-optgroup-structure": "Структура",
+	"advancedSearch-beta-feature-message": "Интерфејс за напредну претрагу",
+	"advancedSearch-beta-feature-description": "Лак приступ напредним могућностима претраге на [[Special:Search]]."
 }

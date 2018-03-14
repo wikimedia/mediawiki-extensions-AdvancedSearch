@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Hinaloe",
-			"Yusuke1109"
+			"Yusuke1109",
+			"夢蝶葬花"
 		]
 	},
 	"advancedsearch-desc": "[[Special:Search]]の高度な検索機能への簡単なアクセス",
@@ -29,6 +30,7 @@
 	"advancedSearch-filesize-smaller-than": "未満",
 	"advancedSearch-namespaces-articles": "記事",
 	"advancedSearch-namespaces-preset-all": "すべて",
+	"advancedSearch-namespaces-preset-discussion": "議論",
 	"advancedSearch-namespaces-placeholder": "名前空間を追加",
 	"advancedSearch-beta-feature-message": "高度な検索インタフェース",
 	"advancedSearch-beta-feature-description": "[[Special:Search]]の高度な検索機能に簡単にアクセスできます。"
