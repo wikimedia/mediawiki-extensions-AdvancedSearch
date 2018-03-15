@@ -157,13 +157,37 @@
 	}
 
 	/**
+	 * @return {string[]}
+	 */
+	function getNamespacesFromUrl() {
+		var url = new mw.Uri(),
+			namespaces = [],
+			allowedNamespaces = Object.keys( prepareNamespaces() );
+		$.each( url.query, function ( param ) {
+			var nsMatch = param.match( /^ns(\d+)$/ );
+			if ( nsMatch ) {
+				namespaces.push( nsMatch[ 1 ] );
+			}
+		} );
+		return namespaces.filter( function ( id ) {
+			return allowedNamespaces.indexOf( id ) !== -1;
+		} );
+	}
+
+	/**
 	 * @return {mw.libs.advancedSearch.dm.SearchModel}
 	 */
 	function initState() {
 		var state = new mw.libs.advancedSearch.dm.SearchModel(
-			mw.libs.advancedSearch.dm.getDefaultNamespaces( mw.user.options.values )
-		);
-		state.setAllFromJSON( mw.util.getParamValue( 'advancedSearch-current' ) || '' );
+				mw.libs.advancedSearch.dm.getDefaultNamespaces( mw.user.options.values )
+			),
+			stateFromUrl = mw.util.getParamValue( 'advancedSearch-current' ),
+			namespacesInUrl = getNamespacesFromUrl();
+		state.setAllFromJSON( stateFromUrl || '' );
+		// allow URL params to define selected namespaces when no AdvancedSearch has occurred before
+		if ( !stateFromUrl && namespacesInUrl.length > 0 ) {
+			state.setNamespaces( namespacesInUrl );
+		}
 
 		return state;
 	}
