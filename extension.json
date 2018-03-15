@@ -68,6 +68,12 @@
 				"modules/ext.advancedSearch.init.less"
 			]
 		},
+		"ext.advancedSearch.searchtoken": {
+			"class": "AdvancedSearch\\SearchnamespaceTokenModule",
+			"dependencies": [
+				"user.tokens"
+			]
+		},
 		"ext.advancedSearch.init": {
 			"scripts": [
 				"modules/ext.advancedSearch.init.js"
@@ -101,6 +107,7 @@
 				"oojs-ui.styles.icons-media",
 				"oojs-ui.styles.icons-user",
 				"oojs-ui.styles.icons-wikimedia",
+				"ext.advancedSearch.searchtoken",
 				"ext.advancedSearch.AdvancedOptionsBuilder",
 				"ext.advancedSearch.QueryCompiler",
 				"ext.advancedSearch.dm.getDefaultNamespaces",

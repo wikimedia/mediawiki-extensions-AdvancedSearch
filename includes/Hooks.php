@@ -36,7 +36,10 @@ class Hooks {
 			return;
 		}
 		if ( $special->getName() === 'Search' ) {
-			$special->getOutput()->addModules( 'ext.advancedSearch.init' );
+			$special->getOutput()->addModules( [
+				'ext.advancedSearch.init',
+				'ext.advancedSearch.searchtoken',
+			] );
 			$special->getOutput()->addModuleStyles( 'ext.advancedSearch.initialstyles' );
 
 			$special->getOutput()->addJsConfigVars(
@@ -48,6 +51,7 @@ class Hooks {
 				'advancedSearch.tooltips' => TooltipGenerator::generateToolTips(),
 				'advancedSearch.namespacePresets' => $config->get( 'AdvancedSearchNamespacePresets' )
 			] );
+
 			/**
 			 * checks if extension Translate is installed and enabled
 			 * https://github.com/wikimedia/mediawiki-extensions-Translate/blob/master/Translate.php#L351
