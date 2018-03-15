@@ -162,16 +162,14 @@
 	function getNamespacesFromUrl() {
 		var url = new mw.Uri(),
 			namespaces = [],
-			allowedNamespaces = Object.keys( prepareNamespaces() );
+			allowedNamespaces = prepareNamespaces();
 		$.each( url.query, function ( param ) {
 			var nsMatch = param.match( /^ns(\d+)$/ );
-			if ( nsMatch ) {
+			if ( nsMatch && nsMatch[ 1 ] in allowedNamespaces ) {
 				namespaces.push( nsMatch[ 1 ] );
 			}
 		} );
-		return namespaces.filter( function ( id ) {
-			return allowedNamespaces.indexOf( id ) !== -1;
-		} );
+		return namespaces;
 	}
 
 	/**
@@ -181,12 +179,16 @@
 		var state = new mw.libs.advancedSearch.dm.SearchModel(
 				mw.libs.advancedSearch.dm.getDefaultNamespaces( mw.user.options.values )
 			),
-			stateFromUrl = mw.util.getParamValue( 'advancedSearch-current' ),
-			namespacesInUrl = getNamespacesFromUrl();
-		state.setAllFromJSON( stateFromUrl || '' );
-		// allow URL params to define selected namespaces when no AdvancedSearch has occurred before
-		if ( !stateFromUrl && namespacesInUrl.length > 0 ) {
-			state.setNamespaces( namespacesInUrl );
+			namespacesFromUrl = getNamespacesFromUrl(),
+			stateFromUrl = mw.util.getParamValue( 'advancedSearch-current' );
+
+		if ( namespacesFromUrl.length ) {
+			state.setNamespaces( namespacesFromUrl );
+		}
+
+		// If AdvancedSearch has occurred before, it's options have the highest precedence
+		if ( stateFromUrl ) {
+			state.setAllFromJSON( stateFromUrl );
 		}
 
 		return state;
