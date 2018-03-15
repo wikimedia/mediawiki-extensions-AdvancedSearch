@@ -7,11 +7,12 @@
 			"4elovek12345",
 			"Okras",
 			"Mouse21",
-			"Movses"
+			"Movses",
+			"Patrick Star"
 		]
 	},
 	"advancedsearch-desc": "Легкий доступ к расширенным возможностям поиска на [[Special:Search]]",
-	"advancedSearch-ask-feedback": "Как новый интерфейс работает для вас? Пожалуйста, дайте нам [$1 обратная связь] (открывается на новой вкладке)",
+	"advancedsearch-ask-feedback": "Как новый интерфейс работает для вас? Пожалуйста, дайте нам [$1 обратная связь] (открывается на новой вкладке)",
 	"advancedsearch-options-pane-head": "Расширенные параметры:",
 	"advancedsearch-optgroup-text": "Искать в тексте страницы",
 	"advancedsearch-optgroup-structure": "Структура",
@@ -37,7 +38,7 @@
 	"advancedsearch-help-filetype": ";Описание\n:Ищет только файлы выбранного типа.\n;Знать следующее\n:* Вы можете искать только один тип файла.\n:* Вы можете выбрать только выбранные типы файлов из раскрывающегося меню.\n;Страницы справки\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype filetype] и [https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime filemime]\n;Синтаксический эквивалент в обычном поиске\n:Слова с <code>filetype:</code> перед ними, как <code>filetype:ogg</code>.",
 	"advancedsearch-help-filew": ";Описание\n:Эти поля позволяют указать ширину файла.\n;Знать следующее\n:* Это применимо только к типам файлов, которые имеют ширину и высоту, например видео и изображения.\n;Страница справки\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]\n;Синтаксический эквивалент в обычном поиске\n:Номера с <code>filew</code> перед ними вроде <code>filew:>800</code>.",
 	"advancedsearch-help-fileh": ";Описание\n:Эти поля позволяют указать высоту файла.\n;Знать следующее\n:* Это применимо только к типам файлов, которые имеют ширину и высоту, например видео и изображения.\n;Страница справки\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]\n;Синтаксический эквивалент в обычном поиске\n:Номера с <code>fileh</code> перед ними вроде <code>fileh:>600</code>.",
-	"advancedSearch-placeholder-exact-text": "Поместите точные слова в кавычки: «кошка любит козу»",
+	"advancedsearch-placeholder-exact-text": "Поместите точные слова в кавычки: «кошка любит козу»",
 	"advancedsearch-filetype-section-types": "Типы внешних файлов:",
 	"advancedsearch-filetype-section-image": "Форматы изображения",
 	"advancedsearch-filetype-section-video": "Форматы видео-файлов",
@@ -49,13 +50,14 @@
 	"advancedsearch-filetype-audio": "Звук",
 	"advancedsearch-filetype-video": "Видео",
 	"advancedsearch-filetype-office": "Офис",
-	"advancedSearch-filesize-equals": "равно",
-	"advancedSearch-filesize-greater-than": "больше",
-	"advancedSearch-filesize-smaller-than": "ниже чем",
-	"advancedSearch-namespaces-articles": "Статьи",
-	"advancedSearch-namespaces-search-in": "Поиск по:",
-	"advancedSearch-namespaces-preset-all": "Все",
-	"advancedSearch-namespaces-placeholder": "Добавить пространства имён",
-	"advancedSearch-beta-feature-message": "Интерфейс расширенного поиска",
-	"advancedSearch-beta-feature-description": "Легкий доступ к расширенным возможностям поиска на [[Special:Search]]."
+	"advancedsearch-filesize-equals": "равно",
+	"advancedsearch-filesize-greater-than": "больше",
+	"advancedsearch-filesize-smaller-than": "ниже чем",
+	"advancedsearch-namespaces-articles": "Статьи",
+	"advancedsearch-namespaces-search-in": "Поиск по:",
+	"advancedsearch-namespaces-preset-all": "Все",
+	"advancedsearch-namespaces-preset-discussion": "Обсуждение",
+	"advancedsearch-namespaces-placeholder": "Добавить пространства имён",
+	"advancedsearch-beta-feature-message": "Интерфейс расширенного поиска",
+	"advancedsearch-beta-feature-description": "Легкий доступ к расширенным возможностям поиска на [[Special:Search]]."
 }

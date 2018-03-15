@@ -4,7 +4,7 @@
 			"Ykhwong"
 		]
 	},
-	"advancedSearch-ask-feedback": "새로운 인터페이스가 어떻게 동작합니까? 저희에게 [$1 의견]을 주십시오 (새 탭에서 열립니다)",
+	"advancedsearch-ask-feedback": "새로운 인터페이스가 어떻게 동작합니까? 저희에게 [$1 의견]을 주십시오 (새 탭에서 열립니다)",
 	"advancedsearch-options-pane-head": "고급 변수:",
 	"advancedsearch-optgroup-text": "본문 내에서 찾기",
 	"advancedsearch-optgroup-structure": "구조",
@@ -41,11 +41,11 @@
 	"advancedsearch-filetype-audio": "소리",
 	"advancedsearch-filetype-video": "동영상",
 	"advancedsearch-filetype-office": "오피스",
-	"advancedSearch-namespaces-articles": "문서",
-	"advancedSearch-namespaces-search-in": "검색 위치:",
-	"advancedSearch-namespaces-preset-all": "모두",
-	"advancedSearch-namespaces-preset-general-help": "일반 도움말",
-	"advancedSearch-namespaces-preset-discussion": "토론",
-	"advancedSearch-namespaces-placeholder": "이름공간 추가",
-	"advancedSearch-beta-feature-message": "고급 검색 인터페이스"
+	"advancedsearch-namespaces-articles": "문서",
+	"advancedsearch-namespaces-search-in": "검색 위치:",
+	"advancedsearch-namespaces-preset-all": "모두",
+	"advancedsearch-namespaces-preset-general-help": "일반 도움말",
+	"advancedsearch-namespaces-preset-discussion": "토론",
+	"advancedsearch-namespaces-placeholder": "이름공간 추가",
+	"advancedsearch-beta-feature-message": "고급 검색 인터페이스"
 }

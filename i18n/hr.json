@@ -35,12 +35,12 @@
 	"advancedsearch-filetype-audio": "Audiodatoteka",
 	"advancedsearch-filetype-video": "Videodatoteka",
 	"advancedsearch-filetype-office": "Datoteke uredskih formata",
-	"advancedSearch-filesize-equals": "iznosi točno",
-	"advancedSearch-filesize-greater-than": "veća od",
-	"advancedSearch-filesize-smaller-than": "manja od",
-	"advancedSearch-namespaces-articles": "Članci",
-	"advancedSearch-namespaces-search-in": "Pretraži imenske prostore:",
-	"advancedSearch-namespaces-preset-all": "Sve",
-	"advancedSearch-beta-feature-message": "Sučelje za naprednu pretragu",
-	"advancedSearch-beta-feature-description": "Lagan pristup naprednim mogućnostima pretrage na [[Special:Search]]."
+	"advancedsearch-filesize-equals": "iznosi točno",
+	"advancedsearch-filesize-greater-than": "veća od",
+	"advancedsearch-filesize-smaller-than": "manja od",
+	"advancedsearch-namespaces-articles": "Članci",
+	"advancedsearch-namespaces-search-in": "Pretraži imenske prostore:",
+	"advancedsearch-namespaces-preset-all": "Sve",
+	"advancedsearch-beta-feature-message": "Sučelje za naprednu pretragu",
+	"advancedsearch-beta-feature-description": "Lagan pristup naprednim mogućnostima pretrage na [[Special:Search]]."
 }

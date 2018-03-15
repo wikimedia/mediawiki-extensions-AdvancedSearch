@@ -30,11 +30,11 @@
 	"advancedsearch-filetype-audio": "Audioa",
 	"advancedsearch-filetype-video": "Bideoa",
 	"advancedsearch-filetype-office": "Bulegoa",
-	"advancedSearch-filesize-equals": "-ren parekoa",
-	"advancedSearch-filesize-greater-than": "baino hobea",
-	"advancedSearch-filesize-smaller-than": "baino baxuagoa",
-	"advancedSearch-namespaces-articles": "Artikuluak",
-	"advancedSearch-namespaces-search-in": "Non bilatu:",
-	"advancedSearch-namespaces-preset-all": "Denak",
-	"advancedSearch-namespaces-placeholder": "Izen-eremuak gehitu"
+	"advancedsearch-filesize-equals": "-ren parekoa",
+	"advancedsearch-filesize-greater-than": "baino hobea",
+	"advancedsearch-filesize-smaller-than": "baino baxuagoa",
+	"advancedsearch-namespaces-articles": "Artikuluak",
+	"advancedsearch-namespaces-search-in": "Non bilatu:",
+	"advancedsearch-namespaces-preset-all": "Denak",
+	"advancedsearch-namespaces-placeholder": "Izen-eremuak gehitu"
 }

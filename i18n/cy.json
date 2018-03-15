@@ -5,7 +5,7 @@
 		]
 	},
 	"advancedsearch-desc": "Mynediad hawdd i alluoedd uwch (Chwilio) ar [[Special:Search]]",
-	"advancedSearch-ask-feedback": "Beth yw eich barn ar y rhyngwyneb newydd? Rhowch eich barn! Caiff ei agor mewn tab newydd.",
+	"advancedsearch-ask-feedback": "Beth yw eich barn ar y rhyngwyneb newydd? Rhowch eich barn! Caiff ei agor mewn tab newydd.",
 	"advancedsearch-options-pane-head": "Paramedrau uwch:",
 	"advancedsearch-optgroup-text": "Chwilio o fewn testun y ddalen",
 	"advancedsearch-optgroup-structure": "Strwythur",
@@ -32,12 +32,12 @@
 	"advancedsearch-filetype-audio": "Sain",
 	"advancedsearch-filetype-video": "Fideo",
 	"advancedsearch-filetype-office": "Swyddfa",
-	"advancedSearch-filesize-equals": "yn hafal i",
-	"advancedSearch-filesize-greater-than": "yn fwy na",
-	"advancedSearch-filesize-smaller-than": "yn llai na",
-	"advancedSearch-namespaces-articles": "Erthyglau",
-	"advancedSearch-namespaces-search-in": "Chwilio yn:",
-	"advancedSearch-namespaces-preset-all": "Y cyfan",
-	"advancedSearch-namespaces-placeholder": "Ychwanegu ''namespace''",
-	"advancedSearch-beta-feature-message": "Rhyngwyneb Chwilio Uwch"
+	"advancedsearch-filesize-equals": "yn hafal i",
+	"advancedsearch-filesize-greater-than": "yn fwy na",
+	"advancedsearch-filesize-smaller-than": "yn llai na",
+	"advancedsearch-namespaces-articles": "Erthyglau",
+	"advancedsearch-namespaces-search-in": "Chwilio yn:",
+	"advancedsearch-namespaces-preset-all": "Y cyfan",
+	"advancedsearch-namespaces-placeholder": "Ychwanegu ''namespace''",
+	"advancedsearch-beta-feature-message": "Rhyngwyneb Chwilio Uwch"
 }

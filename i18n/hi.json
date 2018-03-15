@@ -8,15 +8,15 @@
 		]
 	},
 	"advancedsearch-field-filetype": "फ़ाइल का प्रकार:",
-	"advancedSearch-placeholder-exact-text": "\nसटीक शब्दों को उद्धरण में रखें: \"बिल्ली बकरी को प्यार करती है\"",
+	"advancedsearch-placeholder-exact-text": "\nसटीक शब्दों को उद्धरण में रखें: \"बिल्ली बकरी को प्यार करती है\"",
 	"advancedsearch-filetype-section-video": "वीडियो का फ़ारमैट",
 	"advancedsearch-filetype-section-document": "दस्तावेज़ का फ़ारमैट",
 	"advancedsearch-filetype-bitmap": "छवि",
 	"advancedsearch-filetype-audio": "ऑडियो",
 	"advancedsearch-filetype-video": "वीडियो",
 	"advancedsearch-filetype-office": "कार्यालय",
-	"advancedSearch-namespaces-preset-all": "सभी",
-	"advancedSearch-namespaces-preset-general-help": "सामान्य मदद",
-	"advancedSearch-namespaces-preset-discussion": "चर्चा",
-	"advancedSearch-namespaces-placeholder": "नामस्थान जोड़ें"
+	"advancedsearch-namespaces-preset-all": "सभी",
+	"advancedsearch-namespaces-preset-general-help": "सामान्य मदद",
+	"advancedsearch-namespaces-preset-discussion": "चर्चा",
+	"advancedsearch-namespaces-placeholder": "नामस्थान जोड़ें"
 }

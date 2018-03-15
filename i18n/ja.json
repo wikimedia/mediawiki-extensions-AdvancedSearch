@@ -7,7 +7,7 @@
 		]
 	},
 	"advancedsearch-desc": "[[Special:Search]]の高度な検索機能への簡単なアクセス",
-	"advancedSearch-ask-feedback": "新しいインターフェースはどのように機能しますか？ [$1 フィードバック]をお寄せください（新しいタブで開きます）",
+	"advancedsearch-ask-feedback": "新しいインターフェースはどのように機能しますか？ [$1 フィードバック]をお寄せください（新しいタブで開きます）",
 	"advancedsearch-options-pane-head": "高度なパラメータ:",
 	"advancedsearch-optgroup-text": "ページ内のテキストで検索",
 	"advancedsearch-optgroup-structure": "書式",
@@ -26,12 +26,12 @@
 	"advancedsearch-filetype-audio": "音声",
 	"advancedsearch-filetype-video": "動画",
 	"advancedsearch-filetype-office": "オフィス",
-	"advancedSearch-filesize-equals": "等しい",
-	"advancedSearch-filesize-smaller-than": "未満",
-	"advancedSearch-namespaces-articles": "記事",
-	"advancedSearch-namespaces-preset-all": "すべて",
-	"advancedSearch-namespaces-preset-discussion": "議論",
-	"advancedSearch-namespaces-placeholder": "名前空間を追加",
-	"advancedSearch-beta-feature-message": "高度な検索インタフェース",
-	"advancedSearch-beta-feature-description": "[[Special:Search]]の高度な検索機能に簡単にアクセスできます。"
+	"advancedsearch-filesize-equals": "等しい",
+	"advancedsearch-filesize-smaller-than": "未満",
+	"advancedsearch-namespaces-articles": "記事",
+	"advancedsearch-namespaces-preset-all": "すべて",
+	"advancedsearch-namespaces-preset-discussion": "議論",
+	"advancedsearch-namespaces-placeholder": "名前空間を追加",
+	"advancedsearch-beta-feature-message": "高度な検索インタフェース",
+	"advancedsearch-beta-feature-description": "[[Special:Search]]の高度な検索機能に簡単にアクセスできます。"
 }

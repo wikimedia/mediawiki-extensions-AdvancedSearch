@@ -37,13 +37,13 @@
 	"advancedsearch-filetype-audio": "Hang",
 	"advancedsearch-filetype-video": "Videó",
 	"advancedsearch-filetype-office": "Dokumentum",
-	"advancedSearch-filesize-equals": "annyi, mint",
-	"advancedSearch-filesize-greater-than": "nagyobb, mint",
-	"advancedSearch-filesize-smaller-than": "kisebb, mint",
-	"advancedSearch-namespaces-articles": "Szócikkek",
-	"advancedSearch-namespaces-search-in": "Keresés itt:",
-	"advancedSearch-namespaces-preset-all": "Minden névtér",
-	"advancedSearch-namespaces-placeholder": "Névterek hozzáadása",
-	"advancedSearch-beta-feature-message": "Fejlett keresési felület",
-	"advancedSearch-beta-feature-description": "Egyszerű hozzáférés a haladó keresési lehetőségekhez a [[Special:Search]] oldalon."
+	"advancedsearch-filesize-equals": "annyi, mint",
+	"advancedsearch-filesize-greater-than": "nagyobb, mint",
+	"advancedsearch-filesize-smaller-than": "kisebb, mint",
+	"advancedsearch-namespaces-articles": "Szócikkek",
+	"advancedsearch-namespaces-search-in": "Keresés itt:",
+	"advancedsearch-namespaces-preset-all": "Minden névtér",
+	"advancedsearch-namespaces-placeholder": "Névterek hozzáadása",
+	"advancedsearch-beta-feature-message": "Fejlett keresési felület",
+	"advancedsearch-beta-feature-description": "Egyszerű hozzáférés a haladó keresési lehetőségekhez a [[Special:Search]] oldalon."
 }

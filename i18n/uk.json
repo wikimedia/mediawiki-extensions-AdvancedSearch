@@ -42,13 +42,13 @@
 	"advancedsearch-filetype-audio": "Аудіо",
 	"advancedsearch-filetype-video": "Відео",
 	"advancedsearch-filetype-office": "Office",
-	"advancedSearch-filesize-equals": "дорівнює",
-	"advancedSearch-filesize-greater-than": "більше, ніж",
-	"advancedSearch-filesize-smaller-than": "менше, ніж",
-	"advancedSearch-namespaces-articles": "Статті",
-	"advancedSearch-namespaces-search-in": "Шукати у:",
-	"advancedSearch-namespaces-preset-all": "Усі",
-	"advancedSearch-namespaces-placeholder": "Додати простори назв",
-	"advancedSearch-beta-feature-message": "Інтерфейс розширеного пошуку",
-	"advancedSearch-beta-feature-description": "Легкий доступ до можливостей розширеного пошуку на сторінці [[Special:Search|Спеціальна:Пошук]]."
+	"advancedsearch-filesize-equals": "дорівнює",
+	"advancedsearch-filesize-greater-than": "більше, ніж",
+	"advancedsearch-filesize-smaller-than": "менше, ніж",
+	"advancedsearch-namespaces-articles": "Статті",
+	"advancedsearch-namespaces-search-in": "Шукати у:",
+	"advancedsearch-namespaces-preset-all": "Усі",
+	"advancedsearch-namespaces-placeholder": "Додати простори назв",
+	"advancedsearch-beta-feature-message": "Інтерфейс розширеного пошуку",
+	"advancedsearch-beta-feature-description": "Легкий доступ до можливостей розширеного пошуку на сторінці [[Special:Search|Спеціальна:Пошук]]."
 }
