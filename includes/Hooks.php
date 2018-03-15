@@ -70,8 +70,8 @@ class Hooks {
 		$extensionAssetsPath = $config->get( 'ExtensionAssetsPath' );
 
 		$prefs['advancedsearch'] = [
-			'label-message' => 'advancedSearch-beta-feature-message',
-			'desc-message' => 'advancedSearch-beta-feature-description',
+			'label-message' => 'advancedsearch-beta-feature-message',
+			'desc-message' => 'advancedsearch-beta-feature-description',
 			'screenshot' => [
 				'ltr' => "$extensionAssetsPath/AdvancedSearch/resources/AdvancedSearch-beta-features-ltr.svg",
 				'rtl' => "$extensionAssetsPath/AdvancedSearch/resources/AdvancedSearch-beta-features-rtl.svg",

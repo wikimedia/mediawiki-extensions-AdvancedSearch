@@ -193,9 +193,9 @@
 
 		var searchPreview = new SearchPreview( store, config );
 		var translationStub = sandbox.stub( mw, 'msg' );
-		translationStub.withArgs( 'advancedSearch-filesize-equals-symbol' ).returns( '=' );
-		translationStub.withArgs( 'advancedSearch-filesize-greater-than-symbol' ).returns( '>' );
-		translationStub.withArgs( 'advancedSearch-filesize-smaller-than-symbol' ).returns( '<' );
+		translationStub.withArgs( 'advancedsearch-filesize-equals-symbol' ).returns( '=' );
+		translationStub.withArgs( 'advancedsearch-filesize-greater-than-symbol' ).returns( '>' );
+		translationStub.withArgs( 'advancedsearch-filesize-smaller-than-symbol' ).returns( '<' );
 
 		assert.equal( searchPreview.formatValue( 'someOption', [ '', '' ] ), '' );
 		assert.equal( searchPreview.formatValue( 'fileh', [ '', 1000 ] ), '= 1000' );

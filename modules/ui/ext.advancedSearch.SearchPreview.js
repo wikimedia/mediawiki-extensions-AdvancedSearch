@@ -14,11 +14,11 @@
 	var fileComparatorToMessage = function ( comparator ) {
 		switch ( comparator ) {
 			case '':
-				return 'advancedSearch-filesize-equals-symbol';
+				return 'advancedsearch-filesize-equals-symbol';
 			case '>':
-				return 'advancedSearch-filesize-greater-than-symbol';
+				return 'advancedsearch-filesize-greater-than-symbol';
 			case '<':
-				return 'advancedSearch-filesize-smaller-than-symbol';
+				return 'advancedsearch-filesize-smaller-than-symbol';
 		}
 	};
 

@@ -27,7 +27,7 @@
 				"discussion": {
 					"enabled": true,
 					"provider": "discussion",
-					"label": "advancedSearch-namespaces-preset-discussion"
+					"label": "advancedsearch-namespaces-preset-discussion"
 				},
 				"generalHelp": {
 					"enabled": true,
@@ -35,12 +35,12 @@
 						"4",
 						"12"
 					],
-					"label": "advancedSearch-namespaces-preset-general-help"
+					"label": "advancedsearch-namespaces-preset-general-help"
 				},
 				"all": {
 					"enabled": true,
 					"provider": "all",
-					"label": "advancedSearch-namespaces-preset-all"
+					"label": "advancedsearch-namespaces-preset-all"
 				}
 			},
 			"merge_strategy": "array_plus_2d"
@@ -85,10 +85,10 @@
 			},
 			"messages": [
 				"advancedsearch-options-pane-head",
-				"advancedSearch-namespaces-articles",
-				"advancedSearch-namespaces-search-in",
-				"advancedSearch-namespaces-placeholder",
-				"advancedSearch-ask-feedback"
+				"advancedsearch-namespaces-articles",
+				"advancedsearch-namespaces-search-in",
+				"advancedsearch-namespaces-placeholder",
+				"advancedsearch-ask-feedback"
 			],
 			"dependencies": [
 				"mediawiki.jqueryMsg",
@@ -138,7 +138,7 @@
 				"advancedsearch-optgroup-text",
 				"advancedsearch-optgroup-structure",
 				"advancedsearch-optgroup-files",
-				"advancedSearch-placeholder-exact-text"
+				"advancedsearch-placeholder-exact-text"
 			],
 			"dependencies": [
 				"ext.advancedSearch.ui.ArbitraryWordInput"
@@ -199,9 +199,9 @@
 				"oojs-ui-widgets"
 			],
 			"messages": [
-				"advancedSearch-filesize-equals",
-				"advancedSearch-filesize-greater-than",
-				"advancedSearch-filesize-smaller-than"
+				"advancedsearch-filesize-equals",
+				"advancedsearch-filesize-greater-than",
+				"advancedsearch-filesize-smaller-than"
 			]
 		},
 		"ext.advancedSearch.ui.NamespaceFilters": {
@@ -222,9 +222,9 @@
 				"oojs-ui-widgets"
 			],
 			"messages": [
-				"advancedSearch-namespaces-preset-all",
-				"advancedSearch-namespaces-preset-general-help",
-				"advancedSearch-namespaces-preset-discussion"
+				"advancedsearch-namespaces-preset-all",
+				"advancedsearch-namespaces-preset-general-help",
+				"advancedsearch-namespaces-preset-discussion"
 			]
 		},
 		"ext.advancedSearch.dm.NamespacePresetProviders": {
@@ -248,9 +248,9 @@
 				"oojs-ui-widgets"
 			],
 			"messages": [
-				"advancedSearch-filesize-equals-symbol",
-				"advancedSearch-filesize-greater-than-symbol",
-				"advancedSearch-filesize-smaller-than-symbol",
+				"advancedsearch-filesize-equals-symbol",
+				"advancedsearch-filesize-greater-than-symbol",
+				"advancedsearch-filesize-smaller-than-symbol",
 				"advancedsearch-field-plain",
 				"advancedsearch-field-phrase",
 				"advancedsearch-field-or",
