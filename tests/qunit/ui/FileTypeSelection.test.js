@@ -26,20 +26,11 @@
 			id: 'advancedSearchOption-filetype',
 			name: 'advancedSearchOption-filetype',
 			dropdown: { $overlay: true }
-		},
-		sandbox;
-
-	QUnit.testStart( function () {
-		sandbox = sinon.sandbox.create();
-	} );
-
-	QUnit.testDone( function () {
-		sandbox.restore();
-	} );
+		};
 
 	QUnit.module( 'ext.advancedSearch.ui.FileTypeSelection' );
 
-	QUnit.test( 'Dropdown menu options are set from store', function ( assert ) {
+	QUnit.test( 'Dropdown menu options are set from the provider', function ( assert ) {
 		var dropdown = new FileTypeSelection( store, optionProvider, config );
 		var optionGroups = dropdown.$element[ 0 ].childNodes[ 0 ].childNodes;
 
@@ -48,7 +39,16 @@
 		assert.equal( optionGroups[ 1 ].children[ 0 ].innerText, 'bitmapLabel', 'The label is different than the value' );
 		assert.equal( optionGroups[ 1 ].children[ 1 ].value, 'vector' );
 		assert.equal( optionGroups[ 2 ].children[ 0 ].value, 'image/png' );
+	} );
 
+	QUnit.test( 'Dropdown menu updates when store changes', function ( assert ) {
+		var dropdown = new FileTypeSelection( store, optionProvider, config );
+
+		store.storeOption( 'filetype', 'vector' );
+		assert.equal( dropdown.getValue(), 'vector' );
+
+		store.storeOption( 'filetype', '' );
+		assert.equal( dropdown.getValue(), '' );
 	} );
 
 	QUnit.test( 'Selected option is displayed', function ( assert ) {
@@ -56,7 +56,6 @@
 		dropdown.setValue( 'bitmap' );
 
 		assert.equal( dropdown.getValue(), 'bitmap' );
-
 	} );
 
 }( mediaWiki ) );

@@ -20,20 +20,11 @@
 			id: 'advancedSearchOption-inlanguage',
 			name: 'advancedSearchOption-inlanguage',
 			dropdown: { $overlay: true }
-		},
-		sandbox;
-
-	QUnit.testStart( function () {
-		sandbox = sinon.sandbox.create();
-	} );
-
-	QUnit.testDone( function () {
-		sandbox.restore();
-	} );
+		};
 
 	QUnit.module( 'ext.advancedSearch.ui.LanguageSelection' );
 
-	QUnit.test( 'Dropdown menu options are set from store', function ( assert ) {
+	QUnit.test( 'Dropdown menu options are set from provider', function ( assert ) {
 		var dropdown = new LanguageSelection( store, optionProvider, config );
 		var optionGroups = dropdown.$element[ 0 ].childNodes[ 0 ];
 
@@ -42,7 +33,16 @@
 		assert.equal( optionGroups[ 1 ].innerHTML, 'de - Deutsch' );
 		assert.equal( optionGroups[ 2 ].value, 'en' );
 		assert.equal( optionGroups[ 3 ].value, 'bg' );
+	} );
 
+	QUnit.test( 'Dropdown menu updates when store changes', function ( assert ) {
+		var dropdown = new LanguageSelection( store, optionProvider, config );
+
+		store.storeOption( 'inlanguage', 'bg' );
+		assert.equal( dropdown.getValue(), 'bg' );
+
+		store.storeOption( 'inlanguage', '' );
+		assert.equal( dropdown.getValue(), '' );
 	} );
 
 	QUnit.test( 'Selected option is displayed', function ( assert ) {
@@ -50,7 +50,6 @@
 		dropdown.setValue( 'en' );
 
 		assert.equal( dropdown.getValue(), 'en' );
-
 	} );
 
 }( mediaWiki ) );
