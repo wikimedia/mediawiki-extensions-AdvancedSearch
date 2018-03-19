@@ -6,10 +6,12 @@
 			"Ladsgroup",
 			"Obzord",
 			"Arian Ar",
-			"Alifakoor"
+			"Alifakoor",
+			"Arash"
 		]
 	},
 	"advancedsearch-desc": "دسترسی آسان به قابلیت‌های جستجوی پیشرفته در [[Special:Search]]",
+	"advancedsearch-ask-feedback": "How does the new interface work for you? Please give us [$1 feedback] (opens in new tab)\n\nرابط جدید برای شما چطور کار می‌کند؟ لطفاً به ما [$1 بازخورد بدهید] (در برگهٔ جدید باز می‌شود)",
 	"advancedsearch-options-pane-head": "پارامترهای پیشرفته:",
 	"advancedsearch-optgroup-text": "جستجو در متن صفحه",
 	"advancedsearch-optgroup-structure": "ساختار",
