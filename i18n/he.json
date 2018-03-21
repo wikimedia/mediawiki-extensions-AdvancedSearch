@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amire80"
+			"Amire80",
+			"Guycn2"
 		]
 	},
 	"advancedsearch-desc": "גישה קלה ליכולות חיפוש מתקדמות בדף [[Special:Search|מיוחד:חיפוש]]",
@@ -28,6 +29,7 @@
 	"advancedsearch-help-intitle": "בדיקה",
 	"advancedsearch-help-subpageof": "בדיקה",
 	"advancedsearch-placeholder-exact-text": "שימו מילים מדויקות במירכאות: \"חתול אוהב עז\"",
+	"advancedsearch-inlanguage-default": "בחירת שפה",
 	"advancedsearch-filetype-section-types": "סוגי קובץ כלליים",
 	"advancedsearch-filetype-section-image": "תסדירי תמונה",
 	"advancedsearch-filetype-section-video": "תסדירי וידאו",

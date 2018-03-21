@@ -34,6 +34,7 @@
 	"advancedsearch-help-filew": "<dl><dt>Popis:</dt><dd>Tato pole vám umožňují uvést šířku souboru.</dd><dt>Uvědomte si následující:</dt><dd><ul><li>Tato funkce se dá použít jen na typy souborů, které mají šířku a výšku, jako jsou videa a obrázky.</li></ul></dd><dt>Stránka s nápovědou:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Help:CirrusSearch]</dd><dt>Syntaktický ekvivalent v běžném hledání:</dt><dd>Čísla, před kterými je <code>filew:</code>, např. <code>filew:800</code>.</dd></dl>",
 	"advancedsearch-help-fileh": "<dl><dt>Popis:</dt><dd>Tato pole vám umožňují uvést výšku souboru.</dd><dt>Uvědomte si následující:</dt><dd><ul><li>Tato funkce se dá použít jen na typy souborů, které mají šířku a výšku, jako jsou videa a obrázky.</li></ul></dd><dt>Stránky s nápovědou:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Help:CirrusSearch]</dd><dt>Syntaktický ekvivalent v běžném hledání:</dt><dd>Čísla, před kterými je <code>fileh:</code>, např. <code>fileh:800</code>.</dd></dl>",
 	"advancedsearch-placeholder-exact-text": "Přesnou formulaci vložte do uvozovek: \"kočka miluje kozu\"",
+	"advancedsearch-inlanguage-default": "Vyberte jazyk",
 	"advancedsearch-filetype-section-types": "Obecný typ souboru",
 	"advancedsearch-filetype-section-image": "Formát obrázku",
 	"advancedsearch-filetype-section-video": "Formát videa",
