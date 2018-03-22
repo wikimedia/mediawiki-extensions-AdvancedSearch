@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ykhwong"
+			"Ykhwong",
+			"Ellif"
 		]
 	},
 	"advancedsearch-ask-feedback": "새로운 인터페이스가 어떻게 동작합니까? 저희에게 [$1 의견]을 주십시오 (새 탭에서 열립니다)",
@@ -17,7 +18,7 @@
 	"advancedsearch-field-intitle": "문서 제목이 다음을 포함:",
 	"advancedsearch-field-deepcat": "이 분류 내 문서:",
 	"advancedsearch-field-hastemplate": "이 틀을 포함하는 문서만:",
-	"advancedsearch-field-inlanguage": "이 언어의 문서:",
+	"advancedsearch-field-inlanguage": "이 언어로 된 문서:",
 	"advancedsearch-field-filetype": "파일 유형:",
 	"advancedsearch-field-filew": "파일 너비 (화소):",
 	"advancedsearch-field-fileh": "파일 높이 (화소):",
