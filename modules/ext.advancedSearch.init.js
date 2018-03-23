@@ -163,6 +163,7 @@
 			$searchField = $search.find( 'input[name="search"]' ),
 			$profileField = $search.find( 'input[name="profile"]' );
 
+		// Don't forget to remove the placeholder padding from ….init.less when this message is removed!
 		var feedbackMessage = mw.message( 'advancedsearch-ask-feedback', 'https://www.mediawiki.org/wiki/Help_talk:Extension:AdvancedSearch' ).parse();
 
 		$search.append( $advancedSearch );
