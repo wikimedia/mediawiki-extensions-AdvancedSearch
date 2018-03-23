@@ -89,13 +89,13 @@
 		assert.deepEqual( model.getNamespaces(), [ SearchModel.MAIN_NAMESPACE ] );
 	} );
 
-	QUnit.test( 'Setting namespaces to empty keeps default namespace', function ( assert ) {
+	QUnit.test( 'Setting namespaces to empty does not keep default namespace', function ( assert ) {
 		assert.expect( 1 );
 
 		var model = new SearchModel();
 		model.setNamespaces( [] );
 
-		assert.deepEqual( model.getNamespaces(), [ SearchModel.MAIN_NAMESPACE ] );
+		assert.deepEqual( model.getNamespaces(), [] );
 	} );
 
 	QUnit.test( 'Adding filetype option forces file namespace', function ( assert ) {

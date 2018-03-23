@@ -237,11 +237,7 @@
 			namespaces.push( mw.libs.advancedSearch.dm.SearchModel.FILE_NAMESPACE );
 		}
 
-		if ( namespaces.length ) {
-			this.namespaces = this.sortNamespacesByNumber( namespaces );
-		} else {
-			this.namespaces = [ mw.libs.advancedSearch.dm.SearchModel.MAIN_NAMESPACE ];
-		}
+		this.namespaces = this.sortNamespacesByNumber( namespaces );
 
 		if ( !OO.compare( previousNamespaces, this.namespaces ) ) {
 			this.emitUpdate();

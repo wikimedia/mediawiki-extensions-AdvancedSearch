@@ -91,7 +91,7 @@
 		assert.namespaceElementsPresent( filter.$namespaceContainer, [ '1', '3' ] );
 	} );
 
-	QUnit.test( 'Lonely namespace can not be removed', function ( assert ) {
+	QUnit.test( 'Lonely namespace can be removed', function ( assert ) {
 		assert.expect( 1 );
 
 		var model = new Model(),
@@ -105,7 +105,7 @@
 			} );
 
 		model.setNamespaces( [ '2' ] );
-		assert.equal( filter.getItems()[ 0 ].isDisabled(), true );
+		assert.equal( filter.getItems()[ 0 ].isDisabled(), false );
 	} );
 
 	QUnit.test( 'On multiple namespaces either one can be removed', function ( assert ) {

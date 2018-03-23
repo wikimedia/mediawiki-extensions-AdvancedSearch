@@ -189,12 +189,6 @@
 		mw.libs.advancedSearch.ui.NamespaceFilters.parent.prototype.onChangeTags.call( this );
 
 		this.disableSelectedNamespacesInMenu();
-
-		var tagItems = this.getItems();
-
-		if ( tagItems.length > 0 ) {
-			tagItems[ 0 ].setDisabled( tagItems.length === 1 );
-		}
 	};
 
 	/**
