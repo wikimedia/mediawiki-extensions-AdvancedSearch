@@ -91,16 +91,14 @@
 	 */
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.createNamespaceOptions = function ( namespaces ) {
 		var options = [];
-		$.each( namespaces, function ( ns, label ) {
-			var nsId = parseInt( ns, 10 );
-			if ( nsId < 0 || isNaN( nsId ) || !label ) {
-				return;
+		Object.keys( namespaces ).forEach( function ( id ) {
+			var label = namespaces[ id ];
+			if ( label && Number( id ) >= 0 ) {
+				options.push( {
+					data: id,
+					label: label
+				} );
 			}
-
-			options.push( {
-				data: ns,
-				label: label
-			} );
 		} );
 		return options;
 	};

@@ -206,21 +206,9 @@
 	 * @return {string[]}
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.sortNamespacesByNumber = function ( namespaces ) {
-		var sortedNamespaces;
-
-		sortedNamespaces = namespaces.sort( function ( a, b ) {
-			a = parseInt( a, 10 );
-			b = parseInt( b, 10 );
-			if ( a < b ) {
-				return -1;
-			}
-			if ( a > b ) {
-				return 1;
-			}
-			return 0;
+		return namespaces.sort( function ( a, b ) {
+			return Number( a ) - Number( b );
 		} );
-
-		return sortedNamespaces;
 	};
 
 	/**
