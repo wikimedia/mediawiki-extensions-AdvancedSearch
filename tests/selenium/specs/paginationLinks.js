@@ -8,16 +8,8 @@ const SearchPage = require( '../pageobjects/search.page' );
 describe( 'Advanced Search', function () {
 
 	function addExamplePages( numPages ) {
-		const baseUrl = url.parse( browser.options.baseUrl ), // http://webdriver.io/guide/testrunner/browserobject.html
-			Bot = require( 'nodemw' ), // https://github.com/macbre/nodemw
-			client = new Bot( {
-				protocol: baseUrl.protocol,
-				server: baseUrl.hostname,
-				port: baseUrl.port,
-				path: baseUrl.path,
-				username: browser.options.username,
-				password: browser.options.password
-			} ),
+		let Bot = require( 'mwbot' ), // https://github.com/Fannon/mwbot
+			client = new Bot(),
 			animals = [ 'cat', 'goat' ];
 
 		return new Promise( function ( resolve, reject ) {
@@ -26,27 +18,30 @@ describe( 'Advanced Search', function () {
 				client.edit(
 					'Search Test Page ' + ( pageNumber + 1 ),
 					content,
-					'Created page with "' + content + '"',
-					function ( err ) {
-						if ( err ) {
-							return reject( err );
-						}
-						if ( pageNumber > numPages ) {
-							return resolve();
-						} else {
-							return editPage( pageNumber + 1 );
-						}
-					} );
-			};
-			client.logIn( function ( err ) {
-				if ( err ) {
+					'Created page with "' + content + '"'
+				).then( () => {
+					if ( pageNumber > numPages ) {
+						return resolve();
+					} else {
+						return editPage( pageNumber + 1 );
+					}
+				} ).catch( ( err ) => {
+
 					return reject( err );
-				}
+
+				} );
+			};
+			client.loginGetEditToken( {
+				username: browser.options.username,
+				password: browser.options.password,
+				apiUrl: browser.options.baseUrl + '/api.php'
+			} ).then( () => {
 				return editPage( 0 );
+			} ).catch( ( err ) => {
+				return reject( err );
 			} );
 		} );
 	}
-
 	function assertURLContainsAdvancedSearchState( urlStr ) {
 		const urlparts = url.parse( urlStr ),
 			searchParams = querystring.parse( urlparts.query );
