@@ -4,7 +4,8 @@
 			"Sfic",
 			"Rajatkatiyar10",
 			"Bhatakati aatma",
-			"Smtchahal"
+			"Smtchahal",
+			"Sachinkatiyar"
 		]
 	},
 	"advancedsearch-field-filetype": "फ़ाइल का प्रकार:",
@@ -15,6 +16,7 @@
 	"advancedsearch-filetype-audio": "ऑडियो",
 	"advancedsearch-filetype-video": "वीडियो",
 	"advancedsearch-filetype-office": "कार्यालय",
+	"advancedsearch-namespaces-remember": "चुनाव को भविष्य की खोजों के लिए याद रखें",
 	"advancedsearch-namespaces-preset-all": "सभी",
 	"advancedsearch-namespaces-preset-general-help": "सामान्य मदद",
 	"advancedsearch-namespaces-preset-discussion": "चर्चा",

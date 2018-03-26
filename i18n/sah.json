@@ -4,8 +4,11 @@
 			"HalanTul"
 		]
 	},
+	"advancedsearch-optgroup-text": "Сирэй тиэксигэр көрдөө",
 	"advancedsearch-optgroup-structure": "Тутула",
+	"advancedsearch-optgroup-files": "Билэлэр уонна ойуулар",
 	"advancedsearch-field-plain": "Бу тыллар:",
+	"advancedsearch-field-phrase": "Чопчу бу тиэкис:",
 	"advancedsearch-field-or": "Бу тыллартан биирдэстэрэ:",
 	"advancedsearch-field-not": "Балартан ураты:",
 	"advancedsearch-field-subpageof": "Бу сирэй үөдүҥнэрэ:",
@@ -13,13 +16,14 @@
 	"advancedsearch-field-deepcat": "Бу категория сирэйэ:",
 	"advancedsearch-field-hastemplate": "Маннык халыыптаах сирэйдэри эрэ:",
 	"advancedsearch-field-filetype": "Билэ көрүҥэ:",
+	"advancedsearch-field-filew": "Билэ кэтитэ пикселинэн:",
+	"advancedsearch-field-fileh": "Билэ үрдүгэ пикселинэн:",
 	"advancedsearch-filetype-section-types": "Тас билэлэр көрүҥнэрэ:",
 	"advancedsearch-filetype-section-image": "Ойуу формааттара",
 	"advancedsearch-filetype-section-document": "Докумуоннар формааттара",
 	"advancedsearch-filetype-section-other": "Атын формааттар",
 	"advancedsearch-filetype-bitmap": "Ойуу",
 	"advancedsearch-filetype-vector": "Уруһуй",
-	"advancedsearch-namespaces-articles": "Ыстатыйалар",
 	"advancedsearch-namespaces-search-in": "Манна көрдөт:",
 	"advancedsearch-namespaces-preset-all": "Бары",
 	"advancedsearch-namespaces-placeholder": "Аат далын эбии"
