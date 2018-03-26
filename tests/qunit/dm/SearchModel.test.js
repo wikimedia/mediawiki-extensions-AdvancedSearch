@@ -20,11 +20,11 @@
 		assert.deepEqual( model.getOptions(), {} );
 	} );
 
-	QUnit.test( 'Default model has article namespace', function ( assert ) {
+	QUnit.test( 'There is no hardcoded namespace preset', function ( assert ) {
 		assert.expect( 1 );
 
 		var model = new SearchModel();
-		assert.deepEqual( model.getNamespaces(), [ '0' ] );
+		assert.deepEqual( model.getNamespaces(), [] );
 	} );
 
 	QUnit.test( 'Options that were set can be retrieved', function ( assert ) {
@@ -82,13 +82,6 @@
 		assert.deepEqual( model.getNamespaces(), [ '0', '2' ] );
 	} );
 
-	QUnit.test( 'SearchableNamespaces default to main namespace out of the box', function ( assert ) {
-		assert.expect( 1 );
-
-		var model = new SearchModel();
-		assert.deepEqual( model.getNamespaces(), [ SearchModel.MAIN_NAMESPACE ] );
-	} );
-
 	QUnit.test( 'Setting namespaces to empty does not keep default namespace', function ( assert ) {
 		assert.expect( 1 );
 
@@ -104,7 +97,7 @@
 		var model = new SearchModel();
 		model.storeOption( 'filetype', 'image' );
 
-		assert.deepEqual( model.getNamespaces(), [ SearchModel.MAIN_NAMESPACE, SearchModel.FILE_NAMESPACE ] );
+		assert.deepEqual( model.getNamespaces(), [ SearchModel.FILE_NAMESPACE ] );
 	} );
 
 	QUnit.test( 'When filetype option is set, file namespace cannot be removed', function ( assert ) {

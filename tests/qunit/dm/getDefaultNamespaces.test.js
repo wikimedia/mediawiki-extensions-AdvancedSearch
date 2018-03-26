@@ -1,24 +1,23 @@
 ( function ( mw ) {
-	var getDefaultNamespaces = mw.libs.advancedSearch.dm.getDefaultNamespaces,
-		SearchModel = mw.libs.advancedSearch.dm.SearchModel;
+	var getDefaultNamespaces = mw.libs.advancedSearch.dm.getDefaultNamespaces;
 
 	QUnit.module( 'ext.advancedSearch.dm.getDefaultNamespaces' );
 
-	QUnit.test( 'Empty user settings return article namespace', function ( assert ) {
-		assert.deepEqual( getDefaultNamespaces( {} ), [ SearchModel.MAIN_NAMESPACE ] );
+	QUnit.test( 'Empty user settings return no other default', function ( assert ) {
+		assert.deepEqual( getDefaultNamespaces( {} ), [] );
 	} );
 
-	QUnit.test( 'User settings without namespaces return article namespace', function ( assert ) {
+	QUnit.test( 'User settings without namespaces return no other default', function ( assert ) {
 		assert.deepEqual(
 			getDefaultNamespaces( {
 				foo: 1,
 				bar: 2
 			} ),
-			[ SearchModel.MAIN_NAMESPACE ]
+			[]
 		);
 	} );
 
-	QUnit.test( 'User settings with all namespaces set to false return article namespace', function ( assert ) {
+	QUnit.test( 'User settings with all namespaces set to false return no other default', function ( assert ) {
 		assert.deepEqual(
 			getDefaultNamespaces( {
 				foo: 1,
@@ -27,7 +26,7 @@
 				searchNs10: false,
 				searchNs99: false
 			} ),
-			[ SearchModel.MAIN_NAMESPACE ]
+			[]
 		);
 	} );
 

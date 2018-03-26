@@ -17,11 +17,11 @@
 	 * @class
 	 * @constructor
 	 * @mixins OO.EventEmitter
-	 * @param {string[]} defaultNamespaces The namespaces selected by default (for new searches)
+	 * @param {string[]} [defaultNamespaces] The namespaces selected by default (for new searches)
 	 */
 	mw.libs.advancedSearch.dm.SearchModel = function ( defaultNamespaces ) {
 		this.searchOptions = {};
-		this.namespaces = defaultNamespaces || [ mw.libs.advancedSearch.dm.SearchModel.MAIN_NAMESPACE ];
+		this.namespaces = defaultNamespaces || [];
 
 		// Mixin constructor
 		OO.EventEmitter.call( this );
@@ -41,12 +41,6 @@
 	 */
 
 	/* Constants */
-
-	/**
-	 * Namespace id of Main (Article) namespace
-	 * @type {string}
-	 */
-	mw.libs.advancedSearch.dm.SearchModel.MAIN_NAMESPACE = '0';
 
 	/**
 	 * Namespace id of File namespace
@@ -144,10 +138,11 @@
 	 * @return {string}
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.toJSON = function () {
-		return JSON.stringify( {
-			options: this.searchOptions,
-			namespaces: this.namespaces
-		} );
+		var json = { options: this.searchOptions };
+		if ( this.namespaces.length ) {
+			json.namespaces = this.namespaces;
+		}
+		return JSON.stringify( json );
 	};
 
 	/**

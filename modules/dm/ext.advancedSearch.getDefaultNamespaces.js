@@ -13,18 +13,12 @@
 	 */
 	mw.libs.advancedSearch.dm.getDefaultNamespaces = function ( userSettings ) {
 		var defaultNamespaces = [];
-		if ( !userSettings ) {
-			return [ mw.libs.advancedSearch.dm.SearchModel.MAIN_NAMESPACE ];
-		}
 		$.each( userSettings, function ( key, value ) {
 			var nsMatch = key.match( /^searchNs(\d+)/ );
 			if ( nsMatch !== null && value ) {
 				defaultNamespaces.push( nsMatch[ 1 ] );
 			}
 		} );
-		if ( defaultNamespaces.length === 0 ) {
-			return [ mw.libs.advancedSearch.dm.SearchModel.MAIN_NAMESPACE ];
-		}
 		return defaultNamespaces;
 	};
 

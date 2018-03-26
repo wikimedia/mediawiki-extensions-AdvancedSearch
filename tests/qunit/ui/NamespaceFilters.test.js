@@ -86,7 +86,7 @@
 				}
 			} );
 
-		assert.namespaceElementsPresent( filter.$namespaceContainer, [ '0' ], 'Article namespace should be initialized out of the box' );
+		assert.namespaceElementsPresent( filter.$namespaceContainer, [], 'There is no hardcoded namespace preset' );
 		model.setNamespaces( [ '1', '3' ] );
 		assert.namespaceElementsPresent( filter.$namespaceContainer, [ '1', '3' ] );
 	} );
