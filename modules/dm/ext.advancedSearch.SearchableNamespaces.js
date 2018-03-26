@@ -9,11 +9,9 @@
 		var namespaces = {};
 		Object.keys( rawNamespaces ).forEach( function ( key ) {
 			if ( parseInt( key, 10 ) >= 0 ) {
-				namespaces[ key ] = rawNamespaces[ key ];
+				namespaces[ key ] = rawNamespaces[ key ] || mw.msg( 'blanknamespace' );
 			}
 		} );
-		// Article namespace has no name by default
-		namespaces[ '0' ] = mw.msg( 'advancedsearch-namespaces-articles' );
 		return namespaces;
 	}
 
