@@ -184,16 +184,20 @@
 					presets: mw.config.get( 'advancedSearch.namespacePresets' )
 				}
 			),
-			namespaceSelectionPreview = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection' );
+			namespaceSelectionPreview = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection' ),
+			rememberNameSpaceSelection = new OO.ui.FieldLayout( new OO.ui.CheckboxInputWidget( {
+				value: mw.user.tokens.get( 'searchnamespaceToken' ),
+				name: 'nsRemember'
+			} ), { label: mw.msg( 'advancedsearch-namespaces-remember' ), align: 'inline' } ),
+			headerContainer = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection-header' );
 
+		headerContainer.append( $( '<strong>' ).text( mw.msg( 'advancedsearch-namespaces-search-in' ) ) )
+			.append( rememberNameSpaceSelection.$element );
 		$advancedSearch.append( namespaceSelectionPreview );
 		namespaceSelectionPreview
 			.after( namespaceSelection.$element )
-			.append( $( '<strong>' ).text( mw.msg( 'advancedsearch-namespaces-search-in' ) ) )
+			.append( headerContainer )
 			.append( namespacePresets.$element );
-
-		// remove old namespace selection item to avoid double ns parameters
-		$( '#mw-searchoptions' ).remove();
 
 		// TODO this is workaround to fix a toggle true event fired after the DOM is loaded
 		setTimeout( function () {
