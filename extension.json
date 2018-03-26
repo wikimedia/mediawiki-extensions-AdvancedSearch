@@ -333,7 +333,7 @@
 				"modules/dm/ext.advancedSearch.SearchableNamespaces.js"
 			],
 			"messages": [
-				"advancedsearch-namespaces-articles"
+				"blanknamespace"
 			]
 		},
 		"ext.advancedSearch.dm.SearchModel": {
