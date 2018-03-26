@@ -165,6 +165,38 @@
 		assert.ok( warningLogger.calledWith( 'AdvancedSearch namespace preset "notvalid" contains unknown namespace ID' ) );
 	} );
 
+	QUnit.test( 'Preset is initially selected and stays when adding unrelated values', function ( assert ) {
+		var model = new Model( [ '1', '2' ] ),
+			presets = new NamespacePresets( model, presetProvider, {
+				presets: {
+					oneAndTwo: {
+						enabled: true,
+						label: '',
+						namespaces: [ '1', '2' ]
+					}
+				}
+			} );
+		assert.deepEqual( presets.getValue(), [ 'oneAndTwo' ], 'initial selection' );
+		model.setNamespaces( [ '1', '2', '3' ] );
+		assert.deepEqual( presets.getValue(), [ 'oneAndTwo' ], 'added unrelated value' );
+	} );
+
+	QUnit.test( 'Preset is initially selected and stays when removing unrelated values', function ( assert ) {
+		var model = new Model( [ '1', '2', '3' ] ),
+			presets = new NamespacePresets( model, presetProvider, {
+				presets: {
+					oneAndTwo: {
+						enabled: true,
+						label: '',
+						namespaces: [ '1', '2' ]
+					}
+				}
+			} );
+		assert.deepEqual( presets.getValue(), [ 'oneAndTwo' ], 'initial selection' );
+		model.setNamespaces( [ '1', '2' ] );
+		assert.deepEqual( presets.getValue(), [ 'oneAndTwo' ], 'removed unrelated value' );
+	} );
+
 	QUnit.test( 'Added namespaces of a preset mark the preset as selected', function ( assert ) {
 		assert.expect( 1 );
 		var model = new Model(),

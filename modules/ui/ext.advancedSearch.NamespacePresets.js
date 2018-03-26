@@ -95,6 +95,8 @@
 		// Using undocumented internals because this.on does not work, see https://phabricator.wikimedia.org/T168735
 		this.checkboxMultiselectWidget.on( 'change', this.updateStoreFromPresets, [], this );
 		this.$element.addClass( 'mw-advancedSearch-namespacePresets' );
+
+		this.updatePresetsFromStore();
 		store.connect( this, { update: 'updatePresetsFromStore' } );
 	};
 

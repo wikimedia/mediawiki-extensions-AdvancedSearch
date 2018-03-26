@@ -137,4 +137,13 @@ describe( 'AdvancedSearch', function () {
 
 	} );
 
+	it( 'marks a namespace preset checkbox when all namespaces behind it are present in the namespace search bar', function () {
+
+		SearchPage.open();
+		SearchPage.generalHelpPreset.click();
+		SearchPage.submitForm();
+		assert( SearchPage.generalHelpPreset.isSelected() );
+
+	} );
+
 } );
