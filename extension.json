@@ -37,6 +37,11 @@
 					],
 					"label": "advancedsearch-namespaces-preset-general-help"
 				},
+				"defaultNamespaces": {
+					"enabled": true,
+					"provider": "defaultNamespaces",
+					"label": "advancedsearch-namespaces-preset-default"
+				},
 				"all": {
 					"enabled": true,
 					"provider": "all",
@@ -264,6 +269,7 @@
 			"messages": [
 				"advancedsearch-namespaces-remember",
 				"advancedsearch-namespaces-preset-all",
+				"advancedsearch-namespaces-preset-default",
 				"advancedsearch-namespaces-preset-general-help",
 				"advancedsearch-namespaces-preset-discussion"
 			]
@@ -351,7 +357,8 @@
 			],
 			"dependencies": [
 				"oojs",
-				"ext.advancedSearch.util"
+				"ext.advancedSearch.util",
+				"ext.advancedSearch.dm.getDefaultNamespaces"
 			]
 		},
 		"ext.advancedSearch.dm.FileTypeOptionProvider": {

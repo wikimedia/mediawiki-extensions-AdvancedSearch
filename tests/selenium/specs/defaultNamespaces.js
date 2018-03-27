@@ -109,4 +109,16 @@ describe( 'Advanced Search', function () {
 		assert.deepEqual( selectedNamespaceIDs, expectedNamespaceIDs );
 	} );
 
+	it( 'displays the default namespaces of the user and wiki and that the default checkbox is selected', () => {
+		let defaultNamespaceOptions = [ '15', '4', '5', '6' ];
+		browser.call( resetUserOptions );
+		browser.call( () => { return setSearchNamespaceOptions( defaultNamespaceOptions ); } );
+		UserLoginPage.login( browser.options.username, browser.options.password );
+		SearchPage.open();
+		let selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs();
+		selectedNamespaceIDs.sort();
+		defaultNamespaceOptions.sort();
+		assert( SearchPage.default.isSelected() );
+		assert.deepEqual( defaultNamespaceOptions, selectedNamespaceIDs );
+	} );
 } );

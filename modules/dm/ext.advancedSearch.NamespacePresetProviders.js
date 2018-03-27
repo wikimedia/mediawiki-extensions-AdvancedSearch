@@ -29,6 +29,9 @@
 				return $.grep( namespaceIds, function ( id ) {
 					return Number( id ) % 2;
 				} );
+			},
+			defaultNamespaces: function () {
+				return mw.libs.advancedSearch.dm.getDefaultNamespaces( mw.user.options.values );
 			}
 		};
 		mw.hook( 'advancedSearch.initNamespacePresetProviders' ).fire( this.providerFunctions );
