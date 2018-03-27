@@ -96,7 +96,7 @@ class SearchPage extends Page {
 			},
 			selectAll: function () {
 				// open the menu
-				browser.element( '.mw-advancedSearch-namespaceFilter .oo-ui-indicator-down' ).click();
+				browser.element( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-content' ).click();
 				const menuItems = browser.elements( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"] .oo-ui-labelElement-label' ).value;
 				const FIRST_UNSELECTED_NAMESPACE_ITEM = 1;
 				for ( let i = FIRST_UNSELECTED_NAMESPACE_ITEM; i < menuItems.length; i++ ) {
@@ -107,7 +107,7 @@ class SearchPage extends Page {
 			},
 			getAllLabelsFromMenu: function () {
 				// open the menu to insert the items in the DOM
-				browser.element( '.mw-advancedSearch-namespaceFilter .oo-ui-indicator-down' ).click();
+				browser.element( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-content' ).click();
 				const labels = browser.elements( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"]' ).value.map(
 					( element ) => {
 						return element.getText();
@@ -118,7 +118,7 @@ class SearchPage extends Page {
 			},
 			getAllLabelsForDisabledItemsInMenu: function () {
 				// open the menu to insert the items in the DOM
-				browser.element( '.mw-advancedSearch-namespaceFilter .oo-ui-indicator-down' ).click();
+				browser.element( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-content' ).click();
 				const labels = browser.elements( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"]' ).value.reduce(
 					( acc, element ) => {
 						if ( element.getAttribute( 'aria-disabled' ) === 'true' ) {
