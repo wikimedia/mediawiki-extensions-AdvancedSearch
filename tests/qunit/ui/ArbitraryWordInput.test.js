@@ -15,8 +15,6 @@
 	QUnit.module( 'ext.advancedSearch.ui.ArbitraryWordInput' );
 
 	QUnit.test( 'Input initially gets set from store', function ( assert ) {
-		assert.expect( 1 );
-
 		var model = new Model();
 		model.storeOption( 'myid', [ 'lorem', 'ipsum', 'something with spaces' ] );
 		var input = new ArbitraryWordInput( model, { optionId: 'myid' } );
@@ -35,8 +33,6 @@
 	 * Currently does not write back into store by itself but relies on createMultiSelectChangeHandler in init to do so
 	 */
 	QUnit.test( 'Changes on input cause update event', function ( assert ) {
-		assert.expect( 4 );
-
 		var input = new ArbitraryWordInput( new Model(), {} );
 		var onChangeSpy = sandbox.spy();
 		input.on( 'change', onChangeSpy );
@@ -53,16 +49,12 @@
 	} );
 
 	QUnit.test( 'Placeholder text presented if no content', function ( assert ) {
-		assert.expect( 1 );
-
 		var input = new ArbitraryWordInput( new Model(), { placeholder: 'lorem ipsum' } );
 
 		assert.equal( input.getTextForPlaceholder(), 'lorem ipsum' );
 	} );
 
 	QUnit.test( 'Placeholder text empty if content gets set', function ( assert ) {
-		assert.expect( 1 );
-
 		var input = new ArbitraryWordInput( new Model(), { placeholder: 'lorem ipsum' } );
 		input.setValue( [ 'asinus' ] );
 
@@ -70,8 +62,6 @@
 	} );
 
 	QUnit.test( 'Placeholder text empty if content set from the start', function ( assert ) {
-		assert.expect( 1 );
-
 		var model = new Model();
 		model.storeOption( 'somekey', [ 'gaudiamus' ] );
 		var input = new ArbitraryWordInput( model, { placeholder: 'lorem ipsum', optionId: 'somekey' } );

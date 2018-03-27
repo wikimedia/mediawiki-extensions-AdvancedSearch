@@ -24,8 +24,6 @@
 	}
 
 	QUnit.test( 'Passing a provider function creates namespace presets from the provider', function ( assert ) {
-		assert.expect( 1 );
-
 		presetProvider.hasProvider.returns( true );
 		presetProvider.getNamespaceIdsFromProvider.returns( [ '0', '1', '2' ] );
 
@@ -43,8 +41,6 @@
 	} );
 
 	QUnit.test( 'Passing a nonexisting provider function creates no namespace preset', function ( assert ) {
-		assert.expect( 2 );
-
 		presetProvider.hasProvider.withArgs( 'blackhole' ).returns( false );
 		var warningLogger = sandbox.stub( mw.log, 'warn' );
 		var presets = new NamespacePresets( new Model(), presetProvider, {
@@ -62,8 +58,6 @@
 	} );
 
 	QUnit.test( 'Passing a malformed preset config creates no namespace preset', function ( assert ) {
-		assert.expect( 2 );
-
 		var warningLogger = sandbox.stub( mw.log, 'warn' );
 		var presets = new NamespacePresets( new Model(), presetProvider, {
 			presets: {
@@ -79,8 +73,6 @@
 	} );
 
 	QUnit.test( 'Passing a disabled preset config creates no namespace preset', function ( assert ) {
-		assert.expect( 1 );
-
 		var presets = new NamespacePresets( new Model(), presetProvider, {
 			presets: {
 				turnedoff: {
@@ -95,8 +87,6 @@
 	} );
 
 	QUnit.test( 'Passing a preset config omitting "enabled" creates no namespace preset', function ( assert ) {
-		assert.expect( 1 );
-
 		var presets = new NamespacePresets( new Model(), presetProvider, {
 			presets: {
 				undecided: {
@@ -110,8 +100,6 @@
 	} );
 
 	QUnit.test( 'Selecting namespace adds its preset', function ( assert ) {
-		assert.expect( 1 );
-
 		var model = new Model(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
@@ -127,8 +115,6 @@
 	} );
 
 	QUnit.test( 'Presets with empty namespace definitions log a warning', function ( assert ) {
-		assert.expect( 2 );
-
 		var warningLogger = sandbox.stub( mw.log, 'warn' ),
 			model = new Model(),
 			presets = new NamespacePresets( model, presetProvider, {
@@ -146,8 +132,6 @@
 	} );
 
 	QUnit.test( 'Presets with invalid namespace definitions log a warning', function ( assert ) {
-		assert.expect( 2 );
-
 		presetProvider.namespaceIdsAreValid.returns( false );
 		var warningLogger = sandbox.stub( mw.log, 'warn' ),
 			model = new Model(),
@@ -198,7 +182,6 @@
 	} );
 
 	QUnit.test( 'Added namespaces of a preset mark the preset as selected', function ( assert ) {
-		assert.expect( 1 );
 		var model = new Model(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
@@ -219,7 +202,6 @@
 	} );
 
 	QUnit.test( 'Added namespaces of two presets mark both presets as selected', function ( assert ) {
-		assert.expect( 1 );
 		var model = new Model(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
@@ -240,8 +222,6 @@
 	} );
 
 	QUnit.test( 'Unselecting namespace removes its preset', function ( assert ) {
-		assert.expect( 1 );
-
 		var model = new Model(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
@@ -258,8 +238,6 @@
 	} );
 
 	QUnit.test( 'Changing the store namespaces to the preset namespaces, selects preset irrespective of order', function ( assert ) {
-		assert.expect( 4 );
-
 		var model = new Model(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
