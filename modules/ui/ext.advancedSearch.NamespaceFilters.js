@@ -17,7 +17,6 @@
 	 */
 	mw.libs.advancedSearch.ui.NamespaceFilters = function ( store, config ) {
 		config = $.extend( {
-			indicator: 'down',
 			namespaces: {},
 			namespaceIcons: {
 				2: 'userAvatar',
@@ -199,16 +198,6 @@
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.onMenuChoose = function ( menuItem ) {
 		mw.libs.advancedSearch.ui.NamespaceFilters.parent.prototype.onMenuChoose.call( this, menuItem );
 		this.clearInput();
-	};
-
-	/**
-	 * Respond to menu toggle event by changing the indicator
-	 *
-	 * @param {boolean} isVisible
-	 */
-	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.onMenuToggle = function ( isVisible ) {
-		mw.libs.advancedSearch.ui.NamespaceFilters.parent.prototype.onMenuToggle.call( this, isVisible );
-		this.setIndicator( isVisible ? 'up' : 'down' );
 	};
 
 }( mediaWiki, jQuery ) );
