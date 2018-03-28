@@ -26,9 +26,7 @@ describe( 'Advanced Search', function () {
 						return editPage( pageNumber + 1 );
 					}
 				} ).catch( ( err ) => {
-
 					return reject( err );
-
 				} );
 			};
 			client.loginGetEditToken( {
