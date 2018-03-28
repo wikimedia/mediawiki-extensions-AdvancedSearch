@@ -31,7 +31,6 @@
 			presets: {
 				justatest: {
 					enabled: true,
-					label: 'testing a provider',
 					provider: 'justatest'
 				}
 			}
@@ -47,7 +46,6 @@
 			presets: {
 				blackhole: {
 					enabled: true,
-					label: 'testing a provider',
 					provider: 'blackhole'
 				}
 			}
@@ -62,8 +60,7 @@
 		var presets = new NamespacePresets( new Model(), presetProvider, {
 			presets: {
 				borken: {
-					enabled: true,
-					label: 'testing broken config'
+					enabled: true
 				}
 			}
 		} );
@@ -77,8 +74,7 @@
 			presets: {
 				turnedoff: {
 					enabled: false,
-					namespaces: [ '0', '1', '2' ],
-					label: 'disabled config'
+					namespaces: [ '0', '1', '2' ]
 				}
 			}
 		} );
@@ -90,8 +86,7 @@
 		var presets = new NamespacePresets( new Model(), presetProvider, {
 			presets: {
 				undecided: {
-					namespaces: [ '2', '4', '6', '8' ],
-					label: 'config skipping enabled'
+					namespaces: [ '2', '4', '6', '8' ]
 				}
 			}
 		} );
@@ -105,7 +100,6 @@
 				presets: {
 					all: {
 						enabled: true,
-						label: 'All',
 						namespaces: [ '0', '1', '2' ]
 					}
 				}
@@ -121,7 +115,6 @@
 				presets: {
 					emptypreset: {
 						enabled: true,
-						label: 'All',
 						namespaces: []
 					}
 				}
@@ -139,7 +132,6 @@
 				presets: {
 					notvalid: {
 						enabled: true,
-						label: 'All',
 						namespaces: [ '1', '2' ]
 					}
 				}
@@ -155,7 +147,6 @@
 				presets: {
 					oneAndTwo: {
 						enabled: true,
-						label: '',
 						namespaces: [ '1', '2' ]
 					}
 				}
@@ -171,7 +162,6 @@
 				presets: {
 					oneAndTwo: {
 						enabled: true,
-						label: '',
 						namespaces: [ '1', '2' ]
 					}
 				}
@@ -187,13 +177,11 @@
 				presets: {
 					discussions: {
 						enabled: true,
-						namespaces: [ '3', '5', '7', '9', '11', '13', '711' ],
-						label: 'Discussion'
+						namespaces: [ '3', '5', '7', '9', '11', '13', '711' ]
 					},
 					generalHelp: {
 						enabled: true,
-						namespaces: [ '4', '12' ],
-						label: 'General Help'
+						namespaces: [ '4', '12' ]
 					}
 				}
 			} );
@@ -207,13 +195,11 @@
 				presets: {
 					discussions: {
 						enabled: true,
-						namespaces: [ '3', '5', '7', '9', '11', '13', '711' ],
-						label: 'Discussion'
+						namespaces: [ '3', '5', '7', '9', '11', '13', '711' ]
 					},
 					generalHelp: {
 						enabled: true,
-						namespaces: [ '4', '12' ],
-						label: 'General Help'
+						namespaces: [ '4', '12' ]
 					}
 				}
 			} );
@@ -227,7 +213,6 @@
 				presets: {
 					all: {
 						enabled: true,
-						label: 'All',
 						namespaces: [ '0', '1', '2' ]
 					}
 				}
@@ -243,7 +228,6 @@
 				presets: {
 					all: {
 						enabled: true,
-						label: 'All',
 						namespaces: [ '0', '1', '-1200' ]
 					}
 				}

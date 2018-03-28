@@ -27,7 +27,7 @@
 	function groomPresets( presets, presetProvider ) {
 		var groomedPresets = {};
 		$.each( presets, function ( key, presetConfig ) {
-			var preset = { label: presetConfig.label };
+			var preset = { label: presetConfig.label || key };
 
 			if ( !presetConfig.hasOwnProperty( 'enabled' ) || presetConfig.enabled !== true ) {
 				return;
