@@ -1,6 +1,13 @@
 /* Overwrite timeless padding to OO default to fit general layout */
 .mw-advancedSearch-container input {
+	/* Hack around an incompatibility between Timeless and OOUI, please remove if possible */
+	box-shadow: none;
 	padding: 0.625em 0.625em 0.546875em;
+}
+
+.value-container input {
+	/* Removing Timeless' margin on inputs fixes https://phabricator.wikimedia.org/T189950 */
+	margin: 0;
 }
 
 /* Disable overflow to fully show search forms */
