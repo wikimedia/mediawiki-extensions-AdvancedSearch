@@ -51,7 +51,6 @@
 	/* Methods */
 
 	/**
-	 *
 	 * @param {string} optionId
 	 * @param {*} value
 	 */

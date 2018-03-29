@@ -15,7 +15,6 @@
 	 */
 
 	/**
-	 *
 	 * @param {ext.advancedSearch.dm.SearchableNamespaces} namespaces
 	 * @constructor
 	 */
@@ -44,24 +43,25 @@
 	};
 
 	/**
-	 *
 	 * @param {String} providerName
 	 * @return {String[]}
 	 */
 	mw.libs.advancedSearch.dm.NamespacePresetProviders.prototype.getNamespaceIdsFromProvider = function ( providerName ) {
-		var ids = $.map(
-			this.providerFunctions[ providerName ]( this.namespaces.getNamespaceIds() ),
-			function ( id ) { return String( id ); }
-		);
-		if ( !this.namespaceIdsAreValid( ids ) ) {
-			mw.log.warn( 'AdvancedSearch namespace preset provider "' + providerName + '" returned invalid namespace ID' );
-			return [];
-		}
-		return ids;
+		var self = this;
+
+		return this.providerFunctions[ providerName ]( this.namespaces.getNamespaceIds() )
+			// Calling String() as a function casts numbers to strings
+			.map( String )
+			.filter( function ( id ) {
+				if ( id in self.namespaces.getNamespaces() ) {
+					return true;
+				}
+				mw.log.warn( 'AdvancedSearch namespace preset provider "' + providerName + '" returned invalid namespace ID' );
+				return false;
+			} );
 	};
 
 	/**
-	 *
 	 * @param {String[]} namespaceIds
 	 * @return {bool}
 	 */
