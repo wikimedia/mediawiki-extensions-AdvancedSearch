@@ -5,14 +5,18 @@
 	mw.libs.advancedSearch = mw.libs.advancedSearch || {};
 	mw.libs.advancedSearch.dm = mw.libs.advancedSearch.dm || {};
 
-	function prepareNamespaces( rawNamespaces ) {
-		var namespaces = {};
-		Object.keys( rawNamespaces ).forEach( function ( key ) {
-			if ( parseInt( key, 10 ) >= 0 ) {
-				namespaces[ key ] = rawNamespaces[ key ] || mw.msg( 'blanknamespace' );
+	/**
+	 * @param {Object} allNamespaces
+	 * @return {Object}
+	 */
+	function filterSearchableNamespaces( allNamespaces ) {
+		var searchableNamespaces = {};
+		Object.keys( allNamespaces ).forEach( function ( id ) {
+			if ( Number( id ) >= 0 ) {
+				searchableNamespaces[ id ] = allNamespaces[ id ] || mw.msg( 'blanknamespace' );
 			}
 		} );
-		return namespaces;
+		return searchableNamespaces;
 	}
 
 	/**
@@ -20,10 +24,10 @@
 	 *
 	 * @class
 	 * @constructor
-	 * @param {Object} namespaces Namespaces as provided by mw.config.get( 'wgFormattedNamespaces' )
+	 * @param {Object} allNamespaces Namespaces as provided by mw.config.get( 'wgFormattedNamespaces' )
 	 */
-	mw.libs.advancedSearch.dm.SearchableNamespaces = function ( namespaces ) {
-		this.namespaces = prepareNamespaces( namespaces );
+	mw.libs.advancedSearch.dm.SearchableNamespaces = function ( allNamespaces ) {
+		this.namespaces = filterSearchableNamespaces( allNamespaces );
 	};
 
 	/**

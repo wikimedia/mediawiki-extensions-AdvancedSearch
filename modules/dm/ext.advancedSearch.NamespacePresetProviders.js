@@ -22,12 +22,12 @@
 	mw.libs.advancedSearch.dm.NamespacePresetProviders = function ( namespaces ) {
 		this.namespaces = namespaces;
 		this.providerFunctions = {
-			all: function ( namespaces ) {
-				return namespaces;
+			all: function ( namespaceIds ) {
+				return namespaceIds;
 			},
-			discussion: function ( namespaces ) {
-				return $.grep( namespaces, function ( id ) {
-					return parseInt( id, 10 ) % 2;
+			discussion: function ( namespaceIds ) {
+				return $.grep( namespaceIds, function ( id ) {
+					return Number( id ) % 2;
 				} );
 			}
 		};

@@ -55,9 +55,9 @@ $wgAdvancedSearchNamespacePresets = [
 
 ```
 // in the Javascript initialization code of your extension or in the common.js of your wiki 
-function customTalkNamespaceProvider( namespaceIDs ) {
-	$.grep( namespaceIDs, function ( id ) {
-		var numericId = parseInt( id, 10 ); 
+function customTalkNamespaceProvider( namespaceIds ) {
+	$.grep( namespaceIds, function ( id ) {
+		var numericId = Number( id );
 		return numericId > 100 && numericId % 2;
 	} );
 }

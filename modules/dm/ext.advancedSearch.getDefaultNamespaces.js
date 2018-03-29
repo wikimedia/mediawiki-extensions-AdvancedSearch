@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function ( mw ) {
 	'use strict';
 
 	mw.libs = mw.libs || {};
@@ -13,13 +13,15 @@
 	 */
 	mw.libs.advancedSearch.dm.getDefaultNamespaces = function ( userSettings ) {
 		var defaultNamespaces = [];
-		$.each( userSettings, function ( key, value ) {
-			var nsMatch = key.match( /^searchNs(\d+)/ );
-			if ( nsMatch !== null && value ) {
-				defaultNamespaces.push( nsMatch[ 1 ] );
+		Object.keys( userSettings ).forEach( function ( key ) {
+			if ( userSettings[ key ] ) {
+				var matches = key.match( /^searchNs(\d+)$/ );
+				if ( matches ) {
+					defaultNamespaces.push( matches[ 1 ] );
+				}
 			}
 		} );
 		return defaultNamespaces;
 	};
 
-}( mediaWiki, jQuery ) );
+}( mediaWiki ) );
