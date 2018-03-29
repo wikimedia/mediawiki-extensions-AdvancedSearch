@@ -9,21 +9,36 @@ describe( 'Advanced Search', function () {
 		Bot = require( 'mwbot' ); // https://github.com/Fannon/mwbot
 
 	function setSearchNamespaceOptions( namespaceIds ) {
-		let client = new Bot();
+		const client = new Bot();
 		return client.loginGetEditToken( {
 			username: browser.options.username,
 			password: browser.options.password,
 			apiUrl: browser.options.baseUrl + '/api.php'
 		} ).then( () => {
-			const searchNamespaces = namespaceIds.map( ( nsId ) => {
-				return 'searchNs' + nsId + '=true';
-			} ).join( '|' );
 			return client.request( {
-				action: 'options',
-				change: searchNamespaces,
-				token: client.editToken
-			} ).then( () => {
-				// success
+				action: 'query',
+				meta: 'userinfo',
+				uiprop: 'options'
+			} ).then( ( data ) => {
+				let searchNamespaces = namespaceIds.map( ( nsId ) => {
+					return 'searchNs' + nsId + '=1';
+				} ).join( '|' );
+				const userOptions = data.query.userinfo.options;
+				Object.keys( userOptions ).forEach( function ( key ) {
+					if ( userOptions[ key ] &&
+						key.indexOf( 'searchNs' ) === 0 &&
+						searchNamespaces.indexOf( key + '=1' ) === -1
+					) {
+						searchNamespaces += '|' + key + '=0';
+					}
+				} );
+				return client.request( {
+					action: 'options',
+					change: searchNamespaces,
+					token: client.editToken
+				} ).catch( ( err ) => {
+					log( err );
+				} );
 			} ).catch( ( err ) => {
 				log( err );
 			} );
@@ -31,8 +46,9 @@ describe( 'Advanced Search', function () {
 			log( err );
 		} );
 	}
-	function resetSearchNamespaceOptions() {
-		let client = new Bot();
+
+	function resetUserOptions() {
+		const client = new Bot();
 		return client.loginGetEditToken( {
 			username: browser.options.username,
 			password: browser.options.password,
@@ -42,8 +58,6 @@ describe( 'Advanced Search', function () {
 				action: 'options',
 				reset: true,
 				token: client.editToken
-			} ).then( () => {
-				// success
 			} ).catch( ( err ) => {
 				log( err );
 			} );
@@ -53,7 +67,7 @@ describe( 'Advanced Search', function () {
 	}
 
 	it( 'selects the default namespaces', () => {
-		browser.call( resetSearchNamespaceOptions );
+		browser.call( resetUserOptions );
 		browser.call( () => { return setSearchNamespaceOptions( [ '0', '1', '2', '10' ] ); } );
 		UserLoginPage.login( browser.options.username, browser.options.password );
 		SearchPage.open();
@@ -61,7 +75,7 @@ describe( 'Advanced Search', function () {
 			expectedNamespaceIDs = [ '0', '1', '2', '10' ];
 		selectedNamespaceIDs.sort();
 		expectedNamespaceIDs.sort();
-		browser.call( resetSearchNamespaceOptions );
+		browser.call( resetUserOptions );
 
 		assert.deepEqual( selectedNamespaceIDs, expectedNamespaceIDs );
 	} );
@@ -72,7 +86,7 @@ describe( 'Advanced Search', function () {
 			expectedNamespaceIDs = [ '0', '1', '2', '10' ];
 		selectedNamespaceIDs.sort();
 		expectedNamespaceIDs.sort();
-		browser.call( resetSearchNamespaceOptions );
+		browser.call( resetUserOptions );
 
 		assert.deepEqual( selectedNamespaceIDs, expectedNamespaceIDs );
 	} );
@@ -90,7 +104,7 @@ describe( 'Advanced Search', function () {
 			expectedNamespaceIDs = [ '1', '2' ];
 		selectedNamespaceIDs.sort();
 		expectedNamespaceIDs.sort();
-		browser.call( resetSearchNamespaceOptions );
+		browser.call( resetUserOptions );
 
 		assert.deepEqual( selectedNamespaceIDs, expectedNamespaceIDs );
 	} );
