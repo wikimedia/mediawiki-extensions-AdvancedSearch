@@ -52,10 +52,11 @@
 	"advancedsearch-filesize-greater-than": "större än",
 	"advancedsearch-filesize-smaller-than": "mindre än",
 	"advancedsearch-namespaces-search-in": "Sök på:",
+	"advancedsearch-namespaces-remember": "Kom ihåg val för framtida sökningar",
 	"advancedsearch-namespaces-preset-all": "Alla",
 	"advancedsearch-namespaces-preset-general-help": "Allmän hjälp",
 	"advancedsearch-namespaces-preset-discussion": "Diskussion",
-	"advancedsearch-namespaces-placeholder": "Lägg till namnrymder",
+	"advancedsearch-namespaces-placeholder": "Lägg till namnrymder…",
 	"advancedsearch-beta-feature-message": "Avancerat sökgränssnitt",
 	"advancedsearch-beta-feature-description": "Enkel åtkomst till avancerade sökförmågor på [[Special:Search]]."
 }

@@ -10,6 +10,7 @@
 	},
 	"advancedsearch-field-filetype": "फ़ाइल का प्रकार:",
 	"advancedsearch-placeholder-exact-text": "\nसटीक शब्दों को उद्धरण में रखें: \"बिल्ली बकरी को प्यार करती है\"",
+	"advancedsearch-inlanguage-default": "भाषा चुनें",
 	"advancedsearch-filetype-section-video": "वीडियो का फ़ारमैट",
 	"advancedsearch-filetype-section-document": "दस्तावेज़ का फ़ारमैट",
 	"advancedsearch-filetype-bitmap": "छवि",

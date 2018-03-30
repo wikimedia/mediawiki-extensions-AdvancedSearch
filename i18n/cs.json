@@ -3,7 +3,8 @@
 		"authors": [
 			"Mormegil",
 			"Ilimanaq29",
-			"Matěj Suchánek"
+			"Matěj Suchánek",
+			"Spotter"
 		]
 	},
 	"advancedsearch-desc": "Jednoduchý přístup k pokročilým možnostem vyhledávání na stránce [[Special:Search]]",
@@ -57,7 +58,7 @@
 	"advancedsearch-namespaces-preset-all": "Vše",
 	"advancedsearch-namespaces-preset-general-help": "Všeobecná pomoc",
 	"advancedsearch-namespaces-preset-discussion": "Diskuse",
-	"advancedsearch-namespaces-placeholder": "Přidejte jmenné prostory",
+	"advancedsearch-namespaces-placeholder": "Přidat jmenné prostory",
 	"advancedsearch-beta-feature-message": "Rozhraní pokročilého vyhledávání",
 	"advancedsearch-beta-feature-description": "Jednoduchý přístup k pokročilým možnostem vyhledávání na stránce [[Special:Search]]."
 }

@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Unuaiga"
+			"Unuaiga",
+			"Coriandre"
 		]
 	},
-	"advancedsearch-namespaces-remember": "Se remembrar de la seleccion per las recèrcas venentas"
+	"advancedsearch-namespaces-remember": "Se remembrar de la seleccion per las recèrcas venentas",
+	"advancedsearch-namespaces-placeholder": "Apondre de noms d'espacis"
 }

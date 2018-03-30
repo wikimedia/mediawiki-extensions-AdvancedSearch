@@ -49,9 +49,10 @@
 	"advancedsearch-namespaces-search-in": "חיפוש ב־:",
 	"advancedsearch-namespaces-remember": "שמירת הבחירה עבור חיפושים עתידיים",
 	"advancedsearch-namespaces-preset-all": "הכול",
+	"advancedsearch-namespaces-preset-default": "ברירת מחדל",
 	"advancedsearch-namespaces-preset-general-help": "עזרה כללית",
 	"advancedsearch-namespaces-preset-discussion": "דיון",
-	"advancedsearch-namespaces-placeholder": "הוספת מרחבי שם",
+	"advancedsearch-namespaces-placeholder": "הוספת מרחבי שם…",
 	"advancedsearch-beta-feature-message": "ממשק חיפוש מתקדם",
 	"advancedsearch-beta-feature-description": "גישה קלה ליכולות חיפוש מתקדמים בדף [[Special:Search|מיוחד:חיפוש]]."
 }

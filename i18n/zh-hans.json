@@ -56,9 +56,10 @@
 	"advancedsearch-namespaces-search-in": "在此名字空间中搜索：",
 	"advancedsearch-namespaces-remember": "记住选择用于以后的搜索",
 	"advancedsearch-namespaces-preset-all": "全部",
+	"advancedsearch-namespaces-preset-default": "默认",
 	"advancedsearch-namespaces-preset-general-help": "一般帮助",
 	"advancedsearch-namespaces-preset-discussion": "讨论",
-	"advancedsearch-namespaces-placeholder": "加入名字空间",
+	"advancedsearch-namespaces-placeholder": "加入名字空间…",
 	"advancedsearch-beta-feature-message": "高级搜索界面",
 	"advancedsearch-beta-feature-description": "在[[Special:Search]]提供高级搜索功能的轻松访问。"
 }
