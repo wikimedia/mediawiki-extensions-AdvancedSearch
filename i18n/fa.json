@@ -24,6 +24,7 @@
 	"advancedsearch-field-intitle": "عنوان صفحه شامل:",
 	"advancedsearch-field-deepcat": "صفحه در این رده:",
 	"advancedsearch-field-hastemplate": "تنها صفحات دارای این الگو:",
+	"advancedsearch-field-inlanguage": "صفحات در این زبان:",
 	"advancedsearch-field-filetype": "نوع پرونده:",
 	"advancedsearch-field-filew": "عرض پرونده برحسب پیکسل:",
 	"advancedsearch-field-fileh": "ارتفاع پرونده برحسب پیکسل:",
@@ -48,9 +49,10 @@
 	"advancedsearch-filesize-smaller-than": "کوچکتر از",
 	"advancedsearch-namespaces-search-in": "جستجو در:",
 	"advancedsearch-namespaces-preset-all": "همه",
+	"advancedsearch-namespaces-preset-default": "پیش‌فرض",
 	"advancedsearch-namespaces-preset-general-help": "کمک عمومی",
 	"advancedsearch-namespaces-preset-discussion": "بحث",
-	"advancedsearch-namespaces-placeholder": "افزودن فضاهای نام",
+	"advancedsearch-namespaces-placeholder": "افزودن فضاهای نام…",
 	"advancedsearch-beta-feature-message": "رابط جستجوی پیشرفته",
 	"advancedsearch-beta-feature-description": "دسترسی آسان به قابلیت‌های جستجوی پیشرفته با [[Special:Search]]"
 }
