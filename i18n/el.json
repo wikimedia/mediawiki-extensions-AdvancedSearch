@@ -44,8 +44,9 @@
 	"advancedsearch-filesize-smaller-than": "μικρότερο από",
 	"advancedsearch-namespaces-search-in": "Αναζήτηση σε:",
 	"advancedsearch-namespaces-preset-all": "Όλα",
+	"advancedsearch-namespaces-preset-default": "Προεπιλογή",
 	"advancedsearch-namespaces-preset-general-help": "Γενική βοήθεια",
 	"advancedsearch-namespaces-preset-discussion": "Συζήτηση",
-	"advancedsearch-namespaces-placeholder": "Πρόσθεση ονοματοχώρων:",
+	"advancedsearch-namespaces-placeholder": "Πρόσθεση ονοματοχώρων σε εξέλιξη...",
 	"advancedsearch-beta-feature-message": "Διεπαφή προχωρημένης αναζήτησης"
 }

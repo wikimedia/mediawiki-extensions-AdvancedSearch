@@ -47,8 +47,9 @@
 	"advancedsearch-namespaces-search-in": "검색 위치:",
 	"advancedsearch-namespaces-remember": "향후 검색에 선택 기억하기",
 	"advancedsearch-namespaces-preset-all": "모두",
+	"advancedsearch-namespaces-preset-default": "기본값",
 	"advancedsearch-namespaces-preset-general-help": "일반 도움말",
 	"advancedsearch-namespaces-preset-discussion": "토론",
-	"advancedsearch-namespaces-placeholder": "이름공간 추가",
+	"advancedsearch-namespaces-placeholder": "이름공간 추가...",
 	"advancedsearch-beta-feature-message": "고급 검색 인터페이스"
 }

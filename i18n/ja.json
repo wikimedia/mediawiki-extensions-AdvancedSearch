@@ -3,7 +3,8 @@
 		"authors": [
 			"Hinaloe",
 			"Yusuke1109",
-			"夢蝶葬花"
+			"夢蝶葬花",
+			"Omotecho"
 		]
 	},
 	"advancedsearch-desc": "[[Special:Search]]の高度な検索機能への簡単なアクセス",
@@ -30,7 +31,7 @@
 	"advancedsearch-filesize-smaller-than": "未満",
 	"advancedsearch-namespaces-preset-all": "すべて",
 	"advancedsearch-namespaces-preset-discussion": "議論",
-	"advancedsearch-namespaces-placeholder": "名前空間を追加",
+	"advancedsearch-namespaces-placeholder": "名前空間を追加…",
 	"advancedsearch-beta-feature-message": "高度な検索インタフェース",
 	"advancedsearch-beta-feature-description": "[[Special:Search]]の高度な検索機能に簡単にアクセスできます。"
 }
