@@ -63,6 +63,11 @@
 			return;
 		}
 
+		if ( value === '' || ( Array.isArray( value ) && value.length === 0 ) ) {
+			this.removeOption( optionId );
+			return;
+		}
+
 		this.searchOptions[ optionId ] = value;
 
 		if ( optionId === 'filetype' && !this.filetypeSupportsDimensions() ) {
@@ -94,7 +99,6 @@
 	 * @param {string} optionId
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.removeOption = function ( optionId ) {
-
 		if ( this.searchOptions[ optionId ] === undefined ) {
 			return;
 		}
@@ -110,10 +114,12 @@
 
 	/**
 	 * Reset the file dimension search options
+	 *
+	 * @private
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.resetFileDimensionOptions = function () {
-		this.searchOptions.filew = [ '>', '' ];
-		this.searchOptions.fileh = [ '>', '' ];
+		this.removeOption( 'filew' );
+		this.removeOption( 'fileh' );
 	};
 
 	/**

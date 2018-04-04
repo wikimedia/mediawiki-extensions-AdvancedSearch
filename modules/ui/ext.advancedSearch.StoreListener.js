@@ -30,7 +30,7 @@
 	};
 
 	mw.libs.advancedSearch.ui.StoreListener.prototype.setValueFromStore = function () {
-		var storeValue = this.store.getOption( this.optionId ),
+		var storeValue = this.store.getOption( this.optionId ) || '',
 			selectedItem = this.dropdownWidget.getMenu().findItemFromData( storeValue );
 		// avoid setting invalid values and re-triggering
 		if ( selectedItem === null || this.getValue() === storeValue ) {
