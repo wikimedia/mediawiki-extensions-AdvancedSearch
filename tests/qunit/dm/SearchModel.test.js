@@ -154,8 +154,8 @@
 		model.storeOption( 'filetype', 'bitmap' );
 		assert.ok( model.filetypeSupportsDimensions(), 'File type of bitmap must be supported' );
 
-		model.storeOption( 'filetype', 'vector' );
-		assert.ok( model.filetypeSupportsDimensions(), 'File type of vector (drawing) must be supported' );
+		model.storeOption( 'filetype', 'drawing' );
+		assert.ok( model.filetypeSupportsDimensions(), 'File type of drawing must be supported' );
 
 		model.storeOption( 'filetype', 'image/jpeg' );
 		assert.ok( model.filetypeSupportsDimensions(), 'Image MIME type must be supported' );

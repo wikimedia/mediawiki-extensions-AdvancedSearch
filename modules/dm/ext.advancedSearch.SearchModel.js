@@ -8,7 +8,7 @@
 	// Internal constants
 	var FILETYPES_WITH_DIMENSIONS = [
 		'bitmap',
-		'vector',
+		'drawing',
 		'image',
 		'video'
 	];

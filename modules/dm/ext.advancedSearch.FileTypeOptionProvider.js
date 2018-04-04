@@ -88,7 +88,7 @@
 		return [
 			{ optgroup: mw.msg( 'advancedsearch-filetype-section-types' ) },
 			{ data: 'bitmap', label: mw.msg( 'advancedsearch-filetype-bitmap' ) },
-			{ data: 'vector', label: mw.msg( 'advancedsearch-filetype-vector' ) },
+			{ data: 'drawing', label: mw.msg( 'advancedsearch-filetype-drawing' ) },
 			{ data: 'video', label: mw.msg( 'advancedsearch-filetype-video' ) },
 			{ data: 'audio', label: mw.msg( 'advancedsearch-filetype-audio' ) },
 			{ data: 'office', label: mw.msg( 'advancedsearch-filetype-office' ) }

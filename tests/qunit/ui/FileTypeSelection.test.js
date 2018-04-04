@@ -11,7 +11,7 @@
 				return [
 					{ optgroup: 'section' },
 					{ data: 'bitmap', label: 'bitmapLabel' },
-					{ data: 'vector', label: 'vector' }
+					{ data: 'drawing', label: 'drawing' }
 				];
 			},
 			getAllowedFileTypeOptions: function () {
@@ -37,15 +37,15 @@
 		assert.equal( optionGroups[ 0 ].value, '', 'First option which is the default one from the dropdown is empty' );
 		assert.equal( optionGroups[ 1 ].children[ 0 ].value, 'bitmap' );
 		assert.equal( optionGroups[ 1 ].children[ 0 ].innerText, 'bitmapLabel', 'The label is different than the value' );
-		assert.equal( optionGroups[ 1 ].children[ 1 ].value, 'vector' );
+		assert.equal( optionGroups[ 1 ].children[ 1 ].value, 'drawing' );
 		assert.equal( optionGroups[ 2 ].children[ 0 ].value, 'image/png' );
 	} );
 
 	QUnit.test( 'Dropdown menu updates when store changes', function ( assert ) {
 		var dropdown = new FileTypeSelection( store, optionProvider, config );
 
-		store.storeOption( 'filetype', 'vector' );
-		assert.equal( dropdown.getValue(), 'vector' );
+		store.storeOption( 'filetype', 'drawing' );
+		assert.equal( dropdown.getValue(), 'drawing' );
 
 		store.storeOption( 'filetype', '' );
 		assert.equal( dropdown.getValue(), '' );

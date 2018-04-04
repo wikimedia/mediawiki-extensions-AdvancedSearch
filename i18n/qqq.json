@@ -48,7 +48,7 @@
 	"advancedsearch-filetype-section-other": "Label for the other formats section",
 	"advancedsearch-filetype-default": "Label for default option",
 	"advancedsearch-filetype-bitmap": "Label for image file type\n{{Identical|Image}}",
-	"advancedsearch-filetype-vector": "Label for drawing file type\n{{Identical|Drawing}}",
+	"advancedsearch-filetype-drawing": "Label for drawing file type\n{{Identical|Drawing}}",
 	"advancedsearch-filetype-audio": "Label for audio file type\n{{Identical|Audio}}",
 	"advancedsearch-filetype-video": "Label for video file type\n{{Identical|Video}}",
 	"advancedsearch-filetype-office": "Label for office file types\n{{Identical|Office}}",

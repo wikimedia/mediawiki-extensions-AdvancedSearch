@@ -329,7 +329,6 @@
 						switch ( val ) {
 
 							case 'bitmap':
-							case 'vector':
 							case 'audio':
 							case 'drawing':
 							case 'office':

@@ -49,7 +49,7 @@
 	"advancedsearch-filetype-section-other": "Other formats",
 	"advancedsearch-filetype-default": "Select file type",
 	"advancedsearch-filetype-bitmap": "Image",
-	"advancedsearch-filetype-vector": "Drawing",
+	"advancedsearch-filetype-drawing": "Drawing",
 	"advancedsearch-filetype-audio": "Audio",
 	"advancedsearch-filetype-video": "Video",
 	"advancedsearch-filetype-office": "Office",
