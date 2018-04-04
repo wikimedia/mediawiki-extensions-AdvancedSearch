@@ -7,7 +7,8 @@
 			"Obzord",
 			"Arian Ar",
 			"Alifakoor",
-			"Arash"
+			"Arash",
+			"Mardetanha"
 		]
 	},
 	"advancedsearch-desc": "دسترسی آسان به قابلیت‌های جستجوی پیشرفته در [[Special:Search]]",
@@ -40,7 +41,7 @@
 	"advancedsearch-filetype-section-other": "فرمت دیگر",
 	"advancedsearch-filetype-default": "نوع پرونده را مشخص کنید",
 	"advancedsearch-filetype-bitmap": "تصویر",
-	"advancedsearch-filetype-vector": "نقاشی",
+	"advancedsearch-filetype-drawing": "نقاشی",
 	"advancedsearch-filetype-audio": "صوت",
 	"advancedsearch-filetype-video": "ویدئو",
 	"advancedsearch-filetype-office": "دفتر",
@@ -48,6 +49,7 @@
 	"advancedsearch-filesize-greater-than": "بزرگتر از",
 	"advancedsearch-filesize-smaller-than": "کوچکتر از",
 	"advancedsearch-namespaces-search-in": "جستجو در:",
+	"advancedsearch-namespaces-remember": "انتخاب را برای جستجوهای بعدی به خاطر داشته‌باش",
 	"advancedsearch-namespaces-preset-all": "همه",
 	"advancedsearch-namespaces-preset-default": "پیش‌فرض",
 	"advancedsearch-namespaces-preset-general-help": "کمک عمومی",
