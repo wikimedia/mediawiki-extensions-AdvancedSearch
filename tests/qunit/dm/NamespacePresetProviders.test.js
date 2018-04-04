@@ -50,13 +50,31 @@
 		assert.deepEqual( namespaceIdResult, namespaceIDs );
 	} );
 
-	QUnit.test( 'When provider functions return invalid IDs, a warning is logged and empty array is returned', function ( assert ) {
+	QUnit.test( 'A single invalid ID does not render the entire preset invalid', function ( assert ) {
+		var providerInitializationFunction = function ( providerFunctions ) {
+				providerFunctions.partlyInvalid = function () {
+					return [ '0', '1', '4711' ];
+				};
+			},
+			hook = mw.hook( 'advancedSearch.initNamespacePresetProviders' ),
+			presetProviders,
+			result;
+
+		hook.add( providerInitializationFunction );
+		presetProviders = new mw.libs.advancedSearch.dm.NamespacePresetProviders( namespaces );
+		hook.remove( providerInitializationFunction );
+		result = presetProviders.getNamespaceIdsFromProvider( 'partlyInvalid' );
+
+		assert.deepEqual( result, [ '0', '1' ] );
+	} );
+
+	QUnit.test( 'When all provided IDs are invalid, a warning is logged and empty array is returned', function ( assert ) {
 		var warningLogger = sandbox.stub( mw.log, 'warn' ),
 			providerFunction = sinon.stub(),
 			providerInitializationFunction = function ( providerFunctions ) {
 				providerFunctions.invalid = providerFunction;
 			},
-			namespaceIDs = [ '0', '1', '4711' ],
+			namespaceIDs = [ '4709', '4710', '4711' ],
 			hook = mw.hook( 'advancedSearch.initNamespacePresetProviders' ),
 			namespaceIdResult, presetProviders;
 		hook.add( providerInitializationFunction );
