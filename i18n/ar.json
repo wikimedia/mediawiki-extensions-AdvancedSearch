@@ -54,10 +54,12 @@
 	"advancedsearch-filesize-greater-than": "يفوق",
 	"advancedsearch-filesize-smaller-than": "يقل عن",
 	"advancedsearch-namespaces-search-in": "البحث في:",
+	"advancedsearch-namespaces-remember": "تذكر الاختيار لعمليات البحث المستقبلية",
 	"advancedsearch-namespaces-preset-all": "الكل",
+	"advancedsearch-namespaces-preset-default": "افتراضي",
 	"advancedsearch-namespaces-preset-general-help": "مساعدة عامة",
 	"advancedsearch-namespaces-preset-discussion": "نقاش",
-	"advancedsearch-namespaces-placeholder": "أضف نطاقات",
+	"advancedsearch-namespaces-placeholder": "أضف نطاقات…",
 	"advancedsearch-beta-feature-message": "واجهة البحث المتقدم",
 	"advancedsearch-beta-feature-description": "وصول سهل لقدرات البحث المطور في [[Special:Search]]."
 }
