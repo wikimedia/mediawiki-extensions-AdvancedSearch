@@ -47,7 +47,7 @@
 		return model;
 	}
 
-	QUnit.test( 'Setting empty JSON string does nothing', function ( assert ) {
+	QUnit.test( 'Setting values from empty JSON string does nothing', function ( assert ) {
 		assert.expect( 2 );
 
 		var model = createModelWithValues(),
@@ -80,6 +80,22 @@
 			prefix: 'Sea'
 		} );
 		assert.deepEqual( model.getNamespaces(), [ '0', '2' ] );
+	} );
+
+	QUnit.test( 'Options and namespaces are serialized to JSON', function ( assert ) {
+		var model = createModelWithValues();
+
+		assert.equal(
+			model.toJSON(),
+			'{"options":{"not":"octopi","prefix":"Page"},"namespaces":["1","3"]}'
+		);
+	} );
+
+	QUnit.test( 'Empty options and namespaces are not serialized to JSON', function ( assert ) {
+		assert.equal(
+			new SearchModel().toJSON(),
+			'{}'
+		);
 	} );
 
 	QUnit.test( 'Setting namespaces to empty does not keep default namespace', function ( assert ) {

@@ -143,7 +143,10 @@
 	 * @return {string}
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.toJSON = function () {
-		var json = { options: this.searchOptions };
+		var json = {};
+		if ( Object.keys( this.searchOptions ).length !== 0 ) {
+			json.options = this.searchOptions;
+		}
 		if ( this.namespaces.length ) {
 			json.namespaces = this.namespaces;
 		}
