@@ -36,8 +36,8 @@
 		} );
 		this.valueInput = new OO.ui.TextInputWidget( { label: 'px' } );
 
-		this.operatorInput.connect( this, { change: 'onInputChange' } );
-		this.valueInput.connect( this, { change: 'onInputChange' } );
+		this.operatorInput.connect( this, { change: 'onOperatorInputChange' } );
+		this.valueInput.connect( this, { change: 'onValueInputChange' } );
 
 		this.$element.append(
 			$( '<div>' ).addClass( 'operator-container' ).append( this.operatorInput.$element )
@@ -52,9 +52,13 @@
 
 	OO.inheritClass( mw.libs.advancedSearch.ui.ImageDimensionInput, OO.ui.Widget );
 
-	mw.libs.advancedSearch.ui.ImageDimensionInput.prototype.onInputChange = function () {
-		this.data[ 0 ] = this.operatorInput.getValue();
-		this.data[ 1 ] = this.valueInput.getValue();
+	mw.libs.advancedSearch.ui.ImageDimensionInput.prototype.onOperatorInputChange = function () {
+		this.data = [ this.operatorInput.getValue(), this.data[ 1 ] ];
+		this.emit( 'change', this.data );
+	};
+
+	mw.libs.advancedSearch.ui.ImageDimensionInput.prototype.onValueInputChange = function () {
+		this.data = [ this.data[ 0 ], this.valueInput.getValue() ];
 		this.emit( 'change', this.data );
 	};
 
