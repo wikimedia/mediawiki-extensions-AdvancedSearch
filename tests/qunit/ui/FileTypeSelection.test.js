@@ -24,7 +24,6 @@
 		config = {
 			optionId: 'filetype',
 			id: 'advancedSearchOption-filetype',
-			name: 'advancedSearchOption-filetype',
 			dropdown: { $overlay: true }
 		};
 
