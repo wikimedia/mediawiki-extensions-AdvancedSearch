@@ -144,7 +144,7 @@
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.toJSON = function () {
 		var json = {};
-		if ( Object.keys( this.searchOptions ).length !== 0 ) {
+		if ( !$.isEmptyObject( this.searchOptions ) ) {
 			json.options = this.searchOptions;
 		}
 		if ( this.namespaces.length ) {
