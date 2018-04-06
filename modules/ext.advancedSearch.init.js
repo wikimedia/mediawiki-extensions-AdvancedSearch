@@ -77,13 +77,13 @@
 	function buildPaneElement( state, advancedOptionsBuilder ) {
 		var searchPreview = new mw.libs.advancedSearch.ui.SearchPreview( state, {
 			label: mw.msg( 'advancedsearch-options-pane-head' ),
-			previewOptions: $.map( advancedOptionsBuilder.getOptions(), function ( option ) {
+			previewOptions: $.map( mw.libs.advancedSearch.AdvancedOptionsConfig, function ( option ) {
 				return option.id;
 			} )
 		} );
 
 		var pane = new mw.libs.advancedSearch.ui.ExpandablePane( {
-			$paneContent: advancedOptionsBuilder.buildAllOptionsElement(),
+			$paneContent: advancedOptionsBuilder.buildAllOptionsElement( mw.libs.advancedSearch.AdvancedOptionsConfig ),
 			$buttonLabel: searchPreview.$element,
 			tabIndex: 0
 		} );
@@ -141,7 +141,7 @@
 		var searchableNamespaces = new mw.libs.advancedSearch.dm.SearchableNamespaces( mw.config.get( 'wgFormattedNamespaces' ) ),
 			state = initState( searchableNamespaces ),
 			advancedOptionsBuilder = new mw.libs.advancedSearch.AdvancedOptionsBuilder( state ),
-			queryCompiler = new mw.libs.advancedSearch.QueryCompiler( advancedOptionsBuilder.getOptions() );
+			queryCompiler = new mw.libs.advancedSearch.QueryCompiler( mw.libs.advancedSearch.AdvancedOptionsConfig );
 
 		var $search = $( 'form#search, form#powersearch' ),
 			$title = $( 'h1#firstHeading' ),

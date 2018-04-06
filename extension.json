@@ -114,32 +114,24 @@
 				"oojs-ui.styles.icons-wikimedia",
 				"ext.advancedSearch.searchtoken",
 				"ext.advancedSearch.AdvancedOptionsBuilder",
+				"ext.advancedSearch.AdvancedOptionsConfig",
 				"ext.advancedSearch.QueryCompiler",
 				"ext.advancedSearch.dm.getDefaultNamespaces",
 				"ext.advancedSearch.dm.SearchableNamespaces",
 				"ext.advancedSearch.dm.SearchModel",
-				"ext.advancedSearch.dm.FileTypeOptionProvider",
-				"ext.advancedSearch.dm.LanguageOptionProvider",
 				"ext.advancedSearch.dm.trackingEvents.SearchRequest",
 				"ext.advancedSearch.ui.StoreListener",
 				"ext.advancedSearch.ui.mixins.ClassesForDropdownOptions",
-				"ext.advancedSearch.ui.FileTypeSelection",
-				"ext.advancedSearch.ui.LanguageSelection",
 				"ext.advancedSearch.ui.FormState",
 				"ext.advancedSearch.ui.ExpandablePane",
-				"ext.advancedSearch.ui.ImageDimensionInput",
 				"ext.advancedSearch.ui.NamespaceFilters",
 				"ext.advancedSearch.ui.NamespacePresets",
-				"ext.advancedSearch.ui.OptionalElementLayout",
-				"ext.advancedSearch.ui.OptionalElementLayout",
-				"ext.advancedSearch.ui.SearchPreview",
-				"ext.advancedSearch.ui.TemplateSearch",
-				"ext.advancedSearch.ui.TextInput"
+				"ext.advancedSearch.ui.SearchPreview"
 			]
 		},
-		"ext.advancedSearch.AdvancedOptionsBuilder": {
+		"ext.advancedSearch.AdvancedOptionsConfig": {
 			"scripts": [
-				"modules/ext.advancedSearch.AdvancedOptionsBuilder.js"
+				"modules/ext.advancedSearch.AdvancedOptionsConfig.js"
 			],
 			"messages": [
 				"advancedsearch-field-plain",
@@ -154,14 +146,32 @@
 				"advancedsearch-field-filetype",
 				"advancedsearch-field-filew",
 				"advancedsearch-field-fileh",
-				"advancedsearch-optgroup-text",
-				"advancedsearch-optgroup-structure",
-				"advancedsearch-optgroup-files",
-				"advancedsearch-placeholder-exact-text",
-				"advancedsearch-inlanguage-default"
+				"advancedsearch-inlanguage-default",
+				"advancedsearch-placeholder-exact-text"
 			],
 			"dependencies": [
-				"ext.advancedSearch.ui.ArbitraryWordInput"
+				"ext.advancedSearch.ui.ArbitraryWordInput",
+				"ext.advancedSearch.dm.FileTypeOptionProvider",
+				"ext.advancedSearch.ui.FileTypeSelection",
+				"ext.advancedSearch.ui.ImageDimensionInput",
+				"ext.advancedSearch.dm.LanguageOptionProvider",
+				"ext.advancedSearch.ui.LanguageSelection",
+				"ext.advancedSearch.ui.OptionalElementLayout",
+				"ext.advancedSearch.ui.TemplateSearch",
+				"ext.advancedSearch.ui.TextInput"
+			]
+		},
+		"ext.advancedSearch.AdvancedOptionsBuilder": {
+			"scripts": [
+				"modules/ext.advancedSearch.AdvancedOptionsBuilder.js"
+			],
+			"messages": [
+				"advancedsearch-optgroup-text",
+				"advancedsearch-optgroup-structure",
+				"advancedsearch-optgroup-files"
+			],
+			"dependencies": [
+				"oojs-ui-widgets"
 			]
 		},
 		"ext.advancedSearch.QueryCompiler": {
@@ -226,6 +236,9 @@
 				"oojs-ui-widgets",
 				"ext.advancedSearch.ui.StoreListener",
 				"ext.advancedSearch.ui.mixins.ClassesForDropdownOptions"
+			],
+			"messages": [
+				"advancedsearch-inlanguage-default"
 			]
 		},
 		"ext.advancedSearch.ui.ExpandablePane": {
@@ -241,7 +254,8 @@
 				"modules/ui/ext.advancedSearch.ImageDimensionInput.js"
 			],
 			"dependencies": [
-				"oojs-ui-widgets"
+				"oojs-ui-widgets",
+				"ext.advancedSearch.ui.TextInput"
 			],
 			"messages": [
 				"advancedsearch-filesize-equals",
