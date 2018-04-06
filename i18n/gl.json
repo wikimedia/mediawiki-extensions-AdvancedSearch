@@ -3,7 +3,8 @@
 		"authors": [
 			"Elisardojm",
 			"Banjo",
-			"Athena in Wonderland"
+			"Athena in Wonderland",
+			"Navhy"
 		]
 	},
 	"advancedsearch-desc": "Acceso sinxelo a capacidades de busca avanzadas en [[Special:Search]]",
@@ -19,10 +20,12 @@
 	"advancedsearch-field-intitle": "O título da páxina conténː",
 	"advancedsearch-field-deepcat": "Páxina nesta categoríaː",
 	"advancedsearch-field-hastemplate": "Só páxinas con este modeloː",
+	"advancedsearch-field-inlanguage": "Páxinas nesta lingua:",
 	"advancedsearch-field-filetype": "Tipo de ficheiroː",
 	"advancedsearch-field-filew": "Ancho do ficheiro en pixelsː",
 	"advancedsearch-field-fileh": "Alto do ficheiro en pixelsː",
 	"advancedsearch-placeholder-exact-text": "Coloque as palabras exactas entre comiñas: \"o gato ama á cabra\"",
+	"advancedsearch-inlanguage-default": "Escoller unha lingua",
 	"advancedsearch-filetype-section-types": "Tipos de ficheiro xenéricos",
 	"advancedsearch-filetype-section-image": "Formatos de imaxe",
 	"advancedsearch-filetype-section-video": "Formatos de vídeo",
