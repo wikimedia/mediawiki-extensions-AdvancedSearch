@@ -8,7 +8,8 @@
 			"Okras",
 			"Mouse21",
 			"Movses",
-			"Patrick Star"
+			"Patrick Star",
+			"Happy13241"
 		]
 	},
 	"advancedsearch-desc": "Легкий доступ к расширенным возможностям поиска на [[Special:Search]]",
@@ -54,9 +55,11 @@
 	"advancedsearch-filesize-greater-than": "больше",
 	"advancedsearch-filesize-smaller-than": "ниже чем",
 	"advancedsearch-namespaces-search-in": "Поиск по:",
+	"advancedsearch-namespaces-remember": "Запомнить выбор для будущих поисков",
 	"advancedsearch-namespaces-preset-all": "Все",
+	"advancedsearch-namespaces-preset-default": "По умолчанию",
 	"advancedsearch-namespaces-preset-discussion": "Обсуждение",
-	"advancedsearch-namespaces-placeholder": "Добавить пространства имён",
+	"advancedsearch-namespaces-placeholder": "Добавить пространства имён...",
 	"advancedsearch-beta-feature-message": "Интерфейс расширенного поиска",
 	"advancedsearch-beta-feature-description": "Легкий доступ к расширенным возможностям поиска на [[Special:Search]]."
 }
