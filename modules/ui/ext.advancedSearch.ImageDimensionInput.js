@@ -67,14 +67,20 @@
 	};
 
 	mw.libs.advancedSearch.ui.ImageDimensionInput.prototype.setValuesFromStore = function () {
-		var newValue = this.store.getOption( this.optionId );
-		if ( !newValue || newValue === this.data ) {
-			return;
+		if ( this.store.hasOptionChanged( this.optionId, this.data ) ) {
+			this.setValue( this.store.getOption( this.optionId ) );
 		}
+	};
+
+	/**
+	 * @return {array}
+	 */
+	mw.libs.advancedSearch.ui.ImageDimensionInput.prototype.getValue = function () {
+		return this.data;
+	};
+
+	mw.libs.advancedSearch.ui.ImageDimensionInput.prototype.setValue = function ( newValue ) {
 		this.data = newValue;
-		if ( this.data.length < 2 ) {
-			return;
-		}
 		this.operatorInput.setValue( this.data[ 0 ] );
 		this.valueInput.setValue( this.data[ 1 ] );
 	};

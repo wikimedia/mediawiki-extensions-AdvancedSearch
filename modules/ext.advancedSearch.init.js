@@ -115,12 +115,26 @@
 	}
 
 	/**
+	 * @param {ext.libs.advancedSearch.AdvancedOptionsConfig} options
+	 * @return {object} optionId => default value pairs
+	 */
+	function getDefaultsFromConfig( options ) {
+		return options.reduce( function ( defaults, value ) {
+			if ( value.hasOwnProperty( 'defaultValue' ) ) {
+				defaults[ value.id ] = value.defaultValue;
+			}
+			return defaults;
+		}, {} );
+	}
+
+	/**
 	 * @param {mw.libs.advancedSearch.dm.SearchableNamespaces} searchableNamespaces
 	 * @return {mw.libs.advancedSearch.dm.SearchModel}
 	 */
 	function initState( searchableNamespaces ) {
 		var state = new mw.libs.advancedSearch.dm.SearchModel(
-				mw.libs.advancedSearch.dm.getDefaultNamespaces( mw.user.options.values )
+				mw.libs.advancedSearch.dm.getDefaultNamespaces( mw.user.options.values ),
+				getDefaultsFromConfig( mw.libs.advancedSearch.AdvancedOptionsConfig )
 			),
 			namespacesFromUrl = getNamespacesFromUrl( searchableNamespaces.getNamespaces() ),
 			stateFromUrl = mw.util.getParamValue( 'advancedSearch-current' );

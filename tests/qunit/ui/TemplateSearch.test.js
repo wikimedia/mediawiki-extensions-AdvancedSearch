@@ -12,6 +12,7 @@
 		store = {
 			connect: sandbox.stub(),
 			getOption: sandbox.stub().withArgs( 'hastemplate' ).returns( [] ),
+			hasOptionChanged: sandbox.stub(),
 			storeOption: sandbox.stub()
 		};
 		config = {
@@ -26,10 +27,10 @@
 	QUnit.module( 'ext.advancedSearch.ui.TemplateSearch' );
 
 	QUnit.test( 'Store data subscribed to and synced initially', function ( assert ) {
-		assert.expect( 4 );
-
 		var setValueSpy = sandbox.spy( TemplateSearch.prototype, 'setValue' );
+
 		store.getOption.withArgs( 'hastemplate' ).returns( [ 'Burg' ] );
+		store.hasOptionChanged.withArgs( 'hastemplate' ).returns( true );
 
 		var templateSearch = new TemplateSearch( store, config );
 
@@ -40,9 +41,8 @@
 	} );
 
 	QUnit.test( 'Store update is applied', function ( assert ) {
-		assert.expect( 1 );
-
 		store.getOption.withArgs( 'hastemplate' ).returns( [ 'from', 'beyond' ] );
+		store.hasOptionChanged.withArgs( 'hastemplate' ).returns( true );
 
 		var templateSearch = new TemplateSearch( store, config );
 
@@ -52,15 +52,11 @@
 	} );
 
 	QUnit.test( 'Mixin method overridden to prevent problems', function ( assert ) {
-		assert.expect( 1 );
-
 		var templateSearch = new TemplateSearch( store, config );
 		assert.notOk( templateSearch.isReadOnly() );
 	} );
 
 	QUnit.test( 'API response processed correctly', function ( assert ) {
-		assert.expect( 8 );
-
 		var templateSearch = new TemplateSearch( store, config );
 
 		var apiData = [

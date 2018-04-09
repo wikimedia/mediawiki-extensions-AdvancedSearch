@@ -39,6 +39,15 @@
 		} );
 	} );
 
+	QUnit.test( 'Retrieving an unset option with a default returns the default', function ( assert ) {
+		var model = new SearchModel( [], { not: [], prefix: '' } );
+
+		assert.deepEqual( model.getOption( 'not' ), [] );
+		assert.strictEqual( model.getOption( 'prefix' ), '' );
+		assert.equal( typeof model.getOption( 'prefix' ), 'string' );
+		assert.equal( typeof model.getOption( 'nonexisting' ), 'undefined' );
+	} );
+
 	QUnit.test( 'Retrieving reference type value gives a copy, to avoid modification', function ( assert ) {
 		var model = new SearchModel();
 		var fileHeightValuePair = [ '>', '2' ];
@@ -62,6 +71,30 @@
 
 		assert.ok( options.fileh !== fileHeightValuePair, 'Arrays must be different references' );
 		assert.ok( options.someObject !== someObject, 'Objects must be different references' );
+	} );
+
+	QUnit.test( 'When checking with undefined or empty value, hasOptionChange returns true for unset properties without defaults', function ( assert ) {
+		var model = new SearchModel();
+
+		assert.notOk( model.hasOptionChanged( 'not', undefined ) );
+		assert.notOk( model.hasOptionChanged( 'not', '' ) );
+		assert.ok( model.hasOptionChanged( 'not', 'not empty' ) );
+	} );
+
+	QUnit.test( 'When checking with unset value, hasOptionChange compares to default value', function ( assert ) {
+		var model = new SearchModel( [], { not: 'something' } );
+
+		assert.notOk( model.hasOptionChanged( 'not', 'something' ) );
+		assert.ok( model.hasOptionChanged( 'not', 'anything' ) );
+	} );
+
+	QUnit.test( 'When there is no change, hasOptionChange returns false', function ( assert ) {
+		var model = new SearchModel();
+
+		model.storeOption( 'not', 'something' );
+
+		assert.notOk( model.hasOptionChanged( 'not', 'something' ) );
+		assert.ok( model.hasOptionChanged( 'not', 'anything' ) );
 	} );
 
 	function createModelWithValues() {

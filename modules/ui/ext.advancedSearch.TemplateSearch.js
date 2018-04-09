@@ -48,15 +48,9 @@
 	};
 
 	mw.libs.advancedSearch.ui.TemplateSearch.prototype.populateFromStore = function () {
-		// protect parent class from working with an undefined value
-		var value = this.store.getOption( this.optionId ) || [];
-
-		// avoid redundant event triggering if no value change is performed
-		if ( OO.compare( value, this.getValue() ) ) {
-			return;
+		if ( this.store.hasOptionChanged( this.optionId, this.getValue() ) ) {
+			this.setValue( this.store.getOption( this.optionId ) );
 		}
-
-		this.setValue( value );
 	};
 
 	/**
