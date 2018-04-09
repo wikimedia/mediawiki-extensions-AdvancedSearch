@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ramjit Tudu"
+			"Ramjit Tudu",
+			"Fagunkoyel Hansdah"
 		]
 	},
 	"advancedsearch-optgroup-text": "ᱥᱟᱦᱴᱟ ᱚᱞ ᱨᱮ ᱥᱮᱸᱫᱽᱨᱟ",
@@ -10,9 +11,15 @@
 	"advancedsearch-field-phrase": "ᱱᱚᱶᱟ ᱚᱞ ᱩᱛᱟᱹᱨᱜᱮ:",
 	"advancedsearch-field-or": "ᱱᱩᱠᱩ ᱟᱹᱲᱟᱹ ᱠᱷᱚᱱ ᱢᱤᱫᱴᱟᱝ",
 	"advancedsearch-field-not": "ᱱᱩᱠᱩ ᱟᱹᱲᱟᱹᱫᱚ ᱵᱟᱝ:",
+	"advancedsearch-field-deepcat": "ᱱᱚᱶᱟ ᱛᱷᱚᱠ ᱨᱮᱱᱟᱜ ᱥᱟᱦᱴᱟ",
+	"advancedsearch-field-hastemplate": "ᱱᱚᱶᱟ ᱪᱷᱟᱸᱪ ᱨᱮᱱᱟᱜ ᱥᱟᱦᱴᱟ ᱥᱩᱢᱩᱝ:",
+	"advancedsearch-field-inlanguage": "ᱱᱚᱶᱟ ᱯᱟᱹᱨᱥᱤ ᱨᱮᱱᱟᱜ ᱥᱟᱦᱴᱟᱠᱚ",
 	"advancedsearch-field-filetype": "ᱨᱮᱫ ᱞᱮᱠᱟᱱᱟᱜ:",
 	"advancedsearch-field-filew": "ᱨᱮᱫ ᱚᱥᱟᱨ ᱯᱤᱠᱥᱮᱞᱨᱮ:",
 	"advancedsearch-field-fileh": "ᱨᱮᱫ ᱩᱥᱩᱞ ᱯᱩᱠᱥᱮᱞ ᱛᱮ:",
+	"advancedsearch-inlanguage-default": "ᱯᱟᱹᱨᱥᱤ ᱵᱟᱪᱷᱚᱱ ᱢᱮ",
+	"advancedsearch-filetype-section-types": "ᱥᱟᱫᱷᱟᱨᱚᱱ ᱨᱮᱫ ᱞᱮᱠᱟᱱ",
+	"advancedsearch-filetype-section-image": "ᱪᱤᱛᱟᱹᱨ ᱯᱷᱚᱨᱢᱮᱴᱥ",
 	"advancedsearch-filetype-bitmap": "ᱪᱤᱛᱟᱹᱨ",
 	"advancedsearch-filetype-office": "ᱩᱯᱤᱥ",
 	"advancedsearch-filesize-equals": "ᱥᱚᱢᱟᱱ",
@@ -21,6 +28,6 @@
 	"advancedsearch-namespaces-search-in": "ᱥᱮᱸᱫᱽᱨᱟ ᱨᱮ:",
 	"advancedsearch-namespaces-preset-all": "ᱡᱚᱛᱚ",
 	"advancedsearch-namespaces-preset-discussion": "ᱜᱟᱞᱚᱪ",
-	"advancedsearch-namespaces-placeholder": "ᱨᱟᱠᱷᱟ ᱧᱩᱛᱩᱢ ᱥᱮᱞᱮᱫ",
+	"advancedsearch-namespaces-placeholder": "ᱨᱟᱠᱷᱟᱧᱩᱛᱩᱢ ᱥᱮᱞᱮᱫ",
 	"advancedsearch-beta-feature-message": "ᱵᱟᱹᱲᱛᱤ ᱥᱮᱸᱫᱽᱨᱟ ᱟᱹᱱᱟᱹᱨᱩ"
 }
