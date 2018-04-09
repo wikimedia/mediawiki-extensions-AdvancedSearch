@@ -1,10 +1,73 @@
 'use strict';
 
 const assert = require( 'assert' );
+const Bot = require( 'mwbot' ); // https://github.com/Fannon/mwbot
 const SpecialPage = require( '../pageobjects/special.page' );
 const SearchPage = require( '../pageobjects/search.page' );
 
 describe( 'Advanced Search', function () {
+
+	function addExamplePages( numPages ) {
+		let client = new Bot(),
+			animals = [ 'cat', 'goat' ];
+
+		return new Promise( function ( resolve, reject ) {
+			const editPage = function ( pageNumber ) {
+				const content = 'The big brown ' + animals[ pageNumber % 2 ] + ' jumped over the lazy dog.\n' +
+								'[[Category:Test]]';
+				client.edit(
+					'Test Categories Page ' + ( pageNumber + 1 ),
+					content,
+					'Created page with "' + content + '"'
+				).then( () => {
+					if ( pageNumber > numPages ) {
+						return resolve();
+					} else {
+						return editPage( pageNumber + 1 );
+					}
+				} ).catch( ( err ) => {
+					return reject( err );
+				} );
+			};
+			client.loginGetEditToken( {
+				username: browser.options.username,
+				password: browser.options.password,
+				apiUrl: browser.options.baseUrl + '/api.php'
+			} ).then( () => {
+				return editPage( 0 );
+			} ).catch( ( err ) => {
+				return reject( err );
+			} );
+		} );
+	}
+
+	function addCategory( name ) {
+		let client = new Bot();
+
+		return new Promise( function ( resolve, reject ) {
+			const editPage = function () {
+				const content = 'test';
+				client.edit(
+					'Category:' + name,
+					content,
+					'Created page with "' + content + '"'
+				).then( () => {
+					return resolve();
+				} ).catch( ( err ) => {
+					return reject( err );
+				} );
+			};
+			client.loginGetEditToken( {
+				username: browser.options.username,
+				password: browser.options.password,
+				apiUrl: browser.options.baseUrl + '/api.php'
+			} ).then( () => {
+				return editPage();
+			} ).catch( ( err ) => {
+				return reject( err );
+			} );
+		} );
+	}
 
 	it( 'has the advanced search extension installed', function () {
 
@@ -101,9 +164,44 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchNotTheseWords.put( 'test3 ' );
 		SearchPage.searchOneWord.put( 'test4 test5' );
 		SearchPage.searchExactText.put( '"test1 test2"' );
+		SearchPage.searchCategory.put( 'Help\uE007Me\uE007' );
 		SearchPage.submitForm();
 
-		assert.equal( SearchPage.getSearchQueryFromUrl(), 'test "test1 test2" -test3 test4 OR test5' );
+		assert.equal( SearchPage.getSearchQueryFromUrl(), 'test "test1 test2" -test3 test4 OR test5 deepcat:Help deepcat:Me' );
+
+	} );
+
+	it( 'marks non-existent categories in red', function () {
+		SearchPage.open();
+
+		SearchPage.toggleInputFields();
+		SearchPage.searchCategory.put( 'I do not exist\uE007' );
+
+		browser.waitUntil( function () {
+			let color = SearchPage.getCategoryPillLink( 'I do not exist' ).getCssProperty( 'color' ).value;
+			return color === 'rgba(186,0,0,1)';
+		}, 10000, 'Timed out while waiting for the category pill link to turn red' );
+
+	} );
+
+	it( 'suggests existing categories when typing', function () {
+		this.timeout( 60000 );
+		browser.call( function () {
+			return addExamplePages( 3 );
+		} );
+
+		browser.call( function () {
+			return addCategory( 'Test' );
+		} );
+
+		SearchPage.open();
+		SearchPage.toggleInputFields();
+
+		SearchPage.searchCategory.put( 'Tes' );
+		let suggestionBox = SearchPage.categorySuggestionsBox;
+		suggestionBox.waitForVisible( 10000 );
+
+		assert( suggestionBox.isVisible() );
 
 	} );
 

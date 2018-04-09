@@ -109,6 +109,7 @@ class Hooks {
 			'scripts' => [
 				'tests/qunit/QueryCompiler.test.js',
 				'tests/qunit/ui/ArbitraryWordInput.test.js',
+				'tests/qunit/ui/DeepCategoryFilter.test.js',
 				'tests/qunit/ui/FileTypeSelection.test.js',
 				'tests/qunit/ui/LanguageSelection.test.js',
 				'tests/qunit/ui/NamespaceFilters.test.js',
@@ -127,6 +128,7 @@ class Hooks {
 			'dependencies' => [
 				'ext.advancedSearch.QueryCompiler',
 				'ext.advancedSearch.ui.ArbitraryWordInput',
+				'ext.advancedSearch.ui.DeepCategoryFilter',
 				'ext.advancedSearch.ui.FileTypeSelection',
 				'ext.advancedSearch.ui.LanguageSelection',
 				'ext.advancedSearch.ui.mixins.ClassesForDropdownOptions',
