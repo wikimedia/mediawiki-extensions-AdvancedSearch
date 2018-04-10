@@ -39,6 +39,31 @@
 		} );
 	} );
 
+	QUnit.test( 'Retrieving reference type value gives a copy, to avoid modification', function ( assert ) {
+		var model = new SearchModel();
+		var fileHeightValuePair = [ '>', '2' ];
+		var someObject = { foo: 42 };
+
+		model.storeOption( 'fileh', fileHeightValuePair );
+		model.storeOption( 'someObject', someObject );
+
+		assert.ok( model.getOption( 'fileh' ) !== fileHeightValuePair, 'Arrays must be different references' );
+		assert.ok( model.getOption( 'someObject' ) !== someObject, 'Objects must be different references' );
+	} );
+
+	QUnit.test( 'Retrieving all values gives a copy of reference type values, to avoid modification', function ( assert ) {
+		var model = new SearchModel();
+		var fileHeightValuePair = [ '>', '2' ];
+		var someObject = { foo: 42 };
+
+		model.storeOption( 'fileh', fileHeightValuePair );
+		model.storeOption( 'someObject', someObject );
+		var options = model.getOptions();
+
+		assert.ok( options.fileh !== fileHeightValuePair, 'Arrays must be different references' );
+		assert.ok( options.someObject !== someObject, 'Objects must be different references' );
+	} );
+
 	function createModelWithValues() {
 		var model = new SearchModel();
 		model.storeOption( 'not', 'octopi' );

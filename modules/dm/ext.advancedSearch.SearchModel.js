@@ -13,6 +13,15 @@
 		'video'
 	];
 
+	var cloneReferenceTypeValue = function ( value ) {
+		if ( Array.isArray( value ) ) {
+			return value.slice();
+		} else if ( value !== null && typeof value === 'object' ) {
+			return $.extend( true, {}, value );
+		}
+		return value;
+	};
+
 	/**
 	 * @class
 	 * @constructor
@@ -90,7 +99,7 @@
 	 * @return {*}
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.getOption = function ( optionId ) {
-		return this.searchOptions[ optionId ];
+		return cloneReferenceTypeValue( this.searchOptions[ optionId ] );
 	};
 
 	/**
@@ -131,7 +140,7 @@
 		var options = {};
 		$.each( this.searchOptions, function ( key, value ) {
 			if ( !$.isEmptyObject( value ) ) {
-				options[ key ] = value;
+				options[ key ] = cloneReferenceTypeValue( value );
 			}
 		} );
 		return options;
