@@ -18,7 +18,6 @@
 		config = {
 			optionId: 'inlanguage',
 			id: 'advancedSearchOption-inlanguage',
-			name: 'advancedSearchOption-inlanguage',
 			dropdown: { $overlay: true }
 		};
 
