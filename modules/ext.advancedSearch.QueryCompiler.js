@@ -5,7 +5,7 @@
 	mw.libs.advancedSearch = mw.libs.advancedSearch || {};
 
 	/**
-	 * @param {object} options Options from AdvancedOptionsBuilder.getOptions()
+	 * @param {ext.libs.advancedSearch.AdvancedOptionsConfig} options
 	 * @class
 	 * @constructor
 	 */
