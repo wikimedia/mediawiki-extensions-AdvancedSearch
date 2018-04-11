@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Pmt",
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"Imre Eilertsen"
 		]
 	},
 	"advancedsearch-desc": "Enkel tilgang til avanserte søkemuligheter på [[Special:Search]]",
@@ -49,6 +50,7 @@
 	"advancedsearch-filesize-smaller-than": "mindre enn",
 	"advancedsearch-namespaces-search-in": "Søk i:",
 	"advancedsearch-namespaces-preset-all": "Alle",
+	"advancedsearch-namespaces-preset-default": "Standard",
 	"advancedsearch-namespaces-placeholder": "Legg til navnerom",
 	"advancedsearch-beta-feature-message": "Avansert søkegrensesnitt",
 	"advancedsearch-beta-feature-description": "Enkel tilgang til avanserte søkemuligheter på [[Special:Search]]."
