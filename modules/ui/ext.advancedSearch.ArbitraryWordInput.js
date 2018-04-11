@@ -41,11 +41,9 @@
 	OO.inheritClass( mw.libs.advancedSearch.ui.ArbitraryWordInput, OO.ui.TagMultiselectWidget );
 
 	mw.libs.advancedSearch.ui.ArbitraryWordInput.prototype.populateFromStore = function () {
-		var val = this.store.getOption( this.optionId ) || [];
-		if ( mw.libs.advancedSearch.util.arrayEquals( this.getValue(), val ) ) {
-			return;
+		if ( this.store.hasOptionChanged( this.optionId, this.getValue() ) ) {
+			this.setValue( this.store.getOption( this.optionId ) );
 		}
-		this.setValue( val );
 	};
 
 	mw.libs.advancedSearch.ui.ArbitraryWordInput.prototype.onStoreUpdate = function () {

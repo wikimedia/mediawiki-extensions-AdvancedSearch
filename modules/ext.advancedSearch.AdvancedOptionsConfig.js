@@ -117,6 +117,7 @@
 		{
 			group: 'text',
 			id: 'plain',
+			defaultValue: [],
 			formatter: function ( val ) {
 				if ( Array.isArray( val ) ) {
 					return val.join( ' ' );
@@ -137,6 +138,7 @@
 		{
 			group: 'text',
 			id: 'phrase',
+			defaultValue: '',
 			formatter: function ( val ) {
 				return val;
 			},
@@ -156,6 +158,7 @@
 		{
 			group: 'text',
 			id: 'not',
+			defaultValue: [],
 			formatter: function ( val ) {
 				if ( Array.isArray( val ) ) {
 					return val.map( function ( el ) {
@@ -178,6 +181,7 @@
 		{
 			group: 'text',
 			id: 'or',
+			defaultValue: [],
 			formatter: function ( val ) {
 				if ( Array.isArray( val ) ) {
 					return $.map( val, optionalQuotes ).join( ' OR ' );
@@ -200,6 +204,7 @@
 		{
 			group: 'structure',
 			id: 'intitle',
+			defaultValue: '',
 			formatter: function ( val ) {
 				return 'intitle:' + optionalQuotes( val );
 			},
@@ -217,6 +222,7 @@
 		{
 			group: 'structure',
 			id: 'subpageof',
+			defaultValue: '',
 			formatter: function ( val ) {
 				return 'subpageof:' + optionalQuotes( val );
 			},
@@ -234,6 +240,7 @@
 		{
 			group: 'structure',
 			id: 'hastemplate',
+			defaultValue: [],
 			formatter: function ( val ) {
 				if ( Array.isArray( val ) ) {
 					return $.map( val, function ( templateItem ) {
@@ -257,6 +264,7 @@
 		{
 			group: 'structure',
 			id: 'inlanguage',
+			defaultValue: '',
 			formatter: function ( val ) {
 				return 'inlanguage:' + val;
 			},
@@ -281,6 +289,7 @@
 		{
 			group: 'files',
 			id: 'filetype',
+			defaultValue: '',
 			formatter: function ( val ) {
 				switch ( val ) {
 
@@ -311,6 +320,7 @@
 		{
 			group: 'files',
 			id: 'filew',
+			defaultValue: [ '>', '' ],
 			formatter: function ( val ) {
 				return formatSizeConstraint( 'filew:', val );
 			},
@@ -329,6 +339,7 @@
 		{
 			group: 'files',
 			id: 'fileh',
+			defaultValue: [ '>', '' ],
 			formatter: function ( val ) {
 				return formatSizeConstraint( 'fileh:', val );
 			},

@@ -30,13 +30,9 @@
 	};
 
 	mw.libs.advancedSearch.ui.StoreListener.prototype.setValueFromStore = function () {
-		var storeValue = this.store.getOption( this.optionId ) || '',
-			selectedItem = this.dropdownWidget.getMenu().findItemFromData( storeValue );
-		// avoid setting invalid values and re-triggering
-		if ( selectedItem === null || this.getValue() === storeValue ) {
-			return;
+		if ( this.store.hasOptionChanged( this.optionId, this.getValue() ) ) {
+			this.setValue( this.store.getOption( this.optionId ) );
 		}
-		this.setValue( storeValue );
 	};
 
 }( mediaWiki ) );

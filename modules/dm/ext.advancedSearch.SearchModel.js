@@ -27,10 +27,12 @@
 	 * @constructor
 	 * @mixins OO.EventEmitter
 	 * @param {string[]} [defaultNamespaces] The namespaces selected by default (for new searches)
+	 * @param {object} defaultOptionValues Defaults for search field values
 	 */
-	mw.libs.advancedSearch.dm.SearchModel = function ( defaultNamespaces ) {
+	mw.libs.advancedSearch.dm.SearchModel = function ( defaultNamespaces, defaultOptionValues ) {
 		this.searchOptions = {};
 		this.namespaces = defaultNamespaces || [];
+		this.defaultOptionValues = defaultOptionValues || {};
 
 		// Mixin constructor
 		OO.EventEmitter.call( this );
@@ -68,7 +70,7 @@
 
 		// TODO check for allowed options?
 
-		if ( this.searchOptions[ optionId ] !== undefined && OO.compare( this.searchOptions[ optionId ], value ) ) {
+		if ( this.searchOptions.hasOwnProperty( optionId ) && OO.compare( this.searchOptions[ optionId ], value ) ) {
 			return;
 		}
 
@@ -99,6 +101,9 @@
 	 * @return {*}
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.getOption = function ( optionId ) {
+		if ( !this.searchOptions.hasOwnProperty( optionId ) && this.defaultOptionValues.hasOwnProperty( optionId ) ) {
+			return cloneReferenceTypeValue( this.defaultOptionValues[ optionId ] );
+		}
 		return cloneReferenceTypeValue( this.searchOptions[ optionId ] );
 	};
 
@@ -108,7 +113,7 @@
 	 * @param {string} optionId
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.removeOption = function ( optionId ) {
-		if ( this.searchOptions[ optionId ] === undefined ) {
+		if ( !this.searchOptions.hasOwnProperty( optionId ) ) {
 			return;
 		}
 
@@ -119,6 +124,19 @@
 		}
 
 		this.emitUpdate();
+	};
+
+	/**
+	 *
+	 * @param {string} optionId
+	 * @param {*} comparisonValue
+	 * @return {boolean}
+	 */
+	mw.libs.advancedSearch.dm.SearchModel.prototype.hasOptionChanged = function ( optionId, comparisonValue ) {
+		if ( !this.searchOptions.hasOwnProperty( optionId ) && this.defaultOptionValues.hasOwnProperty( optionId ) ) {
+			return !OO.compare( this.defaultOptionValues[ optionId ], comparisonValue );
+		}
+		return !OO.compare( this.searchOptions[ optionId ], comparisonValue );
 	};
 
 	/**

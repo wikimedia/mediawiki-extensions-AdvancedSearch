@@ -32,11 +32,9 @@
 	};
 
 	mw.libs.advancedSearch.ui.TextInput.prototype.populateFromStore = function () {
-		var val = this.store.getOption( this.optionId );
-		if ( this.getValue() === val ) {
-			return;
+		if ( this.store.hasOptionChanged( this.optionId, this.getValue() ) ) {
+			this.setValue( this.store.getOption( this.optionId ) );
 		}
-		this.setValue( val );
 	};
 
 }( mediaWiki, jQuery ) );
