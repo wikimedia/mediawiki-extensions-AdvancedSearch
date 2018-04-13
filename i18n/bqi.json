@@ -1,9 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mogoeilor"
+			"Mogoeilor",
+			"Beyronvan"
 		]
 	},
+	"advancedsearch-optgroup-text": "پی جۊری ماٛن هیل نڤشت ای بلگٱ",
+	"advancedsearch-optgroup-structure": "ساخدار",
+	"advancedsearch-optgroup-files": "جانیایٱل و ٱسگا",
+	"advancedsearch-field-plain": "ای ڤاجاٛیٱل",
 	"advancedsearch-filetype-bitmap": "ٱسگ",
 	"advancedsearch-filetype-drawing": "کاٛشیاری کردن",
 	"advancedsearch-filetype-audio": "بونگ",
