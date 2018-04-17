@@ -34,7 +34,7 @@
 	"advancedsearch-help-filetype": ";Beskrivning\n:Söker endast efter filer med vald typ.\n:Observera följande\n:* Du kan endast söka efter en filtyp.\n:* Du kan endast välja angivna filtyper från rullgardinslisten.\n;Hjälpsida\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype filetype] och [https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime filemime]\n;Motsvarande syntax i en normal sökning\n:Ord med <code>filetype:</code> innan som <code>filetype:ogg</code>.",
 	"advancedsearch-help-filew": ";Beskrivning\n:Dessa fält låter dig ange bredden på filen.\n:Observera följande\n:* Detta fungerar endast på filtyper som har bredd och höjd, som videor och bilder.\n;Hjälpsida\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]\n;Motsvarande syntax i en normal sökning\n:Siffror med <code>filew</code> innan som <code>filew:>600</code>.",
 	"advancedsearch-help-fileh": ";Beskrivning\n:Dessa fält låter dig ange höjden på filen.\n:Observera följande\n:* Detta fungerar endast på filtyper som har bredd och höjd, som videor och bilder.\n;Hjälpsida\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]\n;Motsvarande syntax i en normal sökning\n:Siffror med <code>fileh</code> innan som <code>fileh:>600</code>.",
-	"advancedsearch-placeholder-exact-text": "Ange de exakta orden inom citationstecken: \"katt älskar get\"",
+	"advancedsearch-placeholder-exact-text": "\"katt älskar get\"",
 	"advancedsearch-inlanguage-default": "Välj språk",
 	"advancedsearch-filetype-section-types": "Allmänna filtyper",
 	"advancedsearch-filetype-section-image": "Bildformat",
