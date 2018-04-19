@@ -68,7 +68,7 @@ class SearchPage extends Page {
 
 		this.searchTitle = new TextInputField( '#advancedSearchOption-intitle' );
 		this.searchSubpageof = new TextInputField( '#advancedSearchOption-subpageof' );
-		this.searchCategory = new PillField( '#advancedSearch-deepcat' );
+		this.searchCategory = new PillField( '#advancedSearch-category' );
 		this.searchTemplate = new PillField( '#advancedSearchOption-hastemplate' );
 		this.searchInLanguage = new DropdownField( '#advancedSearchOption-inlanguage' );
 
@@ -149,7 +149,7 @@ class SearchPage extends Page {
 	get generalHelpPreset() { return browser.element( '.mw-advancedSearch-namespace-selection input[value="generalHelp"]' ); }
 	get rememberSelection() { return browser.element( '.mw-advancedSearch-namespace-selection input[name="nsRemember"]' ); }
 	get default() { return browser.element( '.mw-advancedSearch-namespace-selection input[value="defaultNamespaces"]' ); }
-	get categorySuggestionsBox() { return browser.element( '#advancedSearch-deepcat div[role="listbox"]' ); }
+	get categorySuggestionsBox() { return browser.element( '#advancedSearch-category div[role="listbox"]' ); }
 
 	formWasSubmitted() {
 		return Object.prototype.hasOwnProperty.call( this.getQueryFromUrl(), 'advancedSearch-current' );

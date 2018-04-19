@@ -239,21 +239,22 @@
 		},
 		{
 			group: 'structure',
-			id: 'deepcat',
+			id: 'category',
 			formatter: function ( val ) {
+				var keyword = mw.config.get( 'advancedSearch.deepcategoryEnabled' ) ? 'deepcat:' : 'incategory:';
 				if ( Array.isArray( val ) ) {
 					return $.map( val, function ( templateItem ) {
-						return 'deepcat:' + optionalQuotes( templateItem );
+						return keyword + optionalQuotes( templateItem );
 					} ).join( ' ' );
 				}
-				return 'deepcat:' + optionalQuotes( val );
+				return keyword + optionalQuotes( val );
 			},
 			init: function ( state ) {
 				return new mw.libs.advancedSearch.ui.DeepCategoryFilter(
 					state,
 					{
-						optionId: 'deepcat',
-						id: 'advancedSearch-deepcat'
+						optionId: 'category',
+						id: 'advancedSearch-category'
 					}
 				);
 			},

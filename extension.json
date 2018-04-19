@@ -21,6 +21,10 @@
 			"description": "Make the AdvancedSearch feature a BetaFeature. Setting this requires the BetaFeature extension and requires each user to enable the BetaFeature.",
 			"value": true
 		},
+		"AdvancedSearchDeepcatEnabled": {
+			"description": "Category search also includes child categories.",
+			"value": true
+		},
 		"AdvancedSearchNamespacePresets": {
 			"description": "Groups of namespaces to offer as presets. Can be specified ('namespaces') or determined dynamically ('provider').",
 			"value": {
@@ -140,7 +144,7 @@
 				"advancedsearch-field-not",
 				"advancedsearch-field-subpageof",
 				"advancedsearch-field-intitle",
-				"advancedsearch-field-deepcat",
+				"advancedsearch-field-category",
 				"advancedsearch-field-hastemplate",
 				"advancedsearch-field-inlanguage",
 				"advancedsearch-field-filetype",
@@ -324,7 +328,7 @@
 				"advancedsearch-field-not",
 				"advancedsearch-field-subpageof",
 				"advancedsearch-field-intitle",
-				"advancedsearch-field-deepcat",
+				"advancedsearch-field-category",
 				"advancedsearch-field-hastemplate",
 				"advancedsearch-field-filetype",
 				"advancedsearch-field-filew",

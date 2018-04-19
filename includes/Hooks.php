@@ -49,7 +49,8 @@ class Hooks {
 			);
 			$special->getOutput()->addJsConfigVars( [
 				'advancedSearch.tooltips' => TooltipGenerator::generateToolTips(),
-				'advancedSearch.namespacePresets' => $config->get( 'AdvancedSearchNamespacePresets' )
+				'advancedSearch.namespacePresets' => $config->get( 'AdvancedSearchNamespacePresets' ),
+				'advancedSearch.deepcategoryEnabled' => $config->get( 'AdvancedSearchDeepcatEnabled' )
 			] );
 
 			/**
