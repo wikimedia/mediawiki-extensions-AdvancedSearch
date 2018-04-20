@@ -14,7 +14,7 @@ describe( 'Advanced Search', function () {
 		return new Promise( function ( resolve, reject ) {
 			const editPage = function ( pageNumber ) {
 				const content = 'The big brown ' + animals[ pageNumber % 2 ] + ' jumped over the lazy dog.\n' +
-								'[[Category:Test]]';
+					'[[Category:Test]]';
 				client.edit(
 					'Test Categories Page ' + ( pageNumber + 1 ),
 					content,
@@ -49,6 +49,33 @@ describe( 'Advanced Search', function () {
 				const content = 'test';
 				client.edit(
 					'Category:' + name,
+					content,
+					'Created page with "' + content + '"'
+				).then( () => {
+					return resolve();
+				} ).catch( ( err ) => {
+					return reject( err );
+				} );
+			};
+			client.loginGetEditToken( {
+				username: browser.options.username,
+				password: browser.options.password,
+				apiUrl: browser.options.baseUrl + '/api.php'
+			} ).then( () => {
+				return editPage();
+			} ).catch( ( err ) => {
+				return reject( err );
+			} );
+		} );
+	}
+
+	function addTemplate( name, content ) {
+		let client = new Bot();
+
+		return new Promise( function ( resolve, reject ) {
+			const editPage = function () {
+				client.edit(
+					'Template:' + name,
 					content,
 					'Created page with "' + content + '"'
 				).then( () => {
@@ -165,9 +192,10 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchOneWord.put( 'test4 test5' );
 		SearchPage.searchExactText.put( '"test1 test2"' );
 		SearchPage.searchCategory.put( 'Help\uE007Me\uE007' );
+		SearchPage.searchTemplate.put( 'Main Page\uE007' );
 		SearchPage.submitForm();
 
-		assert.equal( SearchPage.getSearchQueryFromUrl(), 'test "test1 test2" -test3 test4 OR test5 deepcat:Help deepcat:Me' );
+		assert.equal( SearchPage.getSearchQueryFromUrl(), 'test "test1 test2" -test3 test4 OR test5 deepcat:Help deepcat:Me hastemplate:"Main Page"' );
 
 	} );
 
@@ -202,7 +230,6 @@ describe( 'Advanced Search', function () {
 		suggestionBox.waitForVisible( 10000 );
 
 		assert( suggestionBox.isVisible() );
-
 	} );
 
 	it( 'inserts inlanguage field only when the translate extension is installed', function () {
@@ -236,6 +263,37 @@ describe( 'Advanced Search', function () {
 		SearchPage.submitForm();
 
 		assert.equal( SearchPage.getSearchQueryFromUrl(), 'goat' );
+
+	} );
+
+	it( 'marks non-existent templates in red', function () {
+		SearchPage.open();
+
+		SearchPage.toggleInputFields();
+		SearchPage.searchTemplate.put( 'Void\uE007' );
+
+		browser.waitUntil( function () {
+			let color = SearchPage.getTemplatePillLink( 'Void' ).getCssProperty( 'color' ).value;
+			return color === 'rgba(186,0,0,1)';
+		}, 10000, 'Timed out while waiting for the category pill link to turn red' );
+
+	} );
+
+	it( 'suggests existing templates when typing', function () {
+		this.timeout( 60000 );
+
+		browser.call( function () {
+			return addTemplate( 'What is love?', 'Baby don\'t hurt me' );
+		} );
+
+		SearchPage.open();
+		SearchPage.toggleInputFields();
+
+		SearchPage.searchTemplate.put( 'What is lo' );
+		let suggestionBox = SearchPage.templateSuggestionsBox;
+		suggestionBox.waitForVisible( 10000 );
+
+		assert( suggestionBox.isVisible() );
 
 	} );
 

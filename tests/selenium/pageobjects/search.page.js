@@ -150,6 +150,7 @@ class SearchPage extends Page {
 	get rememberSelection() { return browser.element( '.mw-advancedSearch-namespace-selection input[name="nsRemember"]' ); }
 	get default() { return browser.element( '.mw-advancedSearch-namespace-selection input[value="defaultNamespaces"]' ); }
 	get categorySuggestionsBox() { return browser.element( '#advancedSearch-category div[role="listbox"]' ); }
+	get templateSuggestionsBox() { return browser.element( '#advancedSearchOption-hastemplate div[role="listbox"]' ); }
 
 	formWasSubmitted() {
 		return Object.prototype.hasOwnProperty.call( this.getQueryFromUrl(), 'advancedSearch-current' );
@@ -188,6 +189,10 @@ class SearchPage extends Page {
 
 	getCategoryPillLink( category ) {
 		return browser.elements( '.oo-ui-capsuleMultiselectWidget-group a[title^="Category:' + category + '"]' );
+	}
+
+	getTemplatePillLink( template ) {
+		return browser.elements( '.oo-ui-tagMultiselectWidget-group a[title="Template:' + template + '"]' );
 	}
 
 	open( params ) {

@@ -348,6 +348,8 @@
 				"modules/ui/ext.advancedSearch.TemplateSearch.js"
 			],
 			"dependencies": [
+				"ext.advancedSearch.dm.TitleCache",
+				"ext.advancedSearch.util",
 				"oojs-ui-widgets"
 			]
 		},
@@ -378,6 +380,14 @@
 			],
 			"dependencies": [
 				"oojs"
+			]
+		},
+		"ext.advancedSearch.dm.TitleCache": {
+			"scripts": [
+				"modules/dm/ext.advancedSearch.TitleCache.js"
+			],
+			"dependencies": [
+				"mediawiki.Title"
 			]
 		},
 		"ext.advancedSearch.dm.NamespacePresetProviders": {

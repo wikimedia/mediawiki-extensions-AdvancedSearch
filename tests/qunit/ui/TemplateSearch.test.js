@@ -7,6 +7,11 @@
 		config;
 
 	QUnit.testStart( function () {
+		var queryTemplatePages = sinon.match( function ( value ) {
+			return value.action === 'query' &&
+				value.prop === 'info' &&
+				value.titles.match( /Template:/ );
+		} );
 		TemplateSearch = mw.libs.advancedSearch.ui.TemplateSearch;
 		sandbox = sinon.sandbox.create();
 		store = {
@@ -16,8 +21,11 @@
 			storeOption: sandbox.stub()
 		};
 		config = {
-			optionId: 'hastemplate'
+			optionId: 'hastemplate',
+			api: new mw.Api()
 		};
+		// Stub out API to avoid queries if template pages exist
+		sandbox.stub( config.api, 'get' ).withArgs( queryTemplatePages ).returns( $.Deferred().resolve( { query: { pages: {} } } ).promise() );
 	} );
 
 	QUnit.testDone( function () {
@@ -94,6 +102,7 @@
 
 	QUnit.test( 'Items already selected are not suggested', function ( assert ) {
 		var templateSearch = new TemplateSearch( store, config );
+
 		templateSearch.setValue( [ 'Jochen', 'Johannes' ] );
 		var apiData = [
 			'j',

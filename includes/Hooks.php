@@ -122,6 +122,7 @@ class Hooks {
 				'tests/qunit/dm/SearchableNamespaces.test.js',
 				'tests/qunit/dm/SearchModel.test.js',
 				'tests/qunit/dm/FileTypeOptionProvider.test.js',
+				'tests/qunit/dm/TitleCache.test.js',
 				'tests/qunit/dm/LanguageOptionProvider.test.js',
 				'tests/qunit/dm/trackingEvents/SearchRequest.test.js',
 				'tests/qunit/util.test.js'
@@ -144,6 +145,7 @@ class Hooks {
 				'ext.advancedSearch.dm.FileTypeOptionProvider',
 				'ext.advancedSearch.dm.LanguageOptionProvider',
 				'ext.advancedSearch.dm.NamespacePresetProviders',
+				'ext.advancedSearch.dm.TitleCache',
 				'ext.advancedSearch.dm.trackingEvents.SearchRequest',
 				'oojs-ui'
 			],
