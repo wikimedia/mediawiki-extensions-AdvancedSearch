@@ -32,6 +32,7 @@
 	"advancedsearch-filetype-section-audio": "Formatos de son",
 	"advancedsearch-filetype-section-document": "Formatos de documento",
 	"advancedsearch-filetype-section-other": "Outros formatos",
+	"advancedsearch-filetype-default": "Seleccionar o tipo de ficheiro",
 	"advancedsearch-filetype-bitmap": "Imaxe",
 	"advancedsearch-filetype-drawing": "Debuxo",
 	"advancedsearch-filetype-audio": "Son",
@@ -41,8 +42,12 @@
 	"advancedsearch-filesize-greater-than": "maior que",
 	"advancedsearch-filesize-smaller-than": "menor que",
 	"advancedsearch-namespaces-search-in": "Procurar en:",
+	"advancedsearch-namespaces-remember": "Lembrar selección pra procuras futuras",
 	"advancedsearch-namespaces-preset-all": "Todos",
-	"advancedsearch-namespaces-placeholder": "Engadir espazos de nomes",
+	"advancedsearch-namespaces-preset-default": "Predefinido",
+	"advancedsearch-namespaces-preset-general-help": "Axuda xeral",
+	"advancedsearch-namespaces-preset-discussion": "Conversa",
+	"advancedsearch-namespaces-placeholder": "Engadir espazos nominais…",
 	"advancedsearch-beta-feature-message": "Interface de busca avanzada",
 	"advancedsearch-beta-feature-description": "Acceso sinxelo a capacidades de busca avanzada en [[Special:Search]]."
 }

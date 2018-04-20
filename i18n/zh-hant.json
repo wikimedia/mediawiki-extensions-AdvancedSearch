@@ -5,7 +5,8 @@
 			"Liuxinyu970226",
 			"Hello903hello",
 			"A2093064",
-			"Laundry Machine"
+			"Laundry Machine",
+			"Kly"
 		]
 	},
 	"advancedsearch-desc": "在[[Special:Search]]提供高級搜尋功能的輕鬆存取",
@@ -27,7 +28,17 @@
 	"advancedsearch-field-filew": "檔案寬度（像素）：",
 	"advancedsearch-field-fileh": "檔案高度（像素）：",
 	"advancedsearch-help-plain": ";描述\n:在標題或內容中搜尋這些詞。\n;請注意以下說明\n:* 此處可以輸入多個字詞。\n:* 標點符號及其他非字母數字字元（除了冒號和逗號）將會忽略。\n:* 這裡可能存在不包含一個或多個您搜尋關鍵詞的結果。\n:* 詞幹搜尋會被使用。例如：如果輸入「car」的話，搜尋也將考慮「cars」。詞幹搜尋依語言而定。\n;幫助頁面\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch/zh#全文搜尋 全文搜尋]\n;在普通搜尋中具有相同功能的語法\n:<code>sesame street car</code>",
-	"advancedsearch-placeholder-exact-text": "鍵入精確詞并加引號，例如：\"貓喜歡山羊\"",
+	"advancedsearch-help-phrase": ";描述\n:搜尋特定的字元序列，並忽略標點符號。\n;請注意以下事項\n:（僅在使用半形雙引號時有效，請見下方範例）\n:* 以半形逗號或空格區隔，例如：<code>\"good morning\"</code>, <code>\"hello friend!\"</code>。\n:* 會忽略標點符號與其它非拉丁字母和數字的字元（除了半形冒號與逗號）。\n:* 搜尋不區分大小寫。\n:* 不會套用字詞的詞幹分析。\n;協助頁面\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers 字詞與修改]\n;在一般搜尋裡的語法同義字\n:字詞以半形雙引號括住，例如：<code>\"Begin at the beginning\"</code>。",
+	"advancedsearch-help-or": ";描述\n:頁面中至少要包含一個搜尋項目。\n;協助頁面\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers 字詞與修改]\n;在一般搜尋裡的語法同義字\n:在字詞之間以 <code>OR</code> 區隔，例如：<code>Laptop OR Notebook</code>。",
+	"advancedsearch-help-not": ";描述\n:在搜尋裡排除包含這些字詞的頁面。\n;請注意以下事項\n:* 會套用到字詞的詞幹分析。例如：假如像是輸入了 ''car''，那搜尋也會考慮到 ''cars''。字詞的詞幹分析是以語言來指定。\n;協助頁面\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers 字詞與修改]\n;在一般搜尋裡的語法同義字\n:於字詞前方添加 <code>-</code> 符號，例如：<code>-elephant</code>。",
+	"advancedsearch-help-intitle": ";描述\n:搜尋標題開頭帶有關鍵字的頁面\n;請注意以下事項\n:* 搜尋會包含到重新導向。\n:* 會套用到字詞的詞幹分析。例如：假如像是輸入了 ''car''，那搜尋也會考慮到 ''cars''。字詞的詞幹分析是以語言來指定。\n;協助頁面\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Intitle_and_incategory Intitle 與 incategory]\n;在一般搜尋裡的語法同義字\n:於字詞前方添加 <code>intitle:</code>，例如像是：<code>intitle:queen</code>。",
+	"advancedsearch-help-subpageof": ";描述\n:搜尋頁面裡的子頁面。\n;請注意以下事項\n:* 您僅能一次搜尋一個頁面下的子頁面。\n:* 請不要忘記在名稱空間篩選裡啟用您想要用來限制您搜尋的名稱空間。\n:* 請不要在頁面名稱前包含名稱空間，例如像：<del><code>{{ns:project}}:Redirect</code></del>。\n;協助頁面\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#subpageof subpageof]\n;在一般搜尋裡的語法同義字\n:<code>subpageof:</code> 遵循像是 <code>subpageof:Redirect</code> 的頁面名稱。使用半形雙引號括住包含空格的父頁面，例如：<code>subpageof:\"Requests for comment\"</code>。",
+	"advancedsearch-help-hastemplate": ";描述\n:搜尋有確實包含到此模板的頁面。\n;請注意以下事項\n:* 您僅能一次搜尋一個模板。\n;協助頁面\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Hastemplate Hastemplate]\n;在一般搜尋裡的語法同義字\n:以引號包含字詞後，在前方添加 <code>hastemplate:</code>，例如： <code>hastemplate:\"missing information\"</code>。",
+	"advancedsearch-help-inlanguage": ";描述：\n將僅搜尋您挑選的語言。\n;請注意以下事項\n:*在頁面上您僅能以一種語言搜尋。\n:*此欄位僅在 translatewiki 擴充功能啟用時於 wiki 上可見。\n;協助頁面\n: [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Inlanguage Inlanguage]\n;在一般搜尋裡的語法同義字\n:<code>inlanguage:</code> 遵循像是 <code>inlanguage:es</code> 的語言代碼。您可以透過在關鍵字前添加 <code>-</code> 字元來排除指定語言，例如：<code>-inlanguage:en</code>。",
+	"advancedsearch-help-filetype": ";描述\n:搜尋僅針對所選類型檔案。\n;請注意以下事項\n:* 您僅能搜尋一種檔案類型。\n:* 您僅能選擇來自下拉選單裡的檔案類型。\n;協助頁面\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype 檔案類型] 與[https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime 檔案 mime]\n;在一般搜尋裡的語法同義字\n:在字詞前面包含 <code>filetype:</code>，例如：<code>filetype:ogg</code>。",
+	"advancedsearch-help-filew": ";描述\n:這些欄位允許您指定檔案寬度。\n;請注意以下事項\n:* 這僅適用於含有寬度與高度屬性的檔案類型，例如影片和圖片。\n;協助頁面\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures 檔案衡量]\n;在一般搜尋裡的語法同義字\n:於數字前方添加 <code>filew</code>，例如：<code>filew:>800</code>。",
+	"advancedsearch-help-fileh": ";描述\n:這些欄位允許您指定檔案高度。\n;請注意以下事項\n:* 這僅適用於含有寬度與高度屬性的檔案類型，例如影片和圖片。\n;協助頁面\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures 檔案衡量]\n;在一般搜尋裡的語法同義字\n:於數字前方添加 <code>fileh</code>，例如：<code>fileh:>600</code>",
+	"advancedsearch-placeholder-exact-text": "\"貓喜歡山羊\"",
 	"advancedsearch-inlanguage-default": "選擇語言",
 	"advancedsearch-filetype-section-types": "一般檔案類型",
 	"advancedsearch-filetype-section-image": "圖片格式",
@@ -45,10 +56,12 @@
 	"advancedsearch-filesize-greater-than": "大於",
 	"advancedsearch-filesize-smaller-than": "小於",
 	"advancedsearch-namespaces-search-in": "在此命名空間中搜尋：",
+	"advancedsearch-namespaces-remember": "記住選項用於往後的搜尋",
 	"advancedsearch-namespaces-preset-all": "全部",
+	"advancedsearch-namespaces-preset-default": "預設",
 	"advancedsearch-namespaces-preset-general-help": "一般幫助",
 	"advancedsearch-namespaces-preset-discussion": "討論",
-	"advancedsearch-namespaces-placeholder": "加入命名空間",
+	"advancedsearch-namespaces-placeholder": "加入命名空間…",
 	"advancedsearch-beta-feature-message": "高級搜尋介面",
 	"advancedsearch-beta-feature-description": "在[[Special:Search]]提供進階搜尋功能的輕鬆存取。"
 }
