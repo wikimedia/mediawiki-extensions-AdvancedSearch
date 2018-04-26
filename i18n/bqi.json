@@ -9,6 +9,7 @@
 	"advancedsearch-optgroup-structure": "ساخدار",
 	"advancedsearch-optgroup-files": "جانیایٱل و ٱسگا",
 	"advancedsearch-field-plain": "ای ڤاجاٛیٱل",
+	"advancedsearch-field-filetype": "جۊر جانیا:",
 	"advancedsearch-filetype-bitmap": "ٱسگ",
 	"advancedsearch-filetype-drawing": "کاٛشیاری کردن",
 	"advancedsearch-filetype-audio": "بونگ",
@@ -18,5 +19,8 @@
 	"advancedsearch-filesize-greater-than": "گٱپتراٛ ز",
 	"advancedsearch-filesize-smaller-than": "کۊچیرتراٛ ز",
 	"advancedsearch-namespaces-search-in": "ماٛن بگرد:",
-	"advancedsearch-namespaces-preset-all": "همٱ"
+	"advancedsearch-namespaces-preset-all": "همٱ",
+	"advancedsearch-namespaces-preset-default": "پیش فٱرز",
+	"advancedsearch-namespaces-preset-discussion": "گٱپ",
+	"advancedsearch-namespaces-placeholder": "اٛزاف کردن نومجاگٱ"
 }
