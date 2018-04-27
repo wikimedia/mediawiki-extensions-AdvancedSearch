@@ -151,6 +151,7 @@
 			],
 			"dependencies": [
 				"ext.advancedSearch.ui.ArbitraryWordInput",
+				"ext.advancedSearch.ui.DeepCategoryFilter",
 				"ext.advancedSearch.dm.FileTypeOptionProvider",
 				"ext.advancedSearch.ui.FileTypeSelection",
 				"ext.advancedSearch.ui.ImageDimensionInput",
@@ -194,6 +195,16 @@
 			"dependencies": [
 				"ext.advancedSearch.util",
 				"oojs-ui-widgets"
+			]
+		},
+		"ext.advancedSearch.ui.DeepCategoryFilter": {
+			"scripts": [
+				"modules/ui/ext.advancedSearch.DeepCategoryFilter.js"
+			],
+			"dependencies": [
+				"ext.advancedSearch.util",
+				"oojs-ui-widgets",
+				"mediawiki.widgets.CategoryMultiselectWidget"
 			]
 		},
 		"ext.advancedSearch.ui.FormState": {

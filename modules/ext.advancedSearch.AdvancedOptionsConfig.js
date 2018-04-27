@@ -239,6 +239,28 @@
 		},
 		{
 			group: 'structure',
+			id: 'deepcat',
+			formatter: function ( val ) {
+				if ( Array.isArray( val ) ) {
+					return $.map( val, function ( templateItem ) {
+						return 'deepcat:' + optionalQuotes( templateItem );
+					} ).join( ' ' );
+				}
+				return 'deepcat:' + optionalQuotes( val );
+			},
+			init: function ( state ) {
+				return new mw.libs.advancedSearch.ui.DeepCategoryFilter(
+					state,
+					{
+						optionId: 'deepcat',
+						id: 'advancedSearch-deepcat'
+					}
+				);
+			},
+			layout: createDefaultLayout
+		},
+		{
+			group: 'structure',
 			id: 'hastemplate',
 			defaultValue: [],
 			formatter: function ( val ) {
