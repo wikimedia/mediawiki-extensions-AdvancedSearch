@@ -19,7 +19,7 @@
 	"advancedsearch-field-not": "不含这些词：",
 	"advancedsearch-field-subpageof": "此页面的子页面：",
 	"advancedsearch-field-intitle": "页面标题包含：",
-	"advancedsearch-field-deepcat": "此分类中的页面：",
+	"advancedsearch-field-category": "此分类中的页面：",
 	"advancedsearch-field-hastemplate": "含此模板的页面：",
 	"advancedsearch-field-inlanguage": "此语言中的页面：",
 	"advancedsearch-field-filetype": "文件格式：",

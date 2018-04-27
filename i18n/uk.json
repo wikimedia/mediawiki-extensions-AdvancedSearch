@@ -17,7 +17,7 @@
 	"advancedsearch-field-not": "Крім цих слів:",
 	"advancedsearch-field-subpageof": "Підсторінки цієї сторінки:",
 	"advancedsearch-field-intitle": "Назва сторінки містить:",
-	"advancedsearch-field-deepcat": "Сторінка в цій категорії:",
+	"advancedsearch-field-category": "Сторінка в цій категорії:",
 	"advancedsearch-field-hastemplate": "Лише сторінки з цим шаблоном:",
 	"advancedsearch-field-filetype": "Тип файлу:",
 	"advancedsearch-field-filew": "Ширина файлу в пікселях:",

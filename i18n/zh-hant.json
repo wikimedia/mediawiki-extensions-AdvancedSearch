@@ -21,7 +21,7 @@
 	"advancedsearch-field-not": "不含這些詞：",
 	"advancedsearch-field-subpageof": "此頁面的子頁面：",
 	"advancedsearch-field-intitle": "頁面標題包含：",
-	"advancedsearch-field-deepcat": "此分類中的頁面：",
+	"advancedsearch-field-category": "此分類中的頁面：",
 	"advancedsearch-field-hastemplate": "包含此模板的頁面：",
 	"advancedsearch-field-inlanguage": "此語言的頁面：",
 	"advancedsearch-field-filetype": "檔案類型：",

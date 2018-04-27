@@ -19,7 +19,7 @@
 	"advancedsearch-field-not": "دون هذه الكلمات:",
 	"advancedsearch-field-subpageof": "الصفحات الفرعية من هذه الصفحة:",
 	"advancedsearch-field-intitle": "عنوان الصفحة فيه:",
-	"advancedsearch-field-deepcat": "صفحة من هذا التصنيف:",
+	"advancedsearch-field-category": "صفحة من هذا التصنيف:",
 	"advancedsearch-field-hastemplate": "الصفحات المستعمل فيها هذا القالب:",
 	"advancedsearch-field-inlanguage": "صفحات بهذه اللغة:",
 	"advancedsearch-field-filetype": "صيغة الملف:",
