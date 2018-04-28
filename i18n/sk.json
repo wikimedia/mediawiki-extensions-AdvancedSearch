@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Pmikolas44",
-			"TomášPolonec"
+			"TomášPolonec",
+			"Liuxinyu970226"
 		]
 	},
 	"advancedsearch-desc": "Jednoduchý prístup k pokročilým možnostiam vyhľadávania na stránke [[Special:Search]]",
@@ -21,7 +22,7 @@
 	"advancedsearch-field-filetype": "Typ súboru:",
 	"advancedsearch-field-filew": "Šírka súboru v pixeloch:",
 	"advancedsearch-field-fileh": "Výška súboru v pixeloch:",
-	"advancedsearch-placeholder-exact-text": "Vložte presnú formuláciu do úvodzoviek: \"mačka miluje kozu\"",
+	"advancedsearch-placeholder-exact-text": "\"mačka miluje kozu\"",
 	"advancedsearch-filetype-section-types": "Všeobecné typy súborov",
 	"advancedsearch-filetype-section-image": "Formáty obrázkov",
 	"advancedsearch-filetype-section-video": "Formáty videí",
