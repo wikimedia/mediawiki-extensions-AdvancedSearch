@@ -30,6 +30,8 @@
 	"advancedsearch-filesize-equals": "等しい",
 	"advancedsearch-filesize-smaller-than": "未満",
 	"advancedsearch-namespaces-preset-all": "すべて",
+	"advancedsearch-namespaces-preset-default": "既定",
+	"advancedsearch-namespaces-preset-general-help": "一般的なヘルプ",
 	"advancedsearch-namespaces-preset-discussion": "議論",
 	"advancedsearch-namespaces-placeholder": "名前空間を追加…",
 	"advancedsearch-beta-feature-message": "高度な検索インタフェース",
