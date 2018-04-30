@@ -132,8 +132,8 @@
 		label = label || data;
 		var tagItem = new OO.ui.TagItemWidget( { data: data, label: label } );
 		var formattedLabel = mw.libs.advancedSearch.util.capitalize( tagItem.$label.text() ),
-			extLink = '/wiki/Template:' + formattedLabel,
 			title = 'Template:' + formattedLabel,
+			extLink = mw.config.get( 'wgScript' ) + '?title=' + title,
 			content = mw.libs.advancedSearch.util.capitalize( tagItem.getData() );
 
 		tagItem.$element
