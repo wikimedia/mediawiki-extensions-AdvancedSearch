@@ -9,6 +9,8 @@
 	"advancedsearch-optgroup-files": "Faili un attēli",
 	"advancedsearch-field-plain": "Šie vārdi:",
 	"advancedsearch-field-not": "Bez šiem vārdiem:",
+	"advancedsearch-field-category": "Lapas šajās kategorijās:",
+	"advancedsearch-field-hastemplate": "Lapas ar šīm veidnēm:",
 	"advancedsearch-field-inlanguage": "Lapas šajā valodā:",
 	"advancedsearch-inlanguage-default": "Izvēlies valodu",
 	"advancedsearch-filetype-section-image": "Attēlu formāti",
