@@ -5,9 +5,13 @@
 	mw.libs.advancedSearch = mw.libs.advancedSearch || {};
 	mw.libs.advancedSearch.ui = mw.libs.advancedSearch.ui || {};
 
+	var markNonExistent = function ( item ) {
+		item.$label.children().addClass( 'new' );
+	};
+
 	var markTemplateExistence = function ( item, queryCache ) {
 		if ( queryCache.get( item.$label.text() ) === 'NO' ) {
-			item.$element.find( 'a.oo-ui-labelElement-label' ).addClass( 'new' );
+			markNonExistent( item );
 		}
 	};
 
@@ -85,6 +89,8 @@
 			this.items.forEach( function ( item ) {
 				markTemplateExistence( item, self.queryCache );
 			} );
+			// prevents the input from stretching too much
+			// and creating a second row in the field
 			$( '#advancedSearchOption-hastemplate input' ).css( 'width', '1em' );
 		}.bind( this ) );
 	};
@@ -130,26 +136,21 @@
 
 	mw.libs.advancedSearch.ui.TemplateSearch.prototype.createTagItemWidget = function ( data, label ) {
 		label = label || data;
-		var tagItem = new OO.ui.TagItemWidget( { data: data, label: label } );
-		var formattedLabel = mw.libs.advancedSearch.util.capitalize( tagItem.$label.text() ),
-			title = 'Template:' + formattedLabel,
-			extLink = mw.config.get( 'wgScript' ) + '?title=' + title,
-			content = mw.libs.advancedSearch.util.capitalize( tagItem.getData() );
+		var title = mw.Title.newFromText( label, mw.config.get( 'wgNamespaceIds' ).template ),
+			tagItemLabel = $( '<a>' ).attr( {
+				target: '_blank',
+				href: title.getUrl(),
+				title: title.getPrefixedText()
+			} ).text( label ),
+			tagItem = new OO.ui.TagItemWidget( { data: data, label: label } );
 
-		tagItem.$element
-			.find( 'span.oo-ui-labelElement-label:first-child' )
-			.empty()
-			.append(
-				'<a target="_blank" href="' + extLink + '" title="' + title + '" class="oo-ui-labelElement-label">' +
-				content +
-				'</a>'
-			);
-		// If template doesn't exist color the tag text in red
+		tagItem.setLabel( tagItemLabel );
+
 		if ( !this.queryCache.has( tagItem.$label.text() ) ) {
 			this.searchForTemplate( tagItem.$label.text() )
 				.then( function ( response ) {
 					if ( response.length === 0 ) {
-						tagItem.$element.find( 'a.oo-ui-labelElement-label' ).addClass( 'new' );
+						markNonExistent( tagItem );
 					}
 				} );
 		} else {

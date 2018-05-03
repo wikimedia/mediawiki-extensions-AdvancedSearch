@@ -28,8 +28,4 @@
 		} ) );
 	};
 
-	mw.libs.advancedSearch.util.capitalize = function ( str ) {
-		return str.charAt( 0 ).toUpperCase() + str.slice( 1 );
-	};
-
 }( mediaWiki, jQuery ) );
