@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Da voli"
+			"Da voli",
+			"Artsiom91"
 		]
 	},
-	"advancedsearch-optgroup-files": "Файлы і выявы"
+	"advancedsearch-desc": "Лёгкі доступ да пашыраных магчымасцей пошуку ў [[Special:Search]]",
+	"advancedsearch-optgroup-files": "Файлы і выявы",
+	"advancedsearch-beta-feature-message": "Інтэрфейс пашыранага пошуку",
+	"advancedsearch-beta-feature-description": "Лёгкі доступ да пашыраных магчымасцей пошуку ў [[Special:Search]]."
 }

@@ -5,6 +5,7 @@
 			"ShockD"
 		]
 	},
+	"advancedsearch-options-pane-head": "Разширени параметри:",
 	"advancedsearch-optgroup-text": "Търсене в текста на страницата",
 	"advancedsearch-optgroup-structure": "Структура",
 	"advancedsearch-optgroup-files": "Файлове и изображения",
@@ -20,11 +21,21 @@
 	"advancedsearch-field-filew": "Ширина на файла в пиксели:",
 	"advancedsearch-field-fileh": "Височина на файла в пиксели:",
 	"advancedsearch-filetype-section-types": "Общи файлови типове",
+	"advancedsearch-filetype-section-image": "Формати за изображения",
+	"advancedsearch-filetype-section-video": "Видеоформати",
+	"advancedsearch-filetype-section-audio": "Формати за аудио файлове",
+	"advancedsearch-filetype-default": "Избор на файлов тип",
 	"advancedsearch-filetype-bitmap": "Изображение",
 	"advancedsearch-filetype-drawing": "Чертеж",
 	"advancedsearch-filetype-audio": "Аудио",
 	"advancedsearch-filetype-video": "Видео",
 	"advancedsearch-namespaces-search-in": "Търсене в:",
+	"advancedsearch-namespaces-remember": "Запомняне на избора за бъдещи търсения",
 	"advancedsearch-namespaces-preset-all": "Всички",
-	"advancedsearch-namespaces-placeholder": "Добавяне на именни пространства..."
+	"advancedsearch-namespaces-preset-default": "По подразбиране",
+	"advancedsearch-namespaces-preset-general-help": "Обща помощ",
+	"advancedsearch-namespaces-preset-discussion": "Беседа",
+	"advancedsearch-namespaces-placeholder": "Добавяне на именни пространства...",
+	"advancedsearch-beta-feature-message": "Интерфейс за разширено търсене",
+	"advancedsearch-beta-feature-description": "Лесен достъп до разширените възможности за търсене на [[Специални:Търсене]]."
 }
