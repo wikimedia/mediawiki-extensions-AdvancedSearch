@@ -1,0 +1,40 @@
+{
+	"@metadata": {
+		"authors": [
+			"Pyscowicz"
+		]
+	},
+	"advancedsearch-ask-feedback": "Kuinka uusi käyttöliittymä toimii sinulla? Anna meille [$1 palautetta] (aukeaa uuteen välilehteen)",
+	"advancedsearch-options-pane-head": "Laajennetut parametrit:",
+	"advancedsearch-optgroup-structure": "Rakenne",
+	"advancedsearch-optgroup-files": "Tiedostot ja kuvat",
+	"advancedsearch-field-plain": "Nämä sanat:",
+	"advancedsearch-field-or": "Yksi näistä sanoista:",
+	"advancedsearch-field-not": "Ei näitä sanoja:",
+	"advancedsearch-field-intitle": "Sivun otsikko sisältää:",
+	"advancedsearch-field-category": "Sivut näissä luokissa:",
+	"advancedsearch-field-hastemplate": "Sivut näillä mallineilla:",
+	"advancedsearch-field-inlanguage": "Sivut tällä kielellä:",
+	"advancedsearch-field-filetype": "Tiedostotyyppi:",
+	"advancedsearch-field-filew": "Tiedoston leveys pikseleinä:",
+	"advancedsearch-field-fileh": "Tiedoston pituus pikseleinä:",
+	"advancedsearch-placeholder-exact-text": "\"kissa rakastaa vuohta\"",
+	"advancedsearch-inlanguage-default": "Valitse kieli",
+	"advancedsearch-filetype-section-types": "Yleiset tiedostotyypit",
+	"advancedsearch-filetype-section-image": "Kuvamuodot",
+	"advancedsearch-filetype-section-video": "Videomuodot",
+	"advancedsearch-filetype-section-audio": "Äänimuodot",
+	"advancedsearch-filetype-section-document": "Asiakirjamuodot",
+	"advancedsearch-filetype-section-other": "Muut muodot",
+	"advancedsearch-filetype-default": "Valitse tiedostotyyppi",
+	"advancedsearch-filetype-bitmap": "Kuva",
+	"advancedsearch-filetype-audio": "Ääni",
+	"advancedsearch-filetype-video": "Video",
+	"advancedsearch-namespaces-remember": "Muista valinta tulevia hakuja varten",
+	"advancedsearch-namespaces-preset-all": "Kaikki",
+	"advancedsearch-namespaces-preset-default": "Oletus",
+	"advancedsearch-namespaces-preset-general-help": "Yleinen apu",
+	"advancedsearch-namespaces-preset-discussion": "Keskustelu",
+	"advancedsearch-namespaces-placeholder": "Lisää nimiavaruuksia...",
+	"advancedsearch-beta-feature-message": "Laajennettu hakukäyttöliittymä"
+}
