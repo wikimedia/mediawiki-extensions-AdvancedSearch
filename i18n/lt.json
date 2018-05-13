@@ -5,6 +5,7 @@
 		]
 	},
 	"advancedsearch-desc": "Lengva naudotis išplėstinės paieškos galimybėmis puslapyje [[Special:Search]]",
+	"advancedsearch-ask-feedback": "Kaip jums patinka naujoji sąsaja? Prašome pateikti [$1 atsiliepimus] (atsidaro naujame skirtuke)",
 	"advancedsearch-options-pane-head": "Išplėstiniai nustatymai:",
 	"advancedsearch-optgroup-text": "Ieškoti puslapio tekste",
 	"advancedsearch-optgroup-structure": "Struktūra",
@@ -17,6 +18,7 @@
 	"advancedsearch-field-intitle": "Puslapio pavaidinime yra:",
 	"advancedsearch-field-category": "Puslapiai šiose kategorijose:",
 	"advancedsearch-field-hastemplate": "Puslapiai su šiais šablonais:",
+	"advancedsearch-field-inlanguage": "Puslapiai šia kalba:",
 	"advancedsearch-field-filetype": "Failo tipas:",
 	"advancedsearch-field-filew": "Rinkmenos plotis taškais:",
 	"advancedsearch-field-fileh": "Rinkmenos aukštis taškais:",
@@ -41,6 +43,7 @@
 	"advancedsearch-namespaces-remember": "Atsiminti pasirinkimą būsimoms paieškoms",
 	"advancedsearch-namespaces-preset-all": "Visi",
 	"advancedsearch-namespaces-preset-default": "Numatytasis",
+	"advancedsearch-namespaces-preset-general-help": "Bendroji pagalba",
 	"advancedsearch-namespaces-preset-discussion": "Aptarimas",
 	"advancedsearch-namespaces-placeholder": "Pridėti vardų sritis…",
 	"advancedsearch-beta-feature-message": "Išplėstinės paieškos sąsaja",
