@@ -96,6 +96,9 @@ class Hooks {
 			],
 			'info-link' => 'https://www.mediawiki.org/wiki/Help:Extension:AdvancedSearch',
 			'discussion-link' => 'https://www.mediawiki.org/wiki/Help_talk:Extension:AdvancedSearch',
+			'requirements' => [
+				'javascript' => true,
+			],
 		];
 	}
 
