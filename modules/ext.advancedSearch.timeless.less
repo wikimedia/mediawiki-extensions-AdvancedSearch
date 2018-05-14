@@ -1,8 +1,21 @@
 /* Overwrite timeless padding to OO default to fit general layout */
-.mw-advancedSearch-container input {
-	/* Hack around an incompatibility between Timeless and OOUI, please remove if possible */
-	box-shadow: none;
-	padding: 0.625em 0.625em 0.546875em;
+.mw-advancedSearch-container {
+	input {
+		/* Hack around an incompatibility between Timeless and OOUI, please remove if possible */
+		box-shadow: none;
+		padding: 0.625em 0.625em 0.546875em;
+		border-color: #a2a9b1;
+		margin: 0;
+		min-height: initial;
+	}
+
+	code {
+		/* Hack around an incompatibility between Timeless and <code> tag, please remove if possible */
+		background-color: #f8f9fa;
+		border: 1px solid #eaecf0;
+		border-radius: 2px;
+		padding: 1px 4px;
+	}
 }
 
 .value-container input {
@@ -13,4 +26,9 @@
 /* Disable overflow to fully show search forms */
 .mw-advancedSearch-fieldContainer fieldset {
 	overflow: inherit;
+}
+
+/* Hack around an incompatibility between Timeless and OOUI, please remove if possible */
+button .oo-ui-labelElement-label {
+	text-shadow: none;
 }
