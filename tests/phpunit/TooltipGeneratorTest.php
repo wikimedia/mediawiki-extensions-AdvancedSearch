@@ -7,6 +7,9 @@ use MediaWikiTestCase;
 
 /**
  * @covers \AdvancedSearch\TooltipGenerator
+ *
+ * @license GPL-2.0-or-later
+ * @author Thiemo Kreuz
  */
 class TooltipGeneratorTest extends MediaWikiTestCase {
 

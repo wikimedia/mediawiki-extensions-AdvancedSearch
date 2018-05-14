@@ -8,6 +8,8 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \AdvancedSearch\MimeTypeConfigurator
+ *
+ * @license GPL-2.0-or-later
  */
 class MimeTypeConfiguratorTest extends TestCase {
 
