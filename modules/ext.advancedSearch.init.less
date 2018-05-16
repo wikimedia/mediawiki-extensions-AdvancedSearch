@@ -1,7 +1,29 @@
 .client-js {
+	/* This won't match any more if the `.feedback` element is added between. When the
+	   "advancedsearch-ask-feedback" message is removed, this won't have an effect any more and
+	   should be removed. */
 	/* stylelint-disable-next-line selector-max-id */
-	#mw-searchoptions,
+	#firstHeading + #bodyContent {
+		/* Computed height of a single line of text */
+		padding-top: 19px;
+	}
+
 	.mw-search-profile-tabs {
 		display: none;
+	}
+
+	#mw-searchoptions {
+		display: none;
+		/* Computed height of the `.mw-advancedSearch-container` with one row of namespaces as of
+		   OOUI 0.26.5 */
+		height: 9.479em;
+		padding: 0;
+		visibility: hidden;
+
+		/* This won't be the last element any more when `.mw-advancedSearch-container` is added */
+		/* stylelint-disable-next-line selector-max-id */
+		&:last-child {
+			display: block;
+		}
 	}
 }
