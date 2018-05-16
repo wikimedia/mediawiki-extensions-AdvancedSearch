@@ -30,6 +30,11 @@
 		"AdvancedSearchNamespacePresets": {
 			"description": "Groups of namespaces to offer as presets. Can be specified ('namespaces') or determined dynamically ('provider').",
 			"value": {
+				"defaultNamespaces": {
+					"enabled": true,
+					"provider": "defaultNamespaces",
+					"label": "advancedsearch-namespaces-preset-default"
+				},
 				"discussion": {
 					"enabled": true,
 					"provider": "discussion",
@@ -42,11 +47,6 @@
 						"12"
 					],
 					"label": "advancedsearch-namespaces-preset-general-help"
-				},
-				"defaultNamespaces": {
-					"enabled": true,
-					"provider": "defaultNamespaces",
-					"label": "advancedsearch-namespaces-preset-default"
 				},
 				"all": {
 					"enabled": true,
