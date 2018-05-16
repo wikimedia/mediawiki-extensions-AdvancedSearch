@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Beta16"
+			"Beta16",
+			"Fringio"
 		]
 	},
 	"advancedsearch-desc": "Accesso rapido ai parametri di ricerca avanzata in [[Special:Search]]",
+	"advancedsearch-ask-feedback": "Come funziona per te questa nuova interfaccia? Per favore [$1 dì la tua] (si apre in una nuova scheda)",
 	"advancedsearch-options-pane-head": "Parametri avanzati:",
 	"advancedsearch-optgroup-text": "Cerca nel testo della pagina",
 	"advancedsearch-optgroup-structure": "Struttura",
