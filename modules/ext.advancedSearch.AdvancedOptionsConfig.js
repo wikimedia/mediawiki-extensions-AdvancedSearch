@@ -35,7 +35,7 @@
 
 	/**
 	 * @param {string} prefix
-	 * @param {string} val
+	 * @param {string[]} val
 	 * @return {string}
 	 */
 	function formatSizeConstraint( prefix, val ) {
