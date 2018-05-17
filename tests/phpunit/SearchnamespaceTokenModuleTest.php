@@ -9,7 +9,7 @@ use ResourceLoaderContext;
 use User;
 
 /**
- * @covers \AdvancedSearch\TooltipGenerator
+ * @covers \AdvancedSearch\SearchnamespaceTokenModule
  *
  * @license GPL-2.0-or-later
  * @author Thiemo Kreuz
