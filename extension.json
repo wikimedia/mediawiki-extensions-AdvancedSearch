@@ -79,16 +79,7 @@
 				"modules/ext.advancedSearch.init.less"
 			]
 		},
-		"ext.advancedSearch.searchtoken": {
-			"class": "AdvancedSearch\\SearchnamespaceTokenModule",
-			"dependencies": [
-				"user.tokens"
-			]
-		},
-		"ext.advancedSearch.init": {
-			"scripts": [
-				"modules/ext.advancedSearch.init.js"
-			],
+		"ext.advancedSearch.styles": {
 			"styles": [
 				"modules/ext.advancedSearch.less"
 			],
@@ -99,7 +90,18 @@
 				"monobook": [
 					"modules/ext.advancedSearch.monobook.less"
 				]
-			},
+			}
+		},
+		"ext.advancedSearch.searchtoken": {
+			"class": "AdvancedSearch\\SearchnamespaceTokenModule",
+			"dependencies": [
+				"user.tokens"
+			]
+		},
+		"ext.advancedSearch.init": {
+			"scripts": [
+				"modules/ext.advancedSearch.init.js"
+			],
 			"messages": [
 				"advancedsearch-options-pane-head",
 				"advancedsearch-namespaces-search-in",
@@ -126,6 +128,7 @@
 				"ext.advancedSearch.dm.SearchableNamespaces",
 				"ext.advancedSearch.dm.SearchModel",
 				"ext.advancedSearch.dm.trackingEvents.SearchRequest",
+				"ext.advancedSearch.styles",
 				"ext.advancedSearch.ui.StoreListener",
 				"ext.advancedSearch.ui.mixins.ClassesForDropdownOptions",
 				"ext.advancedSearch.ui.FormState",
