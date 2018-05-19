@@ -110,6 +110,7 @@ describe( 'Advanced Search', function () {
 
 	it( 'finds no placeholders for "These words" "None of these words" and "One of these words"', function () {
 		SearchPage.open();
+		SearchPage.toggleInputFields();
 
 		assert( SearchPage.searchTheseWords.getPlaceholderText() === '' );
 		assert( SearchPage.searchNotTheseWords.getPlaceholderText() === '' );
@@ -118,6 +119,7 @@ describe( 'Advanced Search', function () {
 
 	it( 'finds placeholder for "Exactly this text".', function () {
 		SearchPage.open();
+		SearchPage.toggleInputFields();
 
 		assert( SearchPage.searchExactText.getPlaceholderText() !== '' );
 	} );

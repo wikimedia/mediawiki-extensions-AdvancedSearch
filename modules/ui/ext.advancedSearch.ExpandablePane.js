@@ -16,9 +16,12 @@
 	 * @constructor
 	 *
 	 * @param  {Object} config
+	 * @param {jQuery} config.$buttonLabel
+	 * @param {number} [config.tabIndex]
+	 * @param {Function} config.dependentPaneContentBuilder
 	 */
 	mw.libs.advancedSearch.ui.ExpandablePane = function ( config ) {
-		config = $.extend( { data: this.STATE_CLOSED }, config );
+		config = $.extend( config, { data: this.STATE_CLOSED } );
 
 		mw.libs.advancedSearch.ui.ExpandablePane.parent.call( this, config );
 
@@ -36,9 +39,7 @@
 		this.$dependentPane = $( '<div>' )
 			.attr( 'id', 'mw-advancedSearch-expandable' )
 			.addClass( 'mw-advancedSearch-expandablePane-pane' );
-		if ( config.$paneContent ) {
-			this.$dependentPane.append( config.$paneContent );
-		}
+		this.dependentPaneContentBuilder = config.dependentPaneContentBuilder;
 
 		this.$element.addClass( 'mw-advancedSearch-expandablePane' );
 		this.$element.append( this.button.$element, this.$dependentPane );
@@ -62,11 +63,19 @@
 			this.updatePaneVisibility( this.STATE_CLOSED );
 			this.notifyChildInputVisibility( false );
 		} else {
+			this.buildDependentPane();
 			this.data = this.STATE_OPEN;
 			this.updatePaneVisibility( this.STATE_OPEN );
 			this.notifyChildInputVisibility( true );
 		}
 		this.emit( 'change', this.data );
+	};
+
+	mw.libs.advancedSearch.ui.ExpandablePane.prototype.buildDependentPane = function () {
+		if ( this.dependentPaneContentBuilder ) {
+			this.$dependentPane.append( this.dependentPaneContentBuilder() );
+			this.dependentPaneContentBuilder = null;
+		}
 	};
 
 	/**

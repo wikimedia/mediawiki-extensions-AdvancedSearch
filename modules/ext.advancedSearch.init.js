@@ -108,7 +108,9 @@
 		} );
 
 		var pane = new mw.libs.advancedSearch.ui.ExpandablePane( {
-			$paneContent: advancedOptionsBuilder.buildAllOptionsElement( mw.libs.advancedSearch.AdvancedOptionsConfig ),
+			dependentPaneContentBuilder: function () {
+				return advancedOptionsBuilder.buildAllOptionsElement( mw.libs.advancedSearch.AdvancedOptionsConfig );
+			},
 			$buttonLabel: searchPreview.$element,
 			tabIndex: 0
 		} );
@@ -119,6 +121,12 @@
 				searchPreview.showPreview();
 			}
 		} );
+
+		// Proactively lazy-load the pane: if the user hasn't already clicked to open the pane
+		// after half a second, build it in the background.
+		setTimeout( function () {
+			pane.buildDependentPane();
+		}, 500 );
 
 		return pane.$element;
 	}

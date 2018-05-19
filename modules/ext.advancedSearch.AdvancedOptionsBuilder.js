@@ -18,12 +18,14 @@
 	$.extend( mw.libs.advancedSearch.AdvancedOptionsBuilder.prototype, {
 		/**
 		 * @type {ext.libs.advancedSearch.dm.SearchModel}
+		 * @private
 		 */
 		state: null,
 
 		/**
 		 * @param  {string} id
 		 * @return {Function}
+		 * @private
 		 */
 		createMultiSelectChangeHandler: function ( id ) {
 			var self = this;
@@ -46,6 +48,7 @@
 		/**
 		 * @param {Object} option
 		 * @return {ext.libs.advancedSearch.ui.TextInput}
+		 * @private
 		 */
 		createWidget: function ( option ) {
 			var widget = option.init( this.state );
