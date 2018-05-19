@@ -130,7 +130,6 @@
 				"ext.advancedSearch.dm.trackingEvents.SearchRequest",
 				"ext.advancedSearch.styles",
 				"ext.advancedSearch.ui.StoreListener",
-				"ext.advancedSearch.ui.mixins.ClassesForDropdownOptions",
 				"ext.advancedSearch.ui.FormState",
 				"ext.advancedSearch.ui.ExpandablePane",
 				"ext.advancedSearch.ui.NamespaceFilters",

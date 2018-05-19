@@ -136,7 +136,6 @@ class Hooks {
 				'ext.advancedSearch.ui.DeepCategoryFilter',
 				'ext.advancedSearch.ui.FileTypeSelection',
 				'ext.advancedSearch.ui.LanguageSelection',
-				'ext.advancedSearch.ui.mixins.ClassesForDropdownOptions',
 				'ext.advancedSearch.ui.StoreListener',
 				'ext.advancedSearch.ui.NamespaceFilters',
 				'ext.advancedSearch.ui.NamespacePresets',
