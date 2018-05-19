@@ -155,7 +155,6 @@
 				"advancedsearch-field-filetype",
 				"advancedsearch-field-filew",
 				"advancedsearch-field-fileh",
-				"advancedsearch-inlanguage-default",
 				"advancedsearch-placeholder-exact-text"
 			],
 			"dependencies": [
