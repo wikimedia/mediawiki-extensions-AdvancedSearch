@@ -113,12 +113,6 @@
 				"mediawiki.Uri",
 				"mediawiki.util",
 				"oojs-ui-widgets",
-				"oojs-ui.styles.icons-content",
-				"oojs-ui.styles.icons-editing-advanced",
-				"oojs-ui.styles.icons-interactions",
-				"oojs-ui.styles.icons-layout",
-				"oojs-ui.styles.icons-media",
-				"oojs-ui.styles.icons-user",
 				"ext.advancedSearch.searchtoken",
 				"ext.advancedSearch.AdvancedOptionsBuilder",
 				"ext.advancedSearch.AdvancedOptionsConfig",
@@ -287,7 +281,13 @@
 				"modules/ui/ext.advancedSearch.NamespaceFilters.js"
 			],
 			"dependencies": [
-				"oojs-ui-widgets"
+				"oojs-ui-widgets",
+				"oojs-ui.styles.icons-content",
+				"oojs-ui.styles.icons-editing-advanced",
+				"oojs-ui.styles.icons-interactions",
+				"oojs-ui.styles.icons-layout",
+				"oojs-ui.styles.icons-media",
+				"oojs-ui.styles.icons-user"
 			]
 		},
 		"ext.advancedSearch.ui.NamespacePresets": {
