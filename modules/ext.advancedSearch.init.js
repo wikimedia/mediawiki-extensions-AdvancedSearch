@@ -217,6 +217,14 @@
 		// remove old namespace selection item to avoid double ns parameters
 		$( '#mw-searchoptions' ).remove();
 
+		// Undo changes made by timeless skin, because they break the tooltip info box.
+		// This is the only place where the change can take place, because Timeless skin sets those rules on an id selector.
+		if ( mw.config.get( 'skin' ) === 'timeless' ) {
+			$( '.mw-advancedSearch-tooltip-head, dl > dt' ).css( {
+				'font-weight': 'bold',
+				'font-family': 'inherit'
+			} );
+		}
 		// TODO this is workaround to fix a toggle true event fired after the DOM is loaded
 		setTimeout( function () {
 			namespaceSelection.getMenu().toggle( false );
