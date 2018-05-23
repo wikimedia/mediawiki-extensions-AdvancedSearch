@@ -72,7 +72,7 @@
 		if ( ns in this.namespaceIcons ) {
 			return this.namespaceIcons[ ns ];
 		}
-		return ns % 2 ? 'stripeSummary' : 'article';
+		return ns % 2 ? 'speechBubble' : 'article';
 	};
 
 	/**
