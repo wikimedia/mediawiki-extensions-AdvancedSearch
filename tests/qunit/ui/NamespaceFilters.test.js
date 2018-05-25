@@ -15,7 +15,7 @@
 			namespaceIcons: {}
 		} );
 		assert.equal( filter.getNamespaceIcon( 2 ), 'article' );
-		assert.equal( filter.getNamespaceIcon( 3 ), 'stripeSummary' );
+		assert.equal( filter.getNamespaceIcon( 3 ), 'speechBubble' );
 	} );
 
 	QUnit.test( 'Namespace object key-value-pairs are appended to menu options', function ( assert ) {
