@@ -47,7 +47,7 @@ describe( 'AdvancedSearch', function () {
 		SearchPage.searchImageWidth.put( '40' );
 		SearchPage.searchImageHeight.put( '40' );
 
-		SearchPage.searchButton.click();
+		SearchPage.submitForm();
 
 		assert.equal( SearchPage.getSearchQueryFromUrl(), 'old -new big OR enormous OR giant intitle:house subpageof:Wikimedia hastemplate:"Main Page" filemime:image/gif filew:>40 fileh:>40' );
 	} );
@@ -160,7 +160,7 @@ describe( 'AdvancedSearch', function () {
 		SearchPage.allNamespacesPreset.click();
 		SearchPage.allNamespacesPreset.click();
 
-		SearchPage.searchButton.click();
+		SearchPage.submitForm();
 
 		assert( SearchPage.getSelectedNamespaceIDs().indexOf( SearchPage.FILE_NAMESPACE ) !== -1 );
 
