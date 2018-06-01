@@ -14,7 +14,6 @@ describe( 'Advanced Search submit', function () {
 		SearchPage.searchExactText.put( '"test1 test2"' );
 
 		assert( !SearchPage.searchPreviewItems.isExisting(), 'No preview pill elements should exist' );
-
 	} );
 
 	it( 'shows search preview in collapsed state', function () {
@@ -32,14 +31,12 @@ describe( 'Advanced Search submit', function () {
 	} );
 
 	it( 'collapses search preview after submission', function () {
-
 		SearchPage.open();
 		SearchPage.toggleInputFields();
 		SearchPage.searchTheseWords.put( 'test,' );
 		SearchPage.submitForm();
 
 		assert( SearchPage.advancedSearchIsCollapsed() );
-
 	} );
 
 } );

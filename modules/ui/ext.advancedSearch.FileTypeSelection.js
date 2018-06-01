@@ -21,7 +21,6 @@
 	 * @param  {Object} config
 	 */
 	mw.libs.advancedSearch.ui.FileTypeSelection = function ( store, optionProvider, config ) {
-
 		config = $.extend( { options: getOptions( optionProvider ) }, config );
 		this.className = 'mw-advancedSearch-filetype-';
 		mw.libs.advancedSearch.ui.FileTypeSelection.parent.call( this, store, config );

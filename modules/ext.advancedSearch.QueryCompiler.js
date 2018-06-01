@@ -36,7 +36,6 @@
 			} else {
 				queryElements.push( formattedQueryElement );
 			}
-
 		} );
 		if ( greedyQuery ) {
 			queryElements.push( greedyQuery );

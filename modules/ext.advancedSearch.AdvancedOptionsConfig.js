@@ -153,7 +153,6 @@
 				);
 			},
 			layout: createDefaultLayout
-
 		},
 		{
 			group: 'text',
@@ -317,7 +316,6 @@
 			defaultValue: '',
 			formatter: function ( val ) {
 				switch ( val ) {
-
 					case 'bitmap':
 					case 'audio':
 					case 'drawing':
