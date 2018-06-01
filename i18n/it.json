@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"Fringio"
+			"Fringio",
+			"Sakretsu"
 		]
 	},
-	"advancedsearch-desc": "Accesso rapido ai parametri di ricerca avanzata in [[Special:Search]]",
+	"advancedsearch-desc": "Accesso rapido alle funzioni di ricerca avanzata in [[Special:Search]]",
 	"advancedsearch-ask-feedback": "Come funziona per te questa nuova interfaccia? Per favore [$1 dì la tua] (si apre in una nuova scheda)",
 	"advancedsearch-options-pane-head": "Parametri avanzati:",
 	"advancedsearch-optgroup-text": "Cerca nel testo della pagina",
@@ -47,5 +48,6 @@
 	"advancedsearch-namespaces-preset-general-help": "Pagine di aiuto",
 	"advancedsearch-namespaces-preset-discussion": "Discussione",
 	"advancedsearch-namespaces-placeholder": "Aggiungi namespace…",
-	"advancedsearch-beta-feature-message": "Interfaccia di ricerca avanzata"
+	"advancedsearch-beta-feature-message": "Interfaccia di ricerca avanzata",
+	"advancedsearch-beta-feature-description": "Accesso rapido alle funzioni di ricerca avanzata in [[Special:Search]]."
 }
