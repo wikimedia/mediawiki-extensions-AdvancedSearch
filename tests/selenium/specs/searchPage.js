@@ -91,6 +91,18 @@ describe( 'AdvancedSearch', function () {
 
 	} );
 
+	it( 'de-selects all namespaces when clicking "All" preset twice', function () {
+
+		SearchPage.open();
+		// clears the namespace bar
+		SearchPage.allNamespacesPreset.click();
+		SearchPage.allNamespacesPreset.click();
+
+		const selectedNamespaceLabels = SearchPage.namespaces.getAllTagLabels();
+		assert.deepEqual( selectedNamespaceLabels, [] );
+
+	} );
+
 	it( 'can\'t select namespaces from the dropdown which are already present as tags', function () {
 
 		SearchPage.open();
@@ -134,6 +146,23 @@ describe( 'AdvancedSearch', function () {
 		SearchPage.submitForm();
 		let current = SearchPage.getSelectedNamespaceIDs();
 		assert.deepEqual( cache, current );
+
+	} );
+
+	it( 're-adds filetype namespace after search when file type option has been selected but namespace has been removed', function () {
+
+		SearchPage.open();
+		SearchPage.toggleInputFields();
+
+		SearchPage.searchTheseWords.put( 'dog' );
+		SearchPage.searchFileType.selectImageType();
+		// clears the namespace bar
+		SearchPage.allNamespacesPreset.click();
+		SearchPage.allNamespacesPreset.click();
+
+		SearchPage.searchButton.click();
+
+		assert( SearchPage.getSelectedNamespaceIDs().indexOf( SearchPage.FILE_NAMESPACE ) !== -1 );
 
 	} );
 

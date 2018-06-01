@@ -42,6 +42,31 @@
 	}
 
 	/**
+	 * @description It is possible for the namespace field to be completely empty
+	 and at the same time have the file type option selected.
+	 This would lead to an empty search result in most cases,
+	 as the default namespaces (which are used when no namespaces are selected) do not contain files.
+	 As a courtesy to the user, we're forcefully re-adding the file namespace.
+	 When the search result page loads the file namespace will show up in the selected namespace list.
+	 * @param {jQuery} $searchField The search fields inside the forms
+	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
+	 */
+	function forceFileTypeNamespaceWhenSearchForFileType( $searchField, state ) {
+		if ( state.fileTypeIsSelected() &&
+			state.fileNamespaceIsSelected()
+		) {
+			// Can't call state.setNamespaces with file namespace here,
+			// because this function is called inside the onSubmit event
+			// and the DOM update from the state change would take too long.
+			var $compiledFileType = $( '<input>' ).prop( {
+				name: 'ns6',
+				type: 'hidden'
+			} ).val( '1' );
+			$( $searchField ).after( $compiledFileType );
+		}
+	}
+
+	/**
 	 * @param {jQuery} $search The search form element
 	 * @param {jQuery} $searchField The search fields inside the forms
 	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
@@ -49,12 +74,12 @@
 	 */
 	function setSearchSubmitTrigger( $search, $searchField, state, queryCompiler ) {
 		$search.on( 'submit', function () {
+			forceFileTypeNamespaceWhenSearchForFileType( $searchField, state );
 			var compiledQuery = $.trim( $searchField.val() + ' ' + queryCompiler.compileSearchQuery( state ) ),
 				$compiledSearchField = $( '<input>' ).prop( {
 					name: $searchField.prop( 'name' ),
 					type: 'hidden'
 				} ).val( compiledQuery );
-
 			$searchField.prop( 'name', '' )
 				.after( $compiledSearchField );
 		} );

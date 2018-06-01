@@ -151,21 +151,6 @@
 		assert.deepEqual( model.getNamespaces(), [] );
 	} );
 
-	QUnit.test( 'Adding filetype option forces file namespace', function ( assert ) {
-		var model = new SearchModel();
-		model.storeOption( 'filetype', 'image' );
-
-		assert.deepEqual( model.getNamespaces(), [ SearchModel.FILE_NAMESPACE ] );
-	} );
-
-	QUnit.test( 'When filetype option is set, file namespace cannot be removed', function ( assert ) {
-		var model = new SearchModel();
-		model.storeOption( 'filetype', 'image' );
-		model.setNamespaces( [] );
-
-		assert.deepEqual( model.getNamespaces(), [ SearchModel.FILE_NAMESPACE ] );
-	} );
-
 	QUnit.test( 'File dimension data is reset on filetype change', function ( assert ) {
 		var model = new SearchModel();
 		model.storeOption( 'filetype', 'jpeg' );

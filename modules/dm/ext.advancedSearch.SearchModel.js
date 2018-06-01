@@ -230,6 +230,20 @@
 	};
 
 	/**
+	 * @return {boolean}
+	 */
+	mw.libs.advancedSearch.dm.SearchModel.prototype.fileTypeIsSelected = function () {
+		return !!this.getOption( 'filetype' );
+	};
+
+	/**
+	 * @return {boolean}
+	 */
+	mw.libs.advancedSearch.dm.SearchModel.prototype.fileNamespaceIsSelected = function () {
+		return this.getNamespaces().indexOf( mw.libs.advancedSearch.dm.SearchModel.FILE_NAMESPACE ) === -1;
+	};
+
+	/**
 	 * @return {string[]}
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.getNamespaces = function () {
@@ -251,9 +265,6 @@
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.setNamespaces = function ( namespaces ) {
 		var previousNamespaces = this.namespaces.slice( 0 );
-		if ( this.getOption( 'filetype' ) && namespaces.indexOf( mw.libs.advancedSearch.dm.SearchModel.FILE_NAMESPACE ) === -1 ) {
-			namespaces.push( mw.libs.advancedSearch.dm.SearchModel.FILE_NAMESPACE );
-		}
 
 		this.namespaces = this.sortNamespacesByNumber( namespaces );
 

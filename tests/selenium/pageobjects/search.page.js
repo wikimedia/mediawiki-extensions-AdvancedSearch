@@ -61,6 +61,7 @@ class SearchPage extends Page {
 
 	constructor() {
 		super();
+
 		this.searchTheseWords = new PillField( '#advancedSearchOption-plain' );
 		this.searchExactText = new TextInputField( '#advancedSearchOption-phrase' );
 		this.searchNotTheseWords = new PillField( '#advancedSearchOption-not' );
@@ -74,7 +75,10 @@ class SearchPage extends Page {
 
 		this.searchImageWidth = new TextInputField( '#advancedSearchOption-filew' );
 		this.searchImageHeight = new TextInputField( '#advancedSearchOption-fileh' );
+
 	}
+
+	get FILE_NAMESPACE() { return '6'; }
 
 	get searchContainer() { return browser.element( '.mw-advancedSearch-container' ); }
 
