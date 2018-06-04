@@ -151,6 +151,7 @@ class SearchPage extends Page {
 	get default() { return browser.element( '.mw-advancedSearch-namespace-selection input[value="defaultNamespaces"]' ); }
 	get categorySuggestionsBox() { return browser.element( '#advancedSearch-category div[role="listbox"]' ); }
 	get templateSuggestionsBox() { return browser.element( '#advancedSearchOption-hastemplate div[role="listbox"]' ); }
+	get logOut() { return browser.element( '#pt-logout a' ); }
 
 	formWasSubmitted() {
 		return Object.prototype.hasOwnProperty.call( this.getQueryFromUrl(), 'advancedSearch-current' );

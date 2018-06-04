@@ -2,6 +2,7 @@
 
 let assert = require( 'assert' );
 let SearchPage = require( '../pageobjects/search.page' );
+let LoginPage = require( '../pageobjects/login.page' );
 
 describe( 'AdvancedSearch', function () {
 
@@ -125,7 +126,12 @@ describe( 'AdvancedSearch', function () {
 
 	} );
 
-	it( 'remembers the selection of namespaces for future searches', function () {
+	it( 'allows logged-in users to remember the selection of namespaces for future searches', function () {
+
+		SearchPage.open();
+		assert( !SearchPage.rememberSelection.isExisting() );
+
+		LoginPage.loginAdmin();
 
 		SearchPage.open();
 		SearchPage.generalHelpPreset.click();
@@ -134,6 +140,7 @@ describe( 'AdvancedSearch', function () {
 		SearchPage.submitForm();
 		let current = SearchPage.getSelectedNamespaceIDs();
 		assert.deepEqual( cache, current );
+		SearchPage.logOut.click();
 
 	} );
 
