@@ -109,6 +109,7 @@
 				"advancedsearch-ask-feedback"
 			],
 			"dependencies": [
+				"mediawiki.user",
 				"mediawiki.jqueryMsg",
 				"mediawiki.Uri",
 				"mediawiki.util",
