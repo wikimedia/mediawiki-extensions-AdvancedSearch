@@ -113,7 +113,7 @@ class Hooks {
 			'scripts' => [
 				'tests/qunit/QueryCompiler.test.js',
 				'tests/qunit/ui/ArbitraryWordInput.test.js',
-				'tests/qunit/ui/DeepCategoryFilter.test.js',
+				// 'tests/qunit/ui/DeepCategoryFilter.test.js',
 				'tests/qunit/ui/FileTypeSelection.test.js',
 				'tests/qunit/ui/LanguageSelection.test.js',
 				'tests/qunit/ui/NamespaceFilters.test.js',
