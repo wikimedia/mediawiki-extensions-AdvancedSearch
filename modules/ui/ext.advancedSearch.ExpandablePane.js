@@ -6,14 +6,6 @@
 	mw.libs.advancedSearch.ui = mw.libs.advancedSearch.ui || {};
 
 	/**
-	 * @param  {string} state 'open' or 'closed'
-	 * @return {string}       Indicator name
-	 */
-	function getIndicatorNameForState( state ) {
-		return state === 'open' ? 'up' : 'down';
-	}
-
-	/**
 	 * Button that expands a connected pane.
 	 *
 	 * Both button and pane can have arbitrary jQuery content.
@@ -35,7 +27,7 @@
 			framed: true,
 			tabIndex: config.tabIndex,
 			label: config.$buttonLabel,
-			indicator: getIndicatorNameForState( config.data )
+			indicator: 'down'
 		} );
 		this.button.connect( this, {
 			click: 'onButtonClick'
@@ -69,7 +61,6 @@
 			this.$dependentPane.show();
 			this.notifyChildInputVisibility( true );
 		}
-		this.button.setIndicator( getIndicatorNameForState( this.data ) );
 		this.emit( 'change', this.data );
 	};
 
