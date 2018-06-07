@@ -74,7 +74,7 @@ class Hooks {
 	 * @param User $user
 	 * @param array[] &$prefs
 	 */
-	public static function getBetaFeaturePreferences( User $user, array &$prefs ) {
+	public static function onGetBetaFeaturePreferences( User $user, array &$prefs ) {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
 		/**

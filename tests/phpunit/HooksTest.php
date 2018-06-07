@@ -38,7 +38,7 @@ class HooksTest extends MediaWikiTestCase {
 
 	public function testGetBetaFeaturePreferencesHookHandler() {
 		$prefs = [];
-		Hooks::getBetaFeaturePreferences( $this->newUser(), $prefs );
+		Hooks::onGetBetaFeaturePreferences( $this->newUser(), $prefs );
 
 		$this->assertArrayHasKey( 'advancedsearch', $prefs );
 		$this->assertStringStartsWith( '<PATH>/', $prefs['advancedsearch']['screenshot']['ltr'] );
