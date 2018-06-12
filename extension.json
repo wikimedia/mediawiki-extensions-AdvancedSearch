@@ -203,9 +203,7 @@
 				"modules/ui/ext.advancedSearch.DeepCategoryFilter.js"
 			],
 			"dependencies": [
-				"ext.advancedSearch.util",
-				"oojs-ui-widgets",
-				"mediawiki.widgets.CategoryMultiselectWidget"
+				"ext.advancedSearch.dm.MultiselectLookup"
 			]
 		},
 		"ext.advancedSearch.ui.FormState": {
@@ -351,9 +349,7 @@
 				"modules/ui/ext.advancedSearch.TemplateSearch.js"
 			],
 			"dependencies": [
-				"ext.advancedSearch.dm.TitleCache",
-				"ext.advancedSearch.util",
-				"oojs-ui-widgets"
+				"ext.advancedSearch.dm.MultiselectLookup"
 			]
 		},
 		"ext.advancedSearch.ui.TextInput": {
@@ -391,6 +387,16 @@
 			],
 			"dependencies": [
 				"mediawiki.Title"
+			]
+		},
+		"ext.advancedSearch.dm.MultiselectLookup": {
+			"scripts": [
+				"modules/dm/ext.advancedSearch.MultiselectLookup.js"
+			],
+			"dependencies": [
+				"ext.advancedSearch.dm.TitleCache",
+				"oojs-ui-widgets",
+				"ext.advancedSearch.util"
 			]
 		},
 		"ext.advancedSearch.dm.NamespacePresetProviders": {

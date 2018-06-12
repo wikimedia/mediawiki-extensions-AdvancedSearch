@@ -1,7 +1,7 @@
 ( function ( $, QUnit, sinon, mw ) {
 	'use strict';
 
-	var TemplateSearch,
+	var MultiselectLookup,
 		sandbox,
 		store,
 		config;
@@ -12,7 +12,7 @@
 				value.prop === 'info' &&
 				value.titles.match( /Template:/ );
 		} );
-		TemplateSearch = mw.libs.advancedSearch.ui.TemplateSearch;
+		MultiselectLookup = mw.libs.advancedSearch.dm.MultiselectLookup;
 		sandbox = sinon.sandbox.create();
 		store = {
 			connect: sandbox.stub(),
@@ -22,6 +22,7 @@
 		};
 		config = {
 			optionId: 'hastemplate',
+			lookupId: 'template',
 			api: new mw.Api()
 		};
 		// Stub out API to avoid queries if template pages exist
@@ -32,40 +33,63 @@
 		sandbox.restore();
 	} );
 
-	QUnit.module( 'ext.advancedSearch.ui.TemplateSearch' );
+	QUnit.module( 'ext.advancedSearch.dm.MultiselectLookup' );
+
+	QUnit.test( 'Value picked from menu is added to tags and stored', function ( assert ) {
+		var lookup = new MultiselectLookup( store, config );
+		lookup.addTag( 'Preexisting' );
+		lookup.input.setValue( 'My Templ' );
+		var item = new OO.ui.TagItemWidget();
+		item.setData( 'My Template' );
+
+		// reset storeOption as is was invoked by addTag( 'Preexisting' ) before
+		store.storeOption = sandbox.stub();
+
+		lookup.onLookupMenuItemChoose( item );
+
+		var tags = lookup.getItems();
+		assert.ok( Array.isArray( tags ) );
+		assert.equal( tags.length, 2 );
+		assert.equal( tags[ 0 ].getData(), 'Preexisting' );
+		assert.equal( tags[ 1 ].getData(), 'My Template' );
+
+		assert.ok( store.storeOption.withArgs( 'hastemplate', [ 'Preexisting', 'My Template' ] ).calledOnce );
+
+		assert.equal( lookup.input.getValue(), '' );
+	} );
 
 	QUnit.test( 'Store data subscribed to and synced initially', function ( assert ) {
-		var setValueSpy = sandbox.spy( TemplateSearch.prototype, 'setValue' );
+		var setValueSpy = sandbox.spy( MultiselectLookup.prototype, 'setValue' );
 
 		store.getOption.withArgs( 'hastemplate' ).returns( [ 'Burg' ] );
 		store.hasOptionChanged.withArgs( 'hastemplate' ).returns( true );
 
-		var templateSearch = new TemplateSearch( store, config );
+		var lookupField = new MultiselectLookup( store, config );
 
-		assert.ok( templateSearch );
+		assert.ok( lookupField );
 		assert.ok( store.connect.calledOnce );
 		assert.ok( setValueSpy.withArgs( [ 'Burg' ] ).calledOnce );
-		assert.deepEqual( templateSearch.getValue(), [ 'Burg' ] );
+		assert.deepEqual( lookupField.getValue(), [ 'Burg' ] );
 	} );
 
 	QUnit.test( 'Store update is applied', function ( assert ) {
 		store.getOption.withArgs( 'hastemplate' ).returns( [ 'from', 'beyond' ] );
 		store.hasOptionChanged.withArgs( 'hastemplate' ).returns( true );
 
-		var templateSearch = new TemplateSearch( store, config );
+		var lookupField = new MultiselectLookup( store, config );
 
-		templateSearch.onStoreUpdate();
+		lookupField.onStoreUpdate();
 
-		assert.deepEqual( templateSearch.getValue(), [ 'from', 'beyond' ] );
+		assert.deepEqual( lookupField.getValue(), [ 'from', 'beyond' ] );
 	} );
 
 	QUnit.test( 'Mixin method overridden to prevent problems', function ( assert ) {
-		var templateSearch = new TemplateSearch( store, config );
-		assert.notOk( templateSearch.isReadOnly() );
+		var lookupField = new MultiselectLookup( store, config );
+		assert.notOk( lookupField.isReadOnly() );
 	} );
 
 	QUnit.test( 'API response processed correctly', function ( assert ) {
-		var templateSearch = new TemplateSearch( store, config );
+		var lookupField = new MultiselectLookup( store, config );
 
 		var apiData = [
 			'j',
@@ -86,7 +110,7 @@
 			]
 		];
 
-		var result = templateSearch.getLookupMenuOptionsFromData( apiData );
+		var result = lookupField.getLookupMenuOptionsFromData( apiData );
 		assert.ok( Array.isArray( result ) );
 		assert.equal( result.length, 3 );
 
@@ -101,9 +125,9 @@
 	} );
 
 	QUnit.test( 'Items already selected are not suggested', function ( assert ) {
-		var templateSearch = new TemplateSearch( store, config );
+		var lookupField = new MultiselectLookup( store, config );
 
-		templateSearch.setValue( [ 'Jochen', 'Johannes' ] );
+		lookupField.setValue( [ 'Jochen', 'Johannes' ] );
 		var apiData = [
 			'j',
 			[
@@ -123,7 +147,7 @@
 			]
 		];
 
-		var result = templateSearch.getLookupMenuOptionsFromData( apiData );
+		var result = lookupField.getLookupMenuOptionsFromData( apiData );
 		assert.ok( Array.isArray( result ) );
 		assert.equal( result.length, 1 );
 
@@ -132,38 +156,15 @@
 	} );
 
 	QUnit.test( 'Page titles post-processes nicely', function ( assert ) {
-		var templateSearch = new TemplateSearch( store, config );
-		assert.equal( templateSearch.removeNamespace( 'Test' ), 'Test' );
-		assert.equal( templateSearch.removeNamespace( 'Template:Test' ), 'Test' );
-	} );
-
-	QUnit.test( 'Value picked from menu is added to tags and stored', function ( assert ) {
-		var templateSearch = new TemplateSearch( store, config );
-		templateSearch.addTag( 'Preexisting' );
-		templateSearch.input.setValue( 'My Templ' );
-		var item = new OO.ui.TagItemWidget();
-		item.setData( 'My Template' );
-
-		// reset storeOption as is was invoked by addTag( 'Preexisting' ) before
-		store.storeOption = sandbox.stub();
-
-		templateSearch.onLookupMenuItemChoose( item );
-
-		var tags = templateSearch.getItems();
-		assert.ok( Array.isArray( tags ) );
-		assert.equal( tags.length, 2 );
-		assert.equal( tags[ 0 ].getData(), 'Preexisting' );
-		assert.equal( tags[ 1 ].getData(), 'My Template' );
-
-		assert.ok( store.storeOption.withArgs( 'hastemplate', [ 'Preexisting', 'My Template' ] ).calledOnce );
-
-		assert.equal( templateSearch.input.getValue(), '' );
+		var lookupField = new MultiselectLookup( store, config );
+		assert.equal( lookupField.removeNamespace( 'Test' ), 'Test' );
+		assert.equal( lookupField.removeNamespace( 'Template:Test' ), 'Test' );
 	} );
 
 	QUnit.test( 'Native browser autocomplete is not used', function ( assert ) {
-		var templateSearch = new TemplateSearch( store, config );
+		var lookupField = new MultiselectLookup( store, config );
 
-		assert.equal( $( templateSearch.$input ).attr( 'autocomplete' ), 'off' );
+		assert.equal( $( lookupField.$input ).attr( 'autocomplete' ), 'off' );
 	} );
 
 	QUnit.test( 'Well-formed API request yields result', function ( assert ) {
@@ -185,11 +186,10 @@
 			]
 		] ).promise() );
 
-		var templateSearch = new TemplateSearch( store, config );
-		$( templateSearch.$input ).val( 'Burg' );
+		var lookupField = new MultiselectLookup( store, config );
+		$( lookupField.$input ).val( 'Burg' );
 
-		var result = templateSearch.getLookupRequest();
-
+		var result = lookupField.getLookupRequest();
 		assert.ok( getStub.calledOnce );
 
 		assert.equal( result.state(), 'resolved' );
@@ -203,10 +203,10 @@
 		config.api = new mw.Api();
 		var getStub = sandbox.stub( config.api, 'get' );
 
-		var templateSearch = new TemplateSearch( store, config );
-		$( templateSearch.$input ).val( '' );
+		var lookupField = new MultiselectLookup( store, config );
+		$( lookupField.$input ).val( '' );
 
-		var result = templateSearch.getLookupRequest();
+		var result = lookupField.getLookupRequest();
 
 		assert.notOk( getStub.called );
 

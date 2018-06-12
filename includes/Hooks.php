@@ -113,13 +113,11 @@ class Hooks {
 			'scripts' => [
 				'tests/qunit/QueryCompiler.test.js',
 				'tests/qunit/ui/ArbitraryWordInput.test.js',
-				'tests/qunit/ui/DeepCategoryFilter.test.js',
 				'tests/qunit/ui/FileTypeSelection.test.js',
 				'tests/qunit/ui/LanguageSelection.test.js',
 				'tests/qunit/ui/NamespaceFilters.test.js',
 				'tests/qunit/ui/NamespacePresets.test.js',
 				'tests/qunit/ui/SearchPreview.test.js',
-				'tests/qunit/ui/TemplateSearch.test.js',
 				'tests/qunit/dm/getDefaultNamespaces.test.js',
 				'tests/qunit/dm/NamespacePresetProviders.test.js',
 				'tests/qunit/dm/SearchableNamespaces.test.js',
@@ -127,6 +125,7 @@ class Hooks {
 				'tests/qunit/dm/FileTypeOptionProvider.test.js',
 				'tests/qunit/dm/TitleCache.test.js',
 				'tests/qunit/dm/LanguageOptionProvider.test.js',
+				'tests/qunit/dm/MultiselectLookup.test.js',
 				'tests/qunit/dm/trackingEvents/SearchRequest.test.js',
 				'tests/qunit/util.test.js'
 			],
@@ -148,6 +147,7 @@ class Hooks {
 				'ext.advancedSearch.dm.LanguageOptionProvider',
 				'ext.advancedSearch.dm.NamespacePresetProviders',
 				'ext.advancedSearch.dm.TitleCache',
+				'ext.advancedSearch.dm.MultiselectLookup',
 				'ext.advancedSearch.dm.trackingEvents.SearchRequest',
 				'oojs-ui'
 			],
