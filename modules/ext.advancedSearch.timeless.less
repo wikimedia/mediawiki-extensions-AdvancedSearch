@@ -1,18 +1,26 @@
-/* Overwrite timeless padding to OO default to fit general layout */
 .mw-advancedSearch-container {
 	input {
 		/* Hack around an incompatibility between Timeless and OOUI, please remove if possible */
 		box-shadow: none;
+		// Overwrite Timeless padding to OOUI default to fit general layout
 		padding: 0.625em 0.625em 0.546875em;
 		border-color: #a2a9b1;
 		margin: 0;
 		min-height: initial;
 	}
 
-	code {
-		/* Hack around an incompatibility between Timeless and <code> tag, please remove if possible */
-		background-color: #f8f9fa;
-		border-color: #eaecf0;
+	// We intentionally want to ignore and reset all Timeless design choices in our info popups
+	.oo-ui-popupWidget {
+		h6,
+		dt {
+			font-weight: bold;
+			font-family: inherit;
+		}
+
+		code {
+			background-color: #f8f9fa;
+			border-color: #eaecf0;
+		}
 	}
 }
 
