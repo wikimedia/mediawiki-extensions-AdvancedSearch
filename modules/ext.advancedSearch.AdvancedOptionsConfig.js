@@ -254,6 +254,7 @@
 					state,
 					{
 						optionId: 'category',
+						lookupId: 'category',
 						id: 'advancedSearch-category'
 					}
 				);
@@ -277,6 +278,7 @@
 					state,
 					{
 						optionId: 'hastemplate',
+						lookupId: 'template',
 						id: 'advancedSearchOption-hastemplate'
 					}
 				);

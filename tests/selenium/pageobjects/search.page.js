@@ -193,7 +193,7 @@ class SearchPage extends Page {
 	}
 
 	getCategoryPillLink( category ) {
-		return browser.elements( '.oo-ui-capsuleMultiselectWidget-group a[title^="Category:' + category + '"]' );
+		return browser.elements( '.oo-ui-tagMultiselectWidget-group a[title^="Category:' + category + '"]' );
 	}
 
 	getTemplatePillLink( template ) {
