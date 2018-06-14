@@ -7,17 +7,14 @@ let LoginPage = require( '../pageobjects/login.page' );
 describe( 'AdvancedSearch', function () {
 
 	it( 'inserts advanced search icon elements', function () {
-
 		SearchPage.open();
 
 		SearchPage.toggleInputFields();
 
 		assert( SearchPage.searchInfoIcons.isVisible() );
-
 	} );
 
 	it( 'inserts content in icon popups', function () {
-
 		SearchPage.open();
 
 		SearchPage.toggleInputFields();
@@ -30,11 +27,9 @@ describe( 'AdvancedSearch', function () {
 
 			popupIcon.click();
 		} );
-
 	} );
 
 	it( 'submits the search taking into consideration all entered criteria', function () {
-
 		SearchPage.open();
 
 		SearchPage.toggleInputFields();
@@ -54,7 +49,6 @@ describe( 'AdvancedSearch', function () {
 	} );
 
 	it( 'adds the namespace "File" and dimension fields are visible when searching for files of type image', function () {
-
 		SearchPage.open();
 
 		SearchPage.toggleInputFields();
@@ -65,11 +59,9 @@ describe( 'AdvancedSearch', function () {
 
 		assert( SearchPage.searchImageWidth.isVisible() );
 		assert( SearchPage.searchImageHeight.isVisible() );
-
 	} );
 
 	it( 'hides dimension fields when searching for files of type audio', function () {
-
 		SearchPage.open();
 
 		SearchPage.toggleInputFields();
@@ -77,11 +69,9 @@ describe( 'AdvancedSearch', function () {
 
 		assert( !SearchPage.searchImageWidth.isVisible() );
 		assert( !SearchPage.searchImageHeight.isVisible() );
-
 	} );
 
 	it( 'selects all namespaces when clicking "All" preset', function () {
-
 		SearchPage.open();
 
 		SearchPage.allNamespacesPreset.click();
@@ -89,11 +79,9 @@ describe( 'AdvancedSearch', function () {
 		const allLabels = SearchPage.namespaces.getAllLabelsFromMenu();
 		const selectedNamespaceLabels = SearchPage.namespaces.getAllTagLabels();
 		assert.deepEqual( selectedNamespaceLabels, allLabels );
-
 	} );
 
 	it( 'de-selects all namespaces when clicking "All" preset twice', function () {
-
 		SearchPage.open();
 		// clears the namespace bar
 		SearchPage.allNamespacesPreset.click();
@@ -101,11 +89,9 @@ describe( 'AdvancedSearch', function () {
 
 		const selectedNamespaceLabels = SearchPage.namespaces.getAllTagLabels();
 		assert.deepEqual( selectedNamespaceLabels, [] );
-
 	} );
 
 	it( 'can\'t select namespaces from the dropdown which are already present as tags', function () {
-
 		SearchPage.open();
 
 		SearchPage.toggleInputFields();
@@ -115,11 +101,9 @@ describe( 'AdvancedSearch', function () {
 		const disabledMenuLabels = SearchPage.namespaces.getAllLabelsForDisabledItemsInMenu().sort();
 		const selectedNamespaceLabels = SearchPage.namespaces.getAllTagLabels().sort();
 		assert.deepEqual( disabledMenuLabels, selectedNamespaceLabels );
-
 	} );
 
 	it( 'unselects "All" preset when a single namespace is unselected after preset had been clicked', function () {
-
 		SearchPage.open();
 
 		SearchPage.allNamespacesPreset.click();
@@ -129,13 +113,11 @@ describe( 'AdvancedSearch', function () {
 	} );
 
 	it( 'automatically selects "All" preset when selecting all namespaces from the list of all namespaces', function () {
-
 		SearchPage.open();
 
 		SearchPage.namespaces.selectAll();
 
 		assert( SearchPage.allNamespacesPreset.isSelected() );
-
 	} );
 
 	it( 'allows logged-in users to remember the selection of namespaces for future searches', function () {
@@ -157,7 +139,6 @@ describe( 'AdvancedSearch', function () {
 	} );
 
 	it( 're-adds filetype namespace after search when file type option has been selected but namespace has been removed', function () {
-
 		SearchPage.open();
 		SearchPage.toggleInputFields();
 
@@ -170,16 +151,13 @@ describe( 'AdvancedSearch', function () {
 		SearchPage.submitForm();
 
 		assert( SearchPage.getSelectedNamespaceIDs().indexOf( SearchPage.FILE_NAMESPACE ) !== -1 );
-
 	} );
 
 	it( 'marks a namespace preset checkbox when all namespaces behind it are present in the namespace search bar', function () {
-
 		SearchPage.open();
 		SearchPage.generalHelpPreset.click();
 		SearchPage.submitForm();
 		assert( SearchPage.generalHelpPreset.isSelected() );
-
 	} );
 
 } );

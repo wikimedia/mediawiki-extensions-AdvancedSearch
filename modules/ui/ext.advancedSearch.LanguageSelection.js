@@ -20,11 +20,9 @@
 	 * @param  {Object} config
 	 */
 	mw.libs.advancedSearch.ui.LanguageSelection = function ( store, optionProvider, config ) {
-
 		config = $.extend( { options: getOptions( optionProvider ) }, config );
 		this.className = 'mw-advancedSearch-inlanguage-';
 		mw.libs.advancedSearch.ui.LanguageSelection.parent.call( this, store, config );
-
 	};
 
 	OO.inheritClass( mw.libs.advancedSearch.ui.LanguageSelection, mw.libs.advancedSearch.ui.StoreListener );

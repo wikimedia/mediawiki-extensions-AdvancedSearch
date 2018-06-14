@@ -134,7 +134,6 @@
 			}
 		} );
 		this.checkboxMultiselectWidget.on( 'change', this.updateStoreFromPresets, [], this );
-
 	};
 
 }( mediaWiki, jQuery ) );

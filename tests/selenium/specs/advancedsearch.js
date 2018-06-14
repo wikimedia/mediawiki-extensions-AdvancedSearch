@@ -97,36 +97,29 @@ describe( 'Advanced Search', function () {
 	}
 
 	it( 'has the advanced search extension installed', function () {
-
 		SpecialPage.open();
 
 		assert( SpecialPage.advancedSearchExtensionLink.isVisible() );
-
 	} );
 
 	it( 'inserts advanced search elements on search page', function () {
-
 		SearchPage.open();
 
 		assert( SearchPage.searchContainer.isVisible() );
 	} );
 
 	it( 'finds no placeholders for "These words" "None of these words" and "One of these words"', function () {
-
 		SearchPage.open();
 
 		assert( SearchPage.searchTheseWords.getPlaceholderText() === '' );
 		assert( SearchPage.searchNotTheseWords.getPlaceholderText() === '' );
 		assert( SearchPage.searchOneWord.getPlaceholderText() === '' );
-
 	} );
 
 	it( 'finds placeholder for "Exactly this text".', function () {
-
 		SearchPage.open();
 
 		assert( SearchPage.searchExactText.getPlaceholderText() !== '' );
-
 	} );
 
 	it( 'displays "These words" as a pill field ', function () {
@@ -160,7 +153,6 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchTheseWords.put( '\uE007' );
 
 		assert( SearchPage.formWasSubmitted() );
-
 	} );
 
 	it( 'does not submit the search on enter when there is text in "These Words" field', function () {
@@ -170,7 +162,6 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchTheseWords.put( 'test\uE007' );
 
 		assert( !SearchPage.formWasSubmitted() );
-
 	} );
 
 	it( 'submits the search on double enter when there is text in "These Words" field', function () {
@@ -180,7 +171,6 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchTheseWords.put( 'test\uE007\uE007' );
 
 		assert( SearchPage.formWasSubmitted() );
-
 	} );
 
 	it( 'submits the search with the correct search terms from all the pill fields', function () {
@@ -196,7 +186,6 @@ describe( 'Advanced Search', function () {
 		SearchPage.submitForm();
 
 		assert.equal( SearchPage.getSearchQueryFromUrl(), 'test "test1 test2" -test3 test4 OR test5 deepcat:Help deepcat:Me hastemplate:"Main Page"' );
-
 	} );
 
 	it( 'marks non-existent categories in red', function () {
@@ -209,7 +198,6 @@ describe( 'Advanced Search', function () {
 			let color = SearchPage.getCategoryPillLink( 'I do not exist' ).getCssProperty( 'color' ).value;
 			return color === 'rgba(186,0,0,1)';
 		}, 10000, 'Timed out while waiting for the category pill link to turn red' );
-
 	} );
 
 	it( 'suggests existing categories when typing', function () {
@@ -240,7 +228,6 @@ describe( 'Advanced Search', function () {
 		} else {
 			assert( !SearchPage.searchInLanguage.isVisible() );
 		}
-
 	} );
 
 	it( 'submits the search with the specific chosen language', function () {
@@ -251,7 +238,6 @@ describe( 'Advanced Search', function () {
 		SearchPage.submitForm();
 
 		assert.equal( SearchPage.getSearchQueryFromUrl(), 'goat inlanguage:en' );
-
 	} );
 
 	it( 'submits the search without taking into consideration inlanguage if the default option is selected', function () {
@@ -263,7 +249,6 @@ describe( 'Advanced Search', function () {
 		SearchPage.submitForm();
 
 		assert.equal( SearchPage.getSearchQueryFromUrl(), 'goat' );
-
 	} );
 
 	it( 'marks non-existent templates in red', function () {
@@ -276,7 +261,6 @@ describe( 'Advanced Search', function () {
 			let color = SearchPage.getTemplatePillLink( 'Void' ).getCssProperty( 'color' ).value;
 			return color === 'rgba(186,0,0,1)';
 		}, 10000, 'Timed out while waiting for the category pill link to turn red' );
-
 	} );
 
 	it( 'suggests existing templates when typing', function () {
@@ -294,7 +278,6 @@ describe( 'Advanced Search', function () {
 		suggestionBox.waitForVisible( 10000 );
 
 		assert( suggestionBox.isVisible() );
-
 	} );
 
 } );
