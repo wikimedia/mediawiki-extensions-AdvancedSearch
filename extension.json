@@ -59,7 +59,7 @@
 	},
 	"Hooks": {
 		"GetBetaFeaturePreferences": [
-			"AdvancedSearch\\Hooks::getBetaFeaturePreferences"
+			"AdvancedSearch\\Hooks::onGetBetaFeaturePreferences"
 		],
 		"ResourceLoaderTestModules": [
 			"AdvancedSearch\\Hooks::onResourceLoaderTestModules"
