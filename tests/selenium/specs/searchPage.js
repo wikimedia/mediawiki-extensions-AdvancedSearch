@@ -121,7 +121,6 @@ describe( 'AdvancedSearch', function () {
 	} );
 
 	it( 'allows logged-in users to remember the selection of namespaces for future searches', function () {
-
 		SearchPage.open();
 		assert( !SearchPage.rememberSelection.isExisting() );
 
@@ -135,7 +134,6 @@ describe( 'AdvancedSearch', function () {
 		let current = SearchPage.getSelectedNamespaceIDs();
 		assert.deepEqual( cache, current );
 		SearchPage.logOut.click();
-
 	} );
 
 	it( 're-adds filetype namespace after search when file type option has been selected but namespace has been removed', function () {
