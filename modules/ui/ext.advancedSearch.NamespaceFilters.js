@@ -19,13 +19,18 @@
 		config = $.extend( {
 			namespaces: {},
 			namespaceIcons: {
+				0: 'article',
 				2: 'userAvatar',
 				3: 'userTalk',
+				4: 'journal',
 				6: 'image',
-				8: 'language',
+				8: 'bright',
 				10: 'puzzle',
 				12: 'help',
-				828: 'puzzle'
+				14: 'tag',
+				100: 'map',
+				828: 'code',
+				2300: 'heart'
 			},
 			options: [],
 			classes: [],
@@ -72,7 +77,7 @@
 		if ( ns in this.namespaceIcons ) {
 			return this.namespaceIcons[ ns ];
 		}
-		return ns % 2 ? 'speechBubble' : 'article';
+		return ns % 2 ? 'speechBubble' : 'articleSearch';
 	};
 
 	/**
