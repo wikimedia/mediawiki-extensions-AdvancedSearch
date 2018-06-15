@@ -14,7 +14,7 @@
 		var filter = new NamespaceFilters( new Model(), {
 			namespaceIcons: {}
 		} );
-		assert.equal( filter.getNamespaceIcon( 2 ), 'article' );
+		assert.equal( filter.getNamespaceIcon( 2 ), 'articleSearch' );
 		assert.equal( filter.getNamespaceIcon( 3 ), 'speechBubble' );
 	} );
 
