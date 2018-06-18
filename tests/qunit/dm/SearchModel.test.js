@@ -119,7 +119,7 @@
 
 	QUnit.test( 'Setting valid JSON overrides previous state', function ( assert ) {
 		var model = createModelWithValues();
-		model.setAllFromJSON( '{"options":{"or":[ "fish", "turtle" ],"prefix":"Sea"},"namespaces":["0","2"]}' );
+		model.setAllFromJSON( '{"options":{"or":[ "fish", "turtle" ],"prefix":"Sea"},"namespaces":[0,2]}' );
 
 		assert.deepEqual( model.getOptions(), {
 			or: [ 'fish', 'turtle' ],
@@ -133,7 +133,7 @@
 
 		assert.equal(
 			model.toJSON(),
-			'{"options":{"not":"octopi","prefix":"Page"},"namespaces":["1","3"]}'
+			'{"options":{"not":"octopi","prefix":"Page"},"namespaces":[1,3]}'
 		);
 	} );
 

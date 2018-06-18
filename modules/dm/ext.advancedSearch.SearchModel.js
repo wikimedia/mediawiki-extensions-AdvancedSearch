@@ -175,7 +175,9 @@
 			json.options = this.searchOptions;
 		}
 		if ( this.namespaces.length ) {
-			json.namespaces = this.namespaces;
+			json.namespaces = this.namespaces.map( function ( id ) {
+				return Number( id );
+			} );
 		}
 		return JSON.stringify( json );
 	};
@@ -207,7 +209,9 @@
 			valuesChanged = true;
 		}
 		if ( Array.isArray( unserialized.namespaces ) ) {
-			this.namespaces = unserialized.namespaces;
+			this.namespaces = unserialized.namespaces.map( function ( id ) {
+				return String( id );
+			} );
 			valuesChanged = true;
 		}
 		if ( valuesChanged ) {
