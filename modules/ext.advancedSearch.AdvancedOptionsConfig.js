@@ -80,7 +80,8 @@
 			{
 				label: mw.msg( 'advancedsearch-field-' + option.id ),
 				align: 'right',
-				help: getOptionHelpMessage( option )
+				help: getOptionHelpMessage( option ),
+				$overlay: true
 			}
 		);
 	}
@@ -103,7 +104,8 @@
 				checkVisibility: function () {
 					return state.filetypeSupportsDimensions();
 				},
-				help: getOptionHelpMessage( option )
+				help: getOptionHelpMessage( option ),
+				$overlay: true
 			}
 		);
 	}

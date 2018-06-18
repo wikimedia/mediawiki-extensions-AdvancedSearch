@@ -146,7 +146,7 @@ class SearchPage extends Page {
 	get searchPaginationLinks() { return browser.elements( '.mw-search-pager-bottom a' ); }
 	get searchPreviewItems() { return browser.elements( '.mw-advancedSearch-searchPreview .mw-advancedSearch-searchPreview-previewPill' ); }
 	get searchInfoIcons() { return browser.elements( '.mw-advancedSearch-container .oo-ui-fieldLayout:not(.oo-ui-element-hidden) .oo-ui-icon-info' ); }
-	get infoPopup() { return browser.elements( '.mw-advancedSearch-container .oo-ui-popupWidget-popup' ); }
+	get infoPopup() { return browser.elements( '.oo-ui-popupWidget-popup' ); }
 	get searchButton() { return browser.element( '#mw-search-top-table button' ); }
 	get namespaceTags() { return browser.elements( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-group span' ); }
 	get allNamespacesPreset() { return browser.element( '.mw-advancedSearch-namespace-selection input[value="all"]' ); }
