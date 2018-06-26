@@ -178,7 +178,11 @@
 		var self = this;
 
 		$.each( this.getMenu().getItems(), function ( index, menuItem ) {
-			menuItem.setDisabled( !!self.findItemFromData( menuItem.getData() ) );
+			var isInTagList = !!self.findItemFromData( menuItem.getData() );
+			if ( isInTagList ) {
+				menuItem.setSelected( false );
+			}
+			menuItem.setDisabled( isInTagList );
 		} );
 	};
 
