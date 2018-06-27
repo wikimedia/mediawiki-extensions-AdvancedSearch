@@ -207,4 +207,33 @@
 		this.clearInput();
 	};
 
+	/**
+	 * Override to make sure backspace action fills in the pill label rather than the pill data ID
+	 *
+	 * TODO: Remove this override once OOUI has addressed the issue
+	 * Relevant ticket: https://phabricator.wikimedia.org/T190161
+	 * @inheritdoc
+	 */
+	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.doInputBackspace = function ( e, withMetaKey ) {
+		var items, item;
+		if (
+			this.inputPosition === 'inline' &&
+			this.input.getValue() === '' &&
+			!this.isEmpty()
+		) {
+			items = this.getItems();
+			item = items[ items.length - 1 ];
+
+			if ( !item.isDisabled() && !item.isFixed() ) {
+				this.removeItems( [ item ] );
+				if ( !withMetaKey ) {
+					/** Change from parent: item.getData() is now item.getLabel() */
+					this.input.setValue( item.getLabel() );
+				}
+			}
+
+			return false;
+		}
+	};
+
 }( mediaWiki, jQuery ) );
