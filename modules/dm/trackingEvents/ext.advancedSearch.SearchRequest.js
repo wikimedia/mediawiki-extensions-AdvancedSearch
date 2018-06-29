@@ -21,7 +21,8 @@
 			filetype: false,
 			hastemplate: false,
 			subpageof: false,
-			inlanguage: false
+			inlanguage: false,
+			deepcategory: false
 		};
 	};
 

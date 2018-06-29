@@ -142,7 +142,7 @@
 				"advancedsearch-field-not",
 				"advancedsearch-field-subpageof",
 				"advancedsearch-field-intitle",
-				"advancedsearch-field-category",
+				"advancedsearch-field-deepcategory",
 				"advancedsearch-field-hastemplate",
 				"advancedsearch-field-inlanguage",
 				"advancedsearch-field-filetype",
@@ -331,7 +331,7 @@
 				"advancedsearch-field-not",
 				"advancedsearch-field-subpageof",
 				"advancedsearch-field-intitle",
-				"advancedsearch-field-category",
+				"advancedsearch-field-deepcategory",
 				"advancedsearch-field-hastemplate",
 				"advancedsearch-field-filetype",
 				"advancedsearch-field-filew",
@@ -444,7 +444,7 @@
 	"attributes": {
 		"EventLogging": {
 			"Schemas": {
-				"AdvancedSearchRequest": 17841562
+				"AdvancedSearchRequest": 18227136
 			}
 		}
 	},

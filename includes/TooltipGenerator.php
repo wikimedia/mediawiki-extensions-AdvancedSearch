@@ -23,7 +23,7 @@ class TooltipGenerator {
 			'advancedsearch-help-phrase',
 			'advancedsearch-help-or',
 			'advancedsearch-help-not',
-			'advancedsearch-help-category',
+			'advancedsearch-help-deepcategory',
 			'advancedsearch-help-hastemplate',
 			'advancedsearch-help-inlanguage',
 			'advancedsearch-help-intitle',
