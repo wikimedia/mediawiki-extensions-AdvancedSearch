@@ -41,6 +41,7 @@
 
 		this.$element.addClass( 'mw-advancedSearch-expandablePane' );
 		this.$element.append( this.button.$element, this.$dependentPane );
+		this.button.$element.attr( 'aria-expanded', 'false' );
 
 		this.notifyChildInputVisibility( config.data === this.STATE_OPEN );
 	};
@@ -54,18 +55,36 @@
 	mw.libs.advancedSearch.ui.ExpandablePane.prototype.onButtonClick = function () {
 		if ( this.data === this.STATE_OPEN ) {
 			this.data = this.STATE_CLOSED;
-			this.$dependentPane.hide();
+			this.updatePaneVisibility( this.STATE_CLOSED );
 			this.notifyChildInputVisibility( false );
 		} else {
 			this.data = this.STATE_OPEN;
-			this.$dependentPane.show();
+			this.updatePaneVisibility( this.STATE_OPEN );
 			this.notifyChildInputVisibility( true );
 		}
 		this.emit( 'change', this.data );
 	};
 
+	/**
+	 * @private
+	 * @param {boolean} visible
+	 */
 	mw.libs.advancedSearch.ui.ExpandablePane.prototype.notifyChildInputVisibility = function ( visible ) {
 		$( 'input', this.$dependentPane ).trigger( visible === true ? 'visible' : 'hidden' );
+	};
+
+	/**
+	 * @private
+	 * @param {string} state
+	 */
+	mw.libs.advancedSearch.ui.ExpandablePane.prototype.updatePaneVisibility = function ( state ) {
+		if ( state === this.STATE_OPEN ) {
+			this.$dependentPane.show();
+			this.button.$element.attr( 'aria-expanded', 'true' );
+		} else {
+			this.$dependentPane.hide();
+			this.button.$element.attr( 'aria-expanded', 'false' );
+		}
 	};
 
 	/**

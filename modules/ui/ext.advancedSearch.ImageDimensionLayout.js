@@ -16,20 +16,20 @@
 	 * @param  {OO.ui.Widget} widget
 	 * @param  {Object} config
 	 */
-	mw.libs.advancedSearch.ui.OptionalElementLayout = function ( store, widget, config ) {
+	mw.libs.advancedSearch.ui.ImageDimensionLayout = function ( store, widget, config ) {
 		this.store = store;
 		this.checkVisibility = config.checkVisibility;
 
 		store.connect( this, { update: 'onStoreUpdate' } );
 
-		mw.libs.advancedSearch.ui.OptionalElementLayout.parent.call( this, widget, config );
+		mw.libs.advancedSearch.ui.ImageDimensionLayout.parent.call( this, widget, config );
 
 		this.toggle( this.checkVisibility() );
 	};
 
-	OO.inheritClass( mw.libs.advancedSearch.ui.OptionalElementLayout, OO.ui.FieldLayout );
+	OO.inheritClass( mw.libs.advancedSearch.ui.ImageDimensionLayout, OO.ui.FieldLayout );
 
-	mw.libs.advancedSearch.ui.OptionalElementLayout.prototype.onStoreUpdate = function () {
+	mw.libs.advancedSearch.ui.ImageDimensionLayout.prototype.onStoreUpdate = function () {
 		this.toggle( this.checkVisibility() );
 	};
 

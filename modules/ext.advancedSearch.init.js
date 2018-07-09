@@ -227,7 +227,13 @@
 			namespaceSelectionPreview = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection' ),
 			headerContainer = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection-header' );
 
-		headerContainer.append( $( '<strong>' ).text( mw.msg( 'advancedsearch-namespaces-search-in' ) ) );
+		var namespaceLabel = new OO.ui.LabelWidget( {
+			label: mw.msg( 'advancedsearch-namespaces-search-in' ),
+			classes: [ 'mw-advancedSearch-namespace-search-in-label' ],
+			input: namespaceSelection
+		} );
+		headerContainer.append( namespaceLabel.$element );
+
 		if ( !mw.user.isAnon() ) {
 			var rememberNameSpaceSelection = new OO.ui.FieldLayout( new OO.ui.CheckboxInputWidget( {
 				value: mw.user.tokens.get( 'searchnamespaceToken' ),
