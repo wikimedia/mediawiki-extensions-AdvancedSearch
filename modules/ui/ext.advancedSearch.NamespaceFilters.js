@@ -34,7 +34,7 @@
 			},
 			options: [],
 			classes: [],
-			menu: { hideOnChoose: false }
+			menu: { hideOnChoose: false, highlightOnFilter: true }
 		}, config );
 
 		this.namespaces = config.namespaces;
