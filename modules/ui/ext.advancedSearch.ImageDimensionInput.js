@@ -6,8 +6,12 @@
 	mw.libs.advancedSearch.ui = mw.libs.advancedSearch.ui || {};
 
 	/**
+	 * Combination widget that consists of an "comparison operator" dropdown and a size input field.
+	 *
+	 * Use it to search for image/video heights and widths.
+	 *
 	 * @class
-	 * @extends {OO.ui.FieldLayout}
+	 * @extends {OO.ui.Widget}
 	 * @constructor
 	 *
 	 * @param  {ext.advancedSearch.dm.SearchModel} store
