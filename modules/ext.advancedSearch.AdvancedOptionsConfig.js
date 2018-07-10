@@ -92,10 +92,10 @@
 	 * @param {OO.ui.Widget} widget Widget to wrap in a OO.ui.FieldLayout
 	 * @param {Object} option Options for OO.ui.FieldLayout
 	 * @param {ext.libs.advancedSearch.dm.SearchModel} state
-	 * @return {ext.advancedSearch.ui.OptionalElementLayout}
+	 * @return {ext.advancedSearch.ui.ImageDimensionLayout}
 	 */
-	function createOptionalFieldLayout( widget, option, state ) {
-		return new mw.libs.advancedSearch.ui.OptionalElementLayout(
+	function createImageDimensionLayout( widget, option, state ) {
+		return new mw.libs.advancedSearch.ui.ImageDimensionLayout(
 			state,
 			widget,
 			{
@@ -359,7 +359,7 @@
 					}
 				);
 			},
-			layout: createOptionalFieldLayout
+			layout: createImageDimensionLayout
 		},
 		{
 			group: 'files',
@@ -378,7 +378,7 @@
 					}
 				);
 			},
-			layout: createOptionalFieldLayout
+			layout: createImageDimensionLayout
 		}
 
 		// Ideas for Version 2.0:

@@ -85,4 +85,11 @@
 		this.valueInput.setValue( this.data[ 1 ] );
 	};
 
+	/**
+	 * @inheritdoc
+	 */
+	mw.libs.advancedSearch.ui.ImageDimensionInput.prototype.simulateLabelClick = function () {
+		this.operatorInput.focus();
+	};
+
 }( mediaWiki, jQuery ) );

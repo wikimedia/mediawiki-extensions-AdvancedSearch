@@ -158,7 +158,7 @@
 				"ext.advancedSearch.ui.ImageDimensionInput",
 				"ext.advancedSearch.dm.LanguageOptionProvider",
 				"ext.advancedSearch.ui.LanguageSelection",
-				"ext.advancedSearch.ui.OptionalElementLayout",
+				"ext.advancedSearch.ui.ImageDimensionLayout",
 				"ext.advancedSearch.ui.TemplateSearch",
 				"ext.advancedSearch.ui.TextInput"
 			]
@@ -306,9 +306,9 @@
 				"advancedsearch-namespaces-preset-discussion"
 			]
 		},
-		"ext.advancedSearch.ui.OptionalElementLayout": {
+		"ext.advancedSearch.ui.ImageDimensionLayout": {
 			"scripts": [
-				"modules/ui/ext.advancedSearch.OptionalElementLayout.js"
+				"modules/ui/ext.advancedSearch.ImageDimensionLayout.js"
 			],
 			"dependencies": [
 				"oojs-ui-widgets"
