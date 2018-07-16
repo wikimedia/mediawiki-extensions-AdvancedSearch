@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Njardarlogar"
+			"Njardarlogar",
+			"Ranveig"
 		]
 	},
-	"advancedsearch-ask-feedback": "Korleis fungerer det nye grensesnittet for det? Gje oss gjerne [$1 attendemelding] (opnar i ny fane)",
+	"advancedsearch-ask-feedback": "Korleis fungerer det nye grensesnittet for deg? Gje oss gjerne [$1 attendemelding] (opnar i ny fane)",
 	"advancedsearch-options-pane-head": "Avanserte parametrar:",
 	"advancedsearch-optgroup-text": "Søk i sidetekst",
 	"advancedsearch-optgroup-structure": "Bygnad",
