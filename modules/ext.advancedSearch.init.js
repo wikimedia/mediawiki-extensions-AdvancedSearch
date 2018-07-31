@@ -192,7 +192,12 @@
 		var feedbackMessage = mw.message( 'advancedsearch-ask-feedback', 'https://www.mediawiki.org/wiki/Help_talk:Extension:AdvancedSearch' ).parse();
 
 		$search.append( $advancedSearch );
-		$title.after( '<span class="feedback">' + feedbackMessage + '</span>' );
+		// TODO Remove skin-specific check when implementing https://phabricator.wikimedia.org/T199226
+		if ( mw.config.get( 'skin' ) === 'modern' ) {
+			$search.before( '<span class="feedback">' + feedbackMessage + '</span>' );
+		} else {
+			$title.after( '<span class="feedback">' + feedbackMessage + '</span>' );
+		}
 		$( '.feedback a' ).attr( 'target', '_blank' );
 		$searchField.val( queryCompiler.removeCompiledQueryFromSearch( $searchField.val(), state ) );
 		$searchField.focus();
