@@ -21,7 +21,6 @@ describe( 'AdvancedSearch', function () {
 		SearchPage.searchInfoIcons.value.forEach( function ( popupIcon, idx ) {
 			popupIcon.click();
 			let popupContent = SearchPage.infoPopup.value[ idx ];
-
 			assert( popupContent.isVisible() );
 			assert( SearchPage.getInfoPopupContent( popupContent ).getText() !== '' );
 

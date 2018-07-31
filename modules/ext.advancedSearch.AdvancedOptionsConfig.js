@@ -240,7 +240,7 @@
 		},
 		{
 			group: 'structure',
-			id: 'category',
+			id: 'deepcategory',
 			formatter: function ( val ) {
 				var keyword = mw.config.get( 'advancedSearch.deepcategoryEnabled' ) ? 'deepcat:' : 'incategory:';
 				if ( Array.isArray( val ) ) {
@@ -254,9 +254,9 @@
 				return new mw.libs.advancedSearch.ui.DeepCategoryFilter(
 					state,
 					{
-						optionId: 'category',
+						optionId: 'deepcategory',
 						lookupId: 'category',
-						id: 'advancedSearch-category'
+						id: 'advancedSearch-deepcategory'
 					}
 				);
 			},
