@@ -16,7 +16,7 @@
 	"advancedsearch-field-not": "Ne tartalmazza ezeket a szavakat:",
 	"advancedsearch-field-subpageof": "Ezen oldal aloldalai:",
 	"advancedsearch-field-intitle": "Az oldal címe tartalmazza ezt:",
-	"advancedsearch-field-category": "Ezen kategória eleme:",
+	"advancedsearch-field-deepcategory": "Ezen kategória eleme:",
 	"advancedsearch-field-hastemplate": "Csak azok az oldalak, amelyek tartalmazzák ezt a sablont:",
 	"advancedsearch-field-filetype": "Fájltípus",
 	"advancedsearch-field-filew": "Fájl szélessége pixelekben megadva",

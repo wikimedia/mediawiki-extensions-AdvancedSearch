@@ -12,7 +12,7 @@
 	"advancedsearch-field-or": "Yksi näistä sanoista:",
 	"advancedsearch-field-not": "Ei näitä sanoja:",
 	"advancedsearch-field-intitle": "Sivun otsikko sisältää:",
-	"advancedsearch-field-category": "Sivut näissä luokissa:",
+	"advancedsearch-field-deepcategory": "Sivut näissä luokissa:",
 	"advancedsearch-field-hastemplate": "Sivut näillä mallineilla:",
 	"advancedsearch-field-inlanguage": "Sivut tällä kielellä:",
 	"advancedsearch-field-filetype": "Tiedostotyyppi:",
