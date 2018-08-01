@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Leeheonjin",
-			"Emem.calist"
+			"Emem.calist",
+			"Jojit fb"
 		]
 	},
 	"advancedsearch-optgroup-structure": "Kayarian",
@@ -13,7 +14,7 @@
 	"advancedsearch-field-intitle": "Naglalaman ang pamagat pampahina ng:",
 	"advancedsearch-field-deepcategory": "Pahina sa kategoriyang ito:",
 	"advancedsearch-field-hastemplate": "Tanging mga pahina lang na may ganitong padron/suleras:",
-	"advancedsearch-field-filetype": "Uri ng talaksan:",
+	"advancedsearch-field-filetype": "Uri ng file:",
 	"advancedsearch-field-filew": "Lapad ng talaksan sa piksel:",
 	"advancedsearch-field-fileh": "Taas ng talaksan sa piksel:"
 }
