@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dr Lotus Black"
+		]
+	},
+	"advancedsearch-optgroup-structure": "ဖွဲ့စည်းပုံ",
+	"advancedsearch-optgroup-files": "ဖိုင်များနှင့် ရုပ်ပုံများ",
+	"advancedsearch-field-filetype": "ဖိုင်အမျိုးအစား",
+	"advancedsearch-inlanguage-default": "ဘာသာစကား ရွေးရန်",
+	"advancedsearch-filetype-section-types": "ယေဘုယျ ဖိုင်အမျိုးအစားများ",
+	"advancedsearch-filetype-default": "ဖိုင်အမျိုးအစား ရွေးချယ်ရန်",
+	"advancedsearch-filetype-audio": "အသံ",
+	"advancedsearch-filetype-video": "ဗီဒီယို",
+	"advancedsearch-namespaces-preset-all": "အားလုံး",
+	"advancedsearch-namespaces-preset-general-help": "ယေဘုယျ အကူအညီ",
+	"advancedsearch-namespaces-preset-discussion": "ဆွေးနွေးချက်"
+}

@@ -1,9 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Joedalton"
+			"Joedalton",
+			"Saederup92"
 		]
 	},
 	"advancedsearch-filetype-default": "Vælg filtype",
-	"advancedsearch-namespaces-placeholder": "Tilføj navnerum"
+	"advancedsearch-filetype-bitmap": "Billede",
+	"advancedsearch-filetype-drawing": "Tegning",
+	"advancedsearch-filetype-audio": "Lyd",
+	"advancedsearch-filetype-video": "Video",
+	"advancedsearch-filesize-equals": "lig med",
+	"advancedsearch-filesize-greater-than": "større end",
+	"advancedsearch-filesize-smaller-than": "mindre end",
+	"advancedsearch-namespaces-placeholder": "Tilføj navnerum..."
 }
