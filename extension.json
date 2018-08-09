@@ -66,6 +66,9 @@
 		],
 		"SpecialPageBeforeExecute": [
 			"AdvancedSearch\\Hooks::onSpecialPageBeforeExecute"
+		],
+		"SpecialSearchResultsPrepend": [
+			"AdvancedSearch\\Hooks::onSpecialSearchResultsPrepend"
 		]
 	},
 	"MessagesDirs": {

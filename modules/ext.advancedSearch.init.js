@@ -260,6 +260,8 @@
 			.append( headerContainer )
 			.append( namespacePresets.$element );
 
+		$( '.mw-search-spinner' ).hide();
+
 		// remove old namespace selection item to avoid double ns parameters
 		$( '#mw-searchoptions' ).remove();
 
