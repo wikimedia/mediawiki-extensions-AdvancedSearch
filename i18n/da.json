@@ -5,6 +5,7 @@
 			"Saederup92"
 		]
 	},
+	"advancedsearch-optgroup-text": "Søgning i sidetekst",
 	"advancedsearch-optgroup-structure": "Struktur",
 	"advancedsearch-optgroup-files": "Filer og billeder",
 	"advancedsearch-field-plain": "Disse ord:",
@@ -26,6 +27,7 @@
 	"advancedsearch-filetype-drawing": "Tegning",
 	"advancedsearch-filetype-audio": "Lyd",
 	"advancedsearch-filetype-video": "Video",
+	"advancedsearch-filetype-office": "Office",
 	"advancedsearch-filesize-equals": "lig med",
 	"advancedsearch-filesize-greater-than": "større end",
 	"advancedsearch-filesize-smaller-than": "mindre end",
