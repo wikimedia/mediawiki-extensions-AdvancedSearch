@@ -4,8 +4,20 @@
 			"Dr Lotus Black"
 		]
 	},
+	"advancedsearch-desc": "အဆင့်မြင့် ရှာဖွေရေး လုပ်ဆောင်နိုင်စွမ်းများကို [[Special:Search]] တွင် အလွယ်တကူ ရယူနိုင်သည်။",
+	"advancedsearch-options-pane-head": "အဆင့်မြင့် ပါရာမီတာများ:",
+	"advancedsearch-optgroup-text": "စာမျက်နှာ စာသားထဲတွင် ရှာဖွေရန်",
 	"advancedsearch-optgroup-structure": "ဖွဲ့စည်းပုံ",
 	"advancedsearch-optgroup-files": "ဖိုင်များနှင့် ရုပ်ပုံများ",
+	"advancedsearch-field-plain": "ဤစကားလုံးများ:",
+	"advancedsearch-field-phrase": "ဤစာသား အတိအကျ:",
+	"advancedsearch-field-or": "ဤစကားလုံးများထဲမှ တစ်ခု:",
+	"advancedsearch-field-not": "ဤစကားလုံးများ မဟုတ်ရ:",
+	"advancedsearch-field-subpageof": "ဤစာမျက်နှာ၏ စာမျက်နှာခွဲများ:",
+	"advancedsearch-field-intitle": "ပါဝင်သော စာမျက်နှာခေါင်းစဉ်:",
+	"advancedsearch-field-deepcategory": "ဤကဏ္ဍများရှိ စာမျက်နှာများ:",
+	"advancedsearch-field-hastemplate": "ဤတမ်းပလိတ်များရှိ စာမျက်နှာများ:",
+	"advancedsearch-field-inlanguage": "ဤဘာသာစကားရှိ စာမျက်နှာများ:",
 	"advancedsearch-field-filetype": "ဖိုင်အမျိုးအစား",
 	"advancedsearch-inlanguage-default": "ဘာသာစကား ရွေးရန်",
 	"advancedsearch-filetype-section-types": "ယေဘုယျ ဖိုင်အမျိုးအစားများ",
@@ -13,6 +25,8 @@
 	"advancedsearch-filetype-audio": "အသံ",
 	"advancedsearch-filetype-video": "ဗီဒီယို",
 	"advancedsearch-namespaces-preset-all": "အားလုံး",
+	"advancedsearch-namespaces-preset-default": "နဂိုအတိုင်း",
 	"advancedsearch-namespaces-preset-general-help": "ယေဘုယျ အကူအညီ",
-	"advancedsearch-namespaces-preset-discussion": "ဆွေးနွေးချက်"
+	"advancedsearch-namespaces-preset-discussion": "ဆွေးနွေးချက်",
+	"advancedsearch-beta-feature-description": "အဆင့်မြင့် ရှာဖွေရေး လုပ်ဆောင်နိုင်စွမ်းများကို [[Special:Search]] တွင် အလွယ်တကူ ရယူနိုင်သည်။"
 }
