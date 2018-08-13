@@ -4,6 +4,23 @@
 			"Joetaras"
 		]
 	},
+	"advancedsearch-desc": "Accesse 'nderra-'nderre a le funziune de ricerche avanzate sus a [[Special:Search]]",
+	"advancedsearch-ask-feedback": "Accumme funzione pe te sta inderfaccia nove? Pe piacere [$1 manne 'na segnalazione] (se iapre jndr'à 'na scheda nove)",
+	"advancedsearch-options-pane-head": "Parametre avanzate:",
+	"advancedsearch-optgroup-text": "Cirche jndr'à 'u teste d'a pàgene",
 	"advancedsearch-optgroup-structure": "Strutture",
+	"advancedsearch-optgroup-files": "Fail e immaggine",
+	"advancedsearch-field-plain": "Ste parole",
+	"advancedsearch-field-phrase": "Satte satte stu teste",
+	"advancedsearch-field-or": "Une de ste parole",
+	"advancedsearch-field-not": "Nisciuna de ste parole",
+	"advancedsearch-field-subpageof": "Sottepàggene de sta pàgene",
+	"advancedsearch-field-intitle": "Titole d'a pàgene ca tène",
+	"advancedsearch-field-deepcategory": "Pàggene jndr'à ste categorije",
+	"advancedsearch-field-hastemplate": "Pàggene cu ste template",
+	"advancedsearch-field-inlanguage": "Pàggene jndr'à sta lènghe",
+	"advancedsearch-field-filetype": "Tipe de file",
+	"advancedsearch-field-filew": "Larghezze d'u file in pixel",
+	"advancedsearch-field-fileh": "Altezze d'u file in pixel",
 	"advancedsearch-namespaces-preset-all": "Tutte"
 }
