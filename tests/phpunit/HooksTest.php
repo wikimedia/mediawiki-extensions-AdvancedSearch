@@ -17,7 +17,6 @@ use User;
  * @covers \AdvancedSearch\Hooks
  *
  * @license GPL-2.0-or-later
- * @author Thiemo Kreuz
  */
 class HooksTest extends MediaWikiTestCase {
 
@@ -52,6 +51,19 @@ class HooksTest extends MediaWikiTestCase {
 		Hooks::onResourceLoaderTestModules( $testModules, $rl );
 
 		$this->assertNotEmpty( $testModules );
+	}
+
+	public function testSpecialSearchResultsPrependHandler() {
+		$output = new OutputPage( new RequestContext() );
+		$context = new RequestContext();
+		$context->setOutput( $output );
+		$context->setUser( $this->newUser() );
+		$special = new \SpecialSearch();
+		$special->setContext( $context );
+
+		Hooks::onSpecialSearchResultsPrepend( $special, $output, '' );
+
+		$this->assertContains( 'mw-search-spinner', $output->getHTML() );
 	}
 
 	public function testSpecialPageBeforeExecuteHookHandler() {

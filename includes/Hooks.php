@@ -69,6 +69,24 @@ class Hooks {
 	}
 
 	/**
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/onSpecialSearchResultsPrepend
+	 *
+	 * @param \SpecialSearch $specialSearch
+	 * @param \OutputPage $output
+	 * @param string $term
+	 */
+	public static function onSpecialSearchResultsPrepend( \SpecialSearch $specialSearch,
+														  \OutputPage $output, $term ) {
+		$output->addHTML(
+			\Html::rawElement(
+				'div',
+				[ 'class' => 'mw-search-spinner' ],
+				\Html::element( 'div', [ 'class' => 'mw-search-spinner-bounce' ] )
+			)
+		);
+	}
+
+	/**
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/GetBetaFeaturePreferences
 	 *
 	 * @param User $user
