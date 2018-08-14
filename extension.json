@@ -12,7 +12,7 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "other",
 	"requires": {
-		"MediaWiki": ">= 1.31.0"
+		"MediaWiki": ">= 1.32.0"
 	},
 	"AutoloadNamespaces": {
 		"AdvancedSearch\\": "includes/",
@@ -285,6 +285,7 @@
 				"oojs-ui.styles.icons-alerts",
 				"oojs-ui.styles.icons-accessibility",
 				"oojs-ui.styles.icons-content",
+				"oojs-ui.styles.icons-editing-citation",
 				"oojs-ui.styles.icons-editing-advanced",
 				"oojs-ui.styles.icons-interactions",
 				"oojs-ui.styles.icons-location",
