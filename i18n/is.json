@@ -1,16 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sveinn í Felli"
+			"Sveinn í Felli",
+			"Sveinki"
 		]
 	},
 	"advancedsearch-options-pane-head": "Ítarleg viðföng:",
 	"advancedsearch-optgroup-structure": "Uppbygging",
 	"advancedsearch-optgroup-files": "Skrár og myndir",
-	"advancedsearch-field-plain": "Þessi orð:",
-	"advancedsearch-field-filetype": "Skráartegund:",
-	"advancedsearch-field-filew": "Breidd skráar í mynddílum:",
-	"advancedsearch-field-fileh": "Hæð skráar í mynddílum:",
+	"advancedsearch-field-plain": "Þessi orð",
+	"advancedsearch-field-filetype": "Skráartegund",
+	"advancedsearch-field-filew": "Breidd skráar í mynddílum",
+	"advancedsearch-field-fileh": "Hæð skráar í mynddílum",
 	"advancedsearch-filetype-section-types": "Almennar skráategundir",
 	"advancedsearch-filetype-section-image": "Myndsnið",
 	"advancedsearch-filetype-section-video": "Myndskeiðasnið",
