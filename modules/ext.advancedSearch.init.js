@@ -122,11 +122,11 @@
 			}
 		} );
 
-		// Proactively lazy-load the pane: if the user hasn't already clicked to open the pane
-		// after half a second, build it in the background.
-		setTimeout( function () {
+		// Proactively lazy-load the pane: if the user hasn't already clicked to open the pane,
+		// build it in the background.
+		mw.requestIdleCallback( function () {
 			pane.buildDependentPane();
-		}, 500 );
+		} );
 
 		return pane.$element;
 	}
