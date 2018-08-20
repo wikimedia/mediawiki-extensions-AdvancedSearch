@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Subi",
-			"Mikel Ibaiba"
+			"Mikel Ibaiba",
+			"Iñaki LL"
 		]
 	},
+	"advancedsearch-desc": "Bilaketa aurreraturako aukerak hemen: [[Berezi:Bilatu]]",
 	"advancedsearch-options-pane-head": "Parametro aurreratuak:",
 	"advancedsearch-optgroup-text": "Bilatu testu orrialdean",
 	"advancedsearch-optgroup-structure": "Egitura",
@@ -35,5 +37,7 @@
 	"advancedsearch-filesize-smaller-than": "baino baxuagoa",
 	"advancedsearch-namespaces-search-in": "Non bilatu:",
 	"advancedsearch-namespaces-preset-all": "Denak",
-	"advancedsearch-namespaces-placeholder": "Izen-eremuak gehitu"
+	"advancedsearch-namespaces-placeholder": "Izen-eremuak gehitu",
+	"advancedsearch-beta-feature-message": "Bilaketa aurreraturako interfazea",
+	"advancedsearch-beta-feature-description": "Bilaketa aurreraturako aukerak hemen: [[Berezi:Bilatu]]."
 }
