@@ -275,23 +275,6 @@
 				"advancedsearch-filesize-smaller-than"
 			]
 		},
-		"ext.advancedSearch.ui.NamespaceFilters": {
-			"scripts": [
-				"modules/ui/ext.advancedSearch.NamespaceFilters.js"
-			],
-			"dependencies": [
-				"oojs-ui-widgets",
-				"oojs-ui.styles.icons-alerts",
-				"oojs-ui.styles.icons-accessibility",
-				"oojs-ui.styles.icons-content",
-				"oojs-ui.styles.icons-editing-citation",
-				"oojs-ui.styles.icons-editing-advanced",
-				"oojs-ui.styles.icons-interactions",
-				"oojs-ui.styles.icons-location",
-				"oojs-ui.styles.icons-media",
-				"oojs-ui.styles.icons-user"
-			]
-		},
 		"ext.advancedSearch.ui.NamespacePresets": {
 			"scripts": [
 				"modules/ui/ext.advancedSearch.NamespacePresets.js"
@@ -307,6 +290,43 @@
 				"advancedsearch-namespaces-preset-default",
 				"advancedsearch-namespaces-preset-general-help",
 				"advancedsearch-namespaces-preset-discussion"
+			]
+		},
+		"ext.advancedSearch.ui.NamespaceFilters": {
+			"scripts": [
+				"modules/ui/ext.advancedSearch.NamespaceFilters.js"
+			],
+			"dependencies": [
+				"ext.advancedSearch.ui.MenuSelectWidget",
+				"oojs-ui-widgets",
+				"oojs-ui.styles.icons-layout",
+				"oojs-ui.styles.icons-interactions"
+			]
+		},
+		"ext.advancedSearch.ui.MenuSelectWidget": {
+			"scripts": [
+				"modules/ui/ext.advancedSearch.MenuSelectWidget.js"
+			],
+			"dependencies": [
+				"ext.advancedSearch.ui.ItemMenuOptionWidget",
+				"oojs-ui-widgets"
+			]
+		},
+		"ext.advancedSearch.ui.ItemMenuOptionWidget": {
+			"scripts": [
+				"modules/ui/ext.advancedSearch.ItemMenuOptionWidget.js"
+			],
+			"dependencies": [
+				"ext.advancedSearch.ui.CheckboxInputWidget",
+				"oojs-ui-widgets"
+			]
+		},
+		"ext.advancedSearch.ui.CheckboxInputWidget": {
+			"scripts": [
+				"modules/ui/ext.advancedSearch.CheckboxInputWidget.js"
+			],
+			"dependencies": [
+				"oojs-ui-widgets"
 			]
 		},
 		"ext.advancedSearch.ui.ImageDimensionLayout": {

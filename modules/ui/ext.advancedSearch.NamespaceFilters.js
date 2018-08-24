@@ -18,31 +18,29 @@
 	mw.libs.advancedSearch.ui.NamespaceFilters = function ( store, config ) {
 		config = $.extend( {
 			namespaces: {},
-			namespaceIcons: {
-				0: 'article',
-				2: 'userAvatar',
-				3: 'userTalk',
-				4: 'journal',
-				6: 'image',
-				8: 'bright',
-				10: 'puzzle',
-				12: 'help',
-				14: 'tag',
-				100: 'map',
-				828: 'code',
-				2300: 'heart'
-			},
 			options: [],
-			classes: [],
-			menu: { hideOnChoose: false, highlightOnFilter: true }
+			classes: []
 		}, config );
 
+		this.store = store;
 		this.namespaces = config.namespaces;
-		config.options = config.options.concat( this.createNamespaceOptions( this.namespaces ) );
 		config.classes.push( 'mw-advancedSearch-namespaceFilter' );
-		this.setNamespaceIcons( config.namespaceIcons );
 
-		mw.libs.advancedSearch.ui.NamespaceFilters.parent.call( this, config );
+		mw.libs.advancedSearch.ui.NamespaceFilters.parent.call( this, $.extend( true, {
+			inputPosition: 'outline',
+			allowArbitrary: false,
+			allowDisplayInvalidTags: false,
+			allowReordering: false,
+			menu: {
+				hideWhenOutOfView: false,
+				hideOnChoose: false,
+				highlightOnFilter: false,
+				namespaces: this.namespaces
+			},
+			input: {
+				icon: 'menu'
+			}
+		}, config ) );
 
 		this.$namespaceContainer = $( '<span>' ).addClass( 'mw-advancedSearch-namespaceContainer' );
 		this.$element.append( this.$namespaceContainer );
@@ -51,6 +49,7 @@
 		this.store.connect( this, { update: 'onStoreUpdate' } );
 		this.setValueFromStore();
 		this.updateNamespaceFormFields();
+		this.highlightSelectedNamespacesInMenu();
 
 		this.connect( this, { change: 'onValueUpdate' } );
 	};
@@ -60,51 +59,11 @@
 	/**
 	 * @inheritdoc
 	 */
-	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.createMenuOptionWidget = function ( data, label ) {
-		return new OO.ui.MenuOptionWidget( {
-			data: data,
-			label: label || data,
-			classes: [ 'mw-advancedSearch-namespace-' + data ],
-			icon: this.getNamespaceIcon( data )
-		} );
-	};
-
-	/**
-	 * @param  {number} ns Namespace ID
-	 * @return {string}    Icon name
-	 */
-	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.getNamespaceIcon = function ( ns ) {
-		if ( ns in this.namespaceIcons ) {
-			return this.namespaceIcons[ ns ];
-		}
-		return ns % 2 ? 'speechBubble' : 'articleSearch';
-	};
-
-	/**
-	 * @param  {Object} icons Namespace id => icon name
-	 */
-	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.setNamespaceIcons = function ( icons ) {
-		this.namespaceIcons = icons;
-	};
-
-	/**
-	 * Create an options array suitable for menu items
-	 *
-	 * @param {Object} namespaces namespace id => label
-	 * @return {Object[]}
-	 */
-	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.createNamespaceOptions = function ( namespaces ) {
-		var options = [];
-		Object.keys( namespaces ).forEach( function ( id ) {
-			var label = namespaces[ id ];
-			if ( label && Number( id ) >= 0 ) {
-				options.push( {
-					data: id,
-					label: label
-				} );
-			}
-		} );
-		return options;
+	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.createMenuWidget = function ( menuConfig ) {
+		return new mw.libs.advancedSearch.ui.MenuSelectWidget(
+			this.store,
+			menuConfig
+		);
 	};
 
 	/**
@@ -113,6 +72,7 @@
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.onStoreUpdate = function () {
 		this.setValueFromStore();
 		this.updateNamespaceFormFields();
+		this.highlightSelectedNamespacesInMenu();
 	};
 
 	/**
@@ -143,7 +103,6 @@
 
 		// prevent updating the store while reacting to its update notification
 		this.disconnect( this, { change: 'onValueUpdate' } );
-
 		this.clearItems();
 		$.each( namespaces, function ( idx, key ) {
 			self.addTag( key, self.namespaces[ key ] );
@@ -174,37 +133,61 @@
 		} );
 	};
 
-	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.disableSelectedNamespacesInMenu = function () {
+	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.highlightSelectedNamespacesInMenu = function () {
 		var self = this;
-
 		$.each( this.getMenu().getItems(), function ( index, menuItem ) {
 			var isInTagList = !!self.findItemFromData( menuItem.getData() );
 			if ( isInTagList ) {
+				menuItem.checkboxWidget.setSelected( false );
 				menuItem.setSelected( false );
 			}
-			menuItem.setDisabled( isInTagList );
+			menuItem.setSelected( isInTagList );
+			menuItem.checkboxWidget.setSelected( isInTagList );
+		} );
+	};
+
+	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.highlightLastSelectedTag = function ( menuItemData ) {
+		this.getItems().forEach( function ( tag ) {
+			if ( tag.getData() === menuItemData ) {
+				tag.$element.addClass( 'selected' );
+			}
 		} );
 	};
 
 	/**
-	 * Respond to change event, where items were added, removed, or cleared.
-	 *
-	 * Overrides OO.ui.TagMultiselectWidget.prototype.onChangeTags default behaviour to add GUI effect
+	 * Remove an item from the list of namespaces in store
+	 * @param {String} namespace The item to be removed
+	 * @return {String[]} collection of namespaces minus the removed item
 	 */
-	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.onChangeTags = function () {
-		mw.libs.advancedSearch.ui.NamespaceFilters.parent.prototype.onChangeTags.call( this );
-
-		this.disableSelectedNamespacesInMenu();
+	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.removeNamespaceTag = function ( namespace ) {
+		return this.store.getNamespaces().filter( function ( el ) {
+			return el !== namespace;
+		} );
 	};
-
 	/**
-	 * Respond to menu choose event by clearing the input field
+	 * Add or remove a tag for the chosen menu item based on checkbox state
 	 *
 	 * @param {OO.ui.OptionWidget} menuItem Chosen menu item
 	 */
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.onMenuChoose = function ( menuItem ) {
-		mw.libs.advancedSearch.ui.NamespaceFilters.parent.prototype.onMenuChoose.call( this, menuItem );
-		this.clearInput();
+		if ( menuItem.checkboxWidget.isSelected() ) {
+			this.store.setNamespaces( this.removeNamespaceTag( menuItem.getData() ) );
+		} else {
+			mw.libs.advancedSearch.ui.NamespaceFilters.parent.prototype.onMenuChoose.call( this, menuItem );
+			this.highlightLastSelectedTag( menuItem.getData() );
+			this.clearInput();
+		}
+	};
+
+	/**
+	 * Handle menu toggle events.
+	 *
+	 * @private
+	 * @param {boolean} isVisible Open state of the menu
+	 */
+	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.onMenuToggle = function ( isVisible ) {
+		mw.libs.advancedSearch.ui.NamespaceFilters.parent.prototype.onMenuToggle.call( this );
+		this.input.setIcon( isVisible ? 'search' : 'menu' );
 	};
 
 	/**

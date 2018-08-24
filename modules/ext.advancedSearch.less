@@ -149,11 +149,22 @@
 	}
 }
 
+.mw-advancedSearch-namespace-border {
+	border-top: 4px solid #c8ccd1;
+	border-bottom: 1px solid #c8ccd1;
+}
+
 .mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-handle {
 	border-top: 0;
 	border-radius: 0 0 2px 2px;
 }
-
+// that's how nested the background-color property of a tagWidget is
+.oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled {
+	&.selected {
+		background-color: #eaf3ff;
+		border-color: #36c;
+	}
+}
 .oo-ui-popupWidget-popup .mw-advancedSearch-tooltip-head {
 	font-size: 110%;
 	color: #72777d;

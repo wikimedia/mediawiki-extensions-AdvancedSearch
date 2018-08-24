@@ -5,6 +5,7 @@ let SearchPage = require( '../pageobjects/search.page' );
 let LoginPage = require( '../pageobjects/login.page' );
 
 describe( 'AdvancedSearch', function () {
+	const NAMESPACE_USER = '2';
 
 	it( 'inserts advanced search icon elements', function () {
 		SearchPage.open();
@@ -74,7 +75,7 @@ describe( 'AdvancedSearch', function () {
 		SearchPage.open();
 
 		SearchPage.allNamespacesPreset.click();
-
+		SearchPage.namespaces.toggleNamespacesMenu();
 		const allLabels = SearchPage.namespaces.getAllLabelsFromMenu();
 		const selectedNamespaceLabels = SearchPage.namespaces.getAllTagLabels();
 		assert.deepEqual( selectedNamespaceLabels, allLabels );
@@ -90,18 +91,6 @@ describe( 'AdvancedSearch', function () {
 		assert.deepEqual( selectedNamespaceLabels, [] );
 	} );
 
-	it( 'can\'t select namespaces from the dropdown which are already present as tags', function () {
-		SearchPage.open();
-
-		SearchPage.toggleInputFields();
-		SearchPage.searchFileType.selectImageType(); // make test more "interesting" by selecting image file type to force "File" namespace
-		SearchPage.toggleInputFields();
-
-		const disabledMenuLabels = SearchPage.namespaces.getAllLabelsForDisabledItemsInMenu().sort();
-		const selectedNamespaceLabels = SearchPage.namespaces.getAllTagLabels().sort();
-		assert.deepEqual( disabledMenuLabels, selectedNamespaceLabels );
-	} );
-
 	it( 'unselects "All" preset when a single namespace is unselected after preset had been clicked', function () {
 		SearchPage.open();
 
@@ -113,7 +102,7 @@ describe( 'AdvancedSearch', function () {
 
 	it( 'automatically selects "All" preset when selecting all namespaces from the list of all namespaces', function () {
 		SearchPage.open();
-
+		SearchPage.namespaces.toggleNamespacesMenu();
 		SearchPage.namespaces.selectAll();
 
 		assert( SearchPage.allNamespacesPreset.isSelected() );
@@ -155,6 +144,26 @@ describe( 'AdvancedSearch', function () {
 		SearchPage.generalHelpPreset.click();
 		SearchPage.submitForm();
 		assert( SearchPage.generalHelpPreset.isSelected() );
+	} );
+
+	it( 'adds/removes the namespace tag when the namespace option is clicked', function () {
+		SearchPage.open();
+		SearchPage.namespaces.toggleNamespacesMenu();
+		SearchPage.namespaces.clickOnNamespace( NAMESPACE_USER );
+		assert( SearchPage.namespaceTags.value.filter( function ( tag ) {
+			return tag.getText() === 'User';
+		} ).length !== 0 );
+		SearchPage.namespaces.clickOnNamespace( NAMESPACE_USER );
+		assert( SearchPage.namespaceTags.value.filter( function ( tag ) {
+			return tag.getText() === 'User';
+		} ).length === 0 );
+	} );
+
+	it( 'changes the namespace filter input icon when menu is toggled', function () {
+		SearchPage.open();
+		assert( SearchPage.inputIcon.getAttribute( 'class' ).split( ' ' )[ 1 ] === 'oo-ui-icon-menu' );
+		SearchPage.namespaces.toggleNamespacesMenu();
+		assert( SearchPage.inputIcon.getAttribute( 'class' ).split( ' ' )[ 1 ] === 'oo-ui-icon-search' );
 	} );
 
 } );

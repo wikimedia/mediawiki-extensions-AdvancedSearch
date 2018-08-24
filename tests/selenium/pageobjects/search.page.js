@@ -100,24 +100,29 @@ class SearchPage extends Page {
 				browser.element( '.mw-advancedSearch-namespaceFilter .mw-advancedSearch-namespace-6 .oo-ui-buttonWidget' ).click();
 			},
 			selectAll: function () {
-				// open the menu
-				browser.element( '.mw-advancedSearch-namespaceFilter .oo-ui-inputWidget-input' ).click();
-				const menuItems = browser.elements( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"] .oo-ui-labelElement-label' ).value;
+				const menuItems = browser.elements( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"]' ).value;
 				const FIRST_UNSELECTED_NAMESPACE_ITEM = 1;
 				for ( let i = FIRST_UNSELECTED_NAMESPACE_ITEM; i < menuItems.length; i++ ) {
 					browser.execute( 'arguments[0].scrollIntoView(true);', menuItems[ i ] );
+					menuItems[ i ].waitForVisible();
 					menuItems[ i ].click();
 				}
 				browser.keys( '\uE00C' ); // Close menu by hitting the Escape key
 			},
-			getAllLabelsFromMenu: function () {
-				// open the menu to insert the items in the DOM
+			toggleNamespacesMenu() {
 				browser.element( '.mw-advancedSearch-namespaceFilter .oo-ui-inputWidget-input' ).click();
-				const labels = browser.elements( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"]' ).value.map(
-					( element ) => {
-						return element.getText();
-					}
-				);
+			},
+			clickOnNamespace: function ( nsId ) {
+				const menuItem = browser.element( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget .mw-advancedSearch-namespace-' + nsId );
+				browser.execute( 'arguments[0].scrollIntoView(true);', menuItem.value );
+				menuItem.waitForVisible();
+				menuItem.click();
+			},
+			getAllLabelsFromMenu: function () {
+				const labels = browser.elements( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"]' )
+					.value.map(
+						el => el.element( '.oo-ui-labelElement-label' ).getText()
+					);
 				browser.keys( '\uE00C' ); // Close menu by hitting the Escape key
 				return labels;
 			},
@@ -155,6 +160,7 @@ class SearchPage extends Page {
 	get default() { return browser.element( '.mw-advancedSearch-namespace-selection input[value="defaultNamespaces"]' ); }
 	get categorySuggestionsBox() { return browser.element( '#advancedSearch-deepcategory div[role="listbox"]' ); }
 	get templateSuggestionsBox() { return browser.element( '#advancedSearchOption-hastemplate div[role="listbox"]' ); }
+	get inputIcon() { return browser.element( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-input .oo-ui-iconElement-icon' ); }
 	get logOut() { return browser.element( '#pt-logout a' ); }
 
 	formWasSubmitted() {
