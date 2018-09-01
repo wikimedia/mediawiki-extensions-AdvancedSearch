@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Harriettruong3",
-			"Minh Nguyen"
+			"Minh Nguyen",
+			"Nhatminh01"
 		]
 	},
 	"advancedsearch-desc": "Truy cập các chức năng tìm kiếm nâng cao một cách dễ dàng tại [[Special:Search]]",
@@ -11,16 +12,16 @@
 	"advancedsearch-optgroup-text": "Tìm trong văn bản trang",
 	"advancedsearch-optgroup-structure": "Cấu trúc",
 	"advancedsearch-optgroup-files": "Tập tin và hình ảnh",
-	"advancedsearch-field-plain": "Các từ này:",
+	"advancedsearch-field-plain": "Các từ này",
 	"advancedsearch-field-phrase": "Đúng văn bản này:",
-	"advancedsearch-field-or": "Một trong những từ này:",
-	"advancedsearch-field-not": "Không phải các từ này:",
+	"advancedsearch-field-or": "Một trong những từ này",
+	"advancedsearch-field-not": "Không phải các từ này",
 	"advancedsearch-field-subpageof": "Các trang con của trang này:",
 	"advancedsearch-field-intitle": "Tên trang chứa:",
 	"advancedsearch-field-deepcategory": "Các trang trong các thể loại này:",
 	"advancedsearch-field-hastemplate": "Các trang chứa các bản mẫu này:",
 	"advancedsearch-field-inlanguage": "Các trang thuộc ngôn ngữ này:",
-	"advancedsearch-field-filetype": "Kiểu tập tin:",
+	"advancedsearch-field-filetype": "Kiểu tập tin",
 	"advancedsearch-field-filew": "Chiều rộng của tập tin (điểm ảnh):",
 	"advancedsearch-field-fileh": "Chiều cao của tập tin (điểm ảnh):",
 	"advancedsearch-placeholder-exact-text": "\"tiền nào của đấy\"",
