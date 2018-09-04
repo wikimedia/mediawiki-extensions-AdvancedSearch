@@ -15,7 +15,7 @@
 	 */
 
 	/**
-	 * @param {ext.advancedSearch.dm.SearchableNamespaces} namespaces
+	 * @param {Array} namespaces
 	 * @constructor
 	 */
 	mw.libs.advancedSearch.dm.NamespacePresetProviders = function ( namespaces ) {
@@ -49,11 +49,11 @@
 	mw.libs.advancedSearch.dm.NamespacePresetProviders.prototype.getNamespaceIdsFromProvider = function ( providerName ) {
 		var self = this;
 
-		return this.providerFunctions[ providerName ]( this.namespaces.getNamespaceIds() )
+		return this.providerFunctions[ providerName ]( Object.keys( this.namespaces ) )
 			// Calling String() as a function casts numbers to strings
 			.map( String )
 			.filter( function ( id ) {
-				if ( id in self.namespaces.getNamespaces() ) {
+				if ( id in self.namespaces ) {
 					return true;
 				}
 				mw.log.warn( 'AdvancedSearch namespace preset provider "' + providerName + '" returned invalid namespace ID' );
@@ -66,7 +66,7 @@
 	 * @return {bool}
 	 */
 	mw.libs.advancedSearch.dm.NamespacePresetProviders.prototype.namespaceIdsAreValid = function ( namespaceIds ) {
-		return mw.libs.advancedSearch.util.arrayContains( this.namespaces.getNamespaceIds(), namespaceIds );
+		return mw.libs.advancedSearch.util.arrayContains( Object.keys( this.namespaces ), namespaceIds );
 	};
 
 }( mediaWiki, jQuery ) );

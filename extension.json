@@ -122,7 +122,6 @@
 				"ext.advancedSearch.AdvancedOptionsConfig",
 				"ext.advancedSearch.QueryCompiler",
 				"ext.advancedSearch.dm.getDefaultNamespaces",
-				"ext.advancedSearch.dm.SearchableNamespaces",
 				"ext.advancedSearch.dm.SearchModel",
 				"ext.advancedSearch.dm.trackingEvents.SearchRequest",
 				"ext.advancedSearch.styles",
@@ -369,14 +368,6 @@
 		"ext.advancedSearch.dm.getDefaultNamespaces": {
 			"scripts": [
 				"modules/dm/ext.advancedSearch.getDefaultNamespaces.js"
-			]
-		},
-		"ext.advancedSearch.dm.SearchableNamespaces": {
-			"scripts": [
-				"modules/dm/ext.advancedSearch.SearchableNamespaces.js"
-			],
-			"messages": [
-				"blanknamespace"
 			]
 		},
 		"ext.advancedSearch.dm.SearchModel": {

@@ -1,11 +1,11 @@
 ( function ( mw ) {
-	var namespaces = new mw.libs.advancedSearch.dm.SearchableNamespaces( {
+	var namespaces = {
 			0: 'Article',
 			1: 'Talk',
 			2: 'User',
 			12: 'Help',
 			911: 'Emergency Talk'
-		} ),
+		},
 		sandbox;
 
 	QUnit.testStart( function () {

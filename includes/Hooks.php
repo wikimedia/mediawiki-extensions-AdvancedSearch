@@ -22,14 +22,15 @@ class Hooks {
 	 * @param string $subpage
 	 */
 	public static function onSpecialPageBeforeExecute( SpecialPage $special, $subpage ) {
-		$config = MediaWikiServices::getInstance()->getMainConfig();
+		$mainConfig = MediaWikiServices::getInstance()->getMainConfig();
+		$searchConfig = MediaWikiServices::getInstance()->getSearchEngineConfig();
 
 		/**
 		 * If the BetaFeatures extension is loaded then require the current user
 		 * to have the feature enabled.
 		 */
 		if (
-			$config->get( 'AdvancedSearchBetaFeature' ) &&
+			$mainConfig->get( 'AdvancedSearchBetaFeature' ) &&
 			ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) &&
 			!BetaFeatures::isFeatureEnabled( $special->getUser(), 'advancedsearch' )
 		) {
@@ -47,10 +48,15 @@ class Hooks {
 				( new MimeTypeConfigurator( MediaWikiServices::getInstance()->getMimeAnalyzer() ) )
 					->getMimeTypes( $special->getConfig()->get( 'FileExtensions' ) )
 			);
+
 			$special->getOutput()->addJsConfigVars( [
 				'advancedSearch.tooltips' => TooltipGenerator::generateToolTips(),
-				'advancedSearch.namespacePresets' => $config->get( 'AdvancedSearchNamespacePresets' ),
-				'advancedSearch.deepcategoryEnabled' => $config->get( 'AdvancedSearchDeepcatEnabled' )
+				'advancedSearch.namespacePresets' => $mainConfig->get( 'AdvancedSearchNamespacePresets' ),
+				'advancedSearch.deepcategoryEnabled' => $mainConfig->get( 'AdvancedSearchDeepcatEnabled' ),
+				'advancedSearch.searchableNamespaces' =>
+					SearchableNamespaceListBuilder::getCuratedNamespaces(
+						$searchConfig->searchableNamespaces()
+				)
 			] );
 
 			/**
@@ -59,8 +65,8 @@ class Hooks {
 			 * this check is not performed with ExtensionRegistry
 			 * because Translate extension does not have extension.json
 			 */
-			if ( $config->has( 'EnablePageTranslation' ) &&
-				$config->get( 'EnablePageTranslation' ) === true ) {
+			if ( $mainConfig->has( 'EnablePageTranslation' ) &&
+				$mainConfig->get( 'EnablePageTranslation' ) === true ) {
 				$special->getOutput()->addJsConfigVars(
 					'advancedSearch.languages', Language::fetchLanguageNames()
 				);
@@ -138,7 +144,6 @@ class Hooks {
 				'tests/qunit/ui/SearchPreview.test.js',
 				'tests/qunit/dm/getDefaultNamespaces.test.js',
 				'tests/qunit/dm/NamespacePresetProviders.test.js',
-				'tests/qunit/dm/SearchableNamespaces.test.js',
 				'tests/qunit/dm/SearchModel.test.js',
 				'tests/qunit/dm/FileTypeOptionProvider.test.js',
 				'tests/qunit/dm/TitleCache.test.js',
@@ -160,7 +165,6 @@ class Hooks {
 				'ext.advancedSearch.ui.TemplateSearch',
 				'ext.advancedSearch.dm.SearchModel',
 				'ext.advancedSearch.dm.getDefaultNamespaces',
-				'ext.advancedSearch.dm.SearchableNamespaces',
 				'ext.advancedSearch.dm.FileTypeOptionProvider',
 				'ext.advancedSearch.dm.LanguageOptionProvider',
 				'ext.advancedSearch.dm.NamespacePresetProviders',

@@ -132,15 +132,15 @@
 	}
 
 	/**
-	 * @param {object} allowedNamespaces Object returned from SearchableNamespaces.getNamespaces
+	 * @param {Array} searchableNamespaces
 	 * @return {string[]}
 	 */
-	function getNamespacesFromUrl( allowedNamespaces ) {
+	function getNamespacesFromUrl( searchableNamespaces ) {
 		var url = new mw.Uri(),
 			namespaces = [];
 		$.each( url.query, function ( param ) {
 			var nsMatch = param.match( /^ns(\d+)$/ );
-			if ( nsMatch && nsMatch[ 1 ] in allowedNamespaces ) {
+			if ( nsMatch && nsMatch[ 1 ] in searchableNamespaces ) {
 				namespaces.push( nsMatch[ 1 ] );
 			}
 		} );
@@ -169,7 +169,7 @@
 				mw.libs.advancedSearch.dm.getDefaultNamespaces( mw.user.options.values ),
 				getDefaultsFromConfig( mw.libs.advancedSearch.AdvancedOptionsConfig )
 			),
-			namespacesFromUrl = getNamespacesFromUrl( searchableNamespaces.getNamespaces() ),
+			namespacesFromUrl = getNamespacesFromUrl( searchableNamespaces ),
 			stateFromUrl = mw.util.getParamValue( 'advancedSearch-current' );
 
 		if ( namespacesFromUrl.length ) {
@@ -185,7 +185,7 @@
 	}
 
 	$( function () {
-		var searchableNamespaces = new mw.libs.advancedSearch.dm.SearchableNamespaces( mw.config.get( 'wgFormattedNamespaces' ) ),
+		var searchableNamespaces = mw.config.get( 'advancedSearch.searchableNamespaces' ),
 			state = initState( searchableNamespaces ),
 			advancedOptionsBuilder = new mw.libs.advancedSearch.AdvancedOptionsBuilder( state ),
 			queryCompiler = new mw.libs.advancedSearch.QueryCompiler( mw.libs.advancedSearch.AdvancedOptionsConfig );
@@ -225,7 +225,7 @@
 
 		$advancedSearch.append( currentSearch.$element );
 		var namespaceSelection = new mw.libs.advancedSearch.ui.NamespaceFilters( state, {
-				namespaces: searchableNamespaces.getNamespaces(),
+				namespaces: searchableNamespaces,
 				placeholder: mw.msg( 'advancedsearch-namespaces-placeholder' ),
 				$overlay: true
 			} ),
