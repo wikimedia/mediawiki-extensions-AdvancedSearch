@@ -19,10 +19,8 @@
 		}, config ) );
 
 		this.checkboxWidget = new mw.libs.advancedSearch.ui.CheckboxInputWidget( {
-			value: config.data,
-			selected: this.isSelected()
+			value: config.data
 		} );
-
 		$label.append(
 			$( '<div>' )
 				.addClass( 'mw-advancedSearch-ui-itemMenuOptionWidget-label-title' )
@@ -51,5 +49,7 @@
 	};
 
 	OO.inheritClass( mw.libs.advancedSearch.ui.ItemMenuOptionWidget, OO.ui.MenuOptionWidget );
+	// prevents a visual jump when selecting a menu option
+	mw.libs.advancedSearch.ui.ItemMenuOptionWidget.static.scrollIntoViewOnSelect = false;
 
 }( mediaWiki ) );

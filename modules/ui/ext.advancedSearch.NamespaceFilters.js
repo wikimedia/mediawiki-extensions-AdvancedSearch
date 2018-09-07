@@ -49,7 +49,9 @@
 		this.store.connect( this, { update: 'onStoreUpdate' } );
 		this.setValueFromStore();
 		this.updateNamespaceFormFields();
-		this.highlightSelectedNamespacesInMenu();
+		// this needs to be executed last in the stack
+		// in order to prevent unwanted scroll-to-top jumps on select
+		setTimeout( this.highlightSelectedNamespacesInMenu.bind( this ), 0 );
 
 		this.connect( this, { change: 'onValueUpdate' } );
 	};
