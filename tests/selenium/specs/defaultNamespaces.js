@@ -2,7 +2,7 @@
 
 const assert = require( 'assert' );
 const SearchPage = require( '../pageobjects/search.page' );
-const UserLoginPage = require( '../../../../../tests/selenium/pageobjects/userlogin.page' );
+const UserLoginPage = require( 'wdio-mediawiki/LoginPage' );
 
 describe( 'Advanced Search', function () {
 	const log = require( 'semlog' ).log, // https://github.com/fannon/semlog/

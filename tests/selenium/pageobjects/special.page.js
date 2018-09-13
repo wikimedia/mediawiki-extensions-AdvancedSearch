@@ -1,6 +1,6 @@
 'use strict';
 
-const Page = require( '../../../../../tests/selenium/pageobjects/page' );
+const Page = require( 'wdio-mediawiki/Page' );
 
 class SpecialPage extends Page {
 
@@ -9,7 +9,7 @@ class SpecialPage extends Page {
 	get translateExtensionLink() { return browser.element( '#mw-version-ext-other-Translate' ); }
 
 	open() {
-		super.open( 'Special:Version' );
+		super.openTitle( 'Special:Version' );
 	}
 
 }

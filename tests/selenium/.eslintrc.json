@@ -10,6 +10,7 @@
 		"browser": false
 	},
 	"rules": {
-		"max-len": "off"
+		"max-len": "off",
+		"no-console": 0
 	}
 }

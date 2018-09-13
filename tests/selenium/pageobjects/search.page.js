@@ -1,7 +1,6 @@
 'use strict';
-const Page = require( '../../../../../tests/selenium/pageobjects/page' );
+const Page = require( 'wdio-mediawiki/Page' );
 const url = require( 'url' );
-const querystring = require( 'querystring' );
 
 class TextInputField {
 	constructor( selector ) {
@@ -216,10 +215,7 @@ class SearchPage extends Page {
 
 	open( params ) {
 		let pageName = 'Special:Search';
-		if ( typeof params === 'object' ) {
-			pageName += '&' + querystring.stringify( params );
-		}
-		super.open( pageName );
+		super.openTitle( pageName, params );
 		this.waitForAdvancedSearchToLoad();
 	}
 
