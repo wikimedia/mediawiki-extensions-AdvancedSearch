@@ -155,6 +155,11 @@
 			}
 		} );
 	};
+	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.removeHighlighFromTags = function () {
+		this.getItems().forEach( function ( tag ) {
+			tag.$element.removeClass( 'selected' );
+		} );
+	};
 
 	/**
 	 * Remove an item from the list of namespaces in store
@@ -190,6 +195,9 @@
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.onMenuToggle = function ( isVisible ) {
 		mw.libs.advancedSearch.ui.NamespaceFilters.parent.prototype.onMenuToggle.call( this );
 		this.input.setIcon( isVisible ? 'search' : 'menu' );
+		if ( !isVisible ) {
+			this.removeHighlighFromTags();
+		}
 	};
 
 	/**
