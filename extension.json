@@ -137,20 +137,25 @@
 			"scripts": [
 				"modules/ext.advancedSearch.AdvancedOptionsConfig.js"
 			],
+			"dependencies": [
+				"ext.advancedSearch.AdvancedOptionsConfig.init"
+			]
+		},
+		"ext.advancedSearch.AdvancedOptionsConfig.init": {
 			"messages": [
-				"advancedsearch-field-plain",
-				"advancedsearch-field-phrase",
-				"advancedsearch-field-or",
-				"advancedsearch-field-not",
-				"advancedsearch-field-subpageof",
-				"advancedsearch-field-intitle",
+				"advancedsearch-placeholder-exact-text",
 				"advancedsearch-field-deepcategory",
-				"advancedsearch-field-hastemplate",
-				"advancedsearch-field-inlanguage",
+				"advancedsearch-field-fileh",
 				"advancedsearch-field-filetype",
 				"advancedsearch-field-filew",
-				"advancedsearch-field-fileh",
-				"advancedsearch-placeholder-exact-text"
+				"advancedsearch-field-hastemplate",
+				"advancedsearch-field-inlanguage",
+				"advancedsearch-field-intitle",
+				"advancedsearch-field-not",
+				"advancedsearch-field-or",
+				"advancedsearch-field-phrase",
+				"advancedsearch-field-plain",
+				"advancedsearch-field-subpageof"
 			],
 			"dependencies": [
 				"ext.advancedSearch.ui.ArbitraryWordInput",
@@ -158,11 +163,12 @@
 				"ext.advancedSearch.dm.FileTypeOptionProvider",
 				"ext.advancedSearch.ui.FileTypeSelection",
 				"ext.advancedSearch.ui.ImageDimensionInput",
+				"ext.advancedSearch.ui.ImageDimensionLayout",
 				"ext.advancedSearch.dm.LanguageOptionProvider",
 				"ext.advancedSearch.ui.LanguageSelection",
-				"ext.advancedSearch.ui.ImageDimensionLayout",
 				"ext.advancedSearch.ui.TemplateSearch",
-				"ext.advancedSearch.ui.TextInput"
+				"ext.advancedSearch.ui.TextInput",
+				"oojs-ui-widgets"
 			]
 		},
 		"ext.advancedSearch.AdvancedOptionsBuilder": {
