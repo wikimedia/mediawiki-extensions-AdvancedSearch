@@ -23,7 +23,7 @@
 		}, config );
 
 		this.store = store;
-		this.namespaces = config.namespaces;
+		this.namespaces = this.prettifyNamespaces( config.namespaces );
 		config.classes.push( 'mw-advancedSearch-namespaceFilter' );
 
 		mw.libs.advancedSearch.ui.NamespaceFilters.parent.call( this, $.extend( true, {
@@ -58,6 +58,18 @@
 
 	OO.inheritClass( mw.libs.advancedSearch.ui.NamespaceFilters, OO.ui.MenuTagMultiselectWidget );
 
+	/**
+	 * Prettify namespace names e.g. "config_talk" becomes "Config talk"
+	 *
+	 * @param {Object} namespaces Namespace id => Namespace label (similar to mw.config.get( 'wgFormattedNamespaces' ) )
+	 * @return {Object} namespaces
+	 */
+	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.prettifyNamespaces = function ( namespaces ) {
+		Object.keys( namespaces ).forEach( function ( id ) {
+			namespaces[ id ] = mw.Title.newFromText( namespaces[ id ] ).getNameText();
+		} );
+		return namespaces;
+	};
 	/**
 	 * @inheritdoc
 	 */
@@ -102,7 +114,6 @@
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.setValueFromStore = function () {
 		var self = this,
 			namespaces = this.store.getNamespaces();
-
 		// prevent updating the store while reacting to its update notification
 		this.disconnect( this, { change: 'onValueUpdate' } );
 		this.clearItems();
@@ -126,7 +137,6 @@
 	 */
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.createTagItemWidget = function ( data, label ) {
 		label = label || data;
-
 		return new OO.ui.TagItemWidget( {
 			data: data,
 			label: label,
