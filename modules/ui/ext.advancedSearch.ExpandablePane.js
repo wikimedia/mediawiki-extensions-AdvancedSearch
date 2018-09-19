@@ -63,7 +63,6 @@
 			this.updatePaneVisibility( this.STATE_CLOSED );
 			this.notifyChildInputVisibility( false );
 		} else {
-			this.buildDependentPane();
 			this.data = this.STATE_OPEN;
 			this.updatePaneVisibility( this.STATE_OPEN );
 			this.notifyChildInputVisibility( true );

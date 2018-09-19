@@ -226,6 +226,12 @@ class SearchPage extends Page {
 
 	toggleInputFields() {
 		browser.element( '.mw-advancedSearch-expandablePane-button .oo-ui-indicatorElement-indicator' ).click();
+		this.waitForSearchFieldsToLoad();
+	}
+
+	waitForSearchFieldsToLoad() {
+		// Wait for the last search field to be visible as an indicator that all search field widgets have been built
+		browser.waitForExist( '#advancedSearchOption-filetype', 5000 );
 	}
 }
 module.exports = new SearchPage();

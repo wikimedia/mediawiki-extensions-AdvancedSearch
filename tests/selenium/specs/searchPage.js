@@ -30,6 +30,7 @@ describe( 'AdvancedSearch', function () {
 	} );
 
 	it( 'submits the search taking into consideration all entered criteria', function () {
+		this.timeout( 60000 );
 		SearchPage.open();
 
 		SearchPage.toggleInputFields();
@@ -109,6 +110,7 @@ describe( 'AdvancedSearch', function () {
 	} );
 
 	it( 'allows logged-in users to remember the selection of namespaces for future searches', function () {
+		this.timeout( 60000 );
 		SearchPage.open();
 		assert( !SearchPage.rememberSelection.isExisting() );
 

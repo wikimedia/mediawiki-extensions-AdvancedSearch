@@ -125,7 +125,9 @@
 		// Proactively lazy-load the pane: if the user hasn't already clicked to open the pane,
 		// build it in the background.
 		mw.requestIdleCallback( function () {
-			pane.buildDependentPane();
+			mw.loader.using( 'ext.advancedSearch.AdvancedOptionsConfig' ).then( function () {
+				pane.buildDependentPane();
+			} );
 		} );
 
 		return pane.$element;

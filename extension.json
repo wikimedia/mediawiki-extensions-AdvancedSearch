@@ -119,7 +119,7 @@
 				"oojs-ui-widgets",
 				"ext.advancedSearch.searchtoken",
 				"ext.advancedSearch.AdvancedOptionsBuilder",
-				"ext.advancedSearch.AdvancedOptionsConfig",
+				"ext.advancedSearch.AdvancedOptionsConfig.init",
 				"ext.advancedSearch.QueryCompiler",
 				"ext.advancedSearch.dm.getDefaultNamespaces",
 				"ext.advancedSearch.dm.SearchModel",
@@ -133,15 +133,12 @@
 				"ext.advancedSearch.ui.SearchPreview"
 			]
 		},
-		"ext.advancedSearch.AdvancedOptionsConfig": {
+		"ext.advancedSearch.AdvancedOptionsConfig.init": {
 			"scripts": [
 				"modules/ext.advancedSearch.AdvancedOptionsConfig.js"
-			],
-			"dependencies": [
-				"ext.advancedSearch.AdvancedOptionsConfig.init"
 			]
 		},
-		"ext.advancedSearch.AdvancedOptionsConfig.init": {
+		"ext.advancedSearch.AdvancedOptionsConfig": {
 			"messages": [
 				"advancedsearch-placeholder-exact-text",
 				"advancedsearch-field-deepcategory",
