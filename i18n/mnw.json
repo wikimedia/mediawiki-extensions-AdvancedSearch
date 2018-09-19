@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aue Nai"
+		]
+	},
+	"advancedsearch-optgroup-structure": "လဒက်ပတန်",
+	"advancedsearch-optgroup-files": "ဝှာၚ် ကေုာံ သၞိၚ်ရုပ်ဂမၠိုၚ်",
+	"advancedsearch-field-plain": "လိက်ဏံတအ်",
+	"advancedsearch-field-phrase": "လိက်ဏံဗွဲမဍာံ",
+	"advancedsearch-filetype-bitmap": "သၞိၚ်ရုပ်",
+	"advancedsearch-filetype-drawing": "ချူဓဇက်",
+	"advancedsearch-filetype-audio": "ရမျှာၚ်",
+	"advancedsearch-filetype-video": "ရုပ်ဒမျိုၚ်",
+	"advancedsearch-filetype-office": "ရုၚ်",
+	"advancedsearch-filesize-equals": "တုပ်သၟဟ်ကဵု",
+	"advancedsearch-filesize-greater-than": "ဇၞော်နူ",
+	"advancedsearch-filesize-smaller-than": "ဍောတ်နူ",
+	"advancedsearch-namespaces-preset-all": " သီုဖအိုတ်",
+	"advancedsearch-namespaces-preset-default": "မူလ",
+	"advancedsearch-namespaces-preset-general-help": "ရီုဗၚ်နာနာ",
+	"advancedsearch-namespaces-preset-discussion": "သဳကၠဳ",
+	"advancedsearch-namespaces-placeholder": "ထပ် ဒၞဲါယၟု..."
+}
