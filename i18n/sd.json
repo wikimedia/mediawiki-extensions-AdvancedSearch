@@ -5,7 +5,7 @@
 			"Tweety"
 		]
 	},
-	"advancedsearch-desc": "اعلي معيار جي ڳولا کي آساني سان [[Special:Search]] ۾ ڏسو.",
+	"advancedsearch-desc": "اعلي معيار جي ڳولا کي آساني سان [[خاص:ڳولا]] ۾ ڏسو.",
 	"advancedsearch-ask-feedback": "نئون حليو اوهان کي ڪيئن لڳو؟ مهرباني ڪري پنهنجو [$1 رايو] ڏنو (نئين ٽيب تي کلندو)",
 	"advancedsearch-options-pane-head": "اعلي پيما:",
 	"advancedsearch-optgroup-text": "صفحي جي اکرن ۾ ڳوليو",
@@ -48,5 +48,5 @@
 	"advancedsearch-namespaces-preset-discussion": "بحث",
 	"advancedsearch-namespaces-placeholder": "نانءُ فضا شامل ڪيو...",
 	"advancedsearch-beta-feature-message": "اعلي ڳولا حليو",
-	"advancedsearch-beta-feature-description": "اعلي معيار جي ڳولا کي آساني سان [[Special:Search]] ۾ ڏسو."
+	"advancedsearch-beta-feature-description": "اعلي معيار جي ڳولا کي آساني سان [[خاص:ڳولا]] ۾ ڏسو."
 }
