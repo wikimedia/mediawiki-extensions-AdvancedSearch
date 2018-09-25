@@ -101,253 +101,39 @@
 				"user.tokens"
 			]
 		},
-		"ext.advancedSearch.init": {
+		"ext.advancedSearch.elements": {
 			"scripts": [
-				"modules/ext.advancedSearch.init.js"
+				"modules/ext.advancedSearch.AdvancedOptionsConfig.js",
+				"modules/ext.advancedSearch.AdvancedOptionsBuilder.js",
+				"modules/ext.advancedSearch.QueryCompiler.js",
+				"modules/dm/ext.advancedSearch.getDefaultNamespaces.js",
+				"modules/dm/ext.advancedSearch.SearchModel.js",
+				"modules/ui/ext.advancedSearch.StoreListener.js",
+				"modules/ui/ext.advancedSearch.FormState.js",
+				"modules/ui/ext.advancedSearch.ExpandablePane.js",
+				"modules/ui/ext.advancedSearch.NamespaceFilters.js",
+				"modules/ui/ext.advancedSearch.NamespacePresets.js",
+				"modules/ui/ext.advancedSearch.SearchPreview.js",
+				"modules/dm/ext.advancedSearch.NamespacePresetProviders.js",
+				"modules/dm/trackingEvents/ext.advancedSearch.SearchRequest.js",
+				"modules/ui/ext.advancedSearch.MenuSelectWidget.js",
+				"modules/ui/ext.advancedSearch.ItemMenuOptionWidget.js",
+				"modules/ui/ext.advancedSearch.CheckboxInputWidget.js",
+				"modules/ext.advancedSearch.util.js"
 			],
 			"messages": [
 				"advancedsearch-options-pane-head",
 				"advancedsearch-namespaces-search-in",
 				"advancedsearch-namespaces-placeholder",
-				"advancedsearch-ask-feedback"
-			],
-			"dependencies": [
-				"mediawiki.user",
-				"mediawiki.jqueryMsg",
-				"mediawiki.Uri",
-				"mediawiki.util",
-				"oojs-ui-widgets",
-				"ext.advancedSearch.searchtoken",
-				"ext.advancedSearch.AdvancedOptionsBuilder",
-				"ext.advancedSearch.AdvancedOptionsConfig.init",
-				"ext.advancedSearch.QueryCompiler",
-				"ext.advancedSearch.dm.getDefaultNamespaces",
-				"ext.advancedSearch.dm.SearchModel",
-				"ext.advancedSearch.dm.trackingEvents.SearchRequest",
-				"ext.advancedSearch.styles",
-				"ext.advancedSearch.ui.StoreListener",
-				"ext.advancedSearch.ui.FormState",
-				"ext.advancedSearch.ui.ExpandablePane",
-				"ext.advancedSearch.ui.NamespaceFilters",
-				"ext.advancedSearch.ui.NamespacePresets",
-				"ext.advancedSearch.ui.SearchPreview"
-			]
-		},
-		"ext.advancedSearch.AdvancedOptionsConfig.init": {
-			"scripts": [
-				"modules/ext.advancedSearch.AdvancedOptionsConfig.js"
-			]
-		},
-		"ext.advancedSearch.AdvancedOptionsConfig": {
-			"messages": [
-				"advancedsearch-placeholder-exact-text",
-				"advancedsearch-field-deepcategory",
-				"advancedsearch-field-fileh",
-				"advancedsearch-field-filetype",
-				"advancedsearch-field-filew",
-				"advancedsearch-field-hastemplate",
-				"advancedsearch-field-inlanguage",
-				"advancedsearch-field-intitle",
-				"advancedsearch-field-not",
-				"advancedsearch-field-or",
-				"advancedsearch-field-phrase",
-				"advancedsearch-field-plain",
-				"advancedsearch-field-subpageof"
-			],
-			"dependencies": [
-				"ext.advancedSearch.ui.ArbitraryWordInput",
-				"ext.advancedSearch.ui.DeepCategoryFilter",
-				"ext.advancedSearch.dm.FileTypeOptionProvider",
-				"ext.advancedSearch.ui.FileTypeSelection",
-				"ext.advancedSearch.ui.ImageDimensionInput",
-				"ext.advancedSearch.ui.ImageDimensionLayout",
-				"ext.advancedSearch.dm.LanguageOptionProvider",
-				"ext.advancedSearch.ui.LanguageSelection",
-				"ext.advancedSearch.ui.TemplateSearch",
-				"ext.advancedSearch.ui.TextInput",
-				"oojs-ui-widgets"
-			]
-		},
-		"ext.advancedSearch.AdvancedOptionsBuilder": {
-			"scripts": [
-				"modules/ext.advancedSearch.AdvancedOptionsBuilder.js"
-			],
-			"messages": [
+				"advancedsearch-ask-feedback",
 				"advancedsearch-optgroup-text",
 				"advancedsearch-optgroup-structure",
-				"advancedsearch-optgroup-files"
-			],
-			"dependencies": [
-				"oojs-ui-widgets"
-			]
-		},
-		"ext.advancedSearch.QueryCompiler": {
-			"scripts": [
-				"modules/ext.advancedSearch.QueryCompiler.js"
-			]
-		} ,
-		"ext.advancedSearch.ui.mixins.ClassesForDropdownOptions": {
-			"scripts": [
-				"modules/ui/mixins/ext.advancedSearch.ClassesForDropdownOptions.js"
-			],
-			"dependencies": [
-				"oojs-ui-widgets"
-			]
-		},
-		"ext.advancedSearch.ui.ArbitraryWordInput": {
-			"scripts": [
-				"modules/ui/ext.advancedSearch.ArbitraryWordInput.js"
-			],
-			"dependencies": [
-				"ext.advancedSearch.util",
-				"oojs-ui-widgets"
-			]
-		},
-		"ext.advancedSearch.ui.DeepCategoryFilter": {
-			"scripts": [
-				"modules/ui/ext.advancedSearch.DeepCategoryFilter.js"
-			],
-			"dependencies": [
-				"ext.advancedSearch.dm.MultiselectLookup"
-			]
-		},
-		"ext.advancedSearch.ui.FormState": {
-			"scripts": [
-				"modules/ui/ext.advancedSearch.FormState.js"
-			],
-			"dependencies": [
-				"oojs-ui-widgets"
-			]
-		},
-		"ext.advancedSearch.ui.FileTypeSelection": {
-			"scripts": [
-				"modules/ui/ext.advancedSearch.FileTypeSelection.js"
-			],
-			"dependencies": [
-				"oojs-ui-widgets",
-				"ext.advancedSearch.ui.StoreListener",
-				"ext.advancedSearch.ui.mixins.ClassesForDropdownOptions"
-			],
-			"messages": [
-				"advancedsearch-filetype-section-types",
-				"advancedsearch-filetype-section-image",
-				"advancedsearch-filetype-section-video",
-				"advancedsearch-filetype-section-audio",
-				"advancedsearch-filetype-section-document",
-				"advancedsearch-filetype-section-other",
-				"advancedsearch-filetype-default",
-				"advancedsearch-filetype-bitmap",
-				"advancedsearch-filetype-drawing",
-				"advancedsearch-filetype-audio",
-				"advancedsearch-filetype-video",
-				"advancedsearch-filetype-office"
-			]
-		},
-		"ext.advancedSearch.ui.LanguageSelection": {
-			"scripts": [
-				"modules/ui/ext.advancedSearch.LanguageSelection.js"
-			],
-			"dependencies": [
-				"oojs-ui-widgets",
-				"ext.advancedSearch.ui.StoreListener",
-				"ext.advancedSearch.ui.mixins.ClassesForDropdownOptions"
-			],
-			"messages": [
-				"advancedsearch-inlanguage-default"
-			]
-		},
-		"ext.advancedSearch.ui.ExpandablePane": {
-			"scripts": [
-				"modules/ui/ext.advancedSearch.ExpandablePane.js"
-			],
-			"dependencies": [
-				"oojs-ui-widgets"
-			]
-		},
-		"ext.advancedSearch.ui.ImageDimensionInput": {
-			"scripts": [
-				"modules/ui/ext.advancedSearch.ImageDimensionInput.js"
-			],
-			"dependencies": [
-				"oojs-ui-widgets",
-				"ext.advancedSearch.ui.TextInput"
-			],
-			"messages": [
-				"advancedsearch-filesize-equals",
-				"advancedsearch-filesize-greater-than",
-				"advancedsearch-filesize-smaller-than"
-			]
-		},
-		"ext.advancedSearch.ui.NamespacePresets": {
-			"scripts": [
-				"modules/ui/ext.advancedSearch.NamespacePresets.js"
-			],
-			"dependencies": [
-				"ext.advancedSearch.dm.NamespacePresetProviders",
-				"ext.advancedSearch.util",
-				"oojs-ui-widgets"
-			],
-			"messages": [
+				"advancedsearch-optgroup-files",
 				"advancedsearch-namespaces-remember",
 				"advancedsearch-namespaces-preset-all",
 				"advancedsearch-namespaces-preset-default",
 				"advancedsearch-namespaces-preset-general-help",
-				"advancedsearch-namespaces-preset-discussion"
-			]
-		},
-		"ext.advancedSearch.ui.NamespaceFilters": {
-			"scripts": [
-				"modules/ui/ext.advancedSearch.NamespaceFilters.js"
-			],
-			"dependencies": [
-				"ext.advancedSearch.ui.MenuSelectWidget",
-				"oojs-ui-widgets",
-				"oojs-ui.styles.icons-layout",
-				"oojs-ui.styles.icons-interactions"
-			]
-		},
-		"ext.advancedSearch.ui.MenuSelectWidget": {
-			"scripts": [
-				"modules/ui/ext.advancedSearch.MenuSelectWidget.js"
-			],
-			"dependencies": [
-				"ext.advancedSearch.ui.ItemMenuOptionWidget",
-				"oojs-ui-widgets"
-			]
-		},
-		"ext.advancedSearch.ui.ItemMenuOptionWidget": {
-			"scripts": [
-				"modules/ui/ext.advancedSearch.ItemMenuOptionWidget.js"
-			],
-			"dependencies": [
-				"ext.advancedSearch.ui.CheckboxInputWidget",
-				"oojs-ui-widgets"
-			]
-		},
-		"ext.advancedSearch.ui.CheckboxInputWidget": {
-			"scripts": [
-				"modules/ui/ext.advancedSearch.CheckboxInputWidget.js"
-			],
-			"dependencies": [
-				"oojs-ui-widgets"
-			]
-		},
-		"ext.advancedSearch.ui.ImageDimensionLayout": {
-			"scripts": [
-				"modules/ui/ext.advancedSearch.ImageDimensionLayout.js"
-			],
-			"dependencies": [
-				"oojs-ui-widgets"
-			]
-		},
-		"ext.advancedSearch.ui.SearchPreview": {
-			"scripts": [
-				"modules/ui/ext.advancedSearch.SearchPreview.js"
-			],
-			"dependencies": [
-				"oojs-ui-widgets"
-			],
-			"messages": [
+				"advancedsearch-namespaces-preset-discussion",
 				"advancedsearch-filesize-equals-symbol",
 				"advancedsearch-filesize-greater-than-symbol",
 				"advancedsearch-filesize-smaller-than-symbol",
@@ -362,100 +148,82 @@
 				"advancedsearch-field-filetype",
 				"advancedsearch-field-filew",
 				"advancedsearch-field-fileh"
-			]
-		},
-		"ext.advancedSearch.ui.StoreListener": {
-			"scripts": [
-				"modules/ui/ext.advancedSearch.StoreListener.js"
 			],
 			"dependencies": [
-				"oojs-ui-widgets"
-			]
-		},
-		"ext.advancedSearch.ui.TemplateSearch": {
-			"scripts": [
-				"modules/ui/ext.advancedSearch.TemplateSearch.js"
-			],
-			"dependencies": [
-				"ext.advancedSearch.dm.MultiselectLookup"
-			]
-		},
-		"ext.advancedSearch.ui.TextInput": {
-			"scripts": [
-				"modules/ui/ext.advancedSearch.TextInput.js"
-			],
-			"dependencies": [
-				"oojs-ui-widgets"
-			]
-		},
-		"ext.advancedSearch.dm.getDefaultNamespaces": {
-			"scripts": [
-				"modules/dm/ext.advancedSearch.getDefaultNamespaces.js"
-			]
-		},
-		"ext.advancedSearch.dm.SearchModel": {
-			"scripts": [
-				"modules/dm/ext.advancedSearch.SearchModel.js"
-			],
-			"dependencies": [
-				"oojs"
-			]
-		},
-		"ext.advancedSearch.dm.TitleCache": {
-			"scripts": [
-				"modules/dm/ext.advancedSearch.TitleCache.js"
-			],
-			"dependencies": [
-				"mediawiki.Title"
-			]
-		},
-		"ext.advancedSearch.dm.MultiselectLookup": {
-			"scripts": [
-				"modules/dm/ext.advancedSearch.MultiselectLookup.js"
-			],
-			"dependencies": [
-				"ext.advancedSearch.dm.TitleCache",
+				"mediawiki.user",
+				"mediawiki.jqueryMsg",
+				"mediawiki.Uri",
+				"mediawiki.util",
+				"oojs",
 				"oojs-ui-widgets",
-				"ext.advancedSearch.util"
+				"oojs-ui.styles.icons-layout",
+				"oojs-ui.styles.icons-interactions",
+				"ext.advancedSearch.styles"
 			]
 		},
-		"ext.advancedSearch.dm.NamespacePresetProviders": {
+		"ext.advancedSearch.init": {
 			"scripts": [
-				"modules/dm/ext.advancedSearch.NamespacePresetProviders.js"
+				"modules/ext.advancedSearch.init.js"
+			],
+			"dependencies": [
+				"ext.advancedSearch.searchtoken",
+				"ext.advancedSearch.elements"
+			]
+		},
+		"ext.advancedSearch.AdvancedOptionsConfig": {
+			"scripts" : [
+				"modules/ext.advancedSearch.util.js",
+				"modules/dm/ext.advancedSearch.TitleCache.js",
+				"modules/dm/ext.advancedSearch.MultiselectLookup.js",
+				"modules/ui/ext.advancedSearch.ArbitraryWordInput.js",
+				"modules/ui/ext.advancedSearch.DeepCategoryFilter.js",
+				"modules/ui/ext.advancedSearch.TemplateSearch.js",
+				"modules/ui/ext.advancedSearch.StoreListener.js",
+				"modules/ui/mixins/ext.advancedSearch.ClassesForDropdownOptions.js",
+				"modules/ui/ext.advancedSearch.FileTypeSelection.js",
+				"modules/ui/ext.advancedSearch.LanguageSelection.js",
+				"modules/ui/ext.advancedSearch.TextInput.js",
+				"modules/ui/ext.advancedSearch.ImageDimensionInput.js",
+				"modules/ui/ext.advancedSearch.ImageDimensionLayout.js",
+				"modules/ui/ext.advancedSearch.TextInput.js",
+				"modules/dm/ext.advancedSearch.FileTypeOptionProvider.js",
+				"modules/dm/ext.advancedSearch.LanguageOptionProvider.js"
+			],
+			"messages": [
+				"advancedsearch-placeholder-exact-text",
+				"advancedsearch-field-deepcategory",
+				"advancedsearch-field-fileh",
+				"advancedsearch-field-filetype",
+				"advancedsearch-field-filew",
+				"advancedsearch-field-hastemplate",
+				"advancedsearch-field-inlanguage",
+				"advancedsearch-field-intitle",
+				"advancedsearch-field-not",
+				"advancedsearch-field-or",
+				"advancedsearch-field-phrase",
+				"advancedsearch-field-plain",
+				"advancedsearch-field-subpageof",
+				"advancedsearch-filetype-section-types",
+				"advancedsearch-filetype-section-image",
+				"advancedsearch-filetype-section-video",
+				"advancedsearch-filetype-section-audio",
+				"advancedsearch-filetype-section-document",
+				"advancedsearch-filetype-section-other",
+				"advancedsearch-filetype-default",
+				"advancedsearch-filetype-bitmap",
+				"advancedsearch-filetype-drawing",
+				"advancedsearch-filetype-audio",
+				"advancedsearch-filetype-video",
+				"advancedsearch-filetype-office",
+				"advancedsearch-inlanguage-default",
+				"advancedsearch-filesize-equals",
+				"advancedsearch-filesize-greater-than",
+				"advancedsearch-filesize-smaller-than"
 			],
 			"dependencies": [
 				"oojs",
-				"ext.advancedSearch.util",
-				"ext.advancedSearch.dm.getDefaultNamespaces"
-			]
-		},
-		"ext.advancedSearch.dm.FileTypeOptionProvider": {
-			"scripts": [
-				"modules/dm/ext.advancedSearch.FileTypeOptionProvider.js"
-			],
-			"dependencies": [
-				"oojs"
-			]
-		},
-		"ext.advancedSearch.dm.LanguageOptionProvider": {
-			"scripts": [
-				"modules/dm/ext.advancedSearch.LanguageOptionProvider.js"
-			],
-			"dependencies": [
-				"oojs-ui-widgets"
-			]
-		},
-		"ext.advancedSearch.dm.trackingEvents.SearchRequest": {
-			"scripts": [
-				"modules/dm/trackingEvents/ext.advancedSearch.SearchRequest.js"
-			],
-			"dependencies": [
-				"oojs"
-			]
-		},
-		"ext.advancedSearch.util": {
-			"scripts": [
-				"modules/ext.advancedSearch.util.js"
+				"oojs-ui-widgets",
+				"mediawiki.Title"
 			]
 		}
 	},
