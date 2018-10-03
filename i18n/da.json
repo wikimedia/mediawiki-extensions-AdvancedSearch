@@ -18,6 +18,7 @@
 	"advancedsearch-field-hastemplate": "Sider med disse skabeloner",
 	"advancedsearch-field-inlanguage": "Sider i dette sprog",
 	"advancedsearch-field-filetype": "Filtype",
+	"advancedsearch-placeholder-exact-text": "\"kat elsker ged\"",
 	"advancedsearch-inlanguage-default": "Vælg sprog",
 	"advancedsearch-filetype-section-image": "Billedformater",
 	"advancedsearch-filetype-section-video": "Videoformater",
@@ -33,5 +34,9 @@
 	"advancedsearch-filesize-greater-than": "større end",
 	"advancedsearch-filesize-smaller-than": "mindre end",
 	"advancedsearch-namespaces-search-in": "Søg i:",
+	"advancedsearch-namespaces-preset-all": "Alle",
+	"advancedsearch-namespaces-preset-default": "Standard",
+	"advancedsearch-namespaces-preset-general-help": "Generel hjælp",
+	"advancedsearch-namespaces-preset-discussion": "Diskussion",
 	"advancedsearch-namespaces-placeholder": "Tilføj navnerum..."
 }

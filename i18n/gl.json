@@ -7,9 +7,9 @@
 			"Navhy"
 		]
 	},
-	"advancedsearch-desc": "Acceso sinxelo a capacidades de busca avanzadas en [[Special:Search]]",
+	"advancedsearch-desc": "Acceso sinxelo a capacidades de procura avanzadas en [[Special:Search]]",
 	"advancedsearch-options-pane-head": "Parámetros avanzadosː",
-	"advancedsearch-optgroup-text": "Buscar no texto da páxina",
+	"advancedsearch-optgroup-text": "Procurar no texto da páxina",
 	"advancedsearch-optgroup-structure": "Estrutura",
 	"advancedsearch-optgroup-files": "Ficheiros e imaxes",
 	"advancedsearch-field-plain": "Estas palabras:",
@@ -48,6 +48,6 @@
 	"advancedsearch-namespaces-preset-general-help": "Axuda xeral",
 	"advancedsearch-namespaces-preset-discussion": "Conversa",
 	"advancedsearch-namespaces-placeholder": "Engadir espazos nominais…",
-	"advancedsearch-beta-feature-message": "Interface de busca avanzada",
-	"advancedsearch-beta-feature-description": "Acceso sinxelo a capacidades de busca avanzada en [[Special:Search]]."
+	"advancedsearch-beta-feature-message": "Interface de procura avanzada",
+	"advancedsearch-beta-feature-description": "Acceso sinxelo a capacidades de procura avanzada en [[Special:Search]]."
 }
