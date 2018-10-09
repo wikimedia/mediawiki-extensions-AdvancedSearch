@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"NoiX180"
+		]
+	},
+	"advancedsearch-desc": "Aksès gampang menyang kapabilitas panggolèk canggih ing [[Special:Search]]",
+	"advancedsearch-ask-feedback": "Kaya ngapa mukantarané kang anyar miturut panjenengan? Sumangga awèh [$1 pamrayoga] (bukak ing tab anyar)",
+	"advancedsearch-options-pane-head": "Paramèter canggih:",
+	"advancedsearch-optgroup-text": "Golèk ing tulisan ing kaca",
+	"advancedsearch-optgroup-structure": "Setruktur",
+	"advancedsearch-optgroup-files": "Barkas lan gambar",
+	"advancedsearch-field-plain": "Tembung-tembung iki",
+	"advancedsearch-field-phrase": "Bener tulisan iki",
+	"advancedsearch-field-or": "Salah siji saka tembung-tembung iki",
+	"advancedsearch-field-not": "Dudu tembung-tembung iki",
+	"advancedsearch-field-subpageof": "Anak-kaca saka kaca iki",
+	"advancedsearch-field-intitle": "Sesirah kaca ngemu",
+	"advancedsearch-field-deepcategory": "Kaca ing kategori iki",
+	"advancedsearch-field-hastemplate": "Kaca mawa cithakan iki",
+	"advancedsearch-field-inlanguage": "Kaca ing basa iki",
+	"advancedsearch-field-filetype": "Jinis barkas",
+	"advancedsearch-field-filew": "Ambané barkas ing piksel",
+	"advancedsearch-field-fileh": "Dhuwuré barkas ing piksel"
+}
