@@ -193,22 +193,11 @@
 			queryCompiler = new mw.libs.advancedSearch.QueryCompiler( mw.libs.advancedSearch.AdvancedOptionsConfig );
 
 		var $search = $( 'form#search, form#powersearch' ),
-			$title = $( 'h1#firstHeading' ),
 			$advancedSearch = $( '<div>' ).addClass( 'mw-advancedSearch-container' ),
 			$searchField = $search.find( 'input[name="search"]' ),
 			$profileField = $search.find( 'input[name="profile"]' );
 
-		// Don't forget to remove the placeholder padding from ….init.less when this message is removed!
-		var feedbackMessage = mw.message( 'advancedsearch-ask-feedback', 'https://www.mediawiki.org/wiki/Help_talk:Extension:AdvancedSearch' ).parse();
-
 		$search.append( $advancedSearch );
-		// TODO Remove skin-specific check when implementing https://phabricator.wikimedia.org/T199226
-		if ( mw.config.get( 'skin' ) === 'modern' ) {
-			$search.before( '<span class="feedback">' + feedbackMessage + '</span>' );
-		} else {
-			$title.after( '<span class="feedback">' + feedbackMessage + '</span>' );
-		}
-		$( '.feedback a' ).attr( 'target', '_blank' );
 		$searchField.val( queryCompiler.removeCompiledQueryFromSearch( $searchField.val(), state ) );
 		$searchField.focus();
 
