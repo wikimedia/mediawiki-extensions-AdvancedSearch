@@ -6,7 +6,6 @@
 		]
 	},
 	"advancedsearch-desc": "Enkel åtkomst till avancerade sökförmågor på [[Special:Search]]",
-	"advancedsearch-ask-feedback": "Hur fungerar det nya gränssnittet för dig? Ge oss [$1 återkoppling] (öppnas i en ny flik)",
 	"advancedsearch-options-pane-head": "Avancerade parametrar:",
 	"advancedsearch-optgroup-text": "Sök i sidtext",
 	"advancedsearch-optgroup-structure": "Struktur",

@@ -17,7 +17,6 @@
 		]
 	},
 	"advancedsearch-desc": "Лёгкий доступ к расширенным возможностям поиска на [[Special:Search]]",
-	"advancedsearch-ask-feedback": "Насколько вас устраивает новый интерфейс? Пожалуйста, предоставьте нам [$1 обратную связь] (откроется в новой вкладке)",
 	"advancedsearch-options-pane-head": "Расширенные параметры:",
 	"advancedsearch-optgroup-text": "Искать в тексте страницы",
 	"advancedsearch-optgroup-structure": "Структура",

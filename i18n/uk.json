@@ -9,7 +9,6 @@
 		]
 	},
 	"advancedsearch-desc": "Легкий доступ до можливостей розширеного пошуку на сторінці [[Special:Search|Спеціальна:Пошук]]",
-	"advancedsearch-ask-feedback": "Як Вам новий інтерфейс? Будь ласка, залиште нам [$1 відгук] (посилання відкривається у новій вкладці)",
 	"advancedsearch-options-pane-head": "Розширені параметри:",
 	"advancedsearch-optgroup-text": "Пошук у тексті сторінки",
 	"advancedsearch-optgroup-structure": "Структура",

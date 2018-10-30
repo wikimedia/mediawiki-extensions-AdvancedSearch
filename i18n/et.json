@@ -5,7 +5,6 @@
 		]
 	},
 	"advancedsearch-desc": "Lihtne juurdepääs täpsematele otsivõimalustele leheküljel [[Special:Search]]",
-	"advancedsearch-ask-feedback": "Kuidas uus liides töötab? Palun jäta meile [$1 tagasisidet] (avaneb uuel kaardil)",
 	"advancedsearch-options-pane-head": "Täpsemad parameetrid:",
 	"advancedsearch-optgroup-text": "Otsimine lehekülje tekstist",
 	"advancedsearch-optgroup-structure": "Osised",

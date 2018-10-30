@@ -9,7 +9,6 @@
 		]
 	},
 	"advancedsearch-desc": "[[Special:Search]]の高度な検索機能への簡単なアクセス",
-	"advancedsearch-ask-feedback": "新しいインターフェースはどのように機能しますか？ [$1 フィードバック]をお寄せください（新しいタブで開きます）",
 	"advancedsearch-options-pane-head": "高度なパラメータ:",
 	"advancedsearch-optgroup-text": "ページ内のテキストで検索",
 	"advancedsearch-optgroup-structure": "書式",

@@ -10,7 +10,6 @@
 		]
 	},
 	"advancedsearch-desc": "Accès facile aux possibilités de recherche avancée sur [[Special:Search]]",
-	"advancedsearch-ask-feedback": "Comment fonctionne la nouvelle interface pour vous ? Merci de nous donner [$1 votre avis] (s’ouvre dans un nouvel onglet)",
 	"advancedsearch-options-pane-head": "Paramètres avancés :",
 	"advancedsearch-optgroup-text": "Rechercher dans le texte de la page",
 	"advancedsearch-optgroup-structure": "Structure",
