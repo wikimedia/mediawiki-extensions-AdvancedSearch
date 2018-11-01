@@ -3,8 +3,7 @@
 
 	"env": {
 		"browser": true,
-		"jquery": true,
-		"qunit": true
+		"jquery": true
 	},
 	"globals": {
 		"mediaWiki": false,
@@ -13,6 +12,7 @@
 	"rules": {
 		"dot-notation": [ "error", { "allowKeywords": true } ],
 		"one-var": [ "off" ],
-		"vars-on-top": [ "off" ]
+		"vars-on-top": [ "off" ],
+		"max-len": [ "off" ]
 	}
 }

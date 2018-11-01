@@ -53,7 +53,7 @@
 		var self = this;
 
 		for ( var key in searchOptions ) {
-			if ( searchOptions.hasOwnProperty( key ) && searchOptions[ key ].length ) {
+			if ( Object.prototype.hasOwnProperty.call( searchOptions, key ) && searchOptions[ key ].length ) {
 				self.eventData[ key ] = true;
 			}
 		}

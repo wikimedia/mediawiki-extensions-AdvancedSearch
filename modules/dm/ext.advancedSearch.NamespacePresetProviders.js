@@ -39,12 +39,12 @@
 	OO.initClass( mw.libs.advancedSearch.dm.NamespacePresetProviders );
 
 	mw.libs.advancedSearch.dm.NamespacePresetProviders.prototype.hasProvider = function ( providerName ) {
-		return this.providerFunctions.hasOwnProperty( providerName );
+		return Object.prototype.hasOwnProperty.call( this.providerFunctions, providerName );
 	};
 
 	/**
-	 * @param {String} providerName
-	 * @return {String[]}
+	 * @param {string} providerName
+	 * @return {string[]}
 	 */
 	mw.libs.advancedSearch.dm.NamespacePresetProviders.prototype.getNamespaceIdsFromProvider = function ( providerName ) {
 		var self = this;
@@ -62,7 +62,7 @@
 	};
 
 	/**
-	 * @param {String[]} namespaceIds
+	 * @param {string[]} namespaceIds
 	 * @return {bool}
 	 */
 	mw.libs.advancedSearch.dm.NamespacePresetProviders.prototype.namespaceIdsAreValid = function ( namespaceIds ) {

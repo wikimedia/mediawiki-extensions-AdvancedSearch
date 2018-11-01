@@ -173,8 +173,8 @@
 
 	/**
 	 * Remove an item from the list of namespaces in store
-	 * @param {String} namespace The item to be removed
-	 * @return {String[]} collection of namespaces minus the removed item
+	 * @param {string} namespace The item to be removed
+	 * @return {string[]} collection of namespaces minus the removed item
 	 */
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.removeNamespaceTag = function ( namespace ) {
 		return this.store.getNamespaces().filter( function ( el ) {

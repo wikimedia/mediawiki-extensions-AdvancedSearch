@@ -77,7 +77,7 @@
 	};
 
 	/**
-	 * @return {array}
+	 * @return {Array}
 	 */
 	mw.libs.advancedSearch.ui.ImageDimensionInput.prototype.getValue = function () {
 		return this.data;
