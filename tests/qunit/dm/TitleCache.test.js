@@ -7,8 +7,8 @@
 		var cache = new TitleCache();
 		cache.set( 'foo', 'OK' );
 
-		assert.equal( cache.get( 'foo' ), 'OK' );
-		assert.equal( cache.get( 'Foo' ), 'OK' );
+		assert.strictEqual( cache.get( 'foo' ), 'OK' );
+		assert.strictEqual( cache.get( 'Foo' ), 'OK' );
 	} );
 
 	QUnit.test( 'Checking for value existence allows lowercase', function ( assert ) {

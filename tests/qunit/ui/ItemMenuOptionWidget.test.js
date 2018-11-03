@@ -9,8 +9,8 @@
 			label: 'User'
 		} );
 		assert.ok( menuOption.checkboxWidget );
-		assert.equal( menuOption.getData(), '2' );
-		assert.equal( menuOption.getLabel(), 'User' );
+		assert.strictEqual( menuOption.getData(), '2' );
+		assert.strictEqual( menuOption.getLabel(), 'User' );
 	} );
 
 }( mediaWiki ) );

@@ -40,25 +40,25 @@
 		input.input.setValue( 'scalar, octopus' );
 		input.buildTagsFromInput();
 
-		assert.equal( onChangeSpy.callCount, 2 );
+		assert.strictEqual( onChangeSpy.callCount, 2 );
 
-		assert.equal( onChangeSpy.getCall( 0 ).args[ 0 ][ 0 ].data, 'scalar' );
+		assert.strictEqual( onChangeSpy.getCall( 0 ).args[ 0 ][ 0 ].data, 'scalar' );
 
-		assert.equal( onChangeSpy.getCall( 1 ).args[ 0 ][ 0 ].data, 'scalar' );
-		assert.equal( onChangeSpy.getCall( 1 ).args[ 0 ][ 1 ].data, 'octopus' );
+		assert.strictEqual( onChangeSpy.getCall( 1 ).args[ 0 ][ 0 ].data, 'scalar' );
+		assert.strictEqual( onChangeSpy.getCall( 1 ).args[ 0 ][ 1 ].data, 'octopus' );
 	} );
 
 	QUnit.test( 'Placeholder text presented if no content', function ( assert ) {
 		var input = new ArbitraryWordInput( new Model(), { placeholder: 'lorem ipsum' } );
 
-		assert.equal( input.getTextForPlaceholder(), 'lorem ipsum' );
+		assert.strictEqual( input.getTextForPlaceholder(), 'lorem ipsum' );
 	} );
 
 	QUnit.test( 'Placeholder text empty if content gets set', function ( assert ) {
 		var input = new ArbitraryWordInput( new Model(), { placeholder: 'lorem ipsum' } );
 		input.setValue( [ 'asinus' ] );
 
-		assert.equal( input.getTextForPlaceholder(), '' );
+		assert.strictEqual( input.getTextForPlaceholder(), '' );
 	} );
 
 	QUnit.test( 'Placeholder text empty if content set from the start', function ( assert ) {
@@ -66,7 +66,7 @@
 		model.storeOption( 'somekey', [ 'gaudiamus' ] );
 		var input = new ArbitraryWordInput( model, { placeholder: 'lorem ipsum', optionId: 'somekey' } );
 
-		assert.equal( input.getTextForPlaceholder(), '' );
+		assert.strictEqual( input.getTextForPlaceholder(), '' );
 	} );
 
 	QUnit.test( 'Text with commas and spaces gets turned into tags', function ( assert ) {

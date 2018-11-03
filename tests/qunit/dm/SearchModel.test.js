@@ -38,8 +38,8 @@
 
 		assert.deepEqual( model.getOption( 'not' ), [] );
 		assert.strictEqual( model.getOption( 'prefix' ), '' );
-		assert.equal( typeof model.getOption( 'prefix' ), 'string' );
-		assert.equal( typeof model.getOption( 'nonexisting' ), 'undefined' );
+		assert.strictEqual( typeof model.getOption( 'prefix' ), 'string' );
+		assert.strictEqual( typeof model.getOption( 'nonexisting' ), 'undefined' );
 	} );
 
 	QUnit.test( 'Retrieving reference type value gives a copy, to avoid modification', function ( assert ) {
@@ -50,8 +50,8 @@
 		model.storeOption( 'fileh', fileHeightValuePair );
 		model.storeOption( 'someObject', someObject );
 
-		assert.ok( model.getOption( 'fileh' ) !== fileHeightValuePair, 'Arrays must be different references' );
-		assert.ok( model.getOption( 'someObject' ) !== someObject, 'Objects must be different references' );
+		assert.notStrictEqual( model.getOption( 'fileh' ), fileHeightValuePair, 'Arrays must be different references' );
+		assert.notStrictEqual( model.getOption( 'someObject' ), someObject, 'Objects must be different references' );
 	} );
 
 	QUnit.test( 'Retrieving all values gives a copy of reference type values, to avoid modification', function ( assert ) {
@@ -63,8 +63,8 @@
 		model.storeOption( 'someObject', someObject );
 		var options = model.getOptions();
 
-		assert.ok( options.fileh !== fileHeightValuePair, 'Arrays must be different references' );
-		assert.ok( options.someObject !== someObject, 'Objects must be different references' );
+		assert.notStrictEqual( options.fileh, fileHeightValuePair, 'Arrays must be different references' );
+		assert.notStrictEqual( options.someObject, someObject, 'Objects must be different references' );
 	} );
 
 	QUnit.test( 'When checking with undefined or empty value, hasOptionChange returns true for unset properties without defaults', function ( assert ) {
@@ -131,14 +131,14 @@
 	QUnit.test( 'Options and namespaces are serialized to JSON', function ( assert ) {
 		var model = createModelWithValues();
 
-		assert.equal(
+		assert.strictEqual(
 			model.toJSON(),
 			'{"options":{"not":"octopi","prefix":"Page"},"namespaces":[1,3]}'
 		);
 	} );
 
 	QUnit.test( 'Empty options and namespaces are not serialized to JSON', function ( assert ) {
-		assert.equal(
+		assert.strictEqual(
 			new SearchModel().toJSON(),
 			'{}'
 		);
