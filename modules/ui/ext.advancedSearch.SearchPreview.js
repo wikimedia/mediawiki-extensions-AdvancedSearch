@@ -84,7 +84,7 @@
 	 * Decide if an option-value-combination should be listed in the preview
 	 *
 	 * @param {string} optionId
-	 * @param {string|array} value
+	 * @param {string|Array} value
 	 * @return {boolean}
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview.prototype.skipOptionInPreview = function ( optionId, value ) {
@@ -138,7 +138,7 @@
 	 * Format a value to be used in the preview
 	 *
 	 * @param {string} optionId
-	 * @param {string|array} value
+	 * @param {string|Array} value
 	 * @return {string}
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview.prototype.formatValue = function ( optionId, value ) {

@@ -151,11 +151,11 @@
 
 	/**
 	 * @param {ext.libs.advancedSearch.AdvancedOptionsConfig} options
-	 * @return {object} optionId => default value pairs
+	 * @return {oObject} optionId => default value pairs
 	 */
 	function getDefaultsFromConfig( options ) {
 		return options.reduce( function ( defaults, value ) {
-			if ( value.hasOwnProperty( 'defaultValue' ) ) {
+			if ( Object.prototype.hasOwnProperty.call( value, 'defaultValue' ) ) {
 				defaults[ value.id ] = value.defaultValue;
 			}
 			return defaults;

@@ -56,7 +56,7 @@
 	}
 
 	/**
-	 * @param {object} option
+	 * @param {Object} option
 	 * @return {string|boolean}
 	 */
 	function getOptionHelpMessage( option ) {

@@ -22,7 +22,7 @@
 	/**
 	 * @class
 	 * @constructor
-	 * @param {object} languages in format { language-code: language-name }
+	 * @param {Object} languages in format { language-code: language-name }
 	 */
 	mw.libs.advancedSearch.dm.LanguageOptionProvider = function ( languages ) {
 		this.languages = sortAlphabetically( format( languages ) );

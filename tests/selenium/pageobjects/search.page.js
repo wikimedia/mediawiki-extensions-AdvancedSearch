@@ -121,7 +121,7 @@ class SearchPage extends Page {
 			getAllLabelsFromMenu: function () {
 				const labels = browser.elements( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"]' )
 					.value.map(
-						el => el.element( '.oo-ui-labelElement-label' ).getText()
+						( el ) => el.element( '.oo-ui-labelElement-label' ).getText()
 					);
 				browser.keys( '\uE00C' ); // Close menu by hitting the Escape key
 				return labels;

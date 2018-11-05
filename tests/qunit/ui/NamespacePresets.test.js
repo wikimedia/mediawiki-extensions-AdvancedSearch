@@ -1,8 +1,7 @@
 ( function ( mw ) {
 	var NamespacePresets = mw.libs.advancedSearch.ui.NamespacePresets,
 		Model = mw.libs.advancedSearch.dm.SearchModel,
-		sandbox, presetProvider
-	;
+		sandbox, presetProvider;
 
 	QUnit.module( 'ext.advancedSearch.ui.NamespacePresets' );
 
@@ -52,7 +51,7 @@
 		} );
 
 		assert.ok( warningLogger.calledWith( 'Provider function blackhole not registered to mw.libs.advancedSearch.dm.NamespacePresetProviders' ) );
-		assert.notOk( presets.presets.hasOwnProperty( 'blackhole' ) );
+		assert.notOk( Object.prototype.hasOwnProperty.call( presets.presets, 'blackhole' ) );
 	} );
 
 	QUnit.test( 'Passing a malformed preset config creates no namespace preset', function ( assert ) {
@@ -66,7 +65,7 @@
 		} );
 
 		assert.ok( warningLogger.calledWith( 'No defined namespaces or provider function for borken in $wgAdvancedSearchNamespacePresets' ) );
-		assert.notOk( presets.presets.hasOwnProperty( 'borken' ) );
+		assert.notOk( Object.prototype.hasOwnProperty.call( presets.presets, 'borken' ) );
 	} );
 
 	QUnit.test( 'Passing a disabled preset config creates no namespace preset', function ( assert ) {
@@ -79,7 +78,7 @@
 			}
 		} );
 
-		assert.notOk( presets.presets.hasOwnProperty( 'turnedoff' ) );
+		assert.notOk( Object.prototype.hasOwnProperty.call( presets.presets, 'turnedoff' ) );
 	} );
 
 	QUnit.test( 'Passing a preset config omitting "enabled" creates no namespace preset', function ( assert ) {
@@ -91,7 +90,7 @@
 			}
 		} );
 
-		assert.notOk( presets.presets.hasOwnProperty( 'undecided' ) );
+		assert.notOk( Object.prototype.hasOwnProperty.call( presets.presets, 'undecided' ) );
 	} );
 
 	QUnit.test( 'Selecting namespace adds its preset', function ( assert ) {
@@ -120,7 +119,7 @@
 				}
 			} );
 
-		assert.notOk( presets.presets.hasOwnProperty( 'emptypreset' ) );
+		assert.notOk( Object.prototype.hasOwnProperty.call( presets.presets, 'emptypreset' ) );
 		assert.ok( warningLogger.calledWith( 'Empty namespaces for emptypreset in $wgAdvancedSearchNamespacePresets' ) );
 	} );
 
@@ -137,7 +136,7 @@
 				}
 			} );
 
-		assert.notOk( presets.presets.hasOwnProperty( 'notvalid' ) );
+		assert.notOk( Object.prototype.hasOwnProperty.call( presets.presets, 'notvalid' ) );
 		assert.ok( warningLogger.calledWith( 'AdvancedSearch namespace preset "notvalid" contains unknown namespace ID' ) );
 	} );
 

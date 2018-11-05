@@ -23,7 +23,7 @@
 	};
 
 	mw.libs.advancedSearch.dm.TitleCache.prototype.has = function ( name ) {
-		return this.cache.hasOwnProperty( getCacheKey( name ) );
+		return Object.prototype.hasOwnProperty.call( this.cache, getCacheKey( name ) );
 	};
 
 }( mediaWiki ) );

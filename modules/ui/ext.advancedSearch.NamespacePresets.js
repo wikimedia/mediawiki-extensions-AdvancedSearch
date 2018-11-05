@@ -29,7 +29,7 @@
 		$.each( presets, function ( key, presetConfig ) {
 			var preset = { label: presetConfig.label || key };
 
-			if ( !presetConfig.hasOwnProperty( 'enabled' ) || presetConfig.enabled !== true ) {
+			if ( !Object.prototype.hasOwnProperty.call( presetConfig, 'enabled' ) || presetConfig.enabled !== true ) {
 				return;
 			}
 

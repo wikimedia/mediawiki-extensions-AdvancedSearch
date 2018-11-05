@@ -50,7 +50,7 @@
 
 			if ( isKnownDocumentType( fileExtension ) ) {
 				groupName = 'document';
-			} else if ( options.hasOwnProperty( topLevelType ) ) {
+			} else if ( Object.prototype.hasOwnProperty.call( options, topLevelType ) ) {
 				groupName = topLevelType;
 			}
 
