@@ -27,28 +27,28 @@
 		var dropdown = new LanguageSelection( store, optionProvider, config );
 		var optionGroups = dropdown.$element[ 0 ].childNodes[ 0 ];
 
-		assert.equal( optionGroups[ 0 ].value, '', 'First option (default one)' );
-		assert.equal( optionGroups[ 1 ].value, 'de' );
-		assert.equal( optionGroups[ 1 ].innerHTML, 'de - Deutsch' );
-		assert.equal( optionGroups[ 2 ].value, 'en' );
-		assert.equal( optionGroups[ 3 ].value, 'bg' );
+		assert.strictEqual( optionGroups[ 0 ].value, '', 'First option (default one)' );
+		assert.strictEqual( optionGroups[ 1 ].value, 'de' );
+		assert.strictEqual( optionGroups[ 1 ].innerHTML, 'de - Deutsch' );
+		assert.strictEqual( optionGroups[ 2 ].value, 'en' );
+		assert.strictEqual( optionGroups[ 3 ].value, 'bg' );
 	} );
 
 	QUnit.test( 'Dropdown menu updates when store changes', function ( assert ) {
 		var dropdown = new LanguageSelection( store, optionProvider, config );
 
 		store.storeOption( 'inlanguage', 'bg' );
-		assert.equal( dropdown.getValue(), 'bg' );
+		assert.strictEqual( dropdown.getValue(), 'bg' );
 
 		store.storeOption( 'inlanguage', '' );
-		assert.equal( dropdown.getValue(), '' );
+		assert.strictEqual( dropdown.getValue(), '' );
 	} );
 
 	QUnit.test( 'Selected option is displayed', function ( assert ) {
 		var dropdown = new LanguageSelection( store, optionProvider, config );
 		dropdown.setValue( 'en' );
 
-		assert.equal( dropdown.getValue(), 'en' );
+		assert.strictEqual( dropdown.getValue(), 'en' );
 	} );
 
 }( mediaWiki ) );

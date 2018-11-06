@@ -33,28 +33,28 @@
 		var dropdown = new FileTypeSelection( store, optionProvider, config );
 		var optionGroups = dropdown.$element[ 0 ].childNodes[ 0 ].childNodes;
 
-		assert.equal( optionGroups[ 0 ].value, '', 'First option which is the default one from the dropdown is empty' );
-		assert.equal( optionGroups[ 1 ].children[ 0 ].value, 'bitmap' );
-		assert.equal( optionGroups[ 1 ].children[ 0 ].innerText, 'bitmapLabel', 'The label is different than the value' );
-		assert.equal( optionGroups[ 1 ].children[ 1 ].value, 'drawing' );
-		assert.equal( optionGroups[ 2 ].children[ 0 ].value, 'image/png' );
+		assert.strictEqual( optionGroups[ 0 ].value, '', 'First option which is the default one from the dropdown is empty' );
+		assert.strictEqual( optionGroups[ 1 ].children[ 0 ].value, 'bitmap' );
+		assert.strictEqual( optionGroups[ 1 ].children[ 0 ].innerText, 'bitmapLabel', 'The label is different than the value' );
+		assert.strictEqual( optionGroups[ 1 ].children[ 1 ].value, 'drawing' );
+		assert.strictEqual( optionGroups[ 2 ].children[ 0 ].value, 'image/png' );
 	} );
 
 	QUnit.test( 'Dropdown menu updates when store changes', function ( assert ) {
 		var dropdown = new FileTypeSelection( store, optionProvider, config );
 
 		store.storeOption( 'filetype', 'drawing' );
-		assert.equal( dropdown.getValue(), 'drawing' );
+		assert.strictEqual( dropdown.getValue(), 'drawing' );
 
 		store.storeOption( 'filetype', '' );
-		assert.equal( dropdown.getValue(), '' );
+		assert.strictEqual( dropdown.getValue(), '' );
 	} );
 
 	QUnit.test( 'Selected option is displayed', function ( assert ) {
 		var dropdown = new FileTypeSelection( store, optionProvider, config );
 		dropdown.setValue( 'bitmap' );
 
-		assert.equal( dropdown.getValue(), 'bitmap' );
+		assert.strictEqual( dropdown.getValue(), 'bitmap' );
 	} );
 
 }( mediaWiki ) );

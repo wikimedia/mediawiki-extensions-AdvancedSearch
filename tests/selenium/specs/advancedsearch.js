@@ -187,7 +187,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchTemplate.put( 'Main Page\uE007' );
 		SearchPage.submitForm();
 
-		assert.equal( SearchPage.getSearchQueryFromUrl(), 'test "test1 test2" -test3 test4 OR test5 deepcat:Help deepcat:Me hastemplate:"Main Page"' );
+		assert.strictEqual( SearchPage.getSearchQueryFromUrl(), 'test "test1 test2" -test3 test4 OR test5 deepcat:Help deepcat:Me hastemplate:"Main Page"' );
 	} );
 
 	it( 'marks non-existent categories in red', function () {
@@ -239,7 +239,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchInLanguage.choose( 'en' );
 		SearchPage.submitForm();
 
-		assert.equal( SearchPage.getSearchQueryFromUrl(), 'goat inlanguage:en' );
+		assert.strictEqual( SearchPage.getSearchQueryFromUrl(), 'goat inlanguage:en' );
 	} );
 
 	it( 'submits the search without taking into consideration inlanguage if the default option is selected', function () {
@@ -250,7 +250,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchInLanguage.choose( '' );
 		SearchPage.submitForm();
 
-		assert.equal( SearchPage.getSearchQueryFromUrl(), 'goat' );
+		assert.strictEqual( SearchPage.getSearchQueryFromUrl(), 'goat' );
 	} );
 
 	it( 'marks non-existent templates in red', function () {

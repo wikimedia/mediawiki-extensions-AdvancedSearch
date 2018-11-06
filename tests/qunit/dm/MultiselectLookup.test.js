@@ -49,13 +49,13 @@
 
 		var tags = lookup.getItems();
 		assert.ok( Array.isArray( tags ) );
-		assert.equal( tags.length, 2 );
-		assert.equal( tags[ 0 ].getData(), 'Preexisting' );
-		assert.equal( tags[ 1 ].getData(), 'My Template' );
+		assert.strictEqual( tags.length, 2 );
+		assert.strictEqual( tags[ 0 ].getData(), 'Preexisting' );
+		assert.strictEqual( tags[ 1 ].getData(), 'My Template' );
 
 		assert.ok( store.storeOption.withArgs( 'hastemplate', [ 'Preexisting', 'My Template' ] ).calledOnce );
 
-		assert.equal( lookup.input.getValue(), '' );
+		assert.strictEqual( lookup.input.getValue(), '' );
 	} );
 
 	QUnit.test( 'Store data subscribed to and synced initially', function ( assert ) {
@@ -112,16 +112,16 @@
 
 		var result = lookupField.getLookupMenuOptionsFromData( apiData );
 		assert.ok( Array.isArray( result ) );
-		assert.equal( result.length, 3 );
+		assert.strictEqual( result.length, 3 );
 
-		assert.equal( result[ 0 ].getLabel(), 'Jochen' );
-		assert.equal( result[ 0 ].getData(), 'Jochen' );
+		assert.strictEqual( result[ 0 ].getLabel(), 'Jochen' );
+		assert.strictEqual( result[ 0 ].getData(), 'Jochen' );
 
-		assert.equal( result[ 1 ].getLabel(), 'Jens' );
-		assert.equal( result[ 1 ].getData(), 'Jens' );
+		assert.strictEqual( result[ 1 ].getLabel(), 'Jens' );
+		assert.strictEqual( result[ 1 ].getData(), 'Jens' );
 
-		assert.equal( result[ 2 ].getLabel(), 'Johannes' );
-		assert.equal( result[ 2 ].getData(), 'Johannes' );
+		assert.strictEqual( result[ 2 ].getLabel(), 'Johannes' );
+		assert.strictEqual( result[ 2 ].getData(), 'Johannes' );
 	} );
 
 	QUnit.test( 'Items already selected are not suggested', function ( assert ) {
@@ -149,22 +149,22 @@
 
 		var result = lookupField.getLookupMenuOptionsFromData( apiData );
 		assert.ok( Array.isArray( result ) );
-		assert.equal( result.length, 1 );
+		assert.strictEqual( result.length, 1 );
 
-		assert.equal( result[ 0 ].getLabel(), 'Jens' );
-		assert.equal( result[ 0 ].getData(), 'Jens' );
+		assert.strictEqual( result[ 0 ].getLabel(), 'Jens' );
+		assert.strictEqual( result[ 0 ].getData(), 'Jens' );
 	} );
 
 	QUnit.test( 'Page titles post-processes nicely', function ( assert ) {
 		var lookupField = new MultiselectLookup( store, config );
-		assert.equal( lookupField.removeNamespace( 'Test' ), 'Test' );
-		assert.equal( lookupField.removeNamespace( 'Template:Test' ), 'Test' );
+		assert.strictEqual( lookupField.removeNamespace( 'Test' ), 'Test' );
+		assert.strictEqual( lookupField.removeNamespace( 'Template:Test' ), 'Test' );
 	} );
 
 	QUnit.test( 'Native browser autocomplete is not used', function ( assert ) {
 		var lookupField = new MultiselectLookup( store, config );
 
-		assert.equal( $( lookupField.$input ).attr( 'autocomplete' ), 'off' );
+		assert.strictEqual( $( lookupField.$input ).attr( 'autocomplete' ), 'off' );
 	} );
 
 	QUnit.test( 'Well-formed API request yields result', function ( assert ) {
@@ -192,9 +192,9 @@
 		var result = lookupField.getLookupRequest();
 		assert.ok( getStub.calledOnce );
 
-		assert.equal( result.state(), 'resolved' );
+		assert.strictEqual( result.state(), 'resolved' );
 		result.done( function ( doneData ) {
-			assert.equal( doneData[ 0 ], 'Burg' );
+			assert.strictEqual( doneData[ 0 ], 'Burg' );
 			assert.deepEqual( doneData[ 1 ], [ 'Template:Burg' ] );
 		} );
 	} );
@@ -210,7 +210,7 @@
 
 		assert.notOk( getStub.called );
 
-		assert.equal( result.state(), 'rejected' );
+		assert.strictEqual( result.state(), 'rejected' );
 		result.fail( function () {
 			assert.ok( true, 'A failed promise is returned' );
 		} );

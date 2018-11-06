@@ -62,7 +62,7 @@
 
 		filter.input.setValue( 'Use' );
 		filter.getMenu().chooseItem( filter.getMenu().getItems()[ 0 ] );
-		assert.equal( filter.input.getValue(), '' );
+		assert.strictEqual( filter.input.getValue(), '' );
 	} );
 
 	QUnit.test( 'On multiple namespaces either one can be removed', function ( assert ) {

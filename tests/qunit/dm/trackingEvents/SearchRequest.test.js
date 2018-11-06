@@ -17,9 +17,9 @@
 		searchModel.storeOption( 'not', 'some word' );
 		trackingEvent.populateFromStoreOptions( searchModel.getOptions() );
 
-		assert.strictEqual( true, trackingEvent.getEventData().plain, 'option "plain" is being used' );
-		assert.strictEqual( true, trackingEvent.getEventData().not, 'option "not" is being used' );
-		assert.strictEqual( false, trackingEvent.getEventData().or, 'option "or" is not being used' );
+		assert.strictEqual( trackingEvent.getEventData().plain, true, 'option "plain" is being used' );
+		assert.strictEqual( trackingEvent.getEventData().not, true, 'option "not" is being used' );
+		assert.strictEqual( trackingEvent.getEventData().or, false, 'option "or" is not being used' );
 	} );
 
 }( mediaWiki ) );

@@ -16,9 +16,9 @@
 			} );
 
 		menu.getItems().forEach( function ( idx, item ) {
-			assert.equal( namespaces[ idx ], item.$label );
+			assert.strictEqual( namespaces[ idx ], item.$label );
 		} );
-		assert.equal( menu.getItemCount(), 4 );
+		assert.strictEqual( menu.getItemCount(), 4 );
 	} );
 
 }( mediaWiki ) );

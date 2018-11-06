@@ -29,7 +29,7 @@
 		};
 		var searchPreview = new SearchPreview( store, config );
 
-		assert.equal( 'something', searchPreview.label.getLabel() );
+		assert.strictEqual( searchPreview.label.getLabel(), 'something' );
 	} );
 
 	QUnit.test( 'Store data subscribed to and synced initially', function ( assert ) {
@@ -53,7 +53,7 @@
 		var searchPreview = new SearchPreview( store, config );
 
 		var pills = $( '.mw-advancedSearch-searchPreview-previewPill', searchPreview.$element );
-		assert.equal( pills.length, 2 );
+		assert.strictEqual( pills.length, 2 );
 
 		assert.ok( store.getOption.calledTwice );
 		assert.ok( generateTagSpy.calledTwice );
@@ -93,11 +93,11 @@
 		var element = tag.$element[ 0 ];
 
 		assert.ok( messageStub.calledOnce );
-		assert.equal( element.title, 'my field value' );
+		assert.strictEqual( element.title, 'my field value' );
 		// https://phabricator.wikimedia.org/T172781 prevents a semantic way to check for draggable
 		assert.ok( $( element ).hasClass( 'oo-ui-draggableElement-undraggable' ) );
-		assert.equal( $( '.mw-advancedSearch-searchPreview-content', element ).html(), '<bdi>my field value</bdi>' );
-		assert.equal( $( '.oo-ui-labelElement-label span', element ).html(), 'my label:' );
+		assert.strictEqual( $( '.mw-advancedSearch-searchPreview-content', element ).html(), '<bdi>my field value</bdi>' );
+		assert.strictEqual( $( '.oo-ui-labelElement-label span', element ).html(), 'my label:' );
 	} );
 
 	QUnit.test( 'Tag content is HTML-safe', function ( assert ) {
@@ -106,7 +106,7 @@
 
 		var element = tag.$element[ 0 ];
 
-		assert.equal( $( '.mw-advancedSearch-searchPreview-content', element ).html(), '<bdi>&lt;script&gt;alert("evil");&lt;/script&gt;</bdi>' );
+		assert.strictEqual( $( '.mw-advancedSearch-searchPreview-content', element ).html(), '<bdi>&lt;script&gt;alert("evil");&lt;/script&gt;</bdi>' );
 	} );
 
 	QUnit.test( 'Tag label is HTML-safe', function ( assert ) {
@@ -116,7 +116,7 @@
 
 		var element = tag.$element[ 0 ];
 
-		assert.equal( $( '.oo-ui-labelElement-label span', element ).html(), '&lt;div&gt;block&lt;/div&gt;' );
+		assert.strictEqual( $( '.oo-ui-labelElement-label span', element ).html(), '&lt;div&gt;block&lt;/div&gt;' );
 	} );
 
 	QUnit.test( 'Tag removals clears store', function ( assert ) {
@@ -136,7 +136,7 @@
 		var searchPreview = new SearchPreview( store, config );
 		searchPreview.showPreview();
 
-		assert.equal( searchPreview.$element.find( '.mw-advancedSearch-searchPreview-previewPill' ).length, 2 );
+		assert.strictEqual( searchPreview.$element.find( '.mw-advancedSearch-searchPreview-previewPill' ).length, 2 );
 	} );
 
 	QUnit.test( 'Hiding removes pills', function ( assert ) {
@@ -145,23 +145,23 @@
 		var searchPreview = new SearchPreview( store, config );
 		searchPreview.hidePreview();
 
-		assert.equal( searchPreview.$element.find( '.mw-advancedSearch-searchPreview-previewPill' ).length, 0 );
+		assert.strictEqual( searchPreview.$element.find( '.mw-advancedSearch-searchPreview-previewPill' ).length, 0 );
 	} );
 
 	QUnit.test( 'Scalar values get formatted well', function ( assert ) {
 		var searchPreview = new SearchPreview( store, config );
 
-		assert.equal( searchPreview.formatValue( 'someOption', '' ), '' );
-		assert.equal( searchPreview.formatValue( 'someOption', 'hello' ), 'hello' );
-		assert.equal( searchPreview.formatValue( 'someOption', ' stray whitespace  ' ), 'stray whitespace' );
+		assert.strictEqual( searchPreview.formatValue( 'someOption', '' ), '' );
+		assert.strictEqual( searchPreview.formatValue( 'someOption', 'hello' ), 'hello' );
+		assert.strictEqual( searchPreview.formatValue( 'someOption', ' stray whitespace  ' ), 'stray whitespace' );
 	} );
 
 	QUnit.test( 'Array values get formatted well', function ( assert ) {
 		var searchPreview = new SearchPreview( store, config );
 
-		assert.equal( searchPreview.formatValue( 'someOption', [ 'some', 'words', 'in', 'combination' ] ), 'some, words, in, combination' );
-		assert.equal( searchPreview.formatValue( 'someOption', [ 'related words', 'not', 'so' ] ), 'related words, not, so' );
-		assert.equal( searchPreview.formatValue( 'someOption', [ '', ' stray', 'whitespace  ' ] ), 'stray, whitespace' );
+		assert.strictEqual( searchPreview.formatValue( 'someOption', [ 'some', 'words', 'in', 'combination' ] ), 'some, words, in, combination' );
+		assert.strictEqual( searchPreview.formatValue( 'someOption', [ 'related words', 'not', 'so' ] ), 'related words, not, so' );
+		assert.strictEqual( searchPreview.formatValue( 'someOption', [ '', ' stray', 'whitespace  ' ] ), 'stray, whitespace' );
 	} );
 
 	QUnit.test( 'Dimension values get formatted well', function ( assert ) {
@@ -171,12 +171,12 @@
 		translationStub.withArgs( 'advancedsearch-filesize-greater-than-symbol' ).returns( '>' );
 		translationStub.withArgs( 'advancedsearch-filesize-smaller-than-symbol' ).returns( '<' );
 
-		assert.equal( searchPreview.formatValue( 'someOption', [ '', '' ] ), '' );
-		assert.equal( searchPreview.formatValue( 'fileh', [ '', 1000 ] ), '= 1000' );
-		assert.equal( searchPreview.formatValue( 'fileh', [ '>', 300 ] ), '> 300' );
-		assert.equal( searchPreview.formatValue( 'filew', [ '<', 1400 ] ), '< 1400' );
+		assert.strictEqual( searchPreview.formatValue( 'someOption', [ '', '' ] ), '' );
+		assert.strictEqual( searchPreview.formatValue( 'fileh', [ '', 1000 ] ), '= 1000' );
+		assert.strictEqual( searchPreview.formatValue( 'fileh', [ '>', 300 ] ), '> 300' );
+		assert.strictEqual( searchPreview.formatValue( 'filew', [ '<', 1400 ] ), '< 1400' );
 
-		assert.equal( translationStub.callCount, 3 );
+		assert.strictEqual( translationStub.callCount, 3 );
 	} );
 
 }( jQuery, QUnit, sinon, mediaWiki ) );

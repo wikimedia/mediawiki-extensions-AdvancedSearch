@@ -46,7 +46,7 @@ describe( 'AdvancedSearch', function () {
 
 		SearchPage.submitForm();
 
-		assert.equal( SearchPage.getSearchQueryFromUrl(), 'old -new big OR enormous OR giant intitle:house subpageof:Wikimedia hastemplate:"Main Page" filemime:image/gif filew:>40 fileh:>40' );
+		assert.strictEqual( SearchPage.getSearchQueryFromUrl(), 'old -new big OR enormous OR giant intitle:house subpageof:Wikimedia hastemplate:"Main Page" filemime:image/gif filew:>40 fileh:>40' );
 	} );
 
 	it( 'adds the namespace "File" and dimension fields are visible when searching for files of type image', function () {
