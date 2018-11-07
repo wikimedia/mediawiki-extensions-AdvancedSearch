@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 
 	mw.libs = mw.libs || {};
 	mw.libs.advancedSearch = mw.libs.advancedSearch || {};
@@ -57,4 +57,4 @@
 		assert.strictEqual( dropdown.getValue(), 'bitmap' );
 	} );
 
-}( mediaWiki ) );
+}() );

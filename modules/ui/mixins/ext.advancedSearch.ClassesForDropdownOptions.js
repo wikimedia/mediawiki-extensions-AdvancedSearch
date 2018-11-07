@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	'use strict';
 
 	mw.libs = mw.libs || {};
@@ -43,4 +43,4 @@
 		this.dropdownWidget.getMenu().clearItems().addItems( optionWidgets );
 	};
 
-}( mediaWiki ) );
+}() );

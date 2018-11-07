@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	'use strict';
 
 	mw.libs = mw.libs || {};
@@ -106,4 +106,4 @@
 		return this.data === this.STATE_OPEN;
 	};
 
-}( mediaWiki, jQuery ) );
+}() );

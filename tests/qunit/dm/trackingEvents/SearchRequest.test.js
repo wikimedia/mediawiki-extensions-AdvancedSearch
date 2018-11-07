@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var SearchRequest,
 		SearchModel;
 
@@ -22,4 +22,4 @@
 		assert.strictEqual( trackingEvent.getEventData().or, false, 'option "or" is not being used' );
 	} );
 
-}( mediaWiki ) );
+}() );

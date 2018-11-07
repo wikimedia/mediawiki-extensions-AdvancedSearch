@@ -1,4 +1,4 @@
-( function ( $, QUnit, sinon, mw ) {
+( function () {
 	'use strict';
 
 	var SearchPreview,
@@ -179,4 +179,4 @@
 		assert.strictEqual( translationStub.callCount, 3 );
 	} );
 
-}( jQuery, QUnit, sinon, mediaWiki ) );
+}() );

@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var NamespacePresets = mw.libs.advancedSearch.ui.NamespacePresets,
 		Model = mw.libs.advancedSearch.dm.SearchModel,
 		sandbox, presetProvider;
@@ -240,4 +240,4 @@
 		assert.deepEqual( presets.getValue(), [] );
 	} );
 
-}( mediaWiki ) );
+}() );

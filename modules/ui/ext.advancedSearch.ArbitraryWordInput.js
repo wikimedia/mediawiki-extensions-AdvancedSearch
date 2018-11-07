@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	'use strict';
 
 	mw.libs = mw.libs || {};
@@ -115,4 +115,4 @@
 		return mw.libs.advancedSearch.ui.ArbitraryWordInput.parent.prototype.onInputBlur.call( this );
 	};
 
-}( mediaWiki, jQuery ) );
+}() );

@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var NamespaceFilters = mw.libs.advancedSearch.ui.NamespaceFilters,
 		Model = mw.libs.advancedSearch.dm.SearchModel;
 
@@ -83,4 +83,4 @@
 		assert.ok( filter.getMenu().getItemFromLabel( 'UserTalk' ).isSelected() );
 	} );
 
-}( mediaWiki ) );
+}() );

@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	/**
 	 * A menu option widget that shows the selection state with a checkbox.
 	 *
@@ -52,4 +52,4 @@
 	// prevents a visual jump when selecting a menu option
 	mw.libs.advancedSearch.ui.ItemMenuOptionWidget.static.scrollIntoViewOnSelect = false;
 
-}( mediaWiki ) );
+}() );

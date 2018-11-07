@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var CheckboxInputWidget = mw.libs.advancedSearch.ui.CheckboxInputWidget;
 
 	QUnit.module( 'ext.advancedSearch.ui.CheckboxInputWidget' );
@@ -9,4 +9,4 @@
 		assert.notOk( checkbox.isSelected() );
 	} );
 
-}( mediaWiki ) );
+}() );

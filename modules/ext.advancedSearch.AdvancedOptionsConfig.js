@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	'use strict';
 
 	mw.libs = mw.libs || {};
@@ -386,4 +386,4 @@
 		// * Meta ( linksto:, neartitle:, morelike: )
 	];
 
-}( mediaWiki, jQuery ) );
+}() );

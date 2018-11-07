@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	'use strict';
 
 	mw.libs = mw.libs || {};
@@ -33,4 +33,4 @@
 		this.toggle( this.checkVisibility() );
 	};
 
-}( mediaWiki ) );
+}() );

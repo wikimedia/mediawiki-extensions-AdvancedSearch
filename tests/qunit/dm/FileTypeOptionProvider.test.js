@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var FileTypeOptionProvider,
 		sandbox,
 		stubMessage = function () {
@@ -63,4 +63,4 @@
 		assert.deepEqual( model.getAllowedFileTypeOptions(), expectedOptions );
 	} );
 
-}( mediaWiki ) );
+}() );

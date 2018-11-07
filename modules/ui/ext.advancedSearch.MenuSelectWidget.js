@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	/**
 	 * A floating menu widget for the filter list
 	 *
@@ -69,4 +69,4 @@
 		return options;
 	};
 
-}( mediaWiki ) );
+}() );

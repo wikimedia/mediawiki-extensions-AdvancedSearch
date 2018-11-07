@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var SearchModel,
 		sandbox;
 
@@ -282,4 +282,4 @@
 		assert.notOk( updateSpy.called );
 	} );
 
-}( mediaWiki ) );
+}() );

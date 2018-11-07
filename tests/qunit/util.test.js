@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var advancedSearchUtil;
 
 	QUnit.testStart( function () {
@@ -43,4 +43,4 @@
 		assert.notOk( advancedSearchUtil.arrayEquals( [ '1', '3', 'bla' ], [ '3', '1', 'bla' ] ) );
 	} );
 
-}( mediaWiki ) );
+}() );

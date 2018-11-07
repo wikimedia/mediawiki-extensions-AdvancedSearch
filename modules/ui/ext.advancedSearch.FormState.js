@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	'use strict';
 
 	mw.libs = mw.libs || {};
@@ -32,4 +32,4 @@
 		this.$element.val( this.store.toJSON() );
 	};
 
-}( mediaWiki ) );
+}() );
