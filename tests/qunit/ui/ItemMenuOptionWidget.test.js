@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var ItemMenuOptionWidget = mw.libs.advancedSearch.ui.ItemMenuOptionWidget;
 
 	QUnit.module( 'ext.advancedSearch.ui.ItemMenuOptionWidget' );
@@ -13,4 +13,4 @@
 		assert.strictEqual( menuOption.getLabel(), 'User' );
 	} );
 
-}( mediaWiki ) );
+}() );

@@ -1,4 +1,4 @@
-( function ( $, QUnit, sinon, mw ) {
+( function () {
 	'use strict';
 
 	var MultiselectLookup,
@@ -216,4 +216,4 @@
 		} );
 	} );
 
-}( jQuery, QUnit, sinon, mediaWiki ) );
+}() );

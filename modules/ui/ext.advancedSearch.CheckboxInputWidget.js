@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	/**
 	 * A widget representing a single toggle filter
 	 *
@@ -19,4 +19,4 @@
 
 	OO.inheritClass( mw.libs.advancedSearch.ui.CheckboxInputWidget, OO.ui.CheckboxInputWidget );
 
-}( mediaWiki ) );
+}() );

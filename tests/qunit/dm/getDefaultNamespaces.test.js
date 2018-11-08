@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var getDefaultNamespaces = mw.libs.advancedSearch.dm.getDefaultNamespaces;
 
 	QUnit.module( 'ext.advancedSearch.dm.getDefaultNamespaces' );
@@ -45,4 +45,4 @@
 		assert.deepEqual( namespaces, [ '0', '10', '12' ] );
 	} );
 
-}( mediaWiki ) );
+}() );

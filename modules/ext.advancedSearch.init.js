@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	'use strict';
 
 	/**
@@ -262,4 +262,4 @@
 		}, 0 );
 	} );
 
-}( mediaWiki, jQuery ) );
+}() );

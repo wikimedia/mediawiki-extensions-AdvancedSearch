@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	'use strict';
 
 	var QueryCompiler = mw.libs.advancedSearch.QueryCompiler,
@@ -75,4 +75,4 @@
 		assert.strictEqual( compiler.removeCompiledQueryFromSearch( currentQuery, state ), 'awesome goats' );
 	} );
 
-}( mediaWiki ) );
+}() );

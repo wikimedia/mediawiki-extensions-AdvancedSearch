@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	'use strict';
 
 	mw.libs = mw.libs || {};
@@ -69,4 +69,4 @@
 		return mw.libs.advancedSearch.util.arrayContains( Object.keys( this.namespaces ), namespaceIds );
 	};
 
-}( mediaWiki, jQuery ) );
+}() );

@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	'use strict';
 
 	mw.libs = mw.libs || {};
@@ -29,4 +29,4 @@
 	OO.inheritClass( mw.libs.advancedSearch.ui.FileTypeSelection, mw.libs.advancedSearch.ui.StoreListener );
 	OO.mixinClass( mw.libs.advancedSearch.ui.FileTypeSelection, mw.libs.advancedSearch.ui.ClassesForDropdownOptions );
 
-}( mediaWiki, jQuery ) );
+}() );

@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var MenuSelectWidget = mw.libs.advancedSearch.ui.MenuSelectWidget,
 		Model = mw.libs.advancedSearch.dm.SearchModel;
 
@@ -21,4 +21,4 @@
 		assert.strictEqual( menu.getItemCount(), 4 );
 	} );
 
-}( mediaWiki ) );
+}() );

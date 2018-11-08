@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var namespaces = {
 			0: 'Article',
 			1: 'Talk',
@@ -106,4 +106,4 @@
 		assert.deepEqual( namespaceIdResult, [ '0', '1', '12' ] );
 	} );
 
-}( mediaWiki ) );
+}() );

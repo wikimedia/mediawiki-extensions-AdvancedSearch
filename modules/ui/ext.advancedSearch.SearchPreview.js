@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	'use strict';
 
 	mw.libs = mw.libs || {};
@@ -168,4 +168,4 @@
 		this.updatePreview();
 	};
 
-}( mediaWiki, jQuery ) );
+}() );

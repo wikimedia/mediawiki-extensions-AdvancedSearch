@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var TitleCache = mw.libs.advancedSearch.dm.TitleCache;
 
 	QUnit.module( 'ext.advancedSearch.dm.TitleCache' );
@@ -20,4 +20,4 @@
 		assert.notOk( cache.has( 'bar' ) );
 	} );
 
-}( mediaWiki ) );
+}() );

@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	'use strict';
 
 	mw.libs = mw.libs || {};
@@ -136,4 +136,4 @@
 		this.checkboxMultiselectWidget.on( 'change', this.updateStoreFromPresets, [], this );
 	};
 
-}( mediaWiki, jQuery ) );
+}() );

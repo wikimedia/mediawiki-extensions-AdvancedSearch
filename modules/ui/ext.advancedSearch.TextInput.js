@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	'use strict';
 
 	mw.libs = mw.libs || {};
@@ -37,4 +37,4 @@
 		}
 	};
 
-}( mediaWiki, jQuery ) );
+}() );

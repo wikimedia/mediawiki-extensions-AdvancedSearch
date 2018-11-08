@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	'use strict';
 
 	mw.libs = mw.libs || {};
@@ -26,4 +26,4 @@
 		return Object.prototype.hasOwnProperty.call( this.cache, getCacheKey( name ) );
 	};
 
-}( mediaWiki ) );
+}() );

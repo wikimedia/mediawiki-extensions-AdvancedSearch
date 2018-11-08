@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var LanguageOptionProvider,
 		languages = {
 			en: 'English',
@@ -28,4 +28,4 @@
 		assert.deepEqual( provider.getLanguages(), [] );
 	} );
 
-}( mediaWiki ) );
+}() );

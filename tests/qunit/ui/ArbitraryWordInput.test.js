@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 
 	var ArbitraryWordInput = mw.libs.advancedSearch.ui.ArbitraryWordInput,
 		Model = mw.libs.advancedSearch.dm.SearchModel,
@@ -101,4 +101,4 @@
 		);
 	} );
 
-}( mediaWiki ) );
+}() );
