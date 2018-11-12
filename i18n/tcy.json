@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"BHARATHESHA ALASANDEMAJALU"
+			"BHARATHESHA ALASANDEMAJALU",
+			"Lokesha kunchadka"
 		]
 	},
-	"advancedsearch-field-filetype": "ಕಡತೊತ ಮಾದರಿ",
+	"advancedsearch-field-filetype": "ಕಡತ ಮಾದರಿ",
 	"advancedsearch-filetype-bitmap": "ಚಿತ್ರೊ",
 	"advancedsearch-filetype-audio": "ಆಡಿಯೋ",
 	"advancedsearch-filetype-video": "ವೀಡಿಯೊ",
