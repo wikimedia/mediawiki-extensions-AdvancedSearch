@@ -24,6 +24,7 @@
 	"advancedsearch-field-filetype": "Tipo de ficheiro",
 	"advancedsearch-field-filew": "Ancho do ficheiro en pixels",
 	"advancedsearch-field-fileh": "Alto do ficheiro en pixels",
+	"advancedsearch-help-filetype": ";Descrición\n:Procura só ficheiros do tipo seleccionado.\n;Teña en conta o seguinte\n:* Só pode procurar un tipo de ficheiro.\n:* Só pode seleccionar os tipos de ficheiro presentados no menú despregable.\n;Páxinas de axuda\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype Filetype] e [https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime filemime]\n;Equivalente sintáctico na procura normal\n:Palabras precedidas de <code>filetype:</code> como <code>filetype:ogg</code>",
 	"advancedsearch-placeholder-exact-text": "\"o gato ama á cabra\"",
 	"advancedsearch-inlanguage-default": "Escoller unha lingua",
 	"advancedsearch-filetype-section-types": "Tipos de ficheiro xenéricos",
