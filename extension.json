@@ -63,6 +63,9 @@
 		"GetBetaFeaturePreferences": [
 			"AdvancedSearch\\Hooks::onGetBetaFeaturePreferences"
 		],
+		"GetPreferences": [
+			"AdvancedSearch\\Hooks::onGetPreferences"
+		],
 		"ResourceLoaderTestModules": [
 			"AdvancedSearch\\Hooks::onResourceLoaderTestModules"
 		],

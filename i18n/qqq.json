@@ -66,5 +66,8 @@
 	"advancedsearch-namespaces-preset-discussion": "Label for namespace preset 'Discussion'\n{{Identical|Discussion}}",
 	"advancedsearch-namespaces-placeholder": "Placeholder text shown in the namespace selection field",
 	"advancedsearch-beta-feature-message": "Label for the AdvancedSearch Beta Feature.",
-	"advancedsearch-beta-feature-description": "Description for the AdvancedSearch Beta Feature, describing the feature that will be enabled."
+	"advancedsearch-beta-feature-description": "Description for the AdvancedSearch Beta Feature, describing the feature that will be enabled.",
+	"prefs-advancedsearch": "Section name for advanced search settings in the user preferences.",
+	"advancedsearch-preference-help": "Help text explaining the AdvancedSearch interface for the user preference that disables the interface",
+	"advancedsearch-preference-disable": "Label for the user preference that disables the AdvancedSearch interface"
 }
