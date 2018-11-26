@@ -1,10 +1,27 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fitoschido"
+			"Fitoschido",
+			"FranSisPac"
 		]
 	},
-	"advancedsearch-field-hastemplate": "Pàgines amb aquestes plantilles:",
+	"advancedsearch-desc": "Accés fàcil a capacitats avançades de recerca a [[Especial:Cerca]]",
+	"advancedsearch-options-pane-head": "Cerca avançada:",
+	"advancedsearch-optgroup-text": "Cerca dins del text de la pàgina",
+	"advancedsearch-optgroup-structure": "Estructura",
+	"advancedsearch-optgroup-files": "Fitxers i imatges",
+	"advancedsearch-field-plain": "Aquestes paraules",
+	"advancedsearch-field-phrase": "Exactament aquest text",
+	"advancedsearch-field-or": "Una d'aquestes paraules",
+	"advancedsearch-field-not": "Cap d'aquestes paraules",
+	"advancedsearch-field-subpageof": "Subpàgines d'aquesta pàgina",
+	"advancedsearch-field-intitle": "El títol de la pàgina conté",
+	"advancedsearch-field-deepcategory": "Pàgines dins d'aquestes categories",
+	"advancedsearch-field-hastemplate": "Pàgines amb aquestes plantilles",
+	"advancedsearch-field-inlanguage": "Pàgines en aquesta llengua",
+	"advancedsearch-field-filetype": "Tipus de fitxer",
+	"advancedsearch-field-filew": "Amplada del fitxer en píxels",
+	"advancedsearch-field-fileh": "Alçada del fitxer en píxels",
 	"advancedsearch-filetype-default": "Trieu el tipus de fitxer",
 	"advancedsearch-namespaces-preset-general-help": "Ajuda general",
 	"advancedsearch-namespaces-preset-discussion": "Discussió",
