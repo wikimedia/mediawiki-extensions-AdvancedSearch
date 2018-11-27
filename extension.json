@@ -143,6 +143,7 @@
 				"advancedsearch-field-or",
 				"advancedsearch-field-not",
 				"advancedsearch-field-subpageof",
+				"advancedsearch-field-inlanguage",
 				"advancedsearch-field-intitle",
 				"advancedsearch-field-deepcategory",
 				"advancedsearch-field-hastemplate",
