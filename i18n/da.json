@@ -2,9 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Joedalton",
-			"Saederup92"
+			"Saederup92",
+			"Weblars"
 		]
 	},
+	"advancedsearch-desc": "Nem adgang til avancerede søgefunktioner på [[Special:Search]]",
+	"advancedsearch-options-pane-head": "Avancerede søgemuligheder:",
 	"advancedsearch-optgroup-text": "Søgning i sidetekst",
 	"advancedsearch-optgroup-structure": "Struktur",
 	"advancedsearch-optgroup-files": "Filer og billeder",
@@ -18,11 +21,17 @@
 	"advancedsearch-field-hastemplate": "Sider med disse skabeloner",
 	"advancedsearch-field-inlanguage": "Sider i dette sprog",
 	"advancedsearch-field-filetype": "Filtype",
+	"advancedsearch-field-filew": "Billedbredde i pixel",
+	"advancedsearch-field-fileh": "Billedhøjde i pixel",
+	"advancedsearch-help-plain": ";Beskrivelse\n:Søger efter disse ord i titlen eller teksten.\n;Vær opmærksom på følgende\n:* Flere ord kan indtastes her.\n:* Skilletegn og andre ikke-alfanumeriske tegn (med undtagelse af kolon og komma) ignoreres.\n:* Der kan forekomme resultater, der ikke indeholder en eller flere af dine søgetermer.\n:* Bøjningsformer anvendes. Eksempel: Hvis ''bil'' angives, vil søgningen også tage ''biler'' i betragtning. Bøjningsformer er sprogspecifikke.\n;Hjælpeside\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search Fuldtekstsøgning]\n;Tilsvarende syntaks i en normal søgning\n:<code>sesam gade bil</code>",
+	"advancedsearch-help-phrase": "; Beskrivelse\n: Søger efter en bestemt tegnsekvens. Tegnsætning ignoreres.\n; Vær opmærksom på følgende\n: (kun gyldig ved brug af anførselstegn, se eksemplet nedenfor)\n:* Adskil søgefraserne med komma eller mellemrum, f.eks. <code>\"god vind\"</code>, <code>\"hallo ven\"</code>.\n:* Tegnsætting og andre ikke-alfanumeriske tegn (med undtagelse af kolon og komma) ignoreres.\n:* Søgninger skelner IKKE mellem store og små bogstaver.\n:* Ordbøjninger anvendes ikke.\n; Hjælpeside:\n: [https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Ord, fraser og modifikatorer]\n; Tilsvarende syntaks i normal søgning\n: Ord i anførselstegn, f.eks. <code>\"Begynd med begyndelsen\"</code>.",
 	"advancedsearch-placeholder-exact-text": "\"kat elsker ged\"",
 	"advancedsearch-inlanguage-default": "Vælg sprog",
+	"advancedsearch-filetype-section-types": "Generelle filtyper",
 	"advancedsearch-filetype-section-image": "Billedformater",
 	"advancedsearch-filetype-section-video": "Videoformater",
 	"advancedsearch-filetype-section-audio": "Lydformater",
+	"advancedsearch-filetype-section-document": "Dokumentformater",
 	"advancedsearch-filetype-section-other": "Andre formater",
 	"advancedsearch-filetype-default": "Vælg filtype",
 	"advancedsearch-filetype-bitmap": "Billede",
@@ -34,9 +43,12 @@
 	"advancedsearch-filesize-greater-than": "større end",
 	"advancedsearch-filesize-smaller-than": "mindre end",
 	"advancedsearch-namespaces-search-in": "Søg i:",
+	"advancedsearch-namespaces-remember": "Husk valg i fremtidige søgninger",
 	"advancedsearch-namespaces-preset-all": "Alle",
 	"advancedsearch-namespaces-preset-default": "Standard",
 	"advancedsearch-namespaces-preset-general-help": "Generel hjælp",
 	"advancedsearch-namespaces-preset-discussion": "Diskussion",
-	"advancedsearch-namespaces-placeholder": "Tilføj navnerum..."
+	"advancedsearch-namespaces-placeholder": "Tilføj navnerum...",
+	"advancedsearch-beta-feature-message": "Avancerede søgefunktioner",
+	"advancedsearch-beta-feature-description": "Nem adgang til avancerede søgemuligheder på [[Special:Search]]."
 }

@@ -22,6 +22,7 @@
 	"advancedsearch-field-filetype": "Tipus de fitxer",
 	"advancedsearch-field-filew": "Amplada del fitxer en píxels",
 	"advancedsearch-field-fileh": "Alçada del fitxer en píxels",
+	"advancedsearch-help-plain": ";Descripció\n:Cerca aquestes paraules en el títol o text.\n;Tingueu en compte el següent\n:* Aquí podeu entra-hi múltiples paraules.\n:* S'ignoren el signes de puntuació i altres caràcters no alfanumèrics (excepte els dos punts  i la coma).\n:* Pot haver-hi resultats que no continguin un o més dels vostres termes de cerca.\n:* Es tenen en compte les paraules derivades d'una mateixa arrel. Exemple: si s'entra ''cotxe'' la cerca també considerarà ''cotxes''. Aquest aspecte és específic de cada llengua.\n;Pàgina d'ajuda\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search Cerca de text complet]\n;Sintaxi equivalent en la cerca normal\n::<code>cotxe barri sèsam</code>",
 	"advancedsearch-filetype-default": "Trieu el tipus de fitxer",
 	"advancedsearch-namespaces-preset-general-help": "Ajuda general",
 	"advancedsearch-namespaces-preset-discussion": "Discussió",

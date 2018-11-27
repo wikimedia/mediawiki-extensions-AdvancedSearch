@@ -59,5 +59,7 @@
 	"advancedsearch-namespaces-preset-discussion": "Diskussion",
 	"advancedsearch-namespaces-placeholder": "Namensräume hinzufügen …",
 	"advancedsearch-beta-feature-message": "Erweiterte Suchoberfläche",
-	"advancedsearch-beta-feature-description": "Leichter Zugang zu erweiterten Suchmöglichkeiten auf [[Special:Search]]."
+	"advancedsearch-beta-feature-description": "Leichter Zugang zu erweiterten Suchmöglichkeiten auf [[Special:Search]].",
+	"prefs-advancedsearch": "Erweiterte Suche",
+	"advancedsearch-preference-disable": "Die Oberfläche der erweiterten Suche nicht anzeigen"
 }
