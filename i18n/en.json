@@ -69,5 +69,9 @@
 	"advancedsearch-namespaces-placeholder": "Add namespaces…",
 
 	"advancedsearch-beta-feature-message": "Advanced Search Interface",
-	"advancedsearch-beta-feature-description": "Easy access to advanced search capabilities on [[Special:Search]]."
+	"advancedsearch-beta-feature-description": "Easy access to advanced search capabilities on [[Special:Search]].",
+
+	"prefs-advancedsearch": "Advanced Search",
+	"advancedsearch-preference-help": "Advanced Search adds a form to the Special:Search page. This allows you to perform specialized searches, even if you don't know any search syntax. It also changes the way namespaces can be selected.",
+	"advancedsearch-preference-disable": "Don’t show the Advanced Search interface"
 }

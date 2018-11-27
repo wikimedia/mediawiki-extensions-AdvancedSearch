@@ -36,6 +36,15 @@ class Hooks {
 		) {
 			return;
 		}
+		/**
+		 * If the user is logged in and has explicitly requested to disable the extension don't load.
+		 */
+		if (
+			!$special->getUser()->isAnon() &&
+			$special->getUser()->getBoolOption( 'advancedsearch-disable' )
+		) {
+			return;
+		}
 		if ( $special->getName() === 'Search' ) {
 			$special->getOutput()->addModules( [
 				'ext.advancedSearch.init',
@@ -123,6 +132,20 @@ class Hooks {
 			'requirements' => [
 				'javascript' => true,
 			],
+		];
+	}
+
+	/**
+	 * @param User $user
+	 * @param array[] &$preferences
+	 */
+	public static function onGetPreferences( User $user, array &$preferences ) {
+		$preferences['advancedsearch-disable'] = [
+			'type' => 'toggle',
+			'label-message' => 'advancedsearch-preference-disable',
+			'section' => 'searchoptions/advancedsearch',
+			'default' => $user->getBoolOption( 'advancedsearch-disable' ),
+			'help-message' => 'advancedsearch-preference-help',
 		];
 	}
 
