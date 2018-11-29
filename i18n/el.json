@@ -57,5 +57,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Συζήτηση",
 	"advancedsearch-namespaces-placeholder": "Προσθήκη ονοματοχώρων...",
 	"advancedsearch-beta-feature-message": "Διεπαφή Προηγμένης Αναζήτησης",
-	"advancedsearch-beta-feature-description": "Εύκολη πρόσβαση σε προηγμένες δυνατότητες αναζήτησης στην [[Special:Search]]."
+	"advancedsearch-beta-feature-description": "Εύκολη πρόσβαση σε προηγμένες δυνατότητες αναζήτησης στην [[Special:Search]].",
+	"prefs-advancedsearch": "Προχωρημένη αναζήτηση"
 }

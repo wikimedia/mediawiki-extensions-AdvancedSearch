@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
-			"Guycn2"
+			"Guycn2",
+			"IKhitron"
 		]
 	},
 	"advancedsearch-desc": "גישה קלה ליכולות חיפוש מתקדמות בדף [[Special:Search|מיוחד:חיפוש]]",
@@ -59,5 +60,8 @@
 	"advancedsearch-namespaces-preset-discussion": "דיון",
 	"advancedsearch-namespaces-placeholder": "הוספת מרחבי שם…",
 	"advancedsearch-beta-feature-message": "ממשק חיפוש מתקדם",
-	"advancedsearch-beta-feature-description": "גישה קלה ליכולות חיפוש מתקדמות בדף [[Special:Search|מיוחד:חיפוש]]."
+	"advancedsearch-beta-feature-description": "גישה קלה ליכולות חיפוש מתקדמות בדף [[Special:Search|מיוחד:חיפוש]].",
+	"prefs-advancedsearch": "חיפוש מתקדם",
+	"advancedsearch-preference-help": "חיפוש מתקדם מוסיף טופס לדף מיוחד:חיפוש, המאפשר לבצע חיפושים מיוחדים גם למי שלא מכיר את תחביר החיפוש. הוא גם משנה את הדרך בה נבחרים מרחבי שם לחיפוש.",
+	"advancedsearch-preference-disable": "לא להציג ממשק חיפוש מתקדם"
 }

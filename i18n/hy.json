@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Aram1985",
-			"Դավիթ Սարոյան"
+			"Դավիթ Սարոյան",
+			"Kareyac"
 		]
 	},
 	"advancedsearch-options-pane-head": "Ընդլայնված ընտրանքներ",
@@ -45,5 +46,7 @@
 	"advancedsearch-namespaces-preset-general-help": "Ընդհանուր օգնություն",
 	"advancedsearch-namespaces-preset-discussion": "Քննարկում",
 	"advancedsearch-namespaces-placeholder": "Ավելացնել անվանատարածքներ…",
-	"advancedsearch-beta-feature-message": "Ընդլայնված որոնման միջերես"
+	"advancedsearch-beta-feature-message": "Ընդլայնված որոնման միջերես",
+	"prefs-advancedsearch": "Ընդլայնված որոնում",
+	"advancedsearch-preference-disable": "Մի ցուցադրեք ընդլայնված որոնման ինտերֆեյս"
 }

@@ -50,5 +50,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Diskussion",
 	"advancedsearch-namespaces-placeholder": "Tilføj navnerum...",
 	"advancedsearch-beta-feature-message": "Avancerede søgefunktioner",
-	"advancedsearch-beta-feature-description": "Nem adgang til avancerede søgemuligheder på [[Special:Search]]."
+	"advancedsearch-beta-feature-description": "Nem adgang til avancerede søgemuligheder på [[Special:Search]].",
+	"prefs-advancedsearch": "Avanceret søgning"
 }

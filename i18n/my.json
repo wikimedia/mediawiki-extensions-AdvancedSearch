@@ -24,9 +24,11 @@
 	"advancedsearch-filetype-default": "ဖိုင်အမျိုးအစား ရွေးချယ်ရန်",
 	"advancedsearch-filetype-audio": "အသံ",
 	"advancedsearch-filetype-video": "ဗီဒီယို",
+	"advancedsearch-namespaces-remember": "နောင်ရှာဖွေမှုများအတွက် ရွေးချယ်မှုကို အမှတ်ရရန်",
 	"advancedsearch-namespaces-preset-all": "အားလုံး",
 	"advancedsearch-namespaces-preset-default": "နဂိုအတိုင်း",
 	"advancedsearch-namespaces-preset-general-help": "ယေဘုယျ အကူအညီ",
 	"advancedsearch-namespaces-preset-discussion": "ဆွေးနွေးချက်",
+	"advancedsearch-namespaces-placeholder": "အမည်ညွှန်းများ ပေါင်းထည့်ရန်...",
 	"advancedsearch-beta-feature-description": "အဆင့်မြင့် ရှာဖွေရေး လုပ်ဆောင်နိုင်စွမ်းများကို [[Special:Search]] တွင် အလွယ်တကူ ရယူနိုင်သည်။"
 }

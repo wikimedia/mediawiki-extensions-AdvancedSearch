@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Pyscowicz",
-			"SMAUG"
+			"SMAUG",
+			"Valtlait"
 		]
 	},
 	"advancedsearch-options-pane-head": "Laajennetut hakuparametrit:",
@@ -18,9 +19,9 @@
 	"advancedsearch-field-deepcategory": "Sivut näissä luokissa:",
 	"advancedsearch-field-hastemplate": "Sivut näillä mallineilla:",
 	"advancedsearch-field-inlanguage": "Sivut tällä kielellä:",
-	"advancedsearch-field-filetype": "Tiedostotyyppi:",
-	"advancedsearch-field-filew": "Tiedoston leveys pikseleinä:",
-	"advancedsearch-field-fileh": "Tiedoston korkeus pikseleinä:",
+	"advancedsearch-field-filetype": "Tiedostotyyppi",
+	"advancedsearch-field-filew": "Tiedoston leveys pikseleinä",
+	"advancedsearch-field-fileh": "Tiedoston korkeus pikseleinä",
 	"advancedsearch-placeholder-exact-text": "\"kissa rakastaa vuohta\"",
 	"advancedsearch-inlanguage-default": "Valitse kieli",
 	"advancedsearch-filetype-section-types": "Yleiset tiedostotyypit",

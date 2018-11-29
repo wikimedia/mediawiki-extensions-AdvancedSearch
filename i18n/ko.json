@@ -59,5 +59,7 @@
 	"advancedsearch-namespaces-preset-discussion": "토론",
 	"advancedsearch-namespaces-placeholder": "이름공간 추가...",
 	"advancedsearch-beta-feature-message": "고급 검색 인터페이스",
-	"advancedsearch-beta-feature-description": "[[Special:Search|특수:검색]]의 고급 검색 기능에 대한 쉬운 접근입니다."
+	"advancedsearch-beta-feature-description": "[[Special:Search|특수:검색]]의 고급 검색 기능에 대한 쉬운 접근입니다.",
+	"prefs-advancedsearch": "고급 검색",
+	"advancedsearch-preference-disable": "고급 검색 인터페이스를 표시하지 않음"
 }

@@ -4,7 +4,8 @@
 			"Mar(c)",
 			"Patio",
 			"Mainframe98",
-			"KlaasZ4usV"
+			"KlaasZ4usV",
+			"Elroy"
 		]
 	},
 	"advancedsearch-desc": "Eenvoudige toegang tot geavanceerde zoekmogelijkheden op [[Special:Search]]",
@@ -58,5 +59,7 @@
 	"advancedsearch-namespaces-preset-discussion": "Overleg",
 	"advancedsearch-namespaces-placeholder": "Naamruimtes toevoegen...",
 	"advancedsearch-beta-feature-message": "Interface voor geavanceerd zoeken",
-	"advancedsearch-beta-feature-description": "Eenvoudige toegang tot geavanceerde zoekmogelijkheden op [[Special:Search]]."
+	"advancedsearch-beta-feature-description": "Eenvoudige toegang tot geavanceerde zoekmogelijkheden op [[Special:Search]].",
+	"prefs-advancedsearch": "Uitgebreid zoeken",
+	"advancedsearch-preference-disable": "Uitgebreid zoeken niet meer weergeven"
 }
