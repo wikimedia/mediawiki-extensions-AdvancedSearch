@@ -114,7 +114,6 @@ class SearchPage extends Page {
 			},
 			clickOnNamespace: function ( nsId ) {
 				const menuItem = browser.element( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget .mw-advancedSearch-namespace-' + nsId );
-				browser.execute( 'arguments[0].scrollIntoView(true);', menuItem.value );
 				menuItem.waitForVisible();
 				menuItem.click();
 			},
