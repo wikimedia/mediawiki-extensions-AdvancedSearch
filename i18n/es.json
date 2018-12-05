@@ -5,7 +5,8 @@
 			"Fitoschido",
 			"KATRINE1992",
 			"MarcoAurelio",
-			"Jelou"
+			"Jelou",
+			"Esteban"
 		]
 	},
 	"advancedsearch-desc": "Acceso sencillo a las prestaciones de búsqueda avanzadas de [[Special:Search]]",
@@ -56,5 +57,7 @@
 	"advancedsearch-namespaces-preset-discussion": "Discusión",
 	"advancedsearch-namespaces-placeholder": "Añadir espacios de nombres…",
 	"advancedsearch-beta-feature-message": "Interfaz de búsqueda avanzada",
-	"advancedsearch-beta-feature-description": "Acceso sencillo a las prestaciones de búsqueda avanzadas de [[Special:Search]]."
+	"advancedsearch-beta-feature-description": "Acceso sencillo a las prestaciones de búsqueda avanzadas de [[Special:Search]].",
+	"advancedsearch-preference-help": "La búsqueda avanzada añade un formulario a la página Especial:Buscar. Este te permite realizar búsquedas especializadas, incluso si no conoces ninguna sintaxis de búsqueda. También cambia la manera en que se pueden seleccionar los espacios de nombres.",
+	"advancedsearch-preference-disable": "No mostrar la interfaz de búsqueda avanzada."
 }
