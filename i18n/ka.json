@@ -4,6 +4,8 @@
 			"Otogi"
 		]
 	},
+	"advancedsearch-options-pane-head": "გაფართოებული პარამეტრები:",
+	"advancedsearch-namespaces-remember": "მომავალში საძიებლად დაიმახსოვრე არჩევანი",
 	"advancedsearch-beta-feature-message": "გაფართოებული ძიების ინტერფეისი",
 	"advancedsearch-beta-feature-description": "მარტივი წვდომა ძიების გაფართოებულ შესაძლებლობებთან [[Special:Search]]-ზე."
 }
