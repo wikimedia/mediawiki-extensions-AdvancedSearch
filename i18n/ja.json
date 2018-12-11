@@ -5,7 +5,8 @@
 			"Yusuke1109",
 			"夢蝶葬花",
 			"Omotecho",
-			"Suyama"
+			"Suyama",
+			"Shirayuki"
 		]
 	},
 	"advancedsearch-desc": "[[Special:Search]]の高度な検索機能への簡単なアクセス",
@@ -17,7 +18,7 @@
 	"advancedsearch-field-phrase": "この文と完全に一致",
 	"advancedsearch-field-or": "これらの単語のどれかを含む",
 	"advancedsearch-field-not": "これらの単語を除外",
-	"advancedsearch-field-subpageof": "このページのサブページ",
+	"advancedsearch-field-subpageof": "このページの下位ページ",
 	"advancedsearch-field-intitle": "ページタイトルに含まれるもの",
 	"advancedsearch-field-deepcategory": "ページのカテゴリ",
 	"advancedsearch-field-hastemplate": "これらのテンプレートを含む",
