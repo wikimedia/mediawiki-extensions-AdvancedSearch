@@ -5,7 +5,13 @@
 		]
 	},
 	"advancedsearch-options-pane-head": "გაფართოებული პარამეტრები:",
+	"advancedsearch-optgroup-text": "გვერდის ტექსტში ძიება",
+	"advancedsearch-namespaces-search-in": "ძიება:",
 	"advancedsearch-namespaces-remember": "მომავალში საძიებლად დაიმახსოვრე არჩევანი",
+	"advancedsearch-namespaces-preset-default": "ნაგულისხმევად",
+	"advancedsearch-namespaces-preset-general-help": "ზოგადი დახმარება",
+	"advancedsearch-namespaces-preset-discussion": "განხილვა",
+	"advancedsearch-namespaces-placeholder": "სახელთა სივრცის დამატება…",
 	"advancedsearch-beta-feature-message": "გაფართოებული ძიების ინტერფეისი",
 	"advancedsearch-beta-feature-description": "მარტივი წვდომა ძიების გაფართოებულ შესაძლებლობებთან [[Special:Search]]-ზე."
 }

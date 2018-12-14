@@ -51,5 +51,7 @@
 	"advancedsearch-namespaces-placeholder": "Tilføj navnerum...",
 	"advancedsearch-beta-feature-message": "Avancerede søgefunktioner",
 	"advancedsearch-beta-feature-description": "Nem adgang til avancerede søgemuligheder på [[Special:Search]].",
-	"prefs-advancedsearch": "Avanceret søgning"
+	"prefs-advancedsearch": "Avanceret søgning",
+	"advancedsearch-preference-help": "Avanceret Søgning er en ekstra formularboks på siden Speciel:Søgning. Dette giver mulighed for avancerede søgninger, selv hvis man ikke kender til søgesyntaks. Måden man vælger navnerum er også anderledes.",
+	"advancedsearch-preference-disable": "Vis ikke formularen for Avanceret Søgning"
 }
