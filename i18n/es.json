@@ -6,10 +6,11 @@
 			"KATRINE1992",
 			"MarcoAurelio",
 			"Jelou",
-			"Esteban"
+			"Esteban",
+			"Tiberius1701"
 		]
 	},
-	"advancedsearch-desc": "Acceso sencillo a las prestaciones de búsqueda avanzadas de [[Special:Search]]",
+	"advancedsearch-desc": "Acceso sencillo a las funciones de búsqueda avanzadas de [[Special:Search]]",
 	"advancedsearch-options-pane-head": "Parámetros avanzados:",
 	"advancedsearch-optgroup-text": "Buscar en el texto de la página",
 	"advancedsearch-optgroup-structure": "Estructura",
@@ -29,9 +30,9 @@
 	"advancedsearch-help-plain": ";Descripción\n:Busca estas palabras en el título o el texto.\n;Presta atención a lo siguiente\n:* Se pueden proporcionar varias palabras aquí.\n:* Se pasarán por alto los signos de puntuación y otros caracteres no alfanuméricos (con la excepción de los dos puntos y la coma).\n:* Puede que haya resultados que no contengan uno o más de tus términos de búsqueda.\n:* Se aplica la derivación de palabras. Ejemplo: si se escribe ''auto'', la búsqueda también considerará ''autos''. La derivación de palabras es específica de cada idioma.\n;Página de ayuda\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search Búsqueda de texto completo]\n;Equivalente sintáctico en la búsqueda normal\n:<code>sesame street car</code>",
 	"advancedsearch-help-phrase": ";Descripción\n:Busca una secuencia específica de caracteres. Los signos de puntuación se ignoran.\n;Ten en cuenta lo siguiente\n:(solo es válido cuando se usan comillas, ver el ejemplo siguiente)\n:* Separa las frases de búsqueda por coma o espacio, por ejemplo <code>\"buenos días\"</code>, <code>\"¡hola amigo!\"</code>.\n:* Se ignorarán los signos de puntuación y otros caracteres no alfanuméricos (con excepción de los dos puntos y la coma).\n:* La búsqueda no distingue entre mayúsculas y minúsculas.\n:* No se aplica la derivación de palabras.\n;Página de ayuda\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Palabras, frases y modificadores]\n;Sintaxis equivalente a la búsqueda normal\n:Palabras entre comillas, por ejemplo, <code>\"Empezar por el principio\"</code>.",
 	"advancedsearch-help-or": ";Descripción\n:Por lo menos uno de los términos de búsqueda debe incluirse en la página.\n;Página de ayuda\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Palabras, frases y modificadores]\n;Equivalente sintáctico en la búsqueda normal\n:Palabras con <code>OR</code> entre ellas, como <code>Computadora OR Ordenador</code>.",
-	"advancedsearch-help-filetype": "<dl><dt>Descripción:</dt><dd>Busca archivos del tipo seleccionado únicamente.</dd> <dt>Presta atención a lo siguiente: </dt><dd><ul> <li>Solo puedes buscar un tipo de archivo a la vez.</li> <li>Solo puedes seleccionar los tipos de archivo incluidos en el menú desplegable.</li></ul></dd> <dt>Páginas de ayuda:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype filetype] y [https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime filemime]</dd> <dt>El equivalente sintáctico en las búsquedas normales es:</dt><dd>Términos con <code>filetype:</code> antepuesto, como <code>filetype:ogg</code>.</dd></dl>",
-	"advancedsearch-help-filew": ": Descripcion\n: Estos campos le permiten de especificar la largura del fichero.\n: Tome en cuenta los siguientes\nEsto es solamente aplicado en los ficheros que son largos y altos, como videos e imagenes\n: Pagina de ayuda\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]\nSintax que corrsponde a una busqueda normal\n: Numeros con  <code>filew</code> antes ellos como <code>filew:>800</code>.",
-	"advancedsearch-help-fileh": "<dl><dt>Descripción:</dt><dd>Estos campos te permiten especificar la altura del archivo.</dd> <dt>Presta atención a lo siguiente: </dt><dd><ul> <li>Esto solo se aplica a los tipos de archivo que tengan anchura y altura, como los vídeos y las imágenes.</li></ul></dd> <dt>Página de ayuda:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Medidas de archivos]</dd> <dt>Equivalencia sintáctica en búsquedas normales:</dt><dd>Números con <code>fileh</code> antepuesto, como <code>fileh:>600</code>.</dd></dl>",
+	"advancedsearch-help-filetype": ";Descripción\n:Busca solo archivos del tipo seleccionado.\n;Presta atención a lo siguiente\n:* Solo puedes buscar un tipo de archivo.\n:* Solo puedes seleccionar los tipos de archivo del menú desplegable.\n;Páginas de ayuda\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype Tipo de archivo] y [https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime tipo de archivo MIME]\n;Equivalencia sintáctica en búsquedas normales\n:Términos con <code>filetype:</code> antepuesto, como <code>filetype:ogg</code>.",
+	"advancedsearch-help-filew": ";Descripcion\n:Estos campos te permiten de especificar la largura del fichero.\n;Presta atención a lo siguiente\n:* Esto solo se aplica a los tipos de archivo que tengan anchura y altura, como los vídeos y las imágenes.\n;Pagina de ayuda\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Medidas de archivos]\n;Equivalencia sintáctica en búsquedas normales\n:Numeros con <code>filew</code> antepuesto, como <code>filew:>800</code>.",
+	"advancedsearch-help-fileh": ";Descripción\n:Estos campos te permiten especificar la altura del archivo.\n;Presta atención a lo siguiente\n:* Esto solo se aplica a los tipos de archivo que tengan anchura y altura, como los vídeos y las imágenes.\n;Página de ayuda\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Medidas de archivos]\n;Equivalencia sintáctica en búsquedas normales\n:Números con <code>fileh</code> antepuesto, como <code>fileh:>600</code>.",
 	"advancedsearch-placeholder-exact-text": "\"al gato le gusta dormir\"",
 	"advancedsearch-inlanguage-default": "Selecciona un idioma",
 	"advancedsearch-filetype-section-types": "Tipos de archivo generales",
@@ -58,6 +59,7 @@
 	"advancedsearch-namespaces-placeholder": "Añadir espacios de nombres…",
 	"advancedsearch-beta-feature-message": "Interfaz de búsqueda avanzada",
 	"advancedsearch-beta-feature-description": "Acceso sencillo a las prestaciones de búsqueda avanzadas de [[Special:Search]].",
+	"prefs-advancedsearch": "Búsqueda avanzada",
 	"advancedsearch-preference-help": "La búsqueda avanzada añade un formulario a la página Especial:Buscar. Este te permite realizar búsquedas especializadas, incluso si no conoces ninguna sintaxis de búsqueda. También cambia la manera en que se pueden seleccionar los espacios de nombres.",
 	"advancedsearch-preference-disable": "No mostrar la interfaz de búsqueda avanzada."
 }
