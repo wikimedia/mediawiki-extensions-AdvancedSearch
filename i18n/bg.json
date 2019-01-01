@@ -3,7 +3,8 @@
 		"authors": [
 			"StanProg",
 			"ShockD",
-			"ToninaZ"
+			"ToninaZ",
+			"Vlad5250"
 		]
 	},
 	"advancedsearch-desc": "Лесен достъп до възможност за подробно търсене [[Special:Search]]",
@@ -53,7 +54,7 @@
 	"advancedsearch-filesize-greater-than": "по-голямо от",
 	"advancedsearch-filesize-smaller-than": "по-малко от",
 	"advancedsearch-namespaces-search-in": "Търсене в:",
-	"advancedsearch-namespaces-remember": "Запомняне на избора за бъдещи търсения",
+	"advancedsearch-namespaces-remember": "Запомняне в бъдеще",
 	"advancedsearch-namespaces-preset-all": "Всички",
 	"advancedsearch-namespaces-preset-default": "По подразбиране",
 	"advancedsearch-namespaces-preset-general-help": "Обща помощ",
