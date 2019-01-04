@@ -138,14 +138,14 @@
 	 * @return {string[]}
 	 */
 	function getNamespacesFromUrl( searchableNamespaces ) {
-		var url = new mw.Uri(),
+		var nsParamRegExp = /[?&]ns(\d+)\b/g,
+			nsMatch,
 			namespaces = [];
-		$.each( url.query, function ( param ) {
-			var nsMatch = param.match( /^ns(\d+)$/ );
-			if ( nsMatch && nsMatch[ 1 ] in searchableNamespaces ) {
-				namespaces.push( nsMatch[ 1 ] );
-			}
-		} );
+		while ( ( nsMatch = nsParamRegExp.exec( location.href ) ) &&
+			nsMatch[ 1 ] in searchableNamespaces
+		) {
+			namespaces.push( nsMatch[ 1 ] );
+		}
 		return namespaces;
 	}
 
