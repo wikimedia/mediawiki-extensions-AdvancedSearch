@@ -5,9 +5,12 @@
 		]
 	},
 	"advancedsearch-options-pane-head": "Avancata parametri:",
+	"advancedsearch-field-phrase": "Exakte ca texto",
+	"advancedsearch-field-not": "Sen ica vorti",
 	"advancedsearch-field-deepcategory": "Pagini en ica kategorii",
 	"advancedsearch-namespaces-search-in": "Serchar en:",
 	"advancedsearch-namespaces-remember": "Memorez la selektajo por futura serchi",
+	"advancedsearch-namespaces-preset-default": "''Default''",
 	"advancedsearch-namespaces-preset-general-help": "Generala helpo",
 	"advancedsearch-namespaces-placeholder": "Adjuntar nomala spaci..."
 }
