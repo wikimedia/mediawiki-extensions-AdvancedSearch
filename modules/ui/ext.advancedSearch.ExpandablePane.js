@@ -62,10 +62,12 @@
 			this.data = this.STATE_CLOSED;
 			this.updatePaneVisibility( this.STATE_CLOSED );
 			this.notifyChildInputVisibility( false );
+			mw.track( 'counter.MediaWiki.AdvancedSearch.event.collapse' );
 		} else {
 			this.data = this.STATE_OPEN;
 			this.updatePaneVisibility( this.STATE_OPEN );
 			this.notifyChildInputVisibility( true );
+			mw.track( 'counter.MediaWiki.AdvancedSearch.event.expand' );
 		}
 		this.emit( 'change', this.data );
 	};
