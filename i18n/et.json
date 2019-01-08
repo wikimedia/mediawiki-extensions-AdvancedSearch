@@ -59,6 +59,6 @@
 	"advancedsearch-beta-feature-message": "Täpsem otsiliides",
 	"advancedsearch-beta-feature-description": "Lihtne juurdepääs täpsematele otsivõimalustele leheküljel [[Special:Search]]",
 	"prefs-advancedsearch": "Täpsem otsing",
-	"advancedsearch-preference-help": "Täpsema otsinguga lisatakse otsimise erileheküljele vorm, mis võimaldab sooritada erilaadseid otsinguid ka siis, kui otsisüntaksit ei tunta. Samuti muudab see nimeruumide valimise viisi.",
+	"advancedsearch-preference-help": "Täpsema otsinguga lisatakse otsimise erileheküljele vorm, mis võimaldab otsida eri moel ka siis, kui otsisüntaksit ei tunta. Samuti muudab see nimeruumide valimise viisi.",
 	"advancedsearch-preference-disable": "Ära näita täpsema otsingu liidest"
 }
