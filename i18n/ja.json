@@ -6,7 +6,8 @@
 			"夢蝶葬花",
 			"Omotecho",
 			"Suyama",
-			"Shirayuki"
+			"Shirayuki",
+			"Darklanlan"
 		]
 	},
 	"advancedsearch-desc": "[[Special:Search]]の高度な検索機能への簡単なアクセス",
@@ -64,5 +65,6 @@
 	"advancedsearch-namespaces-placeholder": "名前空間を追加…",
 	"advancedsearch-beta-feature-message": "高度な検索インタフェース",
 	"advancedsearch-beta-feature-description": "[[Special:Search]]の高度な検索機能に簡単にアクセスできます。",
-	"prefs-advancedsearch": "高度な検索"
+	"prefs-advancedsearch": "高度な検索",
+	"advancedsearch-preference-disable": "高度な検索インターフェイスを表示しない"
 }
