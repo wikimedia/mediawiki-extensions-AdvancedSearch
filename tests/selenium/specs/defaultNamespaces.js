@@ -66,7 +66,7 @@ describe( 'Advanced Search', function () {
 		} );
 	}
 
-	it( 'selects the default namespaces', () => {
+	it( 'selects the default namespaces', function () {
 		browser.call( resetUserOptions );
 		browser.call( () => { return setSearchNamespaceOptions( [ '0', '1', '2', '10' ] ); } );
 		UserLoginPage.login( browser.options.username, browser.options.password );
@@ -80,7 +80,7 @@ describe( 'Advanced Search', function () {
 		assert.deepEqual( selectedNamespaceIDs, expectedNamespaceIDs );
 	} );
 
-	it( 'selects the namespaces from the URL', () => {
+	it( 'selects the namespaces from the URL', function () {
 		SearchPage.open( { ns0: 1, ns1: 1, ns2: 1, ns10: 1 } );
 		let selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs(),
 			expectedNamespaceIDs = [ '0', '1', '2', '10' ];
@@ -91,7 +91,7 @@ describe( 'Advanced Search', function () {
 		assert.deepEqual( selectedNamespaceIDs, expectedNamespaceIDs );
 	} );
 
-	it( 'ignores the namespaces from the URL when advancedSearch is submitted', () => {
+	it( 'ignores the namespaces from the URL when advancedSearch is submitted', function () {
 		SearchPage.open( {
 			ns0: 1,
 			ns1: 1,
@@ -109,7 +109,7 @@ describe( 'Advanced Search', function () {
 		assert.deepEqual( selectedNamespaceIDs, expectedNamespaceIDs );
 	} );
 
-	it( 'displays the default namespaces of the user and wiki and that the default checkbox is selected', () => {
+	it( 'displays the default namespaces of the user and wiki and that the default checkbox is selected', function () {
 		let defaultNamespaceOptions = [ '15', '4', '5', '6' ];
 		browser.call( resetUserOptions );
 		browser.call( () => { return setSearchNamespaceOptions( defaultNamespaceOptions ); } );
