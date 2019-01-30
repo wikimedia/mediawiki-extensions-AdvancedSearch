@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Songyanzhi"
+			"Songyanzhi",
+			"Iyuqciyang"
 		]
 	},
 	"advancedsearch-field-inlanguage": "Pnatis nu kari nii:",
-	"advancedsearch-inlanguage-default": "Gmao kari"
+	"advancedsearch-inlanguage-default": "Gmao kari",
+	"advancedsearch-namespaces-preset-all": "kana",
+	"advancedsearch-namespaces-preset-discussion": "empprngaw"
 }
