@@ -3,7 +3,8 @@
 		"authors": [
 			"Aram1985",
 			"Դավիթ Սարոյան",
-			"Kareyac"
+			"Kareyac",
+			"Xelgen"
 		]
 	},
 	"advancedsearch-options-pane-head": "Ընդլայնված ընտրանքներ",
@@ -39,7 +40,7 @@
 	"advancedsearch-filesize-equals": "հավասար է",
 	"advancedsearch-filesize-greater-than": "մեծ է",
 	"advancedsearch-filesize-smaller-than": "փոքր է",
-	"advancedsearch-namespaces-search-in": "Որոնել ըստ՝",
+	"advancedsearch-namespaces-search-in": "Հետևյալ անվանատարածքներում՝",
 	"advancedsearch-namespaces-remember": "Հիշել ընտրանքը հաջորդ որոնումների համար",
 	"advancedsearch-namespaces-preset-all": "Բոլորը",
 	"advancedsearch-namespaces-preset-default": "Լռելյայն",
