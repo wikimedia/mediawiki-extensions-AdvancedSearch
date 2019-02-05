@@ -39,7 +39,7 @@
 	 * @return {string}
 	 */
 	function formatSizeConstraint( prefix, val ) {
-		if ( !Array.isArray( val ) || val.length < 2 || $.trim( val[ 1 ] ) === '' ) {
+		if ( !Array.isArray( val ) || val.length < 2 || ( val[ 1 ] || '' ).trim() === '' ) {
 			return '';
 		}
 		return prefix + val.join( '' );
@@ -185,7 +185,7 @@
 			defaultValue: [],
 			formatter: function ( val ) {
 				if ( Array.isArray( val ) ) {
-					return $.map( val, optionalQuotes ).join( ' OR ' );
+					return val.map( optionalQuotes ).join( ' OR ' );
 				}
 				return optionalQuotes( val );
 			},
@@ -244,7 +244,7 @@
 			formatter: function ( val ) {
 				var keyword = mw.config.get( 'advancedSearch.deepcategoryEnabled' ) ? 'deepcat:' : 'incategory:';
 				if ( Array.isArray( val ) ) {
-					return $.map( val, function ( templateItem ) {
+					return val.map( function ( templateItem ) {
 						return keyword + optionalQuotes( templateItem );
 					} ).join( ' ' );
 				}
@@ -268,7 +268,7 @@
 			defaultValue: [],
 			formatter: function ( val ) {
 				if ( Array.isArray( val ) ) {
-					return $.map( val, function ( templateItem ) {
+					return val.map( function ( templateItem ) {
 						return 'hastemplate:' + optionalQuotes( templateItem );
 					} ).join( ' ' );
 				}

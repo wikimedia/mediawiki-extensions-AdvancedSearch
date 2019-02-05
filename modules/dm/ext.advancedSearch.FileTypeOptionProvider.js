@@ -44,8 +44,9 @@
 	 * @return {Object}
 	 */
 	var getFileOptions = function ( options, allowedMimeTypes ) {
-		$.each( allowedMimeTypes, function ( fileExtension, mimeType ) {
+		Object.keys( allowedMimeTypes ).forEach( function ( fileExtension ) {
 			var groupName = 'other',
+				mimeType = allowedMimeTypes[ fileExtension ],
 				topLevelType = getTopLevelMimeType( mimeType );
 
 			if ( isKnownDocumentType( fileExtension ) ) {
@@ -103,6 +104,7 @@
 	mw.libs.advancedSearch.dm.FileTypeOptionProvider.prototype.getAllowedFileTypeOptions = function () {
 		var options = [];
 
+		// eslint-disable-next-line jquery/no-each-util
 		$.each( getFileOptions( this.options, this.mimeTypes ), function ( index, fileOptions ) {
 			options = options.concat( fileOptions );
 		} );

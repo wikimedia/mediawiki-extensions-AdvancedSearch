@@ -1,3 +1,4 @@
+/* eslint-disable jquery/no-global-selector */
 ( function () {
 	'use strict';
 
@@ -42,7 +43,7 @@
 	}
 
 	/**
-	 * @description It is possible for the namespace field to be completely empty
+	 * @desc It is possible for the namespace field to be completely empty
 	 and at the same time have the file type option selected.
 	 This would lead to an empty search result in most cases,
 	 as the default namespaces (which are used when no namespaces are selected) do not contain files.
@@ -75,7 +76,7 @@
 	function setSearchSubmitTrigger( $search, $searchField, state, queryCompiler ) {
 		$search.on( 'submit', function () {
 			forceFileTypeNamespaceWhenSearchForFileType( $searchField, state );
-			var compiledQuery = $.trim( $searchField.val() + ' ' + queryCompiler.compileSearchQuery( state ) ),
+			var compiledQuery = ( $searchField.val() + ' ' + queryCompiler.compileSearchQuery( state ) ).trim(),
 				$compiledSearchField = $( '<input>' ).prop( {
 					name: $searchField.prop( 'name' ),
 					type: 'hidden'
@@ -102,7 +103,7 @@
 	function buildPaneElement( state, advancedOptionsBuilder ) {
 		var searchPreview = new mw.libs.advancedSearch.ui.SearchPreview( state, {
 			label: mw.msg( 'advancedsearch-options-pane-head' ),
-			previewOptions: $.map( mw.libs.advancedSearch.AdvancedOptionsConfig, function ( option ) {
+			previewOptions: mw.libs.advancedSearch.AdvancedOptionsConfig.map( function ( option ) {
 				return option.id;
 			} )
 		} );
@@ -199,7 +200,7 @@
 
 		$search.append( $advancedSearch );
 		$searchField.val( queryCompiler.removeCompiledQueryFromSearch( $searchField.val(), state ) );
-		$searchField.focus();
+		$searchField.trigger( 'focus' );
 
 		$profileField.val( 'advanced' );
 

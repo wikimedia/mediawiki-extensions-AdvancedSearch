@@ -18,6 +18,7 @@
 	var populateCache = function ( res, self ) {
 		var pages = [];
 
+		// eslint-disable-next-line jquery/no-each-util
 		$.each( res.query.pages, function ( index, page ) {
 			if ( !page.missing ) {
 				pages.push( page.title );
@@ -78,7 +79,9 @@
 	mw.libs.advancedSearch.dm.MultiselectLookup.prototype.setValue = function ( valueObject ) {
 		var names = Array.isArray( valueObject ) ? valueObject : [ valueObject ];
 		// Initialize with "PENDING" value to avoid new request in createTagItemWidget
-		names.forEach( function ( value ) { this.queryCache.set( value, 'PENDING' ); }.bind( this ) );
+		names.forEach( function ( value ) {
+			this.queryCache.set( value, 'PENDING' );
+		}.bind( this ) );
 		mw.libs.advancedSearch.dm.MultiselectLookup.parent.prototype.setValue.call( this, valueObject );
 
 		this.searchForPagesInNamespace( names ).then( function () {

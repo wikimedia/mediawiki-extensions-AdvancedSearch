@@ -36,11 +36,11 @@
 					return;
 				}
 
-				self.state.storeOption( id, $.map( newValue, function ( $valueObj ) {
-					if ( typeof $valueObj === 'string' ) {
-						return $valueObj;
+				self.state.storeOption( id, newValue.map( function ( valueObj ) {
+					if ( typeof valueObj === 'string' ) {
+						return valueObj;
 					}
-					return $valueObj.data;
+					return valueObj.data;
 				} ) );
 			};
 		},

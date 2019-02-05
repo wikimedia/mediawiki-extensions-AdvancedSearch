@@ -25,8 +25,9 @@
 				return namespaceIds;
 			},
 			discussion: function ( namespaceIds ) {
-				return $.grep( namespaceIds, function ( id ) {
-					return Number( id ) % 2;
+				// TODO: Use mw.Title.isTalkNamespace
+				return namespaceIds.filter( function ( id ) {
+					return id % 2;
 				} );
 			},
 			defaultNamespaces: function () {
