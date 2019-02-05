@@ -25,10 +25,7 @@
 				return namespaceIds;
 			},
 			discussion: function ( namespaceIds ) {
-				// TODO: Use mw.Title.isTalkNamespace
-				return namespaceIds.filter( function ( id ) {
-					return id % 2;
-				} );
+				return namespaceIds.filter( mw.Title.isTalkNamespace );
 			},
 			defaultNamespaces: function () {
 				return mw.libs.advancedSearch.dm.getDefaultNamespaces( mw.user.options.values );
