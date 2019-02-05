@@ -109,7 +109,7 @@
 	 * @inheritdoc
 	 */
 	mw.libs.advancedSearch.ui.ArbitraryWordInput.prototype.onInputBlur = function () {
-		if ( this.input.getValue() && $.trim( this.input.getValue() ) !== '' ) {
+		if ( this.input.getValue() && this.input.getValue().trim() !== '' ) {
 			this.addTagFromInput();
 		}
 		return mw.libs.advancedSearch.ui.ArbitraryWordInput.parent.prototype.onInputBlur.call( this );

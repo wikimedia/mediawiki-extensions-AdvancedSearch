@@ -69,7 +69,7 @@
 			return;
 		}
 
-		$.each( this.previewOptions, function ( index, optionId ) {
+		this.previewOptions.forEach( function ( optionId ) {
 			var val = this.store.getOption( optionId );
 
 			if ( this.skipOptionInPreview( optionId, val ) ) {
@@ -146,13 +146,11 @@
 			return mw.msg( fileComparatorToMessage( value[ 0 ] ) ) + ' ' + value[ 1 ];
 		}
 		if ( Array.isArray( value ) ) {
-			return $.grep(
-				$.map( value, function ( v ) {
-					return String( v ).trim();
-				} ),
-				function ( v ) {
-					return v !== '';
-				} ).join( ', ' );
+			return value.map( function ( v ) {
+				return String( v ).trim();
+			} ).filter( function ( v ) {
+				return v !== '';
+			} ).join( ', ' );
 		}
 
 		return value.trim();

@@ -5,7 +5,7 @@
 
 	QUnit.test( 'Checkbox does not respond to click events', function ( assert ) {
 		var checkbox = new CheckboxInputWidget( {} );
-		checkbox.$element.click();
+		checkbox.$element.trigger( 'click' );
 		assert.notOk( checkbox.isSelected() );
 	} );
 

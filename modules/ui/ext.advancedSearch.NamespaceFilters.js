@@ -100,7 +100,7 @@
 		var self = this,
 			namespaces = this.store.getNamespaces();
 		this.$namespaceContainer.empty();
-		$.each( namespaces, function ( idx, key ) {
+		namespaces.forEach( function ( key ) {
 			self.$namespaceContainer.append(
 				$( '<input>' ).attr( {
 					type: 'hidden',
@@ -117,7 +117,7 @@
 		// prevent updating the store while reacting to its update notification
 		this.disconnect( this, { change: 'onValueUpdate' } );
 		this.clearItems();
-		$.each( namespaces, function ( idx, key ) {
+		namespaces.forEach( function ( key ) {
 			self.addTag( key, self.namespaces[ key ] );
 		} );
 
@@ -147,7 +147,7 @@
 
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.highlightSelectedNamespacesInMenu = function () {
 		var self = this;
-		$.each( this.getMenu().getItems(), function ( index, menuItem ) {
+		this.getMenu().getItems().forEach( function ( menuItem ) {
 			var isInTagList = !!self.findItemFromData( menuItem.getData() );
 			if ( isInTagList ) {
 				menuItem.checkboxWidget.setSelected( false );

@@ -68,7 +68,9 @@ describe( 'Advanced Search', function () {
 
 	it( 'selects the default namespaces', function () {
 		browser.call( resetUserOptions );
-		browser.call( () => { return setSearchNamespaceOptions( [ '0', '1', '2', '10' ] ); } );
+		browser.call( () => {
+			return setSearchNamespaceOptions( [ '0', '1', '2', '10' ] );
+		} );
 		UserLoginPage.login( browser.options.username, browser.options.password );
 		SearchPage.open();
 		let selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs(),
@@ -112,7 +114,9 @@ describe( 'Advanced Search', function () {
 	it( 'displays the default namespaces of the user and wiki and that the default checkbox is selected', function () {
 		let defaultNamespaceOptions = [ '15', '4', '5', '6' ];
 		browser.call( resetUserOptions );
-		browser.call( () => { return setSearchNamespaceOptions( defaultNamespaceOptions ); } );
+		browser.call( () => {
+			return setSearchNamespaceOptions( defaultNamespaceOptions );
+		} );
 		UserLoginPage.login( browser.options.username, browser.options.password );
 		SearchPage.open();
 		let selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs();

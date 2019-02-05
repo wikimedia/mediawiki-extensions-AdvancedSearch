@@ -26,8 +26,9 @@
 	 */
 	function groomPresets( presets, presetProvider ) {
 		var groomedPresets = {};
-		$.each( presets, function ( key, presetConfig ) {
-			var preset = { label: presetConfig.label || key };
+		Object.keys( presets ).forEach( function ( key ) {
+			var presetConfig = presets[ key ],
+				preset = { label: presetConfig.label || key };
 
 			if ( !Object.prototype.hasOwnProperty.call( presetConfig, 'enabled' ) || presetConfig.enabled !== true ) {
 				return;
@@ -65,6 +66,7 @@
 	 * @return {Object}
 	 */
 	function prepareOptions( presets ) {
+		// eslint-disable-next-line jquery/no-map-util
 		return $.map( presets, function ( preset, id ) {
 			return { data: id, label: mw.msg( preset.label ) };
 		} );
@@ -120,15 +122,16 @@
 		var selectedPresets = {},
 			self = this,
 			storeNamespaces = self.store.getNamespaces();
-		$.each( this.presets, function ( key, presetConfig ) {
+		Object.keys( this.presets ).forEach( function ( key ) {
 			selectedPresets[ key ] = mw.libs.advancedSearch.util.arrayContains(
 				storeNamespaces,
-				presetConfig.namespaces
+				self.presets[ key ].namespaces
 			);
 		} );
 		this.checkboxMultiselectWidget.off( 'change', this.updateStoreFromPresets, this );
-		$.each( selectedPresets, function ( key, isSelected ) {
-			var presetWidget = self.checkboxMultiselectWidget.findItemFromData( key );
+		Object.keys( selectedPresets ).forEach( function ( key ) {
+			var presetWidget = self.checkboxMultiselectWidget.findItemFromData( key ),
+				isSelected = selectedPresets[ key ];
 			if ( presetWidget.isSelected() !== isSelected ) {
 				presetWidget.setSelected( isSelected );
 			}
