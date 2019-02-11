@@ -151,6 +151,7 @@ class Hooks {
 
 	/**
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ResourceLoaderTestModules
+	 * @codeCoverageIgnore
 	 *
 	 * @param array[] &$testModules
 	 * @param ResourceLoader $rl

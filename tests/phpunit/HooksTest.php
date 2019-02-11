@@ -9,7 +9,6 @@ use MediaWikiTestCase;
 use MimeAnalyzer;
 use OutputPage;
 use RequestContext;
-use ResourceLoader;
 use SpecialPage;
 use User;
 
@@ -44,13 +43,12 @@ class HooksTest extends MediaWikiTestCase {
 		$this->assertStringStartsWith( '<PATH>/', $prefs['advancedsearch']['screenshot']['rtl'] );
 	}
 
-	public function testResourceLoaderTestModulesHookHandler() {
-		$rl = $this->getMockBuilder( ResourceLoader::class )->disableOriginalConstructor()->getMock();
+	public function testGetPreferencesHookHandler() {
+		$preferences = [];
+		Hooks::onGetPreferences( $this->newUser(), $preferences );
 
-		$testModules = [];
-		Hooks::onResourceLoaderTestModules( $testModules, $rl );
-
-		$this->assertNotEmpty( $testModules );
+		$this->assertArrayHasKey( 'advancedsearch-disable', $preferences );
+		$this->assertFalse( $preferences['advancedsearch-disable']['default'] );
 	}
 
 	public function testSpecialSearchResultsPrependHandler() {
@@ -104,8 +102,8 @@ class HooksTest extends MediaWikiTestCase {
 	 */
 	private function newUser() {
 		$mock = $this->getMockBuilder( User::class )->disableOriginalConstructor()->getMock();
-		// Act like the user has all options enabled
-		$mock->method( 'getOption' )->willReturn( '1' );
+		// Act like the user has all options disabled
+		$mock->method( 'getBoolOption' )->willReturn( false );
 		return $mock;
 	}
 
