@@ -5,6 +5,7 @@
 			"Orbot707"
 		]
 	},
+	"advancedsearch-optgroup-structure": "Awaniye",
 	"advancedsearch-optgroup-files": "Dosyay u resimi",
 	"advancedsearch-field-plain": "Nê çekuy",
 	"advancedsearch-field-phrase": "Tam ena metin",
@@ -12,6 +13,11 @@
 	"advancedsearch-field-not": "Bê enê çekuya",
 	"advancedsearch-field-subpageof": "Bın pele yê ena pele",
 	"advancedsearch-field-intitle": "Sernamey pele wa ney muhtewa kero",
+	"advancedsearch-field-deepcategory": "Pelê ke nê kategoriyan de",
+	"advancedsearch-field-hastemplate": "Pelê ke nê be şablonanan ra",
+	"advancedsearch-field-inlanguage": "Pelê ke nê zıwanan de",
+	"advancedsearch-field-filetype": "Babetê dosya",
+	"advancedsearch-field-filew": "Hetê pikseli ra gırdiya dosya",
 	"advancedsearch-filetype-section-image": "Formatê resima",
 	"advancedsearch-filetype-section-video": "Formatê video",
 	"advancedsearch-filetype-section-audio": "Formatê vengi",
