@@ -23,6 +23,7 @@
 	"advancedsearch-field-fileh": "دئرازا جانیا ب پیکسل",
 	"advancedsearch-placeholder-exact-text": "\"گورباْ عاشوق بوزاْ\"",
 	"advancedsearch-inlanguage-default": "گولاْڤورچین کردن زڤون",
+	"advancedsearch-filetype-section-types": "جۊر کولی جانیایٱل",
 	"advancedsearch-filetype-section-image": "فورمٱت عسگ",
 	"advancedsearch-filetype-section-video": "فورمٱت ڤیدیو",
 	"advancedsearch-filetype-section-audio": "فورمت دٱنڳ",
@@ -43,5 +44,6 @@
 	"advancedsearch-namespaces-preset-general-help": "هومیاری کولی",
 	"advancedsearch-namespaces-preset-discussion": "گٱپ",
 	"advancedsearch-namespaces-placeholder": "اٛزاف کردن نومجاگٱ",
+	"advancedsearch-beta-feature-message": "ڤاست پاٛی جۊری پیشکرداْ",
 	"prefs-advancedsearch": "پاٛی جۊری پیشکرداْ"
 }
