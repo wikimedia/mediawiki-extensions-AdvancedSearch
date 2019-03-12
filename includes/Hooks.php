@@ -22,7 +22,6 @@ class Hooks {
 	public static function onSpecialPageBeforeExecute( SpecialPage $special, $subpage ) {
 		$services = MediaWikiServices::getInstance();
 		$mainConfig = $special->getConfig();
-		$searchConfig = $services->getSearchEngineConfig();
 
 		if ( $special->getName() !== 'Search' ) {
 			return;
@@ -33,7 +32,8 @@ class Hooks {
 		 * Ensure namespaces are always part of search URLs
 		 */
 		if ( !$special->getUser()->isAnon() &&
-			$special->getUser()->getBoolOption( 'advancedsearch-disable' ) ) {
+			$special->getUser()->getBoolOption( 'advancedsearch-disable' )
+		) {
 			return;
 		}
 
@@ -52,20 +52,18 @@ class Hooks {
 
 		$special->getOutput()->addModuleStyles( 'ext.advancedSearch.initialstyles' );
 
-		$special->getOutput()->addJsConfigVars(
-			'advancedSearch.mimeTypes',
-			( new MimeTypeConfigurator( $services->getMimeAnalyzer() ) )
-				->getMimeTypes( $special->getConfig()->get( 'FileExtensions' ) )
-		);
-
 		$special->getOutput()->addJsConfigVars( [
+			'advancedSearch.mimeTypes' =>
+				( new MimeTypeConfigurator( $services->getMimeAnalyzer() ) )->getMimeTypes(
+					$mainConfig->get( 'FileExtensions' )
+				),
 			'advancedSearch.tooltips' => TooltipGenerator::generateToolTips(),
 			'advancedSearch.namespacePresets' => $mainConfig->get( 'AdvancedSearchNamespacePresets' ),
 			'advancedSearch.deepcategoryEnabled' => $mainConfig->get( 'AdvancedSearchDeepcatEnabled' ),
 			'advancedSearch.searchableNamespaces' =>
 				SearchableNamespaceListBuilder::getCuratedNamespaces(
-					$searchConfig->searchableNamespaces()
-			)
+					$services->getSearchEngineConfig()->searchableNamespaces()
+				),
 		] );
 
 		/**
@@ -75,9 +73,11 @@ class Hooks {
 		 * because Translate extension does not have extension.json
 		 */
 		if ( $mainConfig->has( 'EnablePageTranslation' ) &&
-			$mainConfig->get( 'EnablePageTranslation' ) === true ) {
+			$mainConfig->get( 'EnablePageTranslation' )
+		) {
 			$special->getOutput()->addJsConfigVars(
-				'advancedSearch.languages', Language::fetchLanguageNames()
+				'advancedSearch.languages',
+				Language::fetchLanguageNames()
 			);
 		}
 	}
