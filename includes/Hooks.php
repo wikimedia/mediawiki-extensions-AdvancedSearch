@@ -29,22 +29,22 @@ class Hooks {
 		 * If the BetaFeatures extension is loaded then require the current user
 		 * to have the feature enabled.
 		 */
-		if (
-			$mainConfig->get( 'AdvancedSearchBetaFeature' ) &&
+		if ( $mainConfig->get( 'AdvancedSearchBetaFeature' ) &&
 			ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) &&
 			!BetaFeatures::isFeatureEnabled( $special->getUser(), 'advancedsearch' )
 		) {
 			return;
 		}
+
 		/**
 		 * If the user is logged in and has explicitly requested to disable the extension don't load.
 		 */
-		if (
-			!$special->getUser()->isAnon() &&
+		if ( !$special->getUser()->isAnon() &&
 			$special->getUser()->getBoolOption( 'advancedsearch-disable' )
 		) {
 			return;
 		}
+
 		if ( $special->getName() === 'Search' ) {
 			$special->getOutput()->addModules( [
 				'ext.advancedSearch.init',
@@ -65,7 +65,7 @@ class Hooks {
 				'advancedSearch.searchableNamespaces' =>
 					SearchableNamespaceListBuilder::getCuratedNamespaces(
 						$searchConfig->searchableNamespaces()
-				)
+					)
 			] );
 
 			/**
@@ -75,9 +75,11 @@ class Hooks {
 			 * because Translate extension does not have extension.json
 			 */
 			if ( $mainConfig->has( 'EnablePageTranslation' ) &&
-				$mainConfig->get( 'EnablePageTranslation' ) === true ) {
+				$mainConfig->get( 'EnablePageTranslation' ) === true
+			) {
 				$special->getOutput()->addJsConfigVars(
-					'advancedSearch.languages', Language::fetchLanguageNames()
+					'advancedSearch.languages',
+					Language::fetchLanguageNames()
 				);
 			}
 		}
@@ -90,8 +92,11 @@ class Hooks {
 	 * @param \OutputPage $output
 	 * @param string $term
 	 */
-	public static function onSpecialSearchResultsPrepend( \SpecialSearch $specialSearch,
-														  \OutputPage $output, $term ) {
+	public static function onSpecialSearchResultsPrepend(
+		\SpecialSearch $specialSearch,
+		\OutputPage $output,
+		$term
+	) {
 		$output->addHTML(
 			\Html::rawElement(
 				'div',
