@@ -22,8 +22,9 @@ class Hooks {
 	 * @param string $subpage
 	 */
 	public static function onSpecialPageBeforeExecute( SpecialPage $special, $subpage ) {
-		$mainConfig = MediaWikiServices::getInstance()->getMainConfig();
-		$searchConfig = MediaWikiServices::getInstance()->getSearchEngineConfig();
+		$services = MediaWikiServices::getInstance();
+		$mainConfig = $special->getConfig();
+		$searchConfig = $services->getSearchEngineConfig();
 
 		/**
 		 * If the BetaFeatures extension is loaded then require the current user
@@ -54,8 +55,9 @@ class Hooks {
 
 			$special->getOutput()->addJsConfigVars(
 				'advancedSearch.mimeTypes',
-				( new MimeTypeConfigurator( MediaWikiServices::getInstance()->getMimeAnalyzer() ) )
-					->getMimeTypes( $special->getConfig()->get( 'FileExtensions' ) )
+				( new MimeTypeConfigurator( $services->getMimeAnalyzer() ) )->getMimeTypes(
+					$mainConfig->get( 'FileExtensions' )
+				)
 			);
 
 			$special->getOutput()->addJsConfigVars( [
