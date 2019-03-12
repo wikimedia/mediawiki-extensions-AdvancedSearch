@@ -14,6 +14,11 @@
 	margin-right: 0.3125em;
 }
 
+.advancedsearch-namespacesPreview-label {
+	font-weight: bold;
+	margin-right: 0.3125em;
+}
+
 .mw-advancedSearch-searchPreview-previewPill > .oo-ui-labelElement-label > .mw-advancedSearch-searchPreview-content {
 	display: inline-block;
 	text-overflow: ellipsis;
@@ -55,7 +60,8 @@
 	}
 }
 
-.mw-advancedSearch-expandablePane {
+.mw-advancedSearch-expandablePane-options,
+.mw-advancedSearch-expandablePane-namespaces {
 	clear: both;
 	display: block;
 	margin: 0;
@@ -110,6 +116,7 @@
 .mw-advancedSearch-namespacePresets {
 	/* Required to clear the float started by the "remember" checkbox */
 	clear: right;
+	margin-right: 0;
 
 	label {
 		display: inline-block;
@@ -122,32 +129,36 @@
 	}
 }
 
-.mw-advancedSearch-namespace-selection-header .oo-ui-labelElement {
-	float: right;
-	margin: 0 0 0.4em 0;
+.mw-advancedSearch-namespacePresets .oo-ui-multiselectWidget-group {
+	margin-left: 0.5em;
+	padding-top: 0.5em;
 }
 
-.mw-advancedSearch-namespace-selection-header .mw-advancedSearch-namespace-search-in-label {
-	float: left;
-	font-weight: bold;
+.mw-advancedSearch-namespace-selection-header {
+	display: block;
+	min-height: 30px;
+	padding-top: 0.5em;
+
+	> .oo-ui-labelElement {
+		float: right;
+		margin: 0 0.5em 0.4em 0;
+	}
+
+	> .mw-advancedSearch-namespace-search-in-label {
+		float: left;
+		font-weight: bold;
+	}
 }
 
 .mw-advancedSearch-namespace-selection {
-	border-radius: 2px 2px 0 0;
+	background: linear-gradient( rgba( 0, 0, 0, 0.1 ), #f8f9fa 0.5em );
 	border: solid 1px #a2a9b1;
-	background: #f8f9fa;
 	/* stylelint-disable-next-line no-descending-specificity */
 	.box-sizing( border-box );
-	margin-top: 0.3em;
 	max-width: 50em;
-	padding: 0.4em 0.9375em 0.2em;
 	position: relative;
 	border-bottom: 0;
-
-	&-header {
-		display: block;
-		min-height: 30px;
-	}
+	border-top: 0;
 }
 
 .mw-advancedSearch-namespace-border {
@@ -157,8 +168,16 @@
 
 .mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-handle {
 	border-top: 0;
+	border-left: 0;
+	border-right: 0;
 	border-radius: 0 0 2px 2px;
 }
+
+.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-input .oo-ui-inputWidget-input {
+	border-left: 0;
+	border-right: 0;
+}
+
 // that's how nested the background-color property of a tagWidget is
 .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled {
 	&.selected {

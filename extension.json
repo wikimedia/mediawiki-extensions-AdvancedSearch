@@ -114,6 +114,7 @@
 				"modules/ui/ext.advancedSearch.NamespaceFilters.js",
 				"modules/ui/ext.advancedSearch.NamespacePresets.js",
 				"modules/ui/ext.advancedSearch.SearchPreview.js",
+				"modules/ui/ext.advancedSearch.NamespacesPreview.js",
 				"modules/dm/ext.advancedSearch.NamespacePresetProviders.js",
 				"modules/dm/trackingEvents/ext.advancedSearch.SearchRequest.js",
 				"modules/ui/ext.advancedSearch.MenuSelectWidget.js",

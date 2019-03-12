@@ -54,7 +54,7 @@ describe( 'AdvancedSearch', function () {
 
 		SearchPage.toggleInputFields();
 		SearchPage.searchFileType.selectImageType();
-		assert( SearchPage.namespaceTags.value.filter( function ( tag ) {
+		assert( SearchPage.namespaceTagsInCollapsedMode.value.filter( function ( tag ) {
 			return tag.getText() === 'File';
 		} ).length !== 0 );
 
@@ -74,6 +74,7 @@ describe( 'AdvancedSearch', function () {
 
 	it( 'selects all namespaces when clicking "All" preset', function () {
 		SearchPage.open();
+		SearchPage.namespaces.toggleNamespacesPreview();
 
 		SearchPage.allNamespacesPreset.click();
 		SearchPage.namespaces.toggleNamespacesMenu();
@@ -84,6 +85,7 @@ describe( 'AdvancedSearch', function () {
 
 	it( 'de-selects all namespaces when clicking "All" preset twice', function () {
 		SearchPage.open();
+		SearchPage.namespaces.toggleNamespacesPreview();
 		// clears the namespace bar
 		SearchPage.allNamespacesPreset.click();
 		SearchPage.allNamespacesPreset.click();
@@ -94,6 +96,7 @@ describe( 'AdvancedSearch', function () {
 
 	it( 'unselects "All" preset when a single namespace is unselected after preset had been clicked', function () {
 		SearchPage.open();
+		SearchPage.namespaces.toggleNamespacesPreview();
 
 		SearchPage.allNamespacesPreset.click();
 		SearchPage.namespaces.removeFileNamespace();
@@ -103,6 +106,7 @@ describe( 'AdvancedSearch', function () {
 
 	it( 'automatically selects "All" preset when selecting all namespaces from the list of all namespaces', function () {
 		SearchPage.open();
+		SearchPage.namespaces.toggleNamespacesPreview();
 		SearchPage.namespaces.toggleNamespacesMenu();
 		SearchPage.namespaces.selectAll();
 
@@ -112,11 +116,11 @@ describe( 'AdvancedSearch', function () {
 	it( 'allows logged-in users to remember the selection of namespaces for future searches', function () {
 		this.timeout( 60000 );
 		SearchPage.open();
+		SearchPage.namespaces.toggleNamespacesPreview();
 		assert( !SearchPage.rememberSelection.isExisting() );
-
 		LoginPage.loginAdmin();
-
 		SearchPage.open();
+		SearchPage.namespaces.toggleNamespacesPreview();
 		SearchPage.generalHelpPreset.click();
 		SearchPage.rememberSelection.click();
 		let cache = SearchPage.getSelectedNamespaceIDs();
@@ -132,6 +136,7 @@ describe( 'AdvancedSearch', function () {
 
 		SearchPage.searchTheseWords.put( 'dog' );
 		SearchPage.searchFileType.selectImageType();
+		SearchPage.namespaces.toggleNamespacesPreview();
 		// clears the namespace bar
 		SearchPage.allNamespacesPreset.click();
 		SearchPage.allNamespacesPreset.click();
@@ -143,6 +148,7 @@ describe( 'AdvancedSearch', function () {
 
 	it( 'marks a namespace preset checkbox when all namespaces behind it are present in the namespace search bar', function () {
 		SearchPage.open();
+		SearchPage.namespaces.toggleNamespacesPreview();
 		SearchPage.generalHelpPreset.click();
 		SearchPage.submitForm();
 		assert( SearchPage.generalHelpPreset.isSelected() );
@@ -150,6 +156,7 @@ describe( 'AdvancedSearch', function () {
 
 	it( 'adds/removes the namespace tag when the namespace option is clicked', function () {
 		SearchPage.open();
+		SearchPage.namespaces.toggleNamespacesPreview();
 		SearchPage.namespaces.toggleNamespacesMenu();
 		SearchPage.namespaces.clickOnNamespace( NAMESPACE_USER );
 		assert( SearchPage.namespaceTags.value.filter( function ( tag ) {
@@ -163,6 +170,7 @@ describe( 'AdvancedSearch', function () {
 
 	it( 'changes the namespace filter input icon when menu is toggled', function () {
 		SearchPage.open();
+		SearchPage.namespaces.toggleNamespacesPreview();
 		assert( SearchPage.inputIcon.getAttribute( 'class' ).split( ' ' )[ 1 ] === 'oo-ui-icon-menu' );
 		SearchPage.namespaces.toggleNamespacesMenu();
 		assert( SearchPage.inputIcon.getAttribute( 'class' ).split( ' ' )[ 1 ] === 'oo-ui-icon-search' );
