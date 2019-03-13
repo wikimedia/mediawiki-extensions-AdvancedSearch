@@ -22,14 +22,14 @@
 			}
 		},
 		config = {
-			optionId: 'filetype',
+			fieldId: 'filetype',
 			id: 'advancedSearchOption-filetype',
 			dropdown: { $overlay: true }
 		};
 
 	QUnit.module( 'ext.advancedSearch.ui.FileTypeSelection' );
 
-	QUnit.test( 'Dropdown menu options are set from the provider', function ( assert ) {
+	QUnit.test( 'Dropdown menu fields are set from the provider', function ( assert ) {
 		var dropdown = new FileTypeSelection( store, optionProvider, config );
 		var optionGroups = dropdown.$element[ 0 ].childNodes[ 0 ].childNodes;
 
@@ -43,10 +43,10 @@
 	QUnit.test( 'Dropdown menu updates when store changes', function ( assert ) {
 		var dropdown = new FileTypeSelection( store, optionProvider, config );
 
-		store.storeOption( 'filetype', 'drawing' );
+		store.storeField( 'filetype', 'drawing' );
 		assert.strictEqual( dropdown.getValue(), 'drawing' );
 
-		store.storeOption( 'filetype', '' );
+		store.storeField( 'filetype', '' );
 		assert.strictEqual( dropdown.getValue(), '' );
 	} );
 

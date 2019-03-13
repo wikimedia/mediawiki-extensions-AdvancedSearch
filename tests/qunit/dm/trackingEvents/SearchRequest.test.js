@@ -9,13 +9,13 @@
 		SearchRequest = mw.libs.advancedSearch.dm.trackingEvents.SearchRequest;
 	} );
 
-	QUnit.test( 'using search options are reflected in the tracking event', function ( assert ) {
+	QUnit.test( 'using search fields are reflected in the tracking event', function ( assert ) {
 		var searchModel = new SearchModel(),
 			trackingEvent = new SearchRequest();
 
-		searchModel.storeOption( 'plain', [ 'some', 'value' ] );
-		searchModel.storeOption( 'not', 'some word' );
-		trackingEvent.populateFromStoreOptions( searchModel.getOptions() );
+		searchModel.storeField( 'plain', [ 'some', 'value' ] );
+		searchModel.storeField( 'not', 'some word' );
+		trackingEvent.populateFromStoreOptions( searchModel.getFields() );
 
 		assert.strictEqual( trackingEvent.getEventData().plain, true, 'option "plain" is being used' );
 		assert.strictEqual( trackingEvent.getEventData().not, true, 'option "not" is being used' );

@@ -30,8 +30,8 @@
 	};
 
 	mw.libs.advancedSearch.ui.DeepCategoryFilter.prototype.populateFromStore = function () {
-		if ( this.store.hasOptionChanged( this.optionId, this.getValue() ) ) {
-			this.setValue( this.store.getOption( this.optionId ) );
+		if ( this.store.hasFieldChanged( this.fieldId, this.getValue() ) ) {
+			this.setValue( this.store.getField( this.fieldId ) );
 		}
 	};
 

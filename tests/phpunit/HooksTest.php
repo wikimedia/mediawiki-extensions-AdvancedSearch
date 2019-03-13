@@ -164,7 +164,7 @@ class HooksTest extends MediaWikiTestCase {
 	 */
 	private function newRegisteredUser() {
 		$mock = $this->getMockBuilder( User::class )->disableOriginalConstructor()->getMock();
-		// Act like the user has all options disabled
+		// Act like the user has all fields disabled
 		$mock->method( 'getBoolOption' )->willReturn( false );
 		$mock->method( 'isAnon' )->willReturn( false );
 		$mock->mOptions = [ 'searchNs0' => 0, 'searchNs6' => 1, 'searchNs10' => 1 ];

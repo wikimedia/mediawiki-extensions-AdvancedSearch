@@ -101,9 +101,11 @@
 		},
 		"ext.advancedSearch.elements": {
 			"scripts": [
-				"modules/ext.advancedSearch.AdvancedOptionsConfig.js",
-				"modules/ext.advancedSearch.AdvancedOptionsBuilder.js",
+				"modules/ext.advancedSearch.defaultFields.js",
+				"modules/ext.advancedSearch.FieldCollection.js",
+				"modules/ext.advancedSearch.FieldElementBuilder.js",
 				"modules/ext.advancedSearch.QueryCompiler.js",
+				"modules/ext.advancedSearch.SearchField.js",
 				"modules/dm/ext.advancedSearch.getDefaultNamespaces.js",
 				"modules/dm/ext.advancedSearch.SearchModel.js",
 				"modules/ui/ext.advancedSearch.StoreListener.js",
@@ -168,7 +170,7 @@
 				"ext.advancedSearch.elements"
 			]
 		},
-		"ext.advancedSearch.AdvancedOptionsConfig": {
+		"ext.advancedSearch.SearchFieldUI": {
 			"scripts" : [
 				"modules/ext.advancedSearch.util.js",
 				"modules/dm/ext.advancedSearch.TitleCache.js",

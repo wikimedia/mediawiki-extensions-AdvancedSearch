@@ -16,14 +16,14 @@
 			}
 		},
 		config = {
-			optionId: 'inlanguage',
+			fieldId: 'inlanguage',
 			id: 'advancedSearchOption-inlanguage',
 			dropdown: { $overlay: true }
 		};
 
 	QUnit.module( 'ext.advancedSearch.ui.LanguageSelection' );
 
-	QUnit.test( 'Dropdown menu options are set from provider', function ( assert ) {
+	QUnit.test( 'Dropdown menu fields are set from provider', function ( assert ) {
 		var dropdown = new LanguageSelection( store, optionProvider, config );
 		var optionGroups = dropdown.$element[ 0 ].childNodes[ 0 ];
 
@@ -37,10 +37,10 @@
 	QUnit.test( 'Dropdown menu updates when store changes', function ( assert ) {
 		var dropdown = new LanguageSelection( store, optionProvider, config );
 
-		store.storeOption( 'inlanguage', 'bg' );
+		store.storeField( 'inlanguage', 'bg' );
 		assert.strictEqual( dropdown.getValue(), 'bg' );
 
-		store.storeOption( 'inlanguage', '' );
+		store.storeField( 'inlanguage', '' );
 		assert.strictEqual( dropdown.getValue(), '' );
 	} );
 

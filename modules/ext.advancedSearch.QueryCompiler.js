@@ -5,12 +5,12 @@
 	mw.libs.advancedSearch = mw.libs.advancedSearch || {};
 
 	/**
-	 * @param {ext.libs.advancedSearch.AdvancedOptionsConfig} options
+	 * @param {SearchField[]} searchFields
 	 * @class
 	 * @constructor
 	 */
-	mw.libs.advancedSearch.QueryCompiler = function ( options ) {
-		this.options = options;
+	mw.libs.advancedSearch.QueryCompiler = function ( searchFields ) {
+		this.fields = searchFields;
 	};
 
 	/**
@@ -18,21 +18,21 @@
 	 * @param {ext.libs.advancedSearch.dm.SearchModel} state
 	 * @return {string[]}
 	 */
-	mw.libs.advancedSearch.QueryCompiler.prototype.formatSearchOptions = function ( state ) {
+	mw.libs.advancedSearch.QueryCompiler.prototype.formatSearchFields = function ( state ) {
 		var queryElements = [],
 			greedyQuery = null;
 
-		this.options.forEach( function ( option ) {
-			var val = state.getOption( option.id ),
-				formattedQueryElement = val ? option.formatter( val ) : '';
+		this.fields.forEach( function ( field ) {
+			var val = state.getField( field.id ),
+				formattedQueryElement = val ? field.formatter( val ) : '';
 
 			if ( !formattedQueryElement ) {
 				return;
 			}
 
-			// FIXME: Should fail if there is more than one greedy option!
-			if ( option.greedy && !greedyQuery ) {
-				greedyQuery = option.formatter( val );
+			// FIXME: Should fail if there is more than one greedy field!
+			if ( field.greedy && !greedyQuery ) {
+				greedyQuery = field.formatter( val );
 			} else {
 				queryElements.push( formattedQueryElement );
 			}
@@ -49,7 +49,7 @@
 	 * @return {string}
 	 */
 	mw.libs.advancedSearch.QueryCompiler.prototype.compileSearchQuery = function ( state ) {
-		return this.formatSearchOptions( state ).join( ' ' );
+		return this.formatSearchFields( state ).join( ' ' );
 	};
 
 	/**

@@ -16,12 +16,12 @@
 		sandbox = sinon.sandbox.create();
 		store = {
 			connect: sandbox.stub(),
-			getOption: sandbox.stub().withArgs( 'hastemplate' ).returns( [] ),
-			hasOptionChanged: sandbox.stub(),
-			storeOption: sandbox.stub()
+			getField: sandbox.stub().withArgs( 'hastemplate' ).returns( [] ),
+			hasFieldChanged: sandbox.stub(),
+			storeField: sandbox.stub()
 		};
 		config = {
-			optionId: 'hastemplate',
+			fieldId: 'hastemplate',
 			lookupId: 'template',
 			api: new mw.Api()
 		};
@@ -42,8 +42,8 @@
 		var item = new OO.ui.TagItemWidget();
 		item.setData( 'My Template' );
 
-		// reset storeOption as is was invoked by addTag( 'Preexisting' ) before
-		store.storeOption = sandbox.stub();
+		// reset storeField as is was invoked by addTag( 'Preexisting' ) before
+		store.storeField = sandbox.stub();
 
 		lookup.onLookupMenuItemChoose( item );
 
@@ -53,7 +53,7 @@
 		assert.strictEqual( tags[ 0 ].getData(), 'Preexisting' );
 		assert.strictEqual( tags[ 1 ].getData(), 'My Template' );
 
-		assert.ok( store.storeOption.withArgs( 'hastemplate', [ 'Preexisting', 'My Template' ] ).calledOnce );
+		assert.ok( store.storeField.withArgs( 'hastemplate', [ 'Preexisting', 'My Template' ] ).calledOnce );
 
 		assert.strictEqual( lookup.input.getValue(), '' );
 	} );
@@ -61,8 +61,8 @@
 	QUnit.test( 'Store data subscribed to and synced initially', function ( assert ) {
 		var setValueSpy = sandbox.spy( MultiselectLookup.prototype, 'setValue' );
 
-		store.getOption.withArgs( 'hastemplate' ).returns( [ 'Burg' ] );
-		store.hasOptionChanged.withArgs( 'hastemplate' ).returns( true );
+		store.getField.withArgs( 'hastemplate' ).returns( [ 'Burg' ] );
+		store.hasFieldChanged.withArgs( 'hastemplate' ).returns( true );
 
 		var lookupField = new MultiselectLookup( store, config );
 
@@ -73,8 +73,8 @@
 	} );
 
 	QUnit.test( 'Store update is applied', function ( assert ) {
-		store.getOption.withArgs( 'hastemplate' ).returns( [ 'from', 'beyond' ] );
-		store.hasOptionChanged.withArgs( 'hastemplate' ).returns( true );
+		store.getField.withArgs( 'hastemplate' ).returns( [ 'from', 'beyond' ] );
+		store.hasFieldChanged.withArgs( 'hastemplate' ).returns( true );
 
 		var lookupField = new MultiselectLookup( store, config );
 

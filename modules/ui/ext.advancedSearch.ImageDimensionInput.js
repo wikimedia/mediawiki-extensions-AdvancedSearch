@@ -18,7 +18,7 @@
 	 * @param  {Object} config
 	 */
 	mw.libs.advancedSearch.ui.ImageDimensionInput = function ( store, config ) {
-		this.optionId = config.optionId;
+		this.fieldId = config.fieldId;
 		this.store = store;
 		store.connect( this, { update: 'onStoreUpdate' } );
 
@@ -71,8 +71,8 @@
 	};
 
 	mw.libs.advancedSearch.ui.ImageDimensionInput.prototype.setValuesFromStore = function () {
-		if ( this.store.hasOptionChanged( this.optionId, this.data ) ) {
-			this.setValue( this.store.getOption( this.optionId ) );
+		if ( this.store.hasFieldChanged( this.fieldId, this.data ) ) {
+			this.setValue( this.store.getField( this.fieldId ) );
 		}
 	};
 

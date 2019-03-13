@@ -45,11 +45,11 @@ class DropdownField {
 		this.selector = selector;
 	}
 
-	choose( option ) {
-		let optionElement = browser.element( '.mw-advancedSearch-inlanguage-' + option );
+	choose( fieldName ) {
+		let fieldElement = browser.element( '.mw-advancedSearch-inlanguage-' + fieldName );
 		browser.element( this.selector ).click(); // open inlanguage dropdown
-		browser.execute( 'arguments[0].scrollIntoView(true);', optionElement.value ); // scroll to the option to get it into view
-		optionElement.click();
+		browser.execute( 'arguments[0].scrollIntoView(true);', fieldElement.value ); // scroll to the option to get it into view
+		fieldElement.click();
 	}
 
 	isVisible() {
@@ -62,19 +62,19 @@ class SearchPage extends Page {
 	constructor() {
 		super();
 
-		this.searchTheseWords = new PillField( '#advancedSearchOption-plain' );
-		this.searchExactText = new TextInputField( '#advancedSearchOption-phrase' );
-		this.searchNotTheseWords = new PillField( '#advancedSearchOption-not' );
-		this.searchOneWord = new PillField( '#advancedSearchOption-or' );
+		this.searchTheseWords = new PillField( '#advancedSearchField-plain' );
+		this.searchExactText = new TextInputField( '#advancedSearchField-phrase' );
+		this.searchNotTheseWords = new PillField( '#advancedSearchField-not' );
+		this.searchOneWord = new PillField( '#advancedSearchField-or' );
 
-		this.searchTitle = new TextInputField( '#advancedSearchOption-intitle' );
-		this.searchSubpageof = new TextInputField( '#advancedSearchOption-subpageof' );
-		this.searchCategory = new PillField( '#advancedSearch-deepcategory' );
-		this.searchTemplate = new PillField( '#advancedSearchOption-hastemplate' );
-		this.searchInLanguage = new DropdownField( '#advancedSearchOption-inlanguage' );
+		this.searchTitle = new TextInputField( '#advancedSearchField-intitle' );
+		this.searchSubpageof = new TextInputField( '#advancedSearchField-subpageof' );
+		this.searchCategory = new PillField( '#advancedSearchField-deepcategory' );
+		this.searchTemplate = new PillField( '#advancedSearchField-hastemplate' );
+		this.searchInLanguage = new DropdownField( '#advancedSearchField-inlanguage' );
 
-		this.searchImageWidth = new TextInputField( '#advancedSearchOption-filew' );
-		this.searchImageHeight = new TextInputField( '#advancedSearchOption-fileh' );
+		this.searchImageWidth = new TextInputField( '#advancedSearchField-filew' );
+		this.searchImageHeight = new TextInputField( '#advancedSearchField-fileh' );
 
 	}
 
@@ -85,11 +85,11 @@ class SearchPage extends Page {
 	get searchFileType() {
 		return {
 			selectImageType: function () {
-				browser.element( '#advancedSearchOption-filetype .oo-ui-indicator-down' ).click();
+				browser.element( '#advancedSearchField-filetype .oo-ui-indicator-down' ).click();
 				browser.element( '.mw-advancedSearch-filetype-image-gif' ).click();
 			},
 			selectAudioType: function () {
-				browser.element( '#advancedSearchOption-filetype .oo-ui-indicator-down' ).click();
+				browser.element( '#advancedSearchField-filetype .oo-ui-indicator-down' ).click();
 				browser.element( '.mw-advancedSearch-filetype-audio' ).click();
 			}
 		};
@@ -157,8 +157,8 @@ class SearchPage extends Page {
 	get generalHelpPreset() { return browser.element( '.mw-advancedSearch-namespace-selection input[value="generalHelp"]' ); }
 	get rememberSelection() { return browser.element( '.mw-advancedSearch-namespace-selection input[name="nsRemember"]' ); }
 	get default() { return browser.element( '.mw-advancedSearch-namespace-selection input[value="defaultNamespaces"]' ); }
-	get categorySuggestionsBox() { return browser.element( '#advancedSearch-deepcategory div[role="listbox"]' ); }
-	get templateSuggestionsBox() { return browser.element( '#advancedSearchOption-hastemplate div[role="listbox"]' ); }
+	get categorySuggestionsBox() { return browser.element( '.mw-advancedSearch-deepCategory div[role="listbox"]' ); }
+	get templateSuggestionsBox() { return browser.element( '.mw-advancedSearch-template div[role="listbox"]' ); }
 	get inputIcon() { return browser.element( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-input .oo-ui-iconElement-icon' ); }
 	get logOut() { return browser.element( '#pt-logout a' ); }
 
@@ -230,7 +230,7 @@ class SearchPage extends Page {
 
 	waitForSearchFieldsToLoad() {
 		// Wait for the last search field to be visible as an indicator that all search field widgets have been built
-		browser.waitForExist( '#advancedSearchOption-filetype', 5000 );
+		browser.waitForExist( '#advancedSearchField-filetype', 5000 );
 	}
 }
 module.exports = new SearchPage();

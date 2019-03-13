@@ -16,7 +16,7 @@
 	mw.libs.advancedSearch.ui.TextInput = function ( store, config ) {
 		config = $.extend( {}, config );
 		this.store = store;
-		this.optionId = config.optionId;
+		this.fieldId = config.fieldId;
 
 		this.store.connect( this, { update: 'onStoreUpdate' } );
 
@@ -32,8 +32,8 @@
 	};
 
 	mw.libs.advancedSearch.ui.TextInput.prototype.populateFromStore = function () {
-		if ( this.store.hasOptionChanged( this.optionId, this.getValue() ) ) {
-			this.setValue( this.store.getOption( this.optionId ) );
+		if ( this.store.hasFieldChanged( this.fieldId, this.getValue() ) ) {
+			this.setValue( this.store.getField( this.fieldId ) );
 		}
 	};
 

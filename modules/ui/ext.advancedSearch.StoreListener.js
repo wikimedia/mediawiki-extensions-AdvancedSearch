@@ -16,7 +16,7 @@
 
 	mw.libs.advancedSearch.ui.StoreListener = function ( store, config ) {
 		this.store = store;
-		this.optionId = config.optionId;
+		this.fieldId = config.fieldId;
 
 		mw.libs.advancedSearch.ui.StoreListener.parent.call( this, config );
 		store.connect( this, { update: 'onStoreUpdate' } );
@@ -30,8 +30,8 @@
 	};
 
 	mw.libs.advancedSearch.ui.StoreListener.prototype.setValueFromStore = function () {
-		if ( this.store.hasOptionChanged( this.optionId, this.getValue() ) ) {
-			this.setValue( this.store.getOption( this.optionId ) );
+		if ( this.store.hasFieldChanged( this.fieldId, this.getValue() ) ) {
+			this.setValue( this.store.getField( this.fieldId ) );
 		}
 	};
 
