@@ -184,11 +184,6 @@
 		if ( !$.isEmptyObject( this.searchOptions ) ) {
 			json.options = this.searchOptions;
 		}
-		if ( this.namespaces.length ) {
-			json.namespaces = this.namespaces.map( function ( id ) {
-				return Number( id );
-			} );
-		}
 		return JSON.stringify( json );
 	};
 
@@ -216,12 +211,6 @@
 			for ( var opt in unserialized.options ) {
 				this.searchOptions[ opt ] = unserialized.options[ opt ];
 			}
-			valuesChanged = true;
-		}
-		if ( Array.isArray( unserialized.namespaces ) ) {
-			this.namespaces = unserialized.namespaces.map( function ( id ) {
-				return String( id );
-			} );
 			valuesChanged = true;
 		}
 		if ( valuesChanged ) {

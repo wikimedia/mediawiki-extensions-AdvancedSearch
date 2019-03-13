@@ -34,7 +34,7 @@ class HooksTest extends MediaWikiTestCase {
 
 	public function testGetPreferencesHookHandler() {
 		$preferences = [];
-		Hooks::onGetPreferences( $this->newUser(), $preferences );
+		Hooks::onGetPreferences( $this->newRegisteredUser(), $preferences );
 
 		$this->assertArrayHasKey( 'advancedsearch-disable', $preferences );
 		$this->assertFalse( $preferences['advancedsearch-disable']['default'] );
@@ -44,7 +44,7 @@ class HooksTest extends MediaWikiTestCase {
 		$output = new OutputPage( new RequestContext() );
 		$context = new RequestContext();
 		$context->setOutput( $output );
-		$context->setUser( $this->newUser() );
+		$context->setUser( $this->newAnonymousUser() );
 		$special = new \SpecialSearch();
 		$special->setContext( $context );
 
@@ -59,16 +59,18 @@ class HooksTest extends MediaWikiTestCase {
 			$this->getMock( MimeAnalyzer::class, [ 'getTypesForExtension' ], [], '', false )
 		);
 
-		$output = new OutputPage( new RequestContext() );
-		$context = new RequestContext();
-		$context->setOutput( $output );
-		$context->setUser( $this->newUser() );
-		$special = new SpecialPage( 'Search' );
-		$special->setContext( $context );
+		$special = $this->newSpecialSearchPage(
+			$this->newAnonymousUser(),
+			'/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1',
+				[ 'ns0' => 1 ]
+		);
 
 		Hooks::onSpecialPageBeforeExecute( $special, '' );
 
-		$vars = $output->getJsConfigVars();
+		// Ensure that no namespace-related redirect was performed
+		$this->assertEquals( '', $special->getOutput()->getRedirect() );
+
+		$vars = $special->getOutput()->getJsConfigVars();
 
 		$this->assertArrayHasKey( 'advancedSearch.mimeTypes', $vars );
 		// Integration test only, see MimeTypeConfiguratorTest for the full unit test
@@ -82,14 +84,90 @@ class HooksTest extends MediaWikiTestCase {
 		$this->assertSame( '<NAMESPACEPRESETS>', $vars['advancedSearch.namespacePresets'] );
 	}
 
+	public function testAdvancedSearchForcesNamespacedUrls() {
+		$this->setService(
+			'MimeAnalyzer',
+			$this->getMock( MimeAnalyzer::class, [ 'getTypesForExtension' ], [], '', false )
+		);
+
+		// Search is missing namespace GET parameters like "&ns0=1"
+		$special = $this->newSpecialSearchPage(
+			$this->newAnonymousUser(),
+			'/w/index.php?search=test&title=Special%3ASearch&go=Go',
+			[]
+		);
+
+		Hooks::onSpecialPageBeforeExecute( $special, '' );
+
+		$this->assertEquals(
+			wfGetServerUrl( PROTO_CURRENT ) .
+			'/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1',
+			$special->getOutput()->getRedirect()
+		);
+	}
+
+	public function testAdvancedSearchForcesUserSpecificNamespacedUrls() {
+		$this->setService(
+			'MimeAnalyzer',
+			$this->getMock( MimeAnalyzer::class, [ 'getTypesForExtension' ], [], '', false )
+		);
+
+		// Search is missing namespace GET parameters like "&ns0=1"
+		$special = $this->newSpecialSearchPage(
+			$this->newRegisteredUser(),
+			'/w/index.php?search=test&title=Special%3ASearch&go=Go',
+			[]
+		);
+
+		Hooks::onSpecialPageBeforeExecute( $special, '' );
+
+		$this->assertEquals(
+			wfGetServerUrl( PROTO_CURRENT ) .
+			'/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1&ns6=1&ns10=1',
+			$special->getOutput()->getRedirect()
+		);
+	}
+
+	/**
+	 * @param string $url
+	 * @param array $requestValues
+	 * @return SpecialPage
+	 * @throws \MWException
+	 */
+	private function newSpecialSearchPage( $user, $url, $requestValues = [] ) {
+		$output = new OutputPage( new RequestContext() );
+		$request = new \FauxRequest();
+		$request->setRequestURL( $url );
+		foreach ( $requestValues as $key => $value ) {
+			$request->setVal( $key, $value );
+		}
+		$context = new RequestContext();
+		$context->setOutput( $output );
+		$context->setUser( $user );
+		$context->setRequest( $request );
+		$special = new SpecialPage( 'Search' );
+		$special->setContext( $context );
+		return $special;
+	}
+
 	/**
 	 * @return User
 	 */
-	private function newUser() {
+	private function newAnonymousUser() {
 		$mock = $this->getMockBuilder( User::class )->disableOriginalConstructor()->getMock();
-		// Act like the user has all options disabled
-		$mock->method( 'getBoolOption' )->willReturn( false );
+		$mock->method( 'isAnon' )->willReturn( true );
 		return $mock;
 	}
 
+	/**
+	 * @return User
+	 */
+	private function newRegisteredUser() {
+		$mock = $this->getMockBuilder( User::class )->disableOriginalConstructor()->getMock();
+		// Act like the user has all options disabled
+		$mock->method( 'getBoolOption' )->willReturn( false );
+		$mock->method( 'isAnon' )->willReturn( false );
+		$mock->mOptions = [ 'searchNs0' => 0, 'searchNs6' => 1, 'searchNs10' => 1 ];
+		return $mock;
+	}
 }

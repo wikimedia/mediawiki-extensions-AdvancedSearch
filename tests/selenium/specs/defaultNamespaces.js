@@ -93,26 +93,11 @@ describe( 'Advanced Search', function () {
 		assert.deepEqual( selectedNamespaceIDs, expectedNamespaceIDs );
 	} );
 
-	it( 'ignores the namespaces from the URL when advancedSearch is submitted', function () {
-		SearchPage.open( {
-			ns0: 1,
-			ns1: 1,
-			ns2: 1,
-			ns10: 1,
-			// fake an advancedSearch submission by providing a state
-			'advancedSearch-current': JSON.stringify( { options: {}, namespaces: [ '1', '2' ] } )
-		} );
-		let selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs(),
-			expectedNamespaceIDs = [ '1', '2' ];
-		selectedNamespaceIDs.sort();
-		expectedNamespaceIDs.sort();
-		browser.call( resetUserOptions );
-
-		assert.deepEqual( selectedNamespaceIDs, expectedNamespaceIDs );
-	} );
-
 	it( 'displays the default namespaces of the user and wiki and that the default checkbox is selected', function () {
+		// Since MediaWiki core does not allow us to delete the NS_MAIN namespace,
+		// we add it to the expected result
 		let defaultNamespaceOptions = [ '15', '4', '5', '6' ];
+		let expectedNamespaceOptions = [ '0', '15', '4', '5', '6' ];
 		browser.call( resetUserOptions );
 		browser.call( () => {
 			return setSearchNamespaceOptions( defaultNamespaceOptions );
@@ -121,8 +106,8 @@ describe( 'Advanced Search', function () {
 		SearchPage.open();
 		let selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs();
 		selectedNamespaceIDs.sort();
-		defaultNamespaceOptions.sort();
+		expectedNamespaceOptions.sort();
 		assert( SearchPage.default.isSelected() );
-		assert.deepEqual( defaultNamespaceOptions, selectedNamespaceIDs );
+		assert.deepEqual( expectedNamespaceOptions, selectedNamespaceIDs );
 	} );
 } );
