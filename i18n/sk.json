@@ -3,7 +3,8 @@
 		"authors": [
 			"Pmikolas44",
 			"TomášPolonec",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Robert Važan"
 		]
 	},
 	"advancedsearch-desc": "Jednoduchý prístup k pokročilým možnostiam vyhľadávania na stránke [[Special:Search]]",
@@ -39,6 +40,7 @@
 	"advancedsearch-filesize-smaller-than": "menšia ako",
 	"advancedsearch-namespaces-search-in": "Prehľadávať:",
 	"advancedsearch-namespaces-preset-all": "Všetko",
+	"advancedsearch-namespaces-preset-default": "Predvolené",
 	"advancedsearch-namespaces-placeholder": "Pridať menné priestory",
 	"advancedsearch-beta-feature-message": "Rozhranie pokročilého vyhľadávania",
 	"advancedsearch-beta-feature-description": "Jednoduchý prístup k pokročilým možnostiam vyhľadávania na stránke [[Special:Search]]."
