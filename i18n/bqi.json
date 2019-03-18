@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Mogoeilor",
-			"Beyronvan"
+			"Beyronvan",
+			"Kikumoron"
 		]
 	},
 	"advancedsearch-options-pane-head": "پینیارٱل پیشکرداْ:",
@@ -39,6 +40,7 @@
 	"advancedsearch-filesize-greater-than": "گٱپتراٛ ز",
 	"advancedsearch-filesize-smaller-than": "کۊچیرتراٛ ز",
 	"advancedsearch-namespaces-search-in": "میٛن ناْ بگرد:",
+	"advancedsearch-namespaces-remember": "گولاْڤورچین کردن ناْ سی پاٛی جۊریٱل نیایی ب ڤیرت بۊ.",
 	"advancedsearch-namespaces-preset-all": "هٱمٱ",
 	"advancedsearch-namespaces-preset-default": "پیش فٱرز",
 	"advancedsearch-namespaces-preset-general-help": "هومیاری کولی",
