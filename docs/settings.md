@@ -6,11 +6,11 @@ It should be updated each time a new configuration parameter is added or changed
 
 ### Namespace presets `$wgAdvancedSearchNamespacePresets`
 
-AdvancedSearch supports namespace presets, groups of namespaces that are offered for batch selection via dedicated checkboxes. [By default](https://phabricator.wikimedia.org//r/p/mediawiki/extensions/AdvancedSearch;browse/master/extension.json$23) three presets are offered - _discussion_, _generalHelp_, and _all_.
+AdvancedSearch supports namespace presets, groups of namespaces that are offered for batch selection via dedicated checkboxes. [By default](https://phabricator.wikimedia.org/diffusion/EASR/browse/master/extension.json$32) the following presets are offered: _defaultNamespaces_, _discussion_, _generalHelp_, and _all_.
 
 Which namespaces are contained in a preset can be configured
 * statically, through the `namespaces` key containing an array of namespace ids,
-* or programmatically through the `provider` key containing a reference to a JavaScript function returning the aforementioned namespace id array. The available provider functions are implemented in [NamespacePresetProviders](https://phabricator.wikimedia.org//r/p/mediawiki/extensions/AdvancedSearch;browse/master/modules/dm/ext.advancedSearch.NamespacePresetProviders.js).
+* or programmatically through the `provider` key containing a reference to a JavaScript function returning the aforementioned namespace id array. The available provider functions are implemented in [NamespacePresetProviders](https://phabricator.wikimedia.org/diffusion/EASR/browse/master/modules/dm/ext.advancedSearch.NamespacePresetProviders.js).
 
 You can use `$wgAdvancedSearchNamespacePresets` to modify the default configuration or add your own presets.
 
@@ -54,7 +54,7 @@ $wgAdvancedSearchNamespacePresets = [
 ```
 
 ```
-// in the Javascript initialization code of your extension or in the common.js of your wiki 
+// in the Javascript initialization code of your extension or in the common.js of your wiki
 function customTalkNamespaceProvider( namespaceIds ) {
 	$.grep( namespaceIds, function ( id ) {
 		var numericId = Number( id );
@@ -62,13 +62,13 @@ function customTalkNamespaceProvider( namespaceIds ) {
 	} );
 }
 
-mw.hook( 'advancedSearch.initNamespacePresetProviders' ).add( 
+mw.hook( 'advancedSearch.initNamespacePresetProviders' ).add(
 	function( namespaceProviders ) {
 		// use unique provider ID from PHP config as key
 		namespaceProviders[ 'custom-talk' ] = customTalkNamespaceProvider;
-	} 
-); 
+	}
+);
 ```
 
-The provider function `customTalkNamespaceProvider` will get an array of all supported namespaces IDs. If it returns unsupported namespace IDs, the preset will not be shown. 
-If the provider function returns an empty array, the preset is not shown. This is for creating presets that depend on the existence of certain namespaces. 
+The provider function `customTalkNamespaceProvider` will get an array of all supported namespaces IDs. If it returns unsupported namespace IDs, the preset will not be shown.
+If the provider function returns an empty array, the preset is not shown. This is for creating presets that depend on the existence of certain namespaces.
