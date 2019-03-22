@@ -116,10 +116,9 @@
 					// redundant span to cover browsers without support for bdi tag
 					.add( $( '<span>' ).addClass( 'mw-advancedSearch-searchPreview-content' ).append(
 						$( '<bdi>' ).text( formattedValue )
-					) )
+					) ),
+				draggable: false
 			} );
-
-		tag.toggleDraggable( false ); // constructor config has no effect; https://phabricator.wikimedia.org/T172781
 
 		tag.connect( this, {
 			remove: function () {
