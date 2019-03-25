@@ -2,8 +2,6 @@
 
 namespace AdvancedSearch;
 
-use BetaFeatures;
-use ExtensionRegistry;
 use MediaWiki\MediaWikiServices;
 use ResourceLoader;
 use SpecialPage;
@@ -25,17 +23,6 @@ class Hooks {
 		$services = MediaWikiServices::getInstance();
 		$mainConfig = $special->getConfig();
 		$searchConfig = $services->getSearchEngineConfig();
-
-		/**
-		 * If the BetaFeatures extension is loaded then require the current user
-		 * to have the feature enabled.
-		 */
-		if ( $mainConfig->get( 'AdvancedSearchBetaFeature' ) &&
-			ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) &&
-			!BetaFeatures::isFeatureEnabled( $special->getUser(), 'advancedsearch' )
-		) {
-			return;
-		}
 
 		/**
 		 * If the user is logged in and has explicitly requested to disable the extension don't load.
@@ -106,40 +93,6 @@ class Hooks {
 				\Html::element( 'div', [ 'class' => 'mw-search-spinner-bounce' ] )
 			)
 		);
-	}
-
-	/**
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/GetBetaFeaturePreferences
-	 *
-	 * @param User $user
-	 * @param array[] &$prefs
-	 */
-	public static function onGetBetaFeaturePreferences( User $user, array &$prefs ) {
-		$config = MediaWikiServices::getInstance()->getMainConfig();
-
-		/**
-		 * If the BetaFeatures extension is loaded then require the current user
-		 * to have the feature enabled.
-		 */
-		if ( !$config->get( 'AdvancedSearchBetaFeature' ) ) {
-			return;
-		}
-
-		$extensionAssetsPath = $config->get( 'ExtensionAssetsPath' );
-
-		$prefs['advancedsearch'] = [
-			'label-message' => 'advancedsearch-beta-feature-message',
-			'desc-message' => 'advancedsearch-beta-feature-description',
-			'screenshot' => [
-				'ltr' => "$extensionAssetsPath/AdvancedSearch/resources/AdvancedSearch-beta-features-ltr.svg",
-				'rtl' => "$extensionAssetsPath/AdvancedSearch/resources/AdvancedSearch-beta-features-rtl.svg",
-			],
-			'info-link' => 'https://www.mediawiki.org/wiki/Help:Extension:AdvancedSearch',
-			'discussion-link' => 'https://www.mediawiki.org/wiki/Help_talk:Extension:AdvancedSearch',
-			'requirements' => [
-				'javascript' => true,
-			],
-		];
 	}
 
 	/**

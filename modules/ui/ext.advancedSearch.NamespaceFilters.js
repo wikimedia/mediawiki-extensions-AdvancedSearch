@@ -190,7 +190,7 @@
 		if ( menuItem.checkboxWidget.isSelected() ) {
 			this.store.setNamespaces( this.removeNamespaceTag( menuItem.getData() ) );
 		} else {
-			mw.libs.advancedSearch.ui.NamespaceFilters.parent.prototype.onMenuChoose.call( this, menuItem );
+			mw.libs.advancedSearch.ui.NamespaceFilters.parent.prototype.onMenuChoose.call( this, menuItem, true );
 			this.highlightLastSelectedTag( menuItem.getData() );
 			this.clearInput();
 		}
