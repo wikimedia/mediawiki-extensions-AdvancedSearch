@@ -22,7 +22,7 @@
 	 */
 	mw.libs.advancedSearch.ui.ExpandablePane = function ( config ) {
 		config = $.extend( config, { data: this.STATE_CLOSED } );
-
+		this.suffix = config.suffix;
 		mw.libs.advancedSearch.ui.ExpandablePane.parent.call( this, config );
 
 		this.button = new OO.ui.ButtonWidget( {
@@ -41,7 +41,7 @@
 			.addClass( 'mw-advancedSearch-expandablePane-pane' );
 		this.dependentPaneContentBuilder = config.dependentPaneContentBuilder;
 
-		this.$element.addClass( 'mw-advancedSearch-expandablePane-' + config.suffix );
+		this.$element.addClass( 'mw-advancedSearch-expandablePane-' + this.suffix );
 		this.$element.append( this.button.$element, this.$dependentPane );
 		this.button.$element.attr( {
 			'aria-expanded': 'false',
@@ -62,12 +62,12 @@
 			this.data = this.STATE_CLOSED;
 			this.updatePaneVisibility( this.STATE_CLOSED );
 			this.notifyChildInputVisibility( false );
-			mw.track( 'counter.MediaWiki.AdvancedSearch.event.collapse' );
+			mw.track( 'counter.MediaWiki.AdvancedSearch.event.' + this.suffix + '.collapse' );
 		} else {
 			this.data = this.STATE_OPEN;
 			this.updatePaneVisibility( this.STATE_OPEN );
 			this.notifyChildInputVisibility( true );
-			mw.track( 'counter.MediaWiki.AdvancedSearch.event.expand' );
+			mw.track( 'counter.MediaWiki.AdvancedSearch.event.' + this.suffix + '.expand' );
 		}
 		this.emit( 'change', this.data );
 	};
