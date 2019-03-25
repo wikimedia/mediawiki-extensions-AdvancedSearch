@@ -3,7 +3,6 @@
 namespace AdvancedSearch\Tests;
 
 use AdvancedSearch\Hooks;
-use ExtensionRegistry;
 use HashConfig;
 use MediaWikiTestCase;
 use MimeAnalyzer;
@@ -26,21 +25,11 @@ class HooksTest extends MediaWikiTestCase {
 		$this->setUserLang( 'qqx' );
 
 		$this->overrideMwServices( new HashConfig( [
-			'AdvancedSearchBetaFeature' => true,
 			// Intentional dummy values just to make sure they appear in the assertions below
 			'AdvancedSearchNamespacePresets' => '<NAMESPACEPRESETS>',
 			'ExtensionAssetsPath' => '<PATH>',
 			'FileExtensions' => [ '<EXT>' ],
 		] ) );
-	}
-
-	public function testGetBetaFeaturePreferencesHookHandler() {
-		$prefs = [];
-		Hooks::onGetBetaFeaturePreferences( $this->newUser(), $prefs );
-
-		$this->assertArrayHasKey( 'advancedsearch', $prefs );
-		$this->assertStringStartsWith( '<PATH>/', $prefs['advancedsearch']['screenshot']['ltr'] );
-		$this->assertStringStartsWith( '<PATH>/', $prefs['advancedsearch']['screenshot']['rtl'] );
 	}
 
 	public function testGetPreferencesHookHandler() {
@@ -65,10 +54,6 @@ class HooksTest extends MediaWikiTestCase {
 	}
 
 	public function testSpecialPageBeforeExecuteHookHandler() {
-		if ( ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) ) {
-			$this->setMwGlobals( 'BetaFeaturesWhitelist', [ 'advancedsearch' ] );
-		}
-
 		$this->setService(
 			'MimeAnalyzer',
 			$this->getMock( MimeAnalyzer::class, [ 'getTypesForExtension' ], [], '', false )

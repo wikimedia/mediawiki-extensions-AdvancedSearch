@@ -21,10 +21,6 @@
 		"AdvancedSearch\\Tests\\": "tests/phpunit/"
 	},
 	"config": {
-		"AdvancedSearchBetaFeature": {
-			"description": "Make the AdvancedSearch feature a BetaFeature. Setting this requires the BetaFeature extension and requires each user to enable the BetaFeature.",
-			"value": true
-		},
 		"AdvancedSearchDeepcatEnabled": {
 			"description": "Category search also includes child categories.",
 			"value": true
@@ -60,9 +56,6 @@
 		}
 	},
 	"Hooks": {
-		"GetBetaFeaturePreferences": [
-			"AdvancedSearch\\Hooks::onGetBetaFeaturePreferences"
-		],
 		"GetPreferences": [
 			"AdvancedSearch\\Hooks::onGetPreferences"
 		],
