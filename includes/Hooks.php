@@ -24,54 +24,111 @@ class Hooks {
 		$mainConfig = $special->getConfig();
 		$searchConfig = $services->getSearchEngineConfig();
 
-		/**
-		 * If the user is logged in and has explicitly requested to disable the extension don't load.
-		 */
-		if ( !$special->getUser()->isAnon() &&
-			$special->getUser()->getBoolOption( 'advancedsearch-disable' )
-		) {
+		if ( $special->getName() !== 'Search' ) {
 			return;
 		}
 
-		if ( $special->getName() === 'Search' ) {
-			$special->getOutput()->addModules( [
-				'ext.advancedSearch.init',
-				'ext.advancedSearch.searchtoken',
-			] );
-			$special->getOutput()->addModuleStyles( 'ext.advancedSearch.initialstyles' );
+		/**
+		 * If the user is logged in and has explicitly requested to disable the extension, don't load.
+		 * Ensure namespaces are always part of search URLs
+		 */
+		if ( !$special->getUser()->isAnon() &&
+			$special->getUser()->getBoolOption( 'advancedsearch-disable' ) ) {
+			return;
+		}
 
+		/**
+		 * Ensure the current URL is specifying the namespaces which are to be used
+		 */
+		self::redirectToNamespacedRequest( $special );
+		if ( $special->getOutput()->getRedirect() ) {
+			return;
+		}
+
+		$special->getOutput()->addModules( [
+			'ext.advancedSearch.init',
+			'ext.advancedSearch.searchtoken',
+		] );
+
+		$special->getOutput()->addModuleStyles( 'ext.advancedSearch.initialstyles' );
+
+		$special->getOutput()->addJsConfigVars(
+			'advancedSearch.mimeTypes',
+			( new MimeTypeConfigurator( $services->getMimeAnalyzer() ) )
+				->getMimeTypes( $special->getConfig()->get( 'FileExtensions' ) )
+		);
+
+		$special->getOutput()->addJsConfigVars( [
+			'advancedSearch.tooltips' => TooltipGenerator::generateToolTips(),
+			'advancedSearch.namespacePresets' => $mainConfig->get( 'AdvancedSearchNamespacePresets' ),
+			'advancedSearch.deepcategoryEnabled' => $mainConfig->get( 'AdvancedSearchDeepcatEnabled' ),
+			'advancedSearch.searchableNamespaces' =>
+				SearchableNamespaceListBuilder::getCuratedNamespaces(
+					$searchConfig->searchableNamespaces()
+			)
+		] );
+
+		/**
+		 * checks if extension Translate is installed and enabled
+		 * https://github.com/wikimedia/mediawiki-extensions-Translate/blob/master/Translate.php#L351
+		 * this check is not performed with ExtensionRegistry
+		 * because Translate extension does not have extension.json
+		 */
+		if ( $mainConfig->has( 'EnablePageTranslation' ) &&
+			$mainConfig->get( 'EnablePageTranslation' ) === true ) {
 			$special->getOutput()->addJsConfigVars(
-				'advancedSearch.mimeTypes',
-				( new MimeTypeConfigurator( $services->getMimeAnalyzer() ) )->getMimeTypes(
-					$mainConfig->get( 'FileExtensions' )
-				)
+				'advancedSearch.languages', Language::fetchLanguageNames()
 			);
+		}
+	}
 
-			$special->getOutput()->addJsConfigVars( [
-				'advancedSearch.tooltips' => TooltipGenerator::generateToolTips(),
-				'advancedSearch.namespacePresets' => $mainConfig->get( 'AdvancedSearchNamespacePresets' ),
-				'advancedSearch.deepcategoryEnabled' => $mainConfig->get( 'AdvancedSearchDeepcatEnabled' ),
-				'advancedSearch.searchableNamespaces' =>
-					SearchableNamespaceListBuilder::getCuratedNamespaces(
-						$searchConfig->searchableNamespaces()
-					)
-			] );
+	/**
+	 * If the request does not contain any namespaces, redirect to URL with user default namespaces
+	 * Returns false if user has no namespaces defined
+	 */
+	private static function redirectToNamespacedRequest( \SpecialPage $special ) {
+		if ( !self::isNamespacedRequest( $special ) ) {
+			$namespacedSearchUrl = $special->getRequest()->getFullRequestURL();
+			foreach ( self::getDefaultNamespaces( $special->getUser() ) as $namespace ) {
+				$namespacedSearchUrl .= '&ns' . $namespace . '=1';
+			}
+			$special->getOutput()->redirect( $namespacedSearchUrl );
+		}
+	}
 
-			/**
-			 * checks if extension Translate is installed and enabled
-			 * https://github.com/wikimedia/mediawiki-extensions-Translate/blob/master/Translate.php#L351
-			 * this check is not performed with ExtensionRegistry
-			 * because Translate extension does not have extension.json
-			 */
-			if ( $mainConfig->has( 'EnablePageTranslation' ) &&
-				$mainConfig->get( 'EnablePageTranslation' ) === true
-			) {
-				$special->getOutput()->addJsConfigVars(
-					'advancedSearch.languages',
-					Language::fetchLanguageNames()
-				);
+	/**
+	 * Retrieves the default namespaces for the current user
+	 */
+	private static function getDefaultNamespaces( User $user ): array {
+		$namespaces = [];
+		if ( !$user->isAnon() ) {
+			foreach ( $user->mOptions as $option => $optionValue ) {
+				if ( preg_match( '/^searchNs(\d+)$/', $option, $matchedNamespace ) ) {
+					$namespaces [] = $matchedNamespace[1];
+				}
 			}
 		}
+
+		if ( empty( $namespaces ) ) {
+			$config = MediaWikiServices::getInstance()->getMainConfig();
+			$namespaces = array_keys( $config->get( 'NamespacesToBeSearchedDefault' ) );
+		}
+
+		return $namespaces;
+	}
+
+	/**
+	 * Checks if search request specifies any namespaces
+	 * @param SpecialPage $special
+	 * @return bool
+	 */
+	private static function isNamespacedRequest( \SpecialPage $special ) {
+		foreach ( array_keys( $special->getRequest()->getValues() ) as $requestKey ) {
+			if ( preg_match( '/^ns\d+$/', $requestKey ) ) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -84,8 +141,7 @@ class Hooks {
 	public static function onSpecialSearchResultsPrepend(
 		\SpecialSearch $specialSearch,
 		\OutputPage $output,
-		$term
-	) {
+		$term ) {
 		$output->addHTML(
 			\Html::rawElement(
 				'div',

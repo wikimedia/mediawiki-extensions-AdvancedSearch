@@ -119,25 +119,24 @@
 
 	QUnit.test( 'Setting valid JSON overrides previous state', function ( assert ) {
 		var model = createModelWithValues();
-		model.setAllFromJSON( '{"options":{"or":[ "fish", "turtle" ],"prefix":"Sea"},"namespaces":[0,2]}' );
+		model.setAllFromJSON( '{"options":{"or":[ "fish", "turtle" ],"prefix":"Sea"}}' );
 
 		assert.deepEqual( model.getOptions(), {
 			or: [ 'fish', 'turtle' ],
 			prefix: 'Sea'
 		} );
-		assert.deepEqual( model.getNamespaces(), [ '0', '2' ] );
 	} );
 
-	QUnit.test( 'Options and namespaces are serialized to JSON', function ( assert ) {
+	QUnit.test( 'Options are serialized to JSON', function ( assert ) {
 		var model = createModelWithValues();
 
 		assert.strictEqual(
 			model.toJSON(),
-			'{"options":{"not":"octopi","prefix":"Page"},"namespaces":[1,3]}'
+			'{"options":{"not":"octopi","prefix":"Page"}}'
 		);
 	} );
 
-	QUnit.test( 'Empty options and namespaces are not serialized to JSON', function ( assert ) {
+	QUnit.test( 'Empty options are not serialized to JSON', function ( assert ) {
 		assert.strictEqual(
 			new SearchModel().toJSON(),
 			'{}'
