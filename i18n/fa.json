@@ -54,7 +54,5 @@
 	"advancedsearch-namespaces-preset-default": "پیش‌فرض",
 	"advancedsearch-namespaces-preset-general-help": "کمک عمومی",
 	"advancedsearch-namespaces-preset-discussion": "بحث",
-	"advancedsearch-namespaces-placeholder": "افزودن فضاهای نام…",
-	"advancedsearch-beta-feature-message": "رابط جستجوی پیشرفته",
-	"advancedsearch-beta-feature-description": "دسترسی آسان به قابلیت‌های جستجوی پیشرفته با [[Special:Search]]"
+	"advancedsearch-namespaces-placeholder": "افزودن فضاهای نام…"
 }

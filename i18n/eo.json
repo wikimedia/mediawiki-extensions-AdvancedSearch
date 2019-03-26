@@ -45,8 +45,6 @@
 	"advancedsearch-namespaces-preset-general-help": "Ĝenerala helpo",
 	"advancedsearch-namespaces-preset-discussion": "Diskuto",
 	"advancedsearch-namespaces-placeholder": "Aldoni nomspacojn...",
-	"advancedsearch-beta-feature-message": "Altnivela serĉa interfaco",
-	"advancedsearch-beta-feature-description": "Facila aliro al altnivelaj serĉaj kapabloj sur [[Special:Search]]",
 	"prefs-advancedsearch": "Altnivela serĉo",
 	"advancedsearch-preference-help": "Altnivela Serĉo aldonas formularon al la paĝo Special:Search page. Tio ĉi permesas al vi fari altnivelajn serĉojn, eĉ se vi ne regas ajnan serĉan sintakson. Ĝi ankaŭ ŝanĝas la manieron laŭ kiu nomspacoj povas esti elektitaj.",
 	"advancedsearch-preference-disable": "Ne montri la altnivelan serĉan interfacon"

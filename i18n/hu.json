@@ -51,8 +51,6 @@
 	"advancedsearch-namespaces-preset-general-help": "Segítségnyújtás",
 	"advancedsearch-namespaces-preset-discussion": "Megbeszélések",
 	"advancedsearch-namespaces-placeholder": "Névterek hozzáadása…",
-	"advancedsearch-beta-feature-message": "Fejlett keresési felület",
-	"advancedsearch-beta-feature-description": "Egyszerű hozzáférés a haladó keresési lehetőségekhez a [[Special:Search]] oldalon.",
 	"prefs-advancedsearch": "Fejlett kereső",
 	"advancedsearch-preference-disable": "A fejlett keresőfelület elrejtése"
 }

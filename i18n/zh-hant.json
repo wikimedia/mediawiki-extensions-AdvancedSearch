@@ -64,8 +64,6 @@
 	"advancedsearch-namespaces-preset-general-help": "一般說明",
 	"advancedsearch-namespaces-preset-discussion": "討論",
 	"advancedsearch-namespaces-placeholder": "加入命名空間…",
-	"advancedsearch-beta-feature-message": "進階搜尋介面",
-	"advancedsearch-beta-feature-description": "在[[Special:Search]]提供進階搜尋功能的輕鬆存取。",
 	"prefs-advancedsearch": "進階搜尋",
 	"advancedsearch-preference-help": "進階搜尋可添加表單至 Special:Search page。這能讓您即使不瞭解搜尋語法，也能執行特定搜尋。這也會變更命名空間選擇的方式。",
 	"advancedsearch-preference-disable": "不要顯示進階搜尋介面"

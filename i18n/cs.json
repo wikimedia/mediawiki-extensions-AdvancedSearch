@@ -61,8 +61,6 @@
 	"advancedsearch-namespaces-preset-general-help": "Všeobecná pomoc",
 	"advancedsearch-namespaces-preset-discussion": "Diskuse",
 	"advancedsearch-namespaces-placeholder": "Přidejte jmenné prostory…",
-	"advancedsearch-beta-feature-message": "Rozhraní pokročilého vyhledávání",
-	"advancedsearch-beta-feature-description": "Jednoduchý přístup k pokročilým možnostem vyhledávání na stránce [[Special:Search]].",
 	"prefs-advancedsearch": "Pokročilé vyhledávání",
 	"advancedsearch-preference-help": "Pokročilé vyhledávání přidává na stránku Speciální:Hledání formulář, který umožňuje provádět specializovaná vyhledávání bez znalosti syntaxe vyhledávače. Také mění způsob, kterým se vybírají jmenné prostory.",
 	"advancedsearch-preference-disable": "Nezobrazovat rozhraní Pokročilého vyhledávání"

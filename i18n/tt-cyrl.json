@@ -33,7 +33,5 @@
 	"advancedsearch-namespaces-preset-default": "Килешү буенча",
 	"advancedsearch-namespaces-preset-general-help": "Гомуми ярдәм",
 	"advancedsearch-namespaces-preset-discussion": "Бәхәс",
-	"advancedsearch-namespaces-placeholder": "Исемнәр мәйданын өстәү...",
-	"advancedsearch-beta-feature-message": "Киңәйтелгән эзләү интерфейсы",
-	"advancedsearch-beta-feature-description": "[[Special:Search]] битендә киңәйтелгән эзләү мөмкинлекләрен куллану"
+	"advancedsearch-namespaces-placeholder": "Исемнәр мәйданын өстәү..."
 }

@@ -46,8 +46,6 @@
 	"advancedsearch-namespaces-preset-general-help": "Општа помоћ",
 	"advancedsearch-namespaces-preset-discussion": "Разговор",
 	"advancedsearch-namespaces-placeholder": "Додајте именске просторе…",
-	"advancedsearch-beta-feature-message": "Интерфејс за напредну претрагу",
-	"advancedsearch-beta-feature-description": "Лак приступ напредним могућностима претраге на [[Special:Search|Посебно:Претражи]].",
 	"prefs-advancedsearch": "Напредна претрага",
 	"advancedsearch-preference-help": "Напредна претрага додаје образац на страницу „Посебно:Претражи”. Ово вам омогућава да извршите специјализоване претраге, чак и ако не знате никакву синтаксу претраге. Мења и начин на који се могу изабрати именски простори.",
 	"advancedsearch-preference-disable": "Не приказуј интерфејс напредне претраге"

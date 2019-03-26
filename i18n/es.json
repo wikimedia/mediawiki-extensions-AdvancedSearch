@@ -57,8 +57,6 @@
 	"advancedsearch-namespaces-preset-general-help": "Ayuda general",
 	"advancedsearch-namespaces-preset-discussion": "Discusión",
 	"advancedsearch-namespaces-placeholder": "Añadir espacios de nombres…",
-	"advancedsearch-beta-feature-message": "Interfaz de búsqueda avanzada",
-	"advancedsearch-beta-feature-description": "Acceso sencillo a las prestaciones de búsqueda avanzadas de [[Special:Search]].",
 	"prefs-advancedsearch": "Búsqueda avanzada",
 	"advancedsearch-preference-help": "La búsqueda avanzada añade un formulario a la página Especial:Buscar. Este te permite realizar búsquedas especializadas, incluso si no conoces ninguna sintaxis de búsqueda. También cambia la manera en que se pueden seleccionar los espacios de nombres.",
 	"advancedsearch-preference-disable": "No mostrar la interfaz de búsqueda avanzada."

@@ -73,8 +73,6 @@
 	"advancedsearch-namespaces-preset-general-help": "Общая справка",
 	"advancedsearch-namespaces-preset-discussion": "Обсуждения",
 	"advancedsearch-namespaces-placeholder": "Добавить пространства имён…",
-	"advancedsearch-beta-feature-message": "Интерфейс расширенного поиска",
-	"advancedsearch-beta-feature-description": "Легкий доступ к расширенным возможностям поиска на [[Special:Search]].",
 	"prefs-advancedsearch": "Расширенный поиск",
 	"advancedsearch-preference-help": "Расширенный поиск добавляет на страницу Служебная:Поиск форму с дополнительными полями. Это позволяет выполнять специализированный поиск, даже если вы не знаете поискового синтаксиса. Он также изменяет способ выбора пространств имён.",
 	"advancedsearch-preference-disable": "Не показывать интерфейс расширенного поиска"

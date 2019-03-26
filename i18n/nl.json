@@ -58,8 +58,6 @@
 	"advancedsearch-namespaces-preset-general-help": "Algemene Hulp",
 	"advancedsearch-namespaces-preset-discussion": "Overleg",
 	"advancedsearch-namespaces-placeholder": "Naamruimtes toevoegen...",
-	"advancedsearch-beta-feature-message": "Interface voor geavanceerd zoeken",
-	"advancedsearch-beta-feature-description": "Eenvoudige toegang tot geavanceerde zoekmogelijkheden op [[Special:Search]].",
 	"prefs-advancedsearch": "Uitgebreid zoeken",
 	"advancedsearch-preference-disable": "Uitgebreid zoeken niet meer weergeven"
 }

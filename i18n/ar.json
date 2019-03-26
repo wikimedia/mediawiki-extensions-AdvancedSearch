@@ -61,8 +61,6 @@
 	"advancedsearch-namespaces-preset-general-help": "مساعدة عامة",
 	"advancedsearch-namespaces-preset-discussion": "نقاش",
 	"advancedsearch-namespaces-placeholder": "أضف نطاقات…",
-	"advancedsearch-beta-feature-message": "واجهة البحث المتقدم",
-	"advancedsearch-beta-feature-description": "وصول سهل للبحث المتقدم في [[Special:Search|خاص:بحث]].",
 	"prefs-advancedsearch": "البحث المتقدم",
 	"advancedsearch-preference-help": "يضيف البحث المتقدم نموذجا إلى صفحة خاص:بحث، يتيح لك هذا إجراء عمليات بحث متخصصة، حتى إذا كنت لا تعرف أية بنية بحث، كما أنه يغير الطريقة التي يمكن بها تحديد النطاقات.",
 	"advancedsearch-preference-disable": "لا تعرض واجهة البحث المتقدم"

@@ -62,8 +62,6 @@
 	"advancedsearch-namespaces-preset-general-help": "Genel Yardım",
 	"advancedsearch-namespaces-preset-discussion": "Tartışma",
 	"advancedsearch-namespaces-placeholder": "Ad alanları ekle...",
-	"advancedsearch-beta-feature-message": "Gelişmiş Arama Arabirimi",
-	"advancedsearch-beta-feature-description": "[[Special:Search|Özel:Ara]]'da gelişmiş arama özelliklerine kolay erişim",
 	"prefs-advancedsearch": "Gelişmiş Arama",
 	"advancedsearch-preference-disable": "Gelişmiş Arama arayüzünü gösterme"
 }

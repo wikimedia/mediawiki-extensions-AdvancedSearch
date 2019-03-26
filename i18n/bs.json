@@ -52,7 +52,5 @@
 	"advancedsearch-namespaces-preset-default": "Predodređeno",
 	"advancedsearch-namespaces-preset-general-help": "Opšta pomoć",
 	"advancedsearch-namespaces-preset-discussion": "Razgovor",
-	"advancedsearch-namespaces-placeholder": "Dodaj imenske prostore…",
-	"advancedsearch-beta-feature-message": "Interfejs za naprednu pretragu",
-	"advancedsearch-beta-feature-description": "Lagan pristup naprednim mogućnostima pretrage na [[Special:Search]]."
+	"advancedsearch-namespaces-placeholder": "Dodaj imenske prostore…"
 }

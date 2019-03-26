@@ -58,8 +58,6 @@
 	"advancedsearch-namespaces-preset-general-help": "Ajuda general",
 	"advancedsearch-namespaces-preset-discussion": "Discussió",
 	"advancedsearch-namespaces-placeholder": "Afegeix espais de noms",
-	"advancedsearch-beta-feature-message": "Interfície de cerca avançada",
-	"advancedsearch-beta-feature-description": "Accés senzill a les capacitats de cerca a [[Special:Search|Especial:Cerca]]",
 	"prefs-advancedsearch": "Cerca avançada",
 	"advancedsearch-preference-help": "La cerca avançada incorpora un formulari a la pàgina \"Especial:Cerca\". Això permet realitzar cerques especialitzades fins i tot sense conèixer-ne la sintaxi. També canvia la manera com poden ser seleccionats els espais de noms.",
 	"advancedsearch-preference-disable": "No mostrar la interfície de cerca avançada"

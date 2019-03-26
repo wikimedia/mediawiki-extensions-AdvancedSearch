@@ -61,8 +61,6 @@
 	"advancedsearch-namespaces-preset-general-help": "Trợ giúp chung",
 	"advancedsearch-namespaces-preset-discussion": "Thảo luận",
 	"advancedsearch-namespaces-placeholder": "Thêm không gian tên…",
-	"advancedsearch-beta-feature-message": "Giao diện tìm kiếm nâng cao",
-	"advancedsearch-beta-feature-description": "Truy cập các chức năng tìm kiếm nâng cao một cách dễ dàng tại [[Special:Search]]",
 	"prefs-advancedsearch": "Tìm kiếm nâng cao",
 	"advancedsearch-preference-help": "Tìm kiếm nâng cao thêm một mẫu vào trang Đặc biệt:Tìm kiếm. Nó cho phép bạn thực hiện các tìm kiếm đặc biệt, ngay cả khi bạn không biết cú pháp tìm kiếm nào. Nó cũng thay đổi cách bạn chọn vùng tên.",
 	"advancedsearch-preference-disable": "Không hiển thị giao diện Tìm kiếm nâng cao"

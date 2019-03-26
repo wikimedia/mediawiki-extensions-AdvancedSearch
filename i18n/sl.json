@@ -58,8 +58,6 @@
 	"advancedsearch-namespaces-preset-general-help": "Splošna pomoč",
 	"advancedsearch-namespaces-preset-discussion": "Pogovor",
 	"advancedsearch-namespaces-placeholder": "Dodaj imenske prostore ...",
-	"advancedsearch-beta-feature-message": "Vmesnik naprednega iskanja",
-	"advancedsearch-beta-feature-description": "Enostaven dostop do naprednih možnosti na [[Special:Search|Posebno:Iskanje]].",
 	"prefs-advancedsearch": "Napredno iskanje",
 	"advancedsearch-preference-help": "Napredno iskanje doda obrazec na strani Posebno:Iskanje. Omogoča iskanje s podrobnimi možnostmi ne glede na to, ali uporabnik pozna posebne ukaze. Pravtako ima spremenjen način izbiranja imenskih prostorov.",
 	"advancedsearch-preference-disable": "Ne prikaži vmesnika Naprednega iskanja"

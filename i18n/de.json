@@ -59,8 +59,6 @@
 	"advancedsearch-namespaces-preset-general-help": "Allgemeine Hilfe",
 	"advancedsearch-namespaces-preset-discussion": "Diskussion",
 	"advancedsearch-namespaces-placeholder": "Namensräume hinzufügen …",
-	"advancedsearch-beta-feature-message": "Erweiterte Suchoberfläche",
-	"advancedsearch-beta-feature-description": "Leichter Zugang zu erweiterten Suchmöglichkeiten auf [[Special:Search]].",
 	"prefs-advancedsearch": "Erweiterte Suche",
 	"advancedsearch-preference-help": "Die Erweiterte Suchoberfläche ergänzt ein Formular auf der Such-Spezialseite. Dieses erlaubt dir, spezialisierte Suchanfragen durchzuführen, auch wenn du keine Suchsyntax beherrschst. Es ändert auch die Weise, wie Namensräume ausgewählt werden können.",
 	"advancedsearch-preference-disable": "Die Erweiterte Suchoberfläche nicht anzeigen"

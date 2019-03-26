@@ -56,8 +56,6 @@
 	"advancedsearch-namespaces-preset-general-help": "Pagine di aiuto",
 	"advancedsearch-namespaces-preset-discussion": "Discussione",
 	"advancedsearch-namespaces-placeholder": "Aggiungi namespace…",
-	"advancedsearch-beta-feature-message": "Interfaccia di ricerca avanzata",
-	"advancedsearch-beta-feature-description": "Accesso rapido alle funzioni di ricerca avanzata in [[Special:Search]].",
 	"prefs-advancedsearch": "Ricerca avanzata",
 	"advancedsearch-preference-help": "La ricerca avanzata aggiunge un modulo alla pagina Speciale:Ricerca per consentirti di effettuare ricerche specializzate, anche se non conosci la sintassi di ricerca. Inoltre cambia il modo in cui si possono selezionare i namespace.",
 	"advancedsearch-preference-disable": "Non mostrare l'interfaccia di ricerca avanzata"

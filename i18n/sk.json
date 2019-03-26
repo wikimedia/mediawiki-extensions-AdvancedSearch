@@ -39,9 +39,12 @@
 	"advancedsearch-filesize-greater-than": "väčšia ako",
 	"advancedsearch-filesize-smaller-than": "menšia ako",
 	"advancedsearch-namespaces-search-in": "Prehľadávať:",
+	"advancedsearch-namespaces-remember": "Zapamätať výber pre budúce vyhľadávania",
 	"advancedsearch-namespaces-preset-all": "Všetko",
 	"advancedsearch-namespaces-preset-default": "Predvolené",
+	"advancedsearch-namespaces-preset-discussion": "Diskusie",
 	"advancedsearch-namespaces-placeholder": "Pridať menné priestory",
-	"advancedsearch-beta-feature-message": "Rozhranie pokročilého vyhľadávania",
-	"advancedsearch-beta-feature-description": "Jednoduchý prístup k pokročilým možnostiam vyhľadávania na stránke [[Special:Search]]."
+	"prefs-advancedsearch": "Pokročilé vyhľadávanie",
+	"advancedsearch-preference-help": "Pokročilé vyhľadávanie pridáva na stránku Špeciálne:Hľadanie formulár, ktorý umožňuje vykonávať špecializované vyhľadávania aj bez znalosti syntaxe vyhľadávača. Tiež mení spôsob, akým sa vyberajú menné priestory.",
+	"advancedsearch-preference-disable": "Nezobrazovať rozhranie Pokročilého vyhľadávania"
 }

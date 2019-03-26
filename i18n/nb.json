@@ -62,8 +62,6 @@
 	"advancedsearch-namespaces-preset-general-help": "Generell hjelp",
 	"advancedsearch-namespaces-preset-discussion": "Diskusjon",
 	"advancedsearch-namespaces-placeholder": "Legg til navnerom…",
-	"advancedsearch-beta-feature-message": "Avansert søkegrensesnitt",
-	"advancedsearch-beta-feature-description": "Enkel tilgang til avanserte søkemuligheter på [[Special:Search]].",
 	"prefs-advancedsearch": "Avansert søk",
 	"advancedsearch-preference-help": "Avansert søk legger til et skjema på søkesiden. Dette lar deg utføre spesialiserte søk selv om du ikke kan søkesyntaksen. Det endrer også måten navnerom velges på.",
 	"advancedsearch-preference-disable": "Ikke vis grensesnittet for avansert søk"
