@@ -94,20 +94,17 @@ describe( 'Advanced Search', function () {
 	} );
 
 	it( 'displays the default namespaces of the user and wiki and that the default checkbox is selected', function () {
-		// Since MediaWiki core does not allow us to delete the NS_MAIN namespace,
-		// we add it to the expected result
-		let defaultNamespaceOptions = [ '15', '4', '5', '6' ];
-		let expectedNamespaceOptions = [ '0', '15', '4', '5', '6' ];
+		let namespaceOptions = [ '15', '4', '5', '6' ];
 		browser.call( resetUserOptions );
 		browser.call( () => {
-			return setSearchNamespaceOptions( defaultNamespaceOptions );
+			return setSearchNamespaceOptions( namespaceOptions );
 		} );
 		UserLoginPage.login( browser.options.username, browser.options.password );
 		SearchPage.open();
 		let selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs();
 		selectedNamespaceIDs.sort();
-		expectedNamespaceOptions.sort();
+		namespaceOptions.sort();
 		assert( SearchPage.default.isSelected() );
-		assert.deepEqual( expectedNamespaceOptions, selectedNamespaceIDs );
+		assert.deepEqual( namespaceOptions, selectedNamespaceIDs );
 	} );
 } );

@@ -123,7 +123,7 @@ class HooksTest extends MediaWikiTestCase {
 
 		$this->assertEquals(
 			wfGetServerUrl( PROTO_CURRENT ) .
-			'/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1&ns6=1&ns10=1',
+			'/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1',
 			$special->getOutput()->getRedirect()
 		);
 	}
