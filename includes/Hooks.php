@@ -98,23 +98,13 @@ class Hooks {
 
 	/**
 	 * Retrieves the default namespaces for the current user
+	 *
+	 * @param User $user The user to lookup default namespaces for
+	 * @return int[] List of namespaces to be searched by default
 	 */
-	private static function getDefaultNamespaces( User $user ): array {
-		$namespaces = [];
-		if ( !$user->isAnon() ) {
-			foreach ( $user->mOptions as $option => $optionValue ) {
-				if ( preg_match( '/^searchNs(\d+)$/', $option, $matchedNamespace ) ) {
-					$namespaces [] = $matchedNamespace[1];
-				}
-			}
-		}
-
-		if ( empty( $namespaces ) ) {
-			$config = MediaWikiServices::getInstance()->getMainConfig();
-			$namespaces = array_keys( $config->get( 'NamespacesToBeSearchedDefault' ) );
-		}
-
-		return $namespaces;
+	public static function getDefaultNamespaces( User $user ): array {
+		$searchConfig = MediaWikiServices::getInstance()->getSearchEngineConfig();
+		return $searchConfig->userNamespaces( $user ) ?: $searchConfig->defaultNamespaces();
 	}
 
 	/**
