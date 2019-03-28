@@ -40,6 +40,53 @@ class HooksTest extends MediaWikiTestCase {
 		$this->assertFalse( $preferences['advancedsearch-disable']['default'] );
 	}
 
+	public function getDefaultNamespacesRespectsTrueFalseProvider() {
+		return [
+			'anonymous user' => [
+				'expected' => [ NS_MAIN ],
+				'isAnon' => true,
+				'userOptionsns' => [],
+				'namespacesToBeSearchedDefault' => [ NS_MAIN => true, NS_TALK => false ],
+			],
+			'registered user, no user options' => [
+				'expected' => [ NS_TALK ],
+				'isAnon' => false,
+				'userOptions' => [],
+				'namespacesToBeSearchedDefault' => [ NS_MAIN => false, NS_TALK => true ],
+			],
+			'registered user, with options' => [
+				'expected' => [ NS_FILE ],
+				'isAnon' => false,
+				'userOptions' => [ 'searchNs6' => 1, 'searchNs0' => 0, 'searchNs1' => 0 ],
+				'namespacesToBeSearchedDefault' => [ NS_MAIN => false, NS_TALK => true ],
+			],
+		];
+	}
+
+	/**
+	 * @dataProvider getDefaultNamespacesRespectsTrueFalseProvider
+	 */
+	public function testGetDefaultNamespacesRespectsTrueFalse(
+		$expected, $isAnon, $userOptions, $namespacesToBeSearchedDefault
+	) {
+		$this->setMwGlobals( [
+			'wgNamespacesToBeSearchedDefault' => $namespacesToBeSearchedDefault,
+		] );
+		if ( $isAnon ) {
+			if ( $userOptions ) {
+				$this->fail( 'Anonymous users cant have user options' );
+			}
+			$user = new User();
+		} else {
+			$user = $this->getTestUser()->getUser();
+			foreach ( $userOptions as $option => $value ) {
+				$user->setOption( $option, $value );
+			}
+		}
+		$this->assertEquals( $isAnon, $user->isAnon() );
+		$this->assertEquals( $expected, Hooks::getDefaultNamespaces( $user ) );
+	}
+
 	public function testSpecialSearchResultsPrependHandler() {
 		$output = new OutputPage( new RequestContext() );
 		$context = new RequestContext();
