@@ -89,15 +89,11 @@ class Hooks {
 	private static function redirectToNamespacedRequest( \SpecialPage $special ) {
 		if ( !self::isNamespacedRequest( $special ) ) {
 			$namespacedSearchUrl = $special->getRequest()->getFullRequestURL();
-			if ( parse_url( $namespacedSearchUrl, PHP_URL_QUERY ) ) {
-				$questionOrAmpersand = '&';
-			} else {
-				$questionOrAmpersand = '?';
+			$queryParts = [];
+			foreach ( self::getDefaultNamespaces( $special->getUser() ) as $ns ) {
+				$queryParts['ns' . $ns] = '1';
 			}
-			foreach ( self::getDefaultNamespaces( $special->getUser() ) as $namespace ) {
-				$namespacedSearchUrl .= $questionOrAmpersand . 'ns' . $namespace . '=1';
-				$questionOrAmpersand = '&';
-			}
+			$namespacedSearchUrl = wfAppendQuery( $namespacedSearchUrl, $queryParts );
 			$special->getOutput()->redirect( $namespacedSearchUrl );
 		}
 	}
