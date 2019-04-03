@@ -104,7 +104,7 @@
 	mw.libs.advancedSearch.dm.FileTypeOptionProvider.prototype.getAllowedFileTypeOptions = function () {
 		var options = [];
 
-		// eslint-disable-next-line jquery/no-each-util
+		// eslint-disable-next-line no-jquery/no-each-util
 		$.each( getFileOptions( this.options, this.mimeTypes ), function ( index, fileOptions ) {
 			options = options.concat( fileOptions );
 		} );

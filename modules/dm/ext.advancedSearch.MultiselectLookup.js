@@ -18,7 +18,7 @@
 	var populateCache = function ( res, self ) {
 		var pages = [];
 
-		// eslint-disable-next-line jquery/no-each-util
+		// eslint-disable-next-line no-jquery/no-each-util
 		$.each( res.query.pages, function ( index, page ) {
 			if ( !page.missing ) {
 				pages.push( page.title );

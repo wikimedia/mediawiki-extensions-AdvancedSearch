@@ -163,7 +163,7 @@
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.getFields = function () {
 		var options = {};
-		// eslint-disable-next-line jquery/no-each-util
+		// eslint-disable-next-line no-jquery/no-each-util
 		$.each( this.searchFields, function ( key, value ) {
 			if ( !$.isEmptyObject( value ) ) {
 				options[ key ] = cloneReferenceTypeValue( value );

@@ -66,7 +66,7 @@
 	 * @return {Object}
 	 */
 	function prepareOptions( presets ) {
-		// eslint-disable-next-line jquery/no-map-util
+		// eslint-disable-next-line no-jquery/no-map-util
 		return $.map( presets, function ( preset, id ) {
 			return { data: id, label: mw.msg( preset.label ) };
 		} );
