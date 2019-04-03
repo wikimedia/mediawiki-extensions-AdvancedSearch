@@ -32,11 +32,11 @@
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview = function ( store, config ) {
 		config = $.extend( {
-			previewOptions: [],
+			fieldNames: [],
 			data: true
 		}, config );
 		this.store = store;
-		this.previewOptions = config.previewOptions;
+		this.fieldNames = config.fieldNames;
 
 		store.connect( this, { update: 'onStoreUpdate' } );
 
@@ -59,7 +59,7 @@
 	};
 
 	/**
-	 * Render the preview for all options
+	 * Render the preview for all fields
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview.prototype.updatePreview = function () {
 		// TODO check if we really need to re-generate
@@ -69,32 +69,32 @@
 			return;
 		}
 
-		this.previewOptions.forEach( function ( optionId ) {
-			var val = this.store.getOption( optionId );
+		this.fieldNames.forEach( function ( fieldId ) {
+			var val = this.store.getField( fieldId );
 
-			if ( this.skipOptionInPreview( optionId, val ) ) {
+			if ( this.skipFieldInPreview( fieldId, val ) ) {
 				return;
 			}
 
-			this.$element.append( this.generateTag( optionId, val ).$element );
+			this.$element.append( this.generateTag( fieldId, val ).$element );
 		}.bind( this ) );
 	};
 
 	/**
-	 * Decide if an option-value-combination should be listed in the preview
+	 * Decide if an field-value-combination should be listed in the preview
 	 *
-	 * @param {string} optionId
+	 * @param {string} fieldId
 	 * @param {string|Array} value
 	 * @return {boolean}
 	 */
-	mw.libs.advancedSearch.ui.SearchPreview.prototype.skipOptionInPreview = function ( optionId, value ) {
+	mw.libs.advancedSearch.ui.SearchPreview.prototype.skipFieldInPreview = function ( fieldId, value ) {
 		if ( !value ) {
 			return true;
 		}
 		if ( Array.isArray( value ) && value.length === 0 ) {
 			return true;
 		}
-		if ( /^file[hw]$/.test( optionId ) && Array.isArray( value ) && !value[ 1 ] ) {
+		if ( /^file[hw]$/.test( fieldId ) && Array.isArray( value ) && !value[ 1 ] ) {
 			return true;
 		}
 
@@ -102,17 +102,17 @@
 	};
 
 	/**
-	 * Create a tag item that represents the preview for a single option-value-combination
+	 * Create a tag item that represents the preview for a single field-value-combination
 	 *
-	 * @param {string} optionId
+	 * @param {string} fieldId
 	 * @param {string} value
 	 * @return {OO.ui.TagItemWidget}
 	 */
-	mw.libs.advancedSearch.ui.SearchPreview.prototype.generateTag = function ( optionId, value ) {
-		var formattedValue = this.formatValue( optionId, value ),
+	mw.libs.advancedSearch.ui.SearchPreview.prototype.generateTag = function ( fieldId, value ) {
+		var formattedValue = this.formatValue( fieldId, value ),
 			tag = new OO.ui.TagItemWidget( {
 				label: $()
-					.add( $( '<span>' ).text( mw.msg( 'advancedsearch-field-' + optionId ) ) )
+					.add( $( '<span>' ).text( mw.msg( 'advancedsearch-field-' + fieldId ) ) )
 					// redundant span to cover browsers without support for bdi tag
 					.add( $( '<span>' ).addClass( 'mw-advancedSearch-searchPreview-content' ).append(
 						$( '<bdi>' ).text( formattedValue )
@@ -122,7 +122,7 @@
 
 		tag.connect( this, {
 			remove: function () {
-				this.store.removeOption( optionId );
+				this.store.removeField( fieldId );
 			}
 		} );
 
@@ -136,12 +136,12 @@
 	/**
 	 * Format a value to be used in the preview
 	 *
-	 * @param {string} optionId
+	 * @param {string} fieldId
 	 * @param {string|Array} value
 	 * @return {string}
 	 */
-	mw.libs.advancedSearch.ui.SearchPreview.prototype.formatValue = function ( optionId, value ) {
-		if ( /^file[hw]$/.test( optionId ) && Array.isArray( value ) ) {
+	mw.libs.advancedSearch.ui.SearchPreview.prototype.formatValue = function ( fieldId, value ) {
+		if ( /^file[hw]$/.test( fieldId ) && Array.isArray( value ) ) {
 			return mw.msg( fileComparatorToMessage( value[ 0 ] ) ) + ' ' + value[ 1 ];
 		}
 		if ( Array.isArray( value ) ) {

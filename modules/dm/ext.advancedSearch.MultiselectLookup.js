@@ -43,7 +43,7 @@
 			}
 		} );
 		this.store = store;
-		this.optionId = config.optionId;
+		this.fieldId = config.fieldId;
 		this.lookupId = config.lookupId;
 		this.api = config.api || new mw.Api();
 		this.queryCache = new mw.libs.advancedSearch.dm.TitleCache();
@@ -71,8 +71,8 @@
 
 	mw.libs.advancedSearch.dm.MultiselectLookup.prototype.populateFromStore = function () {
 
-		if ( this.store.hasOptionChanged( this.optionId, this.getValue() ) ) {
-			this.setValue( this.store.getOption( this.optionId ) );
+		if ( this.store.hasFieldChanged( this.fieldId, this.getValue() ) ) {
+			this.setValue( this.store.getField( this.fieldId ) );
 		}
 	};
 
@@ -167,7 +167,7 @@
 	 * Update external states on internal updates
 	 */
 	mw.libs.advancedSearch.dm.MultiselectLookup.prototype.onValueUpdate = function () {
-		this.store.storeOption( this.optionId, this.getValue() );
+		this.store.storeField( this.fieldId, this.getValue() );
 	};
 
 	/**

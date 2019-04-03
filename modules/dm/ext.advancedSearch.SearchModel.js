@@ -27,12 +27,12 @@
 	 * @constructor
 	 * @mixins OO.EventEmitter
 	 * @param {string[]} [defaultNamespaces] The namespaces selected by default (for new searches)
-	 * @param {Object} defaultOptionValues Defaults for search field values
+	 * @param {Object} defaultFieldValues Defaults for search field values
 	 */
-	mw.libs.advancedSearch.dm.SearchModel = function ( defaultNamespaces, defaultOptionValues ) {
-		this.searchOptions = {};
+	mw.libs.advancedSearch.dm.SearchModel = function ( defaultNamespaces, defaultFieldValues ) {
+		this.searchFields = {};
 		this.namespaces = defaultNamespaces || [];
-		this.defaultOptionValues = defaultOptionValues || {};
+		this.defaultFieldValues = defaultFieldValues || {};
 
 		// Mixin constructor
 		OO.EventEmitter.call( this );
@@ -62,34 +62,32 @@
 	/* Methods */
 
 	/**
-	 * @param {string} optionId
+	 * @param {string} fieldId
 	 * @param {*} value
 	 */
-	mw.libs.advancedSearch.dm.SearchModel.prototype.storeOption = function ( optionId, value ) {
+	mw.libs.advancedSearch.dm.SearchModel.prototype.storeField = function ( fieldId, value ) {
 		var namespaces;
 
-		// TODO check for allowed options?
-
 		if (
-			Object.prototype.hasOwnProperty.call( this.searchOptions, optionId ) &&
-			OO.compare( this.searchOptions[ optionId ], value )
+			Object.prototype.hasOwnProperty.call( this.searchFields, fieldId ) &&
+			OO.compare( this.searchFields[ fieldId ], value )
 		) {
 			return;
 		}
 
 		if ( value === '' || ( Array.isArray( value ) && value.length === 0 ) ) {
-			this.removeOption( optionId );
+			this.removeField( fieldId );
 			return;
 		}
 
-		this.searchOptions[ optionId ] = value;
+		this.searchFields[ fieldId ] = value;
 
-		if ( optionId === 'filetype' && !this.filetypeSupportsDimensions() ) {
-			this.resetFileDimensionOptions();
+		if ( fieldId === 'filetype' && !this.filetypeSupportsDimensions() ) {
+			this.resetFileDimensionFields();
 		}
 
 		namespaces = this.getNamespaces();
-		if ( optionId === 'filetype' && namespaces.indexOf( mw.libs.advancedSearch.dm.SearchModel.FILE_NAMESPACE ) === -1 ) {
+		if ( fieldId === 'filetype' && namespaces.indexOf( mw.libs.advancedSearch.dm.SearchModel.FILE_NAMESPACE ) === -1 ) {
 			namespaces.push( mw.libs.advancedSearch.dm.SearchModel.FILE_NAMESPACE );
 			this.setNamespaces( namespaces );
 		}
@@ -98,35 +96,35 @@
 	};
 
 	/**
-	 * Retrieve value of option with given id
+	 * Retrieve value of field with given id
 	 *
-	 * @param {string} optionId
+	 * @param {string} fieldId
 	 * @return {*}
 	 */
-	mw.libs.advancedSearch.dm.SearchModel.prototype.getOption = function ( optionId ) {
+	mw.libs.advancedSearch.dm.SearchModel.prototype.getField = function ( fieldId ) {
 		if (
-			!Object.prototype.hasOwnProperty.call( this.searchOptions, optionId ) &&
-			Object.prototype.hasOwnProperty.call( this.defaultOptionValues, optionId )
+			!Object.prototype.hasOwnProperty.call( this.searchFields, fieldId ) &&
+			Object.prototype.hasOwnProperty.call( this.defaultFieldValues, fieldId )
 		) {
-			return cloneReferenceTypeValue( this.defaultOptionValues[ optionId ] );
+			return cloneReferenceTypeValue( this.defaultFieldValues[ fieldId ] );
 		}
-		return cloneReferenceTypeValue( this.searchOptions[ optionId ] );
+		return cloneReferenceTypeValue( this.searchFields[ fieldId ] );
 	};
 
 	/**
-	 * Remove option with given id
+	 * Remove field with given id
 	 *
-	 * @param {string} optionId
+	 * @param {string} fieldId
 	 */
-	mw.libs.advancedSearch.dm.SearchModel.prototype.removeOption = function ( optionId ) {
-		if ( !Object.prototype.hasOwnProperty.call( this.searchOptions, optionId ) ) {
+	mw.libs.advancedSearch.dm.SearchModel.prototype.removeField = function ( fieldId ) {
+		if ( !Object.prototype.hasOwnProperty.call( this.searchFields, fieldId ) ) {
 			return;
 		}
 
-		delete this.searchOptions[ optionId ];
+		delete this.searchFields[ fieldId ];
 
-		if ( optionId === 'filetype' ) {
-			this.resetFileDimensionOptions();
+		if ( fieldId === 'filetype' ) {
+			this.resetFileDimensionFields();
 		}
 
 		this.emitUpdate();
@@ -134,39 +132,39 @@
 
 	/**
 	 *
-	 * @param {string} optionId
+	 * @param {string} fieldId
 	 * @param {*} comparisonValue
 	 * @return {boolean}
 	 */
-	mw.libs.advancedSearch.dm.SearchModel.prototype.hasOptionChanged = function ( optionId, comparisonValue ) {
+	mw.libs.advancedSearch.dm.SearchModel.prototype.hasFieldChanged = function ( fieldId, comparisonValue ) {
 		if (
-			!Object.prototype.hasOwnProperty.call( this.searchOptions, optionId ) &&
-			Object.prototype.hasOwnProperty.call( this.defaultOptionValues, optionId )
+			!Object.prototype.hasOwnProperty.call( this.searchFields, fieldId ) &&
+			Object.prototype.hasOwnProperty.call( this.defaultFieldValues, fieldId )
 		) {
-			return !OO.compare( this.defaultOptionValues[ optionId ], comparisonValue );
+			return !OO.compare( this.defaultFieldValues[ fieldId ], comparisonValue );
 		}
-		return !OO.compare( this.searchOptions[ optionId ], comparisonValue );
+		return !OO.compare( this.searchFields[ fieldId ], comparisonValue );
 	};
 
 	/**
-	 * Reset the file dimension search options
+	 * Reset the file dimension search fields
 	 *
 	 * @private
 	 */
-	mw.libs.advancedSearch.dm.SearchModel.prototype.resetFileDimensionOptions = function () {
-		this.removeOption( 'filew' );
-		this.removeOption( 'fileh' );
+	mw.libs.advancedSearch.dm.SearchModel.prototype.resetFileDimensionFields = function () {
+		this.removeField( 'filew' );
+		this.removeField( 'fileh' );
 	};
 
 	/**
-	 * Get non-empty search options
+	 * Get non-empty search fields
 	 *
 	 * @return {Object}
 	 */
-	mw.libs.advancedSearch.dm.SearchModel.prototype.getOptions = function () {
+	mw.libs.advancedSearch.dm.SearchModel.prototype.getFields = function () {
 		var options = {};
 		// eslint-disable-next-line jquery/no-each-util
-		$.each( this.searchOptions, function ( key, value ) {
+		$.each( this.searchFields, function ( key, value ) {
 			if ( !$.isEmptyObject( value ) ) {
 				options[ key ] = cloneReferenceTypeValue( value );
 			}
@@ -175,20 +173,20 @@
 	};
 
 	/**
-	 * Serialize options and namespaces to JSON
+	 * Serialize fields and namespaces to JSON
 	 *
 	 * @return {string}
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.toJSON = function () {
 		var json = {};
-		if ( !$.isEmptyObject( this.searchOptions ) ) {
-			json.options = this.searchOptions;
+		if ( !$.isEmptyObject( this.searchFields ) ) {
+			json.fields = this.searchFields;
 		}
 		return JSON.stringify( json );
 	};
 
 	/**
-	 * Set options and namespaces from JSON string
+	 * Set fields and namespaces from JSON string
 	 *
 	 * @param {string} jsonSerialized
 	 */
@@ -206,10 +204,10 @@
 			return;
 		}
 
-		if ( typeof unserialized.options === 'object' ) {
-			this.searchOptions = {};
-			for ( var opt in unserialized.options ) {
-				this.searchOptions[ opt ] = unserialized.options[ opt ];
+		if ( typeof unserialized.fields === 'object' ) {
+			this.searchFields = {};
+			for ( var opt in unserialized.fields ) {
+				this.searchFields[ opt ] = unserialized.fields[ opt ];
 			}
 			valuesChanged = true;
 		}
@@ -224,7 +222,7 @@
 	 * @return {boolean}
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.filetypeSupportsDimensions = function () {
-		var fileType = this.getOption( 'filetype' );
+		var fileType = this.getField( 'filetype' );
 		if ( !fileType ) {
 			return false;
 		}
@@ -236,7 +234,7 @@
 	 * @return {boolean}
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.fileTypeIsSelected = function () {
-		return !!this.getOption( 'filetype' );
+		return !!this.getField( 'filetype' );
 	};
 
 	/**

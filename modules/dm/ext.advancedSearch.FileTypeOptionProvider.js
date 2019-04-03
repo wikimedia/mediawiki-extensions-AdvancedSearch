@@ -81,7 +81,7 @@
 	OO.initClass( mw.libs.advancedSearch.dm.FileTypeOptionProvider );
 
 	/**
-	 * Returns the general file type options
+	 * Returns the general file type fields
 	 *
 	 * @return {Object[]}
 	 */
@@ -97,7 +97,7 @@
 	};
 
 	/**
-	 * Returns the file type options based on allowed mime types
+	 * Returns the file type fields based on allowed mime types
 	 *
 	 * @return {Object[]}
 	 */

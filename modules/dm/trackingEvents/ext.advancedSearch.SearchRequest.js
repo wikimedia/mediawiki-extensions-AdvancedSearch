@@ -45,7 +45,7 @@
 	};
 
 	/**
-	 * Populate tracking event by given search options
+	 * Populate tracking event by given search fields
 	 *
 	 * @param {Object} searchOptions
 	 */

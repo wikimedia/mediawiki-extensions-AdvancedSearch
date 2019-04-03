@@ -37,7 +37,7 @@
 	function setTrackingEvents( $search, state ) {
 		$search.on( 'submit', function () {
 			var trackingEvent = new mw.libs.advancedSearch.dm.trackingEvents.SearchRequest();
-			trackingEvent.populateFromStoreOptions( state.getOptions() );
+			trackingEvent.populateFromStoreOptions( state.getFields() );
 			mw.track( 'event.' + trackingEvent.getEventName(), trackingEvent.getEventData() );
 		} );
 	}
@@ -96,21 +96,31 @@
 	}
 
 	/**
+	 * @return {mw.libs.advancedSearch.FieldCollection}
+	 */
+	function createFieldConfiguration() {
+		var fields = new mw.libs.advancedSearch.FieldCollection();
+		mw.libs.advancedSearch.addDefaultFields( fields );
+		fields.freezeGroups( [ 'text', 'structure', 'files' ] );
+		mw.hook( 'advancedSearch.configureFields' ).fire( fields );
+		return fields;
+	}
+
+	/**
 	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
-	 * @param {mw.libs.advancedSearch.AdvancedOptionsBuilder} advancedOptionsBuilder
+	 * @param {mw.libs.advancedSearch.FieldCollection} fields
+	 * @param {mw.libs.advancedSearch.FieldElementBuilder} advancedOptionsBuilder
 	 * @return {jQuery}
 	 */
-	function buildPaneElement( state, advancedOptionsBuilder ) {
+	function buildPaneElement( state, fields, advancedOptionsBuilder ) {
 		var searchPreview = new mw.libs.advancedSearch.ui.SearchPreview( state, {
 			label: mw.msg( 'advancedsearch-options-pane-head' ),
-			previewOptions: mw.libs.advancedSearch.AdvancedOptionsConfig.map( function ( option ) {
-				return option.id;
-			} )
+			fieldNames: fields.getFieldIds()
 		} );
 
 		var pane = new mw.libs.advancedSearch.ui.ExpandablePane( {
 			dependentPaneContentBuilder: function () {
-				return advancedOptionsBuilder.buildAllOptionsElement( mw.libs.advancedSearch.AdvancedOptionsConfig );
+				return advancedOptionsBuilder.buildAllFieldsElement( fields );
 			},
 			$buttonLabel: searchPreview.$element,
 			tabIndex: 0
@@ -126,7 +136,7 @@
 		// Proactively lazy-load the pane: if the user hasn't already clicked to open the pane,
 		// build it in the background.
 		mw.requestIdleCallback( function () {
-			mw.loader.using( 'ext.advancedSearch.AdvancedOptionsConfig' ).then( function () {
+			mw.loader.using( 'ext.advancedSearch.SearchFieldUI' ).then( function () {
 				pane.buildDependentPane();
 			} );
 		} );
@@ -135,7 +145,7 @@
 	}
 
 	/**
-	 * @param {Array} searchableNamespaces
+	 * @param {Object} searchableNamespaces
 	 * @return {string[]}
 	 */
 	function getNamespacesFromUrl( searchableNamespaces ) {
@@ -151,26 +161,25 @@
 	}
 
 	/**
-	 * @param {ext.libs.advancedSearch.AdvancedOptionsConfig} options
-	 * @return {oObject} optionId => default value pairs
+	 * @param {mw.libs.advancedSearch.SearchField[]} fields
+	 * @return {Object} fieldId => default value pairs
 	 */
-	function getDefaultsFromConfig( options ) {
-		return options.reduce( function ( defaults, value ) {
-			if ( Object.prototype.hasOwnProperty.call( value, 'defaultValue' ) ) {
-				defaults[ value.id ] = value.defaultValue;
-			}
+	function getDefaultsFromConfig( fields ) {
+		return fields.reduce( function ( defaults, field ) {
+			defaults[ field.id ] = field.defaultValue;
 			return defaults;
 		}, {} );
 	}
 
 	/**
-	 * @param {mw.libs.advancedSearch.dm.SearchableNamespaces} searchableNamespaces
+	 * @param {Object} searchableNamespaces
+	 * @param {mw.libs.advancedSearch.FieldCollection} fieldCollection
 	 * @return {mw.libs.advancedSearch.dm.SearchModel}
 	 */
-	function initState( searchableNamespaces ) {
+	function initState( searchableNamespaces, fieldCollection ) {
 		var state = new mw.libs.advancedSearch.dm.SearchModel(
 				mw.libs.advancedSearch.dm.getDefaultNamespaces( mw.user.options.values ),
-				getDefaultsFromConfig( mw.libs.advancedSearch.AdvancedOptionsConfig )
+				getDefaultsFromConfig( fieldCollection.fields )
 			),
 			namespacesFromUrl = getNamespacesFromUrl( searchableNamespaces ),
 			stateFromUrl = mw.util.getParamValue( 'advancedSearch-current' );
@@ -179,7 +188,7 @@
 			state.setNamespaces( namespacesFromUrl );
 		}
 
-		// If AdvancedSearch has occurred before, it's options have the highest precedence
+		// If AdvancedSearch has occurred before, it's fields have the highest precedence
 		if ( stateFromUrl ) {
 			state.setAllFromJSON( stateFromUrl );
 		}
@@ -189,9 +198,10 @@
 
 	$( function () {
 		var searchableNamespaces = mw.config.get( 'advancedSearch.searchableNamespaces' ),
-			state = initState( searchableNamespaces ),
-			advancedOptionsBuilder = new mw.libs.advancedSearch.AdvancedOptionsBuilder( state ),
-			queryCompiler = new mw.libs.advancedSearch.QueryCompiler( mw.libs.advancedSearch.AdvancedOptionsConfig );
+			fieldCollection = createFieldConfiguration(),
+			state = initState( searchableNamespaces, fieldCollection ),
+			advancedOptionsBuilder = new mw.libs.advancedSearch.FieldElementBuilder( state ),
+			queryCompiler = new mw.libs.advancedSearch.QueryCompiler( fieldCollection.fields );
 
 		var $search = $( 'form#search, form#powersearch' ),
 			$advancedSearch = $( '<div>' ).addClass( 'mw-advancedSearch-container' ),
@@ -207,7 +217,7 @@
 		setTrackingEvents( $search, state );
 		setSearchSubmitTrigger( $search, $searchField, state, queryCompiler );
 
-		$advancedSearch.append( buildPaneElement( state, advancedOptionsBuilder ) );
+		$advancedSearch.append( buildPaneElement( state, fieldCollection, advancedOptionsBuilder ) );
 
 		updateSearchResultLinks( state );
 

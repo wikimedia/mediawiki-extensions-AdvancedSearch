@@ -18,6 +18,8 @@
 
 		mw.libs.advancedSearch.ui.TemplateSearch.parent.call( this, store, config );
 
+		this.$element.addClass( 'mw-advancedSearch-template' );
+
 		this.populateFromStore();
 	};
 
@@ -28,8 +30,8 @@
 	};
 
 	mw.libs.advancedSearch.ui.TemplateSearch.prototype.populateFromStore = function () {
-		if ( this.store.hasOptionChanged( this.optionId, this.getValue() ) ) {
-			this.setValue( this.store.getOption( this.optionId ) );
+		if ( this.store.hasFieldChanged( this.fieldId, this.getValue() ) ) {
+			this.setValue( this.store.getField( this.fieldId ) );
 		}
 	};
 
@@ -37,7 +39,7 @@
 	 * Update external states on internal updates
 	 */
 	mw.libs.advancedSearch.ui.TemplateSearch.prototype.onValueUpdate = function () {
-		this.store.storeOption( this.optionId, this.getValue() );
+		this.store.storeField( this.fieldId, this.getValue() );
 	};
 
 }() );

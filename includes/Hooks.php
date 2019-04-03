@@ -171,7 +171,9 @@ class Hooks {
 	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
 		$testModules['qunit']['ext.advancedSearch.tests'] = [
 			'scripts' => [
+				'tests/qunit/FieldCollection.test.js',
 				'tests/qunit/QueryCompiler.test.js',
+				'tests/qunit/SearchField.test.js',
 				'tests/qunit/ui/ArbitraryWordInput.test.js',
 				'tests/qunit/ui/CheckboxInputWidget.test.js',
 				'tests/qunit/ui/ItemMenuOptionWidget.test.js',
@@ -193,7 +195,7 @@ class Hooks {
 			],
 			'dependencies' => [
 				'ext.advancedSearch.elements',
-				'ext.advancedSearch.AdvancedOptionsConfig',
+				'ext.advancedSearch.SearchFieldUI',
 				'oojs-ui'
 			],
 			'localBasePath' => dirname( __DIR__ ),

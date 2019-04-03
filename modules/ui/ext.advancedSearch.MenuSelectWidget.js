@@ -53,7 +53,7 @@
 	};
 
 	/**
-	 * Create an options array suitable for menu items
+	 * Create an fields array suitable for menu items
 	 *
 	 * @param {Object} namespaces namespace id => label
 	 * @return {Object[]}

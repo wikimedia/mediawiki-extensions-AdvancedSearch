@@ -17,7 +17,7 @@
 		config = $.extend( {}, config );
 
 		this.store = store;
-		this.optionId = config.optionId;
+		this.fieldId = config.fieldId;
 		this.placeholderText = config.placeholder || '';
 
 		this.store.connect( this, { update: 'onStoreUpdate' } );
@@ -41,8 +41,8 @@
 	OO.inheritClass( mw.libs.advancedSearch.ui.ArbitraryWordInput, OO.ui.TagMultiselectWidget );
 
 	mw.libs.advancedSearch.ui.ArbitraryWordInput.prototype.populateFromStore = function () {
-		if ( this.store.hasOptionChanged( this.optionId, this.getValue() ) ) {
-			this.setValue( this.store.getOption( this.optionId ) );
+		if ( this.store.hasFieldChanged( this.fieldId, this.getValue() ) ) {
+			this.setValue( this.store.getField( this.fieldId ) );
 		}
 	};
 

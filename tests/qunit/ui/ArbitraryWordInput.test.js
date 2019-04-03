@@ -16,8 +16,8 @@
 
 	QUnit.test( 'Input initially gets set from store', function ( assert ) {
 		var model = new Model();
-		model.storeOption( 'myid', [ 'lorem', 'ipsum', 'something with spaces' ] );
-		var input = new ArbitraryWordInput( model, { optionId: 'myid' } );
+		model.storeField( 'myid', [ 'lorem', 'ipsum', 'something with spaces' ] );
+		var input = new ArbitraryWordInput( model, { fieldId: 'myid' } );
 
 		assert.deepEqual(
 			input.getValue(),
@@ -63,8 +63,8 @@
 
 	QUnit.test( 'Placeholder text empty if content set from the start', function ( assert ) {
 		var model = new Model();
-		model.storeOption( 'somekey', [ 'gaudiamus' ] );
-		var input = new ArbitraryWordInput( model, { placeholder: 'lorem ipsum', optionId: 'somekey' } );
+		model.storeField( 'somekey', [ 'gaudiamus' ] );
+		var input = new ArbitraryWordInput( model, { placeholder: 'lorem ipsum', fieldId: 'somekey' } );
 
 		assert.strictEqual( input.getTextForPlaceholder(), '' );
 	} );
