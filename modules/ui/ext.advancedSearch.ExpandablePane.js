@@ -41,7 +41,7 @@
 			.addClass( 'mw-advancedSearch-expandablePane-pane' );
 		this.dependentPaneContentBuilder = config.dependentPaneContentBuilder;
 
-		this.$element.addClass( 'mw-advancedSearch-expandablePane' );
+		this.$element.addClass( 'mw-advancedSearch-expandablePane-' + config.suffix );
 		this.$element.append( this.button.$element, this.$dependentPane );
 		this.button.$element.attr( {
 			'aria-expanded': 'false',

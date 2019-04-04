@@ -112,6 +112,9 @@ class SearchPage extends Page {
 			toggleNamespacesMenu() {
 				browser.element( '.mw-advancedSearch-namespaceFilter .oo-ui-inputWidget-input' ).click();
 			},
+			toggleNamespacesPreview() {
+				browser.element( '.mw-advancedSearch-expandablePane-namespaces .mw-advancedSearch-expandablePane-button a' ).click();
+			},
 			clickOnNamespace: function ( nsId ) {
 				const menuItem = browser.element( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget .mw-advancedSearch-namespace-' + nsId );
 				menuItem.waitForVisible();
@@ -149,10 +152,12 @@ class SearchPage extends Page {
 	}
 	get searchPaginationLinks() { return browser.elements( '.mw-search-pager-bottom a' ); }
 	get searchPreviewItems() { return browser.elements( '.mw-advancedSearch-searchPreview .mw-advancedSearch-searchPreview-previewPill' ); }
-	get searchInfoIcons() { return browser.elements( '.mw-advancedSearch-container .oo-ui-fieldLayout:not(.oo-ui-element-hidden) .oo-ui-icon-info' ); }
+	get namespacePreviewItems() { return browser.elements( '.mw-advancedSearch-namespacesPreview .mw-advancedSearch-namespacesPreview-previewPill' ); }
+	get searchInfoIcons() { return browser.elements( '.mw-advancedSearch-container .oo-ui-fieldLayout:not(.oo-ui-element-hidden) .oo-ui-buttonElement-button' ); }
 	get infoPopup() { return browser.elements( '.oo-ui-popupWidget-popup' ); }
 	get searchButton() { return browser.element( '#mw-search-top-table button' ); }
 	get namespaceTags() { return browser.elements( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-group span' ); }
+	get namespaceTagsInCollapsedMode() { return browser.elements( '.mw-advancedSearch-namespacesPreview .mw-advancedSearch-namespacesPreview-previewPill .oo-ui-labelElement-label span' ); }
 	get allNamespacesPreset() { return browser.element( '.mw-advancedSearch-namespace-selection input[value="all"]' ); }
 	get generalHelpPreset() { return browser.element( '.mw-advancedSearch-namespace-selection input[value="generalHelp"]' ); }
 	get rememberSelection() { return browser.element( '.mw-advancedSearch-namespace-selection input[name="nsRemember"]' ); }
@@ -167,7 +172,11 @@ class SearchPage extends Page {
 	}
 
 	advancedSearchIsCollapsed() {
-		return browser.element( '.mw-advancedSearch-expandablePane > .oo-ui-indicatorElement .oo-ui-indicatorElement-indicator.oo-ui-indicator-down' ).isExisting();
+		return browser.element( '.mw-advancedSearch-expandablePane-options > .oo-ui-indicatorElement .oo-ui-indicatorElement-indicator.oo-ui-indicator-down' ).isExisting();
+	}
+
+	namespacePreviewIsCollapsed() {
+		return browser.element( '.mw-advancedSearch-expandablePane-namespaces > .oo-ui-indicatorElement .oo-ui-indicatorElement-indicator.oo-ui-indicator-down' ).isExisting();
 	}
 
 	getSearchQueryFromUrl() {
@@ -224,7 +233,7 @@ class SearchPage extends Page {
 	}
 
 	toggleInputFields() {
-		browser.element( '.mw-advancedSearch-expandablePane-button .oo-ui-indicatorElement-indicator' ).click();
+		browser.element( '.mw-advancedSearch-expandablePane-options .mw-advancedSearch-expandablePane-button a' ).click();
 		this.waitForSearchFieldsToLoad();
 	}
 

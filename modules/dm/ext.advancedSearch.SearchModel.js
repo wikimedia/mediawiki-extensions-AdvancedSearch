@@ -131,6 +131,19 @@
 	};
 
 	/**
+	 * Remove namespace with given id
+	 *
+	 * @param {string} nsId
+	 */
+	mw.libs.advancedSearch.dm.SearchModel.prototype.removeNamespace = function ( nsId ) {
+		var index = this.getNamespaces().indexOf( nsId );
+		if ( index !== -1 ) {
+			this.getNamespaces().splice( index, 1 );
+		}
+		this.emitUpdate();
+	};
+
+	/**
 	 *
 	 * @param {string} fieldId
 	 * @param {*} comparisonValue

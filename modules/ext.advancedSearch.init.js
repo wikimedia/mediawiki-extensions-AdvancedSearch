@@ -123,7 +123,8 @@
 				return advancedOptionsBuilder.buildAllFieldsElement( fields );
 			},
 			$buttonLabel: searchPreview.$element,
-			tabIndex: 0
+			tabIndex: 0,
+			suffix: 'options'
 		} );
 		pane.on( 'change', function () {
 			if ( pane.isOpen() ) {
@@ -145,7 +146,41 @@
 	}
 
 	/**
-	 * @param {Object} searchableNamespaces
+	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
+	 * @param {jQuery} header
+	 * @param {mw.libs.advancedSearch.ui.NamespacePresets} presets
+	 * @param {mw.libs.advancedSearch.ui.NamespaceFilters} selection
+	 * @param {mw.libs.advancedSearch.dm.SearchableNamespaces} searchableNamespaces
+	 * @return {jQuery}
+	 */
+	function buildNamespacesPaneElement( state, header, presets, selection, searchableNamespaces ) {
+		var nsPreview = new mw.libs.advancedSearch.ui.NamespacesPreview( state, {
+			label: mw.msg( 'advancedsearch-namespaces-search-in' ),
+			previewOptions: state.getNamespaces(),
+			namespacesLabels: searchableNamespaces
+		} );
+		var container = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection' );
+		var pane = new mw.libs.advancedSearch.ui.ExpandablePane( {
+			dependentPaneContentBuilder: function () {
+				return container.append( header ).append( presets.$element ).append( selection.$element );
+			},
+			$buttonLabel: nsPreview.$element,
+			tabIndex: 0,
+			suffix: 'namespaces'
+		} );
+		pane.on( 'change', function () {
+			if ( pane.isOpen() ) {
+				nsPreview.hidePreview();
+			} else {
+				nsPreview.showPreview();
+			}
+		} );
+		pane.buildDependentPane();
+		return pane.$element;
+	}
+
+	/**
+	 * @param {Array} searchableNamespaces
 	 * @return {string[]}
 	 */
 	function getNamespacesFromUrl( searchableNamespaces ) {
@@ -209,6 +244,7 @@
 			$profileField = $search.find( 'input[name="profile"]' );
 
 		$search.append( $advancedSearch );
+
 		$searchField.val( queryCompiler.removeCompiledQueryFromSearch( $searchField.val(), state ) );
 		$searchField.trigger( 'focus' );
 
@@ -239,15 +275,7 @@
 					presets: mw.config.get( 'advancedSearch.namespacePresets' )
 				}
 			),
-			namespaceSelectionPreview = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection' ),
 			headerContainer = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection-header' );
-
-		var namespaceLabel = new OO.ui.LabelWidget( {
-			label: mw.msg( 'advancedsearch-namespaces-search-in' ),
-			classes: [ 'mw-advancedSearch-namespace-search-in-label' ],
-			input: namespaceSelection
-		} );
-		headerContainer.append( namespaceLabel.$element );
 
 		if ( !mw.user.isAnon() ) {
 			var rememberNameSpaceSelection = new OO.ui.FieldLayout( new OO.ui.CheckboxInputWidget( {
@@ -256,11 +284,14 @@
 			} ), { label: mw.msg( 'advancedsearch-namespaces-remember' ), align: 'inline' } );
 			headerContainer.append( rememberNameSpaceSelection.$element );
 		}
-		$advancedSearch.append( namespaceSelectionPreview );
-		namespaceSelectionPreview
-			.after( namespaceSelection.$element )
-			.append( headerContainer )
-			.append( namespacePresets.$element );
+
+		$advancedSearch.append( buildNamespacesPaneElement(
+			state,
+			headerContainer,
+			namespacePresets,
+			namespaceSelection,
+			searchableNamespaces
+		) );
 
 		$( '.mw-search-spinner' ).hide();
 
