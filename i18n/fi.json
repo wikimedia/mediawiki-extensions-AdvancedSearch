@@ -48,5 +48,5 @@
 	"advancedsearch-namespaces-placeholder": "Lisää nimiavaruuksia...",
 	"prefs-advancedsearch": "Laajennettu haku",
 	"advancedsearch-preference-help": "Laajennettu haku lisää lomakkeen sivulle Special:Search. Näin voit suorittaa erikoistuneita hakuja, vaikka et tietäisi yhtään hakusyntaksia. Se myös muuttaa nimiavaruuksien valintatapaa.",
-	"advancedsearch-preference-disable": "Älä näytä Laajennetun haun käyttöliittymää"
+	"advancedsearch-preference-disable": "Älä näytä laajennetun haun käyttöliittymää"
 }
