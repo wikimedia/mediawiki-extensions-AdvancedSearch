@@ -66,7 +66,7 @@
 	 */
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.prettifyNamespaces = function ( namespaces ) {
 		Object.keys( namespaces ).forEach( function ( id ) {
-			namespaces[ id ] = mw.Title.newFromText( namespaces[ id ] ).getNameText();
+			namespaces[ id ] = mw.Title.newFromText( namespaces[ id ] ).getMainText();
 		} );
 		return namespaces;
 	};

@@ -225,7 +225,7 @@
 	 * @return {string}
 	 */
 	mw.libs.advancedSearch.dm.MultiselectLookup.prototype.removeNamespace = function ( pageTitle ) {
-		return mw.Title.newFromText( pageTitle ).getNameText();
+		return mw.Title.newFromText( pageTitle ).getMainText();
 	};
 
 	/**
