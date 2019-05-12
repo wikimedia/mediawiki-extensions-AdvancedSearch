@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Les Meloures"
 		]
 	},
 	"advancedsearch-desc": "Liichten Zougang zu erweiderte Sich-Méiglechkeeten op [[Special:Search]]",
@@ -21,7 +22,7 @@
 	"advancedsearch-field-filetype": "Typ vu Fichier",
 	"advancedsearch-field-filew": "Breet vum Fichier a Pixel",
 	"advancedsearch-field-fileh": "Héicht vum Fichier a Pixel",
-	"advancedsearch-help-plain": ";Beschreiwung:\n:sSicht no dëse Wierder am Titel oder am Text.\n;Denkt heirun:\n:* Méi Wierder kënnen hei agi ginn.\n:* Sazzeechen an aner net-alphanumeresch Zeechen (mat Ausnam vum Doppelpunkt a vum Komma) ginn gnoréiert.\n:* Et kënne Resultater ginn, an deenen een oder méi vun Äre Sichbegrëffer net dra sinn.\n:* Wuertofbstamung gëtt net applizéiert. Beispill: Wann \"Auto\" agi gëtt, fënnt d'Sich och \"Autoen\". D'Wuertofbstamung ass sproochspezifesch.\n;Hëllefsäit\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search Volltextsuche]\n; Syntaxgläichwerteg an der normaler Sich\n:<code>Sesam Strooss Auto</code>",
+	"advancedsearch-help-plain": ";Beschreiwung:\n:Sicht no dëse Wierder am Titel oder am Text.\n;Denkt heirun:\n:* Méi Wierder kënnen hei agi ginn.\n:* Sazzeechen an aner net-alphanumeresch Zeechen (mat Ausnam vum Doppelpunkt a vum Komma) ginn ignoréiert.\n:* Et kënne Resultater ginn, an deenen een oder méi vun Äre Sichbegrëffer net dra sinn.\n:* Wuertofbstamung gëtt net applizéiert. Beispill: Wann \"Auto\" agi gëtt, fënnt d'Sich och \"Autoen\". D'Wuertofbstamung ass sproochspezifesch.\n;Hëllefsäit\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search Volltextsuche]\n; Syntaxgläichwerteg an der normaler Sich\n:<code>Sesam Strooss Auto</code>",
 	"advancedsearch-help-phrase": "sicht no enger spezifescher Sequenz vun Zeechen. Sazzeeche ginn ignoréiert.",
 	"advancedsearch-help-or": "schléisst Säiten an deenen dës Wierder dra sinn aus dem Sichen aus.",
 	"advancedsearch-help-not": "mindestens ee vun de gesichte Begrëffer muss an der Säit dra sinn.",
