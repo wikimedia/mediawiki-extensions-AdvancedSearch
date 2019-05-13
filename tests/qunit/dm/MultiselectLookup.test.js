@@ -159,6 +159,7 @@
 		var lookupField = new MultiselectLookup( store, config );
 		assert.strictEqual( lookupField.removeNamespace( 'Test' ), 'Test' );
 		assert.strictEqual( lookupField.removeNamespace( 'Template:Test' ), 'Test' );
+		assert.strictEqual( lookupField.removeNamespace( 'User:Foo/Bar.js' ), 'Foo/Bar.js' );
 	} );
 
 	QUnit.test( 'Native browser autocomplete is not used', function ( assert ) {
