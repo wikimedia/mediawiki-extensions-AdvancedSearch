@@ -20,4 +20,20 @@
 		assert.notOk( cache.has( 'bar' ) );
 	} );
 
+	QUnit.test( 'Different namespace does make a difference', function ( assert ) {
+		var cache = new TitleCache();
+		cache.set( 'Template:Foo', 'OK' );
+
+		assert.ok( cache.has( 'Template:Foo' ) );
+		assert.notOk( cache.has( 'User:Foo' ) );
+	} );
+
+	QUnit.test( 'Different file name extension does make a difference', function ( assert ) {
+		var cache = new TitleCache();
+		cache.set( 'File name.jpg', 'OK' );
+
+		assert.ok( cache.has( 'File name.jpg' ) );
+		assert.notOk( cache.has( 'File name.svg' ) );
+	} );
+
 }() );
