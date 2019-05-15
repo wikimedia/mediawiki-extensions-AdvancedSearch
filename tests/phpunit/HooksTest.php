@@ -109,7 +109,7 @@ class HooksTest extends MediaWikiTestCase {
 		$special = $this->newSpecialSearchPage(
 			$this->newAnonymousUser(),
 			'/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1',
-				[ 'ns0' => 1 ]
+			[ 'ns0' => 1 ]
 		);
 
 		Hooks::onSpecialPageBeforeExecute( $special, '' );
@@ -170,7 +170,7 @@ class HooksTest extends MediaWikiTestCase {
 
 		$this->assertEquals(
 			wfGetServerUrl( PROTO_CURRENT ) .
-			'/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1',
+			'/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1&ns6=1&ns10=1',
 			$special->getOutput()->getRedirect()
 		);
 	}
@@ -214,7 +214,11 @@ class HooksTest extends MediaWikiTestCase {
 		// Act like the user has all fields disabled
 		$mock->method( 'getBoolOption' )->willReturn( false );
 		$mock->method( 'isAnon' )->willReturn( false );
-		$mock->mOptions = [ 'searchNs0' => 0, 'searchNs6' => 1, 'searchNs10' => 1 ];
+		$mock->method( 'getOption' )->willReturnMap( [
+			[ 'searchNs0', null, false, 1 ],
+			[ 'searchNs6', null, false, 1 ],
+			[ 'searchNs10', null, false, 1 ],
+		] );
 		return $mock;
 	}
 }
