@@ -32,6 +32,7 @@
 	mw.libs.advancedSearch.dm.SearchModel = function ( defaultNamespaces, defaultFieldValues ) {
 		this.searchFields = {};
 		this.namespaces = defaultNamespaces || [];
+		this.sortMethod = 'relevance';
 		this.defaultFieldValues = defaultFieldValues || {};
 
 		// Mixin constructor
@@ -285,6 +286,21 @@
 		if ( !OO.compare( previousNamespaces, this.namespaces ) ) {
 			this.emitUpdate();
 		}
+	};
+
+	/**
+ 	* @return {string[]}
+ 	*/
+	mw.libs.advancedSearch.dm.SearchModel.prototype.getSortMethod = function () {
+		return this.sortMethod;
+	};
+
+	/**
+ 	* @param {string} sortMethod
+ 	*/
+	mw.libs.advancedSearch.dm.SearchModel.prototype.setSortMethod = function ( sortMethod ) {
+		this.sortMethod = sortMethod;
+		this.emitUpdate();
 	};
 
 	mw.libs.advancedSearch.dm.SearchModel.prototype.emitUpdate = function () {

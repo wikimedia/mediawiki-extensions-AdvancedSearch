@@ -19,9 +19,18 @@ describe( 'AdvancedSearch', function () {
 		SearchPage.open();
 
 		SearchPage.toggleInputFields();
+		let infoPopups = SearchPage.infoPopup.value;
 		SearchPage.searchInfoIcons.value.forEach( function ( popupIcon, idx ) {
+			if ( !popupIcon.isVisible() ) {
+				return;
+			}
+			browser.execute( function ( selector, idx ) {
+				document.querySelectorAll( selector )[ idx ].scrollIntoView( true ); // eslint-disable-line no-undef
+			}, popupIcon.selector, idx );
 			popupIcon.click();
-			let popupContent = SearchPage.infoPopup.value[ idx ];
+			let popupContent = infoPopups[ idx ];
+			popupContent.waitForVisible();
+
 			assert( popupContent.isVisible() );
 			assert( SearchPage.getInfoPopupContent( popupContent ).getText() !== '' );
 
@@ -133,6 +142,7 @@ describe( 'AdvancedSearch', function () {
 	} );
 
 	it( 're-adds filetype namespace after search when file type option has been selected but namespace has been removed', function () {
+		this.timeout( 60000 );
 		SearchPage.open();
 		SearchPage.toggleInputFields();
 

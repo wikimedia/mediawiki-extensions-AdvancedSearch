@@ -117,6 +117,7 @@
 				"modules/ui/ext.advancedSearch.NamespacesPreview.js",
 				"modules/dm/ext.advancedSearch.NamespacePresetProviders.js",
 				"modules/dm/trackingEvents/ext.advancedSearch.SearchRequest.js",
+				"modules/dm/ext.advancedSearch.getSortMethods.js",
 				"modules/ui/ext.advancedSearch.MenuSelectWidget.js",
 				"modules/ui/ext.advancedSearch.ItemMenuOptionWidget.js",
 				"modules/ui/ext.advancedSearch.CheckboxInputWidget.js",
@@ -126,9 +127,13 @@
 				"advancedsearch-options-pane-head",
 				"advancedsearch-namespaces-search-in",
 				"advancedsearch-namespaces-placeholder",
+				"advancedsearch-sort-relevance",
+				"advancedsearch-sort-last-edit-desc",
+				"advancedsearch-sort-create-timestamp-desc",
 				"advancedsearch-optgroup-text",
 				"advancedsearch-optgroup-structure",
 				"advancedsearch-optgroup-files",
+				"advancedsearch-optgroup-sort",
 				"advancedsearch-namespaces-remember",
 				"advancedsearch-namespaces-preset-all",
 				"advancedsearch-namespaces-preset-default",
@@ -148,7 +153,12 @@
 				"advancedsearch-field-hastemplate",
 				"advancedsearch-field-filetype",
 				"advancedsearch-field-filew",
-				"advancedsearch-field-fileh"
+				"advancedsearch-field-fileh",
+				"advancedsearch-field-sort",
+				"advancedsearch-field-preview-sort",
+				"advancedsearch-sort-preview-relevance",
+				"advancedsearch-sort-preview-last-edit-desc",
+				"advancedsearch-sort-preview-create-timestamp-desc"
 			],
 			"dependencies": [
 				"mediawiki.user",
@@ -182,6 +192,7 @@
 				"modules/ui/ext.advancedSearch.StoreListener.js",
 				"modules/ui/mixins/ext.advancedSearch.ClassesForDropdownOptions.js",
 				"modules/ui/ext.advancedSearch.FileTypeSelection.js",
+				"modules/ui/ext.advancedSearch.SortPreference.js",
 				"modules/ui/ext.advancedSearch.LanguageSelection.js",
 				"modules/ui/ext.advancedSearch.TextInput.js",
 				"modules/ui/ext.advancedSearch.ImageDimensionInput.js",
@@ -204,6 +215,7 @@
 				"advancedsearch-field-phrase",
 				"advancedsearch-field-plain",
 				"advancedsearch-field-subpageof",
+				"advancedsearch-field-sort",
 				"advancedsearch-filetype-section-types",
 				"advancedsearch-filetype-section-image",
 				"advancedsearch-filetype-section-video",
@@ -219,7 +231,10 @@
 				"advancedsearch-inlanguage-default",
 				"advancedsearch-filesize-equals",
 				"advancedsearch-filesize-greater-than",
-				"advancedsearch-filesize-smaller-than"
+				"advancedsearch-filesize-smaller-than",
+				"advancedsearch-sort-relevance",
+				"advancedsearch-sort-last-edit-desc",
+				"advancedsearch-sort-create-timestamp-desc"
 			],
 			"dependencies": [
 				"oojs",

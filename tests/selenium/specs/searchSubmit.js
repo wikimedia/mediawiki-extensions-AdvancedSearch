@@ -27,7 +27,7 @@ describe( 'Advanced Search submit', function () {
 		browser.waitUntil( SearchPage.advancedSearchIsCollapsed, 5000 );
 
 		assert( SearchPage.searchPreviewItems.isExisting(), 'Preview pills should be shown' );
-		assert.strictEqual( SearchPage.searchPreviewItems.value.length, 4, 'Number of preview pills must match number of filled fields' );
+		assert.strictEqual( SearchPage.searchPreviewItems.value.length, 5, 'Number of preview pills must match number of filled fields + 1 (default sorting)' );
 	} );
 
 	it( 'collapses search preview after submission', function () {

@@ -23,6 +23,36 @@
 	};
 
 	/**
+	 * @param {string} fieldId
+	 * @return {boolean}
+	 */
+	var fieldIsImageDimension = function ( fieldId ) {
+		return /^file[hw]$/.test( fieldId );
+	};
+
+	/**
+	 * @param {string} fieldId
+	 * @return {boolean}
+	 */
+	var fieldIsSortMethod = function ( fieldId ) {
+		return fieldId === 'sort';
+	};
+
+	var lookupTranslationForSortMethod = function ( sortMethodName ) {
+		var foundSortMethod = mw.libs.advancedSearch.dm.getSortMethods().filter( function ( sortMethod ) {
+			return sortMethod.name === sortMethodName;
+		} );
+		return foundSortMethod.length > 0 ? foundSortMethod[ 0 ].previewLabel : mw.msg( 'advancedsearch-sort-unknown' );
+	};
+
+	var lookupTranslationForLabel = function ( fieldId ) {
+		if ( fieldId === 'sort' ) {
+			return 'advancedsearch-field-preview-sort';
+		}
+		return 'advancedsearch-field-' + fieldId;
+	};
+
+	/**
 	 * @class
 	 * @extends {OO.ui.Widget}
 	 * @constructor
@@ -78,6 +108,8 @@
 
 			this.$element.append( this.generateTag( fieldId, val ).$element );
 		}.bind( this ) );
+
+		this.$element.append( this.generateTag( 'sort', this.store.getSortMethod() ).$element );
 	};
 
 	/**
@@ -94,7 +126,11 @@
 		if ( Array.isArray( value ) && value.length === 0 ) {
 			return true;
 		}
-		if ( /^file[hw]$/.test( fieldId ) && Array.isArray( value ) && !value[ 1 ] ) {
+		if ( fieldIsImageDimension( fieldId ) && Array.isArray( value ) && !value[ 1 ] ) {
+			return true;
+		}
+
+		if ( fieldIsSortMethod( fieldId ) ) {
 			return true;
 		}
 
@@ -112,7 +148,7 @@
 		var formattedValue = this.formatValue( fieldId, value ),
 			tag = new OO.ui.TagItemWidget( {
 				label: $()
-					.add( $( '<span>' ).text( mw.msg( 'advancedsearch-field-' + fieldId ) ) )
+					.add( $( '<span>' ).text( mw.msg( lookupTranslationForLabel( fieldId ) ) ) )
 					// redundant span to cover browsers without support for bdi tag
 					.add( $( '<span>' ).addClass( 'mw-advancedSearch-searchPreview-content' ).append(
 						$( '<bdi>' ).text( formattedValue )
@@ -128,7 +164,8 @@
 
 		tag.$element
 			.attr( 'title', formattedValue )
-			.addClass( 'mw-advancedSearch-searchPreview-previewPill' );
+			.addClass( 'mw-advancedSearch-searchPreview-previewPill' )
+			.addClass( 'mw-advancedSearch-searchPreview-preview-' + fieldId );
 
 		return tag;
 	};
@@ -141,9 +178,14 @@
 	 * @return {string}
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview.prototype.formatValue = function ( fieldId, value ) {
-		if ( /^file[hw]$/.test( fieldId ) && Array.isArray( value ) ) {
+		if ( fieldIsImageDimension( fieldId ) && Array.isArray( value ) ) {
 			return mw.msg( fileComparatorToMessage( value[ 0 ] ) ) + ' ' + value[ 1 ];
 		}
+
+		if ( fieldIsSortMethod( fieldId ) ) {
+			return lookupTranslationForSortMethod( value );
+		}
+
 		if ( Array.isArray( value ) ) {
 			return value.map( function ( v ) {
 				return String( v ).trim();

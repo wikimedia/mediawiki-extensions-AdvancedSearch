@@ -12,7 +12,8 @@
 		store = {
 			connect: sandbox.stub(),
 			getField: sandbox.stub(),
-			removeField: sandbox.stub()
+			removeField: sandbox.stub(),
+			getSortMethod: sandbox.stub()
 		};
 		config = {};
 	} );
@@ -53,10 +54,10 @@
 		var searchPreview = new SearchPreview( store, config );
 
 		var pills = $( '.mw-advancedSearch-searchPreview-previewPill', searchPreview.$element );
-		assert.strictEqual( pills.length, 2 );
+		assert.strictEqual( pills.length, 3 );
 
 		assert.ok( store.getField.calledTwice );
-		assert.ok( generateTagSpy.calledTwice );
+		assert.strictEqual( generateTagSpy.callCount, 3 );
 
 		assert.ok( generateTagSpy.withArgs( 'somename', 'field one value' ).calledOnce );
 		assert.ok( generateTagSpy.withArgs( 'another', 'field two value' ).calledOnce );
@@ -127,7 +128,7 @@
 		assert.ok( store.removeField.withArgs( 'somename' ).calledOnce );
 	} );
 
-	QUnit.test( 'Showing renders pills', function ( assert ) {
+	QUnit.test( 'Showing rendered pills', function ( assert ) {
 		config.fieldNames = [ 'one', 'two' ];
 
 		store.getField.withArgs( 'one' ).returns( 'field one value' );
@@ -136,7 +137,7 @@
 		var searchPreview = new SearchPreview( store, config );
 		searchPreview.showPreview();
 
-		assert.strictEqual( searchPreview.$element.find( '.mw-advancedSearch-searchPreview-previewPill' ).length, 2 );
+		assert.strictEqual( searchPreview.$element.find( '.mw-advancedSearch-searchPreview-previewPill' ).length, 3 );
 	} );
 
 	QUnit.test( 'Hiding removes pills', function ( assert ) {

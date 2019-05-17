@@ -86,9 +86,15 @@
 				$compiledSearchField = $( '<input>' ).prop( {
 					name: $searchField.prop( 'name' ),
 					type: 'hidden'
-				} ).val( compiledQuery );
+				} ).val( compiledQuery ),
+				$sortField = $( '<input>' ).prop( {
+					name: 'sort',
+					type: 'hidden'
+				} ).val( state.getSortMethod() );
 			$searchField.prop( 'name', '' )
-				.after( $compiledSearchField );
+				.after( $compiledSearchField )
+				.after( $sortField );
+
 		} );
 	}
 
@@ -223,10 +229,14 @@
 				getDefaultsFromConfig( fieldCollection.fields )
 			),
 			namespacesFromUrl = getNamespacesFromUrl( searchableNamespaces ),
-			stateFromUrl = mw.util.getParamValue( 'advancedSearch-current' );
+			stateFromUrl = mw.util.getParamValue( 'advancedSearch-current' ),
+			sortMethodFromUrl = mw.util.getParamValue( 'sort' );
 
 		if ( namespacesFromUrl.length ) {
 			state.setNamespaces( namespacesFromUrl );
+		}
+		if ( sortMethodFromUrl ) {
+			state.setSortMethod( sortMethodFromUrl );
 		}
 
 		// If AdvancedSearch has occurred before, it's fields have the highest precedence

@@ -151,7 +151,7 @@ class SearchPage extends Page {
 	get searchPaginationLinks() { return browser.elements( '.mw-search-pager-bottom a' ); }
 	get searchPreviewItems() { return browser.elements( '.mw-advancedSearch-searchPreview .mw-advancedSearch-searchPreview-previewPill' ); }
 	get namespacePreviewItems() { return browser.elements( '.mw-advancedSearch-namespacesPreview .mw-advancedSearch-namespacesPreview-previewPill' ); }
-	get searchInfoIcons() { return browser.elements( '.mw-advancedSearch-container .oo-ui-fieldLayout:not(.oo-ui-element-hidden) .oo-ui-buttonElement-button' ); }
+	get searchInfoIcons() { return browser.elements( '.mw-advancedSearch-container .oo-ui-fieldLayout .oo-ui-buttonElement-button' ); }
 	get infoPopup() { return browser.elements( '.oo-ui-popupWidget-popup' ); }
 	get searchButton() { return browser.element( '#mw-search-top-table button' ); }
 	get namespaceTags() { return browser.elements( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-group span' ); }

@@ -18,8 +18,8 @@
 		this.store = store;
 		this.fieldId = config.fieldId;
 
-		mw.libs.advancedSearch.ui.StoreListener.parent.call( this, config );
 		store.connect( this, { update: 'onStoreUpdate' } );
+		mw.libs.advancedSearch.ui.StoreListener.parent.call( this, config );
 		this.setValueFromStore();
 	};
 
