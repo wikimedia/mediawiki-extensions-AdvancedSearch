@@ -15,6 +15,11 @@ actually be obeyed when using AdvancedSearch in a wiki.
 
 For configuration options please see the [settings documentation](docs/settings.md).
 
+## Adding More Fields
+
+Please see the "[Adding Fields to AdvancedSearch](docs/adding_fields.md)" documentation to learn how you can add new fields for other search keywords to AdvancedSearch.
+
+
 ## Development
 
 This project uses [npm](https://docs.npmjs.com/) and [grunt](https://gruntjs.com/) to run

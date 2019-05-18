@@ -4,9 +4,9 @@ This document explains how to add your own fields to a new section in AdvancedSe
 
 ## Example Code: Prefix search
 
-[The search keyword `prefix:`](https://www.mediawiki.org/wiki/Help:CirrusSearch#Prefix_and_namespace) allows to search for pages where the page title starts with the search string. To add a search field for the `prefix:` keyword to AdvancedSearch, you need to add a hook handler for the `advancedSearch.configureFields` hook. The hook gets the collection of existing fields and you can add your own fields.
+[The search keyword `prefix:`](https://www.mediawiki.org/wiki/Help:CirrusSearch#Prefix_and_namespace) allows to search for pages where the page title starts with the search string. To add a search field for the `prefix:` keyword to AdvancedSearch, you need to add a hook handler for the `advancedSearch.configureFields` hook. The hook gets an instance of [FieldCollection](../modules/ext.advancedSearch.FieldCollection.js) and you can use its `add` method to add a field configuration for your own field.
 
-The `fieldCollection.add` method takes your field definition and the section name where the new field should appear (in our case we're using `extra`). The field definition object needs three methods:
+The `fieldCollection.add` method takes your field definition and the section name where the new field should appear (in our case we're using the section name `extra`). The field definition object needs three methods:
 
 * `formatter` converts the user input to the search keyword string,
 * `init` creates the field widget
@@ -61,7 +61,7 @@ The formatter function takes the field value and converts it to MediaWiki search
 
 The type of the input parameter depends on the field widget you chose - `TextInput` values are strings, `ArbitraryWordInput` values are an array of strings, etc.
 
-Here is an example for the formatter for the //pages without this word// field that uses `ArbitraryWordInput`:
+Here is an example for the formatter for the *pages without this word* field that uses `ArbitraryWordInput`:
 
 ```javascript
 function ( val ) {
@@ -74,7 +74,7 @@ function ( val ) {
 }
 ```
 
-If you're getting strings as input, remember to trim the whitespace at the beginning and end of the value. Also as yourself if the string needs to be quoted to escaped.
+If you're getting strings as input, remember to trim the whitespace at the beginning and end of the value. Please think of all possible values that might come from yoir field. You might need to quote and/or escape the values coming from your field.
 
 #### init
 
@@ -108,4 +108,50 @@ The i18n label for the section name has the prefix `advancedsearch-optgroup-`. S
 ## Implementing your own widgets
 
 ### The data model of AdvancedSearch
-You can't use plain OOUI widgets in AdvancedSearch, because AdvancedSearch collects the current state of all the search fields in a [`SearchModel`](../modules/dm/ext.advancedSearch.SearchModel.js) instance. The `FieldElementBuilder` class that converts the field configuration into widget instances attaches a `change` event handler to each widget. The change handler sends the field value to the `SearchModel`. All fields must connect to the `update` event from `SearchModel`. `SearchModel` triggers the `update` event when its data changes. This event-based, one-directional data flow enables serializing and deserializing the form state when the user sends the form and to programmatically trigger changing the contents of dependent fields.
+AdvancedSearch has a unidirectional data flow: User input events in AdvancedSearch widgets collect the user input and send it to its `store` property, a [`SearchModel`](../modules/dm/ext.advancedSearch.SearchModel.js) instance. All calls to `SearchModel.storeField` trigger the `update` event of `SearchModel`. All AdvancedSearch widgets listen to the `update` event from `SearchModel` to update their value.
+
+```
++--------+  User event (e.g. "change")  +---------------+ field data  +----------+
+|        +----------------------------->+ Event Handler +------------>+          |
+|        |                              +---------------+             |          |
+| Widget |                                            "update" event  |  Store   |
+|        +<-----------------------------------------------------------+          |
++--------+                                                            +----------+
+
+```  
+
+This event-based, one-directional data flow enables
+
+* showing the field field values in different places, e.g. the preview "pills" and the fields themselves
+* serializing and deserializing the form state when the user sends the form
+* to programmatically triggering changing the contents of dependent fields.
+
+Your widgets don't have to implement the event handler themselves, AdvancedSearch initialization code in the [`FieldElementBuilder`](../modules/ext.advancedSearch.FieldElementBuilder.js) class takes care of setting up the event handler. 
+
+Here is some minimal widget example code that shows how to handle the "update" event from the store:
+
+```javascript
+mw.libs.advancedSearch.ui.MyWidget = function ( store, config ) {
+	this.fieldId = config.fieldId;
+	this.store = store;
+	store.connect( this, { update: 'onStoreUpdate' } );
+
+	mw.libs.advancedSearch.ui.MyWidget.parent.call( this, config );
+	this.setValuesFromStore();
+};
+
+OO.inheritClass( mw.libs.advancedSearch.ui.MyWidget, OO.ui.Widget );
+
+mw.libs.advancedSearch.ui.MyWidget.prototype.onStoreUpdate = function () {
+	this.setValuesFromStore();
+};
+
+mw.libs.advancedSearch.ui.MyWidget.prototype.setValuesFromStore = function () {
+	if ( this.store.hasFieldChanged( this.fieldId, this.data ) ) {
+		this.setValue( this.store.getField( this.fieldId ) );
+	}
+};
+```
+
+**Note:** To avoid infinite loops, the event handler in the widget must check if the value coming from the `update` event is the same as the one already in the widget. If the values are the same, don't set it again, otherwise the widget will trigger another change event, sending the value to the store. As you can see, there is a utility method in the store for that.
+ 
