@@ -128,6 +128,8 @@ describe( 'AdvancedSearch', function () {
 		let current = SearchPage.getSelectedNamespaceIDs();
 		assert.deepEqual( cache, current );
 		SearchPage.logOut.click();
+		// TODO use a better way to make sure logout is finished
+		browser.pause( 300 );
 	} );
 
 	it( 're-adds filetype namespace after search when file type option has been selected but namespace has been removed', function () {
