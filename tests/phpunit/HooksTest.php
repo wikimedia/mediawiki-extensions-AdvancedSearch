@@ -30,6 +30,7 @@ class HooksTest extends MediaWikiTestCase {
 			'ExtensionAssetsPath' => '<PATH>',
 			'FileExtensions' => [ '<EXT>' ],
 		] ) );
+		$this->setMwGlobals( 'wgNamespacesToBeSearchedDefault', [ NS_MAIN => true ] );
 	}
 
 	public function testGetPreferencesHookHandler() {
