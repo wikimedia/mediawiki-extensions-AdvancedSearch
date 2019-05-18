@@ -7,6 +7,7 @@ use ResourceLoader;
 use SpecialPage;
 use User;
 use Language;
+use WebRequest;
 
 /**
  * @license GPL-2.0-or-later
@@ -84,10 +85,9 @@ class Hooks {
 
 	/**
 	 * If the request does not contain any namespaces, redirect to URL with user default namespaces
-	 * Returns false if user has no namespaces defined
 	 */
 	private static function redirectToNamespacedRequest( \SpecialPage $special ) {
-		if ( !self::isNamespacedRequest( $special ) ) {
+		if ( !self::isNamespacedSearch( $special->getRequest() ) ) {
 			$namespacedSearchUrl = $special->getRequest()->getFullRequestURL();
 			$queryParts = [];
 			foreach ( self::getDefaultNamespaces( $special->getUser() ) as $ns ) {
@@ -110,12 +110,16 @@ class Hooks {
 	}
 
 	/**
-	 * Checks if search request specifies any namespaces
-	 * @param SpecialPage $special
+	 * Checks if there is a search request, and it already specifies namespaces.
+	 * @param WebRequest $request
 	 * @return bool
 	 */
-	private static function isNamespacedRequest( \SpecialPage $special ) {
-		foreach ( array_keys( $special->getRequest()->getValues() ) as $requestKey ) {
+	private static function isNamespacedSearch( WebRequest $request ) {
+		if ( $request->getRawVal( 'search', '' ) === '' ) {
+			return true;
+		}
+
+		foreach ( $request->getValueNames() as $requestKey ) {
 			if ( preg_match( '/^ns\d+$/', $requestKey ) ) {
 				return true;
 			}

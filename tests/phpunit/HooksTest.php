@@ -142,7 +142,7 @@ class HooksTest extends MediaWikiTestCase {
 		$special = $this->newSpecialSearchPage(
 			$this->newAnonymousUser(),
 			'/w/index.php?search=test&title=Special%3ASearch&go=Go',
-			[]
+			[ 'search' => 'test' ]
 		);
 
 		Hooks::onSpecialPageBeforeExecute( $special, '' );
@@ -164,7 +164,7 @@ class HooksTest extends MediaWikiTestCase {
 		$special = $this->newSpecialSearchPage(
 			$this->newAnonymousUser(),
 			'/wiki/Special%3ASearch',
-			[]
+			[ 'search' => 'test' ]
 		);
 
 		Hooks::onSpecialPageBeforeExecute( $special, '' );
@@ -186,7 +186,7 @@ class HooksTest extends MediaWikiTestCase {
 		$special = $this->newSpecialSearchPage(
 			$this->newRegisteredUser(),
 			'/w/index.php?search=test&title=Special%3ASearch&go=Go',
-			[]
+			[ 'search' => 'test' ]
 		);
 
 		Hooks::onSpecialPageBeforeExecute( $special, '' );
@@ -199,12 +199,13 @@ class HooksTest extends MediaWikiTestCase {
 	}
 
 	/**
+	 * @param User $user
 	 * @param string $url
 	 * @param array $requestValues
 	 * @return SpecialPage
 	 * @throws \MWException
 	 */
-	private function newSpecialSearchPage( $user, $url, $requestValues = [] ) {
+	private function newSpecialSearchPage( User $user, $url, $requestValues = [] ) {
 		$output = new OutputPage( new RequestContext() );
 		$request = new \FauxRequest();
 		$request->setRequestURL( $url );
