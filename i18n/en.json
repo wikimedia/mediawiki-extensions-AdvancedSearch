@@ -6,7 +6,7 @@
 	},
 	"advancedsearch-desc": "Easy access to advanced search capabilities on [[Special:Search]]",
 
-	"advancedsearch-options-pane-head": "Advanced parameters:",
+	"advancedsearch-options-pane-head": "Advanced search:",
 	"advancedsearch-optgroup-text": "Search in page text",
 	"advancedsearch-optgroup-structure": "Structure",
 	"advancedsearch-optgroup-files": "Files and images",
