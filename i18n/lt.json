@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Manvydasz",
-			"Vogone"
+			"Vogone",
+			"Eitvys200"
 		]
 	},
 	"advancedsearch-desc": "Lengva naudotis išplėstinės paieškos galimybėmis puslapyje [[Special:Search]]",
-	"advancedsearch-options-pane-head": "Išplėstiniai nustatymai:",
+	"advancedsearch-options-pane-head": "Išplėstinė paieška:",
 	"advancedsearch-optgroup-text": "Ieškoti puslapio tekste",
 	"advancedsearch-optgroup-structure": "Struktūra",
 	"advancedsearch-optgroup-files": "Failai ir vaizdai",
