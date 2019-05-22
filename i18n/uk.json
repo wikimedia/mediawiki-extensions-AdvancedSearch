@@ -6,11 +6,12 @@
 			"Avatar6",
 			"Base",
 			"Ата",
-			"Gzhegozh"
+			"Gzhegozh",
+			"Vlad5250"
 		]
 	},
 	"advancedsearch-desc": "Легкий доступ до можливостей розширеного пошуку на сторінці [[Special:Search|Спеціальна:Пошук]]",
-	"advancedsearch-options-pane-head": "Розширені параметри:",
+	"advancedsearch-options-pane-head": "Розширений пошук:",
 	"advancedsearch-optgroup-text": "Пошук у тексті сторінки",
 	"advancedsearch-optgroup-structure": "Структура",
 	"advancedsearch-optgroup-files": "Файли та зображення",
