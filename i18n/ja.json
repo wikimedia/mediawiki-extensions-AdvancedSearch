@@ -8,11 +8,12 @@
 			"Suyama",
 			"Shirayuki",
 			"Darklanlan",
-			"Ohgi"
+			"Ohgi",
+			"Suchichi02"
 		]
 	},
 	"advancedsearch-desc": "[[Special:Search]]の高度な検索機能への簡単なアクセス",
-	"advancedsearch-options-pane-head": "高度なパラメータ:",
+	"advancedsearch-options-pane-head": "高度な検索:",
 	"advancedsearch-optgroup-text": "ページ内のテキストで検索",
 	"advancedsearch-optgroup-structure": "書式",
 	"advancedsearch-optgroup-files": "ファイルと画像",

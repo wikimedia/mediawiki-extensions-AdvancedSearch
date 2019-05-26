@@ -7,7 +7,8 @@
 			"A2093064",
 			"夢蝶葬花",
 			"A Chinese Wikipedian",
-			"佛壁灯"
+			"佛壁灯",
+			"LNDDYL"
 		]
 	},
 	"advancedsearch-desc": "在[[Special:Search]]提供高级搜索功能的轻松访问",
@@ -64,6 +65,6 @@
 	"advancedsearch-namespaces-preset-discussion": "讨论",
 	"advancedsearch-namespaces-placeholder": "加入名字空间…",
 	"prefs-advancedsearch": "高级搜索",
-	"advancedsearch-preference-help": "高级搜索将一个表单添加到特殊的搜索页面Special:Search\npage中。这允许您执行专门的搜索，即使您不知道任何搜索语法。它还可以更改命名空间的选择方式。",
+	"advancedsearch-preference-help": "高级搜索将一个表单添加到特殊的搜索页面Special:Search\npage中。这允许您执行专门的搜索，即使您不知道任何搜索语法。它还可以更改名字空间的选择方式。",
 	"advancedsearch-preference-disable": "不要显示高级搜索界面"
 }
