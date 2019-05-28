@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"YvesNevelsteen"
+			"YvesNevelsteen",
+			"Mirin"
 		]
 	},
 	"advancedsearch-desc": "Facila aliro al altnivelaj serĉaj kapabloj sur [[Special:Search]]",
-	"advancedsearch-options-pane-head": "Altnivelaj parametroj:",
+	"advancedsearch-options-pane-head": "Altnivela serĉo:",
 	"advancedsearch-optgroup-text": "Serĉi en paĝa teksto",
 	"advancedsearch-optgroup-structure": "Strukturo",
 	"advancedsearch-optgroup-files": "Dosieroj kaj bildoj",
