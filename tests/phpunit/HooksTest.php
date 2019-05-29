@@ -202,24 +202,18 @@ class HooksTest extends MediaWikiTestCase {
 	 * @return User
 	 */
 	private function newAnonymousUser() {
-		$mock = $this->getMockBuilder( User::class )->disableOriginalConstructor()->getMock();
-		$mock->method( 'isAnon' )->willReturn( true );
-		return $mock;
+		return new User();
 	}
 
 	/**
 	 * @return User
 	 */
 	private function newRegisteredUser() {
-		$mock = $this->getMockBuilder( User::class )->disableOriginalConstructor()->getMock();
-		// Act like the user has all fields disabled
-		$mock->method( 'getBoolOption' )->willReturn( false );
-		$mock->method( 'isAnon' )->willReturn( false );
-		$mock->method( 'getOption' )->willReturnMap( [
-			[ 'searchNs0', null, false, 1 ],
-			[ 'searchNs6', null, false, 1 ],
-			[ 'searchNs10', null, false, 1 ],
-		] );
-		return $mock;
+		$user = new User();
+		$user->setOption( 'searchNs0', true );
+		$user->setOption( 'searchNs6', true );
+		$user->setOption( 'searchNs10', true );
+		return $user;
 	}
+
 }
