@@ -7,11 +7,12 @@
 			"MarcoAurelio",
 			"Jelou",
 			"Esteban",
-			"Tiberius1701"
+			"Tiberius1701",
+			"Agusbou2015"
 		]
 	},
 	"advancedsearch-desc": "Acceso sencillo a las funciones de búsqueda avanzadas de [[Special:Search]]",
-	"advancedsearch-options-pane-head": "Parámetros avanzados:",
+	"advancedsearch-options-pane-head": "Búsqueda avanzada:",
 	"advancedsearch-optgroup-text": "Buscar en el texto de la página",
 	"advancedsearch-optgroup-structure": "Estructura",
 	"advancedsearch-optgroup-files": "Archivos e imágenes",
