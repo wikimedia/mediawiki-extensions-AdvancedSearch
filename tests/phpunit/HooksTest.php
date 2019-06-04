@@ -154,6 +154,28 @@ class HooksTest extends MediaWikiTestCase {
 		);
 	}
 
+	public function testAdvancedSearchForcesNamespacedUrlsForDirectPageAccess() {
+		$this->setService(
+			'MimeAnalyzer',
+			$this->getMock( MimeAnalyzer::class, [ 'getTypesForExtension' ], [], '', false )
+		);
+
+		// Search is missing namespace GET parameters like "&ns0=1"
+		$special = $this->newSpecialSearchPage(
+			$this->newAnonymousUser(),
+			'/wiki/Special%3ASearch',
+			[]
+		);
+
+		Hooks::onSpecialPageBeforeExecute( $special, '' );
+
+		$this->assertEquals(
+			wfGetServerUrl( PROTO_CURRENT ) .
+			'/wiki/Special%3ASearch?ns0=1',
+			$special->getOutput()->getRedirect()
+		);
+	}
+
 	public function testAdvancedSearchForcesUserSpecificNamespacedUrls() {
 		$this->setService(
 			'MimeAnalyzer',
