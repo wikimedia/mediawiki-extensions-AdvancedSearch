@@ -84,11 +84,11 @@ class SearchPage extends Page {
 	get searchFileType() {
 		return {
 			selectImageType: function () {
-				browser.element( '#advancedSearchField-filetype .oo-ui-indicator-down' ).click();
+				browser.element( '#advancedSearchField-filetype .oo-ui-dropdownWidget-handle' ).click();
 				browser.element( '.mw-advancedSearch-filetype-image-gif' ).click();
 			},
 			selectAudioType: function () {
-				browser.element( '#advancedSearchField-filetype .oo-ui-indicator-down' ).click();
+				browser.element( '#advancedSearchField-filetype .oo-ui-dropdownWidget-handle' ).click();
 				browser.element( '.mw-advancedSearch-filetype-audio' ).click();
 			}
 		};
