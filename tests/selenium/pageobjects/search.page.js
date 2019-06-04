@@ -99,13 +99,12 @@ class SearchPage extends Page {
 				browser.element( '.mw-advancedSearch-namespaceFilter .mw-advancedSearch-namespace-6 .oo-ui-buttonWidget' ).click();
 			},
 			selectAll: function () {
-				const menuItems = browser.elements( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"]' ).value;
-				const FIRST_UNSELECTED_NAMESPACE_ITEM = 1;
-				for ( let i = FIRST_UNSELECTED_NAMESPACE_ITEM; i < menuItems.length; i++ ) {
-					browser.execute( 'arguments[0].scrollIntoView(true);', menuItems[ i ] );
-					menuItems[ i ].waitForVisible();
-					menuItems[ i ].click();
-				}
+				browser.elements( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"]:not(.oo-ui-optionWidget-selected)' )
+					.value.forEach( ( element ) => {
+						browser.execute( 'arguments[0].scrollIntoView(true);', element );
+						element.waitForVisible();
+						element.click();
+					} );
 				browser.keys( '\uE00C' ); // Close menu by hitting the Escape key
 			},
 			toggleNamespacesMenu() {
