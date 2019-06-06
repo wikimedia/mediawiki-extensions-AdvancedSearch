@@ -8,11 +8,12 @@
 			"夢蝶葬花",
 			"A Chinese Wikipedian",
 			"佛壁灯",
-			"LNDDYL"
+			"LNDDYL",
+			"Ps2049"
 		]
 	},
 	"advancedsearch-desc": "在[[Special:Search]]提供高级搜索功能的轻松访问",
-	"advancedsearch-options-pane-head": "高级参数：",
+	"advancedsearch-options-pane-head": "高级搜索：",
 	"advancedsearch-optgroup-text": "在页面文本中搜索",
 	"advancedsearch-optgroup-structure": "结构",
 	"advancedsearch-optgroup-files": "文件和图片",

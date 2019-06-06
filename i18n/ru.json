@@ -17,11 +17,12 @@
 			"Kaganer",
 			"Vlad5250",
 			"Jack who built the house",
-			"Diralik"
+			"Diralik",
+			"INS Pirat"
 		]
 	},
 	"advancedsearch-desc": "Лёгкий доступ к расширенным возможностям поиска на [[Special:Search]]",
-	"advancedsearch-options-pane-head": "Расширенные параметры:",
+	"advancedsearch-options-pane-head": "Расширенный поиск:",
 	"advancedsearch-optgroup-text": "Искать в тексте страницы",
 	"advancedsearch-optgroup-structure": "Структура",
 	"advancedsearch-optgroup-files": "Файлы и изображения",
