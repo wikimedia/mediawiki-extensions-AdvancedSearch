@@ -13,7 +13,7 @@
 		"grunt-stylelint": "0.10.1",
 		"qunit": "2.7.1",
 		"sinon": "4.5.0",
-		"stylelint-config-wikimedia": "0.5.0",
+		"stylelint-config-wikimedia": "0.6.0",
 		"wdio-junit-reporter": "0.4.4",
 		"wdio-mediawiki": "0.2.0",
 		"wdio-mocha-framework": "0.6.4",
