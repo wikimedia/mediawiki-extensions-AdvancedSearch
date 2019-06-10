@@ -54,5 +54,7 @@
 	"advancedsearch-namespaces-preset-general-help": "Општа помош",
 	"advancedsearch-namespaces-preset-discussion": "Разговор",
 	"advancedsearch-namespaces-placeholder": "Додај именски простори...",
-	"prefs-advancedsearch": "Напредно пребарување"
+	"prefs-advancedsearch": "Напредно пребарување",
+	"advancedsearch-preference-help": "Напредното пребарување додава образец на страницата Специјална:Барај. Ова ви овозможува да изведувате специјализирани пребарувања, дури и ако не знаете каква било синтакса за пребарување. Исто така, ова го менува начинот на изборот на именските простори.",
+	"advancedsearch-preference-disable": "Не го прикажувај посредник за напредно пребарување"
 }
