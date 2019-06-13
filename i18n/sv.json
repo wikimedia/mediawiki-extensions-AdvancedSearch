@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"WikiPhoenix",
-			"Bengtsson96"
+			"Bengtsson96",
+			"Mjälten"
 		]
 	},
 	"advancedsearch-desc": "Enkel åtkomst till avancerade sökförmågor på [[Special:Search]]",
-	"advancedsearch-options-pane-head": "Avancerade parametrar:",
+	"advancedsearch-options-pane-head": "Avancerad sök:",
 	"advancedsearch-optgroup-text": "Sök i sidtext",
 	"advancedsearch-optgroup-structure": "Struktur",
 	"advancedsearch-optgroup-files": "Filer och bilder",
