@@ -10,7 +10,8 @@
 			"Arash",
 			"Mardetanha",
 			"Alireza Ivaz",
-			"Amirsara"
+			"Amirsara",
+			"FarsiNevis"
 		]
 	},
 	"advancedsearch-desc": "دسترسی آسان به قابلیت‌های جستجوی پیشرفته در [[Special:Search]]",
@@ -56,5 +57,6 @@
 	"advancedsearch-namespaces-preset-general-help": "کمک عمومی",
 	"advancedsearch-namespaces-preset-discussion": "بحث",
 	"advancedsearch-namespaces-placeholder": "افزودن فضاهای نام…",
-	"prefs-advancedsearch": "جستجوی پیشرفته"
+	"prefs-advancedsearch": "جستجوی پیشرفته",
+	"advancedsearch-preference-disable": "رابط کاربری «جستجوی پیشرفته» را نشان مده"
 }

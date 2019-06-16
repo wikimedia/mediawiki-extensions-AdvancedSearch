@@ -5,7 +5,9 @@
 			"Orbot707"
 		]
 	},
+	"advancedsearch-desc": "Pela [[Special:Search|Bağse:Cıgeyrayış]]i sero Cıgeyrayışê ravêrşıyayışan rê rehat cırestışi",
 	"advancedsearch-options-pane-head": "Cıgeyrayışo hera:",
+	"advancedsearch-optgroup-text": "Pela metini de cıgeyrê",
 	"advancedsearch-optgroup-structure": "Awaniye",
 	"advancedsearch-optgroup-files": "Dosyay u resimi",
 	"advancedsearch-field-plain": "Nê çekuy",
@@ -19,6 +21,10 @@
 	"advancedsearch-field-inlanguage": "Pelê ke nê zıwanan de",
 	"advancedsearch-field-filetype": "Babetê dosya",
 	"advancedsearch-field-filew": "Hetê pikseli ra gırdiya dosya",
+	"advancedsearch-field-fileh": "Pikseli heta gırdiya dosya",
+	"advancedsearch-placeholder-exact-text": "\"pısing, bıze sinena\"",
+	"advancedsearch-inlanguage-default": "Zıwan weçine",
+	"advancedsearch-filetype-section-types": "Tewrê dosyayê umumi",
 	"advancedsearch-filetype-section-image": "Formatê resima",
 	"advancedsearch-filetype-section-video": "Formatê video",
 	"advancedsearch-filetype-section-audio": "Formatê vengi",
@@ -30,6 +36,15 @@
 	"advancedsearch-filetype-audio": "Veng",
 	"advancedsearch-filetype-video": "Video",
 	"advancedsearch-filetype-office": "Ofis",
+	"advancedsearch-filesize-equals": "keno",
+	"advancedsearch-filesize-greater-than": "zêde gırdo",
+	"advancedsearch-filesize-smaller-than": "zêde kemiyo",
+	"advancedsearch-namespaces-search-in": "tiya dı bıvinê:",
+	"advancedsearch-namespaces-remember": "Cıgeyrayışanê newe tepyayan de biya xo viri",
 	"advancedsearch-namespaces-preset-all": "Pêro",
-	"advancedsearch-namespaces-preset-default": "Hesabiyaye"
+	"advancedsearch-namespaces-preset-default": "Hesabiyaye",
+	"advancedsearch-namespaces-preset-general-help": "Peştiya Umumi",
+	"advancedsearch-namespaces-preset-discussion": "Werênayış",
+	"advancedsearch-namespaces-placeholder": "Cayenameya cı kerê...",
+	"prefs-advancedsearch": "Cıgeyrayışo Hera"
 }

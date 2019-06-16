@@ -5,7 +5,7 @@
 		]
 	},
 	"advancedsearch-desc": "အဆင့်မြင့် ရှာဖွေရေး လုပ်ဆောင်နိုင်စွမ်းများကို [[Special:Search]] တွင် အလွယ်တကူ ရယူနိုင်သည်။",
-	"advancedsearch-options-pane-head": "အဆင့်မြင့် ပါရာမီတာများ:",
+	"advancedsearch-options-pane-head": "အဆင့်မြင့် ရှာဖွေခြင်း-",
 	"advancedsearch-optgroup-text": "စာမျက်နှာ စာသားထဲတွင် ရှာဖွေရန်",
 	"advancedsearch-optgroup-structure": "ဖွဲ့စည်းပုံ",
 	"advancedsearch-optgroup-files": "ဖိုင်များနှင့် ရုပ်ပုံများ",
@@ -19,15 +19,22 @@
 	"advancedsearch-field-hastemplate": "ဤတမ်းပလိတ်များနှင့် စာမျက်နှာများ",
 	"advancedsearch-field-inlanguage": "ဤဘာသာစကားရှိ စာမျက်နှာများ",
 	"advancedsearch-field-filetype": "ဖိုင်အမျိုးအစား",
+	"advancedsearch-placeholder-exact-text": "\"ကြောင်သည် ဆိတ်ကို ချစ်ခင်သည်\"",
 	"advancedsearch-inlanguage-default": "ဘာသာစကား ရွေးရန်",
 	"advancedsearch-filetype-section-types": "ယေဘုယျ ဖိုင်အမျိုးအစားများ",
 	"advancedsearch-filetype-default": "ဖိုင်အမျိုးအစား ရွေးချယ်ရန်",
 	"advancedsearch-filetype-audio": "အသံ",
 	"advancedsearch-filetype-video": "ဗီဒီယို",
+	"advancedsearch-filesize-equals": "တူညီသည်",
+	"advancedsearch-filesize-greater-than": "ထက်ပိုကြီးသည်",
+	"advancedsearch-filesize-smaller-than": "ထက်ပိုနည်းသည်",
+	"advancedsearch-namespaces-search-in": "ရှာဖွေသည်မှာ-",
 	"advancedsearch-namespaces-remember": "နောင်ရှာဖွေမှုများအတွက် ရွေးချယ်မှုကို အမှတ်ရရန်",
 	"advancedsearch-namespaces-preset-all": "အားလုံး",
 	"advancedsearch-namespaces-preset-default": "နဂိုအတိုင်း",
 	"advancedsearch-namespaces-preset-general-help": "ယေဘုယျ အကူအညီ",
 	"advancedsearch-namespaces-preset-discussion": "ဆွေးနွေးချက်",
-	"advancedsearch-namespaces-placeholder": "အမည်ညွှန်းများ ပေါင်းထည့်ရန်..."
+	"advancedsearch-namespaces-placeholder": "အမည်ညွှန်းများ ပေါင်းထည့်ရန်...",
+	"prefs-advancedsearch": "အဆင့်မြင့် ရှာဖွေခြင်း",
+	"advancedsearch-preference-disable": "အဆင့်မြင့်ရှာဖွေရေး မြင်ကွင်းကို မပြပါနှင့်"
 }
