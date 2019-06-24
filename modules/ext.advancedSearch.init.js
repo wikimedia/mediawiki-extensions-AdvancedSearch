@@ -75,12 +75,6 @@
 	 */
 	function setSearchSubmitTrigger( $search, $searchField, state, queryCompiler ) {
 		$search.on( 'submit', function () {
-			var $form = $( this );
-			// Force a GET request when "Remember selection for future searches" isn't checked and
-			// no user setting will be written to the database.
-			var method = $form.find( '[name=nsRemember]' ).prop( 'checked' ) ? 'post' : 'get';
-			$form.prop( 'method', method );
-
 			forceFileTypeNamespaceWhenSearchForFileType( $searchField, state );
 			var compiledQuery = ( $searchField.val() + ' ' + queryCompiler.compileSearchQuery( state ) ).trim(),
 				$compiledSearchField = $( '<input>' ).prop( {
