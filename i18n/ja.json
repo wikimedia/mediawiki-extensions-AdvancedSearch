@@ -9,7 +9,8 @@
 			"Shirayuki",
 			"Darklanlan",
 			"Ohgi",
-			"Suchichi02"
+			"Suchichi02",
+			"Afaz"
 		]
 	},
 	"advancedsearch-desc": "[[Special:Search]]の高度な検索機能への簡単なアクセス",
@@ -66,5 +67,6 @@
 	"advancedsearch-namespaces-preset-discussion": "議論",
 	"advancedsearch-namespaces-placeholder": "名前空間を追加…",
 	"prefs-advancedsearch": "高度な検索",
+	"advancedsearch-preference-help": "高度な検索では「特別ページ:検索」ページにフォームが追加されます。これにより、検索構文がわからなくても、特殊な検索を実行できます。また、名前空間の選択方法も変更されます。",
 	"advancedsearch-preference-disable": "高度な検索インターフェイスを表示しない"
 }

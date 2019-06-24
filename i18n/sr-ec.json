@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Милан Јелисавчић",
-			"BadDog"
+			"BadDog",
+			"Zoranzoki21"
 		]
 	},
 	"advancedsearch-desc": "Лак приступ напредним могућностима претраге на [[Special:Search|Посебно:Претражи]]",
-	"advancedsearch-options-pane-head": "Напредни параметри:",
+	"advancedsearch-options-pane-head": "Напредна претрага:",
 	"advancedsearch-optgroup-text": "Претрага у тексту странице",
 	"advancedsearch-optgroup-structure": "Структура",
 	"advancedsearch-optgroup-files": "Датотеке и слике",
