@@ -30,7 +30,8 @@ class TooltipGenerator {
 			'advancedsearch-help-subpageof',
 			'advancedsearch-help-filetype',
 			'advancedsearch-help-filew',
-			'advancedsearch-help-fileh'
+			'advancedsearch-help-fileh',
+			'advancedsearch-help-sort'
 		];
 
 		return array_combine(

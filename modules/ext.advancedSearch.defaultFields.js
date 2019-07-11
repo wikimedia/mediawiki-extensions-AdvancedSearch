@@ -349,9 +349,26 @@
 			} ),
 			'files'
 		);
+
+		// Sorting options
+		fieldCollection.add(
+			createField( {
+				id: 'sort',
+				defaultValue: 'relevance',
+				formatter: function () {
+					// Does not return a keyword
+					return '';
+				},
+				init: function ( state, config ) {
+					return new mw.libs.advancedSearch.ui.SortPreference( state, config );
+				},
+				customEventHandling: true,
+				layout: createDefaultLayout
+			} ),
+			'sort'
+		);
 	};
 
 	// Ideas for Version 2.0:
-	// * Ordering ( prefer-recent:,  boost-templates: )
 	// * Meta ( linksto:, neartitle:, morelike: )
 }() );

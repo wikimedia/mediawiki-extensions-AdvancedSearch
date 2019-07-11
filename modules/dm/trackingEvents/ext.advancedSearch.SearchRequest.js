@@ -22,7 +22,8 @@
 			hastemplate: false,
 			subpageof: false,
 			inlanguage: false,
-			deepcategory: false
+			deepcategory: false,
+			sort: false
 		};
 	};
 
