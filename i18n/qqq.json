@@ -62,6 +62,12 @@
 	"advancedsearch-filesize-greater-than-symbol": "Label for the file width/height 'greater than' comparator selection as shorthand symbol",
 	"advancedsearch-filesize-smaller-than": "Label for the file width/height 'smaller than' comparator selection",
 	"advancedsearch-filesize-smaller-than-symbol": "Label for the file width/height 'smaller than' comparator selection as shorthand symbol",
+	"advancedsearch-sort-relevance": "Dropdown label for sort option relevance",
+	"advancedsearch-sort-last-edit-desc": "Dropdown label for sort optio most to least recently edited",
+	"advancedsearch-sort-create-timestamp-desc": "Dropdown label for sort option most to least recently created",
+	"advancedsearch-sort-preview-relevance": "Preview label for sort option relevance",
+	"advancedsearch-sort-preview-last-edit-desc": "Preview label for sort optio most to least recently edited",
+	"advancedsearch-sort-preview-create-timestamp-desc": "Preview label for sort option most to least recently created",
 	"advancedsearch-namespaces-search-in": "Label for the 'Search in' section heading of the namespace section",
 	"advancedsearch-namespaces-remember": "Label for a checkbox to save namespace choice for advanced search to user preferences",
 	"advancedsearch-namespaces-preset-all": "Label for the namespace preset 'All namespaces'\n{{Identical|All}}",
@@ -71,11 +77,5 @@
 	"advancedsearch-namespaces-placeholder": "Placeholder text shown in the namespace selection field",
 	"prefs-advancedsearch": "Section name for advanced search settings in the user preferences.",
 	"advancedsearch-preference-help": "Help text explaining the AdvancedSearch interface for the user preference that disables the interface",
-	"advancedsearch-preference-disable": "Label for the user preference that disables the AdvancedSearch interface",
-	"advancedsearch-sort-relevance": "Dropdown label for sort option relevance",
-	"advancedsearch-sort-last-edit-desc": "Dropdown label for sort optio most to least recently edited",
-	"advancedsearch-sort-create-timestamp-desc": "Dropdown label for sort option most to least recently created",
-	"advancedsearch-sort-preview-relevance": "Preview label for sort option relevance",
-	"advancedsearch-sort-preview-last-edit-desc": "Preview label for sort optio most to least recently edited",
-	"advancedsearch-sort-preview-create-timestamp-desc": "Preview label for sort option most to least recently created"
+	"advancedsearch-preference-disable": "Label for the user preference that disables the AdvancedSearch interface"
 }
