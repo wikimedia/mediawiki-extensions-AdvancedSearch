@@ -18,7 +18,8 @@
 			"Vlad5250",
 			"Jack who built the house",
 			"Diralik",
-			"INS Pirat"
+			"INS Pirat",
+			"Edible Melon"
 		]
 	},
 	"advancedsearch-desc": "Лёгкий доступ к расширенным возможностям поиска на [[Special:Search]]",
@@ -26,6 +27,7 @@
 	"advancedsearch-optgroup-text": "Искать в тексте страницы",
 	"advancedsearch-optgroup-structure": "Структура",
 	"advancedsearch-optgroup-files": "Файлы и изображения",
+	"advancedsearch-optgroup-sort": "Порядок сортировки",
 	"advancedsearch-field-plain": "Эти слова",
 	"advancedsearch-field-phrase": "Именно этот текст",
 	"advancedsearch-field-or": "Одно из этих слов",
@@ -38,6 +40,8 @@
 	"advancedsearch-field-filetype": "Тип файла",
 	"advancedsearch-field-filew": "Ширина файла в пикселах",
 	"advancedsearch-field-fileh": "Высота файла в пикселах",
+	"advancedsearch-field-sort": "Порядок сортировки",
+	"advancedsearch-field-preview-sort": "Сортировать по",
 	"advancedsearch-help-plain": ";Описание\n:Ищет эти слова в заголовке или тексте.\n:Учтите следующее\n:* Здесь можно ввести несколько слов.\n:* Знаки препинания и другие не-буквенно-цифровые символы (за исключением двоеточия и запятой) будут игнорироваться.\n:* Могут быть результаты, которые не содержат одного или нескольких условий поиска.\n:* Используется словосочетание. Пример: Если введен «автомобиль», поиск будет также рассматривать «автомобили». Слово, связанное с языком, зависит от языка.\n;Страница справки\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search Полнотекстовый поиск]\n;Синтаксический эквивалент в обычном поиске\n:<code>кунжутный уличный автомобиль</code>",
 	"advancedsearch-help-phrase": ";Описание\n:Ищет определённую последовательность символов. Знаки препинания игнорируются.\n;Учтите следующее\n:(действует только при использовании кавычек, см. пример ниже) \n:* Разделяйте поисковые фразы запятыми или пробелом, например <code>\"доброе утро\"</code>, <code>\"здравствуй, друг!\"</code>.\n:* Знаки препинания и другие не-буквенно-цифровые символы (за исключением двоеточия и запятой) будут игнорироваться.\n:* Поиск не чувствителен к регистру.\n:* Словосочетание здесь не работает.\n;Страница справки\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Слова, фразы и модификаторы]\n;Синтаксический эквивалент в обычном поиске\n:Слова в двойных кавычках, например <code>\"Начните с самого начала\"</code>.",
 	"advancedsearch-help-or": ";Описание\n:По крайней мере одно из условий поиска должно быть включено в страницу.\n;Страница справки\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Слова, фразы и модификаторы]\n;Синтаксический эквивалент в обычном поиске\n:Слова с <code>OR</code> между ними, например <code>Laptop OR Notebook</code>.",
@@ -67,6 +71,8 @@
 	"advancedsearch-filesize-equals": "равно",
 	"advancedsearch-filesize-greater-than": "больше",
 	"advancedsearch-filesize-smaller-than": "ниже чем",
+	"advancedsearch-sort-preview-last-edit-desc": "дата изменения",
+	"advancedsearch-sort-preview-create-timestamp-desc": "дата создания",
 	"advancedsearch-namespaces-search-in": "Поиск по:",
 	"advancedsearch-namespaces-remember": "Запомнить выбор для поиска в будущем",
 	"advancedsearch-namespaces-preset-all": "Всё",
