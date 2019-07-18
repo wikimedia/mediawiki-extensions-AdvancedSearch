@@ -6,7 +6,8 @@
 			"Liuxinyu970226",
 			"Raymond",
 			"Amire80",
-			"Mar(c)"
+			"Mar(c)",
+			"Woytecr"
 		]
 	},
 	"advancedsearch-desc": "{{desc|name=AdvancedSearch|url=https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:AdvancedSearch}}",
@@ -66,7 +67,7 @@
 	"advancedsearch-sort-last-edit-desc": "Dropdown label for sort optio most to least recently edited",
 	"advancedsearch-sort-create-timestamp-desc": "Dropdown label for sort option most to least recently created",
 	"advancedsearch-sort-preview-relevance": "Preview label for sort option relevance",
-	"advancedsearch-sort-preview-last-edit-desc": "Preview label for sort optio most to least recently edited",
+	"advancedsearch-sort-preview-last-edit-desc": "Preview label for sort option most to least recently edited",
 	"advancedsearch-sort-preview-create-timestamp-desc": "Preview label for sort option most to least recently created",
 	"advancedsearch-namespaces-search-in": "Label for the 'Search in' section heading of the namespace section",
 	"advancedsearch-namespaces-remember": "Label for a checkbox to save namespace choice for advanced search to user preferences",

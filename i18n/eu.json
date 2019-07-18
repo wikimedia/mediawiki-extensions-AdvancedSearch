@@ -3,25 +3,26 @@
 		"authors": [
 			"Subi",
 			"Mikel Ibaiba",
-			"Iñaki LL"
+			"Iñaki LL",
+			"An13sa"
 		]
 	},
-	"advancedsearch-desc": "Bilaketa aurreraturako aukerak hemen: [[Berezi:Bilatu]]",
-	"advancedsearch-options-pane-head": "Parametro aurreratuak:",
+	"advancedsearch-desc": "Bilaketa aurreraturako aukerak hemen: [[Special:Search]]",
+	"advancedsearch-options-pane-head": "Bilaketa aurreratua:",
 	"advancedsearch-optgroup-text": "Bilatu testu orrialdean",
 	"advancedsearch-optgroup-structure": "Egitura",
 	"advancedsearch-optgroup-files": "Artxibo eta irudiak",
-	"advancedsearch-field-plain": "Hitz hauek:",
-	"advancedsearch-field-phrase": "Zehazki testu hau:",
-	"advancedsearch-field-or": "Hitz hauetakoren bat:",
-	"advancedsearch-field-not": "Hitz hauek ez:",
-	"advancedsearch-field-subpageof": "Orri honetako azpi-orriak:",
-	"advancedsearch-field-intitle": "Orrialdearen izenak du:",
-	"advancedsearch-field-deepcategory": "Kategoria honetako orrialdea:",
-	"advancedsearch-field-hastemplate": "Itxura hau duten orrialdeak baino ez:",
-	"advancedsearch-field-filetype": "Artxibo mota:",
-	"advancedsearch-field-filew": "Artxiboa pixelen zabaleran:",
-	"advancedsearch-field-fileh": "Artxiboaren neurria pixeletan:",
+	"advancedsearch-field-plain": "Hitz hauek",
+	"advancedsearch-field-phrase": "Zehazki testu hau",
+	"advancedsearch-field-or": "Hitz hauetakoren bat",
+	"advancedsearch-field-not": "Hitz hauek ez",
+	"advancedsearch-field-subpageof": "Orri honetako azpi-orriak",
+	"advancedsearch-field-intitle": "Orrialdearen izenak du",
+	"advancedsearch-field-deepcategory": "Kategoria honetako orrialdea",
+	"advancedsearch-field-hastemplate": "Txantiloi hau duten orrialdeak baino ez",
+	"advancedsearch-field-filetype": "Fitxategi mota",
+	"advancedsearch-field-filew": "Fitxategiaren zabalera pixeletan",
+	"advancedsearch-field-fileh": "Fitxategiaren altuera pixeletan",
 	"advancedsearch-filetype-section-image": "Irudi formatuak",
 	"advancedsearch-filetype-section-video": "Bideo formatuak",
 	"advancedsearch-filetype-section-audio": "Audio formatuak",
@@ -37,5 +38,5 @@
 	"advancedsearch-filesize-smaller-than": "baino baxuagoa",
 	"advancedsearch-namespaces-search-in": "Non bilatu:",
 	"advancedsearch-namespaces-preset-all": "Denak",
-	"advancedsearch-namespaces-placeholder": "Izen-eremuak gehitu"
+	"advancedsearch-namespaces-placeholder": "Izen-eremuak gehitu..."
 }
