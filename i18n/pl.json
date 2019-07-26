@@ -41,7 +41,7 @@
 	"advancedsearch-help-filew": ";Opis\n:Te pola pozwalają na określenie szerokości pliku.\n;Wskazówki\n:* Ma to zastosowanie tylko do typów plików, dla których określa się szerokość i wysokość, czyli filmy i zdjęcia.\n;Strona pomocy\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]\n;Odpowiednik w zwykłym interfejsie wyszukiwania\n:Liczby poprzedzone <code>filew</code>, np. <code>filew:>800</code>.",
 	"advancedsearch-help-fileh": ";Opis:\n:Te pola pozwalają na określenie wysokości pliku.\n;Wskazówki\n:*Ma to zastosowanie tylko do typów plików, dla których określa się szerokość i wysokość, czyli filmy i zdjęcia.\n;Strona pomocy\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]\n;Odpowiednik w zwykłym interfejsie wyszukiwania\n:Liczby poprzedzone <code>fileh</code>, np. <code>fileh:>600</code>.",
 	"advancedsearch-help-sort": ";Opis\n:Zmienia porządek sortowania wyników. Standardowo najwyżej znajdą się strony najbardziej pasujące do szukanej frazy.\n;Strona pomocy\n: [https://www.mediawiki.org/wiki/Help:CirrusSearch#Explicit_sort_orders Explicit sort orders]\n;Odpowiednik w zwykłym interfejsie wyszukiwania\n: Nie ma specjalnego słowa kluczowego do osiągnięcia tego, funkcja ta jest określana za pomocą parametru URL.",
-	"advancedsearch-placeholder-exact-text": "\"kot uwielbia kozę\"",
+	"advancedsearch-placeholder-exact-text": "„kot uwielbia kozę”",
 	"advancedsearch-inlanguage-default": "Wybierz język",
 	"advancedsearch-filetype-section-types": "Ogólne typy plików",
 	"advancedsearch-filetype-section-image": "Formaty plików graficznych",
