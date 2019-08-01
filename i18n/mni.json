@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Awangba Mangang"
+			"Awangba Mangang",
+			"Amire80"
 		]
 	},
 	"advancedsearch-desc": "Easy access to advanced search capabilities on [[Special:Search]]",
