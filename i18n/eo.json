@@ -42,6 +42,8 @@
 	"advancedsearch-filesize-equals": "egalas",
 	"advancedsearch-filesize-greater-than": "pli granda ol",
 	"advancedsearch-filesize-smaller-than": "pli malgranda ol",
+	"advancedsearch-sort-relevance": "Rilateco",
+	"advancedsearch-sort-preview-relevance": "rilateco",
 	"advancedsearch-sort-preview-last-edit-desc": "dato de redakto",
 	"advancedsearch-sort-preview-create-timestamp-desc": "dato de kreo",
 	"advancedsearch-namespaces-search-in": "Serĉi en:",

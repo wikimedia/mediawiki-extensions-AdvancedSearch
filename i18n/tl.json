@@ -3,7 +3,8 @@
 		"authors": [
 			"Leeheonjin",
 			"Emem.calist",
-			"Jojit fb"
+			"Jojit fb",
+			"Brazal.dang"
 		]
 	},
 	"advancedsearch-optgroup-structure": "Kayarian",
@@ -16,5 +17,7 @@
 	"advancedsearch-field-hastemplate": "Tanging mga pahina lang na may ganitong padron/suleras:",
 	"advancedsearch-field-filetype": "Uri ng file:",
 	"advancedsearch-field-filew": "Lapad ng talaksan sa piksel:",
-	"advancedsearch-field-fileh": "Taas ng talaksan sa piksel:"
+	"advancedsearch-field-fileh": "Taas ng talaksan sa piksel:",
+	"advancedsearch-sort-preview-last-edit-desc": "Baguhin ang petsa",
+	"advancedsearch-sort-preview-create-timestamp-desc": "Petsa ng paggawa"
 }

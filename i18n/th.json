@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Geonuch",
-			"Aefgh39622"
+			"Aefgh39622",
+			"กิ๊ฟ เลิกล่ะ สายแข็ง"
 		]
 	},
 	"advancedsearch-desc": "การเข้าถึงความสามารถในการค้นหาบน [[Special:Search]] อย่างง่ายดาย",
@@ -22,6 +23,7 @@
 	"advancedsearch-field-filetype": "ประเภทไฟล์",
 	"advancedsearch-field-filew": "ความกว้างของไฟล์ในหน่วยพิกเซล",
 	"advancedsearch-field-fileh": "ความสูงของไฟล์ในหน่วยพิกเซล",
+	"advancedsearch-help-sort": ";Description\n:Change the sorting order of results. The standard is that most relevant pages are placed on top of the results.\n;Help page\n: [https://www.mediawiki.org/wiki/Help:CirrusSearch#Explicit_sort_orders Explicit sort orders]\n;Syntax-equivalent in the normal search\n: This feature has no keyword that you can type in the search input field since the function is specified via a parameter in the URL.",
 	"advancedsearch-inlanguage-default": "เลือกภาษา",
 	"advancedsearch-filetype-section-types": "ประเภทไฟล์ทั่วไป",
 	"advancedsearch-filetype-section-image": "รูปแบบภาพ",

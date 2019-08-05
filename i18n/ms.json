@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tofeiku"
+		]
+	},
+	"advancedsearch-optgroup-structure": "Struktur",
+	"advancedsearch-optgroup-files": "Fail dan gambar",
+	"advancedsearch-field-plain": "Perkataan ini",
+	"advancedsearch-field-inlanguage": "Laman dalam bahasa ini",
+	"advancedsearch-field-filetype": "Jenis fail",
+	"advancedsearch-inlanguage-default": "Pilih bahasa",
+	"advancedsearch-filetype-section-types": "Jenis fail umum",
+	"advancedsearch-filetype-section-image": "Format imej",
+	"advancedsearch-filetype-section-video": "Format video",
+	"advancedsearch-filetype-section-audio": "Format audio",
+	"advancedsearch-filetype-section-document": "Format dokumen",
+	"advancedsearch-filetype-section-other": "Format lain",
+	"advancedsearch-filetype-default": "Pilih jenis fail",
+	"advancedsearch-filetype-bitmap": "Imej",
+	"advancedsearch-filetype-drawing": "Lukisan",
+	"advancedsearch-filetype-audio": "Audio",
+	"advancedsearch-filetype-video": "Video",
+	"advancedsearch-filetype-office": "Pejabat",
+	"advancedsearch-filesize-equals": "sama dengan",
+	"advancedsearch-sort-preview-last-edit-desc": "sunting tarikh",
+	"advancedsearch-namespaces-preset-all": "Semua",
+	"advancedsearch-namespaces-placeholder": "Tambah ruang nama…"
+}
