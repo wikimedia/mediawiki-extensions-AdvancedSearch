@@ -30,7 +30,10 @@ class HooksTest extends MediaWikiTestCase {
 			'ExtensionAssetsPath' => '<PATH>',
 			'FileExtensions' => [ '<EXT>' ],
 		] ) );
-		$this->setMwGlobals( 'wgNamespacesToBeSearchedDefault', [ NS_MAIN => true ] );
+		$this->setMwGlobals( [
+			'wgNamespacesToBeSearchedDefault' => [ NS_MAIN => true ],
+			'wgServer' => '//hooks.test'
+		] );
 	}
 
 	public function testGetPreferencesHookHandler() {
@@ -148,8 +151,7 @@ class HooksTest extends MediaWikiTestCase {
 		Hooks::onSpecialPageBeforeExecute( $special, '' );
 
 		$this->assertEquals(
-			wfGetServerUrl( PROTO_CURRENT ) .
-			'/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1',
+			'http://hooks.test/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1',
 			$special->getOutput()->getRedirect()
 		);
 	}
@@ -170,8 +172,7 @@ class HooksTest extends MediaWikiTestCase {
 		Hooks::onSpecialPageBeforeExecute( $special, '' );
 
 		$this->assertEquals(
-			wfGetServerUrl( PROTO_CURRENT ) .
-			'/wiki/Special%3ASearch?ns0=1',
+			'http://hooks.test/wiki/Special%3ASearch?ns0=1',
 			$special->getOutput()->getRedirect()
 		);
 	}
@@ -192,8 +193,7 @@ class HooksTest extends MediaWikiTestCase {
 		Hooks::onSpecialPageBeforeExecute( $special, '' );
 
 		$this->assertEquals(
-			wfGetServerUrl( PROTO_CURRENT ) .
-			'/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1&ns6=1&ns10=1',
+			'http://hooks.test/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1&ns6=1&ns10=1',
 			$special->getOutput()->getRedirect()
 		);
 	}
@@ -207,7 +207,7 @@ class HooksTest extends MediaWikiTestCase {
 	 */
 	private function newSpecialSearchPage( User $user, $url, $requestValues = [] ) {
 		$output = new OutputPage( new RequestContext() );
-		$request = new \FauxRequest( $requestValues );
+		$request = new \FauxRequest( $requestValues, false, null, 'http' );
 		$request->setRequestURL( $url );
 		$context = new RequestContext();
 		$context->setOutput( $output );
