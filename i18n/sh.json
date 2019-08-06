@@ -38,6 +38,8 @@
 	"advancedsearch-filesize-equals": "iznosi tačno",
 	"advancedsearch-filesize-greater-than": "veća od",
 	"advancedsearch-filesize-smaller-than": "manja od",
+	"advancedsearch-sort-relevance": "Relevantnost",
+	"advancedsearch-sort-preview-relevance": "relevantnost",
 	"advancedsearch-namespaces-search-in": "Pretraži u:",
 	"advancedsearch-namespaces-remember": "Zapamti izbor za buduće pretrage",
 	"advancedsearch-namespaces-preset-all": "Sve",

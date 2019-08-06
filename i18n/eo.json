@@ -43,6 +43,8 @@
 	"advancedsearch-filesize-greater-than": "pli granda ol",
 	"advancedsearch-filesize-smaller-than": "pli malgranda ol",
 	"advancedsearch-sort-relevance": "Rilateco",
+	"advancedsearch-sort-last-edit-desc": "Reakta dato – aktuala ĉe supro",
+	"advancedsearch-sort-create-timestamp-desc": "Krea dato – aktuala ĉe supro",
 	"advancedsearch-sort-preview-relevance": "rilateco",
 	"advancedsearch-sort-preview-last-edit-desc": "dato de redakto",
 	"advancedsearch-sort-preview-create-timestamp-desc": "dato de kreo",
