@@ -11,5 +11,6 @@
 	"advancedsearch-namespaces-preset-default": "ნაგულისხმევად",
 	"advancedsearch-namespaces-preset-general-help": "ზოგადი დახმარება",
 	"advancedsearch-namespaces-preset-discussion": "განხილვა",
-	"advancedsearch-namespaces-placeholder": "სახელთა სივრცის დამატება…"
+	"advancedsearch-namespaces-placeholder": "სახელთა სივრცის დამატება…",
+	"advancedsearch-preference-disable": "არ აჩვენო გაფართოებული ძიების ინტერფეისი"
 }
