@@ -51,6 +51,8 @@
 	"advancedsearch-filesize-greater-than": "поголемо од",
 	"advancedsearch-filesize-smaller-than": "помало од",
 	"advancedsearch-sort-relevance": "Релевантност",
+	"advancedsearch-sort-last-edit-desc": "Датум на уредување — тековните најгоре",
+	"advancedsearch-sort-create-timestamp-desc": "Датум на создавање — тековните најгоре",
 	"advancedsearch-sort-preview-relevance": "релевантност",
 	"advancedsearch-sort-preview-last-edit-desc": "датум на уредување",
 	"advancedsearch-sort-preview-create-timestamp-desc": "датум на создавање",
