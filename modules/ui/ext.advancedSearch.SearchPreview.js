@@ -46,9 +46,6 @@
 	};
 
 	var lookupTranslationForLabel = function ( fieldId ) {
-		if ( fieldId === 'sort' ) {
-			return 'advancedsearch-field-preview-sort';
-		}
 		return 'advancedsearch-field-' + fieldId;
 	};
 
@@ -146,6 +143,14 @@
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview.prototype.generateTag = function ( fieldId, value ) {
 		var formattedValue = this.formatValue( fieldId, value ),
+			tag;
+		if ( fieldId === 'sort' ) {
+			tag = new OO.ui.TagItemWidget( {
+				label: $()
+					.add( $( '<span>' ).text( mw.msg( 'advancedsearch-field-preview-sort', formattedValue ) ) ),
+				draggable: false
+			} );
+		} else {
 			tag = new OO.ui.TagItemWidget( {
 				label: $()
 					.add( $( '<span>' ).text( mw.msg( lookupTranslationForLabel( fieldId ) ) ) )
@@ -155,6 +160,7 @@
 					) ),
 				draggable: false
 			} );
+		}
 
 		tag.connect( this, {
 			remove: function () {
