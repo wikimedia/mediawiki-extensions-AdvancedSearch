@@ -207,11 +207,8 @@ class HooksTest extends MediaWikiTestCase {
 	 */
 	private function newSpecialSearchPage( User $user, $url, $requestValues = [] ) {
 		$output = new OutputPage( new RequestContext() );
-		$request = new \FauxRequest();
+		$request = new \FauxRequest( $requestValues );
 		$request->setRequestURL( $url );
-		foreach ( $requestValues as $key => $value ) {
-			$request->setVal( $key, $value );
-		}
 		$context = new RequestContext();
 		$context->setOutput( $output );
 		$context->setUser( $user );
