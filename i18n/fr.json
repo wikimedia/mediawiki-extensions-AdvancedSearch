@@ -6,7 +6,8 @@
 			"DePlusJean",
 			"Urhixidur",
 			"ALDO CP",
-			"Djiboun"
+			"Djiboun",
+			"Verdy p"
 		]
 	},
 	"advancedsearch-desc": "Accès facile aux possibilités de recherche avancée sur [[Special:Search]]",
@@ -28,7 +29,7 @@
 	"advancedsearch-field-filew": "Largeur en pixels",
 	"advancedsearch-field-fileh": "Hauteur en pixels",
 	"advancedsearch-field-sort": "Ordre de tri",
-	"advancedsearch-field-preview-sort": "Trié par",
+	"advancedsearch-field-preview-sort": "Trié par $1",
 	"advancedsearch-help-plain": ";Description\n:Recherche ces mots dans le titre ou le texte.\n;Faites attention à ce qui suit\n:* Plusieurs mots peuvent être entrés ici.\n:* Les signes de ponctuation et autres caractères non alphanumériques (à l’exception de la virgule et du deux-points) seront ignorés.\n:* Il peut y avoir des résultats qui ne contiennent pas un ou plusieurs de vos termes recherchés.\n:* La recherche de radical des mots est appliquée. Exemple : Si ''car'' est entré, la recherche prendra aussi en compte ''cars''. La recherche de radical est spécifique à chaque langue.\n;Page d’aide\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search Recherche en plein texte]\n;Équivalent syntaxique en recherche normale\n:<code>sesame street car</code>",
 	"advancedsearch-help-phrase": ";Description\n:Recherche une séquence spécifique de caractères. La ponctuation est ignorée.\n;Faites attention à ce qui suit\n:(valable uniquement en utilisant les guillemets, voir exemple ci-dessous) \n:* Séparer les phrases recherchées par une virgule et une espace, par ex. <code>\"bonne journée\"</code>, <code>\"salut l'ami\"</code>.\n:* Les signes de ponctuation et autres caractères non alphanumériques (à l’exception de la virgule et du deux-points) seront ignorés.\n:* La recherche n’est pas sensible à la casse.\n:* La recherche de radical des mots n’est pas appliquée.\n;Page d’aide\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Mots, phrases et modificateurs]\n;Équivalent syntaxique en recherche normale\n:Mots entre guillemets, par exemple <code>\"Commencer au commencement\"</code>.",
 	"advancedsearch-help-or": ";Description\n:Au moins un des termes recherchés doit être inclus dans la page.\n;Page d’aide\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Mots, phrases et modificateurs]\n;Équivalent syntaxique en recherche normale\n:Des mots avec <code>OR</code> (OU en anglais) entre eux comme <code>PC OR ordinateur</code>.",

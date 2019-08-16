@@ -52,5 +52,8 @@
 	"advancedsearch-namespaces-preset-default": "Predodređeno",
 	"advancedsearch-namespaces-preset-general-help": "Opšta pomoć",
 	"advancedsearch-namespaces-preset-discussion": "Razgovor",
-	"advancedsearch-namespaces-placeholder": "Dodaj imenske prostore…"
+	"advancedsearch-namespaces-placeholder": "Dodaj imenske prostore…",
+	"prefs-advancedsearch": "Napredna pretraga",
+	"advancedsearch-preference-help": "Napredna pretraga dodaje obrazac na stranicu \"Posebno:Pretraga\". Ovo Vam omogućava izvršenje specijaliziranih pretraga, čak i ako ne znate nikakvu pretraživačku sintaksu. Mijenja se i način na koji se mogu izabrati imenski prostori.",
+	"advancedsearch-preference-disable": "Ne prikazuj interfejs napredne pretrage"
 }
