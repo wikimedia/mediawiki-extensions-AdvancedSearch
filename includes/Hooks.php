@@ -128,7 +128,7 @@ class Hooks {
 	}
 
 	/**
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/onSpecialSearchResultsPrepend
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SpecialSearchResultsPrepend
 	 *
 	 * @param \SpecialSearch $specialSearch
 	 * @param \OutputPage $output
