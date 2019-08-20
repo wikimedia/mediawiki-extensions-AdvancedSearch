@@ -3,13 +3,16 @@
 		"authors": [
 			"Pyscowicz",
 			"SMAUG",
-			"Valtlait"
+			"Valtlait",
+			"Nike"
 		]
 	},
-	"advancedsearch-options-pane-head": "Laajennetut hakuparametrit:",
+	"advancedsearch-desc": "Helpottaa edistyneiden hakuominaisuuksien käyttöä sivulle [[Special:Search|Toiminnot:Haku]]",
+	"advancedsearch-options-pane-head": "Edistynyt haku:",
 	"advancedsearch-optgroup-text": "Hae sivun tekstistä",
 	"advancedsearch-optgroup-structure": "Rakenne",
 	"advancedsearch-optgroup-files": "Tiedostot ja kuvat",
+	"advancedsearch-optgroup-sort": "Lajittelujärjestys",
 	"advancedsearch-field-plain": "Kaikilla näistä sanoista",
 	"advancedsearch-field-phrase": "Täsmälleen tällä sanalla tai näillä sanoilla",
 	"advancedsearch-field-or": "Vähintään yhdellä näistä sanoista",
@@ -22,6 +25,8 @@
 	"advancedsearch-field-filetype": "Tiedostotyyppi",
 	"advancedsearch-field-filew": "Tiedoston leveys pikseleinä",
 	"advancedsearch-field-fileh": "Tiedoston korkeus pikseleinä",
+	"advancedsearch-field-sort": "Lajittelujärjestys",
+	"advancedsearch-field-preview-sort": "Järjestä: $1",
 	"advancedsearch-placeholder-exact-text": "\"kissa rakastaa vuohta\"",
 	"advancedsearch-inlanguage-default": "Valitse kieli",
 	"advancedsearch-filetype-section-types": "Yleiset tiedostotyypit",

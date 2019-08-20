@@ -7,7 +7,8 @@
 			"Raymond",
 			"Amire80",
 			"Mar(c)",
-			"Woytecr"
+			"Woytecr",
+			"Nike"
 		]
 	},
 	"advancedsearch-desc": "{{desc|name=AdvancedSearch|url=https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:AdvancedSearch}}",
@@ -64,7 +65,7 @@
 	"advancedsearch-filesize-smaller-than": "Label for the file width/height 'smaller than' comparator selection",
 	"advancedsearch-filesize-smaller-than-symbol": "Label for the file width/height 'smaller than' comparator selection as shorthand symbol",
 	"advancedsearch-sort-relevance": "Dropdown label for sort option relevance",
-	"advancedsearch-sort-last-edit-desc": "Dropdown label for sort optio most to least recently edited",
+	"advancedsearch-sort-last-edit-desc": "Dropdown label for sort option most to least recently edited",
 	"advancedsearch-sort-create-timestamp-desc": "Dropdown label for sort option most to least recently created",
 	"advancedsearch-sort-preview-relevance": "Preview label for sort option relevance",
 	"advancedsearch-sort-preview-last-edit-desc": "Preview label for sort option most to least recently edited",
