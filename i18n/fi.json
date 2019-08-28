@@ -4,7 +4,8 @@
 			"Pyscowicz",
 			"SMAUG",
 			"Valtlait",
-			"Nike"
+			"Nike",
+			"Stryn"
 		]
 	},
 	"advancedsearch-desc": "Helpottaa edistyneiden hakuominaisuuksien käyttöä sivulle [[Special:Search|Toiminnot:Haku]]",
@@ -44,6 +45,12 @@
 	"advancedsearch-filesize-equals": "täsmälleen",
 	"advancedsearch-filesize-greater-than": "enemmän kuin",
 	"advancedsearch-filesize-smaller-than": "vähemmän kuin",
+	"advancedsearch-sort-relevance": "Osuvimmat",
+	"advancedsearch-sort-last-edit-desc": "Muokkauspäivä – tuorein ylhäällä",
+	"advancedsearch-sort-create-timestamp-desc": "Luontipäivä – tuorein ylhäällä",
+	"advancedsearch-sort-preview-relevance": "osuvin",
+	"advancedsearch-sort-preview-last-edit-desc": "muokkauspäivä",
+	"advancedsearch-sort-preview-create-timestamp-desc": "luontipäivä",
 	"advancedsearch-namespaces-search-in": "Hae nimiavaruuksista:",
 	"advancedsearch-namespaces-remember": "Muista valintani tulevia hakuja varten",
 	"advancedsearch-namespaces-preset-all": "Kaikki",
