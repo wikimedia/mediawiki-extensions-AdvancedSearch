@@ -9,7 +9,7 @@
 		]
 	},
 	"advancedsearch-desc": "Acceso sinxelo a capacidades de procura avanzadas en [[Special:Search]]",
-	"advancedsearch-options-pane-head": "Parámetros avanzadosː",
+	"advancedsearch-options-pane-head": "Procura avanzada:",
 	"advancedsearch-optgroup-text": "Procurar no texto da páxina",
 	"advancedsearch-optgroup-structure": "Estrutura",
 	"advancedsearch-optgroup-files": "Ficheiros e imaxes",
@@ -44,6 +44,9 @@
 	"advancedsearch-filesize-equals": "igual a",
 	"advancedsearch-filesize-greater-than": "maior que",
 	"advancedsearch-filesize-smaller-than": "menor que",
+	"advancedsearch-sort-preview-relevance": "relevancia",
+	"advancedsearch-sort-preview-last-edit-desc": "data de edición",
+	"advancedsearch-sort-preview-create-timestamp-desc": "data de creación",
 	"advancedsearch-namespaces-search-in": "Procurar en:",
 	"advancedsearch-namespaces-remember": "Lembrar selección pra procuras futuras",
 	"advancedsearch-namespaces-preset-all": "Todos",
