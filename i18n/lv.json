@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Papuass"
+			"Papuass",
+			"Silraks"
 		]
 	},
 	"advancedsearch-desc": "Viegla piekļuve paplašinātajām meklēšanas iespējām [[Special:Search]]",
@@ -40,6 +41,9 @@
 	"advancedsearch-filesize-equals": "vienāds ar",
 	"advancedsearch-filesize-greater-than": "lielāks par",
 	"advancedsearch-filesize-smaller-than": "mazāks par",
+	"advancedsearch-sort-relevance": "Saistības",
+	"advancedsearch-sort-last-edit-desc": "Rediģēšanas datuma – jaunākais virspusē",
+	"advancedsearch-sort-create-timestamp-desc": "Izveides datuma – jaunākais virspusē",
 	"advancedsearch-namespaces-search-in": "Meklēt:",
 	"advancedsearch-namespaces-remember": "Atcerēties izvēli turpmākajā meklēšanā",
 	"advancedsearch-namespaces-preset-all": "Visur",
