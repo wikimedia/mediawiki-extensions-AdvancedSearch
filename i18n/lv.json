@@ -24,6 +24,7 @@
 	"advancedsearch-field-filew": "Faila platums pikseļos",
 	"advancedsearch-field-fileh": "Faila augstums pikseļos",
 	"advancedsearch-field-sort": "Kārtošanas secība",
+	"advancedsearch-field-preview-sort": "Kārtot pēc $1",
 	"advancedsearch-placeholder-exact-text": "\"kaķiem patīk kazas\"",
 	"advancedsearch-inlanguage-default": "Izvēlies valodu",
 	"advancedsearch-filetype-section-types": "Vispārīgi failu veidi",

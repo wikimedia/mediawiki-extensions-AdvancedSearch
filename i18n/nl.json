@@ -5,7 +5,8 @@
 			"Patio",
 			"Mainframe98",
 			"KlaasZ4usV",
-			"Elroy"
+			"Elroy",
+			"Bdijkstra"
 		]
 	},
 	"advancedsearch-desc": "Eenvoudige toegang tot geavanceerde zoekmogelijkheden op [[Special:Search]]",
@@ -55,6 +56,7 @@
 	"advancedsearch-filesize-greater-than": "groter dan",
 	"advancedsearch-filesize-smaller-than": "kleiner dan",
 	"advancedsearch-sort-relevance": "Relevantie",
+	"advancedsearch-sort-create-timestamp-desc": "Aanmaakdatum – huidige bovenaan",
 	"advancedsearch-sort-preview-relevance": "relevantie",
 	"advancedsearch-sort-preview-last-edit-desc": "bewerkingsdatum",
 	"advancedsearch-sort-preview-create-timestamp-desc": "aanmaakdatum",
