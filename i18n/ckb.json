@@ -1,23 +1,24 @@
 {
 	"@metadata": {
 		"authors": [
-			"Épine"
+			"Épine",
+			"Muhammed taha"
 		]
 	},
-	"advancedsearch-options-pane-head": "پارامەترە پێشکەوتووەکان:",
+	"advancedsearch-options-pane-head": "گەڕانی پێشکەوتوو:",
 	"advancedsearch-optgroup-files": "پەڕگە و وێنەکان",
-	"advancedsearch-field-plain": "ئەم وشانە:",
-	"advancedsearch-field-phrase": "دەقاودەق ئەم دەقە:",
-	"advancedsearch-field-or": "یەکێک لەم وشانە:",
-	"advancedsearch-field-not": "ئەم وشانە نا:",
-	"advancedsearch-field-subpageof": "ژێرپەڕەکانی ئەم پەڕەیە:",
-	"advancedsearch-field-deepcategory": "پەڕە لەم پۆلەدا:",
-	"advancedsearch-field-hastemplate": "تەنیا ئەو پەڕانەی ئەم داڕێژەیە لەخۆ دەگرن:",
+	"advancedsearch-field-plain": "ئەم وشانە",
+	"advancedsearch-field-phrase": "دەقاودەق ئەم دەقە",
+	"advancedsearch-field-or": "یەکێک لەم وشانە",
+	"advancedsearch-field-not": "ئەم وشانە نا",
+	"advancedsearch-field-subpageof": "ژێرپەڕەکانی ئەم پەڕەیە",
+	"advancedsearch-field-deepcategory": "پەڕەکان لەم پۆلانەدا",
+	"advancedsearch-field-hastemplate": "ئەو پەڕانەی ئەم داڕێژانە لەخۆ دەگرن",
 	"advancedsearch-field-inlanguage": "پەڕەکان بەم زمانە",
-	"advancedsearch-field-filetype": "جۆری پەڕگە:",
-	"advancedsearch-field-filew": "پانیی پەڕگە بە پیکسڵ:",
-	"advancedsearch-field-fileh": "بەرزیی پەڕگە بە پیکسڵ:",
-	"advancedsearch-placeholder-exact-text": "وشەکان دەقاودەق لە ھێمای وتەگێڕانەوەدا دابنێ: «پشیلەکە ئەوی خۆشدەوێ»",
+	"advancedsearch-field-filetype": "جۆری پەڕگە",
+	"advancedsearch-field-filew": "پانیی پەڕگە بە پیکسڵ",
+	"advancedsearch-field-fileh": "بەرزیی پەڕگە بە پیکسڵ",
+	"advancedsearch-placeholder-exact-text": "«پشیلەکە ئەوی خۆشدەوێ»",
 	"advancedsearch-filetype-section-types": "جۆرەکانی پەڕگەی گشتی",
 	"advancedsearch-filetype-section-image": "شێوازەکانی وێنە",
 	"advancedsearch-filetype-section-video": "شێوازەکانی ڤیدیۆ",
@@ -34,7 +35,7 @@
 	"advancedsearch-namespaces-preset-all": "ھەموو",
 	"advancedsearch-namespaces-preset-general-help": "یارمەتیی گشتی",
 	"advancedsearch-namespaces-preset-discussion": "وتووێژ",
-	"advancedsearch-namespaces-placeholder": "زیادکردنی بۆشایی ناو",
+	"advancedsearch-namespaces-placeholder": "زیادکردنی بۆشایی ناو...",
 	"prefs-advancedsearch": "گەڕانی پێشکەوتوو",
 	"advancedsearch-preference-help": "گەڕانی پێشکەوتوو فۆرمێک بۆ پەڕەی تایبەت:گەڕان زیاد دەکات کە گەڕان ئاسانتر دەکات، هەروەها گۆڕانکاری لە شێوەی هەڵبژاردنی بۆشایی ناوەکان دەکات.",
 	"advancedsearch-preference-disable": "ڕووکاری گەڕانی پێشکەوتوو نیشان مەدە"
