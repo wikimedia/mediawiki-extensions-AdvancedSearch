@@ -6,10 +6,11 @@
 		]
 	},
 	"advancedsearch-desc": "Easy access to advanced search capabilities on [[Special:Search]]",
-	"advancedsearch-options-pane-head": "ꯈꯨꯃꯥꯡ ꯆꯥꯎꯁꯤꯟꯈꯔꯕꯥ ꯄꯦꯔꯥꯃꯤꯇꯔ",
-	"advancedsearch-optgroup-text": "Search in page text",
+	"advancedsearch-options-pane-head": "ꯊꯤꯕꯥ ꯈꯨꯃꯥꯡꯆꯥꯎꯁꯤꯟꯂꯕ:",
+	"advancedsearch-optgroup-text": "ꯂꯃꯥꯏꯒꯤ ꯋꯥꯍꯩ ꯋꯥꯇꯥꯗ ꯊꯤꯕꯥ",
 	"advancedsearch-optgroup-structure": "ꯏꯁꯇꯔꯛꯆꯔ",
 	"advancedsearch-optgroup-files": "ꯐꯥꯏꯜ ꯑꯃꯗꯤ ꯃꯃꯤ",
+	"advancedsearch-optgroup-sort": "ꯃꯊꯪ ꯃꯅꯥꯎ ꯂꯥꯛꯄꯗꯨ ꯇꯦꯟꯍꯟꯕ",
 	"advancedsearch-field-plain": "ꯃꯁꯤꯒꯤ ꯋꯥꯍꯩꯁꯤꯡ",
 	"advancedsearch-field-phrase": "ꯃꯁꯤꯒꯤ ꯋꯥꯔꯦꯡ ꯁꯤꯒꯥ ꯆꯞ ꯃꯥꯟꯅꯕ",
 	"advancedsearch-field-or": "ꯋꯥꯍꯩ ꯃꯌꯥꯝꯁꯤꯒꯤ ꯃꯅꯨꯡꯗꯥ ꯱",
@@ -22,6 +23,7 @@
 	"advancedsearch-field-filetype": "ꯐꯥꯏꯜ ꯃꯈꯜ",
 	"advancedsearch-field-filew": "ꯐꯥꯏꯜꯒꯤ ꯑꯄꯥꯛꯄꯥ ꯌꯥꯝ ꯐꯖꯅꯥ ꯎꯨꯅꯕꯥ",
 	"advancedsearch-field-fileh": "ꯐꯥꯏꯜꯒꯤ ꯑꯋꯥꯡꯕꯥ ꯐꯖꯅꯥ ꯁꯦꯡꯅ ꯎꯨꯅꯕꯥ",
+	"advancedsearch-field-sort": "ꯑꯇꯦꯟꯕꯥ ꯃꯊꯪ ꯃꯅꯥꯎ ꯅꯥꯏꯕꯥ",
 	"advancedsearch-help-plain": ";Description\n:Searches for these words in the title or text.\n;Be aware of the following\n:* Multiple words can be entered here.\n:* Punctuation marks and other non-alphanumeric characters (with exception of the colon and comma) will be ignored.\n:* There may be results that do not contain one or more of your search terms.\n:* Word stemming is applied. Example: If ''car'' is entered, the search will also consider ''cars''. The word stemming is language specific.\n;Help page\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search Full text search]\n;Syntax-equivalent in the normal search\n:<code>sesame street car</code>",
 	"advancedsearch-help-phrase": ";Description\n:Searches for a specific sequence of characters. Punctuation marks are ignored.\n;Be aware of the following \n:(only valid when using quotation marks, see example below) \n:* Separate the search phrases by comma or space e.g. <code>\"good morning\"</code>, <code>\"hello friend!\"</code>.\n:* Punctuation marks and other non-alphanumeric characters (with exception of the colon and comma) will be ignored.\n:* Search is not case-sensitive.\n:* Word stemming is not applied.\n;Help page\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Words, phrases, and modifiers]\n;Syntax-equivalent in the normal search\n:Words in quotation marks, for example <code>\"Begin at the beginning\"</code>.",
 	"advancedsearch-help-or": ";Description\n:At least one of the search terms has to be included in the page.\n;Help page\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Words, phrases, and modifiers]\n;Syntax-equivalent in the normal search\n:Words with <code>OR</code> in between them like <code>Laptop OR Notebook</code>.",
@@ -51,11 +53,14 @@
 	"advancedsearch-filesize-equals": "ꯑꯗꯨꯒꯥ ꯃꯥꯟꯅꯩ",
 	"advancedsearch-filesize-greater-than": "ꯑꯗꯨꯗꯒꯤ ꯍꯦꯟꯕꯥ",
 	"advancedsearch-filesize-smaller-than": "ꯑꯗꯨꯗꯒꯤ ꯍꯟꯊꯕꯥ",
+	"advancedsearch-sort-preview-last-edit-desc": "ꯆꯩꯆꯠ ꯁꯦꯝꯗꯣꯛꯄ",
+	"advancedsearch-sort-preview-create-timestamp-desc": "ꯁꯥꯈꯤꯕꯥ ꯆꯩꯆꯠ",
 	"advancedsearch-namespaces-search-in": "ꯊꯤꯖꯤꯟꯕꯥ",
 	"advancedsearch-namespaces-remember": "ꯍꯥꯌꯦꯡꯋꯥꯏ ꯊꯤꯅꯕꯥ ꯀꯥꯎꯒꯅꯨ ꯍꯧꯖꯤꯛ ꯈꯟꯕꯥ",
 	"advancedsearch-namespaces-preset-all": "ꯄꯨꯂꯞ",
 	"advancedsearch-namespaces-preset-default": "ꯑꯃꯥꯍꯦꯛꯇꯥ",
 	"advancedsearch-namespaces-preset-general-help": "ꯃꯌꯥꯝꯒꯤ ꯃꯇꯦꯡ ꯂꯧꯐꯝ",
 	"advancedsearch-namespaces-preset-discussion": "ꯈꯟꯅꯥ ꯅꯩꯅꯕꯥ",
-	"advancedsearch-namespaces-placeholder": "ꯃꯤꯡ ꯏꯕꯝꯒꯤ ꯃꯐꯝ ꯍꯥꯞꯆꯤꯟꯂꯨ"
+	"advancedsearch-namespaces-placeholder": "ꯃꯤꯡ ꯏꯕꯝꯒꯤ ꯃꯐꯝ ꯍꯥꯞꯆꯤꯟꯂꯨ",
+	"prefs-advancedsearch": "ꯈꯨꯃꯥꯡ ꯆꯥꯎꯁꯤꯟꯅ ꯊꯤꯕꯥ"
 }

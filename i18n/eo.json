@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"YvesNevelsteen",
-			"Mirin"
+			"Mirin",
+			"KuboF"
 		]
 	},
 	"advancedsearch-desc": "Facila aliro al altnivelaj serĉaj kapabloj sur [[Special:Search]]",
@@ -24,7 +25,7 @@
 	"advancedsearch-field-filew": "Dosiera larĝo en bilderoj",
 	"advancedsearch-field-fileh": "Dosiera alto en bilderoj",
 	"advancedsearch-field-sort": "Ordiga metodo",
-	"advancedsearch-field-preview-sort": "Ordigi laŭ",
+	"advancedsearch-field-preview-sort": "Ordigi laŭ $1",
 	"advancedsearch-placeholder-exact-text": "\"kato amas kapron\"",
 	"advancedsearch-inlanguage-default": "Elekti lingvon",
 	"advancedsearch-filetype-section-types": "Ĝeneralaj dosierspecoj",
