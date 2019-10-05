@@ -105,10 +105,7 @@ class HooksTest extends MediaWikiTestCase {
 	}
 
 	public function testSpecialPageBeforeExecuteHookHandler() {
-		$this->setService(
-			'MimeAnalyzer',
-			$this->getMock( MimeAnalyzer::class, [ 'getTypesForExtension' ], [], '', false )
-		);
+		$this->mockMimeAnalyser();
 
 		$special = $this->newSpecialSearchPage(
 			$this->newAnonymousUser(),
@@ -136,10 +133,7 @@ class HooksTest extends MediaWikiTestCase {
 	}
 
 	public function testAdvancedSearchForcesNamespacedUrls() {
-		$this->setService(
-			'MimeAnalyzer',
-			$this->getMock( MimeAnalyzer::class, [ 'getTypesForExtension' ], [], '', false )
-		);
+		$this->mockMimeAnalyser();
 
 		// Search is missing namespace GET parameters like "&ns0=1"
 		$special = $this->newSpecialSearchPage(
@@ -157,10 +151,7 @@ class HooksTest extends MediaWikiTestCase {
 	}
 
 	public function testAdvancedSearchForcesNamespacedUrlsForDirectPageAccess() {
-		$this->setService(
-			'MimeAnalyzer',
-			$this->getMock( MimeAnalyzer::class, [ 'getTypesForExtension' ], [], '', false )
-		);
+		$this->mockMimeAnalyser();
 
 		// Search is missing namespace GET parameters like "&ns0=1"
 		$special = $this->newSpecialSearchPage(
@@ -178,10 +169,7 @@ class HooksTest extends MediaWikiTestCase {
 	}
 
 	public function testAdvancedSearchForcesUserSpecificNamespacedUrls() {
-		$this->setService(
-			'MimeAnalyzer',
-			$this->getMock( MimeAnalyzer::class, [ 'getTypesForExtension' ], [], '', false )
-		);
+		$this->mockMimeAnalyser();
 
 		// Search is missing namespace GET parameters like "&ns0=1"
 		$special = $this->newSpecialSearchPage(
@@ -236,4 +224,13 @@ class HooksTest extends MediaWikiTestCase {
 		return $user;
 	}
 
+	private function mockMimeAnalyser() {
+		$this->setService(
+			'MimeAnalyzer',
+			$this->getMockBuilder( MimeAnalyzer::class )
+				->setMethods( [ 'getTypesForExtension' ] )
+				->disableOriginalConstructor()
+				->getMock()
+		);
+	}
 }

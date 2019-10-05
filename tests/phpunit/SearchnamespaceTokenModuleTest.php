@@ -4,7 +4,6 @@ namespace AdvancedSearch\Tests;
 
 use AdvancedSearch\SearchnamespaceTokenModule;
 use PHPUnit\Framework\TestCase;
-use PHPUnit4And6Compat;
 use ResourceLoaderContext;
 use User;
 
@@ -15,7 +14,6 @@ use User;
  * @author Thiemo Kreuz
  */
 class SearchnamespaceTokenModuleTest extends TestCase {
-	use PHPUnit4And6Compat;
 
 	public function testResourceLoaderModule() {
 		$module = new SearchnamespaceTokenModule();
