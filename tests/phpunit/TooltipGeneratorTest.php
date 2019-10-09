@@ -13,7 +13,7 @@ use MediaWikiTestCase;
  */
 class TooltipGeneratorTest extends MediaWikiTestCase {
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 
 		// Dummy language code makes sure no actual localization is loaded
