@@ -1,26 +1,27 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ильнар"
+			"Ильнар",
+			"Ерней"
 		]
 	},
 	"advancedsearch-desc": "[[Special:Search]] битендә киңәйтелгән эзләү мөмкинлекләрен куллану",
-	"advancedsearch-options-pane-head": "Киңәйтелгән параметрлар:",
+	"advancedsearch-options-pane-head": "Киңәйтелгән эзләү:",
 	"advancedsearch-optgroup-text": "Битнең текстында эзләү",
-	"advancedsearch-optgroup-structure": "Структура",
-	"advancedsearch-optgroup-files": "Файллар һәм рәсемнәр",
+	"advancedsearch-optgroup-structure": "Корылыш",
+	"advancedsearch-optgroup-files": "Файллар һәм сурәтләр",
 	"advancedsearch-field-filetype": "Файл төре",
 	"advancedsearch-placeholder-exact-text": "\"мәче кәҗәне ярата\"",
 	"advancedsearch-inlanguage-default": "Телне сайлагыз",
 	"advancedsearch-filetype-section-types": "Файлларның гомуми төрләре",
-	"advancedsearch-filetype-section-image": "Рәсем форматлары",
+	"advancedsearch-filetype-section-image": "Сурәт форматлары",
 	"advancedsearch-filetype-section-video": "Видео форматлары",
 	"advancedsearch-filetype-section-audio": "Аудио форматлары",
 	"advancedsearch-filetype-section-document": "Документ форматлары",
 	"advancedsearch-filetype-section-other": "Башка форматлар",
 	"advancedsearch-filetype-default": "Файл төрен сайлагыз",
-	"advancedsearch-filetype-bitmap": "Рәсем",
-	"advancedsearch-filetype-drawing": "Сурәт",
+	"advancedsearch-filetype-bitmap": "Сурәт",
+	"advancedsearch-filetype-drawing": "Рәсем",
 	"advancedsearch-filetype-audio": "Аудио",
 	"advancedsearch-filetype-video": "Видео",
 	"advancedsearch-filetype-office": "Документ",
@@ -30,8 +31,9 @@
 	"advancedsearch-namespaces-search-in": "Эзләү:",
 	"advancedsearch-namespaces-remember": "Сайланган алдагы эзләүләр өчен истә калдырылсын",
 	"advancedsearch-namespaces-preset-all": "Барысы",
-	"advancedsearch-namespaces-preset-default": "Килешү буенча",
-	"advancedsearch-namespaces-preset-general-help": "Гомуми ярдәм",
-	"advancedsearch-namespaces-preset-discussion": "Бәхәс",
-	"advancedsearch-namespaces-placeholder": "Исемнәр мәйданын өстәү..."
+	"advancedsearch-namespaces-preset-default": "Гадәттәге",
+	"advancedsearch-namespaces-preset-general-help": "Гомуми белешмә",
+	"advancedsearch-namespaces-preset-discussion": "Фикер алышу",
+	"advancedsearch-namespaces-placeholder": "Исемнәр киңлекләрен өстәү…",
+	"prefs-advancedsearch": "Киңәйтелгән эзләү"
 }
