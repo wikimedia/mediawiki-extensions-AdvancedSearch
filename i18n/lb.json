@@ -32,6 +32,7 @@
 	"advancedsearch-help-filetype": "sicht nëmmen no Fichiere vum erausgesichten Typ",
 	"advancedsearch-help-filew": "sicht nëmmen no Fichieren mat der spezifizéierter Breet",
 	"advancedsearch-help-fileh": "<dl><dt>Beschreiwung:</dt><dd> Dës Felder erlaben et Iech d'Héicht vum Fichier ze spezifizéieren.</dd> <dt>Denkt w.e.g. drun: </dt> <dd>Dëst gëllt nëmme fir déi Typpe vu Fichier déi eng Breet an eng Héicht hunn, wéi Videoen a Biller.</dd> <dt>Hëllefsäit:</dt><dd>[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Dateimaße]</dd> <dt>Syntax gläichwäerteg beim normale Sichen:</dt><dd>ZUele mat <code>fileh</code> do virdrun esou wéi <code>fileh:>600</code></dd></dl>",
+	"advancedsearch-placeholder-exact-text": "\"Kaz ass frou mat der Gees\"",
 	"advancedsearch-inlanguage-default": "Sprooch eraussichen",
 	"advancedsearch-filetype-section-types": "Allgemeng Fichiers-Typen",
 	"advancedsearch-filetype-section-image": "Bildformater",
