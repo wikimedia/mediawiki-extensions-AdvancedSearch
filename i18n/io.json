@@ -26,5 +26,8 @@
 	"advancedsearch-namespaces-preset-all": "Omna",
 	"advancedsearch-namespaces-preset-default": "''Default''",
 	"advancedsearch-namespaces-preset-general-help": "Generala helpo",
-	"advancedsearch-namespaces-placeholder": "Adjuntar nomala spaci..."
+	"advancedsearch-namespaces-placeholder": "Adjuntar nomala spaci...",
+	"prefs-advancedsearch": "Specala serchado",
+	"advancedsearch-preference-help": "La \"Specala Serchado\" kreas formulario en la pagino \"Special:Search\". To permisas facar specala serchadi, mem se vu konocas nula sintaxo pri serchado. To anke modifikas quale selektar la 'namespaces'.",
+	"advancedsearch-preference-disable": "Ne montrez l'interfacio* pri Specala Serchado"
 }

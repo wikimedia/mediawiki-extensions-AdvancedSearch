@@ -4,9 +4,25 @@
 			"McDutchie"
 		]
 	},
+	"advancedsearch-desc": "Accesso facile al functiones de recerca avantiate sur [[Special:Search]]",
+	"advancedsearch-options-pane-head": "Recerca avantiate:",
+	"advancedsearch-optgroup-text": "Cercar in le texto del pagina",
+	"advancedsearch-optgroup-structure": "Structura",
+	"advancedsearch-optgroup-files": "Files e imagines",
+	"advancedsearch-optgroup-sort": "Ordination",
+	"advancedsearch-field-plain": "Iste parolas",
+	"advancedsearch-field-phrase": "Exactemente iste texto",
 	"advancedsearch-field-or": "Un de iste parolas",
 	"advancedsearch-field-not": "Non iste parolas",
 	"advancedsearch-field-subpageof": "Subpaginas de iste pagina",
 	"advancedsearch-field-intitle": "Le titulo del pagina contine",
+	"advancedsearch-field-deepcategory": "Paginas in iste categorias",
+	"advancedsearch-field-hastemplate": "Paginas con iste patronos",
+	"advancedsearch-field-inlanguage": "Paginas in iste lingua",
+	"advancedsearch-field-filetype": "Typo de file",
+	"advancedsearch-field-filew": "Latitude del file in pixels",
+	"advancedsearch-field-fileh": "Altitude del file in pixels",
+	"advancedsearch-field-sort": "Ordination",
+	"advancedsearch-field-preview-sort": "Ordinar per $1",
 	"advancedsearch-placeholder-exact-text": "\"catto ama capra\""
 }
