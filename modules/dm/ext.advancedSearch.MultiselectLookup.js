@@ -136,14 +136,14 @@
 	mw.libs.advancedSearch.dm.MultiselectLookup.prototype.createTagItemWidget = function ( data, label ) {
 		label = label || data;
 		var title = mw.Title.newFromText( label, mw.config.get( 'wgNamespaceIds' )[ this.lookupId ] ),
-			tagItemLabel = $( '<a>' ).attr( {
+			$tagItemLabel = $( '<a>' ).attr( {
 				target: '_blank',
 				href: title.getUrl(),
 				title: title.getPrefixedText()
 			} ).text( label ),
 			tagItem = new OO.ui.TagItemWidget( { data: data, label: label } );
 
-		tagItem.setLabel( tagItemLabel );
+		tagItem.setLabel( $tagItemLabel );
 
 		if ( !this.queryCache.has( tagItem.$label.text() ) ) {
 			this.searchForPageInNamespace( tagItem.$label.text() )

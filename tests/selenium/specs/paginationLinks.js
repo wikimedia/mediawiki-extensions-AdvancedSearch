@@ -8,7 +8,7 @@ const SearchPage = require( '../pageobjects/search.page' );
 describe( 'Advanced Search', function () {
 
 	function addExamplePages( numPages ) {
-		let Bot = require( 'mwbot' ), // https://github.com/Fannon/mwbot
+		const Bot = require( 'mwbot' ), // https://github.com/Fannon/mwbot
 			client = new Bot(),
 			animals = [ 'cat', 'goat' ];
 

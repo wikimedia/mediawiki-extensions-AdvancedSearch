@@ -84,6 +84,11 @@
 				group = fieldCollection.getGroup( field.id );
 				if ( !fieldSets[ group ] ) {
 					fieldSets[ group ] = new OO.ui.FieldsetLayout( {
+						// The following messages are used here:
+						// * advancedsearch-optgroup-text
+						// * advancedsearch-optgroup-structure
+						// * advancedsearch-optgroup-files
+						// * advancedsearch-optgroup-sort
 						label: mw.msg( 'advancedsearch-optgroup-' + group )
 					} );
 				}

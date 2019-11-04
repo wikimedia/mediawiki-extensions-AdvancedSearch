@@ -14,11 +14,11 @@
 	var fileComparatorToMessage = function ( comparator ) {
 		switch ( comparator ) {
 			case '':
-				return 'advancedsearch-filesize-equals-symbol';
+				return mw.msg( 'advancedsearch-filesize-equals-symbol' );
 			case '>':
-				return 'advancedsearch-filesize-greater-than-symbol';
+				return mw.msg( 'advancedsearch-filesize-greater-than-symbol' );
 			case '<':
-				return 'advancedsearch-filesize-smaller-than-symbol';
+				return mw.msg( 'advancedsearch-filesize-smaller-than-symbol' );
 		}
 	};
 
@@ -46,7 +46,21 @@
 	};
 
 	var lookupTranslationForLabel = function ( fieldId ) {
-		return 'advancedsearch-field-' + fieldId;
+		// The following messages are used here:
+		// * advancedsearch-field-deepcategory
+		// * advancedsearch-field-fileh
+		// * advancedsearch-field-filetype
+		// * advancedsearch-field-filew
+		// * advancedsearch-field-hastemplate
+		// * advancedsearch-field-inlanguage
+		// * advancedsearch-field-intitle
+		// * advancedsearch-field-not
+		// * advancedsearch-field-or
+		// * advancedsearch-field-phrase
+		// * advancedsearch-field-plain
+		// * advancedsearch-field-sort
+		// * advancedsearch-field-subpageof
+		return mw.msg( 'advancedsearch-field-' + fieldId );
 	};
 
 	/**
@@ -153,7 +167,7 @@
 		} else {
 			tag = new OO.ui.TagItemWidget( {
 				label: $()
-					.add( $( '<span>' ).text( mw.msg( lookupTranslationForLabel( fieldId ) ) ) )
+					.add( $( '<span>' ).text( lookupTranslationForLabel( fieldId ) ) )
 					// redundant span to cover browsers without support for bdi tag
 					.add( $( '<span>' ).addClass( 'mw-advancedSearch-searchPreview-content' ).append(
 						$( '<bdi>' ).text( formattedValue )
@@ -185,7 +199,7 @@
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview.prototype.formatValue = function ( fieldId, value ) {
 		if ( fieldIsImageDimension( fieldId ) && Array.isArray( value ) ) {
-			return mw.msg( fileComparatorToMessage( value[ 0 ] ) ) + ' ' + value[ 1 ];
+			return fileComparatorToMessage( value[ 0 ] ) + ' ' + value[ 1 ];
 		}
 
 		if ( fieldIsSortMethod( fieldId ) ) {

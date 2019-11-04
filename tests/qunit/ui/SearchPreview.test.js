@@ -53,8 +53,8 @@
 
 		var searchPreview = new SearchPreview( store, config );
 
-		var pills = $( '.mw-advancedSearch-searchPreview-previewPill', searchPreview.$element );
-		assert.strictEqual( pills.length, 3 );
+		var $pills = $( '.mw-advancedSearch-searchPreview-previewPill', searchPreview.$element );
+		assert.strictEqual( $pills.length, 3 );
 
 		assert.ok( store.getField.calledTwice );
 		assert.strictEqual( generateTagSpy.callCount, 3 );

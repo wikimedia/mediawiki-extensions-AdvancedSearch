@@ -33,6 +33,13 @@
 	 */
 	var addFileOption = function ( options, groupName, option ) {
 		if ( options[ groupName ].length === 0 ) {
+			// The following messages are used here:
+			// * advancedsearch-filetype-section-types
+			// * advancedsearch-filetype-section-image
+			// * advancedsearch-filetype-section-video
+			// * advancedsearch-filetype-section-audio
+			// * advancedsearch-filetype-section-document
+			// * advancedsearch-filetype-section-other
 			options[ groupName ] = [ { optgroup: mw.msg( 'advancedsearch-filetype-section-' + groupName ) } ];
 		}
 		options[ groupName ] = options[ groupName ].concat( option );

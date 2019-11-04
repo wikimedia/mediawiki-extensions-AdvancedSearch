@@ -74,7 +74,7 @@ describe( 'Advanced Search', function () {
 		UserLoginPage.login( browser.options.username, browser.options.password );
 		SearchPage.open();
 		SearchPage.namespaces.toggleNamespacesPreview();
-		let selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs(),
+		const selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs(),
 			expectedNamespaceIDs = [ '0', '1', '2', '10' ];
 		selectedNamespaceIDs.sort();
 		expectedNamespaceIDs.sort();
@@ -86,7 +86,7 @@ describe( 'Advanced Search', function () {
 	it( 'selects the namespaces from the URL', function () {
 		SearchPage.open( { ns0: 1, ns1: 1, ns2: 1, ns10: 1 } );
 		SearchPage.namespaces.toggleNamespacesPreview();
-		let selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs(),
+		const selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs(),
 			expectedNamespaceIDs = [ '0', '1', '2', '10' ];
 		selectedNamespaceIDs.sort();
 		expectedNamespaceIDs.sort();
@@ -96,7 +96,7 @@ describe( 'Advanced Search', function () {
 	} );
 
 	it( 'displays the default namespaces of the user and wiki and that the default checkbox is selected', function () {
-		let namespaceOptions = [ '15', '4', '5', '6' ];
+		const namespaceOptions = [ '15', '4', '5', '6' ];
 		browser.call( resetUserOptions );
 		browser.call( () => {
 			return setSearchNamespaceOptions( namespaceOptions );
@@ -104,7 +104,7 @@ describe( 'Advanced Search', function () {
 		UserLoginPage.login( browser.options.username, browser.options.password );
 		SearchPage.open();
 		SearchPage.namespaces.toggleNamespacesPreview();
-		let selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs();
+		const selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs();
 		selectedNamespaceIDs.sort();
 		namespaceOptions.sort();
 		assert( SearchPage.default.isSelected() );

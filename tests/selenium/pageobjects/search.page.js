@@ -45,7 +45,7 @@ class DropdownField {
 	}
 
 	choose( fieldName ) {
-		let fieldElement = browser.element( '.mw-advancedSearch-inlanguage-' + fieldName );
+		const fieldElement = browser.element( '.mw-advancedSearch-inlanguage-' + fieldName );
 		browser.element( this.selector ).click(); // open inlanguage dropdown
 		browser.execute( 'arguments[0].scrollIntoView(true);', fieldElement.value ); // scroll to the option to get it into view
 		fieldElement.click();
@@ -192,11 +192,10 @@ class SearchPage extends Page {
 	getSelectedNamespaceIDs() {
 		return browser.elements( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-group .oo-ui-tagItemWidget' ).value.reduce( ( acc, widget ) => {
 			const widgetClass = widget.getAttribute( 'class' );
-			let classMatches;
 			if ( !widgetClass ) {
 				return acc;
 			}
-			classMatches = widgetClass.match( /(?:^| )mw-advancedSearch-namespace-(\d+)(?:$| )/ );
+			const classMatches = widgetClass.match( /(?:^| )mw-advancedSearch-namespace-(\d+)(?:$| )/ );
 			if ( classMatches ) {
 				acc.push( classMatches[ 1 ] );
 			}
@@ -213,7 +212,7 @@ class SearchPage extends Page {
 	}
 
 	open( params ) {
-		let pageName = 'Special:Search';
+		const pageName = 'Special:Search';
 		super.openTitle( pageName, params );
 		this.waitForAdvancedSearchToLoad();
 	}

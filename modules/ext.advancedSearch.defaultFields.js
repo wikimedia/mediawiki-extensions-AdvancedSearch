@@ -60,7 +60,35 @@
 	 * @return {string|boolean}
 	 */
 	function getOptionHelpMessage( option ) {
+		// The following messages are used here:
+		// * advancedsearch-help-deepcategory
+		// * advancedsearch-help-fileh
+		// * advancedsearch-help-filetype
+		// * advancedsearch-help-filew
+		// * advancedsearch-help-hastemplate
+		// * advancedsearch-help-inlanguage
+		// * advancedsearch-help-intitle
+		// * advancedsearch-help-not
+		// * advancedsearch-help-or
+		// * advancedsearch-help-phrase
+		// * advancedsearch-help-plain
+		// * advancedsearch-help-sort
+		// * advancedsearch-help-subpageof
 		var message = getMessage( 'advancedsearch-help-' + option.id );
+		// The following messages are used here:
+		// * advancedsearch-field-deepcategory
+		// * advancedsearch-field-fileh
+		// * advancedsearch-field-filetype
+		// * advancedsearch-field-filew
+		// * advancedsearch-field-hastemplate
+		// * advancedsearch-field-inlanguage
+		// * advancedsearch-field-intitle
+		// * advancedsearch-field-not
+		// * advancedsearch-field-or
+		// * advancedsearch-field-phrase
+		// * advancedsearch-field-plain
+		// * advancedsearch-field-sort
+		// * advancedsearch-field-subpageof
 		var head = mw.msg( 'advancedsearch-field-' + option.id );
 		if ( !message || !head ) {
 			return false;
@@ -78,6 +106,7 @@
 		return new OO.ui.FieldLayout(
 			widget,
 			{
+				// Messages documented in getOptionHelpMessage
 				label: mw.msg( 'advancedsearch-field-' + option.id ),
 				align: 'right',
 				help: getOptionHelpMessage( option ),
@@ -99,6 +128,7 @@
 			state,
 			widget,
 			{
+				// Messages documented in getOptionHelpMessage
 				label: mw.msg( 'advancedsearch-field-' + option.id ),
 				align: 'right',
 				checkVisibility: function () {

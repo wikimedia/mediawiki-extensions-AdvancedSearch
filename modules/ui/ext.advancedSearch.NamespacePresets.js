@@ -68,6 +68,11 @@
 	function prepareOptions( presets ) {
 		// eslint-disable-next-line no-jquery/no-map-util
 		return $.map( presets, function ( preset, id ) {
+			// The following messages are used here:
+			// * advancedsearch-namespaces-preset-all
+			// * advancedsearch-namespaces-preset-default
+			// * advancedsearch-namespaces-preset-general-help
+			// * advancedsearch-namespaces-preset-discussion
 			return { data: id, label: mw.msg( preset.label ) };
 		} );
 	}

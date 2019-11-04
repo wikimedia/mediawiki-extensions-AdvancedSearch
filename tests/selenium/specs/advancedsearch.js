@@ -8,7 +8,7 @@ const SearchPage = require( '../pageobjects/search.page' );
 describe( 'Advanced Search', function () {
 
 	function addExamplePages( numPages ) {
-		let client = new Bot(),
+		const client = new Bot(),
 			animals = [ 'cat', 'goat' ];
 
 		return new Promise( function ( resolve, reject ) {
@@ -42,7 +42,7 @@ describe( 'Advanced Search', function () {
 	}
 
 	function addCategory( name ) {
-		let client = new Bot();
+		const client = new Bot();
 
 		return new Promise( function ( resolve, reject ) {
 			const editPage = function () {
@@ -70,7 +70,7 @@ describe( 'Advanced Search', function () {
 	}
 
 	function addTemplate( name, content ) {
-		let client = new Bot();
+		const client = new Bot();
 
 		return new Promise( function ( resolve, reject ) {
 			const editPage = function () {
@@ -197,7 +197,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchCategory.put( 'I do not exist\uE007' );
 
 		browser.waitUntil( function () {
-			let color = SearchPage.getCategoryPillLink( 'I do not exist' ).getCssProperty( 'color' ).value;
+			const color = SearchPage.getCategoryPillLink( 'I do not exist' ).getCssProperty( 'color' ).value;
 			return color === 'rgba(186,0,0,1)';
 		}, 10000, 'Timed out while waiting for the category pill link to turn red' );
 	} );
@@ -216,7 +216,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.toggleInputFields();
 
 		SearchPage.searchCategory.put( 'Tes' );
-		let suggestionBox = SearchPage.categorySuggestionsBox;
+		const suggestionBox = SearchPage.categorySuggestionsBox;
 		suggestionBox.waitForVisible( 10000 );
 
 		assert( suggestionBox.isVisible() );
@@ -260,7 +260,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchTemplate.put( 'Void\uE007' );
 
 		browser.waitUntil( function () {
-			let color = SearchPage.getTemplatePillLink( 'Void' ).getCssProperty( 'color' ).value;
+			const color = SearchPage.getTemplatePillLink( 'Void' ).getCssProperty( 'color' ).value;
 			return color === 'rgba(186,0,0,1)';
 		}, 10000, 'Timed out while waiting for the category pill link to turn red' );
 	} );
@@ -276,7 +276,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.toggleInputFields();
 
 		SearchPage.searchTemplate.put( 'What is lo' );
-		let suggestionBox = SearchPage.templateSuggestionsBox;
+		const suggestionBox = SearchPage.templateSuggestionsBox;
 		suggestionBox.waitForVisible( 10000 );
 
 		assert( suggestionBox.isVisible() );

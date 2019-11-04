@@ -171,10 +171,10 @@
 			previewOptions: state.getNamespaces(),
 			namespacesLabels: searchableNamespaces
 		} );
-		var container = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection' );
+		var $container = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection' );
 		var pane = new mw.libs.advancedSearch.ui.ExpandablePane( {
 			dependentPaneContentBuilder: function () {
-				return container.append( header ).append( presets.$element ).append( selection.$element );
+				return $container.append( header ).append( presets.$element ).append( selection.$element );
 			},
 			$buttonLabel: nsPreview.$element,
 			tabIndex: 0,
@@ -291,19 +291,19 @@
 					presets: mw.config.get( 'advancedSearch.namespacePresets' )
 				}
 			),
-			headerContainer = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection-header' );
+			$headerContainer = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection-header' );
 
 		if ( !mw.user.isAnon() ) {
 			var rememberNameSpaceSelection = new OO.ui.FieldLayout( new OO.ui.CheckboxInputWidget( {
 				value: mw.user.tokens.get( 'searchnamespaceToken' ),
 				name: 'nsRemember'
 			} ), { label: mw.msg( 'advancedsearch-namespaces-remember' ), align: 'inline' } );
-			headerContainer.append( rememberNameSpaceSelection.$element );
+			$headerContainer.append( rememberNameSpaceSelection.$element );
 		}
 
 		$advancedSearch.append( buildNamespacesPaneElement(
 			state,
-			headerContainer,
+			$headerContainer,
 			namespacePresets,
 			namespaceSelection,
 			searchableNamespaces

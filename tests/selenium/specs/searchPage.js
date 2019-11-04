@@ -1,8 +1,8 @@
 'use strict';
 
-let assert = require( 'assert' );
-let SearchPage = require( '../pageobjects/search.page' );
-let LoginPage = require( '../pageobjects/login.page' );
+const assert = require( 'assert' );
+const SearchPage = require( '../pageobjects/search.page' );
+const LoginPage = require( '../pageobjects/login.page' );
 
 describe( 'AdvancedSearch', function () {
 	const NAMESPACE_USER = '2';
@@ -19,7 +19,7 @@ describe( 'AdvancedSearch', function () {
 		SearchPage.open();
 
 		SearchPage.toggleInputFields();
-		let infoPopups = SearchPage.infoPopup.value;
+		const infoPopups = SearchPage.infoPopup.value;
 		SearchPage.searchInfoIcons.value.forEach( function ( popupIcon, idx ) {
 			if ( !popupIcon.isVisible() ) {
 				return;
@@ -28,7 +28,7 @@ describe( 'AdvancedSearch', function () {
 				document.querySelectorAll( selector )[ idx ].scrollIntoView( true ); // eslint-disable-line no-undef
 			}, popupIcon.selector, idx );
 			popupIcon.click();
-			let popupContent = infoPopups[ idx ];
+			const popupContent = infoPopups[ idx ];
 			popupContent.waitForVisible();
 
 			assert( popupContent.isVisible() );
@@ -132,9 +132,9 @@ describe( 'AdvancedSearch', function () {
 		SearchPage.namespaces.toggleNamespacesPreview();
 		SearchPage.generalHelpPreset.click();
 		SearchPage.rememberSelection.click();
-		let cache = SearchPage.getSelectedNamespaceIDs();
+		const cache = SearchPage.getSelectedNamespaceIDs();
 		SearchPage.submitForm();
-		let current = SearchPage.getSelectedNamespaceIDs();
+		const current = SearchPage.getSelectedNamespaceIDs();
 		assert.deepEqual( cache, current );
 		SearchPage.logOut.click();
 		// TODO use a better way to make sure logout is finished
