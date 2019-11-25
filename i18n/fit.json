@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Pyscowicz"
+			"Pyscowicz",
+			"Palmtree222"
 		]
 	},
+	"advancedsearch-options-pane-head": "avanseerattu haku:",
 	"advancedsearch-field-hastemplate": "Sivut näillä malleila"
 }
