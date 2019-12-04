@@ -25,11 +25,14 @@
 	"advancedsearch-filesize-equals": "တုပ်သၟဟ်ကဵု",
 	"advancedsearch-filesize-greater-than": "ဇၞော်နူ",
 	"advancedsearch-filesize-smaller-than": "ဍောတ်နူ",
+	"advancedsearch-sort-preview-last-edit-desc": "စၟတ်တ္ၚဲ မဒါန်",
+	"advancedsearch-sort-preview-create-timestamp-desc": "တ္ၚဲ ခၞံကၠောန်",
 	"advancedsearch-namespaces-search-in": "ဂၠာဲ ပ္ဍဲ:",
 	"advancedsearch-namespaces-remember": "သမ္တီကေတ်မရုဲစှ်သွက်ဂွံဂၠာဲအနာဂတ်",
 	"advancedsearch-namespaces-preset-all": " သီုဖအိုတ်",
 	"advancedsearch-namespaces-preset-default": "မူလ",
 	"advancedsearch-namespaces-preset-general-help": "ရီုဗၚ်နာနာ",
 	"advancedsearch-namespaces-preset-discussion": "သဳကၠဳ",
-	"advancedsearch-namespaces-placeholder": "ထပ် ဒၞဲါယၟု..."
+	"advancedsearch-namespaces-placeholder": "ထပ် ဒၞဲါယၟု...",
+	"prefs-advancedsearch": "ဂၠာဲမတၟေၚ်"
 }
