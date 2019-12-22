@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Cusolotto"
+			"Cusolotto",
+			"Conky77"
 		]
 	},
-	"advancedsearch-placeholder-exact-text": "\"gato ama cavra\""
+	"advancedsearch-field-plain": "Ste paròle",
+	"advancedsearch-field-or": "Una de  ste paròle",
+	"advancedsearch-placeholder-exact-text": "\"gato ama cavra\"",
+	"advancedsearch-namespaces-preset-discussion": "Discusion"
 }
