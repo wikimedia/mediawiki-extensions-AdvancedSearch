@@ -4,7 +4,8 @@
 			"Aram1985",
 			"Դավիթ Սարոյան",
 			"Kareyac",
-			"Xelgen"
+			"Xelgen",
+			"GeoO"
 		]
 	},
 	"advancedsearch-options-pane-head": "Ընդլայնված ընտրանքներ",
@@ -23,7 +24,7 @@
 	"advancedsearch-field-filetype": "Նիշքի տեսակ",
 	"advancedsearch-field-filew": "Նիշքի լայնքը պիքսելներով",
 	"advancedsearch-field-fileh": "Նիշքի երկայնքը պիքսելներով",
-	"advancedsearch-placeholder-exact-text": "\"կատուն սիրում է այծին\"",
+	"advancedsearch-placeholder-exact-text": "«կատուն սիրում է այծին»",
 	"advancedsearch-inlanguage-default": "Ընտրել լեզուն",
 	"advancedsearch-filetype-section-types": "Նիշքերի հիմնական տեսակներ",
 	"advancedsearch-filetype-section-image": "Պատկերի ձևաչափեր",
