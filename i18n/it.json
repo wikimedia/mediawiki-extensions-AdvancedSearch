@@ -3,7 +3,8 @@
 		"authors": [
 			"Beta16",
 			"Fringio",
-			"Sakretsu"
+			"Sakretsu",
+			"Dansita"
 		]
 	},
 	"advancedsearch-desc": "Accesso rapido alle funzioni di ricerca avanzata in [[Special:Search]]",
@@ -11,6 +12,7 @@
 	"advancedsearch-optgroup-text": "Cerca nel testo della pagina",
 	"advancedsearch-optgroup-structure": "Struttura",
 	"advancedsearch-optgroup-files": "File e immagini",
+	"advancedsearch-optgroup-sort": "Ordine di classificazione",
 	"advancedsearch-field-plain": "Queste parole",
 	"advancedsearch-field-phrase": "Esattamente questo testo",
 	"advancedsearch-field-or": "Una di queste parole",
@@ -23,6 +25,7 @@
 	"advancedsearch-field-filetype": "Tipo di file",
 	"advancedsearch-field-filew": "Larghezza file in pixel",
 	"advancedsearch-field-fileh": "Altezza file in pixel",
+	"advancedsearch-field-sort": "Ordine di classificazione",
 	"advancedsearch-field-preview-sort": "Ordina per $1",
 	"advancedsearch-help-plain": ";Descrizione\n:Cerca queste parole nel titolo o nel testo.\n;Ricorda quanto segue\n:* Possono essere fornite più parole.\n:* I segni di punteggiatura e altri caratteri non alfanumerici (ad eccezione dei due punti e la virgola) saranno ignorati.\n:* Possono capitare risultati che non contengono uno o più dei tuoi termini di ricerca.\n:* Viene applicato lo stemming alle parole. Esempio: se si scrive ''macchina'', la ricerca considererà anche ''macchine''. Lo stemming alle parole è specifico della lingua.\n;Pagina di aiuto\n:[https://www.mediawiki.org/wiki/help:CirrusSearch#Full_text_search Ricerca di testo completo]\n;Sintassi equivalente nella ricerca normale\n:<code>sesame street car</code>",
 	"advancedsearch-help-phrase": ";Descrizione\n:Cerca una sequenza specifica di caratteri. I segni di punteggiatura sono ignorati.\n;Ricorda quanto segue\n:(valido solo quando si usano le virgolette, vedi l'esempio qui sotto)\n:* Separa con una virgola o uno spazio le locuzioni da cercare, es. <code>\"buon giorno\"</code>, <code>\"ciao amico!\"</code>.\n:* I segni di punteggiatura e altri caratteri non alfanumerici (ad eccezione dei due punti e la virgola) saranno ignorati.\n:* La ricerca non fa distinzione fra maiuscole e minuscole.\n:* Non viene applicato lo stemming alle parole.\n;Pagina di aiuto\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Parole, locuzioni e attributi]\n;Sintassi equivalente nella ricerca normale\n:Parole tra virgolette, per esempio <code>\"Inizia dall'inizio\"</code>.",
@@ -45,12 +48,16 @@
 	"advancedsearch-filetype-section-other": "Altri formati",
 	"advancedsearch-filetype-default": "Seleziona il tipo di file",
 	"advancedsearch-filetype-bitmap": "Immagine",
+	"advancedsearch-filetype-drawing": "Disegno",
 	"advancedsearch-filetype-audio": "Audio",
 	"advancedsearch-filetype-video": "Video",
+	"advancedsearch-filetype-office": "Office",
 	"advancedsearch-filesize-equals": "uguale a",
 	"advancedsearch-filesize-greater-than": "maggiore di",
 	"advancedsearch-filesize-smaller-than": "minore di",
 	"advancedsearch-sort-relevance": "Rilevanza",
+	"advancedsearch-sort-last-edit-desc": "Modifica la data – quella attuale in cima",
+	"advancedsearch-sort-create-timestamp-desc": "Crea data – quella attuale in cima",
 	"advancedsearch-sort-preview-relevance": "rilevanza",
 	"advancedsearch-sort-preview-last-edit-desc": "data modifica",
 	"advancedsearch-sort-preview-create-timestamp-desc": "data creazione",
