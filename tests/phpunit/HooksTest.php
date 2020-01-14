@@ -116,7 +116,7 @@ class HooksTest extends MediaWikiTestCase {
 		Hooks::onSpecialPageBeforeExecute( $special, '' );
 
 		// Ensure that no namespace-related redirect was performed
-		$this->assertEquals( '', $special->getOutput()->getRedirect() );
+		$this->assertSame( '', $special->getOutput()->getRedirect() );
 
 		$vars = $special->getOutput()->getJsConfigVars();
 

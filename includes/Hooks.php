@@ -2,11 +2,11 @@
 
 namespace AdvancedSearch;
 
+use Language;
 use MediaWiki\MediaWikiServices;
 use ResourceLoader;
 use SpecialPage;
 use User;
-use Language;
 use WebRequest;
 
 /**
