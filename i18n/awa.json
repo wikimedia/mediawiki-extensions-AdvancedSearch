@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ajeetsinghawadh"
+			"Ajeetsinghawadh",
+			"Ajeetsinghawadhi"
 		]
 	},
 	"advancedsearch-desc": " [[Special:Search]] पय उन्नत खोज क्षमताओं कय आसान पहुँच",
@@ -13,7 +14,7 @@
 	"advancedsearch-field-plain": "ये शब्द",
 	"advancedsearch-field-phrase": "बिल्कुल इहै पाठ",
 	"advancedsearch-field-or": "इन शब्दऽन् मा से एक",
-	"advancedsearch-field-not": "ये शब्द नहीं",
+	"advancedsearch-field-not": "यैं शब्द नाही",
 	"advancedsearch-field-subpageof": "यहि पन्ना कय उपपन्ना",
 	"advancedsearch-field-intitle": "पृष्ठ शीर्षक मा हय",
 	"advancedsearch-field-deepcategory": "एह श्रेणियों मा पृष्ठ",
