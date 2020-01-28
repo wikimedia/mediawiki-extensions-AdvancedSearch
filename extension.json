@@ -58,18 +58,10 @@
 		}
 	},
 	"Hooks": {
-		"GetPreferences": [
-			"AdvancedSearch\\Hooks::onGetPreferences"
-		],
-		"ResourceLoaderTestModules": [
-			"AdvancedSearch\\Hooks::onResourceLoaderTestModules"
-		],
-		"SpecialPageBeforeExecute": [
-			"AdvancedSearch\\Hooks::onSpecialPageBeforeExecute"
-		],
-		"SpecialSearchResultsPrepend": [
-			"AdvancedSearch\\Hooks::onSpecialSearchResultsPrepend"
-		]
+		"GetPreferences": "AdvancedSearch\\Hooks::onGetPreferences",
+		"ResourceLoaderTestModules": "AdvancedSearch\\Hooks::onResourceLoaderTestModules",
+		"SpecialPageBeforeExecute": "AdvancedSearch\\Hooks::onSpecialPageBeforeExecute",
+		"SpecialSearchResultsPrepend": "AdvancedSearch\\Hooks::onSpecialSearchResultsPrepend"
 	},
 	"MessagesDirs": {
 		"AdvancedSearch": [
