@@ -72,3 +72,12 @@ mw.hook( 'advancedSearch.initNamespacePresetProviders' ).add(
 
 The provider function `customTalkNamespaceProvider` will get an array of all supported namespaces IDs. If it returns unsupported namespace IDs, the preset will not be shown.
 If the provider function returns an empty array, the preset is not shown. This is for creating presets that depend on the existence of certain namespaces.
+
+### Category tree support `$wgAdvancedSearchDeepcatEnabled`
+
+AdvancedSearch acts as a remote for [CirrusSearch](https://www.mediawiki.org/wiki/Help:CirrusSearch) features. An advanced, optional CirrusSearch feature is `deepcat:`, which allows to search in subcategories. By default, AdvancedSearch assumes this is available. It needs to be disabled on wikis that can't or don't want to set up the [required SPARQL service](https://www.mediawiki.org/wiki/Help:CirrusSearch#Deepcategory).
+
+```
+// in your LocalSettings.php
+$wgAdvancedSearchDeepcatEnabled = false; // disable deepcat: in favor of incategory:
+```
