@@ -37,7 +37,7 @@
 		} );
 
 		this.$dependentPane = $( '<div>' )
-			.attr( 'id', 'mw-advancedSearch-expandable' )
+			.attr( 'id', 'mw-advancedSearch-expandable-' + config.suffix )
 			.addClass( 'mw-advancedSearch-expandablePane-pane' );
 		this.dependentPaneContentBuilder = config.dependentPaneContentBuilder;
 
@@ -45,7 +45,7 @@
 		this.$element.append( this.button.$element, this.$dependentPane );
 		this.button.$element.attr( {
 			'aria-expanded': 'false',
-			'aria-controls': 'mw-advancedSearch-expandable'
+			'aria-controls': 'mw-advancedSearch-expandable-' + config.suffix
 		} );
 
 		this.notifyChildInputVisibility( config.data === this.STATE_OPEN );
