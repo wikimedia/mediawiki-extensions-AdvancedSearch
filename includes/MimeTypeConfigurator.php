@@ -21,19 +21,19 @@ class MimeTypeConfigurator {
 	/**
 	 * @param string[] $fileExtensions
 	 *
-	 * @return string[]
+	 * @return string[] List of file extension => MIME type.
 	 */
 	public function getMimeTypes( array $fileExtensions ) {
 		$mimeTypes = [];
 
 		foreach ( $fileExtensions as $ext ) {
-			$mimeTypeForExtension = $this->getFirstMimeTypeByFileExtension( $ext );
-			if ( !in_array( $mimeTypeForExtension, $mimeTypes ) ) {
-				$mimeTypes[$ext] = $mimeTypeForExtension;
+			$mimeType = $this->getFirstMimeTypeByFileExtension( $ext );
+			if ( !isset( $mimeTypes[$mimeType] ) ) {
+				$mimeTypes[$mimeType] = $ext;
 			}
 		}
 
-		return array_unique( $mimeTypes );
+		return array_flip( $mimeTypes );
 	}
 
 	/**
@@ -43,8 +43,7 @@ class MimeTypeConfigurator {
 	 * @return string First mime type associated with the given file extension
 	 */
 	private function getFirstMimeTypeByFileExtension( $fileExtension ) {
-		$mimeTypes = explode( ' ', $this->mimeAnalyzer->getTypesForExtension( $fileExtension ) );
-		return $mimeTypes[0];
+		return explode( ' ', $this->mimeAnalyzer->getTypesForExtension( $fileExtension ), 2 )[0];
 	}
 
 }
