@@ -85,6 +85,7 @@ class Hooks {
 
 	/**
 	 * If the request does not contain any namespaces, redirect to URL with user default namespaces
+	 * @param \SpecialPage $special
 	 */
 	private static function redirectToNamespacedRequest( \SpecialPage $special ) {
 		if ( !self::isNamespacedSearch( $special->getRequest() ) ) {
