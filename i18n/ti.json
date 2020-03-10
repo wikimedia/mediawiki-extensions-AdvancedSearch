@@ -4,8 +4,10 @@
 			"Joanmp17"
 		]
 	},
+	"advancedsearch-options-pane-head": "ብሉጽ ምድላይ፥",
 	"advancedsearch-filetype-bitmap": "ምስሊ",
 	"advancedsearch-namespaces-search-in": "ምድላይ ብ፥",
 	"advancedsearch-namespaces-preset-all": "ምሉእ",
-	"advancedsearch-namespaces-preset-discussion": "ምይይጥ"
+	"advancedsearch-namespaces-preset-discussion": "ምይይጥ",
+	"prefs-advancedsearch": "ብሉጽ ምድላይ"
 }
