@@ -87,10 +87,7 @@
 			}
 		},
 		"ext.advancedSearch.searchtoken": {
-			"class": "AdvancedSearch\\SearchnamespaceTokenModule",
-			"dependencies": [
-				"user.tokens"
-			]
+			"class": "AdvancedSearch\\SearchnamespaceTokenModule"
 		},
 		"ext.advancedSearch.elements": {
 			"scripts": [
