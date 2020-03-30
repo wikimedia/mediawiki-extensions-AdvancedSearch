@@ -46,7 +46,7 @@
 	"advancedsearch-help-filetype": ";解説\n:選択した種類のファイルのみ検索します。\n;注意点\n:* 検索できるファイルは1種類のみ。\n:* 選択できるファイルの種類はドロップダウン・メニューにあるものに限定。\n;ヘルプ\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype Filetype]と[https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime filemime]\n;通常の検索のシンタックスに相当\n:単語群の前に<code>filetype:</code>を付け、<code>filetype:ogg</code>と記述。",
 	"advancedsearch-help-filew": ";解説\n:これらの領域でファイルの幅を指定します。\n;注意点\n:* この条件を設定できるのは幅と高さのある、動画や画像などのファイルのみ。\n;ヘルプ\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]\n;通常の検索ではシンタックスに相当\n:数字の前に<code>filew</code>を付け、<code>filew:>800</code>と記述。",
 	"advancedsearch-help-fileh": ";解説\n:この領域でファイルの高さを指定します。\n;注意点\n:* この条件を設定できるのは幅と高さのある、動画や画像などのファイルのみ。\n;ヘルプ\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#File_measures Filemeasures]\n;通常の検索ではシンタックスに相当\n:数字の前に<code>fileh</code>を付け、<code>fileh:>600</code>と記述。",
-	"advancedsearch-help-sort": ";解説\n:検索結果の並び順を変更します。デフォルトでは、最も関連性のあるページが検索結果の最上位に表示されます。\n;ヘルプ\n: [https://www.mediawiki.org/wiki/Help:CirrusSearch#Explicit_sort_orders Explicit sort orders]\n;通常の検索のシンタックスに相当\n: この機能が使えるようになるキーワードはありません。URLのパラメータを介して、並び順が指定されます。",
+	"advancedsearch-help-sort": ";解説\n:検索結果の並び順を変更します。既定では、最も関連性のあるページが検索結果の最上位に表示されます。\n;ヘルプ\n: [https://www.mediawiki.org/wiki/Help:CirrusSearch#Explicit_sort_orders Explicit sort orders]\n;通常の検索のシンタックスに相当\n: この機能が使えるようになるキーワードはありません。URLのパラメーターを介して、並び順が指定されます。",
 	"advancedsearch-placeholder-exact-text": "\"ネコはヤギが好き\"",
 	"advancedsearch-inlanguage-default": "言語の選択",
 	"advancedsearch-filetype-section-types": "一般的なファイルの種類",
