@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Wertuose"
+			"Wertuose",
+			"Toghrul Rahimli"
 		]
 	},
 	"advancedsearch-optgroup-text": "Səhifənin mətnində axtar",
-	"advancedsearch-optgroup-files": "Fayllar və şəkillər"
+	"advancedsearch-optgroup-files": "Fayllar və şəkillər",
+	"advancedsearch-filetype-bitmap": "Şəkil"
 }
