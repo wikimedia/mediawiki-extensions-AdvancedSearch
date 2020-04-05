@@ -2,30 +2,6 @@
 ( function () {
 	'use strict';
 
-	/**
-	 * @return {boolean}
-	 */
-	function isLoaded() {
-		if ( !mw.libs ) {
-			mw.libs = {};
-		}
-		if ( !mw.libs.advancedSearch ) {
-			mw.libs.advancedSearch = {};
-		}
-
-		if ( mw.libs.advancedSearch.advancedOptionsLoaded ) {
-			return true;
-		}
-
-		mw.libs.advancedSearch.advancedOptionsLoaded = true;
-
-		return false;
-	}
-
-	if ( isLoaded() ) {
-		return;
-	}
-
 	if ( mw.config.get( 'wgCanonicalSpecialPageName' ) !== 'Search' ) {
 		return;
 	}
