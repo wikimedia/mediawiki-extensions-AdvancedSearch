@@ -173,7 +173,6 @@
 		},
 		"ext.advancedSearch.SearchFieldUI": {
 			"scripts" : [
-				"modules/ext.advancedSearch.util.js",
 				"modules/dm/ext.advancedSearch.TitleCache.js",
 				"modules/dm/ext.advancedSearch.MultiselectLookup.js",
 				"modules/ui/ext.advancedSearch.ArbitraryWordInput.js",
