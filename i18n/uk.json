@@ -1,13 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Piramidion",
-			"SimondR",
 			"Avatar6",
 			"Base",
-			"Ата",
 			"Gzhegozh",
-			"Vlad5250"
+			"Piramidion",
+			"SimondR",
+			"Vlad5250",
+			"Ата"
 		]
 	},
 	"advancedsearch-desc": "Легкий доступ до можливостей розширеного пошуку на сторінці [[Special:Search|Спеціальна:Пошук]]",

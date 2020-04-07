@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mormegil",
 			"Ilimanaq29",
 			"Matěj Suchánek",
-			"Spotter",
-			"Patriccck"
+			"Mormegil",
+			"Patriccck",
+			"Spotter"
 		]
 	},
 	"advancedsearch-desc": "Jednoduchý přístup k pokročilým možnostem vyhledávání na stránce [[Special:Search]]",

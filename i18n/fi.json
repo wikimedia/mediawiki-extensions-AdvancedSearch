@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Nike",
 			"Pyscowicz",
 			"SMAUG",
-			"Valtlait",
-			"Nike",
-			"Stryn"
+			"Stryn",
+			"Valtlait"
 		]
 	},
 	"advancedsearch-desc": "Helpottaa edistyneiden hakuominaisuuksien käyttöä sivulle [[Special:Search|Toiminnot:Haku]]",

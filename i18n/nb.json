@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Pmt",
-			"Jon Harald Søby",
+			"Danmichaelo",
 			"Imre Eilertsen",
 			"Jeblad",
-			"Danmichaelo",
-			"Orf3us"
+			"Jon Harald Søby",
+			"Orf3us",
+			"Pmt"
 		]
 	},
 	"advancedsearch-desc": "Enkel tilgang til avanserte søkemuligheter på [[Special:Search]]",

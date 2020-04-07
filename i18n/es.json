@@ -1,17 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe",
-			"Fitoschido",
-			"KATRINE1992",
-			"MarcoAurelio",
-			"Jelou",
-			"Esteban",
-			"Tiberius1701",
 			"Agusbou2015",
-			"Johny Weissmuller Jr",
+			"Esteban",
+			"Fitoschido",
 			"Ihojose",
-			"Nicolas Ramirez"
+			"Jelou",
+			"Johny Weissmuller Jr",
+			"KATRINE1992",
+			"Macofe",
+			"MarcoAurelio",
+			"Nicolas Ramirez",
+			"Tiberius1701"
 		]
 	},
 	"advancedsearch-desc": "Acceso sencillo a las funciones de búsqueda avanzadas de [[Special:Search]]",

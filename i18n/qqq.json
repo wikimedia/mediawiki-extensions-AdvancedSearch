@@ -1,15 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"WMDE",
-			"Robby",
-			"Liuxinyu970226",
-			"Raymond",
 			"Amire80",
+			"Liuxinyu970226",
 			"Mar(c)",
-			"Woytecr",
 			"Nike",
-			"Pikne"
+			"Pikne",
+			"Raymond",
+			"Robby",
+			"WMDE",
+			"Woytecr"
 		]
 	},
 	"advancedsearch-desc": "{{desc|name=AdvancedSearch|url=https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:AdvancedSearch}}",

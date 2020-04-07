@@ -1,12 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Elisardojm",
-			"Banjo",
 			"Athena in Wonderland",
-			"Navhy",
-			"Maria zaos",
-			"Iváns"
+			"Banjo",
+			"Elisardojm",
+			"Iváns",
+			"Maria zaos"
 		]
 	},
 	"advancedsearch-desc": "Acceso sinxelo a capacidades de procura avanzadas en [[Special:Search]]",

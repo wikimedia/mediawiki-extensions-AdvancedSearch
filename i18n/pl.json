@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"InternerowyGołąb",
 			"Chrumps",
-			"Woytecr",
-			"Railfail536",
 			"CiaPan",
-			"Rail"
+			"InternerowyGołąb",
+			"Rail",
+			"Railfail536",
+			"Woytecr"
 		]
 	},
 	"advancedsearch-desc": "Ułatwia korzystanie z zaawansowanych możliwości wyszukiwania na [[Special:Search|Specjalna:Szukaj]]",

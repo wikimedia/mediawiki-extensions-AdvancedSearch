@@ -1,17 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hinaloe",
-			"Yusuke1109",
-			"夢蝶葬花",
-			"Omotecho",
-			"Suyama",
-			"Shirayuki",
-			"Darklanlan",
-			"Ohgi",
-			"Suchichi02",
 			"Afaz",
-			"Kkairri"
+			"Darklanlan",
+			"Hinaloe",
+			"Kkairri",
+			"Ohgi",
+			"Omotecho",
+			"Shirayuki",
+			"Suchichi02",
+			"Suyama",
+			"Yusuke1109",
+			"夢蝶葬花"
 		]
 	},
 	"advancedsearch-desc": "[[Special:Search]]の高度な検索機能への簡単なアクセス",

@@ -2,10 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"Fringio",
-			"Sakretsu",
 			"Dansita",
-			"Ontsed"
+			"Fringio",
+			"Ontsed",
+			"Sakretsu"
 		]
 	},
 	"advancedsearch-desc": "Accesso rapido alle funzioni di ricerca avanzata in [[Special:Search]]",

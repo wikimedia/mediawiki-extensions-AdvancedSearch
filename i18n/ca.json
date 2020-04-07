@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bombolla",
 			"Fitoschido",
-			"FranSisPac",
-			"Bombolla"
+			"FranSisPac"
 		]
 	},
 	"advancedsearch-desc": "Accés fàcil a capacitats avançades de recerca a [[Special:Search]]",

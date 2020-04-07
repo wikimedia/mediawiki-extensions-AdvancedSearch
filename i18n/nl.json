@@ -1,13 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mar(c)",
-			"Patio",
-			"Mainframe98",
-			"KlaasZ4usV",
-			"Elroy",
 			"Bdijkstra",
-			"Klaas van Buiten"
+			"Elroy",
+			"Klaas van Buiten",
+			"KlaasZ4usV",
+			"Mainframe98",
+			"Mar(c)",
+			"Patio"
 		]
 	},
 	"advancedsearch-desc": "Eenvoudige toegang tot geavanceerde zoekmogelijkheden op [[Special:Search]]",

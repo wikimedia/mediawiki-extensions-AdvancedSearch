@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Metalhead64",
 			"Gabriel Birke (WMDE)",
+			"Inkowik",
 			"Johanna Strodt (WMDE)",
-			"Sebastian Wallroth",
-			"Inkowik"
+			"Metalhead64",
+			"Sebastian Wallroth"
 		]
 	},
 	"advancedsearch-desc": "Leichter Zugang zu erweiterten Suchmöglichkeiten auf [[Special:Search]]",

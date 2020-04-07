@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Geonuch",
 			"Aefgh39622",
-			"กิ๊ฟ เลิกล่ะ สายแข็ง",
-			"Horus"
+			"Geonuch",
+			"Horus",
+			"กิ๊ฟ เลิกล่ะ สายแข็ง"
 		]
 	},
 	"advancedsearch-desc": "เข้าถึงสมรรถนะค้นหาขั้นสูงบน [[Special:Search]] ได้โดยง่าย",

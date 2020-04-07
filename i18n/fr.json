@@ -1,15 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Wladek92",
-			"Gomoko",
-			"DePlusJean",
-			"Urhixidur",
 			"ALDO CP",
+			"DePlusJean",
 			"Djiboun",
-			"Verdy p",
+			"Gomoko",
+			"Pols12",
 			"Thibaut120094",
-			"Pols12"
+			"Urhixidur",
+			"Verdy p",
+			"Wladek92"
 		]
 	},
 	"advancedsearch-desc": "Accès facile aux possibilités de recherche avancée sur [[Special:Search]]",

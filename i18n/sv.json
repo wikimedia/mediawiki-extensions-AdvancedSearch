@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix",
 			"Bengtsson96",
 			"Mjälten",
-			"Technic2"
+			"Technic2",
+			"WikiPhoenix"
 		]
 	},
 	"advancedsearch-desc": "Enkel åtkomst till avancerade sökförmågor på [[Special:Search]]",

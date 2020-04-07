@@ -1,18 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mahdy Saffar",
-			"Alirezaaa",
-			"Ladsgroup",
-			"Obzord",
-			"Arian Ar",
 			"Alifakoor",
-			"Arash",
-			"Mardetanha",
 			"Alireza Ivaz",
+			"Alirezaaa",
 			"Amirsara",
+			"Arash",
+			"Arian Ar",
 			"FarsiNevis",
-			"Huji"
+			"Huji",
+			"Ladsgroup",
+			"Mahdy Saffar",
+			"Mardetanha",
+			"Obzord"
 		]
 	},
 	"advancedsearch-desc": "دسترسی آسان به قابلیت‌های جستجوی پیشرفته در [[Special:Search]]",
