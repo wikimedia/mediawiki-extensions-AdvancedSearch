@@ -5,7 +5,8 @@
 			"Iñaki LL",
 			"Joseba",
 			"Mikel Ibaiba",
-			"Subi"
+			"Subi",
+			"Xabier Armendaritz"
 		]
 	},
 	"advancedsearch-desc": "Bilaketa aurreraturako aukerak hemen: [[Special:Search]]",
@@ -49,5 +50,5 @@
 	"advancedsearch-namespaces-search-in": "Non bilatu:",
 	"advancedsearch-namespaces-preset-all": "Denak",
 	"advancedsearch-namespaces-placeholder": "Izen-eremuak gehitu...",
-	"advancedsearch-preference-disable": "Ez erakutsi Bilekata Aurreratua interfazea"
+	"advancedsearch-preference-disable": "Ez erakutsi bilaketa aurreratuaren interfazea"
 }
