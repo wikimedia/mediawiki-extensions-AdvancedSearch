@@ -43,9 +43,9 @@
 
 		this.$element.addClass( 'mw-advancedSearch-expandablePane-' + this.suffix );
 		this.$element.append( this.button.$element, this.$dependentPane );
-		this.button.$element.attr( {
-			'aria-expanded': 'false',
-			'aria-controls': 'mw-advancedSearch-expandable-' + config.suffix
+		this.button.$button.attr( {
+			'aria-controls': 'mw-advancedSearch-expandable-' + config.suffix,
+			'aria-expanded': 'false'
 		} );
 
 		this.notifyChildInputVisibility( config.data === this.STATE_OPEN );
@@ -94,10 +94,10 @@
 	mw.libs.advancedSearch.ui.ExpandablePane.prototype.updatePaneVisibility = function ( state ) {
 		if ( state === this.STATE_OPEN ) {
 			this.$dependentPane.show();
-			this.button.$element.attr( 'aria-expanded', 'true' );
+			this.button.$button.attr( 'aria-expanded', 'true' );
 		} else {
 			this.$dependentPane.hide();
-			this.button.$element.attr( 'aria-expanded', 'false' );
+			this.button.$button.attr( 'aria-expanded', 'false' );
 		}
 	};
 
