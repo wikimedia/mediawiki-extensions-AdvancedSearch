@@ -11,6 +11,7 @@
 	"rules": {
 		"one-var": "off",
 		"vars-on-top": "off",
-		"max-len": "off"
+		"max-len": "off",
+		"mediawiki/class-doc": "warn"
 	}
 }
