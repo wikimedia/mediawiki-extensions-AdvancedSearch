@@ -4,7 +4,6 @@ namespace AdvancedSearch;
 
 use Language;
 use MediaWiki\MediaWikiServices;
-use ResourceLoader;
 use SpecialPage;
 use User;
 use WebRequest;
@@ -161,47 +160,4 @@ class Hooks {
 			'help-message' => 'advancedsearch-preference-help',
 		];
 	}
-
-	/**
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ResourceLoaderTestModules
-	 * @codeCoverageIgnore
-	 *
-	 * @param array[] &$testModules
-	 * @param ResourceLoader $rl
-	 */
-	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
-		$testModules['qunit']['ext.advancedSearch.tests'] = [
-			'scripts' => [
-				'tests/qunit/FieldCollection.test.js',
-				'tests/qunit/QueryCompiler.test.js',
-				'tests/qunit/SearchField.test.js',
-				'tests/qunit/ui/ArbitraryWordInput.test.js',
-				'tests/qunit/ui/CheckboxInputWidget.test.js',
-				'tests/qunit/ui/ItemMenuOptionWidget.test.js',
-				'tests/qunit/ui/FileTypeSelection.test.js',
-				'tests/qunit/ui/MenuSelectWidget.test.js',
-				'tests/qunit/ui/LanguageSelection.test.js',
-				'tests/qunit/ui/NamespaceFilters.test.js',
-				'tests/qunit/ui/NamespacePresets.test.js',
-				'tests/qunit/ui/SearchPreview.test.js',
-				'tests/qunit/dm/getDefaultNamespaces.test.js',
-				'tests/qunit/dm/NamespacePresetProviders.test.js',
-				'tests/qunit/dm/SearchModel.test.js',
-				'tests/qunit/dm/FileTypeOptionProvider.test.js',
-				'tests/qunit/dm/TitleCache.test.js',
-				'tests/qunit/dm/LanguageOptionProvider.test.js',
-				'tests/qunit/dm/MultiselectLookup.test.js',
-				'tests/qunit/dm/trackingEvents/SearchRequest.test.js',
-				'tests/qunit/util.test.js'
-			],
-			'dependencies' => [
-				'ext.advancedSearch.elements',
-				'ext.advancedSearch.SearchFieldUI',
-				'oojs-ui'
-			],
-			'localBasePath' => dirname( __DIR__ ),
-			'remoteExtPath' => 'AdvancedSearch',
-		];
-	}
-
 }

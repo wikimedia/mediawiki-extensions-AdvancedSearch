@@ -58,7 +58,6 @@
 	},
 	"Hooks": {
 		"GetPreferences": "AdvancedSearch\\Hooks::onGetPreferences",
-		"ResourceLoaderTestModules": "AdvancedSearch\\Hooks::onResourceLoaderTestModules",
 		"SpecialPageBeforeExecute": "AdvancedSearch\\Hooks::onSpecialPageBeforeExecute",
 		"SpecialSearchResultsPrepend": "AdvancedSearch\\Hooks::onSpecialSearchResultsPrepend"
 	},
@@ -231,6 +230,38 @@
 				"mediawiki.Title"
 			]
 		}
+	},
+	"QUnitTestModule": {
+		"localBasePath": "tests/qunit",
+		"remoteExtPath": "AdvancedSearch/tests/qunit",
+		"scripts": [
+			"FieldCollection.test.js",
+			"QueryCompiler.test.js",
+			"SearchField.test.js",
+			"ui/ArbitraryWordInput.test.js",
+			"ui/CheckboxInputWidget.test.js",
+			"ui/ItemMenuOptionWidget.test.js",
+			"ui/FileTypeSelection.test.js",
+			"ui/MenuSelectWidget.test.js",
+			"ui/LanguageSelection.test.js",
+			"ui/NamespaceFilters.test.js",
+			"ui/NamespacePresets.test.js",
+			"ui/SearchPreview.test.js",
+			"dm/getDefaultNamespaces.test.js",
+			"dm/NamespacePresetProviders.test.js",
+			"dm/SearchModel.test.js",
+			"dm/FileTypeOptionProvider.test.js",
+			"dm/TitleCache.test.js",
+			"dm/LanguageOptionProvider.test.js",
+			"dm/MultiselectLookup.test.js",
+			"dm/trackingEvents/SearchRequest.test.js",
+			"util.test.js"
+		],
+		"dependencies": [
+			"ext.advancedSearch.elements",
+			"ext.advancedSearch.SearchFieldUI",
+			"oojs-ui"
+		]
 	},
 	"attributes": {
 		"EventLogging": {
