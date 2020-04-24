@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"1917 Ekim Devrimi",
 			"Mirzali",
 			"Orbot707"
 		]
@@ -43,6 +44,8 @@
 	"advancedsearch-filesize-greater-than": "zêde gırdo",
 	"advancedsearch-filesize-smaller-than": "zêde kemiyo",
 	"advancedsearch-sort-relevance": "Eleqe",
+	"advancedsearch-sort-last-edit-desc": "Terıxê vurnayışi - cor de ravêrde",
+	"advancedsearch-sort-create-timestamp-desc": "Terıxê vıraştışi - cor de ravêrde",
 	"advancedsearch-sort-preview-relevance": "eleqe",
 	"advancedsearch-sort-preview-last-edit-desc": "tarixi bıvurne",
 	"advancedsearch-sort-preview-create-timestamp-desc": "tarixê vıraştışi",
@@ -53,5 +56,6 @@
 	"advancedsearch-namespaces-preset-general-help": "Peştiya Umumi",
 	"advancedsearch-namespaces-preset-discussion": "Werênayış",
 	"advancedsearch-namespaces-placeholder": "Cayenameya cı kerê...",
-	"prefs-advancedsearch": "Cıgeyrayışo Hera"
+	"prefs-advancedsearch": "Cıgeyrayışo Hera",
+	"advancedsearch-preference-disable": "Verrıyê cıgeyrayışê ravêrşıyayışi memocne"
 }
