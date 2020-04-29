@@ -4,6 +4,7 @@
 			"An13sa",
 			"Iñaki LL",
 			"Joseba",
+			"Manex",
 			"Mikel Ibaiba",
 			"Subi",
 			"Xabier Armendaritz"
@@ -27,6 +28,7 @@
 	"advancedsearch-field-filetype": "Fitxategi mota",
 	"advancedsearch-field-filew": "Fitxategiaren zabalera pixeletan",
 	"advancedsearch-field-fileh": "Fitxategiaren altuera pixeletan",
+	"advancedsearch-field-sort": "Sailkapenerako irizpidea",
 	"advancedsearch-placeholder-exact-text": "\"katuak ahuntza maite du\"",
 	"advancedsearch-inlanguage-default": "Hautatu hizkuntza",
 	"advancedsearch-filetype-section-types": "Fitxategi mota orokorrak",
