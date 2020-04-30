@@ -25,6 +25,10 @@
 
 			if ( opt.optgroup === undefined ) {
 				optValue = widget.cleanUpValue( opt.data );
+				// The following classes are used here:
+				// * mw-advancedSearch-inlanguage-*
+				// * mw-advancedSearch-filetype-*
+				// * mw-advancedSearch-sort-*
 				optionWidget = new OO.ui.MenuOptionWidget( {
 					data: optValue,
 					classes: [ widget.className + optValue.replace( /\W+/g, '-' ) ],

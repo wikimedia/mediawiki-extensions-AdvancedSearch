@@ -182,6 +182,20 @@
 			}
 		} );
 
+		// The following classes are used here:
+		// * mw-advancedsearch-searchPreview-preview-deepcategory
+		// * mw-advancedsearch-searchPreview-preview-fileh
+		// * mw-advancedsearch-searchPreview-preview-filetype
+		// * mw-advancedsearch-searchPreview-preview-filew
+		// * mw-advancedsearch-searchPreview-preview-hastemplate
+		// * mw-advancedsearch-searchPreview-preview-inlanguage
+		// * mw-advancedsearch-searchPreview-preview-intitle
+		// * mw-advancedsearch-searchPreview-preview-not
+		// * mw-advancedsearch-searchPreview-preview-or
+		// * mw-advancedsearch-searchPreview-preview-phrase
+		// * mw-advancedsearch-searchPreview-preview-plain
+		// * mw-advancedsearch-searchPreview-preview-sort
+		// * mw-advancedsearch-searchPreview-preview-subpageof
 		tag.$element
 			.attr( 'title', formattedValue )
 			.addClass( 'mw-advancedSearch-searchPreview-previewPill' )
