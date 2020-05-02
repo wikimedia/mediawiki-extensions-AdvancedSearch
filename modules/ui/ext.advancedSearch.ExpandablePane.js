@@ -41,6 +41,9 @@
 			.addClass( 'mw-advancedSearch-expandablePane-pane' );
 		this.dependentPaneContentBuilder = config.dependentPaneContentBuilder;
 
+		// The following classes are used here:
+		// * mw-advancedSearch-expandablePane-namespaces
+		// * mw-advancedSearch-expandablePane-options
 		this.$element.addClass( 'mw-advancedSearch-expandablePane-' + this.suffix );
 		this.$element.append( this.button.$element, this.$dependentPane );
 		this.button.$element.attr( {

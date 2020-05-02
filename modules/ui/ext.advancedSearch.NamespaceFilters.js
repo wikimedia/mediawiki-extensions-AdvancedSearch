@@ -137,6 +137,10 @@
 	 */
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.createTagItemWidget = function ( data, label ) {
 		label = label || data;
+		// The following classes are used here:
+		// * mw-advancedSearch-namespace-0
+		// * mw-advancedSearch-namespace-1
+		// etc.
 		return new OO.ui.TagItemWidget( {
 			data: data,
 			label: label,

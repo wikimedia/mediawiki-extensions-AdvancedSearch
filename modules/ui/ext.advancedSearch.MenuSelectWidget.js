@@ -43,6 +43,10 @@
 		this.menuInitialized = true;
 		var items = this.options.map( function ( option ) {
 			var isDiscussionNamespace = ( Number( option.data ) % 2 );
+			// The following classes are used here:
+			// * mw-advancedSearch-namespace-0
+			// * mw-advancedSearch-namespace-1
+			// etc.
 			return new mw.libs.advancedSearch.ui.ItemMenuOptionWidget( $.extend( {
 				data: option.data,
 				label: option.label || option.data,
