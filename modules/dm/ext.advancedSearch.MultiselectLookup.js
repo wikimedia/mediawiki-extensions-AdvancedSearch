@@ -233,7 +233,7 @@
 	 *
 	 * @param {OO.ui.TagItemWidget} item
 	 */
-	mw.libs.advancedSearch.dm.MultiselectLookup.prototype.onLookupMenuItemChoose = function ( item ) {
+	mw.libs.advancedSearch.dm.MultiselectLookup.prototype.onLookupMenuChoose = function ( item ) {
 		this.addTag( item.getData() );
 		this.input.setValue( '' );
 	};

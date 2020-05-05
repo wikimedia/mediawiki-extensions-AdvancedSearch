@@ -45,7 +45,7 @@
 		// reset storeField as is was invoked by addTag( 'Preexisting' ) before
 		store.storeField = sandbox.stub();
 
-		lookup.onLookupMenuItemChoose( item );
+		lookup.onLookupMenuChoose( item );
 
 		var tags = lookup.getItems();
 		assert.ok( Array.isArray( tags ) );
