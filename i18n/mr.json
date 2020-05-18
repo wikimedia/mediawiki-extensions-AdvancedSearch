@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Sureshkhole",
 			"V.narsikar"
 		]
 	},
@@ -41,7 +42,7 @@
 	"advancedsearch-namespaces-remember": "केलेली निवड ही पुढील शोधासाठी आठवणीत ठेवा",
 	"advancedsearch-namespaces-preset-all": "सर्व",
 	"advancedsearch-namespaces-preset-default": "अविचल (डिफॉल्ट)",
-	"advancedsearch-namespaces-preset-general-help": "सर्वसामान्य सहाय्य",
+	"advancedsearch-namespaces-preset-general-help": "सर्वसामान्य मदत",
 	"advancedsearch-namespaces-preset-discussion": "चर्चा",
 	"advancedsearch-namespaces-placeholder": "नामविश्व जोडा...",
 	"prefs-advancedsearch": "प्रगत शोध",
