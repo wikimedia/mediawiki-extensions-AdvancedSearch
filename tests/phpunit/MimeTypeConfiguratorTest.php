@@ -13,10 +13,10 @@ use PHPUnit\Framework\TestCase;
  */
 class MimeTypeConfiguratorTest extends TestCase {
 
-	const EXT_SINGLE_MIMETYPE = 'singletype';
-	const EXT_MULTIPLE_MIMETYPES = 'multitype';
-	const EXT_SAME_MIMETYPE = 'same1';
-	const OTHER_EXT_SAME_MIMETYPE = 'same2';
+	private const EXT_SINGLE_MIMETYPE = 'singletype';
+	private const EXT_MULTIPLE_MIMETYPES = 'multitype';
+	private const EXT_SAME_MIMETYPE = 'same1';
+	private const OTHER_EXT_SAME_MIMETYPE = 'same2';
 
 	public function testConfiguratorReturnsMimeTypeForFileExtension() {
 		$configurator = new MimeTypeConfigurator( $this->newMimeAnalyzerMock() );

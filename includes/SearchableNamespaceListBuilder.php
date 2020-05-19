@@ -7,7 +7,7 @@ namespace AdvancedSearch;
  */
 class SearchableNamespaceListBuilder {
 
-	const MAIN_NAMESPACE = 'blanknamespace';
+	private const MAIN_NAMESPACE = 'blanknamespace';
 
 	/**
 	 * Get a curated list of namespaces. Adds Main namespace and removes unnamed namespaces
