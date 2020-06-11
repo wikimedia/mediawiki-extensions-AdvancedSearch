@@ -10,7 +10,7 @@
 	 * @extends {OO.ui.MenuTagMultiselectWidget}
 	 * @constructor
 	 *
-	 * @param  {ext.advancedSearch.dm.SearchModel} store
+	 * @param  {mw.libs.advancedSearch.dm.SearchModel} store
 	 * @param  {Object} config
 	 * @cfg {Object} [namespaceIcons] Namespace id => icon name
 	 * @cfg {Object} [namespaces] Namespace id => Namespace label (similar to mw.config.get( 'wgFormattedNamespaces' ) )
@@ -177,6 +177,7 @@
 
 	/**
 	 * Remove an item from the list of namespaces in store
+	 *
 	 * @param {string} namespace The item to be removed
 	 * @return {string[]} collection of namespaces minus the removed item
 	 */
@@ -219,6 +220,7 @@
 	 *
 	 * TODO: Remove this override once OOUI has addressed the issue
 	 * Relevant ticket: https://phabricator.wikimedia.org/T190161
+	 *
 	 * @inheritdoc
 	 */
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.doInputBackspace = function ( e, withMetaKey ) {

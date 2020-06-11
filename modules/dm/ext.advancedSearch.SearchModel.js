@@ -56,6 +56,7 @@
 
 	/**
 	 * Namespace id of File namespace
+	 *
 	 * @type {string}
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.FILE_NAMESPACE = '6';

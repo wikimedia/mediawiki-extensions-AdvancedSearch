@@ -5,7 +5,7 @@
 	mw.libs.advancedSearch = mw.libs.advancedSearch || {};
 
 	/**
-	 * @param {SearchField[]} searchFields
+	 * @param {Array} searchFields
 	 * @class
 	 * @constructor
 	 */
@@ -15,7 +15,7 @@
 
 	/**
 	 * @private
-	 * @param {ext.libs.advancedSearch.dm.SearchModel} state
+	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
 	 * @return {string[]}
 	 */
 	mw.libs.advancedSearch.QueryCompiler.prototype.formatSearchFields = function ( state ) {
@@ -45,7 +45,7 @@
 	};
 
 	/**
-	 * @param {ext.libs.advancedSearch.dm.SearchModel} state
+	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
 	 * @return {string}
 	 */
 	mw.libs.advancedSearch.QueryCompiler.prototype.compileSearchQuery = function ( state ) {
@@ -64,7 +64,7 @@
 
 	/**
 	 * @param {string} search The current search string
-	 * @param {ext.libs.advancedSearch.dm.SearchModel} state
+	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
 	 * @return {string}
 	 */
 	mw.libs.advancedSearch.QueryCompiler.prototype.removeCompiledQueryFromSearch = function ( search, state ) {

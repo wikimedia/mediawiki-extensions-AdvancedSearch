@@ -7,7 +7,7 @@
 
 	/**
 	 * @mixin
-	 * @depends on {OO.ui.DropdownInputWidget}
+	 * @requires {OO.ui.DropdownInputWidget}
 	 * @constructor
 	 *
 	 * @param {string} className

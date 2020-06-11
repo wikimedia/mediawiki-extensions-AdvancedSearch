@@ -15,8 +15,8 @@
 	 * @extends {OO.ui.DropdownInputWidget}
 	 * @constructor
 	 *
-	 * @param  {ext.advancedSearch.dm.SearchModel} store
-	 * @param  {ext.advancedSearch.dm.LanguageOptionProvider} optionProvider
+	 * @param  {mw.libs.advancedSearch.dm.SearchModel} store
+	 * @param  {mw.libs.advancedSearch.dm.LanguageOptionProvider} optionProvider
 	 * @param  {Object} config
 	 */
 	mw.libs.advancedSearch.ui.LanguageSelection = function ( store, optionProvider, config ) {

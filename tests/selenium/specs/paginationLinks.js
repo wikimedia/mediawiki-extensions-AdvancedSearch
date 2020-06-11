@@ -61,7 +61,7 @@ describe( 'Advanced Search', function () {
 		browser.waitForVisible( '.mw-advancedSearch-container', 10000 );
 
 		assert( SearchPage.searchPaginationLinks.isExisting() );
-		SearchPage.searchPaginationLinks.value.map( function ( link ) {
+		SearchPage.searchPaginationLinks.value.forEach( function ( link ) {
 			assertURLContainsAdvancedSearchState( link.getAttribute( 'href' ) );
 		} );
 	} );

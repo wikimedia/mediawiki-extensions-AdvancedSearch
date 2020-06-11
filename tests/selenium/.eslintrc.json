@@ -1,15 +1,10 @@
 {
 	"root": true,
 	"extends": [
-		"wikimedia/server"
+		"wikimedia/selenium"
 	],
-	"env": {
-		"mocha": true
-	},
-	"globals": {
-		"browser": "readonly"
-	},
 	"rules": {
-		"max-len": "off"
+		"max-len": "off",
+		"node/no-deprecated-api": "warn"
 	}
 }

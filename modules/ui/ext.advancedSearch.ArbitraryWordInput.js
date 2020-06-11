@@ -10,7 +10,7 @@
 	 * @extends {OO.ui.TagMultiselectWidget}
 	 * @constructor
 	 *
-	 * @param  {ext.advancedSearch.dm.SearchModel} store
+	 * @param  {mw.libs.advancedSearch.dm.SearchModel} store
 	 * @param  {Object} config
 	 */
 	mw.libs.advancedSearch.ui.ArbitraryWordInput = function ( store, config ) {
@@ -56,7 +56,7 @@
 		if ( segments.length > 1 ) {
 			var self = this;
 
-			segments.map( function ( segment ) {
+			segments.forEach( function ( segment ) {
 				var trimmedSegment = segment.trim();
 
 				if ( self.isAllowedData( trimmedSegment ) ) {

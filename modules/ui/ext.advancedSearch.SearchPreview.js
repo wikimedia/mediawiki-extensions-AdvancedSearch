@@ -68,7 +68,7 @@
 	 * @extends {OO.ui.Widget}
 	 * @constructor
 	 *
-	 * @param  {ext.advancedSearch.dm.SearchModel} store
+	 * @param  {mw.libs.advancedSearch.dm.SearchModel} store
 	 * @param  {Object} config
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview = function ( store, config ) {

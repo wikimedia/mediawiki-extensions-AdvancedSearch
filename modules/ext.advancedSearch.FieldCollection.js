@@ -11,7 +11,7 @@
 	};
 
 	/**
-	 * @param {SearchField} field
+	 * @param {mw.libs.advancedSearch.SearchField} field
 	 * @param {string} group
 	 */
 	mw.libs.advancedSearch.FieldCollection.prototype.add = function ( field, group ) {

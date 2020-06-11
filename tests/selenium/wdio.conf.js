@@ -1,3 +1,5 @@
+'use strict';
+
 const fs = require( 'fs' ),
 	saveScreenshot = require( 'wdio-mediawiki' ).saveScreenshot,
 	logPath = process.env.LOG_DIR || `${__dirname}/log`;

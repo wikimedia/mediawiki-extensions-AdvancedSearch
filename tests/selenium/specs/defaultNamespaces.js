@@ -3,11 +3,10 @@
 const assert = require( 'assert' );
 const SearchPage = require( '../pageobjects/search.page' );
 const UserLoginPage = require( 'wdio-mediawiki/LoginPage' );
+const log = require( 'semlog' ).log; // https://github.com/fannon/semlog/
+const Bot = require( 'mwbot' ); // https://github.com/Fannon/mwbot
 
 describe( 'Advanced Search', function () {
-	const log = require( 'semlog' ).log, // https://github.com/fannon/semlog/
-		Bot = require( 'mwbot' ); // https://github.com/Fannon/mwbot
-
 	function setSearchNamespaceOptions( namespaceIds ) {
 		const client = new Bot();
 		return client.loginGetEditToken( {

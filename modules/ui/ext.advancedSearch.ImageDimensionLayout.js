@@ -12,7 +12,7 @@
 	 * @extends {OO.ui.FieldLayout}
 	 * @constructor
 	 *
-	 * @param  {ext.advancedSearch.dm.SearchModel} store
+	 * @param  {mw.libs.advancedSearch.dm.SearchModel} store
 	 * @param  {OO.ui.Widget} widget
 	 * @param  {Object} config
 	 */

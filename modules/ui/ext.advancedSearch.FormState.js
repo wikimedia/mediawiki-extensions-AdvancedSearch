@@ -10,7 +10,7 @@
 	 * @extends {OO.ui.HiddenInputWidget}
 	 * @constructor
 	 *
-	 * @param  {ext.advancedSearch.dm.SearchModel} store
+	 * @param  {mw.libs.advancedSearch.dm.SearchModel} store
 	 * @param  {Object} config
 	 */
 	mw.libs.advancedSearch.ui.FormState = function ( store, config ) {

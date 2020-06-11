@@ -16,8 +16,8 @@
 	 * @extends {OO.ui.DropdownInputWidget}
 	 * @constructor
 	 *
-	 * @param  {ext.advancedSearch.dm.SearchModel} store
-	 * @param  {ext.advancedSearch.dm.FileTypeOptionProvider} optionProvider
+	 * @param  {mw.libs.advancedSearch.dm.SearchModel} store
+	 * @param  {mw.libs.advancedSearch.dm.FileTypeOptionProvider} optionProvider
 	 * @param  {Object} config
 	 */
 	mw.libs.advancedSearch.ui.FileTypeSelection = function ( store, optionProvider, config ) {

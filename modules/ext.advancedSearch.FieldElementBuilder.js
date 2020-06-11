@@ -6,7 +6,7 @@
 	mw.libs.advancedSearch.dm = mw.libs.advancedSearch.dm || {};
 
 	/**
-	 * @param {ext.libs.advancedSearch.dm.SearchModel} state
+	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
 	 *
 	 * @class
 	 * @constructor
@@ -17,7 +17,7 @@
 
 	$.extend( mw.libs.advancedSearch.FieldElementBuilder.prototype, {
 		/**
-		 * @type {ext.libs.advancedSearch.dm.SearchModel}
+		 * @type {mw.libs.advancedSearch.dm.SearchModel}
 		 * @private
 		 */
 		state: null,
@@ -46,8 +46,8 @@
 		},
 
 		/**
-		 * @param {ext.libs.advancedSearch.SearchField} field
-		 * @return {ext.libs.advancedSearch.ui.TextInput}
+		 * @param {mw.libs.advancedSearch.SearchField} field
+		 * @return {mw.libs.advancedSearch.ui.TextInput}
 		 * @private
 		 */
 		createWidget: function ( field ) {
@@ -67,7 +67,7 @@
 		/**
 		 * Build HTML element that contains all the search fields
 		 *
-		 * @param {ext.advancedSearch.FieldCollection} fieldCollection
+		 * @param {mw.libs.advancedSearch.FieldCollection} fieldCollection
 		 * @return {jQuery} jQuery object that contains all search field widgets, wrapped in Layout widgets
 		 */
 		buildAllFieldsElement: function ( fieldCollection ) {

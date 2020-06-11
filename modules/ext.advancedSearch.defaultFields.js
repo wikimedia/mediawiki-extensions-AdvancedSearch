@@ -120,8 +120,8 @@
 	 *
 	 * @param {OO.ui.Widget} widget Widget to wrap in a OO.ui.FieldLayout
 	 * @param {Object} option Options for OO.ui.FieldLayout
-	 * @param {ext.libs.advancedSearch.dm.SearchModel} state
-	 * @return {ext.advancedSearch.ui.ImageDimensionLayout}
+	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
+	 * @return {mw.libs.advancedSearch.ui.ImageDimensionLayout}
 	 */
 	function createImageDimensionLayout( widget, option, state ) {
 		return new mw.libs.advancedSearch.ui.ImageDimensionLayout(

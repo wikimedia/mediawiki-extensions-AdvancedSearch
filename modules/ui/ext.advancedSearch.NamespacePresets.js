@@ -21,7 +21,7 @@
 	 * Prepare static namespace ID presets for improved performance during later processing
 	 *
 	 * @param {Object} presets
-	 * @param {ext.advancedSearch.dm.NamespacePresetProviders} presetProvider
+	 * @param {mw.libs.advancedSearch.dm.NamespacePresetProviders} presetProvider
 	 * @return {Object}
 	 */
 	function groomPresets( presets, presetProvider ) {
@@ -82,8 +82,8 @@
 	 * @extends {OO.ui.CheckboxMultiselectInputWidget}
 	 * @constructor
 	 *
-	 * @param  {ext.advancedSearch.dm.SearchModel} store
-	 * @param  {ext.advancedSearch.dm.NamespacePresetProviders} presetProvider
+	 * @param  {mw.libs.advancedSearch.dm.SearchModel} store
+	 * @param  {mw.libs.advancedSearch.dm.NamespacePresetProviders} presetProvider
 	 * @param  {Object} config
 	 */
 	mw.libs.advancedSearch.ui.NamespacePresets = function ( store, presetProvider, config ) {

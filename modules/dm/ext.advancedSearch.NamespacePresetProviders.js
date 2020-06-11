@@ -11,7 +11,7 @@
 	 * The real event name is `advancedSearch.initNamespacePresetProviders`, but jsDuck does not support dots in event names.
 	 *
 	 * @event advancedSearch_initNamespacePresetProviders
-	 * @param {object} providerFunctions
+	 * @param {Object} providerFunctions
 	 */
 
 	/**
@@ -61,7 +61,7 @@
 
 	/**
 	 * @param {string[]} namespaceIds
-	 * @return {bool}
+	 * @return {boolean}
 	 */
 	mw.libs.advancedSearch.dm.NamespacePresetProviders.prototype.namespaceIdsAreValid = function ( namespaceIds ) {
 		return mw.libs.advancedSearch.util.arrayContains( Object.keys( this.namespaces ), namespaceIds );
