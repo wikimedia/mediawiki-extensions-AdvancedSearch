@@ -7,8 +7,7 @@
 	/**
 	 * Base class for search form fields
 	 *
-	 * @class
-	 * @typedef {Object} SearchField
+	 * @class SearchField
 	 * @param {string} id
 	 * @param {string|Array} defaultValue
 	 * @param {boolean} isGreedy
