@@ -15,7 +15,7 @@
 	 * @mixins {OO.ui.mixin.IndicatorElement}
 	 * @constructor
 	 *
-	 * @param  {Object} config
+	 * @param {Object} config
 	 * @param {jQuery} config.$buttonLabel
 	 * @param {number} [config.tabIndex]
 	 * @param {Function} config.dependentPaneContentBuilder

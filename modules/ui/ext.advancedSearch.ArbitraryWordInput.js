@@ -10,8 +10,8 @@
 	 * @extends {OO.ui.TagMultiselectWidget}
 	 * @constructor
 	 *
-	 * @param  {mw.libs.advancedSearch.dm.SearchModel} store
-	 * @param  {Object} config
+	 * @param {mw.libs.advancedSearch.dm.SearchModel} store
+	 * @param {Object} config
 	 */
 	mw.libs.advancedSearch.ui.ArbitraryWordInput = function ( store, config ) {
 		config = $.extend( {}, config );

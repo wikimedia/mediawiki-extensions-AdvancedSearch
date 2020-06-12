@@ -14,8 +14,8 @@
 	 * @extends {OO.ui.Widget}
 	 * @constructor
 	 *
-	 * @param  {mw.libs.advancedSearch.dm.SearchModel} store
-	 * @param  {Object} config
+	 * @param {mw.libs.advancedSearch.dm.SearchModel} store
+	 * @param {Object} config
 	 */
 	mw.libs.advancedSearch.ui.ImageDimensionInput = function ( store, config ) {
 		this.fieldId = config.fieldId;

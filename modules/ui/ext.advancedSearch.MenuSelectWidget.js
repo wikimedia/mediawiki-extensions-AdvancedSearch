@@ -5,7 +5,7 @@
 	 * @extends OO.ui.MenuSelectWidget
 	 *
 	 * @constructor
-	 * @param  {mw.libs.advancedSearch.dm.SearchModel} store
+	 * @param {mw.libs.advancedSearch.dm.SearchModel} store
 	 * @param {Object} [config] Configuration object
 	 * @cfg {jQuery} [$overlay] A jQuery object serving as overlay for popups
 	 */

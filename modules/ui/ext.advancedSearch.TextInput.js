@@ -10,8 +10,8 @@
 	 * @extends {OO.ui.TextInputWidget}
 	 * @constructor
 	 *
-	 * @param  {mw.libs.advancedSearch.dm.SearchModel} store
-	 * @param  {Object} config
+	 * @param {mw.libs.advancedSearch.dm.SearchModel} store
+	 * @param {Object} config
 	 */
 	mw.libs.advancedSearch.ui.TextInput = function ( store, config ) {
 		config = $.extend( {}, config );

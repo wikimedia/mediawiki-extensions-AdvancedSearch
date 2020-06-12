@@ -23,7 +23,7 @@
 		state: null,
 
 		/**
-		 * @param  {string} id
+		 * @param {string} id
 		 * @return {Function}
 		 * @private
 		 */

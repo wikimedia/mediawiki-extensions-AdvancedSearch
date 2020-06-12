@@ -12,9 +12,9 @@
 	 * @extends {OO.ui.FieldLayout}
 	 * @constructor
 	 *
-	 * @param  {mw.libs.advancedSearch.dm.SearchModel} store
-	 * @param  {OO.ui.Widget} widget
-	 * @param  {Object} config
+	 * @param {mw.libs.advancedSearch.dm.SearchModel} store
+	 * @param {OO.ui.Widget} widget
+	 * @param {Object} config
 	 */
 	mw.libs.advancedSearch.ui.ImageDimensionLayout = function ( store, widget, config ) {
 		this.store = store;

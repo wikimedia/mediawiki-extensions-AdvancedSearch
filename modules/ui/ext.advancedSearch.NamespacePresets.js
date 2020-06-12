@@ -82,9 +82,9 @@
 	 * @extends {OO.ui.CheckboxMultiselectInputWidget}
 	 * @constructor
 	 *
-	 * @param  {mw.libs.advancedSearch.dm.SearchModel} store
-	 * @param  {mw.libs.advancedSearch.dm.NamespacePresetProviders} presetProvider
-	 * @param  {Object} config
+	 * @param {mw.libs.advancedSearch.dm.SearchModel} store
+	 * @param {mw.libs.advancedSearch.dm.NamespacePresetProviders} presetProvider
+	 * @param {Object} config
 	 */
 	mw.libs.advancedSearch.ui.NamespacePresets = function ( store, presetProvider, config ) {
 		config = $.extend( {

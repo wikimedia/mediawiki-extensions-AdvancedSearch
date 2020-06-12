@@ -15,9 +15,9 @@
 	 * @extends {OO.ui.DropdownInputWidget}
 	 * @constructor
 	 *
-	 * @param  {mw.libs.advancedSearch.dm.SearchModel} store
-	 * @param  {mw.libs.advancedSearch.dm.LanguageOptionProvider} optionProvider
-	 * @param  {Object} config
+	 * @param {mw.libs.advancedSearch.dm.SearchModel} store
+	 * @param {mw.libs.advancedSearch.dm.LanguageOptionProvider} optionProvider
+	 * @param {Object} config
 	 */
 	mw.libs.advancedSearch.ui.LanguageSelection = function ( store, optionProvider, config ) {
 		config = $.extend( { options: getOptions( optionProvider ) }, config );

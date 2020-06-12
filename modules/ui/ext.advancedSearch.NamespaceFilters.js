@@ -10,8 +10,8 @@
 	 * @extends {OO.ui.MenuTagMultiselectWidget}
 	 * @constructor
 	 *
-	 * @param  {mw.libs.advancedSearch.dm.SearchModel} store
-	 * @param  {Object} config
+	 * @param {mw.libs.advancedSearch.dm.SearchModel} store
+	 * @param {Object} config
 	 * @cfg {Object} [namespaceIcons] Namespace id => icon name
 	 * @cfg {Object} [namespaces] Namespace id => Namespace label (similar to mw.config.get( 'wgFormattedNamespaces' ) )
 	 */
