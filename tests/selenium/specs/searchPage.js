@@ -12,16 +12,16 @@ describe( 'AdvancedSearch', function () {
 
 		SearchPage.toggleInputFields();
 
-		assert( SearchPage.searchInfoIcons.isVisible() );
+		assert( SearchPage.searchInfoIcon.isDisplayed() );
 	} );
 
 	it( 'inserts content in icon popups', function () {
 		SearchPage.open();
 
 		SearchPage.toggleInputFields();
-		const infoPopups = SearchPage.infoPopup.value;
-		SearchPage.searchInfoIcons.value.forEach( function ( popupIcon, idx ) {
-			if ( !popupIcon.isVisible() ) {
+		const infoPopups = SearchPage.infoPopup;
+		SearchPage.searchInfoIcons.forEach( function ( popupIcon, idx ) {
+			if ( !popupIcon.isDisplayed() ) {
 				return;
 			}
 			browser.execute( function ( selector, idx ) {
@@ -29,9 +29,9 @@ describe( 'AdvancedSearch', function () {
 			}, popupIcon.selector, idx );
 			popupIcon.click();
 			const popupContent = infoPopups[ idx ];
-			popupContent.waitForVisible();
+			popupContent.waitForDisplayed();
 
-			assert( popupContent.isVisible() );
+			assert( popupContent.isDisplayed() );
 			assert( SearchPage.getInfoPopupContent( popupContent ).getText() !== '' );
 
 			popupIcon.click();
@@ -63,12 +63,12 @@ describe( 'AdvancedSearch', function () {
 
 		SearchPage.toggleInputFields();
 		SearchPage.searchFileType.selectImageType();
-		assert( SearchPage.namespaceTagsInCollapsedMode.value.filter( function ( tag ) {
+		assert( SearchPage.namespaceTagsInCollapsedMode.filter( function ( tag ) {
 			return tag.getText() === 'File';
 		} ).length !== 0 );
 
-		assert( SearchPage.searchImageWidth.isVisible() );
-		assert( SearchPage.searchImageHeight.isVisible() );
+		assert( SearchPage.searchImageWidth.isDisplayed() );
+		assert( SearchPage.searchImageHeight.isDisplayed() );
 	} );
 
 	it( 'hides dimension fields when searching for files of type audio', function () {
@@ -77,8 +77,8 @@ describe( 'AdvancedSearch', function () {
 		SearchPage.toggleInputFields();
 		SearchPage.searchFileType.selectAudioType();
 
-		assert( !SearchPage.searchImageWidth.isVisible() );
-		assert( !SearchPage.searchImageHeight.isVisible() );
+		assert( !SearchPage.searchImageWidth.isDisplayed() );
+		assert( !SearchPage.searchImageHeight.isDisplayed() );
 	} );
 
 	it( 'selects all namespaces when clicking "All" preset', function () {
@@ -171,11 +171,11 @@ describe( 'AdvancedSearch', function () {
 		SearchPage.namespaces.toggleNamespacesPreview();
 		SearchPage.namespaces.toggleNamespacesMenu();
 		SearchPage.namespaces.clickOnNamespace( NAMESPACE_USER );
-		assert( SearchPage.namespaceTags.value.filter( function ( tag ) {
+		assert( SearchPage.namespaceTags.filter( function ( tag ) {
 			return tag.getText() === 'User';
 		} ).length !== 0 );
 		SearchPage.namespaces.clickOnNamespace( NAMESPACE_USER );
-		assert( SearchPage.namespaceTags.value.filter( function ( tag ) {
+		assert( SearchPage.namespaceTags.filter( function ( tag ) {
 			return tag.getText() === 'User';
 		} ).length === 0 );
 	} );

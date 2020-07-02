@@ -30,9 +30,9 @@ describe( 'Advanced Search', function () {
 				} );
 			};
 			client.loginGetEditToken( {
-				username: browser.options.username,
-				password: browser.options.password,
-				apiUrl: browser.options.baseUrl + '/api.php'
+				username: browser.config.mwUser,
+				password: browser.config.mwPwd,
+				apiUrl: browser.config.baseUrl + '/api.php'
 			} ).then( () => {
 				return editPage( 0 );
 			} ).catch( ( err ) => {
@@ -58,9 +58,9 @@ describe( 'Advanced Search', function () {
 				} );
 			};
 			client.loginGetEditToken( {
-				username: browser.options.username,
-				password: browser.options.password,
-				apiUrl: browser.options.baseUrl + '/api.php'
+				username: browser.config.mwUser,
+				password: browser.config.mwPwd,
+				apiUrl: browser.config.baseUrl + '/api.php'
 			} ).then( () => {
 				return editPage();
 			} ).catch( ( err ) => {
@@ -85,9 +85,9 @@ describe( 'Advanced Search', function () {
 				} );
 			};
 			client.loginGetEditToken( {
-				username: browser.options.username,
-				password: browser.options.password,
-				apiUrl: browser.options.baseUrl + '/api.php'
+				username: browser.config.mwUser,
+				password: browser.config.mwPwd,
+				apiUrl: browser.config.baseUrl + '/api.php'
 			} ).then( () => {
 				return editPage();
 			} ).catch( ( err ) => {
@@ -99,13 +99,13 @@ describe( 'Advanced Search', function () {
 	it( 'has the advanced search extension installed', function () {
 		SpecialPage.open();
 
-		assert( SpecialPage.advancedSearchExtensionLink.isVisible() );
+		assert( SpecialPage.advancedSearchExtensionLink.isDisplayed() );
 	} );
 
 	it( 'inserts advanced search elements on search page', function () {
 		SearchPage.open();
 
-		assert( SearchPage.searchContainer.isVisible() );
+		assert( SearchPage.searchContainer.isDisplayed() );
 	} );
 
 	it( 'finds no placeholders for "These words" "None of these words" and "One of these words"', function () {
@@ -197,7 +197,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchCategory.put( 'I do not exist\uE007' );
 
 		browser.waitUntil( function () {
-			const color = SearchPage.getCategoryPillLink( 'I do not exist' ).getCssProperty( 'color' ).value;
+			const color = SearchPage.getCategoryPillLink( 'I do not exist' ).getCSSProperty( 'color' ).value;
 			return color === 'rgba(186,0,0,1)';
 		}, 10000, 'Timed out while waiting for the category pill link to turn red' );
 	} );
@@ -217,18 +217,18 @@ describe( 'Advanced Search', function () {
 
 		SearchPage.searchCategory.put( 'Tes' );
 		const suggestionBox = SearchPage.categorySuggestionsBox;
-		suggestionBox.waitForVisible( 10000 );
+		suggestionBox.waitForDisplayed( 10000 );
 
-		assert( suggestionBox.isVisible() );
+		assert( suggestionBox.isDisplayed() );
 	} );
 
 	it( 'inserts inlanguage field only when the translate extension is installed', function () {
 		SearchPage.open();
 
-		if ( SpecialPage.translateExtensionLink.isVisible() ) {
-			assert( SearchPage.searchInLanguage.isVisible() );
+		if ( SpecialPage.translateExtensionLink.isDisplayed() ) {
+			assert( SearchPage.searchInLanguage.isDisplayed() );
 		} else {
-			assert( !SearchPage.searchInLanguage.isVisible() );
+			assert( !SearchPage.searchInLanguage.isDisplayed() );
 		}
 	} );
 
@@ -260,7 +260,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchTemplate.put( 'Void\uE007' );
 
 		browser.waitUntil( function () {
-			const color = SearchPage.getTemplatePillLink( 'Void' ).getCssProperty( 'color' ).value;
+			const color = SearchPage.getTemplatePillLink( 'Void' ).getCSSProperty( 'color' ).value;
 			return color === 'rgba(186,0,0,1)';
 		}, 10000, 'Timed out while waiting for the category pill link to turn red' );
 	} );
@@ -277,9 +277,9 @@ describe( 'Advanced Search', function () {
 
 		SearchPage.searchTemplate.put( 'What is lo' );
 		const suggestionBox = SearchPage.templateSuggestionsBox;
-		suggestionBox.waitForVisible( 10000 );
+		suggestionBox.waitForDisplayed( 10000 );
 
-		assert( suggestionBox.isVisible() );
+		assert( suggestionBox.isDisplayed() );
 	} );
 
 } );

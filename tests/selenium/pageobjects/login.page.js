@@ -4,9 +4,9 @@ const Page = require( 'wdio-mediawiki/Page' );
 
 class LoginPage extends Page {
 
-	get username() { return browser.element( '#wpName1' ); }
-	get password() { return browser.element( '#wpPassword1' ); }
-	get loginButton() { return browser.element( '#wpLoginAttempt' ); }
+	get username() { return $( '#wpName1' ); }
+	get password() { return $( '#wpPassword1' ); }
+	get loginButton() { return $( '#wpLoginAttempt' ); }
 
 	open() {
 		super.openTitle( 'Special:UserLogin' );
@@ -20,7 +20,7 @@ class LoginPage extends Page {
 	}
 
 	loginAdmin() {
-		this.login( browser.options.username, browser.options.password );
+		this.login( browser.config.mwUser, browser.config.mwPwd );
 	}
 }
 

@@ -30,8 +30,8 @@ describe( 'Advanced Search', function () {
 				} );
 			};
 			client.loginGetEditToken( {
-				username: browser.options.username,
-				password: browser.options.password,
+				username: browser.config.mwUser,
+				password: browser.config.mwPwd,
 				apiUrl: browser.options.baseUrl + '/api.php'
 			} ).then( () => {
 				return editPage( 0 );
@@ -58,10 +58,10 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchTheseWords.put( 'brown,' );
 		SearchPage.searchExactText.put( '"jumped over"' );
 		SearchPage.submitForm();
-		browser.waitForVisible( '.mw-advancedSearch-container', 10000 );
+		$( '.mw-advancedSearch-container' ).waitForDisplayed( 10000 );
 
-		assert( SearchPage.searchPaginationLinks.isExisting() );
-		SearchPage.searchPaginationLinks.value.forEach( function ( link ) {
+		assert( SearchPage.searchPaginationLink.isExisting() );
+		SearchPage.searchPaginationLinks.forEach( function ( link ) {
 			assertURLContainsAdvancedSearchState( link.getAttribute( 'href' ) );
 		} );
 	} );
