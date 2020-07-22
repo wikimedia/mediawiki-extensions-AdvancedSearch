@@ -21,6 +21,7 @@
 	"advancedsearch-field-filetype": "檔類型",
 	"advancedsearch-field-filew": "檔闊度（像素）",
 	"advancedsearch-field-fileh": "檔高度（像素）",
+	"advancedsearch-field-preview-sort": "按$1嚟排",
 	"advancedsearch-placeholder-exact-text": "\"貓中意山羊\"",
 	"advancedsearch-inlanguage-default": "揀語言",
 	"advancedsearch-filetype-section-types": "一般檔類型",
