@@ -1,17 +1,26 @@
 {
 	"@metadata": {
 		"authors": [
+			"Carcassonne93",
 			"Kyouko"
 		]
 	},
+	"advancedsearch-options-pane-head": "Căutare avansată:",
+	"advancedsearch-optgroup-text": "Caută în textul paginii",
+	"advancedsearch-optgroup-structure": "Structură",
+	"advancedsearch-optgroup-files": "Fișiere și imagini",
+	"advancedsearch-optgroup-sort": "Ordine de sortare",
 	"advancedsearch-field-plain": "Aceste cuvinte",
 	"advancedsearch-field-phrase": "Exact aceste cuvinte",
 	"advancedsearch-field-or": "Unul dintre aceste cuvinte",
 	"advancedsearch-field-not": "Fără aceste cuvinte",
+	"advancedsearch-field-subpageof": "Subpagini ale acestei pagini",
 	"advancedsearch-field-intitle": "Titlul paginii conține",
+	"advancedsearch-field-deepcategory": "Pagini în aceste categorii",
 	"advancedsearch-field-hastemplate": "Pagini cu aceste șabloane",
 	"advancedsearch-field-inlanguage": "Pagini în această limbă",
 	"advancedsearch-field-filetype": "Tip de fișier",
 	"advancedsearch-field-filew": "Lățimea fișierului în pixeli",
-	"advancedsearch-field-fileh": "Înălțimea fișierului în pixeli"
+	"advancedsearch-field-fileh": "Înălțimea fișierului în pixeli",
+	"advancedsearch-field-sort": "Ordine de sortare:"
 }
