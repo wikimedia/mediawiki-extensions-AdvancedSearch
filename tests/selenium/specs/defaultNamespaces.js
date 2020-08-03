@@ -10,9 +10,9 @@ describe( 'Advanced Search', function () {
 	function setSearchNamespaceOptions( namespaceIds ) {
 		const client = new Bot();
 		return client.loginGetEditToken( {
-			username: browser.options.username,
-			password: browser.options.password,
-			apiUrl: browser.options.baseUrl + '/api.php'
+			username: browser.config.mwUser,
+			password: browser.config.mwPwd,
+			apiUrl: browser.config.baseUrl + '/api.php'
 		} ).then( () => {
 			return client.request( {
 				action: 'query',
@@ -49,9 +49,9 @@ describe( 'Advanced Search', function () {
 	function resetUserOptions() {
 		const client = new Bot();
 		return client.loginGetEditToken( {
-			username: browser.options.username,
-			password: browser.options.password,
-			apiUrl: browser.options.baseUrl + '/api.php'
+			username: browser.config.mwUser,
+			password: browser.config.mwPwd,
+			apiUrl: browser.config.baseUrl + '/api.php'
 		} ).then( () => {
 			return client.request( {
 				action: 'options',
@@ -70,7 +70,7 @@ describe( 'Advanced Search', function () {
 		browser.call( () => {
 			return setSearchNamespaceOptions( [ '0', '1', '2', '10' ] );
 		} );
-		UserLoginPage.login( browser.options.username, browser.options.password );
+		UserLoginPage.login( browser.config.mwUser, browser.config.mwPwd );
 		SearchPage.open();
 		SearchPage.namespaces.toggleNamespacesPreview();
 		const selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs(),
@@ -100,7 +100,7 @@ describe( 'Advanced Search', function () {
 		browser.call( () => {
 			return setSearchNamespaceOptions( namespaceOptions );
 		} );
-		UserLoginPage.login( browser.options.username, browser.options.password );
+		UserLoginPage.login( browser.config.mwUser, browser.config.mwPwd );
 		SearchPage.open();
 		SearchPage.namespaces.toggleNamespacesPreview();
 		const selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs();

@@ -8,15 +8,15 @@ class TextInputField {
 	}
 
 	put( content ) {
-		browser.element( this.selector + ' input' ).setValue( content );
+		$( this.selector + ' input' ).setValue( content );
 	}
 
 	getPlaceholderText() {
-		return browser.element( this.selector + ' input' ).getAttribute( 'placeholder' ) || '';
+		return $( this.selector + ' input' ).getAttribute( 'placeholder' ) || '';
 	}
 
-	isVisible() {
-		return browser.element( this.selector + ' input' ).isVisible();
+	isDisplayed() {
+		return $( this.selector + ' input' ).isDisplayed();
 	}
 }
 
@@ -26,16 +26,16 @@ class PillField {
 	}
 
 	put( content ) {
-		browser.element( this.selector ).click();
+		$( this.selector ).click();
 		browser.keys( content );
 	}
 
 	getPlaceholderText() {
-		return browser.element( this.selector + ' input' ).getAttribute( 'placeholder' ) || '';
+		return $( this.selector + ' input' ).getAttribute( 'placeholder' ) || '';
 	}
 
 	getTagLabels() {
-		return browser.elements( this.selector + ' .oo-ui-tagItemWidget > .oo-ui-labelElement-label' ).value.map( ( elem ) => elem.getText() );
+		return $$( this.selector + ' .oo-ui-tagItemWidget > .oo-ui-labelElement-label' ).map( ( elem ) => elem.getText() );
 	}
 }
 
@@ -45,14 +45,14 @@ class DropdownField {
 	}
 
 	choose( fieldName ) {
-		const fieldElement = browser.element( '.mw-advancedSearch-inlanguage-' + fieldName );
-		browser.element( this.selector ).click(); // open inlanguage dropdown
-		browser.execute( 'arguments[0].scrollIntoView(true);', fieldElement.value ); // scroll to the option to get it into view
+		const fieldElement = $( '.mw-advancedSearch-inlanguage-' + fieldName );
+		$( this.selector ).click(); // open inlanguage dropdown
+		browser.execute( 'arguments[0].scrollIntoView(true);', fieldElement ); // scroll to the option to get it into view
 		fieldElement.click();
 	}
 
-	isVisible() {
-		return browser.element( this.selector ).isVisible();
+	isDisplayed() {
+		return $( this.selector ).isDisplayed();
 	}
 }
 
@@ -79,57 +79,56 @@ class SearchPage extends Page {
 
 	get FILE_NAMESPACE() { return '6'; }
 
-	get searchContainer() { return browser.element( '.mw-advancedSearch-container' ); }
+	get searchContainer() { return $( '.mw-advancedSearch-container' ); }
 
 	get searchFileType() {
 		return {
 			selectImageType: function () {
-				browser.element( '#advancedSearchField-filetype .oo-ui-dropdownWidget-handle' ).click();
-				browser.element( '.mw-advancedSearch-filetype-image-gif' ).click();
+				$( '#advancedSearchField-filetype .oo-ui-dropdownWidget-handle' ).click();
+				$( '.mw-advancedSearch-filetype-image-gif' ).click();
 			},
 			selectAudioType: function () {
-				browser.element( '#advancedSearchField-filetype .oo-ui-dropdownWidget-handle' ).click();
-				browser.element( '.mw-advancedSearch-filetype-audio' ).click();
+				$( '#advancedSearchField-filetype .oo-ui-dropdownWidget-handle' ).click();
+				$( '.mw-advancedSearch-filetype-audio' ).click();
 			}
 		};
 	}
 	get namespaces() {
 		return {
 			removeFileNamespace: function () {
-				browser.element( '.mw-advancedSearch-namespaceFilter .mw-advancedSearch-namespace-6 .oo-ui-buttonWidget' ).click();
+				$( '.mw-advancedSearch-namespaceFilter .mw-advancedSearch-namespace-6 .oo-ui-buttonWidget' ).click();
 			},
 			selectAll: function () {
-				browser.elements( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"]:not(.oo-ui-optionWidget-selected)' )
-					.value.forEach( ( element ) => {
+				$$( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"]:not(.oo-ui-optionWidget-selected)' )
+					.forEach( ( element ) => {
 						browser.execute( 'arguments[0].scrollIntoView(true);', element );
-						element.waitForVisible();
+						element.waitForDisplayed();
 						element.click();
 					} );
 				browser.keys( '\uE00C' ); // Close menu by hitting the Escape key
 			},
 			toggleNamespacesMenu() {
-				browser.element( '.mw-advancedSearch-namespaceFilter .oo-ui-inputWidget-input' ).click();
+				$( '.mw-advancedSearch-namespaceFilter .oo-ui-inputWidget-input' ).click();
 			},
 			toggleNamespacesPreview() {
-				browser.element( '.mw-advancedSearch-expandablePane-namespaces .mw-advancedSearch-expandablePane-button a' ).click();
+				$( '.mw-advancedSearch-expandablePane-namespaces .mw-advancedSearch-expandablePane-button a' ).click();
 			},
 			clickOnNamespace: function ( nsId ) {
-				const menuItem = browser.element( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget .mw-advancedSearch-namespace-' + nsId );
-				menuItem.waitForVisible();
+				const menuItem = $( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget .mw-advancedSearch-namespace-' + nsId );
+				menuItem.waitForDisplayed();
 				menuItem.click();
 			},
 			getAllLabelsFromMenu: function () {
-				const labels = browser.elements( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"]' )
-					.value.map(
-						( el ) => el.element( '.oo-ui-labelElement-label' ).getText()
-					);
+				const labels = $$( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"]' ).map(
+					( el ) => el.$( '.oo-ui-labelElement-label' ).getText()
+				);
 				browser.keys( '\uE00C' ); // Close menu by hitting the Escape key
 				return labels;
 			},
 			getAllLabelsForDisabledItemsInMenu: function () {
 				// open the menu to insert the items in the DOM
-				browser.element( '.mw-advancedSearch-namespaceFilter .oo-ui-inputWidget-input' ).click();
-				const labels = browser.elements( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"]' ).value.reduce(
+				$( '.mw-advancedSearch-namespaceFilter .oo-ui-inputWidget-input' ).click();
+				const labels = $$( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"]' ).reduce(
 					( acc, element ) => {
 						if ( element.getAttribute( 'aria-disabled' ) === 'true' ) {
 							acc.push( element.getText() );
@@ -142,39 +141,42 @@ class SearchPage extends Page {
 				return labels;
 			},
 			getAllTagLabels: function () {
-				return browser.elements( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-content div[class^="mw-advancedSearch-namespace-"]' ).value.map(
+				return $$( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-content div[class^="mw-advancedSearch-namespace-"]' ).map(
 					( element ) => { return element.getText(); }
 				);
 			}
 		};
 	}
-	get searchPaginationLinks() { return browser.elements( '.mw-search-pager-bottom a' ); }
-	get searchPreviewItems() { return browser.elements( '.mw-advancedSearch-searchPreview .mw-advancedSearch-searchPreview-previewPill' ); }
-	get namespacePreviewItems() { return browser.elements( '.mw-advancedSearch-namespacesPreview .mw-advancedSearch-namespacesPreview-previewPill' ); }
-	get searchInfoIcons() { return browser.elements( '.mw-advancedSearch-container .oo-ui-fieldLayout .oo-ui-buttonElement-button' ); }
-	get infoPopup() { return browser.elements( '.oo-ui-popupWidget-popup' ); }
-	get searchButton() { return browser.element( '#mw-search-top-table button' ); }
-	get namespaceTags() { return browser.elements( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-group span' ); }
-	get namespaceTagsInCollapsedMode() { return browser.elements( '.mw-advancedSearch-namespacesPreview .mw-advancedSearch-namespacesPreview-previewPill .oo-ui-labelElement-label span' ); }
-	get allNamespacesPreset() { return browser.element( '.mw-advancedSearch-namespace-selection input[value="all"]' ); }
-	get generalHelpPreset() { return browser.element( '.mw-advancedSearch-namespace-selection input[value="generalHelp"]' ); }
-	get rememberSelection() { return browser.element( '.mw-advancedSearch-namespace-selection input[name="nsRemember"]' ); }
-	get default() { return browser.element( '.mw-advancedSearch-namespace-selection input[value="defaultNamespaces"]' ); }
-	get categorySuggestionsBox() { return browser.element( '.mw-advancedSearch-deepCategory div[role="listbox"]' ); }
-	get templateSuggestionsBox() { return browser.element( '.mw-advancedSearch-template div[role="listbox"]' ); }
-	get inputIcon() { return browser.element( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-input .oo-ui-iconElement-icon' ); }
-	get logOut() { return browser.element( '#pt-logout a' ); }
+	get searchPaginationLink() { return $( '.mw-search-pager-bottom a' ); }
+	get searchPaginationLinks() { return $$( '.mw-search-pager-bottom a' ); }
+	get searchPreviewItem() { return $( '.mw-advancedSearch-searchPreview .mw-advancedSearch-searchPreview-previewPill' ); }
+	get searchPreviewItems() { return $$( '.mw-advancedSearch-searchPreview .mw-advancedSearch-searchPreview-previewPill' ); }
+	get namespacePreviewItems() { return $( '.mw-advancedSearch-namespacesPreview .mw-advancedSearch-namespacesPreview-previewPill' ); }
+	get searchInfoIcon() { return $( '.mw-advancedSearch-container .oo-ui-fieldLayout .oo-ui-buttonElement-button' ); }
+	get searchInfoIcons() { return $$( '.mw-advancedSearch-container .oo-ui-fieldLayout .oo-ui-buttonElement-button' ); }
+	get infoPopup() { return $$( '.oo-ui-popupWidget-popup' ); }
+	get searchButton() { return $( '#mw-search-top-table button' ); }
+	get namespaceTags() { return $$( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-group span' ); }
+	get namespaceTagsInCollapsedMode() { return $$( '.mw-advancedSearch-namespacesPreview .mw-advancedSearch-namespacesPreview-previewPill .oo-ui-labelElement-label span' ); }
+	get allNamespacesPreset() { return $( '.mw-advancedSearch-namespace-selection input[value="all"]' ); }
+	get generalHelpPreset() { return $( '.mw-advancedSearch-namespace-selection input[value="generalHelp"]' ); }
+	get rememberSelection() { return $( '.mw-advancedSearch-namespace-selection input[name="nsRemember"]' ); }
+	get default() { return $( '.mw-advancedSearch-namespace-selection input[value="defaultNamespaces"]' ); }
+	get categorySuggestionsBox() { return $( '.mw-advancedSearch-deepCategory div[role="listbox"]' ); }
+	get templateSuggestionsBox() { return $( '.mw-advancedSearch-template div[role="listbox"]' ); }
+	get inputIcon() { return $( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-input .oo-ui-iconElement-icon' ); }
+	get logOut() { return $( '#pt-logout a' ); }
 
 	formWasSubmitted() {
 		return Object.prototype.hasOwnProperty.call( this.getQueryFromUrl(), 'advancedSearch-current' );
 	}
 
 	advancedSearchIsCollapsed() {
-		return browser.element( '.mw-advancedSearch-expandablePane-options > .oo-ui-indicatorElement .oo-ui-indicatorElement-indicator.oo-ui-indicator-down' ).isExisting();
+		return $( '.mw-advancedSearch-expandablePane-options > .oo-ui-indicatorElement .oo-ui-indicatorElement-indicator.oo-ui-indicator-down' ).isExisting();
 	}
 
 	namespacePreviewIsCollapsed() {
-		return browser.element( '.mw-advancedSearch-expandablePane-namespaces > .oo-ui-indicatorElement .oo-ui-indicatorElement-indicator.oo-ui-indicator-down' ).isExisting();
+		return $( '.mw-advancedSearch-expandablePane-namespaces > .oo-ui-indicatorElement .oo-ui-indicatorElement-indicator.oo-ui-indicator-down' ).isExisting();
 	}
 
 	getSearchQueryFromUrl() {
@@ -186,11 +188,11 @@ class SearchPage extends Page {
 	}
 
 	getInfoPopupContent( popup ) {
-		return popup.element( 'dl' );
+		return popup.$( 'dl' );
 	}
 
 	getSelectedNamespaceIDs() {
-		return browser.elements( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-group .oo-ui-tagItemWidget' ).value.reduce( ( acc, widget ) => {
+		return $$( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-group .oo-ui-tagItemWidget' ).reduce( ( acc, widget ) => {
 			const widgetClass = widget.getAttribute( 'class' );
 			if ( !widgetClass ) {
 				return acc;
@@ -204,11 +206,11 @@ class SearchPage extends Page {
 	}
 
 	getCategoryPillLink( category ) {
-		return browser.elements( '.oo-ui-tagMultiselectWidget-group a[title^="Category:' + category + '"]' );
+		return $( '.oo-ui-tagMultiselectWidget-group a[title^="Category:' + category + '"]' );
 	}
 
 	getTemplatePillLink( template ) {
-		return browser.elements( '.oo-ui-tagMultiselectWidget-group a[title="Template:' + template + '"]' );
+		return $( '.oo-ui-tagMultiselectWidget-group a[title="Template:' + template + '"]' );
 	}
 
 	open( params ) {
@@ -218,7 +220,7 @@ class SearchPage extends Page {
 	}
 
 	waitForAdvancedSearchToLoad() {
-		browser.waitForVisible( '.mw-advancedSearch-container', 5000 );
+		$( '.mw-advancedSearch-container' ).waitForDisplayed( 5000 );
 	}
 
 	submitForm() {
@@ -227,13 +229,13 @@ class SearchPage extends Page {
 	}
 
 	toggleInputFields() {
-		browser.element( '.mw-advancedSearch-expandablePane-options .mw-advancedSearch-expandablePane-button a' ).click();
+		$( '.mw-advancedSearch-expandablePane-options .mw-advancedSearch-expandablePane-button a' ).click();
 		this.waitForSearchFieldsToLoad();
 	}
 
 	waitForSearchFieldsToLoad() {
 		// Wait for the last search field to be visible as an indicator that all search field widgets have been built
-		browser.waitForExist( '#advancedSearchField-filetype', 5000 );
+		$( '#advancedSearchField-filetype' ).waitForExist( 5000 );
 	}
 }
 module.exports = new SearchPage();
