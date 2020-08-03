@@ -48,7 +48,7 @@ describe( 'AdvancedSearch', function () {
 		SearchPage.searchOneWord.put( 'big enormous giant' );
 		SearchPage.searchTitle.put( 'house' );
 		SearchPage.searchSubpageof.put( 'Wikimedia' );
-		SearchPage.searchTemplate.put( 'Main Page\uE007' );
+		SearchPage.searchTemplate.put( 'Main Page' );
 		SearchPage.searchFileType.selectImageType();
 		SearchPage.searchImageWidth.put( '40' );
 		SearchPage.searchImageHeight.put( '40' );

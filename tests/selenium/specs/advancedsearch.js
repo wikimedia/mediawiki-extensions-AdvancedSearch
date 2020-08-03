@@ -135,7 +135,7 @@ describe( 'Advanced Search', function () {
 	it( 'displays "One of these words" as a pill field', function () {
 		SearchPage.open();
 		SearchPage.toggleInputFields();
-		SearchPage.searchOneWord.put( 'testäöü test2äß, testme3\uE007' );
+		SearchPage.searchOneWord.put( 'testäöü test2äß, testme3\n' );
 
 		assert.deepEqual( SearchPage.searchOneWord.getTagLabels(), [ 'testäöü', 'test2äß', 'testme3' ] );
 	} );
@@ -152,7 +152,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.open();
 
 		SearchPage.toggleInputFields();
-		SearchPage.searchTheseWords.put( '\uE007' );
+		SearchPage.searchTheseWords.put( '\n' );
 
 		assert( SearchPage.formWasSubmitted() );
 	} );
@@ -170,7 +170,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.open();
 
 		SearchPage.toggleInputFields();
-		SearchPage.searchTheseWords.put( 'test\uE007\uE007' );
+		SearchPage.searchTheseWords.put( 'test\n\n' );
 
 		assert( SearchPage.formWasSubmitted() );
 	} );
@@ -183,8 +183,8 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchNotTheseWords.put( 'test3 ' );
 		SearchPage.searchOneWord.put( 'test4 test5' );
 		SearchPage.searchExactText.put( '"test1 test2"' );
-		SearchPage.searchCategory.put( 'Help\uE007Me\uE007' );
-		SearchPage.searchTemplate.put( 'Main Page\uE007' );
+		SearchPage.searchCategory.put( 'Help\nMe\n' );
+		SearchPage.searchTemplate.put( 'Main Page\n' );
 		SearchPage.submitForm();
 
 		assert.strictEqual( SearchPage.getSearchQueryFromUrl(), 'test "test1 test2" -test3 test4 OR test5 deepcat:Help deepcat:Me hastemplate:"Main Page"' );
@@ -194,11 +194,11 @@ describe( 'Advanced Search', function () {
 		SearchPage.open();
 
 		SearchPage.toggleInputFields();
-		SearchPage.searchCategory.put( 'I do not exist\uE007' );
+		SearchPage.searchCategory.put( 'I do not exist\n' );
 
 		browser.waitUntil( function () {
 			const color = SearchPage.getCategoryPillLink( 'I do not exist' ).getCSSProperty( 'color' ).value;
-			return color === 'rgba(186,0,0,1)';
+			return color === 'rgb(221,51,51)';
 		}, 10000, 'Timed out while waiting for the category pill link to turn red' );
 	} );
 
@@ -257,11 +257,11 @@ describe( 'Advanced Search', function () {
 		SearchPage.open();
 
 		SearchPage.toggleInputFields();
-		SearchPage.searchTemplate.put( 'Void\uE007' );
+		SearchPage.searchTemplate.put( 'Void\n' );
 
 		browser.waitUntil( function () {
 			const color = SearchPage.getTemplatePillLink( 'Void' ).getCSSProperty( 'color' ).value;
-			return color === 'rgba(186,0,0,1)';
+			return color === 'rgb(221,51,51)';
 		}, 10000, 'Timed out while waiting for the category pill link to turn red' );
 	} );
 
