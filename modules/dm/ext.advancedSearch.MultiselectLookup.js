@@ -6,11 +6,11 @@
 	mw.libs.advancedSearch.ui = mw.libs.advancedSearch.ui || {};
 
 	var markNonExistent = function ( item ) {
-		item.$label.children().addClass( 'new' );
+		item.$label.addClass( 'new' );
 	};
 
 	var markPageExistence = function ( item, queryCache ) {
-		if ( queryCache.get( item.$label.text() ) === 'NO' ) {
+		if ( queryCache.get( item.getLabel() ) === 'NO' ) {
 			markNonExistent( item );
 		}
 	};
@@ -140,13 +140,15 @@
 				target: '_blank',
 				href: title.getUrl(),
 				title: title.getPrefixedText()
-			} ).text( label ),
-			tagItem = new OO.ui.TagItemWidget( { data: data, label: label } );
+			} ),
+			tagItem = new OO.ui.TagItemWidget( {
+				data: data,
+				label: label,
+				$label: $tagItemLabel
+			} );
 
-		tagItem.setLabel( $tagItemLabel );
-
-		if ( !this.queryCache.has( tagItem.$label.text() ) ) {
-			this.searchForPageInNamespace( tagItem.$label.text() )
+		if ( !this.queryCache.has( tagItem.getLabel() ) ) {
+			this.searchForPageInNamespace( tagItem.getLabel() )
 				.then( function ( response ) {
 					if ( response.length === 0 ) {
 						markNonExistent( tagItem );
