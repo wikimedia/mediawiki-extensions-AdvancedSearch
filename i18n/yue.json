@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Hello903hello",
-			"Moon0319"
+			"Moon0319",
+			"Roy17"
 		]
 	},
 	"advancedsearch-options-pane-head": "高級參數：",
@@ -41,7 +42,7 @@
 	"advancedsearch-filesize-smaller-than": "細過",
 	"advancedsearch-namespaces-search-in": "喺呢個名空間度搵：",
 	"advancedsearch-namespaces-remember": "記住今次選擇方便第時搵嘢用返",
-	"advancedsearch-namespaces-preset-all": "冚唪唥",
+	"advancedsearch-namespaces-preset-all": "全部",
 	"advancedsearch-namespaces-preset-default": "預設",
 	"advancedsearch-namespaces-preset-general-help": "一般幫手",
 	"advancedsearch-namespaces-preset-discussion": "討論",
