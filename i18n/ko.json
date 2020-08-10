@@ -38,6 +38,7 @@
 	"advancedsearch-help-filetype": ";설명\n:선택된 유형의 파일만 검색합니다.\n;다음을 숙지하십시오\n:* 한 개의 파일 유형만 검색할 수 있습니다.\n:* 드롭다운 메뉴에서 제공되는 파일 유형만 선택할 수 있습니다.\n;도움말 문서\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#filetype Filetype], [https://www.mediawiki.org/wiki/Help:CirrusSearch#filemime filemime]\n;일반 검색에서 구문 일치\n:<code>filetype:ogg</code>처럼 <code>filetype:</code> 다음에 단어가 옵니다.",
 	"advancedsearch-help-filew": "지정된 너비에 해당하는 파일만 검색합니다",
 	"advancedsearch-help-fileh": "지정된 높이에 해당하는 파일만 검색합니다",
+	"advancedsearch-help-sort": ";설명\n:결과의 정렬 순서를 변경합니다. 가장 적절한 문서가 결과의 최상단에 위치하는 것이 표준입니다.\n;도움말 페이지\n: [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Explicit_sort_orders 명시적인 정렬 순서]\n;일반 검색에서 구문 일치\n: 이 기능은 검색 입력 칸에 입력할 수 있는 키워드가 없습니다. 이 기능은 URL에서 변수를 통해 지정됩니다.",
 	"advancedsearch-placeholder-exact-text": "\"고양이는 염소를 좋아한다\"",
 	"advancedsearch-inlanguage-default": "언어 선택",
 	"advancedsearch-filetype-section-types": "일반 파일 유형",
