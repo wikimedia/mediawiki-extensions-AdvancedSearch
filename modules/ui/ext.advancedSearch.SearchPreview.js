@@ -42,7 +42,7 @@
 		var foundSortMethod = mw.libs.advancedSearch.dm.getSortMethods().filter( function ( sortMethod ) {
 			return sortMethod.name === sortMethodName;
 		} );
-		return foundSortMethod.length > 0 ? foundSortMethod[ 0 ].previewLabel : mw.msg( 'advancedsearch-sort-unknown' );
+		return foundSortMethod.length > 0 ? foundSortMethod[ 0 ].previewLabel : sortMethodName;
 	};
 
 	var lookupTranslationForLabel = function ( fieldId ) {
