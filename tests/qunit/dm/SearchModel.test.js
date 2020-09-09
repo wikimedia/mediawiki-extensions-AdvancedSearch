@@ -139,7 +139,7 @@
 	QUnit.test( 'Empty fields are not serialized to JSON', function ( assert ) {
 		assert.strictEqual(
 			new SearchModel().toJSON(),
-			'{}'
+			''
 		);
 	} );
 

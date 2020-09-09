@@ -168,7 +168,7 @@ class SearchPage extends Page {
 	get logOut() { return $( '#pt-logout a' ); }
 
 	formWasSubmitted() {
-		return Object.prototype.hasOwnProperty.call( this.getQueryFromUrl(), 'advancedSearch-current' );
+		return Object.prototype.hasOwnProperty.call( this.getQueryFromUrl(), 'profile' );
 	}
 
 	advancedSearchIsCollapsed() {

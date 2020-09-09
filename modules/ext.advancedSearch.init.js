@@ -80,16 +80,23 @@
 	 * @param {mw.libs.advancedSearch.dm.SearchModel} currentState
 	 */
 	function updateSearchResultLinks( currentState ) {
-		var extraParams = '';
-		// Skip the default to avoid noise in the user's address bar
-		if ( currentState.getSortMethod() !== 'relevance' ) {
-			extraParams += '&sort=' + currentState.getSortMethod();
-		}
-		extraParams += '&advancedSearch-current=' + currentState.toJSON();
+		var extraParams = '',
+			sort = currentState.getSortMethod(),
+			json = currentState.toJSON();
 
-		$( '.mw-prevlink, .mw-nextlink, .mw-numlink' ).attr( 'href', function ( i, href ) {
-			return href + extraParams;
-		} );
+		// Skip the default to avoid noise in the user's address bar
+		if ( sort !== 'relevance' ) {
+			extraParams += '&sort=' + sort;
+		}
+		if ( json ) {
+			extraParams += '&advancedSearch-current=' + json;
+		}
+
+		if ( extraParams ) {
+			$( '.mw-prevlink, .mw-nextlink, .mw-numlink' ).attr( 'href', function ( i, href ) {
+				return href + extraParams;
+			} );
+		}
 	}
 
 	/**

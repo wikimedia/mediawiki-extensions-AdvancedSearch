@@ -191,11 +191,13 @@
 	 * @return {string}
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.toJSON = function () {
-		var json = {};
-		if ( !$.isEmptyObject( this.searchFields ) ) {
-			json.fields = this.searchFields;
+		if ( $.isEmptyObject( this.searchFields ) ) {
+			return '';
 		}
-		return JSON.stringify( json );
+		// Warning: While it's possible to change this format (e.g. add elements), please don't make
+		// unnecessary changes (e.g. rename or move existing elements). Existing links (e.g. in
+		// bookmarks or on wiki pages) won't work as expected any more.
+		return JSON.stringify( { fields: this.searchFields } );
 	};
 
 	/**
