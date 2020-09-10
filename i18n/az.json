@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Toghrul Rahimli",
-			"Wertuose"
+			"Wertuose",
+			"Şeyx Şamil"
 		]
 	},
 	"advancedsearch-optgroup-text": "Səhifənin mətnində axtar",
 	"advancedsearch-optgroup-files": "Fayllar və şəkillər",
+	"advancedsearch-inlanguage-default": "Dili seçin",
 	"advancedsearch-filetype-bitmap": "Şəkil"
 }
