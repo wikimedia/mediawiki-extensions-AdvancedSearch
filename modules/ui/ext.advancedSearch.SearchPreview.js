@@ -30,15 +30,8 @@
 		return /^file[hw]$/.test( fieldId );
 	};
 
-	/**
-	 * @param {string} fieldId
-	 * @return {boolean}
-	 */
-	var fieldIsSortMethod = function ( fieldId ) {
-		return fieldId === 'sort';
-	};
-
 	var lookupTranslationForSortMethod = function ( sortMethodName ) {
+		// TODO: Can use Array#find when we drop IE 11 support
 		var foundSortMethod = mw.libs.advancedSearch.dm.getSortMethods().filter( function ( sortMethod ) {
 			return sortMethod.name === sortMethodName;
 		} );
@@ -131,17 +124,17 @@
 	 * @return {boolean}
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview.prototype.skipFieldInPreview = function ( fieldId, value ) {
-		if ( !value ) {
+		// No point in previewing empty fields
+		if ( !value || ( Array.isArray( value ) && !value.length ) ) {
 			return true;
 		}
-		if ( Array.isArray( value ) && value.length === 0 ) {
-			return true;
-		}
+
 		if ( fieldIsImageDimension( fieldId ) && Array.isArray( value ) && !value[ 1 ] ) {
 			return true;
 		}
 
-		if ( fieldIsSortMethod( fieldId ) ) {
+		// We have special handling for sort in #updatePreview
+		if ( fieldId === 'sort' ) {
 			return true;
 		}
 
@@ -216,7 +209,7 @@
 			return fileComparatorToMessage( value[ 0 ] ) + ' ' + value[ 1 ];
 		}
 
-		if ( fieldIsSortMethod( fieldId ) ) {
+		if ( fieldId === 'sort' ) {
 			return lookupTranslationForSortMethod( value );
 		}
 
