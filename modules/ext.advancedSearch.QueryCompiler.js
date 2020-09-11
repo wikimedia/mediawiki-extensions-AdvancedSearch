@@ -5,7 +5,7 @@
 	mw.libs.advancedSearch = mw.libs.advancedSearch || {};
 
 	/**
-	 * @param {Array} searchFields
+	 * @param {mw.libs.advancedSearch.SearchField[]} searchFields
 	 * @class
 	 * @constructor
 	 */

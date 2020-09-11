@@ -154,7 +154,7 @@
 	 * @param {jQuery} header
 	 * @param {mw.libs.advancedSearch.ui.NamespacePresets} presets
 	 * @param {mw.libs.advancedSearch.ui.NamespaceFilters} selection
-	 * @param {mw.libs.advancedSearch.dm.SearchableNamespaces} searchableNamespaces
+	 * @param {Object} searchableNamespaces Mapping namespace IDs to localized names
 	 * @return {jQuery}
 	 */
 	function buildNamespacesPaneElement( state, header, presets, selection, searchableNamespaces ) {
@@ -184,7 +184,7 @@
 	}
 
 	/**
-	 * @param {Array} searchableNamespaces
+	 * @param {Object} searchableNamespaces Mapping namespace IDs to localized names
 	 * @return {string[]}
 	 */
 	function getNamespacesFromUrl( searchableNamespaces ) {
@@ -211,7 +211,7 @@
 	}
 
 	/**
-	 * @param {Object} searchableNamespaces
+	 * @param {Object} searchableNamespaces Mapping namespace IDs to localized names
 	 * @param {mw.libs.advancedSearch.FieldCollection} fieldCollection
 	 * @return {mw.libs.advancedSearch.dm.SearchModel}
 	 */
