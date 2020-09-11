@@ -113,7 +113,6 @@ exports.config = {
 	 *
 	 * @param {Object} test Mocha Test object
 	 * @return {void}
-	 *
 	 */
 	afterTest: function ( test ) {
 		if ( !test.passed ) {
