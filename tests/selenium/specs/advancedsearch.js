@@ -197,8 +197,8 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchCategory.put( 'I do not exist\n' );
 
 		browser.waitUntil( function () {
-			const color = SearchPage.getCategoryPillLink( 'I do not exist' ).getCSSProperty( 'color' ).value;
-			return color === 'rgb(221,51,51)';
+			return SearchPage.getCategoryPillLink( 'I do not exist' )
+				.getAttribute( 'class' ).split( ' ' ).includes( 'new' );
 		}, 10000, 'Timed out while waiting for the category pill link to turn red' );
 	} );
 
@@ -260,8 +260,8 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchTemplate.put( 'Void\n' );
 
 		browser.waitUntil( function () {
-			const color = SearchPage.getTemplatePillLink( 'Void' ).getCSSProperty( 'color' ).value;
-			return color === 'rgb(221,51,51)';
+			return SearchPage.getTemplatePillLink( 'Void' )
+				.getAttribute( 'class' ).split( ' ' ).includes( 'new' );
 		}, 10000, 'Timed out while waiting for the category pill link to turn red' );
 	} );
 

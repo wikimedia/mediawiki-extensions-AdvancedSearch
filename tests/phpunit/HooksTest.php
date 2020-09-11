@@ -101,7 +101,7 @@ class HooksTest extends MediaWikiTestCase {
 
 		Hooks::onSpecialSearchResultsPrepend( $special, $output, '' );
 
-		$this->assertContains( 'mw-search-spinner', $output->getHTML() );
+		$this->assertStringContainsString( 'mw-search-spinner', $output->getHTML() );
 	}
 
 	public function testSpecialPageBeforeExecuteHookHandler() {

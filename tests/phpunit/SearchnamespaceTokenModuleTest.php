@@ -25,8 +25,8 @@ class SearchnamespaceTokenModuleTest extends TestCase {
 		$context->method( 'getUserObj' )->willReturn( $user );
 
 		$script = $module->getScript( $context );
-		$this->assertContains( 'searchnamespaceToken', $script, 'token name is set' );
-		$this->assertContains( '\u003CTOKEN\u003E', $script, 'token is escaped' );
+		$this->assertStringContainsString( 'searchnamespaceToken', $script, 'token name is set' );
+		$this->assertStringContainsString( '\u003CTOKEN\u003E', $script, 'token is escaped' );
 
 		$this->assertFalse( $module->supportsURLLoading(), 'supportsURLLoading' );
 		$this->assertSame( 'private', $module->getGroup(), 'getGroup' );
