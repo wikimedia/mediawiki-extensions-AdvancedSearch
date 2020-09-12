@@ -19,7 +19,7 @@
 	}
 
 	/**
-	 * @desc It is possible for the namespace field to be completely empty
+	 * @description It is possible for the namespace field to be completely empty
 	 and at the same time have the file type option selected.
 	 This would lead to an empty search result in most cases,
 	 as the default namespaces (which are used when no namespaces are selected) do not contain files.

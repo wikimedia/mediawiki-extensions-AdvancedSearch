@@ -41,6 +41,7 @@ describe( 'Advanced Search', function () {
 		} );
 	}
 	function assertURLContainsAdvancedSearchState( urlStr ) {
+		// eslint-disable-next-line node/no-deprecated-api
 		const urlparts = url.parse( urlStr ),
 			searchParams = querystring.parse( urlparts.query );
 		assert( typeof searchParams[ 'advancedSearch-current' ] !== 'undefined' );

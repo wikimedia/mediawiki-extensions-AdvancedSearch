@@ -184,6 +184,7 @@ class SearchPage extends Page {
 	}
 
 	getQueryFromUrl() {
+		// eslint-disable-next-line node/no-deprecated-api
 		return url.parse( browser.getUrl(), true ).query;
 	}
 

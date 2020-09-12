@@ -65,7 +65,7 @@
 
 	/**
 	 * @class
-	 * @extends {OO.ui.Widget}
+	 * @extends OO.ui.Widget
 	 * @constructor
 	 *
 	 * @param {mw.libs.advancedSearch.dm.SearchModel} store
