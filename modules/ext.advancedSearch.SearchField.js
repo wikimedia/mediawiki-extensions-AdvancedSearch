@@ -42,8 +42,8 @@
 		delete obj.id;
 		delete obj.defaultValue;
 		delete obj.isGreedy;
-		var SearchFieldSubclass = function ( id, defaultValue, isGreedy ) {
-			mw.libs.advancedSearch.SearchField.call( this, id, defaultValue, isGreedy );
+		var SearchFieldSubclass = function () {
+			mw.libs.advancedSearch.SearchField.apply( this, arguments );
 		};
 		SearchFieldSubclass.prototype = Object.create( mw.libs.advancedSearch.SearchField.prototype );
 		$.extend( SearchFieldSubclass.prototype, obj );

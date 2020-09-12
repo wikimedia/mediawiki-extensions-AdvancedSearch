@@ -24,8 +24,8 @@ describe( 'AdvancedSearch', function () {
 			if ( !popupIcon.isDisplayed() ) {
 				return;
 			}
-			browser.execute( function ( selector, idx ) {
-				document.querySelectorAll( selector )[ idx ].scrollIntoView( true ); // eslint-disable-line no-undef
+			browser.execute( function ( selector, i ) {
+				document.querySelectorAll( selector )[ i ].scrollIntoView( true ); // eslint-disable-line no-undef
 			}, popupIcon.selector, idx );
 			popupIcon.click();
 			const popupContent = infoPopups[ idx ];
