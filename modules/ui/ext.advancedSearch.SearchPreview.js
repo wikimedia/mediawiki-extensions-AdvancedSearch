@@ -30,12 +30,11 @@
 		return /^file[hw]$/.test( fieldId );
 	};
 
-	var lookupTranslationForSortMethod = function ( sortMethodName ) {
-		// TODO: Can use Array#find when we drop IE 11 support
-		var foundSortMethod = mw.libs.advancedSearch.dm.getSortMethods().filter( function ( sortMethod ) {
-			return sortMethod.name === sortMethodName;
-		} );
-		return foundSortMethod.length > 0 ? foundSortMethod[ 0 ].previewLabel : sortMethodName;
+	var lookupTranslationForSortMethod = function ( name ) {
+		// The following messages are used here:
+		// * advancedsearch-sort-preview-*
+		var msg = mw.message( 'advancedsearch-sort-preview-' + name.replace( /_/g, '-' ) );
+		return msg.exists() ? msg.text() : name;
 	};
 
 	var lookupTranslationForLabel = function ( fieldId ) {
