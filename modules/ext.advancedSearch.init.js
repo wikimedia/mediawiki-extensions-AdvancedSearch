@@ -62,15 +62,17 @@
 				$compiledSearchField = $( '<input>' ).prop( {
 					name: $searchField.prop( 'name' ),
 					type: 'hidden'
-				} ).val( compiledQuery ),
-				$sortField = $( '<input>' ).prop( {
+				} ).val( compiledQuery );
+			$searchField.prop( 'name', '' )
+				.after( $compiledSearchField );
+
+			// Skip the default to avoid noise in the user's address bar
+			if ( state.getSortMethod() !== 'relevance' ) {
+				$searchField.after( $( '<input>' ).prop( {
 					name: 'sort',
 					type: 'hidden'
-				} ).val( state.getSortMethod() );
-			$searchField.prop( 'name', '' )
-				.after( $compiledSearchField )
-				.after( $sortField );
-
+				} ).val( state.getSortMethod() ) );
+			}
 		} );
 	}
 
@@ -78,8 +80,15 @@
 	 * @param {mw.libs.advancedSearch.dm.SearchModel} currentState
 	 */
 	function updateSearchResultLinks( currentState ) {
+		var extraParams = '';
+		// Skip the default to avoid noise in the user's address bar
+		if ( currentState.getSortMethod() !== 'relevance' ) {
+			extraParams += '&sort=' + currentState.getSortMethod();
+		}
+		extraParams += '&advancedSearch-current=' + currentState.toJSON();
+
 		$( '.mw-prevlink, .mw-nextlink, .mw-numlink' ).attr( 'href', function ( i, href ) {
-			return href + '&advancedSearch-current=' + currentState.toJSON();
+			return href + extraParams;
 		} );
 	}
 
