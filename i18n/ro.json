@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Carcassonne93",
-			"Kyouko"
+			"Kyouko",
+			"NGC 54"
 		]
 	},
 	"advancedsearch-options-pane-head": "Căutare avansată:",
@@ -22,5 +23,12 @@
 	"advancedsearch-field-filetype": "Tip de fișier",
 	"advancedsearch-field-filew": "Lățimea fișierului în pixeli",
 	"advancedsearch-field-fileh": "Înălțimea fișierului în pixeli",
-	"advancedsearch-field-sort": "Ordine de sortare:"
+	"advancedsearch-field-sort": "Ordine de sortare:",
+	"advancedsearch-namespaces-search-in": "Căutare în:",
+	"advancedsearch-namespaces-remember": "Reține selecția pentru căutări viitoare",
+	"advancedsearch-namespaces-preset-all": "Tot",
+	"advancedsearch-namespaces-preset-default": "Implicit",
+	"advancedsearch-namespaces-preset-general-help": "Ajutor general",
+	"advancedsearch-namespaces-preset-discussion": "Discuții",
+	"advancedsearch-namespaces-placeholder": "Adăugare spații de nume..."
 }
