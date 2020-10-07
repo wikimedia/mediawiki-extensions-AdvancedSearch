@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ainali",
 			"Bengtsson96",
 			"Mjälten",
 			"Sabelöga",
@@ -59,8 +60,8 @@
 	"advancedsearch-filesize-greater-than": "större än",
 	"advancedsearch-filesize-smaller-than": "mindre än",
 	"advancedsearch-sort-relevance": "Relevans",
-	"advancedsearch-sort-last-edit-desc": "Redigeringsdatum – nuvarande längst upp",
-	"advancedsearch-sort-create-timestamp-desc": "Redigeringsdatum – nuvarande längst upp",
+	"advancedsearch-sort-last-edit-desc": "Redigeringsdatum – senaste högst upp",
+	"advancedsearch-sort-create-timestamp-desc": "Skapandedatum – senaste högst upp",
 	"advancedsearch-sort-preview-relevance": "relevans",
 	"advancedsearch-sort-preview-last-edit-desc": "redigeringsdatum",
 	"advancedsearch-sort-preview-create-timestamp-desc": "Skapningsdatum",
