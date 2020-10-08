@@ -4,6 +4,8 @@ namespace AdvancedSearch\Tests;
 
 use AdvancedSearch\TooltipGenerator;
 use MediaWikiTestCase;
+use Message;
+use MessageLocalizer;
 
 /**
  * @covers \AdvancedSearch\TooltipGenerator
@@ -13,20 +15,20 @@ use MediaWikiTestCase;
  */
 class TooltipGeneratorTest extends MediaWikiTestCase {
 
-	protected function setUp() : void {
-		parent::setUp();
-
-		// Dummy language code makes sure no actual localization is loaded
-		$this->setUserLang( 'qqx' );
-	}
-
 	public function testGenerateToolTips() {
-		$tooltips = ( new TooltipGenerator() )->generateToolTips();
+		$messageLocalizer = $this->createMock( MessageLocalizer::class );
+		$messageLocalizer->method( 'msg' )->willReturnCallback( function ( $key ) {
+			$msg = $this->createMock( Message::class );
+			$msg->method( 'parse' )->willReturn( "($key)" );
+			return $msg;
+		} );
+
+		$tooltips = ( new TooltipGenerator( $messageLocalizer ) )->generateTooltips();
 
 		$this->assertNotEmpty( $tooltips );
 		foreach ( $tooltips as $messageKey => $html ) {
 			$this->assertStringStartsWith( 'advancedsearch-help-', $messageKey );
-			$this->assertStringStartsWith( '(advancedsearch-help-', $html );
+			$this->assertSame( "($messageKey)", $html );
 		}
 	}
 
