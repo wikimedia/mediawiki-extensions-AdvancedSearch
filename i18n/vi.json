@@ -59,6 +59,7 @@
 	"advancedsearch-filesize-equals": "bằng",
 	"advancedsearch-filesize-greater-than": "lớn hơn",
 	"advancedsearch-filesize-smaller-than": "nhỏ hơn",
+	"advancedsearch-sort-relevance": "Độ phù hợp",
 	"advancedsearch-sort-last-edit-desc": "Ngày sửa đổi - gần nhất lên đầu",
 	"advancedsearch-sort-create-timestamp-desc": "Ngày tạo - gần nhất lên đầu",
 	"advancedsearch-sort-preview-relevance": "độ phù hợp",
