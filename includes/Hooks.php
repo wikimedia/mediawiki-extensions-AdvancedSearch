@@ -18,6 +18,7 @@ class Hooks {
 	 *
 	 * @param SpecialPage $special
 	 * @param string $subpage
+	 * @return false|void false to abort the execution of the special page, "void" otherwise
 	 */
 	public static function onSpecialPageBeforeExecute( SpecialPage $special, $subpage ) {
 		$services = MediaWikiServices::getInstance();
@@ -40,9 +41,11 @@ class Hooks {
 		/**
 		 * Ensure the current URL is specifying the namespaces which are to be used
 		 */
-		self::redirectToNamespacedRequest( $special );
-		if ( $special->getOutput()->getRedirect() ) {
-			return;
+		$redirect = self::redirectToNamespacedRequest( $special );
+		if ( $redirect !== null ) {
+			$special->getOutput()->redirect( $redirect );
+			// Abort execution of the SpecialPage by returning false since we are redirecting
+			return false;
 		}
 
 		$special->getOutput()->addModules( [
@@ -85,17 +88,18 @@ class Hooks {
 	/**
 	 * If the request does not contain any namespaces, redirect to URL with user default namespaces
 	 * @param \SpecialPage $special
+	 * @return string|null the URL to redirect to or null if not needed
 	 */
-	private static function redirectToNamespacedRequest( \SpecialPage $special ) {
+	private static function redirectToNamespacedRequest( \SpecialPage $special ): ?string {
 		if ( !self::isNamespacedSearch( $special->getRequest() ) ) {
 			$namespacedSearchUrl = $special->getRequest()->getFullRequestURL();
 			$queryParts = [];
 			foreach ( self::getDefaultNamespaces( $special->getUser() ) as $ns ) {
 				$queryParts['ns' . $ns] = '1';
 			}
-			$namespacedSearchUrl = wfAppendQuery( $namespacedSearchUrl, $queryParts );
-			$special->getOutput()->redirect( $namespacedSearchUrl );
+			return wfAppendQuery( $namespacedSearchUrl, $queryParts );
 		}
+		return null;
 	}
 
 	/**

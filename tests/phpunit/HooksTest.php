@@ -113,7 +113,8 @@ class HooksTest extends MediaWikiTestCase {
 			[ 'ns0' => 1 ]
 		);
 
-		Hooks::onSpecialPageBeforeExecute( $special, '' );
+		$ret = Hooks::onSpecialPageBeforeExecute( $special, '' );
+		$this->assertNull( $ret );
 
 		// Ensure that no namespace-related redirect was performed
 		$this->assertSame( '', $special->getOutput()->getRedirect() );
@@ -142,8 +143,8 @@ class HooksTest extends MediaWikiTestCase {
 			[ 'search' => 'test' ]
 		);
 
-		Hooks::onSpecialPageBeforeExecute( $special, '' );
-
+		$ret = Hooks::onSpecialPageBeforeExecute( $special, '' );
+		$this->assertFalse( $ret );
 		$this->assertEquals(
 			'http://hooks.test/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1',
 			$special->getOutput()->getRedirect()
@@ -160,7 +161,8 @@ class HooksTest extends MediaWikiTestCase {
 			[ 'search' => 'test' ]
 		);
 
-		Hooks::onSpecialPageBeforeExecute( $special, '' );
+		$ret = Hooks::onSpecialPageBeforeExecute( $special, '' );
+		$this->assertFalse( $ret );
 
 		$this->assertEquals(
 			'http://hooks.test/wiki/Special%3ASearch?ns0=1',
@@ -178,7 +180,8 @@ class HooksTest extends MediaWikiTestCase {
 			[ 'search' => 'test' ]
 		);
 
-		Hooks::onSpecialPageBeforeExecute( $special, '' );
+		$ret = Hooks::onSpecialPageBeforeExecute( $special, '' );
+		$this->isFalse( $ret );
 
 		$this->assertEquals(
 			'http://hooks.test/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1&ns6=1&ns10=1',
