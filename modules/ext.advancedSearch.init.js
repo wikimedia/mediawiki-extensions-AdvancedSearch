@@ -244,6 +244,11 @@
 			$searchField = $search.find( 'input[name="search"]' ),
 			$profileField = $search.find( 'input[name="profile"]' );
 
+		// There is possibly no form, e.g. when the special page failed (T266163)
+		if ( !$searchField.length ) {
+			return;
+		}
+
 		$search.append( $advancedSearch );
 
 		$searchField.val( queryCompiler.removeCompiledQueryFromSearch( $searchField.val(), state ) );
