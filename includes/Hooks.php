@@ -60,7 +60,7 @@ class Hooks {
 				( new MimeTypeConfigurator( $services->getMimeAnalyzer() ) )->getMimeTypes(
 					$mainConfig->get( 'FileExtensions' )
 				),
-			'advancedSearch.tooltips' => TooltipGenerator::generateToolTips(),
+			'advancedSearch.tooltips' => ( new TooltipGenerator( $special->getContext() ) )->generateTooltips(),
 			'advancedSearch.namespacePresets' => $mainConfig->get( 'AdvancedSearchNamespacePresets' ),
 			'advancedSearch.deepcategoryEnabled' => $mainConfig->get( 'AdvancedSearchDeepcatEnabled' ),
 			'advancedSearch.searchableNamespaces' =>
