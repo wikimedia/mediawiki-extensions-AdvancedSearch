@@ -12,8 +12,14 @@ use Xml;
  */
 class SearchnamespaceTokenModule extends ResourceLoaderModule {
 
+	/**
+	 * @var int
+	 */
 	protected $origin = self::ORIGIN_CORE_INDIVIDUAL;
 
+	/**
+	 * @var string[]
+	 */
 	protected $targets = [ 'desktop', 'mobile' ];
 
 	/**
