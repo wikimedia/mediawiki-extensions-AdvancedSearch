@@ -5,16 +5,25 @@
 	mw.libs.advancedSearch = mw.libs.advancedSearch || {};
 	mw.libs.advancedSearch.ui = mw.libs.advancedSearch.ui || {};
 
-	var getOptions = function () {
-		return mw.libs.advancedSearch.dm.getSortMethods().map( function ( searchOption ) {
-			return { data: searchOption.name, label: searchOption.label };
+	var getOptions = function ( selected ) {
+		var options = mw.libs.advancedSearch.dm.getSortMethods().map( function ( method ) {
+			// The currently active sort method already appears in the list, don't add it again
+			if ( method.name === selected ) {
+				selected = undefined;
+			}
+			return { data: method.name, label: method.label };
 		} );
+		if ( selected ) {
+			// If the currently active sort method isn't known, show its raw identifier
+			options.push( { data: selected } );
+		}
+		return options;
 	};
 
 	mw.libs.advancedSearch.ui.SortPreference = function ( store, config ) {
 		this.store = store;
 		config = $.extend( {
-			options: getOptions()
+			options: getOptions( store.getSortMethod() )
 		}, config );
 		this.className = 'mw-advancedSearch-sort-';
 
