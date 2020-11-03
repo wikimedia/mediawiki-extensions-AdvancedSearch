@@ -17,13 +17,10 @@ class Hooks {
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SpecialPageBeforeExecute
 	 *
 	 * @param SpecialPage $special
-	 * @param string $subpage
+	 * @param string|null $subpage
 	 * @return false|void false to abort the execution of the special page, "void" otherwise
 	 */
 	public static function onSpecialPageBeforeExecute( SpecialPage $special, $subpage ) {
-		$services = MediaWikiServices::getInstance();
-		$mainConfig = $special->getConfig();
-
 		if ( $special->getName() !== 'Search' ) {
 			return;
 		}
@@ -47,6 +44,9 @@ class Hooks {
 			// Abort execution of the SpecialPage by returning false since we are redirecting
 			return false;
 		}
+
+		$services = MediaWikiServices::getInstance();
+		$mainConfig = $special->getConfig();
 
 		$special->getOutput()->addModules( [
 			'ext.advancedSearch.init',
