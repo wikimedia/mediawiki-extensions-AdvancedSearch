@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Balyozxane",
+			"Guherto"
+		]
+	},
+	"advancedsearch-optgroup-text": "Di naveroka rûpelê de lê bigere",
+	"advancedsearch-field-plain": "Ev peyv",
+	"advancedsearch-field-or": "Yek ji van peyvan",
+	"advancedsearch-field-not": "Ne ev peyv",
+	"advancedsearch-field-subpageof": "Binrûpelên vê rûpelê",
+	"advancedsearch-field-intitle": "Navê rûpelê dihundurîne",
+	"advancedsearch-field-deepcategory": "Rûpelên di van kategoriyan de",
+	"advancedsearch-field-hastemplate": "Rûpelên bi van şablonan",
+	"advancedsearch-namespaces-search-in": "Di van de lê bigere:",
+	"prefs-advancedsearch": "Lêgerîna Pêşketî"
+}
