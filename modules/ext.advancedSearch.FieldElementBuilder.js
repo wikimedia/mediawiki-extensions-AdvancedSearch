@@ -93,7 +93,7 @@
 				}
 
 				fieldSets[ group ].addItems( [
-					field.layout( self.createWidget( field ), field, self.state )
+					field.layout( self.createWidget( field ), field.id, self.state )
 				] );
 			} );
 

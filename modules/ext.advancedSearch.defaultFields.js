@@ -46,19 +46,10 @@
 	}
 
 	/**
-	 * @param {string} messageKey
-	 * @return {string}
-	 */
-	function getMessage( messageKey ) {
-		// use prepared tooltip because of mw.message deficiencies
-		return mw.config.get( 'advancedSearch.tooltips' )[ messageKey ] || '';
-	}
-
-	/**
-	 * @param {Object} option
+	 * @param {string} id
 	 * @return {string|boolean}
 	 */
-	function getOptionHelpMessage( option ) {
+	function getOptionHelpMessage( id ) {
 		// The following messages are used here:
 		// * advancedsearch-help-deepcategory
 		// * advancedsearch-help-fileh
@@ -73,7 +64,11 @@
 		// * advancedsearch-help-plain
 		// * advancedsearch-help-sort
 		// * advancedsearch-help-subpageof
-		var message = getMessage( 'advancedsearch-help-' + option.id );
+		var message = mw.config.get( 'advancedSearch.tooltips' )[ 'advancedsearch-help-' + id ] || '';
+		if ( !message ) {
+			return false;
+		}
+
 		// The following messages are used here:
 		// * advancedsearch-field-deepcategory
 		// * advancedsearch-field-fileh
@@ -88,27 +83,23 @@
 		// * advancedsearch-field-plain
 		// * advancedsearch-field-sort
 		// * advancedsearch-field-subpageof
-		var head = mw.msg( 'advancedsearch-field-' + option.id );
-		if ( !message || !head ) {
-			return false;
-		}
-
+		var head = mw.msg( 'advancedsearch-field-' + id );
 		return new OO.ui.HtmlSnippet( '<h6 class="mw-advancedSearch-tooltip-head">' + head + '</h6>' + message );
 	}
 
 	/**
 	 * @param {OO.ui.Widget} widget
-	 * @param {Object} option
+	 * @param {string} id
 	 * @return {OO.ui.FieldLayout}
 	 */
-	function createDefaultLayout( widget, option ) {
+	function createDefaultLayout( widget, id ) {
 		return new OO.ui.FieldLayout(
 			widget,
 			{
 				// Messages documented in getOptionHelpMessage
-				label: mw.msg( 'advancedsearch-field-' + option.id ),
+				label: mw.msg( 'advancedsearch-field-' + id ),
 				align: 'right',
-				help: getOptionHelpMessage( option ),
+				help: getOptionHelpMessage( id ),
 				$overlay: true
 			}
 		);
@@ -118,22 +109,22 @@
 	 * Create a layout widget that can react to state changes
 	 *
 	 * @param {OO.ui.Widget} widget Widget to wrap in a OO.ui.FieldLayout
-	 * @param {Object} option Options for OO.ui.FieldLayout
+	 * @param {string} id
 	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
 	 * @return {mw.libs.advancedSearch.ui.ImageDimensionLayout}
 	 */
-	function createImageDimensionLayout( widget, option, state ) {
+	function createImageDimensionLayout( widget, id, state ) {
 		return new mw.libs.advancedSearch.ui.ImageDimensionLayout(
 			state,
 			widget,
 			{
 				// Messages documented in getOptionHelpMessage
-				label: mw.msg( 'advancedsearch-field-' + option.id ),
+				label: mw.msg( 'advancedsearch-field-' + id ),
 				align: 'right',
 				checkVisibility: function () {
 					return state.filetypeSupportsDimensions();
 				},
-				help: getOptionHelpMessage( option ),
+				help: getOptionHelpMessage( id ),
 				$overlay: true
 			}
 		);
