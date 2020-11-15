@@ -31,6 +31,7 @@ class HooksTest extends MediaWikiTestCase {
 			'FileExtensions' => [ '<EXT>' ],
 		] ) );
 		$this->setMwGlobals( [
+			'wgLanguageCode' => 'qqx',
 			'wgNamespacesToBeSearchedDefault' => [ NS_MAIN => true ],
 			'wgServer' => '//hooks.test'
 		] );
@@ -104,6 +105,21 @@ class HooksTest extends MediaWikiTestCase {
 		$this->assertStringContainsString( 'mw-search-spinner', $output->getHTML() );
 	}
 
+	public function testSpecialPageHookHandler_wrongSpecialPage() {
+		$specialPage = $this->createMock( SpecialPage::class );
+		$specialPage->expects( $this->never() )->method( 'getUser' );
+		Hooks::onSpecialPageBeforeExecute( $specialPage, null );
+	}
+
+	public function testSpecialPageHookHandler_userOptedOut() {
+		$user = $this->createMock( User::class );
+		$user->method( 'getBoolOption' )->willReturn( true );
+		$specialPage = $this->createMock( SpecialPage::class );
+		$specialPage->method( 'getUser' )->willReturn( $user );
+		$specialPage->expects( $this->never() )->method( 'getOutput' );
+		Hooks::onSpecialPageBeforeExecute( $specialPage, null );
+	}
+
 	public function testSpecialPageBeforeExecuteHookHandler() {
 		$this->mockMimeAnalyser();
 
@@ -113,8 +129,7 @@ class HooksTest extends MediaWikiTestCase {
 			[ 'ns0' => 1 ]
 		);
 
-		$ret = Hooks::onSpecialPageBeforeExecute( $special, '' );
-		$this->assertNull( $ret );
+		Hooks::onSpecialPageBeforeExecute( $special, null );
 
 		// Ensure that no namespace-related redirect was performed
 		$this->assertSame( '', $special->getOutput()->getRedirect() );
@@ -143,7 +158,7 @@ class HooksTest extends MediaWikiTestCase {
 			[ 'search' => 'test' ]
 		);
 
-		$ret = Hooks::onSpecialPageBeforeExecute( $special, '' );
+		$ret = Hooks::onSpecialPageBeforeExecute( $special, null );
 		$this->assertFalse( $ret );
 		$this->assertEquals(
 			'http://hooks.test/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1',
@@ -161,7 +176,7 @@ class HooksTest extends MediaWikiTestCase {
 			[ 'search' => 'test' ]
 		);
 
-		$ret = Hooks::onSpecialPageBeforeExecute( $special, '' );
+		$ret = Hooks::onSpecialPageBeforeExecute( $special, null );
 		$this->assertFalse( $ret );
 
 		$this->assertEquals(
@@ -180,8 +195,8 @@ class HooksTest extends MediaWikiTestCase {
 			[ 'search' => 'test' ]
 		);
 
-		$ret = Hooks::onSpecialPageBeforeExecute( $special, '' );
-		$this->isFalse( $ret );
+		$ret = Hooks::onSpecialPageBeforeExecute( $special, null );
+		$this->assertFalse( $ret );
 
 		$this->assertEquals(
 			'http://hooks.test/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1&ns6=1&ns10=1',
@@ -194,11 +209,10 @@ class HooksTest extends MediaWikiTestCase {
 	 * @param string $url
 	 * @param array $requestValues
 	 * @return SpecialPage
-	 * @throws \MWException
 	 */
 	private function newSpecialSearchPage( User $user, $url, $requestValues = [] ) {
 		$output = new OutputPage( new RequestContext() );
-		$request = new \FauxRequest( $requestValues, false, null, 'http' );
+		$request = new \FauxRequest( $requestValues );
 		$request->setRequestURL( $url );
 		$context = new RequestContext();
 		$context->setOutput( $output );
