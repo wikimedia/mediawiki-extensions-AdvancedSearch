@@ -11,11 +11,6 @@
 			{
 				id: 'keyword',
 				formatter: function ( v ) { return 'keyword:' + v; }
-			},
-			{
-				id: 'greedy',
-				formatter: stringFormatter,
-				greedy: true
 			}
 		];
 
@@ -26,7 +21,6 @@
 
 		state.getField.withArgs( 'plain' ).returns( 'one' );
 		state.getField.withArgs( 'keyword' ).returns( 'two' );
-		state.getField.withArgs( 'greedy' ).returns( 'three' );
 		return state;
 	}
 
@@ -40,15 +34,7 @@
 	QUnit.test( 'filled values will return formatted search string', function ( assert ) {
 		var compiler = new QueryCompiler( defaultFields ),
 			state = getDefaultState();
-		assert.strictEqual( compiler.compileSearchQuery( state ), 'one keyword:two three' );
-	} );
-
-	QUnit.test( 'Regardless of field order, greedy field always comes last', function ( assert ) {
-		var reorderedFields = [ defaultFields[ 2 ], defaultFields[ 1 ], defaultFields[ 0 ] ],
-			compiler = new QueryCompiler( reorderedFields ),
-			state = getDefaultState();
-
-		assert.strictEqual( compiler.compileSearchQuery( state ), 'keyword:two one three' );
+		assert.strictEqual( compiler.compileSearchQuery( state ), 'one keyword:two' );
 	} );
 
 	QUnit.test( 'Given search string with no advanced search contents, it is untouched', function ( assert ) {
@@ -62,7 +48,7 @@
 	QUnit.test( 'Given search string with partial advanced search contents, it is untouched', function ( assert ) {
 		var compiler = new QueryCompiler( defaultFields ),
 			state = getDefaultState(),
-			currentQuery = 'awesome goats keyword:two three';
+			currentQuery = 'awesome goats keyword:two';
 
 		assert.strictEqual( compiler.removeCompiledQueryFromSearch( currentQuery, state ), currentQuery );
 	} );
@@ -70,7 +56,7 @@
 	QUnit.test( 'Given search string ending with advanced search contents, they are removed', function ( assert ) {
 		var compiler = new QueryCompiler( defaultFields ),
 			state = getDefaultState(),
-			currentQuery = 'awesome goats one keyword:two three';
+			currentQuery = 'awesome goats one keyword:two';
 
 		assert.strictEqual( compiler.removeCompiledQueryFromSearch( currentQuery, state ), 'awesome goats' );
 	} );

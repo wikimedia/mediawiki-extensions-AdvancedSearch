@@ -145,7 +145,6 @@
 	};
 
 	/**
-	 *
 	 * @param {string} fieldId
 	 * @param {*} comparisonValue
 	 * @return {boolean}
