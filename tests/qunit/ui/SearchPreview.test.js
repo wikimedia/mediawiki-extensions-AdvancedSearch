@@ -13,7 +13,7 @@
 			connect: sandbox.stub(),
 			getField: sandbox.stub(),
 			removeField: sandbox.stub(),
-			getSortMethod: sandbox.stub()
+			getSortMethod: sandbox.stub().returns( '' )
 		};
 		config = {};
 	} );
