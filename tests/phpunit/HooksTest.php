@@ -97,7 +97,10 @@ class HooksTest extends MediaWikiTestCase {
 		$context = new RequestContext();
 		$context->setOutput( $output );
 		$context->setUser( $this->newAnonymousUser() );
-		$special = new \SpecialSearch();
+
+		$special = \MediaWiki\MediaWikiServices::getInstance()
+			->getSpecialPageFactory()
+			->getPage( 'Search' );
 		$special->setContext( $context );
 
 		Hooks::onSpecialSearchResultsPrepend( $special, $output, '' );
