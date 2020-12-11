@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Abbas dhothar"
+		]
+	},
+	"advancedsearch-field-filetype": "فلٹر قسم",
+	"advancedsearch-inlanguage-default": "بولی چنو",
+	"advancedsearch-filetype-bitmap": "تصویر",
+	"advancedsearch-filetype-audio": "آڈیو",
+	"advancedsearch-filetype-video": "ویڈیو",
+	"advancedsearch-filetype-office": "دفتر",
+	"advancedsearch-filesize-equals": "برابر ہے",
+	"advancedsearch-filesize-greater-than": "توں وڈا",
+	"advancedsearch-filesize-smaller-than": "توں گھٹ",
+	"advancedsearch-sort-preview-create-timestamp-desc": "تخلیق تریخ",
+	"advancedsearch-namespaces-search-in": "وچ لبھو:",
+	"advancedsearch-namespaces-preset-all": "سارے",
+	"advancedsearch-namespaces-preset-default": "ڈیفالٹ",
+	"advancedsearch-namespaces-preset-general-help": "عام مدد",
+	"advancedsearch-namespaces-preset-discussion": "گل بات",
+	"prefs-advancedsearch": "ہور کھوج"
+}
