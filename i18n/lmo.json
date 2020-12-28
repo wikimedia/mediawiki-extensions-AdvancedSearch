@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Salvemm el lombard"
+		]
+	},
+	"advancedsearch-field-plain": "Chi parole chì",
+	"advancedsearch-field-filetype": "Tipo de fail",
+	"advancedsearch-field-filew": "Larghezza del file in pixel",
+	"advancedsearch-field-fileh": "Altezza del fail in picsel",
+	"advancedsearch-field-preview-sort": "Ordina per $1"
+}
