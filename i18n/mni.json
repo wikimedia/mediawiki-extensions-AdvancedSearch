@@ -53,6 +53,8 @@
 	"advancedsearch-filesize-equals": "ꯑꯗꯨꯒꯥ ꯃꯥꯟꯅꯩ",
 	"advancedsearch-filesize-greater-than": "ꯑꯗꯨꯗꯒꯤ ꯍꯦꯟꯕꯥ",
 	"advancedsearch-filesize-smaller-than": "ꯑꯗꯨꯗꯒꯤ ꯍꯟꯊꯕꯥ",
+	"advancedsearch-sort-last-edit-asc": "ꯁꯦꯝꯒꯠ-ꯁꯥꯒꯠꯈꯤꯕ ꯆꯩꯆꯠ – ꯑꯔꯤꯕꯅ ꯃꯇꯣꯟꯗ",
+	"advancedsearch-sort-last-edit-desc": "ꯁꯦꯝꯒꯠ-ꯁꯥꯒꯠꯈꯤꯕ ꯆꯩꯆꯠ – ꯍꯧꯖꯤꯛꯀꯤꯅ ꯃꯇꯣꯟꯗ",
 	"advancedsearch-sort-preview-last-edit-desc": "ꯆꯩꯆꯠ ꯁꯦꯝꯗꯣꯛꯄ",
 	"advancedsearch-sort-preview-create-timestamp-desc": "ꯁꯥꯈꯤꯕꯥ ꯆꯩꯆꯠ",
 	"advancedsearch-namespaces-search-in": "ꯊꯤꯖꯤꯟꯕꯥ",

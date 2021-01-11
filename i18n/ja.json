@@ -10,6 +10,7 @@
 			"Shirayuki",
 			"Suchichi02",
 			"Suyama",
+			"Tmv",
 			"Yusuke1109",
 			"夢蝶葬花"
 		]
@@ -68,6 +69,7 @@
 	"advancedsearch-sort-last-edit-desc": "ページ編集日 - 直近のものが一番上",
 	"advancedsearch-sort-create-timestamp-desc": "ページ作成日 - 直近のものが一番上",
 	"advancedsearch-sort-preview-relevance": "関連度順",
+	"advancedsearch-sort-preview-last-edit-asc": "最新の編集",
 	"advancedsearch-sort-preview-last-edit-desc": "ページ編集日",
 	"advancedsearch-sort-preview-create-timestamp-desc": "ページ作成日",
 	"advancedsearch-namespaces-search-in": "検索範囲:",
