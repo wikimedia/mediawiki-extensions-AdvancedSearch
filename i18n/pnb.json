@@ -4,6 +4,7 @@
 			"Abbas dhothar"
 		]
 	},
+	"advancedsearch-options-pane-head": "ہور اختیار:",
 	"advancedsearch-optgroup-text": "صفحہ ٹیکسٹ وچ لبھو",
 	"advancedsearch-optgroup-structure": "ساخت",
 	"advancedsearch-optgroup-files": "فائلاں تے مورتاں",
@@ -18,6 +19,7 @@
 	"advancedsearch-field-hastemplate": "انہاں سانچےآں دا استعمال کرن والے صفحے",
 	"advancedsearch-field-filetype": "فائل دی قسم",
 	"advancedsearch-field-sort": "مرتب سازی ترتیب",
+	"advancedsearch-field-preview-sort": "چُنو $1",
 	"advancedsearch-placeholder-exact-text": "\"بلی تے بکری دی محبت\"",
 	"advancedsearch-inlanguage-default": "بولی چنو",
 	"advancedsearch-filetype-section-types": "عام فائل قسماں",
@@ -39,7 +41,7 @@
 	"advancedsearch-sort-preview-relevance": "متعلقہ",
 	"advancedsearch-sort-preview-last-edit-desc": "اڈیٹ تریخ",
 	"advancedsearch-sort-preview-create-timestamp-desc": "تخلیق تریخ",
-	"advancedsearch-namespaces-search-in": "وچ لبھو:",
+	"advancedsearch-namespaces-search-in": "لبھو وچ:",
 	"advancedsearch-namespaces-preset-all": "سارے",
 	"advancedsearch-namespaces-preset-default": "ڈیفالٹ",
 	"advancedsearch-namespaces-preset-general-help": "عام مدد",
