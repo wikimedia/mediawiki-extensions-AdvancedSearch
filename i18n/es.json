@@ -10,6 +10,7 @@
 			"KATRINE1992",
 			"Macofe",
 			"MarcoAurelio",
+			"MarleneR329",
 			"Nicolas Ramirez",
 			"Tiberius1701",
 			"ZebaX2010"
@@ -71,7 +72,9 @@
 	"advancedsearch-sort-create-timestamp-asc": "Fecha de creación; más antiguas arriba",
 	"advancedsearch-sort-create-timestamp-desc": "Fecha de creación; actual en la parte superior",
 	"advancedsearch-sort-preview-relevance": "relevancia",
+	"advancedsearch-sort-preview-last-edit-asc": "Menos editada recientemente",
 	"advancedsearch-sort-preview-last-edit-desc": "fecha de edición",
+	"advancedsearch-sort-preview-create-timestamp-asc": "Menos recientemente creado",
 	"advancedsearch-sort-preview-create-timestamp-desc": "fecha de creación",
 	"advancedsearch-namespaces-search-in": "Buscar en:",
 	"advancedsearch-namespaces-remember": "Recordar la selección en búsquedas futuras",
