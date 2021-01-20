@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Eduardo Addad de Oliveira",
+			"Jaideraf",
 			"Leonardo9387"
 		]
 	},
@@ -14,7 +15,7 @@
 	"advancedsearch-field-plain": "Esta palavra",
 	"advancedsearch-field-phrase": "Exatamente este texto",
 	"advancedsearch-field-or": "Uma dessas palavras",
-	"advancedsearch-field-not": "Não são estas palavras",
+	"advancedsearch-field-not": "Sem estas palavras",
 	"advancedsearch-field-subpageof": "Subpáginas desta página",
 	"advancedsearch-field-intitle": "O título da página contém",
 	"advancedsearch-field-deepcategory": "Página nestas categorias",
