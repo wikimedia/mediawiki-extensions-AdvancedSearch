@@ -20,7 +20,7 @@ class MimeTypeConfiguratorTest extends TestCase {
 
 	public function testConfiguratorReturnsMimeTypeForFileExtension() {
 		$configurator = new MimeTypeConfigurator( $this->newMimeAnalyzerMock() );
-		$this->assertEquals(
+		$this->assertSame(
 			[ self::EXT_SINGLE_MIMETYPE => 'test' ],
 			$configurator->getMimeTypes( [ self::EXT_SINGLE_MIMETYPE ] )
 		);
@@ -28,7 +28,7 @@ class MimeTypeConfiguratorTest extends TestCase {
 
 	public function testConfiguratorAlwaysUsesTheFirstMimeType() {
 		$configurator = new MimeTypeConfigurator( $this->newMimeAnalyzerMock() );
-		$this->assertEquals(
+		$this->assertSame(
 			[ self::EXT_MULTIPLE_MIMETYPES => 'one' ],
 			$configurator->getMimeTypes( [ self::EXT_MULTIPLE_MIMETYPES ] )
 		);
@@ -36,7 +36,7 @@ class MimeTypeConfiguratorTest extends TestCase {
 
 	public function testConfiguratorDoesNotAllowRedundantEntries() {
 		$configurator = new MimeTypeConfigurator( $this->newMimeAnalyzerMock() );
-		$this->assertEquals(
+		$this->assertSame(
 			[ self::EXT_SAME_MIMETYPE => 'mime' ],
 			$configurator->getMimeTypes( [ self::EXT_SAME_MIMETYPE, self::OTHER_EXT_SAME_MIMETYPE ] )
 		);

@@ -88,8 +88,8 @@ class HooksTest extends MediaWikiTestCase {
 				$user->setOption( $option, $value );
 			}
 		}
-		$this->assertEquals( $isAnon, $user->isAnon() );
-		$this->assertEquals( $expected, Hooks::getDefaultNamespaces( $user ) );
+		$this->assertSame( $isAnon, $user->isAnon() );
+		$this->assertSame( $expected, Hooks::getDefaultNamespaces( $user ) );
 	}
 
 	public function testSpecialSearchResultsPrependHandler() {
@@ -163,7 +163,7 @@ class HooksTest extends MediaWikiTestCase {
 
 		$ret = Hooks::onSpecialPageBeforeExecute( $special, null );
 		$this->assertFalse( $ret );
-		$this->assertEquals(
+		$this->assertSame(
 			'http://hooks.test/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1',
 			$special->getOutput()->getRedirect()
 		);
@@ -182,7 +182,7 @@ class HooksTest extends MediaWikiTestCase {
 		$ret = Hooks::onSpecialPageBeforeExecute( $special, null );
 		$this->assertFalse( $ret );
 
-		$this->assertEquals(
+		$this->assertSame(
 			'http://hooks.test/wiki/Special%3ASearch?ns0=1',
 			$special->getOutput()->getRedirect()
 		);
@@ -201,7 +201,7 @@ class HooksTest extends MediaWikiTestCase {
 		$ret = Hooks::onSpecialPageBeforeExecute( $special, null );
 		$this->assertFalse( $ret );
 
-		$this->assertEquals(
+		$this->assertSame(
 			'http://hooks.test/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1&ns6=1&ns10=1',
 			$special->getOutput()->getRedirect()
 		);

@@ -17,7 +17,7 @@ class SearchableNamespaceListBuilderTest extends TestCase {
 			$this->getSampleNamespaces()
 		);
 
-		$this->assertEquals( '(Main)', $curatedNamespaces[0] );
+		$this->assertSame( '(Main)', $curatedNamespaces[0] );
 	}
 
 	public function testEmptyNamespacesAreFiltered() {
@@ -25,7 +25,7 @@ class SearchableNamespaceListBuilderTest extends TestCase {
 			$this->getSampleNamespaces()
 		);
 
-		$this->assertEquals( $this->getCuratedSampleNamespaces(), $curatedNamespaces );
+		$this->assertSame( $this->getCuratedSampleNamespaces(), $curatedNamespaces );
 	}
 
 	private function getSampleNamespaces() {
