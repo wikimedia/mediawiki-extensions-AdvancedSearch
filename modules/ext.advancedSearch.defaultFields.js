@@ -51,8 +51,7 @@
 	 */
 	function getMessage( messageKey ) {
 		// use prepared tooltip because of mw.message deficiencies
-		var tooltips = mw.config.get( 'advancedSearch.tooltips' );
-		return tooltips[ messageKey ] || '';
+		return mw.config.get( 'advancedSearch.tooltips' )[ messageKey ] || '';
 	}
 
 	/**

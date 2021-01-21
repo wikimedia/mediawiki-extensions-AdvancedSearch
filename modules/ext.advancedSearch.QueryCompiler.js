@@ -25,11 +25,9 @@
 			var val = state.getField( field.id ),
 				formattedQueryElement = val ? field.formatter( val ) : '';
 
-			if ( !formattedQueryElement ) {
-				return;
+			if ( formattedQueryElement ) {
+				queryElements.push( formattedQueryElement );
 			}
-
-			queryElements.push( formattedQueryElement );
 		} );
 
 		return queryElements;

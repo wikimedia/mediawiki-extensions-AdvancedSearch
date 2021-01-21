@@ -51,11 +51,10 @@
 		 * @private
 		 */
 		createWidget: function ( field ) {
-			var widgetDefaultConfig = {
-					fieldId: field.id,
-					id: 'advancedSearchField-' + field.id
-				},
-				widget = field.init( this.state, widgetDefaultConfig );
+			var widget = field.init( this.state, {
+				fieldId: field.id,
+				id: 'advancedSearchField-' + field.id
+			} );
 
 			if ( !field.customEventHandling ) {
 				widget.on( 'change', this.createMultiSelectChangeHandler( field.id ) );

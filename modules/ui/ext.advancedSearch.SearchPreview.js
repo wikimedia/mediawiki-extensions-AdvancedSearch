@@ -133,11 +133,7 @@
 		}
 
 		// We have special handling for sort in #updatePreview
-		if ( fieldId === 'sort' ) {
-			return true;
-		}
-
-		return false;
+		return fieldId === 'sort';
 	};
 
 	/**

@@ -206,8 +206,7 @@
 	 * @param {string} jsonSerialized
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.setAllFromJSON = function ( jsonSerialized ) {
-		var valuesChanged = false,
-			unserialized;
+		var unserialized;
 
 		try {
 			unserialized = JSON.parse( jsonSerialized );
@@ -215,20 +214,15 @@
 			return;
 		}
 
-		if ( typeof unserialized !== 'object' ) {
+		if ( !unserialized || typeof unserialized.fields !== 'object' ) {
 			return;
 		}
 
-		if ( typeof unserialized.fields === 'object' ) {
-			this.searchFields = {};
-			for ( var opt in unserialized.fields ) {
-				this.searchFields[ opt ] = unserialized.fields[ opt ];
-			}
-			valuesChanged = true;
+		this.searchFields = {};
+		for ( var opt in unserialized.fields ) {
+			this.searchFields[ opt ] = unserialized.fields[ opt ];
 		}
-		if ( valuesChanged ) {
-			this.emitUpdate();
-		}
+		this.emitUpdate();
 	};
 
 	/**
