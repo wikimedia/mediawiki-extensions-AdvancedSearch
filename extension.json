@@ -176,7 +176,7 @@
 			]
 		},
 		"ext.advancedSearch.SearchFieldUI": {
-			"scripts" : [
+			"scripts": [
 				"modules/dm/ext.advancedSearch.TitleCache.js",
 				"modules/dm/ext.advancedSearch.MultiselectLookup.js",
 				"modules/ui/ext.advancedSearch.ArbitraryWordInput.js",

@@ -21,6 +21,7 @@
 		 * - none
 		 * - random
 		 * - relevance
+		 *
 		 * @see \CirrusSearch\CirrusSearch::getValidSorts
 		 * @see https://www.mediawiki.org/wiki/Help:CirrusSearch#Explicit_sort_orders
 		 * @see https://codesearch.wmcloud.org/search/?q=public%20function%20getValidSorts
