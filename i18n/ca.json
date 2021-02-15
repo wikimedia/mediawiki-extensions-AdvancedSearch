@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Alan Mena",
 			"Bombolla",
 			"Fitoschido",
 			"FranSisPac",
@@ -57,6 +58,7 @@
 	"advancedsearch-filesize-greater-than": "Més gran que",
 	"advancedsearch-filesize-smaller-than": "menor de",
 	"advancedsearch-sort-relevance": "Rellevància",
+	"advancedsearch-sort-last-edit-asc": "Data d'edició - Antic a dalt",
 	"advancedsearch-sort-last-edit-desc": "Data d'edició – descendent",
 	"advancedsearch-sort-create-timestamp-desc": "Data de creació – descendent",
 	"advancedsearch-sort-preview-relevance": "rellevància",
