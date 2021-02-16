@@ -7,6 +7,7 @@
 			"Matma Rex",
 			"Rail",
 			"Railfail536",
+			"SemanticPioneer",
 			"Shirayuki",
 			"Woytecr"
 		]
@@ -67,7 +68,9 @@
 	"advancedsearch-sort-create-timestamp-asc": "Daty utworzenia – najstarsze na gó©ze",
 	"advancedsearch-sort-create-timestamp-desc": "Daty utworzenia – najnowsze na górze",
 	"advancedsearch-sort-preview-relevance": "trafność",
+	"advancedsearch-sort-preview-last-edit-asc": "ostatnio edytowany",
 	"advancedsearch-sort-preview-last-edit-desc": "data edycji",
+	"advancedsearch-sort-preview-create-timestamp-asc": "ostatnio utworzony",
 	"advancedsearch-sort-preview-create-timestamp-desc": "data utworzenia",
 	"advancedsearch-namespaces-search-in": "Szukaj w:",
 	"advancedsearch-namespaces-remember": "Zapamiętaj wybór dla przyszłych wyszukiwań",
