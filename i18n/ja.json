@@ -12,6 +12,7 @@
 			"Suchichi02",
 			"Suyama",
 			"Tmv",
+			"Whym",
 			"Yusuke1109",
 			"夢蝶葬花"
 		]
@@ -67,7 +68,9 @@
 	"advancedsearch-filesize-greater-than": "以上",
 	"advancedsearch-filesize-smaller-than": "未満",
 	"advancedsearch-sort-relevance": "関連度順",
+	"advancedsearch-sort-last-edit-asc": "ページ編集日 - 古いものを上に",
 	"advancedsearch-sort-last-edit-desc": "ページ編集日 - 直近のものが一番上",
+	"advancedsearch-sort-create-timestamp-asc": "ページ作成日 - 古いものを上に",
 	"advancedsearch-sort-create-timestamp-desc": "ページ作成日 - 直近のものが一番上",
 	"advancedsearch-sort-preview-relevance": "関連度順",
 	"advancedsearch-sort-preview-last-edit-asc": "最新の編集",
