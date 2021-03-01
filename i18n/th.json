@@ -5,6 +5,7 @@
 			"Geonuch",
 			"Horus",
 			"Just Sayori",
+			"NP-chaonay",
 			"Patsagorn Y.",
 			"กิ๊ฟ เลิกล่ะ สายแข็ง"
 		]
@@ -29,7 +30,7 @@
 	"advancedsearch-field-fileh": "ความสูงของไฟล์ในหน่วยพิกเซล",
 	"advancedsearch-field-sort": "ลำดับการเรียง",
 	"advancedsearch-field-preview-sort": "เรียงลำดับตาม $1",
-	"advancedsearch-help-plain": ";คำบรรยาย\n:ค้นหาคำต่อไปนี้ในชื่อเรื่องหรือข้อความ\n;พึงทราบประเด็นต่อไปนี้\n:* สามารถใส่ได้หลายคำในช่องนี้\n:* จะไม่สนใจเครื่องหมายวรรคตอนและอักขระที่มิใช่ตัวอักษรเลข (ยกเว้นทวิภาคและจุลภาค)\n:* อาจมีผลลัพธ์ที่ไม่มีคำค้นของคุณตั้งแต่หนึ่งคำขึ้นไป\n:* ใช้ word stemming ตัวอย่างเช่น ถ้ากรอกคำว่า ''car'' การค้นหาจะพิจารณา ''cars'' ด้วย ทั้งนี้ แล้วแต่ภาษา\n;หน้าวิธีใช้\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search การค้นหาข้อความเต็ม]\n;วากยสัมพันธ์เทียบเท่าในการค้นหาปกติ\n:<code>sesame street car</code>",
+	"advancedsearch-help-plain": ";คำบรรยาย\n:ค้นหาคำต่อไปนี้ในชื่อเรื่องหรือข้อความ\n;พึงทราบประเด็นต่อไปนี้\n:* สามารถใส่ได้หลายคำในช่องนี้\n:* จะไม่สนใจเครื่องหมายวรรคตอนและอักขระที่มิใช่ตัวอักษรเลข (ยกเว้นทวิภาคและจุลภาค)\n:* อาจมีผลลัพธ์ที่ไม่มีคำค้นของคุณตั้งแต่หนึ่งคำขึ้นไป\n:* ใช้ word stemming ตัวอย่างเช่น ถ้ากรอกคำว่า ''car'' การค้นหาจะพิจารณา ''cars'' ด้วย ทั้งนี้ แล้วแต่ภาษา\n;หน้าวิธีใช้\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Full_text_search การค้นหาข้อความเต็ม]\n;วากยสัมพันธ์เทียบเท่าในการค้นหาปกติ\n:<code>sesame street car</code>",
 	"advancedsearch-help-phrase": ";คำบรรยาย\n:ค้นหาลำดับอักขระที่จำเพาะ ไม่สนใจเครื่องหมายวรรคตอน\n;พึงทราบประเด็นต่อไปนี้\n:(ใช้ได้เฉพาะเมื่อใช้เครื่องหมายอัญประกาศ ดูตัวอย่างด้านล่าง)\n:* แยกวลีค้นด้วยเครื่องหมายจุลภาคหรือช่องว่าง เช่น <code>\"good morning\"</code>, <code>\"hello friend!\"</code>\n:* จะไม่สนใจเครื่องหมายวรรคตอนและอักขระที่มิใช่ตัวอักษรเลข (ยกเว้นทวิภาคและจุลภาค)\n:* การค้นหาไม่ไวต่ออักษรใหญ่เล็ก\n:* ไม่ใช้ word stemming\n;หน้าวิธีใช้\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers คำ วลีและตัวดัดแปร]\n;วากยสัมพันธ์เทียบเท่าในการค้นหาปกติ\n:คำในเครื่องหมายอัญประกาศ ตัวอย่างเช่น <code>\"Begin at the beginning\"</code>",
 	"advancedsearch-help-or": ";คำบรรยาย\n:จะต้องมีคำค้นอย่างน้อยหนึ่งคำในหน้า\n;หน้าวิธีใช้\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers คำ วลีและตัวดัดแปร]\n;วากยสัมพันธ์เทียบเท่าในการค้นหาปกติ\n:กลุ่มคำที่มี <code>OR</code> อยู่ระหว่างกลาง ตัวอย่างเช่น <code>Laptop OR Notebook</code>",
 	"advancedsearch-help-not": ";คำบรรยาย\n:ไม่รวมหน้าที่มีคำเหล่านี้ในการค้นหา\n;พึงทราบประเด็นต่อไปนี้\n:* ใช้ word stemming ตัวอย่างเช่น ถ้ากรอกคำว่า ''car'' การค้นหาจะพิจารณา ''cars'' ด้วย ทั้งนี้ แล้วแต่ภาษา\n;หน้าวิธีใช้\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers คำ วลีและตัวดัดแปร]\n;วากยสัมพันธ์เทียบเท่าในการค้นหาปกติ\n:กลุ่มคำที่มี <code>-</code> นำหน้า ตัวอย่างเช่น <code>-elephant</code>",
