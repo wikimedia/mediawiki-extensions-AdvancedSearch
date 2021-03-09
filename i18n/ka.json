@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"David1010",
 			"Otogi",
 			"Tokoko"
 		]
 	},
-	"advancedsearch-options-pane-head": "გაფართოებული პარამეტრები:",
+	"advancedsearch-options-pane-head": "გაფართოებული ძიება:",
 	"advancedsearch-optgroup-text": "გვერდის ტექსტში ძიება",
 	"advancedsearch-optgroup-structure": "სტრუქტურა",
 	"advancedsearch-optgroup-files": "ფაილები და გამოსახულებები",
