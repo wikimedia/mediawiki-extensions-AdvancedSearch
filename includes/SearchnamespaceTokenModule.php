@@ -34,7 +34,7 @@ class SearchnamespaceTokenModule extends ResourceLoaderModule {
 			Xml::encodeJsCall(
 				'mw.user.tokens.set',
 				[ 'searchnamespaceToken', $user->getEditToken( 'searchnamespace' ) ],
-				ResourceLoader::inDebugMode()
+				(bool)ResourceLoader::inDebugMode()
 			);
 	}
 
