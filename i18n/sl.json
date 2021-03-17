@@ -71,5 +71,5 @@
 	"advancedsearch-namespaces-placeholder": "Dodaj imenske prostore ...",
 	"prefs-advancedsearch": "Napredno iskanje",
 	"advancedsearch-preference-help": "Napredno iskanje doda obrazec na stran Posebno:Iskanje. Omogoča napredno iskanje ne glede na to, ali uporabnik pozna posebne ukaze. Prav tako spremeni način izbiranja imenskih prostorov.",
-	"advancedsearch-preference-disable": "Ne prikaži vmesnika Naprednega iskanja"
+	"advancedsearch-preference-disable": "Ne prikaži vmesnika Naprednega iskanja med uporabo Posebno:Iskanje"
 }

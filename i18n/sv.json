@@ -78,5 +78,5 @@
 	"advancedsearch-namespaces-placeholder": "Lägg till namnrymder…",
 	"prefs-advancedsearch": "Avancerad sökning",
 	"advancedsearch-preference-help": "Avancerad sökning lägger till ett formulär på sidan Special:Search. Detta låter dig göra specialiserade sökningar även om du inte kan någon sökningssyntax. Det ändrar även sättet namnrymder kan markeras.",
-	"advancedsearch-preference-disable": "Visa inte gränssnittet för avancerad sökning"
+	"advancedsearch-preference-disable": "Visa inte gränssnittet för avancerad sökning vid användning av Special:Search"
 }

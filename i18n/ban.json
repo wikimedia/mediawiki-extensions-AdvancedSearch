@@ -26,6 +26,9 @@
 	"advancedsearch-field-sort": "Pangurutan",
 	"advancedsearch-field-preview-sort": "Urutang mawit $1",
 	"advancedsearch-help-plain": ";Katerangan\n:Ngarereh kruna-kruna puniki ring murda utawi suratan.\n;Waspada indik-indik puniki\n:* Makudang kruna prasida kadagingin iriki.\n:* Tanda wacén miwah karakter non-alfanumerik liyanan (tiosan carik pamungkah {:} miwah carik siki {,}) pacang tan karungu.\n:* Prasida kawéntenan asil sané nénten madaging satunggil utawi langkung kruna wagian saking parerehan Ida.\n:* Pabongkolan kruna kamargiang. Sekadi: Pinaka Ida ngerereh ''sastra'', punika parerehan taler pacang nganimbangang ''susatra''. Pabongkolan kruna kamargiang spésifik ring basa katentu.\n;Kaca wantuan\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Full_text_search Parerehan suratan jangkep]\n;Sintaks sané seduur ring parerehan ketah nyané\n:<code>sastra Bali anyar</code>",
+	"advancedsearch-help-phrase": ";Katerangan\n:Ngarereh urutan karakter-karakter sané spésifik. Tanda wacén kaabaiyang.\n;Waspada paindikan puniki\n:(wantah kamargiang ri kala nganggén tanda kutip, sekadi conto ring metén)\n:* Welasang riantara frasa parerehan antuk koma utawi spasi, sekadi <code>\"rahajeng semeng\"</code>, <code>\"halo timpal!\"</code>.\n:* Tanda wacén miwah karakter ten-alphanumérik liyanan (tiosan titik kalih miwah koma) pacang kaabaiyang.\n:* Parerehan nénten manutin kapitalisasi.\n:* Pacabangan kruna nénten katerapin.\n;Kaca wantuan\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Kruna, frasa, miwah panguahan]\n;Sintaks sané sapantaran ring parerehan ketah\n:Kruna-kruna ring tanda kutip, sekadi <code>\"Babhbah saking pamahbah\"</code>.",
+	"advancedsearch-help-or": ";Katerangan\n:Sanéntenné satunggil paistilah parerehan patut madaging ring kaca.\n;Kaca wantuan\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Kruna, frasa, miwah pauahan]\n;Sintaks sané sapantaran ring parerehan ketah\n: Kruna-kruna antuk <code>OR</code> ri antara inucap, sekadi <code>Paksi OR Kedis</code>.",
+	"advancedsearch-placeholder-exact-text": "\"alisné kadi don intaran\"",
 	"advancedsearch-inlanguage-default": "Pilih basa",
 	"advancedsearch-filetype-section-types": "Jenis berkas umum",
 	"advancedsearch-filetype-section-image": "Format gambar",
@@ -60,5 +63,5 @@
 	"advancedsearch-namespaces-preset-discussion": "Pabligbagan",
 	"advancedsearch-namespaces-placeholder": "Nambahin genaharan…",
 	"prefs-advancedsearch": "Parerehan lantur",
-	"advancedsearch-preference-disable": "Sampunang nyinahang antarmuka Parerehan Lantur"
+	"advancedsearch-preference-disable": "Sampunang nyinahang antarmuka Parerehan Lantur ri kala nganggén Special:Search"
 }
