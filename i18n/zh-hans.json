@@ -4,6 +4,7 @@
 			"A Chinese Wikipedian",
 			"A2093064",
 			"Func",
+			"Hmgrmb",
 			"LNDDYL",
 			"Liuxinyu970226",
 			"NeverBehave",
@@ -86,5 +87,5 @@
 	"advancedsearch-namespaces-placeholder": "加入名字空间…",
 	"prefs-advancedsearch": "高级搜索",
 	"advancedsearch-preference-help": "高级搜索将一个表单添加到Special:Search页面中。这允许您执行专门的搜索，即使您不知道任何搜索语法。它还可以更改名字空间的选择方式。",
-	"advancedsearch-preference-disable": "不要显示高级搜索界面"
+	"advancedsearch-preference-disable": "不要在使用特殊搜索时显示高级搜索界面"
 }

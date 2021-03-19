@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Casadelproverbio",
 			"Joetaras"
 		]
 	},
@@ -73,5 +74,5 @@
 	"advancedsearch-namespaces-placeholder": "Aggiunge namespace…",
 	"prefs-advancedsearch": "Ricerche avanzate",
 	"advancedsearch-preference-help": "'A Ricerche avanzate aggiunge 'nu module a 'a pàgene Special:Search . Quiste permette de fà recerche specializzate, pure ca non ge canusce 'a sindasse. Puè pure cangià le namespace ca puè scacchià.",
-	"advancedsearch-preference-disable": "No ffà 'ndrucà l'inderfacce d'a Ricerche avanzate"
+	"advancedsearch-preference-disable": "No ffà 'ndrucà l'inderfacce d'a Ricerche avanzate quanne ste ause Special:Search"
 }

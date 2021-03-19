@@ -12,6 +12,7 @@
 			"MarcoAurelio",
 			"MarleneR329",
 			"Nicolas Ramirez",
+			"Rossnyev",
 			"Tiberius1701",
 			"ZebaX2010"
 		]
@@ -85,5 +86,5 @@
 	"advancedsearch-namespaces-placeholder": "Añadir espacios de nombres…",
 	"prefs-advancedsearch": "Búsqueda avanzada",
 	"advancedsearch-preference-help": "La búsqueda avanzada añade un formulario a la página Especial:Buscar. Este te permite realizar búsquedas especializadas, incluso si no conoces ninguna sintaxis de búsqueda. También cambia la manera en que se pueden seleccionar los espacios de nombres.",
-	"advancedsearch-preference-disable": "No mostrar la interfaz de búsqueda avanzada."
+	"advancedsearch-preference-disable": "No mostrar la opcion de búsqueda avanzada."
 }

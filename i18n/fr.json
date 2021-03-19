@@ -82,5 +82,5 @@
 	"advancedsearch-namespaces-placeholder": "Ajouter des espaces de noms...",
 	"prefs-advancedsearch": "Recherche avancée",
 	"advancedsearch-preference-help": "La recherche avancée ajoute un formulaire à la page ''Special:Search''. Ceci vous permet de réaliser des recherches spécialisées, même si vous ne connaissez aucune syntaxe de recherche. Elle modifie également la façon dont les espaces de noms peuvent être sélectionnés.",
-	"advancedsearch-preference-disable": "Ne pas afficher l’interface de recherche avancée"
+	"advancedsearch-preference-disable": "Ne pas afficher l’interface de recherche avancée lors de l’utilisation de Special:Search"
 }
