@@ -9,6 +9,7 @@
 			"Ohgi",
 			"Omotecho",
 			"Shirayuki",
+			"Sonicarts",
 			"Suchichi02",
 			"Suyama",
 			"Tmv",
@@ -85,5 +86,5 @@
 	"advancedsearch-namespaces-placeholder": "名前空間を追加…",
 	"prefs-advancedsearch": "高度な検索",
 	"advancedsearch-preference-help": "高度な検索では「特別ページ:検索」ページにフォームが追加されます。これにより、検索構文がわからなくても、特殊な検索を実行できます。また、名前空間の選択方法も変更されます。",
-	"advancedsearch-preference-disable": "高度な検索インターフェイスを表示しない"
+	"advancedsearch-preference-disable": "Special:Searchの使用中、高度な検索インターフェイスを表示しない"
 }
