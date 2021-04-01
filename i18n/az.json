@@ -1,13 +1,30 @@
 {
 	"@metadata": {
 		"authors": [
+			"NMW03",
 			"Toghrul Rahimli",
 			"Wertuose",
 			"Şeyx Şamil"
 		]
 	},
+	"advancedsearch-options-pane-head": "Ətraflı axtarış:",
 	"advancedsearch-optgroup-text": "Səhifənin mətnində axtar",
+	"advancedsearch-optgroup-structure": "Struktur",
 	"advancedsearch-optgroup-files": "Fayllar və şəkillər",
+	"advancedsearch-field-plain": "Bu sözlər",
+	"advancedsearch-field-phrase": "Tam olaraq bu mətn",
+	"advancedsearch-field-or": "Bu sözlərdən biri",
+	"advancedsearch-field-not": "Bu sözlər olmayan",
+	"advancedsearch-field-subpageof": "Bu səhifənin alt səhifələri",
+	"advancedsearch-field-intitle": "Səhifə adında:",
 	"advancedsearch-inlanguage-default": "Dili seçin",
-	"advancedsearch-filetype-bitmap": "Şəkil"
+	"advancedsearch-filetype-bitmap": "Şəkil",
+	"advancedsearch-namespaces-search-in": "Axtar:",
+	"advancedsearch-namespaces-remember": "Gələcək axtarışlar üçün seçimi yadda saxla",
+	"advancedsearch-namespaces-preset-all": "Hamısı",
+	"advancedsearch-namespaces-preset-default": "Standart",
+	"advancedsearch-namespaces-preset-general-help": "Kömək",
+	"advancedsearch-namespaces-preset-discussion": "Müzakirə",
+	"advancedsearch-namespaces-placeholder": "Adlar fəzası əlavə et...",
+	"prefs-advancedsearch": "Ətraflı axtarış:"
 }
