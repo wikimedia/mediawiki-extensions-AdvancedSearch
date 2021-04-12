@@ -29,7 +29,7 @@ class Hooks {
 		 * If the user is logged in and has explicitly requested to disable the extension, don't load.
 		 * Ensure namespaces are always part of search URLs
 		 */
-		if ( !$special->getUser()->isAnon() &&
+		if ( $special->getUser()->isRegistered() &&
 			$special->getUser()->getBoolOption( 'advancedsearch-disable' )
 		) {
 			return;

@@ -49,19 +49,19 @@ class HooksTest extends MediaWikiTestCase {
 		return [
 			'anonymous user' => [
 				'expected' => [ NS_MAIN ],
-				'isAnon' => true,
+				'isRegistered' => false,
 				'userOptionsns' => [],
 				'namespacesToBeSearchedDefault' => [ NS_MAIN => true, NS_TALK => false ],
 			],
 			'registered user, no user options' => [
 				'expected' => [ NS_TALK ],
-				'isAnon' => false,
+				'isRegistered' => true,
 				'userOptions' => [],
 				'namespacesToBeSearchedDefault' => [ NS_MAIN => false, NS_TALK => true ],
 			],
 			'registered user, with options' => [
 				'expected' => [ NS_FILE ],
-				'isAnon' => false,
+				'isRegistered' => true,
 				'userOptions' => [ 'searchNs6' => 1, 'searchNs0' => 0, 'searchNs1' => 0 ],
 				'namespacesToBeSearchedDefault' => [ NS_MAIN => false, NS_TALK => true ],
 			],
@@ -72,23 +72,22 @@ class HooksTest extends MediaWikiTestCase {
 	 * @dataProvider getDefaultNamespacesRespectsTrueFalseProvider
 	 */
 	public function testGetDefaultNamespacesRespectsTrueFalse(
-		$expected, $isAnon, $userOptions, $namespacesToBeSearchedDefault
+		$expected, $isRegistered, $userOptions, $namespacesToBeSearchedDefault
 	) {
+		if ( !$isRegistered && $userOptions ) {
+			$this->fail( 'Anonymous users cant have user options' );
+		}
+
 		$this->setMwGlobals( [
 			'wgNamespacesToBeSearchedDefault' => $namespacesToBeSearchedDefault,
 		] );
-		if ( $isAnon ) {
-			if ( $userOptions ) {
-				$this->fail( 'Anonymous users cant have user options' );
-			}
-			$user = new User();
-		} else {
-			$user = $this->getTestUser()->getUser();
-			foreach ( $userOptions as $option => $value ) {
-				$user->setOption( $option, $value );
-			}
+
+		$user = $isRegistered ? $this->getTestUser()->getUser() : new User();
+		foreach ( $userOptions as $option => $value ) {
+			$user->setOption( $option, $value );
 		}
-		$this->assertSame( $isAnon, $user->isAnon() );
+
+		$this->assertSame( $isRegistered, $user->isRegistered() );
 		$this->assertSame( $expected, Hooks::getDefaultNamespaces( $user ) );
 	}
 
