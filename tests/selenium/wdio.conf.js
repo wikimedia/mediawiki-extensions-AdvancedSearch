@@ -27,6 +27,15 @@ exports.config = {
 		`${__dirname}/specs/*.js`
 	],
 
+	suites: {
+		daily: [
+			'./tests/selenium/specs/defaultNamespaces.js',
+			'./tests/selenium/specs/paginationLinks.js',
+			'./tests/selenium/specs/searchPage.js',
+			'./tests/selenium/specs/searchSubmit.js'
+		]
+	},
+
 	// ============
 	// Capabilities
 	// ============
@@ -88,13 +97,19 @@ exports.config = {
 	framework: 'mocha',
 
 	// Test reporter for stdout.
-	// See also: http://webdriver.io/guide/testrunner/reporters.html
-	reporters: [ 'spec', 'junit' ],
-	reporterOptions: {
-		junit: {
-			outputDir: logPath
-		}
-	},
+	// See:
+	// https://webdriver.io/docs/spec-reporter
+	// https://webdriver.io/docs/junit-reporter
+	reporters: [
+		'spec',
+		[ 'junit', {
+			outputDir: logPath,
+			outputFileFormat: function () {
+				const makeFilenameDate = new Date().toISOString().replace( /[:.]/g, '-' );
+				return `WDIO.xunit-${makeFilenameDate}.xml`;
+			}
+		} ]
+	],
 
 	// Options to be passed to Mocha.
 	// See the full list at http://mochajs.org/
