@@ -119,7 +119,7 @@
 	 * Decide if an field-value-combination should be listed in the preview
 	 *
 	 * @param {string} fieldId
-	 * @param {string|Array} value
+	 * @param {string|string[]} value
 	 * @return {boolean}
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview.prototype.skipFieldInPreview = function ( fieldId, value ) {
@@ -140,7 +140,7 @@
 	 * Create a tag item that represents the preview for a single field-value-combination
 	 *
 	 * @param {string} fieldId
-	 * @param {string} value
+	 * @param {string|string[]} value
 	 * @return {OO.ui.TagItemWidget}
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview.prototype.generateTag = function ( fieldId, value ) {
@@ -196,7 +196,7 @@
 	 * Format a value to be used in the preview
 	 *
 	 * @param {string} fieldId
-	 * @param {string|Array} value
+	 * @param {string|string[]} value
 	 * @return {string}
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview.prototype.formatValue = function ( fieldId, value ) {

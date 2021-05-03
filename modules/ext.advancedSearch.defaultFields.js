@@ -47,7 +47,7 @@
 
 	/**
 	 * @param {string} id
-	 * @return {string|boolean}
+	 * @return {string|false}
 	 */
 	function getOptionHelpMessage( id ) {
 		// The following messages are used here:
@@ -158,7 +158,6 @@
 		fieldCollection.add(
 			createField( {
 				id: 'phrase',
-				defaultValue: '',
 				formatter: function ( val ) {
 					return val;
 				},
@@ -215,7 +214,6 @@
 		fieldCollection.add(
 			createField( {
 				id: 'intitle',
-				defaultValue: '',
 				formatter: function ( val ) {
 					return 'intitle:' + optionalQuotes( val );
 				},
@@ -230,7 +228,6 @@
 		fieldCollection.add(
 			createField( {
 				id: 'subpageof',
-				defaultValue: '',
 				formatter: function ( val ) {
 					return 'subpageof:' + optionalQuotes( val );
 				},
@@ -292,7 +289,6 @@
 		fieldCollection.add(
 			createField( {
 				id: 'inlanguage',
-				defaultValue: '',
 				formatter: function ( val ) {
 					return 'inlanguage:' + val;
 				},
@@ -315,7 +311,6 @@
 		fieldCollection.add(
 			createField( {
 				id: 'filetype',
-				defaultValue: '',
 				formatter: function ( val ) {
 					switch ( val ) {
 						case 'bitmap':
@@ -376,7 +371,7 @@
 				id: 'sort',
 				defaultValue: 'relevance',
 				formatter: function () {
-					// Does not return a keyword
+					// Doesn't become a keyword in …&search=…, but it's own …&sort=… parameter
 					return '';
 				},
 				init: function ( state, config ) {

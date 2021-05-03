@@ -47,7 +47,7 @@
 
 		/**
 		 * @param {mw.libs.advancedSearch.SearchField} field
-		 * @return {mw.libs.advancedSearch.ui.TextInput}
+		 * @return {OO.ui.Widget}
 		 * @private
 		 */
 		createWidget: function ( field ) {
