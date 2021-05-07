@@ -42,7 +42,6 @@ class HooksTest extends MediaWikiTestCase {
 		Hooks::onGetPreferences( $this->newRegisteredUser(), $preferences );
 
 		$this->assertArrayHasKey( 'advancedsearch-disable', $preferences );
-		$this->assertFalse( $preferences['advancedsearch-disable']['default'] );
 	}
 
 	public function getDefaultNamespacesRespectsTrueFalseProvider() {
