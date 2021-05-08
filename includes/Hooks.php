@@ -160,7 +160,6 @@ class Hooks {
 			'type' => 'toggle',
 			'label-message' => 'advancedsearch-preference-disable',
 			'section' => 'searchoptions/advancedsearch',
-			'default' => $user->getBoolOption( 'advancedsearch-disable' ),
 			'help-message' => 'advancedsearch-preference-help',
 		];
 	}
