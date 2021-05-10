@@ -31,5 +31,19 @@
 	"advancedsearch-help-intitle": ";Description\n:Cerca paginas con titulos que contine iste parolas.\n;Sia attente al sequentes\n:* Le parolas es reducite a lor radices. Exemplo: Si se cerca ''auto'', le recerca trova equalmente ''autos''. Le recerca per radice depende del lingua.\n;Pagina de adjuta\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Intitle_and_incategory Intitle e incategory]\n;Equivalente syntactic in le recerca normal\n:Parolas con <code>intitle:</code> ante illos, per exemplo <code>intitle:regina</code>.",
 	"advancedsearch-help-subpageof": ";Description\n:Cerca paginas que es subpaginas de iste pagina.\n;Sia attente al sequentes\n:* Tu pote cercar subpaginas pro solmente un pagina al vice.\n:* Non oblida activar le spatios de nomines al quales limitar le recerca in le filtro de spatios de nomines.\n:* Non include le spatio de nomines ante le nomine del pagina in iste modo: <del><code>{{ns:project}}:Redirect</code></del>.\n;Pagina de adjuta\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#subpageof Subpageof]\n;Equivalente syntactic in le recerca normal\n:<code>subpageof:</code> sequite per le nomine de un pagina como <code>subpageof:Redirect</code>. Usa virgulettas si le nomine contine spatios: <code>subpageof:\"Appello a commentos\"</code>.",
 	"advancedsearch-help-deepcategory": ";Description\n: Cerca paginas que es in iste categorias e subcategorias.\n;Sia attente del sequentes\n:* Solmente le prime 5 nivellos de subcategoria essera includite in le recerca.\n:* Le numero de categorias es limitate a 256.\n:* Es possibile cercar paginas un plure categorias.\n;Pagina de adjuta\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Deepcategory Deepcategory]\n;Equivalente syntactic in le recerca normal\n: <code>deepcategory:</code> sequite per un nomine de categoria como <code>deepcategory:Help</code>. Usa virgulettas si le nomine contine spatios: <code>deepcategory:\"Categorias celate\"</code>.",
-	"advancedsearch-placeholder-exact-text": "\"catto ama capra\""
+	"advancedsearch-placeholder-exact-text": "\"catto ama capra\"",
+	"advancedsearch-inlanguage-default": "Selige lingua",
+	"advancedsearch-filetype-section-types": "Typos general de file",
+	"advancedsearch-filetype-section-image": "Formatos de imagine",
+	"advancedsearch-filetype-section-video": "Formatos video",
+	"advancedsearch-filetype-section-audio": "Formatos audio",
+	"advancedsearch-filetype-section-document": "Formatos de documento",
+	"advancedsearch-filetype-section-other": "Altere formatos",
+	"advancedsearch-filetype-default": "Selige typo de file",
+	"advancedsearch-filetype-bitmap": "Imagine",
+	"advancedsearch-filetype-drawing": "Designo",
+	"advancedsearch-filetype-audio": "Audio",
+	"advancedsearch-filetype-video": "Video",
+	"advancedsearch-filetype-office": "Officio",
+	"advancedsearch-filesize-equals": "equal a"
 }
