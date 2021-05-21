@@ -60,10 +60,14 @@
 	"advancedsearch-filesize-greater-than": "lớn hơn",
 	"advancedsearch-filesize-smaller-than": "nhỏ hơn",
 	"advancedsearch-sort-relevance": "Độ phù hợp",
+	"advancedsearch-sort-last-edit-asc": "Ngày sửa đổi – cũ nhất lên đầu",
 	"advancedsearch-sort-last-edit-desc": "Ngày sửa đổi - gần nhất lên đầu",
+	"advancedsearch-sort-create-timestamp-asc": "Ngày tạo – cũ nhất lên đầu",
 	"advancedsearch-sort-create-timestamp-desc": "Ngày tạo - gần nhất lên đầu",
 	"advancedsearch-sort-preview-relevance": "độ phù hợp",
+	"advancedsearch-sort-preview-last-edit-asc": "sửa đổi lâu ngày nhất",
 	"advancedsearch-sort-preview-last-edit-desc": "ngày sửa đổi",
+	"advancedsearch-sort-preview-create-timestamp-asc": "tạo lâu ngày nhất",
 	"advancedsearch-sort-preview-create-timestamp-desc": "ngày tạo",
 	"advancedsearch-namespaces-search-in": "Tìm trong:",
 	"advancedsearch-namespaces-remember": "Nhớ lựa chọn cho lần tìm kiếm sau",
@@ -74,5 +78,5 @@
 	"advancedsearch-namespaces-placeholder": "Thêm không gian tên…",
 	"prefs-advancedsearch": "Tìm kiếm nâng cao",
 	"advancedsearch-preference-help": "Tìm kiếm nâng cao thêm một mẫu vào trang Đặc biệt:Tìm kiếm. Nó cho phép bạn thực hiện các tìm kiếm đặc biệt, ngay cả khi bạn không biết cú pháp tìm kiếm nào. Nó cũng thay đổi cách bạn chọn vùng tên.",
-	"advancedsearch-preference-disable": "Không hiển thị giao diện Tìm kiếm nâng cao"
+	"advancedsearch-preference-disable": "Ẩn giao diện Tìm kiếm nâng cao khi sử dụng Đặc biệt:Tìm kiếm"
 }
