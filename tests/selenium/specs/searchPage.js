@@ -3,6 +3,7 @@
 const assert = require( 'assert' );
 const SearchPage = require( '../pageobjects/search.page' );
 const LoginPage = require( '../pageobjects/login.page' );
+const LogoutPage = require( '../pageobjects/logout.page' );
 
 describe( 'AdvancedSearch', function () {
 	const NAMESPACE_USER = '2';
@@ -123,7 +124,6 @@ describe( 'AdvancedSearch', function () {
 	} );
 
 	it( 'allows logged-in users to remember the selection of namespaces for future searches', function () {
-		this.timeout( 60000 );
 		SearchPage.open();
 		SearchPage.namespaces.toggleNamespacesPreview();
 		assert( !SearchPage.rememberSelection.isExisting() );
@@ -136,13 +136,13 @@ describe( 'AdvancedSearch', function () {
 		SearchPage.submitForm();
 		const current = SearchPage.getSelectedNamespaceIDs();
 		assert.deepStrictEqual( cache, current );
-		SearchPage.logOut.click();
-		// TODO use a better way to make sure logout is finished
-		browser.pause( 300 );
+		LogoutPage.open();
+		LogoutPage.logoutButton.click();
+		LogoutPage.open();
+		LogoutPage.logoutText.waitForDisplayed();
 	} );
 
 	it( 're-adds filetype namespace after search when file type option has been selected but namespace has been removed', function () {
-		this.timeout( 60000 );
 		SearchPage.open();
 		SearchPage.toggleInputFields();
 

@@ -165,7 +165,6 @@ class SearchPage extends Page {
 	get categorySuggestionsBox() { return $( '.mw-advancedSearch-deepCategory div[role="listbox"]' ); }
 	get templateSuggestionsBox() { return $( '.mw-advancedSearch-template div[role="listbox"]' ); }
 	get inputIcon() { return $( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-input .oo-ui-iconElement-icon' ); }
-	get logOut() { return $( '#pt-logout a' ); }
 
 	formWasSubmitted() {
 		return Object.prototype.hasOwnProperty.call( this.getQueryFromUrl(), 'profile' );
