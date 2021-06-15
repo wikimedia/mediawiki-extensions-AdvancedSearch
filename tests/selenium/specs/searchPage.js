@@ -89,7 +89,7 @@ describe( 'AdvancedSearch', function () {
 		SearchPage.namespaces.toggleNamespacesMenu();
 		const allLabels = SearchPage.namespaces.getAllLabelsFromMenu();
 		const selectedNamespaceLabels = SearchPage.namespaces.getAllTagLabels();
-		assert.deepEqual( selectedNamespaceLabels, allLabels );
+		assert.deepStrictEqual( selectedNamespaceLabels, allLabels );
 	} );
 
 	it( 'de-selects all namespaces when clicking "All" preset twice', function () {
@@ -100,7 +100,7 @@ describe( 'AdvancedSearch', function () {
 		SearchPage.allNamespacesPreset.click();
 
 		const selectedNamespaceLabels = SearchPage.namespaces.getAllTagLabels();
-		assert.deepEqual( selectedNamespaceLabels, [] );
+		assert.deepStrictEqual( selectedNamespaceLabels, [] );
 	} );
 
 	it( 'unselects "All" preset when a single namespace is unselected after preset had been clicked', function () {
@@ -135,7 +135,7 @@ describe( 'AdvancedSearch', function () {
 		const cache = SearchPage.getSelectedNamespaceIDs();
 		SearchPage.submitForm();
 		const current = SearchPage.getSelectedNamespaceIDs();
-		assert.deepEqual( cache, current );
+		assert.deepStrictEqual( cache, current );
 		SearchPage.logOut.click();
 		// TODO use a better way to make sure logout is finished
 		browser.pause( 300 );

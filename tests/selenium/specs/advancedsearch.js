@@ -129,7 +129,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.toggleInputFields();
 		SearchPage.searchTheseWords.put( 'test test2,' );
 
-		assert.deepEqual( SearchPage.searchTheseWords.getTagLabels(), [ 'test', 'test2' ] );
+		assert.deepStrictEqual( SearchPage.searchTheseWords.getTagLabels(), [ 'test', 'test2' ] );
 	} );
 
 	it( 'displays "One of these words" as a pill field', function () {
@@ -137,7 +137,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.toggleInputFields();
 		SearchPage.searchOneWord.put( 'testäöü test2äß, testme3\n' );
 
-		assert.deepEqual( SearchPage.searchOneWord.getTagLabels(), [ 'testäöü', 'test2äß', 'testme3' ] );
+		assert.deepStrictEqual( SearchPage.searchOneWord.getTagLabels(), [ 'testäöü', 'test2äß', 'testme3' ] );
 	} );
 
 	it( 'displays "None of these words" as a pill field', function () {
@@ -145,7 +145,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.toggleInputFields();
 		SearchPage.searchNotTheseWords.put( 'test test2,' );
 
-		assert.deepEqual( SearchPage.searchNotTheseWords.getTagLabels(), [ 'test', 'test2' ] );
+		assert.deepStrictEqual( SearchPage.searchNotTheseWords.getTagLabels(), [ 'test', 'test2' ] );
 	} );
 
 	it( 'submits the search on enter when there is no text in "These Words" field', function () {

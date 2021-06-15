@@ -79,7 +79,7 @@ describe( 'Advanced Search', function () {
 		expectedNamespaceIDs.sort();
 		browser.call( resetUserOptions );
 
-		assert.deepEqual( selectedNamespaceIDs, expectedNamespaceIDs );
+		assert.deepStrictEqual( selectedNamespaceIDs, expectedNamespaceIDs );
 	} );
 
 	it( 'selects the namespaces from the URL', function () {
@@ -91,7 +91,7 @@ describe( 'Advanced Search', function () {
 		expectedNamespaceIDs.sort();
 		browser.call( resetUserOptions );
 
-		assert.deepEqual( selectedNamespaceIDs, expectedNamespaceIDs );
+		assert.deepStrictEqual( selectedNamespaceIDs, expectedNamespaceIDs );
 	} );
 
 	it( 'displays the default namespaces of the user and wiki and that the default checkbox is selected', function () {
@@ -107,6 +107,6 @@ describe( 'Advanced Search', function () {
 		selectedNamespaceIDs.sort();
 		namespaceOptions.sort();
 		assert( SearchPage.default.isSelected() );
-		assert.deepEqual( namespaceOptions, selectedNamespaceIDs );
+		assert.deepStrictEqual( namespaceOptions, selectedNamespaceIDs );
 	} );
 } );
