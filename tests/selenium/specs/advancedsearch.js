@@ -96,12 +96,6 @@ describe( 'Advanced Search', function () {
 		} );
 	}
 
-	it( 'has the advanced search extension installed', function () {
-		SpecialPage.open();
-
-		assert( SpecialPage.advancedSearchExtensionLink.isDisplayed() );
-	} );
-
 	it( 'inserts advanced search elements on search page', function () {
 		SearchPage.open();
 
