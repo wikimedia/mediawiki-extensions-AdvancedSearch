@@ -6,7 +6,6 @@
 		"wikimedia/mediawiki"
 	],
 	"rules": {
-		"one-var": "off",
 		"vars-on-top": "off",
 		"max-len": "off",
 		"mediawiki/msg-doc": "warn"
