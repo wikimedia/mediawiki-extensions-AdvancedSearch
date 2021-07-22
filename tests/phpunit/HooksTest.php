@@ -18,7 +18,7 @@ use User;
  */
 class HooksTest extends MediaWikiTestCase {
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		// Dummy language code makes sure no actual localization is loaded
