@@ -85,5 +85,5 @@
 	"advancedsearch-namespaces-placeholder": "加入命名空間…",
 	"prefs-advancedsearch": "進階搜尋",
 	"advancedsearch-preference-help": "進階搜尋可添加表單至 Special:Search page。這能讓您即使不瞭解搜尋語法，也能執行特定搜尋。這也會變更命名空間選擇的方式。",
-	"advancedsearch-preference-disable": "不要顯示進階搜尋介面"
+	"advancedsearch-preference-disable": "當使用 Special:Search 時不要顯示進階搜尋介面"
 }
