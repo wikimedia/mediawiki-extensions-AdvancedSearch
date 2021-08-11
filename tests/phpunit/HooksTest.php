@@ -82,8 +82,9 @@ class HooksTest extends MediaWikiTestCase {
 		] );
 
 		$user = $isRegistered ? $this->getTestUser()->getUser() : new User();
+		$userOptionsManager = $this->getServiceContainer()->getUserOptionsManager();
 		foreach ( $userOptions as $option => $value ) {
-			$user->setOption( $option, $value );
+			$userOptionsManager->setOption( $user, $option, $value );
 		}
 
 		$this->assertSame( $isRegistered, $user->isRegistered() );
@@ -236,9 +237,10 @@ class HooksTest extends MediaWikiTestCase {
 	 */
 	private function newRegisteredUser() {
 		$user = new User();
-		$user->setOption( 'searchNs0', true );
-		$user->setOption( 'searchNs6', true );
-		$user->setOption( 'searchNs10', true );
+		$userOptionsManager = $this->getServiceContainer()->getUserOptionsManager();
+		$userOptionsManager->setOption( $user, 'searchNs0', true );
+		$userOptionsManager->setOption( $user, 'searchNs6', true );
+		$userOptionsManager->setOption( $user, 'searchNs10', true );
 		return $user;
 	}
 
