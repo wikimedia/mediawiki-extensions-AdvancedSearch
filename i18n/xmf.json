@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Narazeni"
+		]
+	},
+	"advancedsearch-field-not": "თე ზიტყვეფი ვარი",
+	"advancedsearch-field-hastemplate": "ხასჷლეფი ათე თანგეფით",
+	"advancedsearch-field-inlanguage": "ხასჷლეფი ათე ნინაშა",
+	"advancedsearch-field-filetype": "ფაილიშ ტიპი",
+	"advancedsearch-inlanguage-default": "გეგშაგორით ნინა",
+	"advancedsearch-filetype-drawing": "ნახანტი",
+	"advancedsearch-filetype-audio": "აუდიო",
+	"advancedsearch-filetype-video": "ვიდეო",
+	"advancedsearch-filetype-office": "ოფისი"
+}
