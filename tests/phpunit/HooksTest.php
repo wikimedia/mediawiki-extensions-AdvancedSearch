@@ -4,7 +4,8 @@ namespace AdvancedSearch\Tests;
 
 use AdvancedSearch\Hooks;
 use HashConfig;
-use MediaWikiTestCase;
+use MediaWiki\User\UserOptionsLookup;
+use MediaWikiIntegrationTestCase;
 use MimeAnalyzer;
 use OutputPage;
 use RequestContext;
@@ -16,7 +17,7 @@ use User;
  *
  * @license GPL-2.0-or-later
  */
-class HooksTest extends MediaWikiTestCase {
+class HooksTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
@@ -115,7 +116,9 @@ class HooksTest extends MediaWikiTestCase {
 
 	public function testSpecialPageHookHandler_userOptedOut() {
 		$user = $this->createMock( User::class );
-		$user->method( 'getBoolOption' )->willReturn( true );
+		$userOptionsLookup = $this->createMock( UserOptionsLookup::class );
+		$userOptionsLookup->method( 'getBoolOption' )->willReturn( true );
+		$this->setService( 'UserOptionsLookup', $userOptionsLookup );
 		$specialPage = $this->createMock( SpecialPage::class );
 		$specialPage->method( 'getUser' )->willReturn( $user );
 		$specialPage->expects( $this->never() )->method( 'getOutput' );
