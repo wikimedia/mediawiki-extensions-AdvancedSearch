@@ -5,7 +5,8 @@
 			"Dansita",
 			"Fringio",
 			"Ontsed",
-			"Sakretsu"
+			"Sakretsu",
+			"Stefano"
 		]
 	},
 	"advancedsearch-desc": "Accesso rapido alle funzioni di ricerca avanzata in [[Special:Search]]",
@@ -57,7 +58,9 @@
 	"advancedsearch-filesize-greater-than": "maggiore di",
 	"advancedsearch-filesize-smaller-than": "minore di",
 	"advancedsearch-sort-relevance": "Rilevanza",
+	"advancedsearch-sort-last-edit-asc": "Data di modifica – meno recenti in alto",
 	"advancedsearch-sort-last-edit-desc": "Data di modifica – quella attuale in cima",
+	"advancedsearch-sort-create-timestamp-asc": "Data di creazione – meno recenti in alto",
 	"advancedsearch-sort-create-timestamp-desc": "Data di creazione – quella attuale in cima",
 	"advancedsearch-sort-preview-relevance": "rilevanza",
 	"advancedsearch-sort-preview-last-edit-desc": "data modifica",
