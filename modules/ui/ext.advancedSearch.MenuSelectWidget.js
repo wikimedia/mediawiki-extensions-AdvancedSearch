@@ -61,4 +61,44 @@ MenuSelectWidget.prototype.createMenu = function () {
 	this.addItems( items );
 };
 
+/**
+ * @param {string} query
+ * @param {string} [mode='prefix']
+ * @return {Function}
+ */
+MenuSelectWidget.prototype.getItemMatcher = function ( query, mode ) {
+	if ( mode && mode !== 'prefix' ) {
+		// Fall back to the original behavior when not in the default "prefix" mode
+		return MenuSelectWidget.super.prototype.getItemMatcher.apply( this, arguments );
+	}
+
+	const normalizeForMatching = ( text ) => OO.ui.SelectWidget.static.normalizeForMatching( text )
+		// Additional normalization to match the normalization in wgNamespaceIds
+		.replace( /[\s_]+/g, '_' );
+
+	const normalizedQuery = normalizeForMatching( query );
+	if ( !normalizedQuery ) {
+		// Match everything, same default behavior as in OO.ui.SelectWidget.getItemMatcher
+		return () => true;
+	}
+
+	const goodIds = {};
+	// Assume the query was numeric, this just won't do anything in case it was not
+	goodIds[ normalizedQuery ] = true;
+
+	const namespaceIds = mw.config.get( 'wgNamespaceIds' );
+	for ( const name in namespaceIds ) {
+		// Prefix match with the canonical, normalized namespace names in wgNamespaceIds
+		if ( name.indexOf( normalizedQuery ) === 0 ) {
+			goodIds[ namespaceIds[ name ] ] = true;
+		}
+	}
+
+	return function ( item ) {
+		return item.getData() in goodIds ||
+			// This is the default behavior from OO.ui.SelectWidget.getItemMatcher
+			normalizeForMatching( item.getMatchText() ).indexOf( normalizedQuery ) === 0;
+	};
+};
+
 module.exports = MenuSelectWidget;
