@@ -74,7 +74,6 @@ class SearchPage extends Page {
 
 		this.searchImageWidth = new TextInputField( '#advancedSearchField-filew' );
 		this.searchImageHeight = new TextInputField( '#advancedSearchField-fileh' );
-
 	}
 
 	get FILE_NAMESPACE() { return '6'; }

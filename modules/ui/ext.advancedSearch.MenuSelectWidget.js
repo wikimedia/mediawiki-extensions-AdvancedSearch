@@ -11,7 +11,6 @@
 	 * @cfg {jQuery} [$overlay] A jQuery object serving as overlay for popups
 	 */
 	mw.libs.advancedSearch.ui.MenuSelectWidget = function ( store, config ) {
-
 		this.store = store;
 		this.config = config;
 		this.namespaces = config.namespaces;

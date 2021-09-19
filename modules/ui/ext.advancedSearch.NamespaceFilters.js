@@ -69,6 +69,7 @@
 		} );
 		return namespaces;
 	};
+
 	/**
 	 * @inheritdoc
 	 */
@@ -167,6 +168,7 @@
 			}
 		} );
 	};
+
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.removeHighlighFromTags = function () {
 		this.getItems().forEach( function ( tag ) {
 			tag.$element.removeClass( 'selected' );
@@ -184,6 +186,7 @@
 			return el !== namespace;
 		} );
 	};
+
 	/**
 	 * Add or remove a tag for the chosen menu item based on checkbox state
 	 *

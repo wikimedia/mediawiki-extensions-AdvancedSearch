@@ -19,7 +19,6 @@
 			formatter: function () {
 				return 'baz';
 			}
-
 		} );
 		assert.ok( field instanceof SearchField );
 		assert.strictEqual( field.id, 'test' );
