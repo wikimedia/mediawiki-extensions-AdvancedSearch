@@ -12,8 +12,7 @@
 	 *
 	 * @param {mw.libs.advancedSearch.dm.SearchModel} store
 	 * @param {Object} config
-	 * @cfg {Object} [namespaceIcons] Namespace id => icon name
-	 * @cfg {Object} [namespaces] Namespace id => Namespace label (similar to mw.config.get( 'wgFormattedNamespaces' ) )
+	 * @cfg {Object} [namespaces={}] Namespace id => Namespace label (similar to mw.config.get( 'wgFormattedNamespaces' ) )
 	 */
 	mw.libs.advancedSearch.ui.NamespaceFilters = function ( store, config ) {
 		config = $.extend( {
