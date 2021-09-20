@@ -6,12 +6,12 @@
 	 *
 	 * @constructor
 	 * @param {mw.libs.advancedSearch.dm.SearchModel} store
-	 * @param {Object} [config] Configuration object
+	 * @param {Object} config
+	 * @cfg {Object} namespaces
 	 * @cfg {jQuery} [$overlay] A jQuery object serving as overlay for popups
 	 */
 	mw.libs.advancedSearch.ui.MenuSelectWidget = function ( store, config ) {
 
-		config = config || {};
 		this.store = store;
 		this.config = config;
 		this.namespaces = config.namespaces;
