@@ -67,6 +67,9 @@
 			"i18n"
 		]
 	},
+	"DefaultUserOptions": {
+		"advancedsearch-disable": false
+	},
 	"ResourceModules": {
 		"ext.advancedSearch.initialstyles": {
 			"styles": [
