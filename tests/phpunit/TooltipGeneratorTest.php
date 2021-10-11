@@ -3,7 +3,7 @@
 namespace AdvancedSearch\Tests;
 
 use AdvancedSearch\TooltipGenerator;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 use Message;
 use MessageLocalizer;
 
@@ -13,7 +13,7 @@ use MessageLocalizer;
  * @license GPL-2.0-or-later
  * @author Thiemo Kreuz
  */
-class TooltipGeneratorTest extends MediaWikiTestCase {
+class TooltipGeneratorTest extends MediaWikiIntegrationTestCase {
 
 	public function testGenerateToolTips() {
 		$messageLocalizer = $this->createMock( MessageLocalizer::class );
