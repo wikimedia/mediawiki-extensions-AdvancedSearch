@@ -4,6 +4,11 @@
 			"Ajeje Brazorf"
 		]
 	},
+	"advancedsearch-field-filetype": "Tipu di file",
 	"advancedsearch-filetype-bitmap": "Mmàggini",
-	"advancedsearch-filetype-audio": "Àudiu"
+	"advancedsearch-filetype-audio": "Àudiu",
+	"advancedsearch-namespaces-preset-all": "Tutti",
+	"advancedsearch-namespaces-preset-default": "Pridifinutu",
+	"advancedsearch-namespaces-preset-discussion": "Discussioni",
+	"advancedsearch-namespaces-placeholder": "Agghiunci namespace..."
 }
