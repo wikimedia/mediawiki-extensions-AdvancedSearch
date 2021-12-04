@@ -19,6 +19,11 @@ use User;
  */
 class HooksTest extends MediaWikiIntegrationTestCase {
 
+	/**
+	 * @var Hooks
+	 */
+	private $hook;
+
 	protected function setUp(): void {
 		parent::setUp();
 
@@ -36,11 +41,13 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			'wgNamespacesToBeSearchedDefault' => [ NS_MAIN => true ],
 			'wgServer' => '//hooks.test'
 		] );
+		$this->hook = new Hooks();
 	}
 
 	public function testGetPreferencesHookHandler() {
 		$preferences = [];
-		Hooks::onGetPreferences( $this->newRegisteredUser(), $preferences );
+
+		$this->hook->onGetPreferences( $this->newRegisteredUser(), $preferences );
 
 		$this->assertArrayHasKey( 'advancedsearch-disable', $preferences );
 	}
@@ -103,7 +110,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			->getPage( 'Search' );
 		$special->setContext( $context );
 
-		Hooks::onSpecialSearchResultsPrepend( $special, $output, '' );
+		$this->hook->onSpecialSearchResultsPrepend( $special, $output, '' );
 
 		$this->assertStringContainsString( 'mw-search-spinner', $output->getHTML() );
 	}
@@ -111,7 +118,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 	public function testSpecialPageHookHandler_wrongSpecialPage() {
 		$specialPage = $this->createMock( SpecialPage::class );
 		$specialPage->expects( $this->never() )->method( 'getUser' );
-		Hooks::onSpecialPageBeforeExecute( $specialPage, null );
+		$this->hook->onSpecialPageBeforeExecute( $specialPage, null );
 	}
 
 	public function testSpecialPageHookHandler_userOptedOut() {
@@ -122,7 +129,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		$specialPage = $this->createMock( SpecialPage::class );
 		$specialPage->method( 'getUser' )->willReturn( $user );
 		$specialPage->expects( $this->never() )->method( 'getOutput' );
-		Hooks::onSpecialPageBeforeExecute( $specialPage, null );
+		$this->hook->onSpecialPageBeforeExecute( $specialPage, null );
 	}
 
 	public function testSpecialPageBeforeExecuteHookHandler() {
@@ -134,7 +141,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			[ 'ns0' => 1 ]
 		);
 
-		Hooks::onSpecialPageBeforeExecute( $special, null );
+		$this->hook->onSpecialPageBeforeExecute( $special, null );
 
 		// Ensure that no namespace-related redirect was performed
 		$this->assertSame( '', $special->getOutput()->getRedirect() );
@@ -163,7 +170,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			[ 'search' => 'test' ]
 		);
 
-		$ret = Hooks::onSpecialPageBeforeExecute( $special, null );
+		$ret = $this->hook->onSpecialPageBeforeExecute( $special, null );
 		$this->assertFalse( $ret );
 		$this->assertSame(
 			'http://hooks.test/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1',
@@ -181,7 +188,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			[ 'search' => 'test' ]
 		);
 
-		$ret = Hooks::onSpecialPageBeforeExecute( $special, null );
+		$ret = $this->hook->onSpecialPageBeforeExecute( $special, null );
 		$this->assertFalse( $ret );
 
 		$this->assertSame(
@@ -200,7 +207,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			[ 'search' => 'test' ]
 		);
 
-		$ret = Hooks::onSpecialPageBeforeExecute( $special, null );
+		$ret = $this->hook->onSpecialPageBeforeExecute( $special, null );
 		$this->assertFalse( $ret );
 
 		$this->assertSame(
