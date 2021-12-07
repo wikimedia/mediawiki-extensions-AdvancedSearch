@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hakim1bal"
+			"Hakim1bal",
+			"Brahim-essaidi"
 		]
 	},
+	"advancedsearch-inlanguage-default": "ⵙⵜⵢ ⵜⵓⵜⵍⴰⵢⵜ",
 	"advancedsearch-sort-preview-last-edit-desc": "ⵙⵏⴼⵍ ⴰⵙⴰⴽⵓⴷ"
 }
