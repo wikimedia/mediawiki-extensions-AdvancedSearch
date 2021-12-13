@@ -53,6 +53,7 @@
 	"advancedsearch-filesize-equals": "ꯑꯗꯨꯒꯥ ꯃꯥꯟꯅꯩ",
 	"advancedsearch-filesize-greater-than": "ꯑꯗꯨꯗꯒꯤ ꯍꯦꯟꯕꯥ",
 	"advancedsearch-filesize-smaller-than": "ꯑꯗꯨꯗꯒꯤ ꯍꯟꯊꯕꯥ",
+	"advancedsearch-sort-last-edit-desc": "ꯁꯦꯝꯒꯠ-ꯁꯥꯒꯠꯈꯤꯕ ꯆꯩꯆꯠ – ꯍꯧꯖꯤꯛꯀꯤꯅ ꯃꯇꯣꯟꯗ",
 	"advancedsearch-sort-preview-last-edit-desc": "ꯆꯩꯆꯠ ꯁꯦꯝꯗꯣꯛꯄ",
 	"advancedsearch-sort-preview-create-timestamp-desc": "ꯁꯥꯈꯤꯕꯥ ꯆꯩꯆꯠ",
 	"advancedsearch-namespaces-search-in": "ꯊꯤꯖꯤꯟꯕꯥ",
@@ -61,6 +62,6 @@
 	"advancedsearch-namespaces-preset-default": "ꯑꯃꯥꯍꯦꯛꯇꯥ",
 	"advancedsearch-namespaces-preset-general-help": "ꯃꯌꯥꯝꯒꯤ ꯃꯇꯦꯡ ꯂꯧꯐꯝ",
 	"advancedsearch-namespaces-preset-discussion": "ꯈꯟꯅꯥ ꯅꯩꯅꯕꯥ",
-	"advancedsearch-namespaces-placeholder": "ꯃꯤꯡ ꯏꯕꯝꯒꯤ ꯃꯐꯝ ꯍꯥꯞꯆꯤꯟꯂꯨ",
+	"advancedsearch-namespaces-placeholder": "ꯃꯤꯡ ꯏꯕꯝꯒꯤ ꯃꯐꯝ ꯍꯥꯞꯆꯤꯟꯂꯨ...",
 	"prefs-advancedsearch": "ꯈꯨꯃꯥꯡ ꯆꯥꯎꯁꯤꯟꯅ ꯊꯤꯕꯥ"
 }

@@ -2,11 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Iyuqciyang",
-			"Songyanzhi"
+			"Songyanzhi",
+			"Akamycoco"
 		]
 	},
 	"advancedsearch-field-inlanguage": "Pnatis nu kari nii:",
 	"advancedsearch-inlanguage-default": "Gmao kari",
+	"advancedsearch-filetype-drawing": "rmisuh matas",
+	"advancedsearch-filetype-audio": "onggaku",
+	"advancedsearch-filetype-video": "sasaw samaw",
 	"advancedsearch-namespaces-preset-all": "Kana",
 	"advancedsearch-namespaces-preset-discussion": "Empprngaw"
 }

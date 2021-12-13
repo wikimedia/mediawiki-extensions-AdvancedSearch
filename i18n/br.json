@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Dishual",
-			"Fulup"
+			"Fulup",
+			"Adriendelucca"
 		]
 	},
-	"advancedsearch-options-pane-head": "Arventennoù araokaet",
+	"advancedsearch-options-pane-head": "Klask araokaet:",
 	"advancedsearch-optgroup-text": "Klask er bajenn destenn",
 	"advancedsearch-optgroup-structure": "Framm",
 	"advancedsearch-optgroup-files": "Siloù ha skeudennoù",
