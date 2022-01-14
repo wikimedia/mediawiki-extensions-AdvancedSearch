@@ -48,12 +48,12 @@
 		lookup.onLookupMenuChoose( item );
 
 		var tags = lookup.getItems();
-		assert.ok( Array.isArray( tags ) );
+		assert.true( Array.isArray( tags ) );
 		assert.strictEqual( tags.length, 2 );
 		assert.strictEqual( tags[ 0 ].getData(), 'Preexisting' );
 		assert.strictEqual( tags[ 1 ].getData(), 'My Template' );
 
-		assert.ok( store.storeField.withArgs( 'hastemplate', [ 'Preexisting', 'My Template' ] ).calledOnce );
+		assert.true( store.storeField.withArgs( 'hastemplate', [ 'Preexisting', 'My Template' ] ).calledOnce );
 
 		assert.strictEqual( lookup.input.getValue(), '' );
 	} );
@@ -66,9 +66,8 @@
 
 		var lookupField = new MultiselectLookup( store, config );
 
-		assert.ok( lookupField );
-		assert.ok( store.connect.calledOnce );
-		assert.ok( setValueSpy.withArgs( [ 'Burg' ] ).calledOnce );
+		assert.true( store.connect.calledOnce );
+		assert.true( setValueSpy.withArgs( [ 'Burg' ] ).calledOnce );
 		assert.deepEqual( lookupField.getValue(), [ 'Burg' ] );
 	} );
 
@@ -85,7 +84,7 @@
 
 	QUnit.test( 'Mixin method overridden to prevent problems', function ( assert ) {
 		var lookupField = new MultiselectLookup( store, config );
-		assert.notOk( lookupField.isReadOnly() );
+		assert.false( lookupField.isReadOnly() );
 	} );
 
 	QUnit.test( 'API response processed correctly', function ( assert ) {
@@ -111,7 +110,7 @@
 		];
 
 		var result = lookupField.getLookupMenuOptionsFromData( apiData );
-		assert.ok( Array.isArray( result ) );
+		assert.true( Array.isArray( result ) );
 		assert.strictEqual( result.length, 3 );
 
 		assert.strictEqual( result[ 0 ].getLabel(), 'Jochen' );
@@ -148,7 +147,7 @@
 		];
 
 		var result = lookupField.getLookupMenuOptionsFromData( apiData );
-		assert.ok( Array.isArray( result ) );
+		assert.true( Array.isArray( result ) );
 		assert.strictEqual( result.length, 1 );
 
 		assert.strictEqual( result[ 0 ].getLabel(), 'Jens' );
@@ -191,7 +190,7 @@
 		$( lookupField.$input ).val( 'Burg' );
 
 		var result = lookupField.getLookupRequest();
-		assert.ok( getStub.calledOnce );
+		assert.true( getStub.calledOnce );
 
 		assert.strictEqual( result.state(), 'resolved' );
 		result.done( function ( doneData ) {
@@ -209,11 +208,11 @@
 
 		var result = lookupField.getLookupRequest();
 
-		assert.notOk( getStub.called );
+		assert.false( getStub.called );
 
 		assert.strictEqual( result.state(), 'rejected' );
 		result.fail( function () {
-			assert.ok( true, 'A failed promise is returned' );
+			assert.true( true, 'A failed promise is returned' );
 		} );
 	} );
 

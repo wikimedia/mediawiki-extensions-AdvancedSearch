@@ -20,7 +20,7 @@
 				return 'baz';
 			}
 		} );
-		assert.ok( field instanceof SearchField );
+		assert.true( field instanceof SearchField );
 		assert.strictEqual( field.id, 'test' );
 		assert.strictEqual( field.init(), 'foo' );
 		assert.strictEqual( field.layout(), 'bar' );

@@ -26,7 +26,7 @@ describe( 'Advanced Search', function () {
 				Object.keys( userOptions ).forEach( function ( key ) {
 					if ( userOptions[ key ] &&
 						key.indexOf( 'searchNs' ) === 0 &&
-						searchNamespaces.indexOf( key + '=1' ) === -1
+						!searchNamespaces.includes( key + '=1' )
 					) {
 						searchNamespaces += '|' + key + '=0';
 					}

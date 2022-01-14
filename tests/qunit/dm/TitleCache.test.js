@@ -15,25 +15,25 @@
 		var cache = new TitleCache();
 		cache.set( 'foo', 'OK' );
 
-		assert.ok( cache.has( 'foo' ) );
-		assert.ok( cache.has( 'Foo' ) );
-		assert.notOk( cache.has( 'bar' ) );
+		assert.true( cache.has( 'foo' ) );
+		assert.true( cache.has( 'Foo' ) );
+		assert.false( cache.has( 'bar' ) );
 	} );
 
 	QUnit.test( 'Different namespace does make a difference', function ( assert ) {
 		var cache = new TitleCache();
 		cache.set( 'Template:Foo', 'OK' );
 
-		assert.ok( cache.has( 'Template:Foo' ) );
-		assert.notOk( cache.has( 'User:Foo' ) );
+		assert.true( cache.has( 'Template:Foo' ) );
+		assert.false( cache.has( 'User:Foo' ) );
 	} );
 
 	QUnit.test( 'Different file name extension does make a difference', function ( assert ) {
 		var cache = new TitleCache();
 		cache.set( 'File name.jpg', 'OK' );
 
-		assert.ok( cache.has( 'File name.jpg' ) );
-		assert.notOk( cache.has( 'File name.svg' ) );
+		assert.true( cache.has( 'File name.jpg' ) );
+		assert.false( cache.has( 'File name.svg' ) );
 	} );
 
 }() );
