@@ -44,9 +44,9 @@
 		providerFunction.returns( namespaceIDs );
 		namespaceIdResult = presetProviders.getNamespaceIdsFromProvider( 'my-new-func' );
 
-		assert.ok( providerFunction.calledOnce );
+		assert.true( providerFunction.calledOnce );
 		assert.deepEqual( providerFunction.firstCall.args[ 0 ], [ '0', '1', '2', '12', '911' ] );
-		assert.notEqual( namespaceIdResult, namespaceIDs );
+		assert.false( namespaceIdResult === namespaceIDs );
 		assert.deepEqual( namespaceIdResult, namespaceIDs );
 	} );
 
@@ -83,9 +83,9 @@
 		providerFunction.returns( namespaceIDs );
 		namespaceIdResult = presetProviders.getNamespaceIdsFromProvider( 'invalid' );
 
-		assert.ok( providerFunction.calledOnce );
+		assert.true( providerFunction.calledOnce );
 		assert.deepEqual( namespaceIdResult, [] );
-		assert.ok( warningLogger.calledWith( 'AdvancedSearch namespace preset provider "invalid" returned invalid namespace ID' ) );
+		assert.true( warningLogger.calledWith( 'AdvancedSearch namespace preset provider "invalid" returned invalid namespace ID' ) );
 	} );
 
 	QUnit.test( 'Numeric IDs from provider are converted to string IDs', function ( assert ) {
@@ -102,7 +102,7 @@
 		providerFunction.returns( namespaceIDs );
 		namespaceIdResult = presetProviders.getNamespaceIdsFromProvider( 'invalid' );
 
-		assert.ok( providerFunction.calledOnce );
+		assert.true( providerFunction.calledOnce );
 		assert.deepEqual( namespaceIdResult, [ '0', '1', '12' ] );
 	} );
 

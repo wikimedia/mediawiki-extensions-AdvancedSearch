@@ -155,7 +155,7 @@ describe( 'AdvancedSearch', function () {
 
 		SearchPage.submitForm();
 
-		assert( SearchPage.getSelectedNamespaceIDs().indexOf( SearchPage.FILE_NAMESPACE ) !== -1 );
+		assert( SearchPage.getSelectedNamespaceIDs().includes( SearchPage.FILE_NAMESPACE ) );
 	} );
 
 	it( 'marks a namespace preset checkbox when all namespaces behind it are present in the namespace search bar', function () {

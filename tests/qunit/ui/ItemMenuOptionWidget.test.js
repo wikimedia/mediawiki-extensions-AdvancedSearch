@@ -8,7 +8,7 @@
 			data: '2',
 			label: 'User'
 		} );
-		assert.ok( menuOption.checkboxWidget );
+		assert.true( menuOption.checkboxWidget instanceof mw.libs.advancedSearch.ui.CheckboxInputWidget );
 		assert.strictEqual( menuOption.getData(), '2' );
 		assert.strictEqual( menuOption.getLabel(), 'User' );
 	} );

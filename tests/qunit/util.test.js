@@ -8,18 +8,18 @@
 	QUnit.module( 'mw.libs.advancedSearch.util' );
 
 	QUnit.test( 'First array contains all the values from the second', function ( assert ) {
-		assert.ok( advancedSearchUtil.arrayContains( [ '1', '2', '3', '4' ], [ '3', '2' ] ), 'first array contains all from second array' );
-		assert.notOk( advancedSearchUtil.arrayContains( [ '1', '2' ], [ '1', '2', '3' ] ), 'second array contains all from first but not the other way around' );
-		assert.notOk( advancedSearchUtil.arrayContains( [ '4', '5' ], [ '1', '2', '3' ] ), 'arrays contain completely different values' );
-		assert.notOk( advancedSearchUtil.arrayContains( [ '1', '2', '3', '4' ], [ 3, '2' ] ), 'arrays contain same values but of different type' );
+		assert.true( advancedSearchUtil.arrayContains( [ '1', '2', '3', '4' ], [ '3', '2' ] ), 'first array contains all from second array' );
+		assert.false( advancedSearchUtil.arrayContains( [ '1', '2' ], [ '1', '2', '3' ] ), 'second array contains all from first but not the other way around' );
+		assert.false( advancedSearchUtil.arrayContains( [ '4', '5' ], [ '1', '2', '3' ] ), 'arrays contain completely different values' );
+		assert.false( advancedSearchUtil.arrayContains( [ '1', '2', '3', '4' ], [ 3, '2' ] ), 'arrays contain same values but of different type' );
 	} );
 
 	QUnit.test( 'Can handle empty array as first input', function ( assert ) {
-		assert.notOk( advancedSearchUtil.arrayContains( [ ], [ '1', '2', '3' ] ) );
+		assert.false( advancedSearchUtil.arrayContains( [ ], [ '1', '2', '3' ] ) );
 	} );
 
 	QUnit.test( 'Can handle empty array as second input', function ( assert ) {
-		assert.ok( advancedSearchUtil.arrayContains( [ '1', '2' ], [ ] ) );
+		assert.true( advancedSearchUtil.arrayContains( [ '1', '2' ], [ ] ) );
 	} );
 
 	QUnit.test( 'Merges two arrays using only the unique values', function ( assert ) {
@@ -32,15 +32,15 @@
 	} );
 
 	QUnit.test( 'Verifies two arrays are identical', function ( assert ) {
-		assert.ok( advancedSearchUtil.arrayEquals( [ '1', '3', 'bla' ], [ '1', '3', 'bla' ] ) );
+		assert.true( advancedSearchUtil.arrayEquals( [ '1', '3', 'bla' ], [ '1', '3', 'bla' ] ) );
 	} );
 
 	QUnit.test( 'Two arrays are not identical when one is longer than the other', function ( assert ) {
-		assert.notOk( advancedSearchUtil.arrayEquals( [ '1', '3', 'bla', '' ], [ '1', '3', 'bla' ] ) );
+		assert.false( advancedSearchUtil.arrayEquals( [ '1', '3', 'bla', '' ], [ '1', '3', 'bla' ] ) );
 	} );
 
 	QUnit.test( 'Two arrays are not identical when they hold the same values but in different order', function ( assert ) {
-		assert.notOk( advancedSearchUtil.arrayEquals( [ '1', '3', 'bla' ], [ '3', '1', 'bla' ] ) );
+		assert.false( advancedSearchUtil.arrayEquals( [ '1', '3', 'bla' ], [ '3', '1', 'bla' ] ) );
 	} );
 
 }() );

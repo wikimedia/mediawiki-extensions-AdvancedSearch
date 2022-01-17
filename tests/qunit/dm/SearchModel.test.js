@@ -70,16 +70,16 @@
 	QUnit.test( 'When checking with undefined or empty value, hasOptionChange returns true for unset properties without defaults', function ( assert ) {
 		var model = new SearchModel();
 
-		assert.notOk( model.hasFieldChanged( 'not', undefined ) );
-		assert.notOk( model.hasFieldChanged( 'not', '' ) );
-		assert.ok( model.hasFieldChanged( 'not', 'not empty' ) );
+		assert.false( model.hasFieldChanged( 'not', undefined ) );
+		assert.false( model.hasFieldChanged( 'not', '' ) );
+		assert.true( model.hasFieldChanged( 'not', 'not empty' ) );
 	} );
 
 	QUnit.test( 'When checking with unset value, hasOptionChange compares to default value', function ( assert ) {
 		var model = new SearchModel( [], { not: 'something' } );
 
-		assert.notOk( model.hasFieldChanged( 'not', 'something' ) );
-		assert.ok( model.hasFieldChanged( 'not', 'anything' ) );
+		assert.false( model.hasFieldChanged( 'not', 'something' ) );
+		assert.true( model.hasFieldChanged( 'not', 'anything' ) );
 	} );
 
 	QUnit.test( 'When there is no change, hasOptionChange returns false', function ( assert ) {
@@ -87,8 +87,8 @@
 
 		model.storeField( 'not', 'something' );
 
-		assert.notOk( model.hasFieldChanged( 'not', 'something' ) );
-		assert.ok( model.hasFieldChanged( 'not', 'anything' ) );
+		assert.false( model.hasFieldChanged( 'not', 'something' ) );
+		assert.true( model.hasFieldChanged( 'not', 'anything' ) );
 	} );
 
 	function createModelWithValues() {
@@ -177,34 +177,34 @@
 	QUnit.test( 'Image and Video file types support dimensions', function ( assert ) {
 		var model = new SearchModel();
 
-		assert.notOk( model.filetypeSupportsDimensions(), 'Images are not supported when filetype is not set' );
+		assert.false( model.filetypeSupportsDimensions(), 'Images are not supported when filetype is not set' );
 
 		model.storeField( 'filetype', 'image' );
-		assert.ok( model.filetypeSupportsDimensions(), 'General image type must be supported' );
+		assert.true( model.filetypeSupportsDimensions(), 'General image type must be supported' );
 
 		model.storeField( 'filetype', 'video' );
-		assert.ok( model.filetypeSupportsDimensions(), 'General video type must be supported' );
+		assert.true( model.filetypeSupportsDimensions(), 'General video type must be supported' );
 
 		model.storeField( 'filetype', 'bitmap' );
-		assert.ok( model.filetypeSupportsDimensions(), 'File type of bitmap must be supported' );
+		assert.true( model.filetypeSupportsDimensions(), 'File type of bitmap must be supported' );
 
 		model.storeField( 'filetype', 'drawing' );
-		assert.ok( model.filetypeSupportsDimensions(), 'File type of drawing must be supported' );
+		assert.true( model.filetypeSupportsDimensions(), 'File type of drawing must be supported' );
 
 		model.storeField( 'filetype', 'image/jpeg' );
-		assert.ok( model.filetypeSupportsDimensions(), 'Image MIME type must be supported' );
+		assert.true( model.filetypeSupportsDimensions(), 'Image MIME type must be supported' );
 
 		model.storeField( 'filetype', 'image/svg+xml', 'Complex image MIME types must be supported' );
-		assert.ok( model.filetypeSupportsDimensions() );
+		assert.true( model.filetypeSupportsDimensions() );
 
 		model.storeField( 'filetype', 'video/ogg', 'Video MIME types must be supported' );
-		assert.ok( model.filetypeSupportsDimensions() );
+		assert.true( model.filetypeSupportsDimensions() );
 
 		model.storeField( 'filetype', 'audio', 'Audio must not support dimensions' );
-		assert.notOk( model.filetypeSupportsDimensions() );
+		assert.false( model.filetypeSupportsDimensions() );
 
 		model.storeField( 'filetype', 'audio/wav', 'Audio MIME types must not support dimensions' );
-		assert.notOk( model.filetypeSupportsDimensions() );
+		assert.false( model.filetypeSupportsDimensions() );
 	} );
 
 	QUnit.test( 'Setting namespace to existing value does not trigger emitUpdate', function ( assert ) {
@@ -214,7 +214,7 @@
 		var updateSpy = sandbox.spy( model, 'emitUpdate' );
 		model.setNamespaces( [ '1', '2', '3' ] );
 
-		assert.notOk( updateSpy.called );
+		assert.false( updateSpy.called );
 	} );
 
 	QUnit.test( 'Changing namespaces triggers emitUpdate', function ( assert ) {
@@ -222,10 +222,10 @@
 		var updateSpy = sandbox.spy( model, 'emitUpdate' );
 
 		model.setNamespaces( [ '1', '2', '3' ] );
-		assert.ok( updateSpy.calledOnce );
+		assert.true( updateSpy.calledOnce );
 
 		model.setNamespaces( [ '1', '2' ] );
-		assert.ok( updateSpy.calledTwice );
+		assert.true( updateSpy.calledTwice );
 	} );
 
 	QUnit.test( 'Storing an option triggers emitUpdate', function ( assert ) {
@@ -234,7 +234,7 @@
 
 		model.storeField( 'aaa', 'fff' );
 
-		assert.ok( updateSpy.calledOnce );
+		assert.true( updateSpy.calledOnce );
 	} );
 
 	QUnit.test( 'Storing an option with the same scalar value does not trigger emitUpdate', function ( assert ) {
@@ -245,7 +245,7 @@
 
 		model.storeField( 'lorem', 'ipsum' );
 
-		assert.notOk( updateSpy.called );
+		assert.false( updateSpy.called );
 	} );
 
 	QUnit.test( 'Storing an option with the same array value does not trigger emitUpdate', function ( assert ) {
@@ -256,7 +256,7 @@
 
 		model.storeField( 'lorem', [ 'hakuna', 'matata' ] );
 
-		assert.notOk( updateSpy.called );
+		assert.false( updateSpy.called );
 	} );
 
 	QUnit.test( 'Removing an option triggers emitUpdate', function ( assert ) {
@@ -267,7 +267,7 @@
 
 		model.removeField( 'lorem' );
 
-		assert.ok( updateSpy.calledOnce );
+		assert.true( updateSpy.calledOnce );
 	} );
 
 	QUnit.test( 'Removing an unset option does not trigger emitUpdate', function ( assert ) {
@@ -278,7 +278,7 @@
 
 		model.removeField( 'amet' );
 
-		assert.notOk( updateSpy.called );
+		assert.false( updateSpy.called );
 	} );
 
 }() );

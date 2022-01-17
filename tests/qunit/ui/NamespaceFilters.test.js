@@ -77,10 +77,10 @@
 			} );
 
 		model.setNamespaces( [ '1', '2', '3' ] );
-		assert.notOk( filter.getMenu().getItemFromLabel( 'Article' ).isSelected() );
-		assert.ok( filter.getMenu().getItemFromLabel( 'Talk' ).isSelected() );
-		assert.ok( filter.getMenu().getItemFromLabel( 'User' ).isSelected() );
-		assert.ok( filter.getMenu().getItemFromLabel( 'UserTalk' ).isSelected() );
+		assert.false( filter.getMenu().getItemFromLabel( 'Article' ).isSelected() );
+		assert.true( filter.getMenu().getItemFromLabel( 'Talk' ).isSelected() );
+		assert.true( filter.getMenu().getItemFromLabel( 'User' ).isSelected() );
+		assert.true( filter.getMenu().getItemFromLabel( 'UserTalk' ).isSelected() );
 	} );
 
 }() );

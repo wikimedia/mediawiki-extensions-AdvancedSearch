@@ -50,8 +50,8 @@
 			}
 		} );
 
-		assert.ok( warningLogger.calledWith( 'Provider function blackhole not registered to mw.libs.advancedSearch.dm.NamespacePresetProviders' ) );
-		assert.notOk( Object.prototype.hasOwnProperty.call( presets.presets, 'blackhole' ) );
+		assert.true( warningLogger.calledWith( 'Provider function blackhole not registered to mw.libs.advancedSearch.dm.NamespacePresetProviders' ) );
+		assert.false( Object.prototype.hasOwnProperty.call( presets.presets, 'blackhole' ) );
 	} );
 
 	QUnit.test( 'Passing a malformed preset config creates no namespace preset', function ( assert ) {
@@ -64,8 +64,8 @@
 			}
 		} );
 
-		assert.ok( warningLogger.calledWith( 'No defined namespaces or provider function for borken in $wgAdvancedSearchNamespacePresets' ) );
-		assert.notOk( Object.prototype.hasOwnProperty.call( presets.presets, 'borken' ) );
+		assert.true( warningLogger.calledWith( 'No defined namespaces or provider function for borken in $wgAdvancedSearchNamespacePresets' ) );
+		assert.false( Object.prototype.hasOwnProperty.call( presets.presets, 'borken' ) );
 	} );
 
 	QUnit.test( 'Passing a disabled preset config creates no namespace preset', function ( assert ) {
@@ -78,7 +78,7 @@
 			}
 		} );
 
-		assert.notOk( Object.prototype.hasOwnProperty.call( presets.presets, 'turnedoff' ) );
+		assert.false( Object.prototype.hasOwnProperty.call( presets.presets, 'turnedoff' ) );
 	} );
 
 	QUnit.test( 'Passing a preset config omitting "enabled" creates no namespace preset', function ( assert ) {
@@ -90,7 +90,7 @@
 			}
 		} );
 
-		assert.notOk( Object.prototype.hasOwnProperty.call( presets.presets, 'undecided' ) );
+		assert.false( Object.prototype.hasOwnProperty.call( presets.presets, 'undecided' ) );
 	} );
 
 	QUnit.test( 'Selecting namespace adds its preset', function ( assert ) {
@@ -119,8 +119,8 @@
 				}
 			} );
 
-		assert.notOk( Object.prototype.hasOwnProperty.call( presets.presets, 'emptypreset' ) );
-		assert.ok( warningLogger.calledWith( 'Empty namespaces for emptypreset in $wgAdvancedSearchNamespacePresets' ) );
+		assert.false( Object.prototype.hasOwnProperty.call( presets.presets, 'emptypreset' ) );
+		assert.true( warningLogger.calledWith( 'Empty namespaces for emptypreset in $wgAdvancedSearchNamespacePresets' ) );
 	} );
 
 	QUnit.test( 'Presets with invalid namespace definitions log a warning', function ( assert ) {
@@ -136,8 +136,8 @@
 				}
 			} );
 
-		assert.notOk( Object.prototype.hasOwnProperty.call( presets.presets, 'notvalid' ) );
-		assert.ok( warningLogger.calledWith( 'AdvancedSearch namespace preset "notvalid" contains unknown namespace ID' ) );
+		assert.false( Object.prototype.hasOwnProperty.call( presets.presets, 'notvalid' ) );
+		assert.true( warningLogger.calledWith( 'AdvancedSearch namespace preset "notvalid" contains unknown namespace ID' ) );
 	} );
 
 	QUnit.test( 'Preset is initially selected and stays when adding unrelated values', function ( assert ) {

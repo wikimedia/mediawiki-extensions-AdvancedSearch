@@ -36,11 +36,11 @@
 	QUnit.test( 'Store data subscribed to and synced initially', function ( assert ) {
 		var updatePreviewSpy = sandbox.spy( SearchPreview.prototype, 'updatePreview' );
 
-		var searchPreview = new SearchPreview( store, config );
+		// eslint-disable-next-line no-new
+		new SearchPreview( store, config );
 
-		assert.ok( searchPreview );
-		assert.ok( store.connect.calledOnce );
-		assert.ok( updatePreviewSpy.calledOnce );
+		assert.true( store.connect.calledOnce );
+		assert.true( updatePreviewSpy.calledOnce );
 	} );
 
 	QUnit.test( 'Store state is reflected in preview', function ( assert ) {
@@ -56,34 +56,34 @@
 		var $pills = $( '.mw-advancedSearch-searchPreview-previewPill', searchPreview.$element );
 		assert.strictEqual( $pills.length, 3 );
 
-		assert.ok( store.getField.calledTwice );
+		assert.true( store.getField.calledTwice );
 		assert.strictEqual( generateTagSpy.callCount, 3 );
 
-		assert.ok( generateTagSpy.withArgs( 'somename', 'field one value' ).calledOnce );
-		assert.ok( generateTagSpy.withArgs( 'another', 'field two value' ).calledOnce );
+		assert.true( generateTagSpy.withArgs( 'somename', 'field one value' ).calledOnce );
+		assert.true( generateTagSpy.withArgs( 'another', 'field two value' ).calledOnce );
 	} );
 
 	QUnit.test( 'Fields are correctly selected for preview', function ( assert ) {
 		var searchPreview = new SearchPreview( store, config );
 
-		assert.notOk( searchPreview.skipFieldInPreview( 'plain', 'searchme' ) );
-		assert.notOk( searchPreview.skipFieldInPreview( 'filetype', 'bitmap' ) );
-		assert.notOk( searchPreview.skipFieldInPreview( 'phrase', [ 'alpha', 'omega' ] ) );
-		assert.notOk( searchPreview.skipFieldInPreview( 'fileh', [ '<', '30' ] ) );
-		assert.notOk( searchPreview.skipFieldInPreview( 'filew', [ '>', '1400' ] ) );
-		assert.notOk( searchPreview.skipFieldInPreview( 'filew', [ '', '600' ] ) );
+		assert.false( searchPreview.skipFieldInPreview( 'plain', 'searchme' ) );
+		assert.false( searchPreview.skipFieldInPreview( 'filetype', 'bitmap' ) );
+		assert.false( searchPreview.skipFieldInPreview( 'phrase', [ 'alpha', 'omega' ] ) );
+		assert.false( searchPreview.skipFieldInPreview( 'fileh', [ '<', '30' ] ) );
+		assert.false( searchPreview.skipFieldInPreview( 'filew', [ '>', '1400' ] ) );
+		assert.false( searchPreview.skipFieldInPreview( 'filew', [ '', '600' ] ) );
 
-		assert.ok( searchPreview.skipFieldInPreview( 'plain', '' ) );
-		assert.ok( searchPreview.skipFieldInPreview( 'plain', null ) );
-		assert.ok( searchPreview.skipFieldInPreview( '', null ) );
-		assert.ok( searchPreview.skipFieldInPreview( 'phrase', [] ) );
+		assert.true( searchPreview.skipFieldInPreview( 'plain', '' ) );
+		assert.true( searchPreview.skipFieldInPreview( 'plain', null ) );
+		assert.true( searchPreview.skipFieldInPreview( '', null ) );
+		assert.true( searchPreview.skipFieldInPreview( 'phrase', [] ) );
 
-		assert.ok( searchPreview.skipFieldInPreview( 'fileh', null ) );
-		assert.ok( searchPreview.skipFieldInPreview( 'fileh', [] ) );
-		assert.ok( searchPreview.skipFieldInPreview( 'fileh', [ '>', null ] ) );
-		assert.ok( searchPreview.skipFieldInPreview( 'filew', null ) );
-		assert.ok( searchPreview.skipFieldInPreview( 'filew', [] ) );
-		assert.ok( searchPreview.skipFieldInPreview( 'filew', [ '>', null ] ) );
+		assert.true( searchPreview.skipFieldInPreview( 'fileh', null ) );
+		assert.true( searchPreview.skipFieldInPreview( 'fileh', [] ) );
+		assert.true( searchPreview.skipFieldInPreview( 'fileh', [ '>', null ] ) );
+		assert.true( searchPreview.skipFieldInPreview( 'filew', null ) );
+		assert.true( searchPreview.skipFieldInPreview( 'filew', [] ) );
+		assert.true( searchPreview.skipFieldInPreview( 'filew', [ '>', null ] ) );
 	} );
 
 	QUnit.test( 'Tag is generated', function ( assert ) {
@@ -93,10 +93,10 @@
 
 		var element = tag.$element[ 0 ];
 
-		assert.ok( messageStub.calledOnce );
+		assert.true( messageStub.calledOnce );
 		assert.strictEqual( element.title, 'my field value' );
 		// https://phabricator.wikimedia.org/T172781 prevents a semantic way to check for draggable
-		assert.ok( $( element ).hasClass( 'oo-ui-draggableElement-undraggable' ) );
+		assert.true( $( element ).hasClass( 'oo-ui-draggableElement-undraggable' ) );
 		assert.strictEqual( $( '.mw-advancedSearch-searchPreview-content', element ).html(), '<bdi>my field value</bdi>' );
 		assert.strictEqual( $( '.oo-ui-labelElement-label span', element ).html(), 'my label:' );
 	} );
@@ -125,7 +125,7 @@
 		var tag = searchPreview.generateTag( 'somename', 'my field value' );
 
 		tag.remove();
-		assert.ok( store.removeField.withArgs( 'somename' ).calledOnce );
+		assert.true( store.removeField.withArgs( 'somename' ).calledOnce );
 	} );
 
 	QUnit.test( 'Showing rendered pills', function ( assert ) {
