@@ -41,29 +41,29 @@ describe( 'Advanced Search submit', function () {
 
 	it( 'no namespaces preview is shown in expanded state', function () {
 		SearchPage.open();
-		SearchPage.namespaces.toggleNamespacesPreview();
-		SearchPage.namespaces.toggleNamespacesMenu();
+		SearchPage.expandNamespacesPreview();
+		SearchPage.expandNamespacesMenu();
 		SearchPage.namespaces.clickOnNamespace( 4 );
 		assert( !SearchPage.namespacePreviewItems.isExisting(), 'No preview pill elements should exist' );
 	} );
 
 	it( 'shows namespaces preview in collapsed state', function () {
 		SearchPage.open();
-		SearchPage.namespaces.toggleNamespacesPreview();
-		SearchPage.namespaces.toggleNamespacesMenu();
+		SearchPage.expandNamespacesPreview();
+		SearchPage.expandNamespacesMenu();
 		SearchPage.namespaces.clickOnNamespace( 4 );
-		SearchPage.namespaces.toggleNamespacesPreview();
-		browser.waitUntil( SearchPage.namespacePreviewIsCollapsed, 5000 );
+		SearchPage.namespacesPreview.click();
+		SearchPage.namespacesMenu.waitForDisplayed( { reverse: true } );
 		assert( SearchPage.namespacePreviewItems.isExisting(), 'Preview pills should be shown' );
 	} );
 
 	it( 'collapses namespaces preview after submission', function () {
 		SearchPage.open();
-		SearchPage.namespaces.toggleNamespacesPreview();
-		SearchPage.namespaces.toggleNamespacesMenu();
+		SearchPage.expandNamespacesPreview();
+		SearchPage.expandNamespacesMenu();
 		SearchPage.namespaces.clickOnNamespace( 4 );
 		SearchPage.submitForm();
-		assert( SearchPage.namespacePreviewIsCollapsed() );
+		assert( !SearchPage.namespacesMenu.isDisplayed() );
 	} );
 
 } );

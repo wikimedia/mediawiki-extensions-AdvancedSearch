@@ -1,6 +1,7 @@
 'use strict';
-const Page = require( 'wdio-mediawiki/Page' );
-const url = require( 'url' );
+const Page = require( 'wdio-mediawiki/Page' ),
+	Util = require( 'wdio-mediawiki/Util' ),
+	url = require( 'url' );
 
 class TextInputField {
 	constructor( selector ) {
@@ -92,6 +93,22 @@ class SearchPage extends Page {
 			}
 		};
 	}
+
+	get namespacesPreview() { return $( '.mw-advancedSearch-expandablePane-namespaces .mw-advancedSearch-expandablePane-button .oo-ui-indicator-down' ); }
+	get namespacesMenu() { return $( '.mw-advancedSearch-namespaceFilter .oo-ui-inputWidget-input' ); }
+	get namespaceOptionMain() { return $( '.mw-advancedSearch-namespace-0' ); }
+
+	expandNamespacesPreview() {
+		this.namespacesPreview.waitForDisplayed();
+		this.namespacesPreview.click();
+		this.namespacesMenu.waitForDisplayed();
+	}
+	expandNamespacesMenu() {
+		this.namespacesMenu.waitForDisplayed();
+		this.namespacesMenu.click();
+		this.namespaceOptionMain.waitForDisplayed();
+	}
+
 	get namespaces() {
 		return {
 			removeFileNamespace: function () {
@@ -105,12 +122,6 @@ class SearchPage extends Page {
 						element.click();
 					} );
 				browser.keys( '\uE00C' ); // Close menu by hitting the Escape key
-			},
-			toggleNamespacesMenu() {
-				$( '.mw-advancedSearch-namespaceFilter .oo-ui-inputWidget-input' ).click();
-			},
-			toggleNamespacesPreview() {
-				$( '.mw-advancedSearch-expandablePane-namespaces .mw-advancedSearch-expandablePane-button a' ).click();
 			},
 			clickOnNamespace: function ( nsId ) {
 				const menuItem = $( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget .mw-advancedSearch-namespace-' + nsId );
@@ -173,10 +184,6 @@ class SearchPage extends Page {
 		return $( '.mw-advancedSearch-expandablePane-options > .oo-ui-indicatorElement .oo-ui-indicatorElement-indicator.oo-ui-indicator-down' ).isExisting();
 	}
 
-	namespacePreviewIsCollapsed() {
-		return $( '.mw-advancedSearch-expandablePane-namespaces > .oo-ui-indicatorElement .oo-ui-indicatorElement-indicator.oo-ui-indicator-down' ).isExisting();
-	}
-
 	getSearchQueryFromUrl() {
 		return this.getQueryFromUrl().search;
 	}
@@ -219,7 +226,7 @@ class SearchPage extends Page {
 	}
 
 	waitForAdvancedSearchToLoad() {
-		$( '.mw-advancedSearch-container' ).waitForDisplayed( 5000 );
+		Util.waitForModuleState( 'ext.advancedSearch.init' );
 	}
 
 	submitForm() {

@@ -46,63 +46,44 @@ describe( 'Advanced Search', function () {
 		} );
 	}
 
-	function resetUserOptions() {
-		const client = new Bot();
-		return client.loginGetEditToken( {
-			username: browser.config.mwUser,
-			password: browser.config.mwPwd,
-			apiUrl: browser.config.baseUrl + '/api.php'
-		} ).then( () => {
-			return client.request( {
-				action: 'options',
-				reset: true,
-				token: client.editToken
-			} ).catch( ( err ) => {
-				log( err );
-			} );
-		} ).catch( ( err ) => {
-			log( err );
-		} );
-	}
+	beforeEach( function () {
+		browser.deleteCookies();
+	} );
 
 	it( 'selects the default namespaces', function () {
-		browser.call( resetUserOptions );
+		const namespaceOptions = [ '0', '1', '2', '10' ];
 		browser.call( () => {
-			return setSearchNamespaceOptions( [ '0', '1', '2', '10' ] );
+			return setSearchNamespaceOptions( namespaceOptions );
 		} );
-		UserLoginPage.login( browser.config.mwUser, browser.config.mwPwd );
+		UserLoginPage.loginAdmin();
 		SearchPage.open();
-		SearchPage.namespaces.toggleNamespacesPreview();
-		const selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs(),
-			expectedNamespaceIDs = [ '0', '1', '2', '10' ];
+		SearchPage.expandNamespacesPreview();
+		const selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs();
 		selectedNamespaceIDs.sort();
-		expectedNamespaceIDs.sort();
-		browser.call( resetUserOptions );
+		namespaceOptions.sort();
 
-		assert.deepStrictEqual( selectedNamespaceIDs, expectedNamespaceIDs );
+		assert.deepStrictEqual( selectedNamespaceIDs, namespaceOptions );
 	} );
 
 	it( 'selects the namespaces from the URL', function () {
 		SearchPage.open( { ns0: 1, ns1: 1, ns2: 1, ns10: 1 } );
-		SearchPage.namespaces.toggleNamespacesPreview();
+		SearchPage.expandNamespacesPreview();
 		const selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs(),
 			expectedNamespaceIDs = [ '0', '1', '2', '10' ];
 		selectedNamespaceIDs.sort();
 		expectedNamespaceIDs.sort();
-		browser.call( resetUserOptions );
 
 		assert.deepStrictEqual( selectedNamespaceIDs, expectedNamespaceIDs );
 	} );
 
 	it( 'displays the default namespaces of the user and wiki and that the default checkbox is selected', function () {
 		const namespaceOptions = [ '15', '4', '5', '6' ];
-		browser.call( resetUserOptions );
 		browser.call( () => {
 			return setSearchNamespaceOptions( namespaceOptions );
 		} );
-		UserLoginPage.login( browser.config.mwUser, browser.config.mwPwd );
+		UserLoginPage.loginAdmin();
 		SearchPage.open();
-		SearchPage.namespaces.toggleNamespacesPreview();
+		SearchPage.expandNamespacesPreview();
 		const selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs();
 		selectedNamespaceIDs.sort();
 		namespaceOptions.sort();
