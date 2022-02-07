@@ -11,6 +11,7 @@
 			"Huji",
 			"Jeeputer",
 			"Ladsgroup",
+			"LordProfo",
 			"Mahdy Saffar",
 			"Mardetanha",
 			"Obzord"
@@ -61,6 +62,7 @@
 	"advancedsearch-sort-create-timestamp-asc": "تاریخ ایجاد – جدیدتر، بالاتر",
 	"advancedsearch-sort-create-timestamp-desc": "تاریخ ایجاد – جدیدتر بالاتر",
 	"advancedsearch-sort-preview-relevance": "ارتباط",
+	"advancedsearch-sort-preview-last-edit-asc": "حداقل اخیراً ویرایش شده است",
 	"advancedsearch-sort-preview-last-edit-desc": "تاریخ ویرایش",
 	"advancedsearch-sort-preview-create-timestamp-desc": "تاریخ ایجاد",
 	"advancedsearch-namespaces-search-in": "جستجو در:",
