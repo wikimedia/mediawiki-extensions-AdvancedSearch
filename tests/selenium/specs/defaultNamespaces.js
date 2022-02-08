@@ -1,10 +1,10 @@
 'use strict';
 
-const assert = require( 'assert' );
-const SearchPage = require( '../pageobjects/search.page' );
-const UserLoginPage = require( 'wdio-mediawiki/LoginPage' );
-const log = require( 'semlog' ).log; // https://github.com/fannon/semlog/
-const Bot = require( 'mwbot' ); // https://github.com/Fannon/mwbot
+const assert = require( 'assert' ),
+	SearchPage = require( '../pageobjects/search.page' ),
+	UserLoginPage = require( 'wdio-mediawiki/LoginPage' ),
+	log = require( 'semlog' ).log, // https://github.com/fannon/semlog/
+	Bot = require( 'mwbot' ); // https://github.com/Fannon/mwbot
 
 describe( 'Advanced Search', function () {
 	function setSearchNamespaceOptions( namespaceIds ) {
@@ -55,9 +55,12 @@ describe( 'Advanced Search', function () {
 		browser.call( () => {
 			return setSearchNamespaceOptions( namespaceOptions );
 		} );
+
 		UserLoginPage.loginAdmin();
 		SearchPage.open();
+
 		SearchPage.expandNamespacesPreview();
+
 		const selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs();
 		selectedNamespaceIDs.sort();
 		namespaceOptions.sort();
@@ -67,7 +70,9 @@ describe( 'Advanced Search', function () {
 
 	it( 'selects the namespaces from the URL', function () {
 		SearchPage.open( { ns0: 1, ns1: 1, ns2: 1, ns10: 1 } );
+
 		SearchPage.expandNamespacesPreview();
+
 		const selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs(),
 			expectedNamespaceIDs = [ '0', '1', '2', '10' ];
 		selectedNamespaceIDs.sort();
@@ -81,12 +86,16 @@ describe( 'Advanced Search', function () {
 		browser.call( () => {
 			return setSearchNamespaceOptions( namespaceOptions );
 		} );
+
 		UserLoginPage.loginAdmin();
 		SearchPage.open();
+
 		SearchPage.expandNamespacesPreview();
+
 		const selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs();
 		selectedNamespaceIDs.sort();
 		namespaceOptions.sort();
+
 		assert( SearchPage.default.isSelected() );
 		assert.deepStrictEqual( namespaceOptions, selectedNamespaceIDs );
 	} );

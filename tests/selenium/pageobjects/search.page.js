@@ -1,5 +1,6 @@
 'use strict';
-const Page = require( 'wdio-mediawiki/Page' ),
+const Api = require( 'wdio-mediawiki/Api' ),
+	Page = require( 'wdio-mediawiki/Page' ),
 	Util = require( 'wdio-mediawiki/Util' ),
 	url = require( 'url' );
 
@@ -135,21 +136,6 @@ class SearchPage extends Page {
 				browser.keys( '\uE00C' ); // Close menu by hitting the Escape key
 				return labels;
 			},
-			getAllLabelsForDisabledItemsInMenu: function () {
-				// open the menu to insert the items in the DOM
-				$( '.mw-advancedSearch-namespaceFilter .oo-ui-inputWidget-input' ).click();
-				const labels = $$( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"]' ).reduce(
-					( acc, element ) => {
-						if ( element.getAttribute( 'aria-disabled' ) === 'true' ) {
-							acc.push( element.getText() );
-						}
-						return acc;
-					},
-					[]
-				);
-				browser.keys( '\uE00C' ); // Close menu by hitting the Escape key
-				return labels;
-			},
 			getAllTagLabels: function () {
 				return $$( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-content div[class^="mw-advancedSearch-namespace-"]' ).map(
 					( element ) => { return element.getText(); }
@@ -241,7 +227,40 @@ class SearchPage extends Page {
 
 	waitForSearchFieldsToLoad() {
 		// Wait for the last search field to be visible as an indicator that all search field widgets have been built
-		$( '#advancedSearchField-filetype' ).waitForExist( 5000 );
+		$( '#advancedSearchField-filetype' ).waitForExist();
+	}
+
+	addExamplePages( num ) {
+		browser.call( async () => {
+			const animals = [ 'cat', 'goat' ],
+				bot = await Api.bot();
+
+			for ( let i = 1; i <= num; i++ ) {
+				await bot.edit(
+					'Search Test Page ' + ( i + 1 ),
+					'The big brown ' + animals[ i % 2 ] + ' jumped over the lazy dog.'
+				);
+			}
+		} );
+	}
+
+	addPage( title, text ) {
+		browser.call( async () => {
+			const bot = await Api.bot();
+
+			return await bot.edit(
+				title,
+				text
+			);
+		} );
+	}
+
+	addCategory( title ) {
+		this.addPage( 'Category:' + title, 'test' );
+	}
+
+	addTemplate( title ) {
+		this.addPage( 'Template:' + title, 'test' );
 	}
 }
 module.exports = new SearchPage();

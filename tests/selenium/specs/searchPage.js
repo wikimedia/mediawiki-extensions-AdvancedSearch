@@ -9,19 +9,16 @@ describe( 'AdvancedSearch', function () {
 
 	beforeEach( function () {
 		browser.deleteCookies();
+		SearchPage.open();
 	} );
 
 	it( 'inserts advanced search icon elements', function () {
-		SearchPage.open();
-
 		SearchPage.toggleInputFields();
 
 		assert( SearchPage.searchInfoIcon.isDisplayed() );
 	} );
 
 	it( 'inserts content in icon popups', function () {
-		SearchPage.open();
-
 		SearchPage.toggleInputFields();
 		const infoPopups = SearchPage.infoPopup;
 		SearchPage.searchInfoIcons.forEach( function ( popupIcon, idx ) {
@@ -43,9 +40,6 @@ describe( 'AdvancedSearch', function () {
 	} );
 
 	it( 'submits the search taking into consideration all entered criteria', function () {
-		this.timeout( 60000 );
-		SearchPage.open();
-
 		SearchPage.toggleInputFields();
 		SearchPage.searchTheseWords.put( 'old,' );
 		SearchPage.searchNotTheseWords.put( 'new ' );
@@ -63,21 +57,17 @@ describe( 'AdvancedSearch', function () {
 	} );
 
 	it( 'adds the namespace "File" and dimension fields are visible when searching for files of type image', function () {
-		SearchPage.open();
-
 		SearchPage.toggleInputFields();
 		SearchPage.searchFileType.selectImageType();
+
 		assert( SearchPage.namespaceTagsInCollapsedMode.filter( function ( tag ) {
 			return tag.getText() === 'File';
 		} ).length !== 0 );
-
 		assert( SearchPage.searchImageWidth.isDisplayed() );
 		assert( SearchPage.searchImageHeight.isDisplayed() );
 	} );
 
 	it( 'hides dimension fields when searching for files of type audio', function () {
-		SearchPage.open();
-
 		SearchPage.toggleInputFields();
 		SearchPage.searchFileType.selectAudioType();
 
@@ -86,31 +76,30 @@ describe( 'AdvancedSearch', function () {
 	} );
 
 	it( 'selects all namespaces when clicking "All" preset', function () {
-		SearchPage.open();
 		SearchPage.expandNamespacesPreview();
-
 		SearchPage.allNamespacesPreset.click();
 		SearchPage.expandNamespacesMenu();
-		const allLabels = SearchPage.namespaces.getAllLabelsFromMenu();
-		const selectedNamespaceLabels = SearchPage.namespaces.getAllTagLabels();
-		assert.deepStrictEqual( selectedNamespaceLabels, allLabels );
+
+		assert.deepStrictEqual(
+			SearchPage.namespaces.getAllTagLabels(),
+			SearchPage.namespaces.getAllLabelsFromMenu()
+		);
 	} );
 
 	it( 'de-selects all namespaces when clicking "All" preset twice', function () {
-		SearchPage.open();
 		SearchPage.expandNamespacesPreview();
 		// clears the namespace bar
 		SearchPage.allNamespacesPreset.click();
 		SearchPage.allNamespacesPreset.click();
 
-		const selectedNamespaceLabels = SearchPage.namespaces.getAllTagLabels();
-		assert.deepStrictEqual( selectedNamespaceLabels, [] );
+		assert.deepStrictEqual(
+			SearchPage.namespaces.getAllTagLabels(),
+			[]
+		);
 	} );
 
 	it( 'unselects "All" preset when a single namespace is unselected after preset had been clicked', function () {
-		SearchPage.open();
 		SearchPage.expandNamespacesPreview();
-
 		SearchPage.allNamespacesPreset.click();
 		SearchPage.namespaces.removeFileNamespace();
 
@@ -118,7 +107,6 @@ describe( 'AdvancedSearch', function () {
 	} );
 
 	it( 'automatically selects "All" preset when selecting all namespaces from the list of all namespaces', function () {
-		SearchPage.open();
 		SearchPage.expandNamespacesPreview();
 		SearchPage.expandNamespacesMenu();
 		SearchPage.namespaces.selectAll();
@@ -127,7 +115,6 @@ describe( 'AdvancedSearch', function () {
 	} );
 
 	it( 'does not allow to remember the selection of namespaces for anonymous users', function () {
-		SearchPage.open();
 		SearchPage.expandNamespacesPreview();
 
 		assert( !SearchPage.rememberSelection.isExisting() );
@@ -136,17 +123,18 @@ describe( 'AdvancedSearch', function () {
 	it( 'allows logged-in users to remember the selection of namespaces for future searches', function () {
 		UserLoginPage.loginAdmin();
 		SearchPage.open();
+
 		SearchPage.expandNamespacesPreview();
 		SearchPage.generalHelpPreset.click();
 		SearchPage.rememberSelection.click();
 		const cache = SearchPage.getSelectedNamespaceIDs();
+
 		SearchPage.submitForm();
-		const current = SearchPage.getSelectedNamespaceIDs();
-		assert.deepStrictEqual( cache, current );
+
+		assert.deepStrictEqual( cache, SearchPage.getSelectedNamespaceIDs() );
 	} );
 
 	it( 're-adds filetype namespace after search when file type option has been selected but namespace has been removed', function () {
-		SearchPage.open();
 		SearchPage.toggleInputFields();
 
 		SearchPage.searchTheseWords.put( 'dog' );
@@ -162,33 +150,38 @@ describe( 'AdvancedSearch', function () {
 	} );
 
 	it( 'marks a namespace preset checkbox when all namespaces behind it are present in the namespace search bar', function () {
-		SearchPage.open();
 		SearchPage.expandNamespacesPreview();
 		SearchPage.generalHelpPreset.click();
+
 		SearchPage.submitForm();
+
 		assert( SearchPage.generalHelpPreset.isSelected() );
 	} );
 
 	it( 'adds/removes the namespace tag when the namespace option is clicked', function () {
-		SearchPage.open();
 		SearchPage.expandNamespacesPreview();
 		SearchPage.expandNamespacesMenu();
 		SearchPage.namespaces.clickOnNamespace( NAMESPACE_USER );
+
 		assert( SearchPage.namespaceTags.filter( function ( tag ) {
 			return tag.getText() === 'User';
 		} ).length !== 0 );
+
 		SearchPage.namespaces.clickOnNamespace( NAMESPACE_USER );
+
 		assert( SearchPage.namespaceTags.filter( function ( tag ) {
 			return tag.getText() === 'User';
 		} ).length === 0 );
 	} );
 
 	it( 'changes the namespace filter input icon when menu is toggled', function () {
-		SearchPage.open();
 		SearchPage.expandNamespacesPreview();
-		assert( SearchPage.inputIcon.getAttribute( 'class' ).split( ' ' )[ 1 ] === 'oo-ui-icon-menu' );
+
+		assert( SearchPage.inputIcon.getAttribute( 'class' ).includes( 'oo-ui-icon-menu' ) );
+
 		SearchPage.expandNamespacesMenu();
-		assert( SearchPage.inputIcon.getAttribute( 'class' ).split( ' ' )[ 1 ] === 'oo-ui-icon-search' );
+
+		assert( SearchPage.inputIcon.getAttribute( 'class' ).includes( 'oo-ui-icon-search' ) );
 	} );
 
 } );
