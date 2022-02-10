@@ -2,61 +2,18 @@
 
 const assert = require( 'assert' ),
 	SearchPage = require( '../pageobjects/search.page' ),
-	UserLoginPage = require( 'wdio-mediawiki/LoginPage' ),
-	log = require( 'semlog' ).log, // https://github.com/fannon/semlog/
-	Bot = require( 'mwbot' ); // https://github.com/Fannon/mwbot
+	UserLoginPage = require( 'wdio-mediawiki/LoginPage' );
 
 describe( 'Advanced Search', function () {
-	function setSearchNamespaceOptions( namespaceIds ) {
-		const client = new Bot();
-		return client.loginGetEditToken( {
-			username: browser.config.mwUser,
-			password: browser.config.mwPwd,
-			apiUrl: browser.config.baseUrl + '/api.php'
-		} ).then( () => {
-			return client.request( {
-				action: 'query',
-				meta: 'userinfo',
-				uiprop: 'options'
-			} ).then( ( data ) => {
-				let searchNamespaces = namespaceIds.map( ( nsId ) => {
-					return 'searchNs' + nsId + '=1';
-				} ).join( '|' );
-				const userOptions = data.query.userinfo.options;
-				Object.keys( userOptions ).forEach( function ( key ) {
-					if ( userOptions[ key ] &&
-						key.indexOf( 'searchNs' ) === 0 &&
-						!searchNamespaces.includes( key + '=1' )
-					) {
-						searchNamespaces += '|' + key + '=0';
-					}
-				} );
-				return client.request( {
-					action: 'options',
-					change: searchNamespaces,
-					token: client.editToken
-				} ).catch( ( err ) => {
-					log( err );
-				} );
-			} ).catch( ( err ) => {
-				log( err );
-			} );
-		} ).catch( ( err ) => {
-			log( err );
-		} );
-	}
-
 	beforeEach( function () {
 		browser.deleteCookies();
 	} );
 
 	it( 'selects the default namespaces', function () {
-		const namespaceOptions = [ '0', '1', '2', '10' ];
-		browser.call( () => {
-			return setSearchNamespaceOptions( namespaceOptions );
-		} );
-
 		UserLoginPage.loginAdmin();
+
+		const namespaceOptions = [ '0', '1', '2', '10' ];
+		SearchPage.setSearchNamespaceOptions( namespaceOptions );
 		SearchPage.open();
 
 		SearchPage.expandNamespacesPreview();
@@ -82,12 +39,10 @@ describe( 'Advanced Search', function () {
 	} );
 
 	it( 'displays the default namespaces of the user and wiki and that the default checkbox is selected', function () {
-		const namespaceOptions = [ '15', '4', '5', '6' ];
-		browser.call( () => {
-			return setSearchNamespaceOptions( namespaceOptions );
-		} );
-
 		UserLoginPage.loginAdmin();
+
+		const namespaceOptions = [ '15', '4', '5', '6' ];
+		SearchPage.setSearchNamespaceOptions( namespaceOptions );
 		SearchPage.open();
 
 		SearchPage.expandNamespacesPreview();
