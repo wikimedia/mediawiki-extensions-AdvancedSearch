@@ -10,6 +10,7 @@
 	"advancedsearch-optgroup-files": "Fayllar va tasvirlar",
 	"advancedsearch-optgroup-sort": "Saralash tartibi",
 	"advancedsearch-field-plain": "Bu soʻzlar",
+	"advancedsearch-field-phrase": "Aynan bu matn",
 	"advancedsearch-field-or": "Bu soʻzlardan biri",
 	"advancedsearch-field-not": "Bu soʻzlarni ichiga olmasin",
 	"advancedsearch-field-subpageof": "Bu sahifa ostsahifalari",
