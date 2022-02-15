@@ -64,6 +64,7 @@
 	"advancedsearch-sort-preview-relevance": "ارتباط",
 	"advancedsearch-sort-preview-last-edit-asc": "حداقل اخیراً ویرایش شده است",
 	"advancedsearch-sort-preview-last-edit-desc": "تاریخ ویرایش",
+	"advancedsearch-sort-preview-create-timestamp-asc": "حداقل اخیراً ایجاد شده است",
 	"advancedsearch-sort-preview-create-timestamp-desc": "تاریخ ایجاد",
 	"advancedsearch-namespaces-search-in": "جستجو در:",
 	"advancedsearch-namespaces-remember": "انتخاب را برای جستجوهای بعدی به خاطر داشته‌باش",
