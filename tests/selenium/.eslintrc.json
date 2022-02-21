@@ -3,8 +3,10 @@
 	"extends": [
 		"wikimedia/selenium"
 	],
+	"globals": {
+		"mw": "readonly"
+	},
 	"rules": {
-		"max-len": "off",
-		"node/no-deprecated-api": "warn"
+		"max-len": "off"
 	}
 }

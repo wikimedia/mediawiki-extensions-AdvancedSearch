@@ -244,6 +244,41 @@ class SearchPage extends Page {
 		} );
 	}
 
+	setSearchNamespaceOptions( nsIds ) {
+		Util.waitForModuleState( 'mediawiki.base' );
+		return browser.execute( function ( namespaceIds ) {
+			return mw.loader.using( 'mediawiki.api' ).then( function () {
+				const api = new mw.Api();
+				return api.postWithToken( 'csrf',
+					{
+						action: 'query',
+						meta: 'userinfo',
+						uiprop: 'options'
+					} ).then( ( data ) => {
+					let newSearchNamespaces = namespaceIds.map( ( nsId ) => {
+						return 'searchNs' + nsId + '=1';
+					} ).join( '|' );
+
+					const userOptions = data.query.userinfo.options;
+					Object.keys( userOptions ).forEach( function ( key ) {
+						if ( userOptions[ key ] &&
+								key.indexOf( 'searchNs' ) === 0 &&
+								!newSearchNamespaces.includes( key + '=1' )
+						) {
+							newSearchNamespaces += '|' + key + '=0';
+						}
+					} );
+
+					return api.postWithToken( 'csrf',
+						{
+							action: 'options',
+							change: newSearchNamespaces
+						} );
+				} );
+			} );
+		}, nsIds );
+	}
+
 	addPage( title, text ) {
 		browser.call( async () => {
 			const bot = await Api.bot();
