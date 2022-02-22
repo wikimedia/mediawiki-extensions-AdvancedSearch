@@ -50,5 +50,6 @@
 	"advancedsearch-namespaces-preset-general-help": "Umumiy yordam",
 	"advancedsearch-namespaces-preset-discussion": "Munozara",
 	"advancedsearch-namespaces-placeholder": "Nomfazolar qoʻshish…",
-	"prefs-advancedsearch": "Kengaytirilgan qidiruv"
+	"prefs-advancedsearch": "Kengaytirilgan qidiruv",
+	"advancedsearch-preference-disable": "Maxsus:Search sahifasidan foydalanilganda, Kengaytirilgan qidiruv interfeysi koʻrsatilmasin"
 }
