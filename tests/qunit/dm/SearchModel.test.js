@@ -15,7 +15,7 @@
 
 	QUnit.test( 'Default model has no fields', function ( assert ) {
 		var model = new SearchModel();
-		assert.deepEqual( model.getFields(), {} );
+		assert.deepEqual( model.searchFields, {} );
 	} );
 
 	QUnit.test( 'There is no hardcoded namespace preset', function ( assert ) {
@@ -27,7 +27,7 @@
 		var model = new SearchModel();
 		model.storeField( 'not', 'octopi' );
 		model.storeField( 'prefix', 'Page' );
-		assert.deepEqual( model.getFields(), {
+		assert.deepEqual( model.searchFields, {
 			not: 'octopi',
 			prefix: 'Page'
 		} );
@@ -52,19 +52,6 @@
 
 		assert.notStrictEqual( model.getField( 'fileh' ), fileHeightValuePair, 'Arrays must be different references' );
 		assert.notStrictEqual( model.getField( 'someObject' ), someObject, 'Objects must be different references' );
-	} );
-
-	QUnit.test( 'Retrieving all values gives a copy of reference type values, to avoid modification', function ( assert ) {
-		var model = new SearchModel();
-		var fileHeightValuePair = [ '>', '2' ];
-		var someObject = { foo: 42 };
-
-		model.storeField( 'fileh', fileHeightValuePair );
-		model.storeField( 'someObject', someObject );
-		var options = model.getFields();
-
-		assert.notStrictEqual( options.fileh, fileHeightValuePair, 'Arrays must be different references' );
-		assert.notStrictEqual( options.someObject, someObject, 'Objects must be different references' );
 	} );
 
 	QUnit.test( 'When checking with undefined or empty value, hasOptionChange returns true for unset properties without defaults', function ( assert ) {
@@ -104,7 +91,7 @@
 			expected = createModelWithValues();
 		model.setAllFromJSON( '' );
 
-		assert.deepEqual( model.getFields(), expected.getFields() );
+		assert.deepEqual( model.searchFields, expected.searchFields );
 		assert.deepEqual( model.getNamespaces(), expected.getNamespaces() );
 	} );
 
@@ -113,7 +100,7 @@
 			expected = createModelWithValues();
 		model.setAllFromJSON( '{ "unclosed_string": "str }' );
 
-		assert.deepEqual( model.getFields(), expected.getFields() );
+		assert.deepEqual( model.searchFields, expected.searchFields );
 		assert.deepEqual( model.getNamespaces(), expected.getNamespaces() );
 	} );
 
@@ -121,7 +108,7 @@
 		var model = createModelWithValues();
 		model.setAllFromJSON( '{"fields":{"or":[ "fish", "turtle" ],"prefix":"Sea"}}' );
 
-		assert.deepEqual( model.getFields(), {
+		assert.deepEqual( model.searchFields, {
 			or: [ 'fish', 'turtle' ],
 			prefix: 'Sea'
 		} );

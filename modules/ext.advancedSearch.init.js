@@ -7,18 +7,6 @@
 	}
 
 	/**
-	 * @param {jQuery} $search The search form element
-	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
-	 */
-	function setTrackingEvents( $search, state ) {
-		$search.on( 'submit', function () {
-			var trackingEvent = new mw.libs.advancedSearch.dm.trackingEvents.SearchRequest();
-			trackingEvent.populateFromStoreOptions( state.getFields() );
-			mw.track( 'event.' + trackingEvent.getEventName(), trackingEvent.getEventData() );
-		} );
-	}
-
-	/**
 	 * It is possible for the namespace field to be completely empty
 	 * and at the same time have the file type option selected.
 	 * This would lead to an empty search result in most cases,
@@ -264,7 +252,6 @@
 
 		$profileField.val( 'advanced' );
 
-		setTrackingEvents( $search, state );
 		setSearchSubmitTrigger( $search, $searchField, state, queryCompiler );
 
 		$advancedSearch.append( buildPaneElement( state, fieldCollection, advancedOptionsBuilder ) );
