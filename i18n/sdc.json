@@ -4,8 +4,19 @@
 			"Jun Misugi"
 		]
 	},
+	"advancedsearch-optgroup-structure": "Sthruttura",
+	"advancedsearch-optgroup-files": "Ischedàrii ed immàgini",
 	"advancedsearch-field-plain": "Chisthi paràuri",
 	"advancedsearch-field-or": "Una di chisthi paràuri",
 	"advancedsearch-field-not": "No chisthi paràuri",
+	"advancedsearch-inlanguage-default": "Isciubarà linga",
+	"advancedsearch-filetype-section-image": "Fuimmaddi immàgina",
+	"advancedsearch-filetype-section-video": "Fuimmaddi vìdeo",
+	"advancedsearch-filetype-section-audio": "Fuimmaddi àudiu",
+	"advancedsearch-filetype-section-document": "Fuimmaddi documentu",
+	"advancedsearch-filetype-section-other": "Althri fuimmaddi",
+	"advancedsearch-filetype-bitmap": "Immàgina",
+	"advancedsearch-filetype-drawing": "Dissegnu",
+	"advancedsearch-filetype-audio": "Àudiu",
 	"advancedsearch-filetype-video": "Vìdeo"
 }
