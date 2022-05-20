@@ -3,8 +3,8 @@
 namespace AdvancedSearch\Tests;
 
 use AdvancedSearch\SearchnamespaceTokenModule;
+use MediaWiki\ResourceLoader\Context;
 use PHPUnit\Framework\TestCase;
-use ResourceLoaderContext;
 use User;
 
 /**
@@ -21,7 +21,7 @@ class SearchnamespaceTokenModuleTest extends TestCase {
 		$user = $this->createMock( User::class );
 		$user->method( 'getEditToken' )->with( 'searchnamespace' )->willReturn( '<TOKEN>' );
 
-		$context = $this->createMock( ResourceLoaderContext::class );
+		$context = $this->createMock( Context::class );
 		$context->method( 'getUserObj' )->willReturn( $user );
 
 		$script = $module->getScript( $context );
