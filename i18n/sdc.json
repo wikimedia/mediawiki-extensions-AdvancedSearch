@@ -12,11 +12,13 @@
 	"advancedsearch-field-plain": "Chisthi paràuri",
 	"advancedsearch-field-or": "Una di chisthi paràuri",
 	"advancedsearch-field-not": "No chisthi paràuri",
+	"advancedsearch-field-subpageof": "Sottupàgini di chista pàgina",
 	"advancedsearch-field-intitle": "Tìturu di pàgina cunteni",
 	"advancedsearch-field-deepcategory": "Pàgini in chisthi categurì",
 	"advancedsearch-field-hastemplate": "Pàgini cun chisthi mudelli",
 	"advancedsearch-field-inlanguage": "Pàgini in chistha linga",
 	"advancedsearch-field-filetype": "Tipu di file",
+	"advancedsearch-field-sort": "Urdhinamentu",
 	"advancedsearch-inlanguage-default": "Isciubarà linga",
 	"advancedsearch-filetype-section-image": "Fuimmaddi immàgina",
 	"advancedsearch-filetype-section-video": "Fuimmaddi vìdeo",
@@ -26,5 +28,8 @@
 	"advancedsearch-filetype-bitmap": "Immàgina",
 	"advancedsearch-filetype-drawing": "Dissegnu",
 	"advancedsearch-filetype-audio": "Àudiu",
-	"advancedsearch-filetype-video": "Vìdeo"
+	"advancedsearch-filetype-video": "Vìdeo",
+	"advancedsearch-namespaces-preset-all": "Tutti",
+	"advancedsearch-namespaces-preset-default": "Pridifiniddu",
+	"advancedsearch-namespaces-preset-discussion": "Cuntierra"
 }
