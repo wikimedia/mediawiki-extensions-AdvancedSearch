@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jun Misugi"
+			"Jun Misugi",
+			"F Samaritani"
 		]
 	},
 	"advancedsearch-options-pane-head": "Zercha abanzadda:",
@@ -29,7 +30,9 @@
 	"advancedsearch-filetype-drawing": "Dissegnu",
 	"advancedsearch-filetype-audio": "Àudiu",
 	"advancedsearch-filetype-video": "Vìdeo",
+	"advancedsearch-namespaces-search-in": "Zercha in:",
 	"advancedsearch-namespaces-preset-all": "Tutti",
 	"advancedsearch-namespaces-preset-default": "Pridifiniddu",
-	"advancedsearch-namespaces-preset-discussion": "Cuntierra"
+	"advancedsearch-namespaces-preset-discussion": "Cuntierra",
+	"prefs-advancedsearch": "Zercha abanzadda"
 }
