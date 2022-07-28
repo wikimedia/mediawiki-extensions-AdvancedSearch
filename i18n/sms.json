@@ -4,6 +4,11 @@
 			"Yupik"
 		]
 	},
+	"advancedsearch-optgroup-files": "Teâttõõzz da kaart",
 	"advancedsearch-field-subpageof": "Tän seeid vueʹllseeid",
-	"advancedsearch-inlanguage-default": "Vaʹlljed ǩiõl"
+	"advancedsearch-inlanguage-default": "Vaʹlljed ǩiõl",
+	"advancedsearch-filetype-bitmap": "Kartt leʼbe snimldõk",
+	"advancedsearch-filetype-audio": "Jiõnn",
+	"advancedsearch-filetype-video": "Video",
+	"advancedsearch-namespaces-preset-discussion": "Saǥstõõllmõš"
 }
