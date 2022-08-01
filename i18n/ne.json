@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bada Kaji"
+		]
+	},
+	"advancedsearch-optgroup-structure": "संरचना",
+	"advancedsearch-inlanguage-default": "भाषा छान्नुहाेस्",
+	"advancedsearch-filetype-bitmap": "चित्र",
+	"advancedsearch-filetype-drawing": "रेखाचित्र",
+	"advancedsearch-filetype-office": "कार्यलय",
+	"advancedsearch-filesize-equals": "बराबर",
+	"advancedsearch-filesize-greater-than": "भन्दा ठुलो",
+	"advancedsearch-filesize-smaller-than": "भन्दा कम",
+	"advancedsearch-sort-relevance": "प्रासङ्गिकता",
+	"advancedsearch-namespaces-preset-all": "सबै"
+}
