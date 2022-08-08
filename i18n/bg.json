@@ -43,7 +43,7 @@
 	"advancedsearch-help-sort": "; Описание\n: Промяна на реда за сортиране на резултатите. По-подразбиране най-подходящите страници се поставят най-горе в резултата.\n; Помощна страница\n: [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Explicit_sort_orders Изрични редове на сортиране]\n; Еквивалент на синтаксиса при нормално търсене\n: Тази функция няма ключова дума, която можете да въведете в полето за въвеждане за търсене, тъй като функцията е указана чрез параметър в URL адреса.",
 	"advancedsearch-placeholder-exact-text": "„котката обича козата“",
 	"advancedsearch-inlanguage-default": "Избор на език",
-	"advancedsearch-filetype-section-types": "Общи файлови типове",
+	"advancedsearch-filetype-section-types": "Основни файлови типове",
 	"advancedsearch-filetype-section-image": "Формати за изображения",
 	"advancedsearch-filetype-section-video": "Видеоформати",
 	"advancedsearch-filetype-section-audio": "Формати за аудио файлове",
