@@ -247,8 +247,16 @@
 
 		$search.append( $advancedSearch );
 
-		$searchField.val( queryCompiler.removeCompiledQueryFromSearch( $searchField.val(), state ) );
-		$searchField.trigger( 'focus' );
+		var term = $searchField.val(),
+			autoFocus = !term.trim();
+
+		$searchField.val( queryCompiler.removeCompiledQueryFromSearch( term, state ) );
+
+		// Autofocus is handled by mediawiki on simple search, but AdvancedSearch breaks it.
+		// Search field need to be focused only when search term is empty.
+		if ( autoFocus ) {
+			$searchField.trigger( 'focus' );
+		}
 
 		$profileField.val( 'advanced' );
 
