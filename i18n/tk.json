@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"TayfunEt."
+		]
+	},
+	"advancedsearch-filetype-bitmap": "Surat",
+	"advancedsearch-filetype-audio": "Ses",
+	"advancedsearch-filetype-video": "Wideo",
+	"advancedsearch-filetype-office": "Ofis",
+	"advancedsearch-filesize-greater-than": "ondan ulurak",
+	"advancedsearch-sort-relevance": "Degişlilik",
+	"advancedsearch-sort-last-edit-desc": "Redaktirleme senesi - ýokarsyndaky tok",
+	"advancedsearch-sort-create-timestamp-desc": "Döredilen senesi - ýokarsynda häzirki",
+	"advancedsearch-sort-preview-relevance": "degişlilik",
+	"advancedsearch-sort-preview-last-edit-desc": "redaktirleme senesi",
+	"advancedsearch-sort-preview-create-timestamp-desc": "döredilen senesi",
+	"advancedsearch-namespaces-preset-all": "Ählisi"
+}
