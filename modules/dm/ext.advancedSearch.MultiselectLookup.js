@@ -17,17 +17,13 @@
 
 	var populateCache = function ( res, self ) {
 		var pages = [];
-
-		// eslint-disable-next-line no-jquery/no-each-util
-		$.each( res.query.pages, function ( index, page ) {
+		for ( var i in res.query.pages ) {
+			var page = res.query.pages[ i ];
 			if ( !page.missing ) {
 				pages.push( page.title );
-				self.queryCache.set( page.title, 'YES' );
-				return;
 			}
-			self.queryCache.set( page.title, 'NO' );
-		} );
-
+			self.queryCache.set( page.title, page.missing ? 'NO' : 'YES' );
+		}
 		return pages;
 	};
 
