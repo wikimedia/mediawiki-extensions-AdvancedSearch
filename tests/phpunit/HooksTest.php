@@ -258,7 +258,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		$this->setService(
 			'MimeAnalyzer',
 			$this->getMockBuilder( MimeAnalyzer::class )
-				->onlyMethods( [ 'getTypesForExtension' ] )
+				->onlyMethods( [ 'getMimeTypeFromExtensionOrNull' ] )
 				->disableOriginalConstructor()
 				->getMock()
 		);
