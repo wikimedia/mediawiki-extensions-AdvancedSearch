@@ -47,10 +47,10 @@ class MimeTypeConfiguratorTest extends TestCase {
 	 */
 	private function newMimeAnalyzerMock() {
 		$mock = $this->createMock( MimeAnalyzer::class );
-		$mock->method( 'getTypesForExtension' )->will(
+		$mock->method( 'getMimeTypeFromExtensionOrNull' )->will(
 			$this->returnValueMap( [
 				[ self::EXT_SINGLE_MIMETYPE, 'test' ],
-				[ self::EXT_MULTIPLE_MIMETYPES, 'one two' ],
+				[ self::EXT_MULTIPLE_MIMETYPES, 'one' ],
 				[ self::EXT_SAME_MIMETYPE, 'mime' ],
 				[ self::OTHER_EXT_SAME_MIMETYPE, 'mime' ]
 			] )
