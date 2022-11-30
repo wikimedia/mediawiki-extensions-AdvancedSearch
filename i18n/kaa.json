@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ajiniyaz Nurniyazov"
+			"Ajiniyaz Nurniyazov",
+			"Nurlan"
 		]
 	},
 	"advancedsearch-desc": "[[Special:Search]] arqalı keńeytilgen izlew múmkinshiliklerine ańsat kiriw",
@@ -17,7 +18,7 @@
 	"advancedsearch-field-subpageof": "Bul bettiń ishki betleri",
 	"advancedsearch-field-intitle": "Bettiń ataması qamtıydı",
 	"advancedsearch-field-deepcategory": "Usı kategoriyadaǵı betler",
-	"advancedsearch-field-hastemplate": "Usı shablon isletilgen betler",
+	"advancedsearch-field-hastemplate": "Usı úlgi isletilgen betler",
 	"advancedsearch-field-inlanguage": "Usı tildegi betler",
 	"advancedsearch-field-filetype": "Fayl túri",
 	"advancedsearch-field-filew": "Fayldıń keńligi piksellerde",
