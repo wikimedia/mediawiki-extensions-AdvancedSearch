@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Ilimanaq29",
+			"JAn Dudík",
 			"Matěj Suchánek",
 			"Mormegil",
 			"Patriccck",
@@ -60,10 +61,14 @@
 	"advancedsearch-filesize-greater-than": "větší než",
 	"advancedsearch-filesize-smaller-than": "menší než",
 	"advancedsearch-sort-relevance": "Relevance",
+	"advancedsearch-sort-last-edit-asc": "Datum úpravy – nejstarší nahoře",
 	"advancedsearch-sort-last-edit-desc": "Datum editace – novější nahoře",
+	"advancedsearch-sort-create-timestamp-asc": "Datum vytvoření – nejstarší nahoře",
 	"advancedsearch-sort-create-timestamp-desc": "Datum vytvoření – novější nahoře",
 	"advancedsearch-sort-preview-relevance": "relevance",
+	"advancedsearch-sort-preview-last-edit-asc": "naposledy upraveno",
 	"advancedsearch-sort-preview-last-edit-desc": "data editace",
+	"advancedsearch-sort-preview-create-timestamp-asc": "nedávno vytvořené",
 	"advancedsearch-sort-preview-create-timestamp-desc": "datum vytvoření",
 	"advancedsearch-namespaces-search-in": "Prohledávat:",
 	"advancedsearch-namespaces-remember": "Zapamatovat výběr pro budoucí hledání",
