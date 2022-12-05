@@ -2,6 +2,7 @@
 
 namespace AdvancedSearch;
 
+use ExtensionRegistry;
 use Html;
 use Language;
 use MediaWiki\Hook\SpecialSearchResultsPrependHook;
@@ -80,15 +81,7 @@ class Hooks implements
 				),
 		] );
 
-		/**
-		 * checks if extension Translate is installed and enabled
-		 * https://github.com/wikimedia/mediawiki-extensions-Translate/blob/master/Translate.php#L351
-		 * this check is not performed with ExtensionRegistry
-		 * because Translate extension does not have extension.json
-		 */
-		if ( $mainConfig->has( 'EnablePageTranslation' ) &&
-			$mainConfig->get( 'EnablePageTranslation' )
-		) {
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'Translate' ) ) {
 			$special->getOutput()->addJsConfigVars(
 				'advancedSearch.languages',
 				Language::fetchLanguageNames()
