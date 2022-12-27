@@ -4,7 +4,6 @@ namespace AdvancedSearch;
 
 use ExtensionRegistry;
 use Html;
-use Language;
 use MediaWiki\Hook\SpecialSearchResultsPrependHook;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
@@ -84,7 +83,7 @@ class Hooks implements
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'Translate' ) ) {
 			$special->getOutput()->addJsConfigVars(
 				'advancedSearch.languages',
-				Language::fetchLanguageNames()
+				$services->getLanguageNameUtils()->getLanguageNames()
 			);
 		}
 	}
