@@ -49,6 +49,8 @@
 	"advancedsearch-filesize-greater-than": "yn fwy na",
 	"advancedsearch-filesize-smaller-than": "yn llai na",
 	"advancedsearch-sort-relevance": "Perthnasedd",
+	"advancedsearch-sort-last-edit-desc": "Dyddiad golygu - cyfredol ar y brig",
+	"advancedsearch-sort-create-timestamp-desc": "Dyddiad creu – cyfredol ar y brig",
 	"advancedsearch-sort-preview-relevance": "perthnasedd",
 	"advancedsearch-sort-preview-last-edit-desc": "dyddiad golygu",
 	"advancedsearch-sort-preview-create-timestamp-desc": "dyddiad creu",
