@@ -4,5 +4,7 @@
 			"Kimberli Mäkäräinen (WMNO)"
 		]
 	},
-	"advancedsearch-inlanguage-default": "Vállje giela"
+	"advancedsearch-options-pane-head": "Aiddostahttojuvvon ohcan:",
+	"advancedsearch-inlanguage-default": "Vállje giela",
+	"prefs-advancedsearch": "Aiddostahttojuvvon ohcan"
 }
