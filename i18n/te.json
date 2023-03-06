@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Chaduvari",
 			"Veeven"
 		]
@@ -10,6 +11,7 @@
 	"advancedsearch-optgroup-text": "పేజీ పాఠ్యంలో వెతకటం",
 	"advancedsearch-optgroup-structure": "ఆకృతి",
 	"advancedsearch-optgroup-files": "దస్త్రాలు, బొమ్మలూ",
+	"advancedsearch-optgroup-sort": "వరుస క్రమం",
 	"advancedsearch-field-plain": "ఈ పదాలు",
 	"advancedsearch-field-phrase": "కచ్చితంగా ఇదే పాఠ్యం",
 	"advancedsearch-field-or": "ఈ పదాల్లో ఒకటి",
