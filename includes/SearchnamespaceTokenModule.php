@@ -23,7 +23,6 @@ class SearchnamespaceTokenModule extends RL\Module {
 
 	/**
 	 * @param RL\Context $context
-	 *
 	 * @return string JavaScript code
 	 */
 	public function getScript( RL\Context $context ) {
@@ -33,7 +32,7 @@ class SearchnamespaceTokenModule extends RL\Module {
 			Xml::encodeJsCall(
 				'mw.user.tokens.set',
 				[ 'searchnamespaceToken', $user->getEditToken( 'searchnamespace' ) ],
-				(bool)ResourceLoader::inDebugMode()
+				(bool)$context->getDebug()
 			);
 	}
 
