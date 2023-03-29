@@ -20,8 +20,8 @@
 		white-space: nowrap;
 		animation: mw-search-fadein 1500ms cubic-bezier( 1, -0.5, 1, 1 );
 
-		&:before,
-		&:after,
+		&::before,
+		&::after,
 		& .mw-search-spinner-bounce {
 			content: '';
 			background-color: @colorGray7;
@@ -33,12 +33,12 @@
 			animation: mw-search-bounceDelay 1600ms ease-in-out -160ms infinite both;
 		}
 
-		&:before {
+		&::before {
 			margin-right: 4px;
 			animation-delay: -330ms;
 		}
 
-		&:after {
+		&::after {
 			margin-left: 4px;
 			animation-delay: 0s;
 		}
