@@ -1,6 +1,6 @@
-@import 'mediawiki.ui/variables';
+@import 'mediawiki.skin.variables.less';
 
-@mw-search-spinner-size: 12px;
+@size-mw-search-spinner: 12px;
 
 .client-js {
 	.mw-search-form-wrapper {
@@ -16,7 +16,7 @@
 		position: absolute;
 		left: 25em;
 		top: 7em;
-		margin-left: -3 * @mw-search-spinner-size / 2;
+		margin-left: -3 * @size-mw-search-spinner / 2;
 		white-space: nowrap;
 		animation: mw-search-fadein 1500ms cubic-bezier( 1, -0.5, 1, 1 );
 
@@ -24,12 +24,12 @@
 		&::after,
 		& .mw-search-spinner-bounce {
 			content: '';
-			background-color: @colorGray7;
+			background-color: #72777d;
 			display: block;
 			float: left;
-			width: @mw-search-spinner-size;
-			height: @mw-search-spinner-size;
-			border-radius: 100%;
+			width: @size-mw-search-spinner;
+			height: @size-mw-search-spinner;
+			border-radius: @border-radius-circle;
 			animation: mw-search-bounceDelay 1600ms ease-in-out -160ms infinite both;
 		}
 
