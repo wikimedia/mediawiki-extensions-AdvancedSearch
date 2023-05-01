@@ -46,6 +46,10 @@
 	"advancedsearch-filesize-greater-than": "didesnis nei",
 	"advancedsearch-filesize-smaller-than": "mažesnis nei",
 	"advancedsearch-sort-relevance": "Aktualumas",
+	"advancedsearch-sort-last-edit-asc": "Redagavimo data – seniausi viršuje",
+	"advancedsearch-sort-last-edit-desc": "Redagavimo data – dabartinis viršuje",
+	"advancedsearch-sort-create-timestamp-asc": "Sukūrimo data – seniausi viršuje",
+	"advancedsearch-sort-create-timestamp-desc": "Sukūrimo data – dabartinis viršuje",
 	"advancedsearch-sort-preview-relevance": "aktualumas",
 	"advancedsearch-sort-preview-last-edit-desc": "redagavimo data",
 	"advancedsearch-sort-preview-create-timestamp-desc": "sukūrimo data",
@@ -56,5 +60,6 @@
 	"advancedsearch-namespaces-preset-general-help": "Bendroji pagalba",
 	"advancedsearch-namespaces-preset-discussion": "Aptarimas",
 	"advancedsearch-namespaces-placeholder": "Pridėti vardų sritis…",
-	"prefs-advancedsearch": "Išplėstinė paieška"
+	"prefs-advancedsearch": "Išplėstinė paieška",
+	"advancedsearch-preference-disable": "Nerodyti išplėstinės paieškos sąsajos naudojant Special:Search"
 }
