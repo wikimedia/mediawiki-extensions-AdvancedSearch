@@ -46,6 +46,8 @@
 	"advancedsearch-filesize-greater-than": "didesnis nei",
 	"advancedsearch-filesize-smaller-than": "mažesnis nei",
 	"advancedsearch-sort-relevance": "Aktualumas",
+	"advancedsearch-sort-last-edit-desc": "Redagavimo data – dabartinis viršuje",
+	"advancedsearch-sort-create-timestamp-desc": "Sukūrimo data – dabartinis viršuje",
 	"advancedsearch-sort-preview-relevance": "aktualumas",
 	"advancedsearch-sort-preview-last-edit-desc": "redagavimo data",
 	"advancedsearch-sort-preview-create-timestamp-desc": "sukūrimo data",
