@@ -52,7 +52,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		$this->assertArrayHasKey( 'advancedsearch-disable', $preferences );
 	}
 
-	public function getDefaultNamespacesRespectsTrueFalseProvider() {
+	public static function getDefaultNamespacesRespectsTrueFalseProvider() {
 		return [
 			'anonymous user' => [
 				'expected' => [ NS_MAIN ],
