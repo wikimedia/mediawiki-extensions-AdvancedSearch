@@ -286,7 +286,7 @@
 			),
 			$headerContainer = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection-header' );
 
-		if ( !mw.user.isAnon() ) {
+		if ( mw.user.isNamed() ) {
 			var rememberNameSpaceSelection = new OO.ui.FieldLayout( new OO.ui.CheckboxInputWidget( {
 				value: mw.user.tokens.get( 'searchnamespaceToken' ),
 				name: 'nsRemember'
