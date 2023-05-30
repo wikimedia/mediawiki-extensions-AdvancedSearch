@@ -4,29 +4,29 @@ const assert = require( 'assert' ),
 	SearchPage = require( '../pageobjects/search.page' ),
 	SpecialPage = require( '../pageobjects/special.page' );
 
-describe( 'Advanced Search submit', function () {
+describe( 'Advanced Search', function () {
 
-	beforeEach( function () {
-		SearchPage.open();
+	beforeEach( async function () {
+		await SearchPage.open();
 	} );
 
-	it( 'submits the search on enter when there is no text in "These Words" field', function () {
-		SearchPage.toggleInputFields();
-		SearchPage.searchTheseWords.put( '\n' );
+	it( 'submits the search on enter when there is no text in "These Words" field', async function () {
+		await SearchPage.toggleInputFields();
+		await SearchPage.searchTheseWords.put( '\n' );
 
-		assert( SearchPage.formWasSubmitted() );
+		assert( await SearchPage.formWasSubmitted() );
 	} );
 
-	it( 'submits the search with the specific chosen language', function () {
-		if ( !SpecialPage.translateExtensionLink.isDisplayed() ) {
+	it( 'submits the search with the specific chosen language', async function () {
+		if ( !await SpecialPage.translateExtensionLink.isDisplayed() ) {
 			this.skip();
 		}
 
-		SearchPage.toggleInputFields();
-		SearchPage.searchTheseWords.put( 'goat,' );
-		SearchPage.searchInLanguage.choose( 'en' );
-		SearchPage.submitForm();
+		await SearchPage.toggleInputFields();
+		await SearchPage.searchTheseWords.put( 'goat,' );
+		await SearchPage.searchInLanguage.choose( 'en' );
+		await SearchPage.submitForm();
 
-		assert.strictEqual( SearchPage.getSearchQueryFromUrl(), 'goat inlanguage:en' );
+		assert.strictEqual( await SearchPage.getSearchQueryFromUrl(), 'goat inlanguage:en' );
 	} );
 } );
