@@ -73,7 +73,7 @@
 		]
 	},
 	"DefaultUserOptions": {
-		"advancedsearch-disable": false
+		"advancedsearch-disable": 0
 	},
 	"ResourceModules": {
 		"ext.advancedSearch.initialstyles": {
