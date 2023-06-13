@@ -2,12 +2,14 @@
 
 namespace AdvancedSearch;
 
+use Config;
 use ExtensionRegistry;
 use Html;
 use MediaWiki\Hook\SpecialSearchResultsPrependHook;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
+use MessageLocalizer;
 use OutputPage;
 use SpecialPage;
 use SpecialSearch;
@@ -57,8 +59,6 @@ class Hooks implements
 			return false;
 		}
 
-		$mainConfig = $special->getConfig();
-
 		$special->getOutput()->addModules( [
 			'ext.advancedSearch.init',
 			'ext.advancedSearch.searchtoken',
@@ -66,26 +66,48 @@ class Hooks implements
 
 		$special->getOutput()->addModuleStyles( 'ext.advancedSearch.initialstyles' );
 
-		$special->getOutput()->addJsConfigVars( [
+		$special->getOutput()->addJsConfigVars( $this->getJsConfigVars(
+			$special->getContext(),
+			$special->getConfig(),
+			ExtensionRegistry::getInstance(),
+			$services
+		) );
+	}
+
+	/**
+	 * @param MessageLocalizer $context
+	 * @param Config $config
+	 * @param ExtensionRegistry $extensionRegistry
+	 * @param MediaWikiServices $services
+	 * @return array
+	 */
+	private function getJsConfigVars(
+		MessageLocalizer $context,
+		Config $config,
+		ExtensionRegistry $extensionRegistry,
+		MediaWikiServices $services
+	): array {
+		$vars = [
 			'advancedSearch.mimeTypes' =>
 				( new MimeTypeConfigurator( $services->getMimeAnalyzer() ) )->getMimeTypes(
-					$mainConfig->get( 'FileExtensions' )
+					$config->get( 'FileExtensions' )
 				),
-			'advancedSearch.tooltips' => ( new TooltipGenerator( $special->getContext() ) )->generateTooltips(),
-			'advancedSearch.namespacePresets' => $mainConfig->get( 'AdvancedSearchNamespacePresets' ),
-			'advancedSearch.deepcategoryEnabled' => $mainConfig->get( 'AdvancedSearchDeepcatEnabled' ),
+			'advancedSearch.tooltips' => ( new TooltipGenerator( $context ) )->generateTooltips(),
+			'advancedSearch.namespacePresets' => $config->get( 'AdvancedSearchNamespacePresets' ),
+			'advancedSearch.deepcategoryEnabled' => $config->get( 'AdvancedSearchDeepcatEnabled' ),
 			'advancedSearch.searchableNamespaces' =>
 				SearchableNamespaceListBuilder::getCuratedNamespaces(
 					$services->getSearchEngineConfig()->searchableNamespaces()
 				),
-		] );
+		];
 
-		if ( ExtensionRegistry::getInstance()->isLoaded( 'Translate' ) ) {
-			$special->getOutput()->addJsConfigVars(
-				'advancedSearch.languages',
+		if ( $extensionRegistry->isLoaded( 'Translate' ) ) {
+			$vars += [ 'advancedSearch.languages' =>
 				$services->getLanguageNameUtils()->getLanguageNames()
-			);
+			];
 		}
+
+		return $vars;
 	}
 
 	/**

@@ -3,6 +3,7 @@
 namespace AdvancedSearch\Tests;
 
 use AdvancedSearch\Hooks;
+use ExtensionRegistry;
 use HashConfig;
 use MediaWiki\User\UserOptionsLookup;
 use MediaWikiIntegrationTestCase;
@@ -11,6 +12,7 @@ use OutputPage;
 use RequestContext;
 use SpecialPage;
 use User;
+use Wikimedia\TestingAccessWrapper;
 
 /**
  * @covers \AdvancedSearch\Hooks
@@ -30,12 +32,6 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		// Dummy language code makes sure no actual localization is loaded
 		$this->setUserLang( 'qqx' );
 
-		$this->overrideMwServices( new HashConfig( [
-			// Intentional dummy values just to make sure they appear in the assertions below
-			'AdvancedSearchNamespacePresets' => '<NAMESPACEPRESETS>',
-			'ExtensionAssetsPath' => '<PATH>',
-			'FileExtensions' => [ '<EXT>' ],
-		] ) );
 		$this->setMwGlobals( [
 			'wgLanguageCode' => 'qqx',
 			'wgNamespacesToBeSearchedDefault' => [ NS_MAIN => true ],
@@ -131,7 +127,40 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		$this->hook->onSpecialPageBeforeExecute( $specialPage, null );
 	}
 
-	public function testSpecialPageBeforeExecuteHookHandler() {
+	public function testGetJsConfigVars() {
+		$this->mockMimeAnalyser();
+
+		$hook = TestingAccessWrapper::newFromObject( $this->hook );
+
+		$extensionRegistry = $this->createMock( ExtensionRegistry::class );
+		$extensionRegistry->method( 'isLoaded' )
+			->with( 'Translate' )
+			->willReturn( true );
+
+		$vars = $hook->getJsConfigVars(
+			new RequestContext(),
+			new HashConfig( [
+				'AdvancedSearchNamespacePresets' => '<NAMESPACEPRESETS>',
+				'ExtensionAssetsPath' => '<PATH>',
+				'FileExtensions' => [ '<EXT>' ],
+				'AdvancedSearchDeepcatEnabled' => true
+			] ),
+			$extensionRegistry,
+			$this->getServiceContainer()
+		);
+
+		// Integration test only, see MimeTypeConfiguratorTest for the full unit test
+		$this->assertSame( [ '<EXT>' => '' ], $vars['advancedSearch.mimeTypes'] );
+		// Integration test only, see TooltipGeneratorTest for the full unit test
+		$this->assertContainsOnly( 'string', $vars['advancedSearch.tooltips'] );
+
+		$this->assertSame( '<NAMESPACEPRESETS>', $vars['advancedSearch.namespacePresets'] );
+		$this->assertSame( true, $vars['advancedSearch.deepcategoryEnabled'] );
+
+		$this->assertArrayHasKey( 'advancedSearch.languages', $vars );
+	}
+
+	public function testAdvancedSearchNoNamespaceRedirect() {
 		$this->mockMimeAnalyser();
 
 		$special = $this->newSpecialSearchPage(
@@ -144,19 +173,6 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 
 		// Ensure that no namespace-related redirect was performed
 		$this->assertSame( '', $special->getOutput()->getRedirect() );
-
-		$vars = $special->getOutput()->getJsConfigVars();
-
-		$this->assertArrayHasKey( 'advancedSearch.mimeTypes', $vars );
-		// Integration test only, see MimeTypeConfiguratorTest for the full unit test
-		$this->assertSame( [ '<EXT>' => '' ], $vars['advancedSearch.mimeTypes'] );
-
-		$this->assertArrayHasKey( 'advancedSearch.tooltips', $vars );
-		// Integration test only, see TooltipGeneratorTest for the full unit test
-		$this->assertContainsOnly( 'string', $vars['advancedSearch.tooltips'] );
-
-		$this->assertArrayHasKey( 'advancedSearch.namespacePresets', $vars );
-		$this->assertSame( '<NAMESPACEPRESETS>', $vars['advancedSearch.namespacePresets'] );
 	}
 
 	public function testAdvancedSearchForcesNamespacedUrls() {
