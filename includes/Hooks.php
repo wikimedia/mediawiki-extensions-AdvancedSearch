@@ -41,7 +41,7 @@ class Hooks implements
 		 * If the user is logged in and has explicitly requested to disable the extension, don't load.
 		 * Ensure namespaces are always part of search URLs
 		 */
-		if ( $special->getUser()->isRegistered() &&
+		if ( $special->getUser()->isNamed() &&
 			$services->getUserOptionsLookup()->getBoolOption( $special->getUser(), 'advancedsearch-disable' )
 		) {
 			return;

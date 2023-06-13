@@ -56,19 +56,19 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		return [
 			'anonymous user' => [
 				'expected' => [ NS_MAIN ],
-				'isRegistered' => false,
+				'isNamed' => false,
 				'userOptionsns' => [],
 				'namespacesToBeSearchedDefault' => [ NS_MAIN => true, NS_TALK => false ],
 			],
 			'registered user, no user options' => [
 				'expected' => [ NS_TALK ],
-				'isRegistered' => true,
+				'isNamed' => true,
 				'userOptions' => [],
 				'namespacesToBeSearchedDefault' => [ NS_MAIN => false, NS_TALK => true ],
 			],
 			'registered user, with options' => [
 				'expected' => [ NS_FILE ],
-				'isRegistered' => true,
+				'isNamed' => true,
 				'userOptions' => [ 'searchNs6' => 1, 'searchNs0' => 0, 'searchNs1' => 0 ],
 				'namespacesToBeSearchedDefault' => [ NS_MAIN => false, NS_TALK => true ],
 			],
@@ -79,9 +79,9 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 	 * @dataProvider getDefaultNamespacesRespectsTrueFalseProvider
 	 */
 	public function testGetDefaultNamespacesRespectsTrueFalse(
-		$expected, $isRegistered, $userOptions, $namespacesToBeSearchedDefault
+		$expected, $isNamed, $userOptions, $namespacesToBeSearchedDefault
 	) {
-		if ( !$isRegistered && $userOptions ) {
+		if ( !$isNamed && $userOptions ) {
 			$this->fail( 'Anonymous users cant have user options' );
 		}
 
@@ -89,13 +89,12 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			'wgNamespacesToBeSearchedDefault' => $namespacesToBeSearchedDefault,
 		] );
 
-		$user = $isRegistered ? $this->getTestUser()->getUser() : new User();
+		$user = $isNamed ? $this->getTestUser()->getUser() : new User();
 		$userOptionsManager = $this->getServiceContainer()->getUserOptionsManager();
 		foreach ( $userOptions as $option => $value ) {
 			$userOptionsManager->setOption( $user, $option, $value );
 		}
 
-		$this->assertSame( $isRegistered, $user->isRegistered() );
 		$this->assertSame( $expected, Hooks::getDefaultNamespaces( $user ) );
 	}
 
