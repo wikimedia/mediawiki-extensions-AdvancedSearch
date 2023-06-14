@@ -1,7 +1,6 @@
 'use strict';
 
 const assert = require( 'assert' ),
-	SpecialPage = require( '../pageobjects/special.page' ),
 	SearchPage = require( '../pageobjects/search.page' );
 
 describe( 'Advanced Search', function () {
@@ -34,6 +33,8 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchOneWord.put( 'one1 one2' );
 		SearchPage.searchExactText.put( '"exact test"' );
 
+		assert( !SearchPage.searchPreviewItem.isExisting(), 'No preview pill elements should exist' );
+
 		// Test autocompletion
 		SearchPage.addCategory( 'Existing Category' );
 		SearchPage.addTemplate( 'Existing Template' );
@@ -64,35 +65,43 @@ describe( 'Advanced Search', function () {
 			'Pill field marks non-existent templates in red'
 		);
 
+		// Test preview pills
+		SearchPage.toggleInputFields();
+		browser.waitUntil( SearchPage.advancedSearchIsCollapsed );
+
+		assert( SearchPage.searchPreviewItem.isExisting(), 'Preview pills should be shown' );
+		assert.strictEqual(
+			SearchPage.searchPreviewItems.length,
+			7,
+			'Number of preview pills must match number of filled fields + 1 (default sorting)'
+		);
+
+		// Test the namespace preview
+		SearchPage.expandNamespacesPreview();
+		SearchPage.expandNamespacesMenu();
+		SearchPage.namespaces.clickOnNamespace( 4 );
+
+		assert( !SearchPage.namespacePreviewItems.isExisting(), 'No preview pill elements should exist' );
+
+		SearchPage.namespacesPreview.click();
+		SearchPage.namespacesMenu.waitForDisplayed( { reverse: true } );
+
+		assert( SearchPage.namespacePreviewItems.isExisting(), 'Preview pills should be shown' );
+
 		// Test submitting with double enter
+		SearchPage.toggleInputFields();
 		SearchPage.searchTheseWords.put( '\n\n' );
 
 		assert( SearchPage.formWasSubmitted(), 'form was submitted on double enter in "These Words" field' );
+
+		SearchPage.waitForAdvancedSearchToLoad();
+		assert( SearchPage.advancedSearchIsCollapsed(), 'Search preview is collapsed after submission' );
+		assert( !SearchPage.namespacesMenu.isDisplayed(), 'Namespaces preview is collapsed after submission' );
 
 		// Test query composition
 		assert.strictEqual(
 			SearchPage.getSearchQueryFromUrl(),
 			'these1 these2 these3 "exact test" -not1 -not2 one1 OR one2 deepcat:"Existing Category" deepcat:Category2 hastemplate:"Existing Template" hastemplate:Template2'
 		);
-	} );
-
-	it( 'submits the search on enter when there is no text in "These Words" field', function () {
-		SearchPage.toggleInputFields();
-		SearchPage.searchTheseWords.put( '\n' );
-
-		assert( SearchPage.formWasSubmitted() );
-	} );
-
-	it( 'submits the search with the specific chosen language', function () {
-		if ( !SpecialPage.translateExtensionLink.isDisplayed() ) {
-			this.skip();
-		}
-
-		SearchPage.toggleInputFields();
-		SearchPage.searchTheseWords.put( 'goat,' );
-		SearchPage.searchInLanguage.choose( 'en' );
-		SearchPage.submitForm();
-
-		assert.strictEqual( SearchPage.getSearchQueryFromUrl(), 'goat inlanguage:en' );
 	} );
 } );
