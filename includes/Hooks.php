@@ -9,6 +9,7 @@ use MediaWiki\Hook\SpecialSearchResultsPrependHook;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
+use MediaWiki\User\UserIdentity;
 use MessageLocalizer;
 use OutputPage;
 use SpecialPage;
@@ -38,13 +39,15 @@ class Hooks implements
 		}
 
 		$services = MediaWikiServices::getInstance();
+		$user = $special->getUser();
+		$outputPage = $special->getOutput();
 
 		/**
 		 * If the user is logged in and has explicitly requested to disable the extension, don't load.
 		 * Ensure namespaces are always part of search URLs
 		 */
-		if ( $special->getUser()->isNamed() &&
-			$services->getUserOptionsLookup()->getBoolOption( $special->getUser(), 'advancedsearch-disable' )
+		if ( $user->isNamed() &&
+			$services->getUserOptionsLookup()->getBoolOption( $user, 'advancedsearch-disable' )
 		) {
 			return;
 		}
@@ -54,19 +57,19 @@ class Hooks implements
 		 */
 		$redirect = self::redirectToNamespacedRequest( $special );
 		if ( $redirect !== null ) {
-			$special->getOutput()->redirect( $redirect );
+			$outputPage->redirect( $redirect );
 			// Abort execution of the SpecialPage by returning false since we are redirecting
 			return false;
 		}
 
-		$special->getOutput()->addModules( [
+		$outputPage->addModules( [
 			'ext.advancedSearch.init',
 			'ext.advancedSearch.searchtoken',
 		] );
 
-		$special->getOutput()->addModuleStyles( 'ext.advancedSearch.initialstyles' );
+		$outputPage->addModuleStyles( 'ext.advancedSearch.initialstyles' );
 
-		$special->getOutput()->addJsConfigVars( $this->getJsConfigVars(
+		$outputPage->addJsConfigVars( $this->getJsConfigVars(
 			$special->getContext(),
 			$special->getConfig(),
 			ExtensionRegistry::getInstance(),
@@ -130,10 +133,10 @@ class Hooks implements
 	/**
 	 * Retrieves the default namespaces for the current user
 	 *
-	 * @param User $user The user to lookup default namespaces for
+	 * @param UserIdentity $user The user to lookup default namespaces for
 	 * @return int[] List of namespaces to be searched by default
 	 */
-	public static function getDefaultNamespaces( User $user ): array {
+	public static function getDefaultNamespaces( UserIdentity $user ): array {
 		$searchConfig = MediaWikiServices::getInstance()->getSearchEngineConfig();
 		return $searchConfig->userNamespaces( $user ) ?: $searchConfig->defaultNamespaces();
 	}

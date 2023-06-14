@@ -150,7 +150,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		);
 
 		// Integration test only, see MimeTypeConfiguratorTest for the full unit test
-		$this->assertSame( [ '<EXT>' => '' ], $vars['advancedSearch.mimeTypes'] );
+		$this->assertSame( [ '<EXT>' => '<MIME>' ], $vars['advancedSearch.mimeTypes'] );
 		// Integration test only, see TooltipGeneratorTest for the full unit test
 		$this->assertContainsOnly( 'string', $vars['advancedSearch.tooltips'] );
 
@@ -270,12 +270,8 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 	}
 
 	private function mockMimeAnalyser() {
-		$this->setService(
-			'MimeAnalyzer',
-			$this->getMockBuilder( MimeAnalyzer::class )
-				->onlyMethods( [ 'getMimeTypeFromExtensionOrNull' ] )
-				->disableOriginalConstructor()
-				->getMock()
-		);
+		$mock = $this->createNoOpMock( MimeAnalyzer::class, [ 'getMimeTypeFromExtensionOrNull' ] );
+		$mock->method( 'getMimeTypeFromExtensionOrNull' )->willReturn( '<MIME>' );
+		$this->setService( 'MimeAnalyzer', $mock );
 	}
 }

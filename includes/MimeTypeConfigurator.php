@@ -30,23 +30,13 @@ class MimeTypeConfigurator {
 		$mimeTypes = [];
 
 		foreach ( $fileExtensions as $ext ) {
-			$mimeType = $this->getFirstMimeTypeByFileExtension( $ext );
-			if ( !isset( $mimeTypes[$mimeType] ) ) {
+			$mimeType = $this->mimeAnalyzer->getMimeTypeFromExtensionOrNull( $ext );
+			if ( $mimeType && !isset( $mimeTypes[$mimeType] ) ) {
 				$mimeTypes[$mimeType] = $ext;
 			}
 		}
 
 		return array_flip( $mimeTypes );
-	}
-
-	/**
-	 * Uses MimeAnalyzer to determine the mimetype of a given file extension
-	 *
-	 * @param string $fileExtension
-	 * @return string|null First mime type associated with the given file extension
-	 */
-	private function getFirstMimeTypeByFileExtension( $fileExtension ) {
-		return $this->mimeAnalyzer->getMimeTypeFromExtensionOrNull( $fileExtension );
 	}
 
 }
