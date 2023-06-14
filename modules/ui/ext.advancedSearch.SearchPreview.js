@@ -205,11 +205,17 @@
 	 * @return {string}
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview.prototype.formatValue = function ( fieldId, value ) {
-		if ( fieldIsImageDimension( fieldId ) && Array.isArray( value ) ) {
+		if ( fieldId === 'filetype' && value.indexOf( '/' ) !== -1 ) {
+			var mimeTypes = mw.config.get( 'advancedSearch.mimeTypes' );
+			for ( var fileExtension in mimeTypes ) {
+				if ( mimeTypes[ fileExtension ] === value ) {
+					return fileExtension;
+				}
+			}
+			return value;
+		} else if ( fieldIsImageDimension( fieldId ) && Array.isArray( value ) ) {
 			return fileComparatorToMessage( value[ 0 ] ) + ' ' + value[ 1 ];
-		}
-
-		if ( fieldId === 'sort' ) {
+		} else if ( fieldId === 'sort' ) {
 			return lookupTranslationForSortMethod( value );
 		}
 
