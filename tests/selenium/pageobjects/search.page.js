@@ -149,8 +149,6 @@ class SearchPage extends Page {
 	get searchPreviewItems() { return $$( '.mw-advancedSearch-searchPreview .mw-advancedSearch-searchPreview-previewPill' ); }
 	get namespacePreviewItems() { return $( '.mw-advancedSearch-namespacesPreview .mw-advancedSearch-namespacesPreview-previewPill' ); }
 	get searchInfoIcon() { return $( '.mw-advancedSearch-container .oo-ui-fieldLayout .oo-ui-buttonElement-button' ); }
-	get searchInfoIcons() { return $$( '.mw-advancedSearch-container .oo-ui-fieldLayout .oo-ui-buttonElement-button' ); }
-	get infoPopup() { return $$( '.oo-ui-popupWidget-popup' ); }
 	get searchButton() { return $( '#mw-search-top-table button' ); }
 	get namespaceTags() { return $$( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-group span' ); }
 	get namespaceTagsInCollapsedMode() { return $$( '.mw-advancedSearch-namespacesPreview .mw-advancedSearch-namespacesPreview-previewPill .oo-ui-labelElement-label span' ); }
@@ -177,10 +175,6 @@ class SearchPage extends Page {
 	getQueryFromUrl() {
 		// eslint-disable-next-line node/no-deprecated-api
 		return url.parse( browser.getUrl(), true ).query;
-	}
-
-	getInfoPopupContent( popup ) {
-		return popup.$( 'dl' );
 	}
 
 	getSelectedNamespaceIDs() {
