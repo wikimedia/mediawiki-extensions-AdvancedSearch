@@ -13,14 +13,14 @@
 	 */
 	mw.libs.advancedSearch.dm.getDefaultNamespaces = function ( userSettings ) {
 		var defaultNamespaces = [];
-		Object.keys( userSettings ).forEach( function ( key ) {
+		for ( var key in userSettings ) {
 			if ( userSettings[ key ] ) {
 				var matches = key.match( /^searchNs(\d+)$/ );
 				if ( matches ) {
 					defaultNamespaces.push( matches[ 1 ] );
 				}
 			}
-		} );
+		}
 		return defaultNamespaces;
 	};
 

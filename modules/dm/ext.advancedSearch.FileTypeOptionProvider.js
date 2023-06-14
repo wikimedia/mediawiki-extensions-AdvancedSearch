@@ -51,7 +51,7 @@
 	 * @return {Object}
 	 */
 	var getFileOptions = function ( options, allowedMimeTypes ) {
-		Object.keys( allowedMimeTypes ).forEach( function ( fileExtension ) {
+		for ( var fileExtension in allowedMimeTypes ) {
 			var groupName = 'other',
 				mimeType = allowedMimeTypes[ fileExtension ],
 				topLevelType = getTopLevelMimeType( mimeType );
@@ -63,7 +63,7 @@
 			}
 
 			addFileOption( options, groupName, { data: mimeType, label: fileExtension } );
-		} );
+		}
 
 		return options;
 	};

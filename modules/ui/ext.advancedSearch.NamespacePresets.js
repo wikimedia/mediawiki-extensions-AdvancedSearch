@@ -124,23 +124,23 @@
 	};
 
 	mw.libs.advancedSearch.ui.NamespacePresets.prototype.updatePresetsFromStore = function () {
-		var selectedPresets = {},
-			self = this,
-			storeNamespaces = self.store.getNamespaces();
-		Object.keys( this.presets ).forEach( function ( key ) {
+		var key,
+			selectedPresets = {},
+			storeNamespaces = this.store.getNamespaces();
+		for ( key in this.presets ) {
 			selectedPresets[ key ] = mw.libs.advancedSearch.util.arrayContains(
 				storeNamespaces,
-				self.presets[ key ].namespaces
+				this.presets[ key ].namespaces
 			);
-		} );
+		}
 		this.checkboxMultiselectWidget.off( 'change', this.updateStoreFromPresets, this );
-		Object.keys( selectedPresets ).forEach( function ( key ) {
-			var presetWidget = self.checkboxMultiselectWidget.findItemFromData( key ),
+		for ( key in selectedPresets ) {
+			var presetWidget = this.checkboxMultiselectWidget.findItemFromData( key ),
 				isSelected = selectedPresets[ key ];
 			if ( presetWidget.isSelected() !== isSelected ) {
 				presetWidget.setSelected( isSelected );
 			}
-		} );
+		}
 		this.checkboxMultiselectWidget.on( 'change', this.updateStoreFromPresets, [], this );
 	};
 
