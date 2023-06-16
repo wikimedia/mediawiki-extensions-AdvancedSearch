@@ -9,7 +9,7 @@ describe( 'Advanced Search', function () {
 		browser.deleteCookies();
 	} );
 
-	it( 'selects the default namespaces', function () {
+	it( 'selects the users default namespaces when logged in', function () {
 		UserLoginPage.loginAdmin();
 
 		const namespaceOptions = [ '0', '1', '2', '10' ];
@@ -22,6 +22,7 @@ describe( 'Advanced Search', function () {
 		selectedNamespaceIDs.sort();
 		namespaceOptions.sort();
 
+		assert( SearchPage.default.isSelected(), 'The default checkbox is selected' );
 		assert.deepStrictEqual( selectedNamespaceIDs, namespaceOptions );
 	} );
 
@@ -36,22 +37,5 @@ describe( 'Advanced Search', function () {
 		expectedNamespaceIDs.sort();
 
 		assert.deepStrictEqual( selectedNamespaceIDs, expectedNamespaceIDs );
-	} );
-
-	it( 'displays the default namespaces of the user and wiki and that the default checkbox is selected', function () {
-		UserLoginPage.loginAdmin();
-
-		const namespaceOptions = [ '15', '4', '5', '6' ];
-		SearchPage.setSearchNamespaceOptions( namespaceOptions );
-		SearchPage.open();
-
-		SearchPage.expandNamespacesPreview();
-
-		const selectedNamespaceIDs = SearchPage.getSelectedNamespaceIDs();
-		selectedNamespaceIDs.sort();
-		namespaceOptions.sort();
-
-		assert( SearchPage.default.isSelected() );
-		assert.deepStrictEqual( namespaceOptions, selectedNamespaceIDs );
 	} );
 } );
