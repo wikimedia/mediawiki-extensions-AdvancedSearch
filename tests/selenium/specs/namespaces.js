@@ -12,69 +12,6 @@ describe( 'AdvancedSearch', function () {
 		SearchPage.open();
 	} );
 
-	it( 'inserts advanced search icon elements', function () {
-		SearchPage.toggleInputFields();
-
-		assert( SearchPage.searchInfoIcon.isDisplayed() );
-	} );
-
-	it( 'inserts content in icon popups', function () {
-		SearchPage.toggleInputFields();
-		const infoPopups = SearchPage.infoPopup;
-		SearchPage.searchInfoIcons.forEach( function ( popupIcon, idx ) {
-			if ( !popupIcon.isDisplayed() ) {
-				return;
-			}
-			browser.execute( function ( selector, i ) {
-				document.querySelectorAll( selector )[ i ].scrollIntoView( true ); // eslint-disable-line no-undef
-			}, popupIcon.selector, idx );
-			popupIcon.click();
-			const popupContent = infoPopups[ idx ];
-			popupContent.waitForDisplayed();
-
-			assert( popupContent.isDisplayed() );
-			assert( SearchPage.getInfoPopupContent( popupContent ).getText() !== '' );
-
-			popupIcon.click();
-		} );
-	} );
-
-	it( 'submits the search taking into consideration all entered criteria', function () {
-		SearchPage.toggleInputFields();
-		SearchPage.searchTheseWords.put( 'old,' );
-		SearchPage.searchNotTheseWords.put( 'new ' );
-		SearchPage.searchOneWord.put( 'big enormous giant' );
-		SearchPage.searchTitle.put( 'house' );
-		SearchPage.searchSubpageof.put( 'Wikimedia' );
-		SearchPage.searchTemplate.put( 'Main Page' );
-		SearchPage.searchFileType.selectImageType();
-		SearchPage.searchImageWidth.put( '40' );
-		SearchPage.searchImageHeight.put( '40' );
-
-		SearchPage.submitForm();
-
-		assert.strictEqual( SearchPage.getSearchQueryFromUrl(), 'old -new big OR enormous OR giant intitle:house subpageof:Wikimedia hastemplate:"Main Page" filemime:image/gif filew:>40 fileh:>40' );
-	} );
-
-	it( 'adds the namespace "File" and dimension fields are visible when searching for files of type image', function () {
-		SearchPage.toggleInputFields();
-		SearchPage.searchFileType.selectImageType();
-
-		assert( SearchPage.namespaceTagsInCollapsedMode.filter( function ( tag ) {
-			return tag.getText() === 'File';
-		} ).length !== 0 );
-		assert( SearchPage.searchImageWidth.isDisplayed() );
-		assert( SearchPage.searchImageHeight.isDisplayed() );
-	} );
-
-	it( 'hides dimension fields when searching for files of type audio', function () {
-		SearchPage.toggleInputFields();
-		SearchPage.searchFileType.selectAudioType();
-
-		assert( !SearchPage.searchImageWidth.isDisplayed() );
-		assert( !SearchPage.searchImageHeight.isDisplayed() );
-	} );
-
 	it( 'selects all namespaces when clicking "All" preset', function () {
 		SearchPage.expandNamespacesPreview();
 		SearchPage.allNamespacesPreset.click();

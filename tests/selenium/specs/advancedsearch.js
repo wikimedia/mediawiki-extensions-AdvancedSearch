@@ -14,6 +14,7 @@ describe( 'Advanced Search', function () {
 
 		SearchPage.toggleInputFields();
 
+		assert( SearchPage.searchInfoIcon.isDisplayed(), 'Info icons are visible' );
 		assert( SearchPage.searchTheseWords.getPlaceholderText() === '' );
 		assert( SearchPage.searchExactText.getPlaceholderText() !== '' );
 		assert( SearchPage.searchNotTheseWords.getPlaceholderText() === '' );
@@ -32,6 +33,25 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchNotTheseWords.put( 'not1 not2,' );
 		SearchPage.searchOneWord.put( 'one1 one2' );
 		SearchPage.searchExactText.put( '"exact test"' );
+		SearchPage.searchTitle.put( 'intitle' );
+		SearchPage.searchSubpageof.put( 'Subpage' );
+
+		// Don't show dimension on audio input
+		SearchPage.searchFileType.selectAudioType();
+		assert( !SearchPage.searchImageWidth.isDisplayed() );
+		assert( !SearchPage.searchImageHeight.isDisplayed() );
+
+		// Add image
+		SearchPage.searchFileType.selectImageType();
+		SearchPage.searchImageWidth.put( '40' );
+		SearchPage.searchImageHeight.put( '40' );
+
+		assert(
+			SearchPage.namespaceTagsInCollapsedMode.filter(
+				( tag ) => { return tag.getText() === 'File'; }
+			).length !== 0,
+			'File namespace is selected '
+		);
 
 		assert( !SearchPage.searchPreviewItem.isExisting(), 'No preview pill elements should exist' );
 
@@ -72,7 +92,7 @@ describe( 'Advanced Search', function () {
 		assert( SearchPage.searchPreviewItem.isExisting(), 'Preview pills should be shown' );
 		assert.strictEqual(
 			SearchPage.searchPreviewItems.length,
-			7,
+			12,
 			'Number of preview pills must match number of filled fields + 1 (default sorting)'
 		);
 
@@ -101,7 +121,7 @@ describe( 'Advanced Search', function () {
 		// Test query composition
 		assert.strictEqual(
 			SearchPage.getSearchQueryFromUrl(),
-			'these1 these2 these3 "exact test" -not1 -not2 one1 OR one2 deepcat:"Existing Category" deepcat:Category2 hastemplate:"Existing Template" hastemplate:Template2'
+			'these1 these2 these3 "exact test" -not1 -not2 one1 OR one2 intitle:intitle subpageof:Subpage deepcat:"Existing Category" deepcat:Category2 hastemplate:"Existing Template" hastemplate:Template2 filemime:image/gif filew:>40 fileh:>40'
 		);
 	} );
 } );
