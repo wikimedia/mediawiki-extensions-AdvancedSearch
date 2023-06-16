@@ -77,19 +77,11 @@
 	},
 	"ResourceModules": {
 		"ext.advancedSearch.initialstyles": {
-			"targets": [
-				"desktop",
-				"mobile"
-			],
 			"styles": [
 				"modules/ext.advancedSearch.init.less"
 			]
 		},
 		"ext.advancedSearch.styles": {
-			"targets": [
-				"desktop",
-				"mobile"
-			],
 			"styles": [
 				"modules/ext.advancedSearch.less"
 			],
@@ -106,10 +98,6 @@
 			"class": "AdvancedSearch\\SearchnamespaceTokenModule"
 		},
 		"ext.advancedSearch.elements": {
-			"targets": [
-				"desktop",
-				"mobile"
-			],
 			"scripts": [
 				"modules/ext.advancedSearch.defaultFields.js",
 				"modules/ext.advancedSearch.FieldCollection.js",
@@ -186,10 +174,6 @@
 			]
 		},
 		"ext.advancedSearch.init": {
-			"targets": [
-				"desktop",
-				"mobile"
-			],
 			"scripts": [
 				"modules/ext.advancedSearch.init.js"
 			],
@@ -199,10 +183,6 @@
 			]
 		},
 		"ext.advancedSearch.SearchFieldUI": {
-			"targets": [
-				"desktop",
-				"mobile"
-			],
 			"scripts": [
 				"modules/dm/ext.advancedSearch.TitleCache.js",
 				"modules/dm/ext.advancedSearch.MultiselectLookup.js",
