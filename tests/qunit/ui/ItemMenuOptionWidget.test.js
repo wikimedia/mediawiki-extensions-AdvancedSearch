@@ -1,10 +1,10 @@
 ( function () {
-	var ItemMenuOptionWidget = mw.libs.advancedSearch.ui.ItemMenuOptionWidget;
+	const ItemMenuOptionWidget = mw.libs.advancedSearch.ui.ItemMenuOptionWidget;
 
 	QUnit.module( 'ext.advancedSearch.ui.ItemMenuOptionWidget' );
 
 	QUnit.test( 'Creates a valid menu option', function ( assert ) {
-		var menuOption = new ItemMenuOptionWidget( {
+		const menuOption = new ItemMenuOptionWidget( {
 			data: '2',
 			label: 'User'
 		} );

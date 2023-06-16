@@ -5,8 +5,8 @@
 	mw.libs.advancedSearch = mw.libs.advancedSearch || {};
 	mw.libs.advancedSearch.ui = mw.libs.advancedSearch.ui || {};
 
-	var getOptions = function ( optionProvider ) {
-		var languages = optionProvider.getLanguages();
+	const getOptions = function ( optionProvider ) {
+		const languages = optionProvider.getLanguages();
 		return [ { data: '', label: mw.msg( 'advancedsearch-inlanguage-default' ) } ].concat( languages );
 	};
 

@@ -1,7 +1,7 @@
 ( function () {
 	'use strict';
 
-	var SearchPreview,
+	let SearchPreview,
 		sandbox,
 		store,
 		config;
@@ -28,13 +28,13 @@
 		config = {
 			label: 'something'
 		};
-		var searchPreview = new SearchPreview( store, config );
+		const searchPreview = new SearchPreview( store, config );
 
 		assert.strictEqual( searchPreview.label.getLabel(), 'something' );
 	} );
 
 	QUnit.test( 'Store data subscribed to and synced initially', function ( assert ) {
-		var updatePreviewSpy = sandbox.spy( SearchPreview.prototype, 'updatePreview' );
+		const updatePreviewSpy = sandbox.spy( SearchPreview.prototype, 'updatePreview' );
 
 		// eslint-disable-next-line no-new
 		new SearchPreview( store, config );
@@ -44,16 +44,16 @@
 	} );
 
 	QUnit.test( 'Store state is reflected in preview', function ( assert ) {
-		var generateTagSpy = sandbox.spy( SearchPreview.prototype, 'generateTag' );
+		const generateTagSpy = sandbox.spy( SearchPreview.prototype, 'generateTag' );
 
 		store.getField.withArgs( 'somename' ).returns( 'field one value' );
 		store.getField.withArgs( 'another' ).returns( 'field two value' );
 
 		config.fieldNames = [ 'somename', 'another' ];
 
-		var searchPreview = new SearchPreview( store, config );
+		const searchPreview = new SearchPreview( store, config );
 
-		var $pills = $( '.mw-advancedSearch-searchPreview-previewPill', searchPreview.$element );
+		const $pills = $( '.mw-advancedSearch-searchPreview-previewPill', searchPreview.$element );
 		assert.strictEqual( $pills.length, 3 );
 
 		assert.true( store.getField.calledTwice );
@@ -64,7 +64,7 @@
 	} );
 
 	QUnit.test( 'Fields are correctly selected for preview', function ( assert ) {
-		var searchPreview = new SearchPreview( store, config );
+		const searchPreview = new SearchPreview( store, config );
 
 		assert.false( searchPreview.skipFieldInPreview( 'plain', 'searchme' ) );
 		assert.false( searchPreview.skipFieldInPreview( 'filetype', 'bitmap' ) );
@@ -87,11 +87,11 @@
 	} );
 
 	QUnit.test( 'Tag is generated', function ( assert ) {
-		var messageStub = sandbox.stub( mw, 'msg' ).withArgs( 'advancedsearch-field-somename' ).returns( 'my label:' );
-		var searchPreview = new SearchPreview( store, config );
-		var tag = searchPreview.generateTag( 'somename', 'my field value' );
+		const messageStub = sandbox.stub( mw, 'msg' ).withArgs( 'advancedsearch-field-somename' ).returns( 'my label:' );
+		const searchPreview = new SearchPreview( store, config );
+		const tag = searchPreview.generateTag( 'somename', 'my field value' );
 
-		var element = tag.$element[ 0 ];
+		const element = tag.$element[ 0 ];
 
 		assert.true( messageStub.calledOnce );
 		assert.strictEqual( element.title, 'my field value' );
@@ -102,27 +102,27 @@
 	} );
 
 	QUnit.test( 'Tag content is HTML-safe', function ( assert ) {
-		var searchPreview = new SearchPreview( store, config );
-		var tag = searchPreview.generateTag( 'whatever', '<script>alert("evil");</script>' );
+		const searchPreview = new SearchPreview( store, config );
+		const tag = searchPreview.generateTag( 'whatever', '<script>alert("evil");</script>' );
 
-		var element = tag.$element[ 0 ];
+		const element = tag.$element[ 0 ];
 
 		assert.strictEqual( $( '.mw-advancedSearch-searchPreview-content', element ).html(), '<bdi>&lt;script&gt;alert("evil");&lt;/script&gt;</bdi>' );
 	} );
 
 	QUnit.test( 'Tag label is HTML-safe', function ( assert ) {
 		sandbox.stub( mw, 'msg' ).withArgs( 'advancedsearch-field-whatever' ).returns( '<div>block</div>' );
-		var searchPreview = new SearchPreview( store, config );
-		var tag = searchPreview.generateTag( 'whatever', 'lorem' );
+		const searchPreview = new SearchPreview( store, config );
+		const tag = searchPreview.generateTag( 'whatever', 'lorem' );
 
-		var element = tag.$element[ 0 ];
+		const element = tag.$element[ 0 ];
 
 		assert.strictEqual( $( '.oo-ui-labelElement-label span', element ).html(), '&lt;div&gt;block&lt;/div&gt;' );
 	} );
 
 	QUnit.test( 'Tag removals clears store', function ( assert ) {
-		var searchPreview = new SearchPreview( store, config );
-		var tag = searchPreview.generateTag( 'somename', 'my field value' );
+		const searchPreview = new SearchPreview( store, config );
+		const tag = searchPreview.generateTag( 'somename', 'my field value' );
 
 		tag.remove();
 		assert.true( store.removeField.withArgs( 'somename' ).calledOnce );
@@ -134,7 +134,7 @@
 		store.getField.withArgs( 'one' ).returns( 'field one value' );
 		store.getField.withArgs( 'two' ).returns( 'field two value' );
 
-		var searchPreview = new SearchPreview( store, config );
+		const searchPreview = new SearchPreview( store, config );
 		searchPreview.showPreview();
 
 		assert.strictEqual( searchPreview.$element.find( '.mw-advancedSearch-searchPreview-previewPill' ).length, 3 );
@@ -143,14 +143,14 @@
 	QUnit.test( 'Hiding removes pills', function ( assert ) {
 		config.fieldNames = [ 'one', 'two' ];
 
-		var searchPreview = new SearchPreview( store, config );
+		const searchPreview = new SearchPreview( store, config );
 		searchPreview.hidePreview();
 
 		assert.strictEqual( searchPreview.$element.find( '.mw-advancedSearch-searchPreview-previewPill' ).length, 0 );
 	} );
 
 	QUnit.test( 'Scalar values get formatted well', function ( assert ) {
-		var searchPreview = new SearchPreview( store, config );
+		const searchPreview = new SearchPreview( store, config );
 
 		assert.strictEqual( searchPreview.formatValue( 'someOption', '' ), '' );
 		assert.strictEqual( searchPreview.formatValue( 'someOption', 'hello' ), 'hello' );
@@ -158,7 +158,7 @@
 	} );
 
 	QUnit.test( 'Array values get formatted well', function ( assert ) {
-		var searchPreview = new SearchPreview( store, config );
+		const searchPreview = new SearchPreview( store, config );
 
 		assert.strictEqual( searchPreview.formatValue( 'someOption', [ 'some', 'words', 'in', 'combination' ] ), 'some, words, in, combination' );
 		assert.strictEqual( searchPreview.formatValue( 'someOption', [ 'related words', 'not', 'so' ] ), 'related words, not, so' );
@@ -166,8 +166,8 @@
 	} );
 
 	QUnit.test( 'Dimension values get formatted well', function ( assert ) {
-		var searchPreview = new SearchPreview( store, config );
-		var translationStub = sandbox.stub( mw, 'msg' );
+		const searchPreview = new SearchPreview( store, config );
+		const translationStub = sandbox.stub( mw, 'msg' );
 		translationStub.withArgs( 'advancedsearch-filesize-equals-symbol' ).returns( '=' );
 		translationStub.withArgs( 'advancedsearch-filesize-greater-than-symbol' ).returns( '>' );
 		translationStub.withArgs( 'advancedsearch-filesize-smaller-than-symbol' ).returns( '<' );

@@ -5,8 +5,8 @@
 	mw.libs.advancedSearch = mw.libs.advancedSearch || {};
 	mw.libs.advancedSearch.ui = mw.libs.advancedSearch.ui || {};
 
-	var getOptions = function ( selected ) {
-		var options = mw.libs.advancedSearch.dm.getSortMethods().map( function ( name ) {
+	const getOptions = function ( selected ) {
+		const options = mw.libs.advancedSearch.dm.getSortMethods().map( function ( name ) {
 			// The currently active sort method already appears in the list, don't add it again
 			if ( name === selected ) {
 				selected = undefined;
@@ -14,14 +14,14 @@
 			// The following messages are used here:
 			// * advancedsearch-sort-relevance
 			// * advancedsearch-sort-*
-			var msg = mw.message( 'advancedsearch-sort-' + name.replace( /_/g, '-' ) );
+			const msg = mw.message( 'advancedsearch-sort-' + name.replace( /_/g, '-' ) );
 			return { data: name, label: msg.exists() ? msg.text() : name };
 		} );
 		if ( selected ) {
 			// The following messages are used here:
 			// * advancedsearch-sort-relevance
 			// * advancedsearch-sort-*
-			var selectedMsg = mw.message( 'advancedsearch-sort-' + selected.replace( /_/g, '-' ) );
+			const selectedMsg = mw.message( 'advancedsearch-sort-' + selected.replace( /_/g, '-' ) );
 			options.push( { data: selected, label: selectedMsg.exists() ? selectedMsg.text() : selected } );
 		}
 		return options;

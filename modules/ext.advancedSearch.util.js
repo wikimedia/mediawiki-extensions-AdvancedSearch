@@ -6,7 +6,7 @@
 	mw.libs.advancedSearch.util = mw.libs.advancedSearch.util || {};
 
 	mw.libs.advancedSearch.util.arrayEquals = function ( a1, a2 ) {
-		var i = a1.length;
+		let i = a1.length;
 		if ( i !== a2.length ) {
 			return false;
 		}

@@ -55,10 +55,10 @@
 	};
 
 	mw.libs.advancedSearch.ui.ArbitraryWordInput.prototype.buildTagsFromInput = function () {
-		var segments = this.input.getValue().split( /[\s,]+/ );
+		const segments = this.input.getValue().split( /[\s,]+/ );
 
 		if ( segments.length > 1 ) {
-			var self = this;
+			const self = this;
 
 			segments.forEach( function ( segment ) {
 				if ( self.isAllowedData( segment ) ) {

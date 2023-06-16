@@ -1,5 +1,5 @@
 ( function () {
-	var getDefaultNamespaces = mw.libs.advancedSearch.dm.getDefaultNamespaces;
+	const getDefaultNamespaces = mw.libs.advancedSearch.dm.getDefaultNamespaces;
 
 	QUnit.module( 'ext.advancedSearch.dm.getDefaultNamespaces' );
 
@@ -31,7 +31,7 @@
 	} );
 
 	QUnit.test( 'All selected namespaces are returned', function ( assert ) {
-		var namespaces = getDefaultNamespaces( {
+		const namespaces = getDefaultNamespaces( {
 			foo: 1,
 			searchNs0: true,
 			searchNs1: false,

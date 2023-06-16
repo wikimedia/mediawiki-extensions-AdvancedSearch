@@ -50,11 +50,11 @@
 	 * @return {SearchField}
 	 */
 	mw.libs.advancedSearch.createSearchFieldFromObject = function ( obj ) {
-		var id = obj.id,
+		const id = obj.id,
 			defaultValue = obj.defaultValue || '';
 		delete obj.id;
 		delete obj.defaultValue;
-		var SearchFieldSubclass = function () {
+		const SearchFieldSubclass = function () {
 			mw.libs.advancedSearch.SearchField.apply( this, arguments );
 		};
 		SearchFieldSubclass.prototype = Object.create( mw.libs.advancedSearch.SearchField.prototype );

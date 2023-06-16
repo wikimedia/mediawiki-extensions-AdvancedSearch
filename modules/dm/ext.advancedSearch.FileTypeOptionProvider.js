@@ -5,7 +5,7 @@
 	mw.libs.advancedSearch = mw.libs.advancedSearch || {};
 	mw.libs.advancedSearch.dm = mw.libs.advancedSearch.dm || {};
 
-	var KNOWN_DOCUMENT_TYPES = [
+	const KNOWN_DOCUMENT_TYPES = [
 		'xls', 'xlsx',
 		'doc', 'docx',
 		'odt',
@@ -14,7 +14,7 @@
 		'pdf'
 	];
 
-	var isKnownDocumentType = function ( fileExtension ) {
+	const isKnownDocumentType = function ( fileExtension ) {
 		return KNOWN_DOCUMENT_TYPES.indexOf( fileExtension ) !== -1;
 	};
 
@@ -22,7 +22,7 @@
 	 * @param {string} mimeType
 	 * @return {string}
 	 */
-	var getTopLevelMimeType = function ( mimeType ) {
+	const getTopLevelMimeType = function ( mimeType ) {
 		return mimeType.split( '/' )[ 0 ];
 	};
 
@@ -31,7 +31,7 @@
 	 * @param {string} groupName
 	 * @param {Object} option
 	 */
-	var addFileOption = function ( options, groupName, option ) {
+	const addFileOption = function ( options, groupName, option ) {
 		if ( options[ groupName ].length === 0 ) {
 			// The following messages are used here:
 			// * advancedsearch-filetype-section-types
@@ -50,10 +50,10 @@
 	 * @param {Object} allowedMimeTypes File extension => MIME type
 	 * @return {Object}
 	 */
-	var getFileOptions = function ( options, allowedMimeTypes ) {
-		for ( var fileExtension in allowedMimeTypes ) {
-			var groupName = 'other',
-				mimeType = allowedMimeTypes[ fileExtension ],
+	const getFileOptions = function ( options, allowedMimeTypes ) {
+		for ( const fileExtension in allowedMimeTypes ) {
+			let groupName = 'other';
+			const mimeType = allowedMimeTypes[ fileExtension ],
 				topLevelType = getTopLevelMimeType( mimeType );
 
 			if ( isKnownDocumentType( fileExtension ) ) {
@@ -109,7 +109,7 @@
 	 * @return {Object[]}
 	 */
 	mw.libs.advancedSearch.dm.FileTypeOptionProvider.prototype.getAllowedFileTypeOptions = function () {
-		var options = [];
+		let options = [];
 
 		// eslint-disable-next-line no-jquery/no-each-util
 		$.each( getFileOptions( this.options, this.mimeTypes ), function ( index, fileOptions ) {

@@ -6,14 +6,14 @@
 	mw.libs.advancedSearch.dm = mw.libs.advancedSearch.dm || {};
 
 	// Internal constants
-	var FILETYPES_WITH_DIMENSIONS = [
+	const FILETYPES_WITH_DIMENSIONS = [
 		'bitmap',
 		'drawing',
 		'image',
 		'video'
 	];
 
-	var cloneReferenceTypeValue = function ( value ) {
+	const cloneReferenceTypeValue = function ( value ) {
 		if ( Array.isArray( value ) ) {
 			return value.slice();
 		} else if ( value !== null && typeof value === 'object' ) {
@@ -67,8 +67,6 @@
 	 * @param {*} value
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.storeField = function ( fieldId, value ) {
-		var namespaces;
-
 		if (
 			Object.prototype.hasOwnProperty.call( this.searchFields, fieldId ) &&
 			OO.compare( this.searchFields[ fieldId ], value )
@@ -87,7 +85,7 @@
 			this.resetFileDimensionFields();
 		}
 
-		namespaces = this.getNamespaces();
+		const namespaces = this.getNamespaces();
 		if ( fieldId === 'filetype' && namespaces.indexOf( mw.libs.advancedSearch.dm.SearchModel.FILE_NAMESPACE ) === -1 ) {
 			namespaces.push( mw.libs.advancedSearch.dm.SearchModel.FILE_NAMESPACE );
 			this.setNamespaces( namespaces );
@@ -137,7 +135,7 @@
 	 * @param {string} nsId
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.removeNamespace = function ( nsId ) {
-		var index = this.getNamespaces().indexOf( nsId );
+		const index = this.getNamespaces().indexOf( nsId );
 		if ( index !== -1 ) {
 			this.getNamespaces().splice( index, 1 );
 		}
@@ -190,7 +188,7 @@
 	 * @param {string} jsonSerialized
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.setAllFromJSON = function ( jsonSerialized ) {
-		var unserialized;
+		let unserialized;
 
 		try {
 			unserialized = JSON.parse( jsonSerialized );
@@ -203,7 +201,7 @@
 		}
 
 		this.searchFields = {};
-		for ( var opt in unserialized.fields ) {
+		for ( const opt in unserialized.fields ) {
 			this.searchFields[ opt ] = unserialized.fields[ opt ];
 		}
 		this.emitUpdate();
@@ -215,11 +213,11 @@
 	 * @return {boolean}
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.filetypeSupportsDimensions = function () {
-		var fileType = this.getField( 'filetype' );
+		const fileType = this.getField( 'filetype' );
 		if ( !fileType ) {
 			return false;
 		}
-		var generalFileType = fileType.replace( /\/.*/, '' );
+		const generalFileType = fileType.replace( /\/.*/, '' );
 		return FILETYPES_WITH_DIMENSIONS.indexOf( generalFileType ) !== -1;
 	};
 
@@ -258,7 +256,7 @@
 	 * @param {string[]} namespaces
 	 */
 	mw.libs.advancedSearch.dm.SearchModel.prototype.setNamespaces = function ( namespaces ) {
-		var previousNamespaces = this.namespaces.slice( 0 );
+		const previousNamespaces = this.namespaces.slice( 0 );
 
 		this.namespaces = this.sortNamespacesByNumber( namespaces );
 

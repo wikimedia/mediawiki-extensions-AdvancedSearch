@@ -12,10 +12,10 @@
 	 * @return {string[]} Namespace IDs
 	 */
 	mw.libs.advancedSearch.dm.getDefaultNamespaces = function ( userSettings ) {
-		var defaultNamespaces = [];
-		for ( var key in userSettings ) {
+		const defaultNamespaces = [];
+		for ( const key in userSettings ) {
 			if ( userSettings[ key ] ) {
-				var matches = key.match( /^searchNs(\d+)$/ );
+				const matches = key.match( /^searchNs(\d+)$/ );
 				if ( matches ) {
 					defaultNamespaces.push( matches[ 1 ] );
 				}

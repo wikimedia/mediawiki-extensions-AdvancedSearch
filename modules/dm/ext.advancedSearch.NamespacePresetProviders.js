@@ -45,7 +45,7 @@
 	 * @return {string[]}
 	 */
 	mw.libs.advancedSearch.dm.NamespacePresetProviders.prototype.getNamespaceIdsFromProvider = function ( providerName ) {
-		var self = this;
+		const self = this;
 
 		return this.providerFunctions[ providerName ]( Object.keys( this.namespaces ) )
 			// Calling String() as a function casts numbers to strings

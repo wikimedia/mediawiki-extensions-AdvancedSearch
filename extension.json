@@ -98,6 +98,7 @@
 			"class": "AdvancedSearch\\SearchnamespaceTokenModule"
 		},
 		"ext.advancedSearch.elements": {
+			"es6": true,
 			"scripts": [
 				"modules/ext.advancedSearch.defaultFields.js",
 				"modules/ext.advancedSearch.FieldCollection.js",
@@ -174,6 +175,7 @@
 			]
 		},
 		"ext.advancedSearch.init": {
+			"es6": true,
 			"scripts": [
 				"modules/ext.advancedSearch.init.js"
 			],
@@ -183,6 +185,7 @@
 			]
 		},
 		"ext.advancedSearch.SearchFieldUI": {
+			"es6": true,
 			"scripts": [
 				"modules/dm/ext.advancedSearch.TitleCache.js",
 				"modules/dm/ext.advancedSearch.MultiselectLookup.js",

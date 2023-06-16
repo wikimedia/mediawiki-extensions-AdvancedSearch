@@ -1,12 +1,12 @@
 ( function () {
 	'use strict';
 
-	var FieldCollection = mw.libs.advancedSearch.FieldCollection;
+	const FieldCollection = mw.libs.advancedSearch.FieldCollection;
 
 	QUnit.module( 'mw.libs.advancedSearch.FieldCollection' );
 
 	QUnit.test( 'Field ids must be unique', function ( assert ) {
-		var coll = new FieldCollection(),
+		const coll = new FieldCollection(),
 			stubField = { id: 'foo' };
 		coll.add( stubField, 'test' );
 		assert.throws( function () {
@@ -15,7 +15,7 @@
 	} );
 
 	QUnit.test( 'Can lookup group name for id', function ( assert ) {
-		var coll = new FieldCollection();
+		const coll = new FieldCollection();
 		coll.add( { id: 'foo' }, 'firstGroup' );
 		coll.add( { id: 'bar' }, 'firstGroup' );
 		coll.add( { id: 'baz' }, 'secondGroup' );
@@ -25,7 +25,7 @@
 	} );
 
 	QUnit.test( 'Adding fields to frozen group throws error', function ( assert ) {
-		var coll = new FieldCollection(),
+		const coll = new FieldCollection(),
 			stubField = { id: 'foo' };
 		coll.freezeGroups( [ 'test' ] );
 		assert.throws( function () {

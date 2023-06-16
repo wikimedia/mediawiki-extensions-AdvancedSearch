@@ -1,7 +1,7 @@
 ( function () {
-	var NamespacePresets = mw.libs.advancedSearch.ui.NamespacePresets,
-		Model = mw.libs.advancedSearch.dm.SearchModel,
-		sandbox, presetProvider;
+	const NamespacePresets = mw.libs.advancedSearch.ui.NamespacePresets;
+	const Model = mw.libs.advancedSearch.dm.SearchModel;
+	let sandbox, presetProvider;
 
 	QUnit.module( 'ext.advancedSearch.ui.NamespacePresets' );
 
@@ -26,7 +26,7 @@
 		presetProvider.hasProvider.returns( true );
 		presetProvider.getNamespaceIdsFromProvider.returns( [ '0', '1', '2' ] );
 
-		var presets = new NamespacePresets( new Model(), presetProvider, {
+		const presets = new NamespacePresets( new Model(), presetProvider, {
 			presets: {
 				justatest: {
 					enabled: true,
@@ -40,8 +40,8 @@
 
 	QUnit.test( 'Passing a nonexisting provider function creates no namespace preset', function ( assert ) {
 		presetProvider.hasProvider.withArgs( 'blackhole' ).returns( false );
-		var warningLogger = sandbox.stub( mw.log, 'warn' );
-		var presets = new NamespacePresets( new Model(), presetProvider, {
+		const warningLogger = sandbox.stub( mw.log, 'warn' );
+		const presets = new NamespacePresets( new Model(), presetProvider, {
 			presets: {
 				blackhole: {
 					enabled: true,
@@ -55,8 +55,8 @@
 	} );
 
 	QUnit.test( 'Passing a malformed preset config creates no namespace preset', function ( assert ) {
-		var warningLogger = sandbox.stub( mw.log, 'warn' );
-		var presets = new NamespacePresets( new Model(), presetProvider, {
+		const warningLogger = sandbox.stub( mw.log, 'warn' );
+		const presets = new NamespacePresets( new Model(), presetProvider, {
 			presets: {
 				borken: {
 					enabled: true
@@ -69,7 +69,7 @@
 	} );
 
 	QUnit.test( 'Passing a disabled preset config creates no namespace preset', function ( assert ) {
-		var presets = new NamespacePresets( new Model(), presetProvider, {
+		const presets = new NamespacePresets( new Model(), presetProvider, {
 			presets: {
 				turnedoff: {
 					enabled: false,
@@ -82,7 +82,7 @@
 	} );
 
 	QUnit.test( 'Passing a preset config omitting "enabled" creates no namespace preset', function ( assert ) {
-		var presets = new NamespacePresets( new Model(), presetProvider, {
+		const presets = new NamespacePresets( new Model(), presetProvider, {
 			presets: {
 				undecided: {
 					namespaces: [ '2', '4', '6', '8' ]
@@ -94,7 +94,7 @@
 	} );
 
 	QUnit.test( 'Selecting namespace adds its preset', function ( assert ) {
-		var model = new Model(),
+		const model = new Model(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					all: {
@@ -108,7 +108,7 @@
 	} );
 
 	QUnit.test( 'Presets with empty namespace definitions log a warning', function ( assert ) {
-		var warningLogger = sandbox.stub( mw.log, 'warn' ),
+		const warningLogger = sandbox.stub( mw.log, 'warn' ),
 			model = new Model(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
@@ -125,7 +125,7 @@
 
 	QUnit.test( 'Presets with invalid namespace definitions log a warning', function ( assert ) {
 		presetProvider.namespaceIdsAreValid.returns( false );
-		var warningLogger = sandbox.stub( mw.log, 'warn' ),
+		const warningLogger = sandbox.stub( mw.log, 'warn' ),
 			model = new Model(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
@@ -141,7 +141,7 @@
 	} );
 
 	QUnit.test( 'Preset is initially selected and stays when adding unrelated values', function ( assert ) {
-		var model = new Model( [ '1', '2' ] ),
+		const model = new Model( [ '1', '2' ] ),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					oneAndTwo: {
@@ -156,7 +156,7 @@
 	} );
 
 	QUnit.test( 'Preset is initially selected and stays when removing unrelated values', function ( assert ) {
-		var model = new Model( [ '1', '2', '3' ] ),
+		const model = new Model( [ '1', '2', '3' ] ),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					oneAndTwo: {
@@ -171,7 +171,7 @@
 	} );
 
 	QUnit.test( 'Added namespaces of a preset mark the preset as selected', function ( assert ) {
-		var model = new Model(),
+		const model = new Model(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					discussions: {
@@ -189,7 +189,7 @@
 	} );
 
 	QUnit.test( 'Added namespaces of two presets mark both presets as selected', function ( assert ) {
-		var model = new Model(),
+		const model = new Model(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					discussions: {
@@ -207,7 +207,7 @@
 	} );
 
 	QUnit.test( 'Unselecting namespace removes its preset', function ( assert ) {
-		var model = new Model(),
+		const model = new Model(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					all: {
@@ -222,7 +222,7 @@
 	} );
 
 	QUnit.test( 'Changing the store namespaces to the preset namespaces, selects preset irrespective of order', function ( assert ) {
-		var model = new Model(),
+		const model = new Model(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					all: {

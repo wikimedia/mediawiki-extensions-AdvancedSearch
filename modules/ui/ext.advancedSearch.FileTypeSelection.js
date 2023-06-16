@@ -5,7 +5,7 @@
 	mw.libs.advancedSearch = mw.libs.advancedSearch || {};
 	mw.libs.advancedSearch.ui = mw.libs.advancedSearch.ui || {};
 
-	var getOptions = function ( optionProvider ) {
+	const getOptions = function ( optionProvider ) {
 		return [ { data: '', label: mw.msg( 'advancedsearch-filetype-default' ) } ]
 			.concat( optionProvider.getFileGroupOptions() )
 			.concat( optionProvider.getAllowedFileTypeOptions() );

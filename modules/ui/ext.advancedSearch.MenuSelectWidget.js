@@ -39,9 +39,9 @@
 			return;
 		}
 		this.menuInitialized = true;
-		var items = [];
-		for ( var id in this.namespaces ) {
-			var isDiscussionNamespace = ( Number( id ) % 2 );
+		const items = [];
+		for ( const id in this.namespaces ) {
+			const isDiscussionNamespace = ( Number( id ) % 2 );
 			// The following classes are used here:
 			// * mw-advancedSearch-namespace-0
 			// * mw-advancedSearch-namespace-1

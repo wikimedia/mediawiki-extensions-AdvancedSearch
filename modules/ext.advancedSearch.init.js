@@ -24,7 +24,7 @@
 			// Can't call state.setNamespaces with file namespace here,
 			// because this function is called inside the onSubmit event
 			// and the DOM update from the state change would take too long.
-			var $compiledFileType = $( '<input>' ).prop( {
+			const $compiledFileType = $( '<input>' ).prop( {
 				name: 'ns6',
 				type: 'hidden'
 			} ).val( '1' );
@@ -40,14 +40,14 @@
 	 */
 	function setSearchSubmitTrigger( $search, $searchField, state, queryCompiler ) {
 		$search.on( 'submit', function () {
-			var $form = $( this );
+			const $form = $( this );
 			// Force a GET request when "Remember selection for future searches" isn't checked and
 			// no user setting will be written to the database.
-			var method = $form.find( '[name=nsRemember]' ).prop( 'checked' ) ? 'post' : 'get';
+			const method = $form.find( '[name=nsRemember]' ).prop( 'checked' ) ? 'post' : 'get';
 			$form.prop( 'method', method );
 
 			forceFileTypeNamespaceWhenSearchForFileType( $searchField, state );
-			var compiledQuery = ( $searchField.val() + ' ' + queryCompiler.compileSearchQuery( state ) ).trim(),
+			const compiledQuery = ( $searchField.val() + ' ' + queryCompiler.compileSearchQuery( state ) ).trim(),
 				$compiledSearchField = $( '<input>' ).prop( {
 					name: $searchField.prop( 'name' ),
 					type: 'hidden'
@@ -69,9 +69,9 @@
 	 * @param {mw.libs.advancedSearch.dm.SearchModel} currentState
 	 */
 	function updateSearchResultLinks( currentState ) {
-		var extraParams = '',
-			sort = currentState.getSortMethod(),
-			json = currentState.toJSON();
+		let extraParams = '';
+		const sort = currentState.getSortMethod();
+		const json = currentState.toJSON();
 
 		// Skip the default to avoid noise in the user's address bar
 		if ( sort !== 'relevance' ) {
@@ -92,7 +92,7 @@
 	 * @return {mw.libs.advancedSearch.FieldCollection}
 	 */
 	function createFieldConfiguration() {
-		var fields = new mw.libs.advancedSearch.FieldCollection();
+		const fields = new mw.libs.advancedSearch.FieldCollection();
 		mw.libs.advancedSearch.addDefaultFields( fields );
 		fields.freezeGroups( [ 'text', 'structure', 'files' ] );
 		mw.hook( 'advancedSearch.configureFields' ).fire( fields );
@@ -106,12 +106,12 @@
 	 * @return {jQuery}
 	 */
 	function buildPaneElement( state, fields, advancedOptionsBuilder ) {
-		var searchPreview = new mw.libs.advancedSearch.ui.SearchPreview( state, {
+		const searchPreview = new mw.libs.advancedSearch.ui.SearchPreview( state, {
 			label: mw.msg( 'advancedsearch-options-pane-head' ),
 			fieldNames: fields.getFieldIds()
 		} );
 
-		var pane = new mw.libs.advancedSearch.ui.ExpandablePane( {
+		const pane = new mw.libs.advancedSearch.ui.ExpandablePane( {
 			dependentPaneContentBuilder: function () {
 				return advancedOptionsBuilder.buildAllFieldsElement( fields );
 			},
@@ -147,13 +147,13 @@
 	 * @return {jQuery}
 	 */
 	function buildNamespacesPaneElement( state, header, presets, selection, searchableNamespaces ) {
-		var nsPreview = new mw.libs.advancedSearch.ui.NamespacesPreview( state, {
+		const nsPreview = new mw.libs.advancedSearch.ui.NamespacesPreview( state, {
 			label: mw.msg( 'advancedsearch-namespaces-search-in' ),
 			previewOptions: state.getNamespaces(),
 			namespacesLabels: searchableNamespaces
 		} );
-		var $container = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection' );
-		var pane = new mw.libs.advancedSearch.ui.ExpandablePane( {
+		const $container = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection' );
+		const pane = new mw.libs.advancedSearch.ui.ExpandablePane( {
 			dependentPaneContentBuilder: function () {
 				return $container.append( header ).append( presets.$element ).append( selection.$element );
 			},
@@ -177,9 +177,9 @@
 	 * @return {string[]}
 	 */
 	function getNamespacesFromUrl( searchableNamespaces ) {
-		var nsParamRegExp = /[?&]ns(\d+)\b/g,
-			nsMatch,
-			namespaces = [];
+		const nsParamRegExp = /[?&]ns(\d+)\b/g;
+		const namespaces = [];
+		let nsMatch;
 		while ( ( nsMatch = nsParamRegExp.exec( location.href ) ) &&
 			nsMatch[ 1 ] in searchableNamespaces
 		) {
@@ -205,7 +205,7 @@
 	 * @return {mw.libs.advancedSearch.dm.SearchModel}
 	 */
 	function initState( searchableNamespaces, fieldCollection ) {
-		var state = new mw.libs.advancedSearch.dm.SearchModel(
+		const state = new mw.libs.advancedSearch.dm.SearchModel(
 				mw.libs.advancedSearch.dm.getDefaultNamespaces( mw.user.options.values ),
 				getDefaultsFromConfig( fieldCollection.fields )
 			),
@@ -229,13 +229,13 @@
 	}
 
 	$( function () {
-		var searchableNamespaces = mw.config.get( 'advancedSearch.searchableNamespaces' ),
+		const searchableNamespaces = mw.config.get( 'advancedSearch.searchableNamespaces' ),
 			fieldCollection = createFieldConfiguration(),
 			state = initState( searchableNamespaces, fieldCollection ),
 			advancedOptionsBuilder = new mw.libs.advancedSearch.FieldElementBuilder( state ),
 			queryCompiler = new mw.libs.advancedSearch.QueryCompiler( fieldCollection.fields );
 
-		var $search = $( 'form#search, form#powersearch' ),
+		const $search = $( 'form#search, form#powersearch' ),
 			$advancedSearch = $( '<div>' ).addClass( 'mw-advancedSearch-container' ),
 			$searchField = $search.find( 'input[name="search"]' ),
 			$profileField = $search.find( 'input[name="profile"]' );
@@ -247,7 +247,7 @@
 
 		$search.append( $advancedSearch );
 
-		var term = $searchField.val(),
+		const term = $searchField.val(),
 			autoFocus = !term.trim();
 
 		$searchField.val( queryCompiler.removeCompiledQueryFromSearch( term, state ) );
@@ -266,12 +266,12 @@
 
 		updateSearchResultLinks( state );
 
-		var currentSearch = new mw.libs.advancedSearch.ui.FormState( state, {
+		const currentSearch = new mw.libs.advancedSearch.ui.FormState( state, {
 			name: 'advancedSearch-current'
 		} );
 
 		$advancedSearch.append( currentSearch.$element );
-		var namespaceSelection = new mw.libs.advancedSearch.ui.NamespaceFilters( state, {
+		const namespaceSelection = new mw.libs.advancedSearch.ui.NamespaceFilters( state, {
 				namespaces: searchableNamespaces,
 				placeholder: mw.msg( 'advancedsearch-namespaces-placeholder' ),
 				$overlay: true
@@ -287,7 +287,7 @@
 			$headerContainer = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection-header' );
 
 		if ( mw.user.isNamed() ) {
-			var rememberNameSpaceSelection = new OO.ui.FieldLayout( new OO.ui.CheckboxInputWidget( {
+			const rememberNameSpaceSelection = new OO.ui.FieldLayout( new OO.ui.CheckboxInputWidget( {
 				value: mw.user.tokens.get( 'searchnamespaceToken' ),
 				name: 'nsRemember'
 			} ), { label: mw.msg( 'advancedsearch-namespaces-remember' ), align: 'inline' } );

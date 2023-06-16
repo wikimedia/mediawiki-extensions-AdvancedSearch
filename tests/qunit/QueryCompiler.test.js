@@ -1,7 +1,7 @@
 ( function () {
 	'use strict';
 
-	var QueryCompiler = mw.libs.advancedSearch.QueryCompiler,
+	const QueryCompiler = mw.libs.advancedSearch.QueryCompiler,
 		stringFormatter = function ( v ) { return String( v ); },
 		defaultFields = [
 			{
@@ -17,7 +17,7 @@
 	QUnit.module( 'mw.libs.advancedSearch.QueryCompiler' );
 
 	function getDefaultState() {
-		var state = { getField: sinon.stub() };
+		const state = { getField: sinon.stub() };
 
 		state.getField.withArgs( 'plain' ).returns( 'one' );
 		state.getField.withArgs( 'keyword' ).returns( 'two' );
@@ -25,20 +25,20 @@
 	}
 
 	QUnit.test( 'empty values will return empty search string', function ( assert ) {
-		var compiler = new QueryCompiler( defaultFields ),
+		const compiler = new QueryCompiler( defaultFields ),
 			state = { getField: sinon.stub().returns( '' ) };
 
 		assert.strictEqual( compiler.compileSearchQuery( state ), '' );
 	} );
 
 	QUnit.test( 'filled values will return formatted search string', function ( assert ) {
-		var compiler = new QueryCompiler( defaultFields ),
+		const compiler = new QueryCompiler( defaultFields ),
 			state = getDefaultState();
 		assert.strictEqual( compiler.compileSearchQuery( state ), 'one keyword:two' );
 	} );
 
 	QUnit.test( 'Given search string with no advanced search contents, it is untouched', function ( assert ) {
-		var compiler = new QueryCompiler( defaultFields ),
+		const compiler = new QueryCompiler( defaultFields ),
 			state = getDefaultState(),
 			currentQuery = 'awesome goats';
 
@@ -46,7 +46,7 @@
 	} );
 
 	QUnit.test( 'Given search string with partial advanced search contents, it is untouched', function ( assert ) {
-		var compiler = new QueryCompiler( defaultFields ),
+		const compiler = new QueryCompiler( defaultFields ),
 			state = getDefaultState(),
 			currentQuery = 'awesome goats keyword:two';
 
@@ -54,7 +54,7 @@
 	} );
 
 	QUnit.test( 'Given search string ending with advanced search contents, they are removed', function ( assert ) {
-		var compiler = new QueryCompiler( defaultFields ),
+		const compiler = new QueryCompiler( defaultFields ),
 			state = getDefaultState(),
 			currentQuery = 'awesome goats one keyword:two';
 

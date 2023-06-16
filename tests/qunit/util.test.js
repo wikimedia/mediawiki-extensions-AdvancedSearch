@@ -1,5 +1,5 @@
 ( function () {
-	var advancedSearchUtil;
+	let advancedSearchUtil;
 
 	QUnit.testStart( function () {
 		advancedSearchUtil = mw.libs.advancedSearch.util;

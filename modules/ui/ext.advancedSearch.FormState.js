@@ -31,7 +31,7 @@
 	};
 
 	mw.libs.advancedSearch.ui.FormState.prototype.populateFromStore = function () {
-		var json = this.store.toJSON();
+		const json = this.store.toJSON();
 		// To avoid noise (empty query parameters) in the URL, temporarily remove the name
 		this.$element.attr( 'name', json ? this.name : null ).val( json );
 	};

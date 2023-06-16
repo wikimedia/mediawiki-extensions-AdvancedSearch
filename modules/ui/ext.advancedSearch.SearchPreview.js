@@ -11,7 +11,7 @@
 	 * @param {string} comparator
 	 * @return {string}
 	 */
-	var fileComparatorToMessage = function ( comparator ) {
+	const fileComparatorToMessage = function ( comparator ) {
 		switch ( comparator ) {
 			case '':
 				return mw.msg( 'advancedsearch-filesize-equals-symbol' );
@@ -26,11 +26,11 @@
 	 * @param {string} fieldId
 	 * @return {boolean}
 	 */
-	var fieldIsImageDimension = function ( fieldId ) {
+	const fieldIsImageDimension = function ( fieldId ) {
 		return /^file[hw]$/.test( fieldId );
 	};
 
-	var lookupTranslationForSortMethod = function ( name ) {
+	const lookupTranslationForSortMethod = function ( name ) {
 		// The following messages are used here:
 		// * advancedsearch-sort-preview-create-timestamp-asc
 		// * advancedsearch-sort-preview-create-timestamp-desc
@@ -38,11 +38,11 @@
 		// * advancedsearch-sort-preview-last-edit-desc
 		// * advancedsearch-sort-preview-relevance
 		// * advancedsearch-sort-preview-*
-		var msg = mw.message( 'advancedsearch-sort-preview-' + name.replace( /_/g, '-' ) );
+		const msg = mw.message( 'advancedsearch-sort-preview-' + name.replace( /_/g, '-' ) );
 		return msg.exists() ? msg.text() : name;
 	};
 
-	var lookupTranslationForLabel = function ( fieldId ) {
+	const lookupTranslationForLabel = function ( fieldId ) {
 		// The following messages are used here:
 		// * advancedsearch-field-deepcategory
 		// * advancedsearch-field-fileh
@@ -108,7 +108,7 @@
 		}
 
 		this.fieldNames.forEach( function ( fieldId ) {
-			var val = this.store.getField( fieldId );
+			const val = this.store.getField( fieldId );
 
 			if ( this.skipFieldInPreview( fieldId, val ) ) {
 				return;
@@ -149,8 +149,8 @@
 	 * @return {OO.ui.TagItemWidget}
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview.prototype.generateTag = function ( fieldId, value ) {
-		var formattedValue = this.formatValue( fieldId, value ),
-			tag;
+		const formattedValue = this.formatValue( fieldId, value );
+		let tag;
 		if ( fieldId === 'sort' ) {
 			tag = new OO.ui.TagItemWidget( {
 				label: $()
@@ -206,8 +206,8 @@
 	 */
 	mw.libs.advancedSearch.ui.SearchPreview.prototype.formatValue = function ( fieldId, value ) {
 		if ( fieldId === 'filetype' && value.indexOf( '/' ) !== -1 ) {
-			var mimeTypes = mw.config.get( 'advancedSearch.mimeTypes' );
-			for ( var fileExtension in mimeTypes ) {
+			const mimeTypes = mw.config.get( 'advancedSearch.mimeTypes' );
+			for ( const fileExtension in mimeTypes ) {
 				if ( mimeTypes[ fileExtension ] === value ) {
 					return fileExtension;
 				}

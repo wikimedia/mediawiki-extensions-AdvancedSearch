@@ -1,13 +1,13 @@
 ( function () {
 	'use strict';
 
-	var SearchField = mw.libs.advancedSearch.SearchField,
+	const SearchField = mw.libs.advancedSearch.SearchField,
 		createField = mw.libs.advancedSearch.createSearchFieldFromObject;
 
 	QUnit.module( 'mw.libs.advancedSearch.createSearchFieldFromObject' );
 
 	QUnit.test( 'It creates a subclassed instance', function ( assert ) {
-		var field = createField( {
+		const field = createField( {
 			id: 'test',
 			// overriding the abstract methods with dummy functions, in production code init and layout must return factory functions instead of values.
 			init: function () {
@@ -28,7 +28,7 @@
 	} );
 
 	QUnit.test( 'Given missing method overrides for abstract methods, calling them throws an exeption', function ( assert ) {
-		var field = createField( { id: 'test' } );
+		const field = createField( { id: 'test' } );
 		assert.throws( function () {
 			field.init();
 		} );

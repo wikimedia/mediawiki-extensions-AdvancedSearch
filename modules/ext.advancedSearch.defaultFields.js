@@ -64,7 +64,7 @@
 		// * advancedsearch-help-plain
 		// * advancedsearch-help-sort
 		// * advancedsearch-help-subpageof
-		var message = mw.config.get( 'advancedSearch.tooltips' )[ 'advancedsearch-help-' + id ] || '';
+		const message = mw.config.get( 'advancedSearch.tooltips' )[ 'advancedsearch-help-' + id ] || '';
 		if ( !message ) {
 			return false;
 		}
@@ -83,7 +83,7 @@
 		// * advancedsearch-field-plain
 		// * advancedsearch-field-sort
 		// * advancedsearch-field-subpageof
-		var head = mw.msg( 'advancedsearch-field-' + id );
+		const head = mw.msg( 'advancedsearch-field-' + id );
 		return new OO.ui.HtmlSnippet( '<h6 class="mw-advancedSearch-tooltip-head">' + head + '</h6>' + message );
 	}
 
@@ -134,7 +134,7 @@
 	 * @param {mw.libs.advancedSearch.FieldCollection} fieldCollection
 	 */
 	mw.libs.advancedSearch.addDefaultFields = function ( fieldCollection ) {
-		var createField = mw.libs.advancedSearch.createSearchFieldFromObject;
+		const createField = mw.libs.advancedSearch.createSearchFieldFromObject;
 
 		// Text Group
 		fieldCollection.add(
@@ -243,7 +243,7 @@
 			createField( {
 				id: 'deepcategory',
 				formatter: function ( val ) {
-					var keyword = mw.config.get( 'advancedSearch.deepcategoryEnabled' ) ? 'deepcat:' : 'incategory:';
+					const keyword = mw.config.get( 'advancedSearch.deepcategoryEnabled' ) ? 'deepcat:' : 'incategory:';
 					if ( Array.isArray( val ) ) {
 						return val.map( function ( templateItem ) {
 							return keyword + optionalQuotes( templateItem );

@@ -50,9 +50,9 @@
 		if ( !this.data ) {
 			return;
 		}
-		var namespaces = this.store.getNamespaces();
+		const namespaces = this.store.getNamespaces();
 		namespaces.forEach( function ( nsId ) {
-			var val = this.namespacesLabels[ nsId ];
+			const val = this.namespacesLabels[ nsId ];
 			this.$element.append( this.generateTag( nsId, val ).$element );
 		}.bind( this ) );
 	};
@@ -65,7 +65,7 @@
 	 * @return {OO.ui.TagItemWidget}
 	 */
 	mw.libs.advancedSearch.ui.NamespacesPreview.prototype.generateTag = function ( nsId, value ) {
-		var tag = new OO.ui.TagItemWidget( {
+		const tag = new OO.ui.TagItemWidget( {
 			label: $( '<span>' ).text( value ),
 			draggable: false
 		} );

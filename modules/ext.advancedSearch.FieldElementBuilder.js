@@ -28,7 +28,7 @@
 		 * @private
 		 */
 		createMultiSelectChangeHandler: function ( id ) {
-			var self = this;
+			const self = this;
 
 			return function ( newValue ) {
 				if ( typeof newValue !== 'object' ) {
@@ -51,7 +51,7 @@
 		 * @private
 		 */
 		createWidget: function ( field ) {
-			var widget = field.init( this.state, {
+			const widget = field.init( this.state, {
 				fieldId: field.id,
 				id: 'advancedSearchField-' + field.id
 			} );
@@ -70,10 +70,10 @@
 		 * @return {jQuery} jQuery object that contains all search field widgets, wrapped in Layout widgets
 		 */
 		buildAllFieldsElement: function ( fieldCollection ) {
-			var $allOptions = $( '<div>' ).addClass( 'mw-advancedSearch-fieldContainer' ),
-				fieldSets = {},
-				self = this,
-				group;
+			const $allOptions = $( '<div>' ).addClass( 'mw-advancedSearch-fieldContainer' );
+			const fieldSets = {};
+			const self = this;
+			let group;
 
 			fieldCollection.fields.forEach( function ( field ) {
 				if ( typeof field.enabled === 'function' && !field.enabled() ) {

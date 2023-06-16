@@ -15,13 +15,11 @@
 	mw.libs.advancedSearch.ui.ClassesForDropdownOptions = function () {};
 
 	mw.libs.advancedSearch.ui.ClassesForDropdownOptions.prototype.setOptionsData = function ( options ) {
-		var
-			optionWidgets,
-			widget = this;
+		const widget = this;
 		this.optionsDirty = true;
 
-		optionWidgets = options.map( function ( opt ) {
-			var optValue, optionWidget;
+		const optionWidgets = options.map( function ( opt ) {
+			let optValue, optionWidget;
 
 			if ( opt.optgroup === undefined ) {
 				optValue = widget.cleanUpValue( opt.data );

@@ -1,5 +1,5 @@
 ( function () {
-	var LanguageOptionProvider,
+	let LanguageOptionProvider,
 		languages = {
 			en: 'English',
 			de: 'Deutsch',
@@ -13,7 +13,7 @@
 	QUnit.module( 'ext.advancedSearch.dm.LanguageOptionProvider' );
 
 	QUnit.test( 'Languages are correctly formatted', function ( assert ) {
-		var provider = new LanguageOptionProvider( languages );
+		const provider = new LanguageOptionProvider( languages );
 		assert.deepEqual( provider.getLanguages(), [
 			{ data: 'bg', label: 'bg - Български' },
 			{ data: 'de', label: 'de - Deutsch' },
@@ -24,7 +24,7 @@
 
 	QUnit.test( 'Returns empty languages list when languages object is empty', function ( assert ) {
 		languages = {};
-		var provider = new LanguageOptionProvider( languages );
+		const provider = new LanguageOptionProvider( languages );
 		assert.deepEqual( provider.getLanguages(), [] );
 	} );
 

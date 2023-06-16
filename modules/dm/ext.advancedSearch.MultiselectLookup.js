@@ -5,20 +5,20 @@
 	mw.libs.advancedSearch = mw.libs.advancedSearch || {};
 	mw.libs.advancedSearch.ui = mw.libs.advancedSearch.ui || {};
 
-	var markNonExistent = function ( item ) {
+	const markNonExistent = function ( item ) {
 		item.$label.addClass( 'new' );
 	};
 
-	var markPageExistence = function ( item, queryCache ) {
+	const markPageExistence = function ( item, queryCache ) {
 		if ( queryCache.get( item.getLabel() ) === 'NO' ) {
 			markNonExistent( item );
 		}
 	};
 
-	var populateCache = function ( res, self ) {
-		var pages = [];
-		for ( var i in res.query.pages ) {
-			var page = res.query.pages[ i ];
+	const populateCache = function ( res, self ) {
+		const pages = [];
+		for ( const i in res.query.pages ) {
+			const page = res.query.pages[ i ];
 			if ( !page.missing ) {
 				pages.push( page.title );
 			}
@@ -32,7 +32,7 @@
 	 * @param {string} namespace
 	 * @return {mw.Title|null}
 	 */
-	var getTitle = function ( name, namespace ) {
+	const getTitle = function ( name, namespace ) {
 		return mw.Title.newFromText( name, mw.config.get( 'wgNamespaceIds' )[ namespace ] );
 	};
 
@@ -77,7 +77,7 @@
 	};
 
 	mw.libs.advancedSearch.dm.MultiselectLookup.prototype.setValue = function ( valueObject ) {
-		var names = Array.isArray( valueObject ) ? valueObject : [ valueObject ];
+		const names = Array.isArray( valueObject ) ? valueObject : [ valueObject ];
 		// Initialize with "PENDING" value to avoid new request in createTagItemWidget
 		names.forEach( function ( value ) {
 			this.queryCache.set( value, 'PENDING' );
@@ -85,7 +85,7 @@
 		mw.libs.advancedSearch.dm.MultiselectLookup.parent.prototype.setValue.call( this, valueObject );
 
 		this.searchForPagesInNamespace( names ).then( function () {
-			var self = this;
+			const self = this;
 			this.items.forEach( function ( item ) {
 				markPageExistence( item, self.queryCache );
 			} );
@@ -93,10 +93,10 @@
 	};
 
 	mw.libs.advancedSearch.dm.MultiselectLookup.prototype.searchForPageInNamespace = function ( name ) {
-		var deferred = $.Deferred(),
+		const deferred = $.Deferred(),
 			self = this;
 
-		var title = getTitle( name, this.lookupId );
+		const title = getTitle( name, this.lookupId );
 		if ( !title ) {
 			this.queryCache[ name ] = 'NO';
 			return deferred.resolve( [] ).promise();
@@ -110,7 +110,7 @@
 			prop: 'info',
 			titles: title.getPrefixedText()
 		} ).done( function ( res ) {
-			var pages = populateCache( res, self );
+			const pages = populateCache( res, self );
 			deferred.resolve( pages );
 		} ).fail( function () {
 			deferred.reject.bind( deferred );
@@ -120,11 +120,11 @@
 	};
 
 	mw.libs.advancedSearch.dm.MultiselectLookup.prototype.searchForPagesInNamespace = function ( names ) {
-		var deferred = $.Deferred(),
+		const deferred = $.Deferred(),
 			self = this;
 
 		names = names.map( function ( name ) {
-			var title = getTitle( name, self.lookupId );
+			const title = getTitle( name, self.lookupId );
 			if ( !title ) {
 				this.queryCache[ name ] = 'NO';
 				return null;
@@ -143,7 +143,7 @@
 			prop: 'info',
 			titles: names.join( '|' )
 		} ).done( function ( res ) {
-			var pages = [];
+			const pages = [];
 			populateCache( res, self );
 			deferred.resolve( pages );
 		} ).fail( function () {
@@ -155,9 +155,8 @@
 
 	mw.libs.advancedSearch.dm.MultiselectLookup.prototype.createTagItemWidget = function ( data, label ) {
 		label = label || data;
-		var title = getTitle( label, this.lookupId ),
-			$tagItemLabel = $( '<a>' ),
-			tagItem;
+		const title = getTitle( label, this.lookupId ),
+			$tagItemLabel = $( '<a>' );
 
 		if ( title ) {
 			$tagItemLabel.attr( {
@@ -167,7 +166,7 @@
 			} );
 		}
 
-		tagItem = new OO.ui.TagItemWidget( {
+		const tagItem = new OO.ui.TagItemWidget( {
 			data: data,
 			label: label,
 			$label: $tagItemLabel
@@ -202,7 +201,7 @@
 	 * @inheritdoc OO.ui.mixin.LookupElement
 	 */
 	mw.libs.advancedSearch.dm.MultiselectLookup.prototype.getLookupRequest = function () {
-		var value = this.input.getValue();
+		const value = this.input.getValue();
 
 		// @todo More elegant way to prevent empty API requests?
 		if ( value.trim() === '' ) {
@@ -226,10 +225,9 @@
 	 * @inheritdoc OO.ui.mixin.LookupElement
 	 */
 	mw.libs.advancedSearch.dm.MultiselectLookup.prototype.getLookupMenuOptionsFromData = function ( data ) {
-		var
-			items = [],
-			i, pageNameWithoutNamespace,
-			currentValues = this.getValue();
+		let i, pageNameWithoutNamespace;
+		const items = [];
+		const currentValues = this.getValue();
 		for ( i = 0; i < data[ 1 ].length; i++ ) {
 			pageNameWithoutNamespace = this.removeNamespace( data[ 1 ][ i ] );
 

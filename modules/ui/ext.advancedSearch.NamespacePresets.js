@@ -25,9 +25,9 @@
 	 * @return {Object}
 	 */
 	function groomPresets( presets, presetProvider ) {
-		var groomedPresets = {};
+		const groomedPresets = {};
 		Object.keys( presets ).forEach( function ( key ) {
-			var presetConfig = presets[ key ],
+			const presetConfig = presets[ key ],
 				preset = { label: presetConfig.label || key };
 
 			if ( !Object.prototype.hasOwnProperty.call( presetConfig, 'enabled' ) || presetConfig.enabled !== true ) {
@@ -110,7 +110,7 @@
 	OO.inheritClass( mw.libs.advancedSearch.ui.NamespacePresets, OO.ui.CheckboxMultiselectInputWidget );
 
 	mw.libs.advancedSearch.ui.NamespacePresets.prototype.updateStoreFromPresets = function ( newValue ) {
-		var key = newValue.getData();
+		const key = newValue.getData();
 		if ( newValue.selected ) {
 			this.store.setNamespaces( mw.libs.advancedSearch.util.arrayConcatUnique(
 				this.presets[ key ].namespaces,
@@ -124,18 +124,17 @@
 	};
 
 	mw.libs.advancedSearch.ui.NamespacePresets.prototype.updatePresetsFromStore = function () {
-		var key,
-			selectedPresets = {},
-			storeNamespaces = this.store.getNamespaces();
-		for ( key in this.presets ) {
+		const selectedPresets = {};
+		const storeNamespaces = this.store.getNamespaces();
+		for ( const key in this.presets ) {
 			selectedPresets[ key ] = mw.libs.advancedSearch.util.arrayContains(
 				storeNamespaces,
 				this.presets[ key ].namespaces
 			);
 		}
 		this.checkboxMultiselectWidget.off( 'change', this.updateStoreFromPresets, this );
-		for ( key in selectedPresets ) {
-			var presetWidget = this.checkboxMultiselectWidget.findItemFromData( key ),
+		for ( const key in selectedPresets ) {
+			const presetWidget = this.checkboxMultiselectWidget.findItemFromData( key ),
 				isSelected = selectedPresets[ key ];
 			if ( presetWidget.isSelected() !== isSelected ) {
 				presetWidget.setSelected( isSelected );

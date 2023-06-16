@@ -1,11 +1,11 @@
 ( function () {
-	var NamespaceFilters = mw.libs.advancedSearch.ui.NamespaceFilters,
+	const NamespaceFilters = mw.libs.advancedSearch.ui.NamespaceFilters,
 		Model = mw.libs.advancedSearch.dm.SearchModel;
 
 	QUnit.module( 'ext.advancedSearch.ui.NamespaceFilters' );
 
 	QUnit.assert.namespaceElementsPresent = function ( element, expectedNamespaces, message ) {
-		var actualNamespaces = [];
+		const actualNamespaces = [];
 		element.find( 'input' ).each( function () {
 			actualNamespaces.push( $( this ).prop( 'name' ).replace( /^ns/, '' ) );
 		} );
@@ -13,7 +13,7 @@
 	};
 
 	QUnit.test( 'StoreUpdate event handler updates hidden namespace fields', function ( assert ) {
-		var model = new Model(),
+		const model = new Model(),
 			filter = new NamespaceFilters( model, {
 				namespaces: {
 					0: 'Article',
@@ -29,7 +29,7 @@
 	} );
 
 	QUnit.test( 'Value update propagates to model', function ( assert ) {
-		var model = new Model(),
+		const model = new Model(),
 			filter = new NamespaceFilters( model, {
 				namespaces: {
 					0: 'Article',
@@ -50,7 +50,7 @@
 	} );
 
 	QUnit.test( 'Choosing a namespace from the menu clears the input field', function ( assert ) {
-		var model = new Model(),
+		const model = new Model(),
 			filter = new NamespaceFilters( model, {
 				namespaces: {
 					0: 'Article',
@@ -66,7 +66,7 @@
 	} );
 
 	QUnit.test( 'On multiple namespaces either one can be removed', function ( assert ) {
-		var model = new Model(),
+		const model = new Model(),
 			filter = new NamespaceFilters( model, {
 				namespaces: {
 					0: 'Article',

@@ -9,9 +9,8 @@
 	 * @cfg {string} data
 	 */
 	mw.libs.advancedSearch.ui.ItemMenuOptionWidget = function ( config ) {
-		var layout,
-			$label = $( '<div>' )
-				.addClass( 'mw-advancedSearch-ui-itemMenuOptionWidget-label' );
+		const $label = $( '<div>' )
+			.addClass( 'mw-advancedSearch-ui-itemMenuOptionWidget-label' );
 
 		mw.libs.advancedSearch.ui.ItemMenuOptionWidget.parent.call( this, $.extend( {
 			// Override the 'check' icon that OOUI defines
@@ -27,7 +26,7 @@
 				.append( $( '<bdi>' ).append( this.$label ) )
 		);
 
-		layout = new OO.ui.FieldLayout( this.checkboxWidget, {
+		const layout = new OO.ui.FieldLayout( this.checkboxWidget, {
 			label: $label,
 			align: 'inline'
 		} );

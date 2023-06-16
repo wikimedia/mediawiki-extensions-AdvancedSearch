@@ -19,10 +19,10 @@
 	 * @return {string[]}
 	 */
 	mw.libs.advancedSearch.QueryCompiler.prototype.formatSearchFields = function ( state ) {
-		var queryElements = [];
+		const queryElements = [];
 
 		this.fields.forEach( function ( field ) {
-			var val = state.getField( field.id ),
+			const val = state.getField( field.id ),
 				formattedQueryElement = val ? field.formatter( val ) : '';
 
 			if ( formattedQueryElement ) {
@@ -46,8 +46,8 @@
 	 * @param {string} needle
 	 * @return {boolean}
 	 */
-	var stringEndsWith = function ( haystack, needle ) {
-		var position = haystack.length - needle.length;
+	const stringEndsWith = function ( haystack, needle ) {
+		const position = haystack.length - needle.length;
 		return position >= 0 && haystack.indexOf( needle, position ) === position;
 	};
 
@@ -57,7 +57,7 @@
 	 * @return {string}
 	 */
 	mw.libs.advancedSearch.QueryCompiler.prototype.removeCompiledQueryFromSearch = function ( search, state ) {
-		var advancedQuery = this.compileSearchQuery( state );
+		const advancedQuery = this.compileSearchQuery( state );
 		if ( advancedQuery && stringEndsWith( search, advancedQuery ) ) {
 			return search.slice( 0, -advancedQuery.length ).replace( /\s+$/, '' );
 		}

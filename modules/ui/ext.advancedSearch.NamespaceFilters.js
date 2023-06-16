@@ -97,7 +97,7 @@
 	};
 
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.updateNamespaceFormFields = function () {
-		var self = this,
+		const self = this,
 			namespaces = this.store.getNamespaces();
 		this.$namespaceContainer.empty();
 		namespaces.forEach( function ( key ) {
@@ -112,7 +112,7 @@
 	};
 
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.setValueFromStore = function () {
-		var self = this,
+		const self = this,
 			namespaces = this.store.getNamespaces();
 		// prevent updating the store while reacting to its update notification
 		this.disconnect( this, { change: 'onValueUpdate' } );
@@ -149,9 +149,9 @@
 	};
 
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.highlightSelectedNamespacesInMenu = function () {
-		var self = this;
+		const self = this;
 		this.getMenu().getItems().forEach( function ( menuItem ) {
-			var isInTagList = !!self.findItemFromData( menuItem.getData() );
+			const isInTagList = !!self.findItemFromData( menuItem.getData() );
 			if ( isInTagList ) {
 				menuItem.checkboxWidget.setSelected( false );
 				menuItem.setSelected( false );
@@ -225,7 +225,7 @@
 	 * @inheritdoc
 	 */
 	mw.libs.advancedSearch.ui.NamespaceFilters.prototype.doInputBackspace = function ( e, withMetaKey ) {
-		var items, item;
+		let items, item;
 		if (
 			this.inputPosition === 'inline' &&
 			this.input.getValue() === '' &&
