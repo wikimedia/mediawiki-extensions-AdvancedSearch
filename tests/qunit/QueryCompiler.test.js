@@ -1,28 +1,29 @@
 ( function () {
 	'use strict';
 
-	const QueryCompiler = mw.libs.advancedSearch.QueryCompiler,
-		stringFormatter = function ( v ) { return String( v ); },
-		defaultFields = [
-			{
-				id: 'plain',
-				formatter: stringFormatter
-			},
-			{
-				id: 'keyword',
-				formatter: function ( v ) { return 'keyword:' + v; }
-			}
-		];
+	const { QueryCompiler } = require( 'ext.advancedSearch.elements' );
+
+	const stringFormatter = ( v ) => String( v );
+	const defaultFields = [
+		{
+			id: 'plain',
+			formatter: stringFormatter
+		},
+		{
+			id: 'keyword',
+			formatter: function ( v ) { return 'keyword:' + v; }
+		}
+	];
 
 	QUnit.module( 'mw.libs.advancedSearch.QueryCompiler' );
 
-	function getDefaultState() {
+	const getDefaultState = function () {
 		const state = { getField: sinon.stub() };
 
 		state.getField.withArgs( 'plain' ).returns( 'one' );
 		state.getField.withArgs( 'keyword' ).returns( 'two' );
 		return state;
-	}
+	};
 
 	QUnit.test( 'empty values will return empty search string', function ( assert ) {
 		const compiler = new QueryCompiler( defaultFields ),
@@ -60,5 +61,4 @@
 
 		assert.strictEqual( compiler.removeCompiledQueryFromSearch( currentQuery, state ), 'awesome goats' );
 	} );
-
 }() );

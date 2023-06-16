@@ -1,11 +1,8 @@
 ( function () {
+	const { FileTypeSelection } = require( 'ext.advancedSearch.SearchFieldUI' );
+	const { SearchModel } = require( 'ext.advancedSearch.elements' );
 
-	mw.libs = mw.libs || {};
-	mw.libs.advancedSearch = mw.libs.advancedSearch || {};
-
-	const FileTypeSelection = mw.libs.advancedSearch.ui.FileTypeSelection,
-		Model = mw.libs.advancedSearch.dm.SearchModel,
-		store = new Model(),
+	const store = new SearchModel(),
 		optionProvider = {
 			getFileGroupOptions: function () {
 				return [
@@ -56,5 +53,4 @@
 
 		assert.strictEqual( dropdown.getValue(), 'bitmap' );
 	} );
-
 }() );

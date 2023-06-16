@@ -1,13 +1,12 @@
 ( function () {
-	const NamespacePresets = mw.libs.advancedSearch.ui.NamespacePresets;
-	const Model = mw.libs.advancedSearch.dm.SearchModel;
+	const { NamespacePresets, NamespacePresetProviders, SearchModel } = require( 'ext.advancedSearch.elements' );
 	let sandbox, presetProvider;
 
 	QUnit.module( 'ext.advancedSearch.ui.NamespacePresets' );
 
 	QUnit.testStart( function () {
 		sandbox = sinon.sandbox.create();
-		presetProvider = sinon.createStubInstance( mw.libs.advancedSearch.dm.NamespacePresetProviders );
+		presetProvider = sinon.createStubInstance( NamespacePresetProviders );
 		presetProvider.namespaceIdsAreValid.returns( true );
 	} );
 
@@ -15,18 +14,18 @@
 		sandbox.restore();
 	} );
 
-	function getDummyCheckbox( selected ) {
+	const getDummyCheckbox = function ( selected ) {
 		return {
 			getData: function () { return 'all'; },
 			selected: selected
 		};
-	}
+	};
 
 	QUnit.test( 'Passing a provider function creates namespace presets from the provider', function ( assert ) {
 		presetProvider.hasProvider.returns( true );
 		presetProvider.getNamespaceIdsFromProvider.returns( [ '0', '1', '2' ] );
 
-		const presets = new NamespacePresets( new Model(), presetProvider, {
+		const presets = new NamespacePresets( new SearchModel(), presetProvider, {
 			presets: {
 				justatest: {
 					enabled: true,
@@ -41,7 +40,7 @@
 	QUnit.test( 'Passing a nonexisting provider function creates no namespace preset', function ( assert ) {
 		presetProvider.hasProvider.withArgs( 'blackhole' ).returns( false );
 		const warningLogger = sandbox.stub( mw.log, 'warn' );
-		const presets = new NamespacePresets( new Model(), presetProvider, {
+		const presets = new NamespacePresets( new SearchModel(), presetProvider, {
 			presets: {
 				blackhole: {
 					enabled: true,
@@ -50,13 +49,13 @@
 			}
 		} );
 
-		assert.true( warningLogger.calledWith( 'Provider function blackhole not registered to mw.libs.advancedSearch.dm.NamespacePresetProviders' ) );
+		assert.true( warningLogger.calledWith( 'Provider function blackhole not registered to NamespacePresetProviders' ) );
 		assert.false( Object.prototype.hasOwnProperty.call( presets.presets, 'blackhole' ) );
 	} );
 
 	QUnit.test( 'Passing a malformed preset config creates no namespace preset', function ( assert ) {
 		const warningLogger = sandbox.stub( mw.log, 'warn' );
-		const presets = new NamespacePresets( new Model(), presetProvider, {
+		const presets = new NamespacePresets( new SearchModel(), presetProvider, {
 			presets: {
 				borken: {
 					enabled: true
@@ -69,7 +68,7 @@
 	} );
 
 	QUnit.test( 'Passing a disabled preset config creates no namespace preset', function ( assert ) {
-		const presets = new NamespacePresets( new Model(), presetProvider, {
+		const presets = new NamespacePresets( new SearchModel(), presetProvider, {
 			presets: {
 				turnedoff: {
 					enabled: false,
@@ -82,7 +81,7 @@
 	} );
 
 	QUnit.test( 'Passing a preset config omitting "enabled" creates no namespace preset', function ( assert ) {
-		const presets = new NamespacePresets( new Model(), presetProvider, {
+		const presets = new NamespacePresets( new SearchModel(), presetProvider, {
 			presets: {
 				undecided: {
 					namespaces: [ '2', '4', '6', '8' ]
@@ -94,7 +93,7 @@
 	} );
 
 	QUnit.test( 'Selecting namespace adds its preset', function ( assert ) {
-		const model = new Model(),
+		const model = new SearchModel(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					all: {
@@ -109,7 +108,7 @@
 
 	QUnit.test( 'Presets with empty namespace definitions log a warning', function ( assert ) {
 		const warningLogger = sandbox.stub( mw.log, 'warn' ),
-			model = new Model(),
+			model = new SearchModel(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					emptypreset: {
@@ -126,7 +125,7 @@
 	QUnit.test( 'Presets with invalid namespace definitions log a warning', function ( assert ) {
 		presetProvider.namespaceIdsAreValid.returns( false );
 		const warningLogger = sandbox.stub( mw.log, 'warn' ),
-			model = new Model(),
+			model = new SearchModel(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					notvalid: {
@@ -141,7 +140,7 @@
 	} );
 
 	QUnit.test( 'Preset is initially selected and stays when adding unrelated values', function ( assert ) {
-		const model = new Model( [ '1', '2' ] ),
+		const model = new SearchModel( [ '1', '2' ] ),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					oneAndTwo: {
@@ -156,7 +155,7 @@
 	} );
 
 	QUnit.test( 'Preset is initially selected and stays when removing unrelated values', function ( assert ) {
-		const model = new Model( [ '1', '2', '3' ] ),
+		const model = new SearchModel( [ '1', '2', '3' ] ),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					oneAndTwo: {
@@ -171,7 +170,7 @@
 	} );
 
 	QUnit.test( 'Added namespaces of a preset mark the preset as selected', function ( assert ) {
-		const model = new Model(),
+		const model = new SearchModel(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					discussions: {
@@ -189,7 +188,7 @@
 	} );
 
 	QUnit.test( 'Added namespaces of two presets mark both presets as selected', function ( assert ) {
-		const model = new Model(),
+		const model = new SearchModel(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					discussions: {
@@ -207,7 +206,7 @@
 	} );
 
 	QUnit.test( 'Unselecting namespace removes its preset', function ( assert ) {
-		const model = new Model(),
+		const model = new SearchModel(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					all: {
@@ -222,7 +221,7 @@
 	} );
 
 	QUnit.test( 'Changing the store namespaces to the preset namespaces, selects preset irrespective of order', function ( assert ) {
-		const model = new Model(),
+		const model = new SearchModel(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
 					all: {
@@ -239,5 +238,4 @@
 		model.setNamespaces( [ '0', '1' ] );
 		assert.deepEqual( presets.getValue(), [] );
 	} );
-
 }() );

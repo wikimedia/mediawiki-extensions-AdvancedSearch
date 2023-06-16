@@ -1,11 +1,7 @@
 ( function () {
-
-	mw.libs = mw.libs || {};
-	mw.libs.advancedSearch = mw.libs.advancedSearch || {};
-
-	const LanguageSelection = mw.libs.advancedSearch.ui.LanguageSelection,
-		Model = mw.libs.advancedSearch.dm.SearchModel,
-		store = new Model(),
+	const { LanguageSelection } = require( 'ext.advancedSearch.SearchFieldUI' );
+	const { SearchModel } = require( 'ext.advancedSearch.elements' );
+	const store = new SearchModel(),
 		optionProvider = {
 			getLanguages: function () {
 				return [
@@ -50,5 +46,4 @@
 
 		assert.strictEqual( dropdown.getValue(), 'en' );
 	} );
-
 }() );

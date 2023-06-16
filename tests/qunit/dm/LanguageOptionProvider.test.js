@@ -1,14 +1,11 @@
 ( function () {
-	let LanguageOptionProvider,
-		languages = {
-			en: 'English',
-			de: 'Deutsch',
-			bg: 'Български'
-		};
+	const { LanguageOptionProvider } = require( 'ext.advancedSearch.SearchFieldUI' );
 
-	QUnit.testStart( function () {
-		LanguageOptionProvider = mw.libs.advancedSearch.dm.LanguageOptionProvider;
-	} );
+	let languages = {
+		en: 'English',
+		de: 'Deutsch',
+		bg: 'Български'
+	};
 
 	QUnit.module( 'ext.advancedSearch.dm.LanguageOptionProvider' );
 
@@ -27,5 +24,4 @@
 		const provider = new LanguageOptionProvider( languages );
 		assert.deepEqual( provider.getLanguages(), [] );
 	} );
-
 }() );

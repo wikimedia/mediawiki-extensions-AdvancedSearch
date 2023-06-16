@@ -1,6 +1,5 @@
 ( function () {
-	const NamespaceFilters = mw.libs.advancedSearch.ui.NamespaceFilters,
-		Model = mw.libs.advancedSearch.dm.SearchModel;
+	const { NamespaceFilters, SearchModel } = require( 'ext.advancedSearch.elements' );
 
 	QUnit.module( 'ext.advancedSearch.ui.NamespaceFilters' );
 
@@ -13,7 +12,7 @@
 	};
 
 	QUnit.test( 'StoreUpdate event handler updates hidden namespace fields', function ( assert ) {
-		const model = new Model(),
+		const model = new SearchModel(),
 			filter = new NamespaceFilters( model, {
 				namespaces: {
 					0: 'Article',
@@ -29,7 +28,7 @@
 	} );
 
 	QUnit.test( 'Value update propagates to model', function ( assert ) {
-		const model = new Model(),
+		const model = new SearchModel(),
 			filter = new NamespaceFilters( model, {
 				namespaces: {
 					0: 'Article',
@@ -50,7 +49,7 @@
 	} );
 
 	QUnit.test( 'Choosing a namespace from the menu clears the input field', function ( assert ) {
-		const model = new Model(),
+		const model = new SearchModel(),
 			filter = new NamespaceFilters( model, {
 				namespaces: {
 					0: 'Article',
@@ -66,7 +65,7 @@
 	} );
 
 	QUnit.test( 'On multiple namespaces either one can be removed', function ( assert ) {
-		const model = new Model(),
+		const model = new SearchModel(),
 			filter = new NamespaceFilters( model, {
 				namespaces: {
 					0: 'Article',
@@ -82,5 +81,4 @@
 		assert.true( filter.getMenu().getItemFromLabel( 'User' ).isSelected() );
 		assert.true( filter.getMenu().getItemFromLabel( 'UserTalk' ).isSelected() );
 	} );
-
 }() );

@@ -1,6 +1,6 @@
 ( function () {
-	let FileTypeOptionProvider,
-		sandbox;
+	const { FileTypeOptionProvider } = require( 'ext.advancedSearch.SearchFieldUI' );
+	let sandbox;
 	const stubMessage = function () {
 		sandbox.stub( mw, 'msg', function ( msg ) {
 			return msg;
@@ -8,7 +8,6 @@
 	};
 
 	QUnit.testStart( function () {
-		FileTypeOptionProvider = mw.libs.advancedSearch.dm.FileTypeOptionProvider;
 		sandbox = sinon.sandbox.create();
 	} );
 
@@ -62,5 +61,4 @@
 		const model = new FileTypeOptionProvider( mimeTypes );
 		assert.deepEqual( model.getAllowedFileTypeOptions(), expectedOptions );
 	} );
-
 }() );

@@ -98,7 +98,8 @@
 			"class": "AdvancedSearch\\SearchnamespaceTokenModule"
 		},
 		"ext.advancedSearch.elements": {
-			"scripts": [
+			"packageFiles": [
+				"modules/ext.advancedSearch.elements.js",
 				"modules/ext.advancedSearch.defaultFields.js",
 				"modules/ext.advancedSearch.FieldCollection.js",
 				"modules/ext.advancedSearch.FieldElementBuilder.js",
@@ -106,7 +107,6 @@
 				"modules/ext.advancedSearch.SearchField.js",
 				"modules/dm/ext.advancedSearch.getDefaultNamespaces.js",
 				"modules/dm/ext.advancedSearch.SearchModel.js",
-				"modules/ui/ext.advancedSearch.StoreListener.js",
 				"modules/ui/ext.advancedSearch.FormState.js",
 				"modules/ui/ext.advancedSearch.ExpandablePane.js",
 				"modules/ui/ext.advancedSearch.NamespaceFilters.js",
@@ -114,7 +114,6 @@
 				"modules/ui/ext.advancedSearch.SearchPreview.js",
 				"modules/ui/ext.advancedSearch.NamespacesPreview.js",
 				"modules/dm/ext.advancedSearch.NamespacePresetProviders.js",
-				"modules/dm/ext.advancedSearch.getSortMethods.js",
 				"modules/ui/ext.advancedSearch.MenuSelectWidget.js",
 				"modules/ui/ext.advancedSearch.ItemMenuOptionWidget.js",
 				"modules/ui/ext.advancedSearch.CheckboxInputWidget.js",
@@ -170,11 +169,12 @@
 				"oojs-ui-widgets",
 				"oojs-ui.styles.icons-layout",
 				"oojs-ui.styles.icons-interactions",
+				"ext.advancedSearch.SearchFieldUI",
 				"ext.advancedSearch.styles"
 			]
 		},
 		"ext.advancedSearch.init": {
-			"scripts": [
+			"packageFiles": [
 				"modules/ext.advancedSearch.init.js"
 			],
 			"dependencies": [
@@ -183,7 +183,8 @@
 			]
 		},
 		"ext.advancedSearch.SearchFieldUI": {
-			"scripts": [
+			"packageFiles": [
+				"modules/ext.advancedSearch.SearchFieldUI.js",
 				"modules/dm/ext.advancedSearch.TitleCache.js",
 				"modules/dm/ext.advancedSearch.MultiselectLookup.js",
 				"modules/ui/ext.advancedSearch.ArbitraryWordInput.js",
@@ -193,8 +194,8 @@
 				"modules/ui/mixins/ext.advancedSearch.ClassesForDropdownOptions.js",
 				"modules/ui/ext.advancedSearch.FileTypeSelection.js",
 				"modules/ui/ext.advancedSearch.SortPreference.js",
+				"modules/dm/ext.advancedSearch.getSortMethods.js",
 				"modules/ui/ext.advancedSearch.LanguageSelection.js",
-				"modules/ui/ext.advancedSearch.TextInput.js",
 				"modules/ui/ext.advancedSearch.ImageDimensionInput.js",
 				"modules/ui/ext.advancedSearch.ImageDimensionLayout.js",
 				"modules/ui/ext.advancedSearch.TextInput.js",
@@ -270,7 +271,6 @@
 		],
 		"dependencies": [
 			"ext.advancedSearch.elements",
-			"ext.advancedSearch.SearchFieldUI",
 			"oojs-ui"
 		]
 	},
