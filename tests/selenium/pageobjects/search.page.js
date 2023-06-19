@@ -52,10 +52,6 @@ class DropdownField {
 		browser.execute( 'arguments[0].scrollIntoView(true);', fieldElement ); // scroll to the option to get it into view
 		fieldElement.click();
 	}
-
-	isDisplayed() {
-		return $( this.selector ).isDisplayed();
-	}
 }
 
 class SearchPage extends Page {
@@ -112,9 +108,6 @@ class SearchPage extends Page {
 
 	get namespaces() {
 		return {
-			removeFileNamespace: function () {
-				$( '.mw-advancedSearch-namespaceFilter .mw-advancedSearch-namespace-6 .oo-ui-buttonWidget' ).click();
-			},
 			selectAll: function () {
 				$$( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"]:not(.oo-ui-optionWidget-selected)' )
 					.forEach( ( element ) => {
@@ -143,14 +136,11 @@ class SearchPage extends Page {
 			}
 		};
 	}
-	get searchPaginationLink() { return $( '.mw-search-pager-bottom a' ); }
 	get searchPaginationLinks() { return $$( '.mw-search-pager-bottom a' ); }
-	get searchPreviewItem() { return $( '.mw-advancedSearch-searchPreview .mw-advancedSearch-searchPreview-previewPill' ); }
 	get searchPreviewItems() { return $$( '.mw-advancedSearch-searchPreview .mw-advancedSearch-searchPreview-previewPill' ); }
 	get namespacePreviewItems() { return $( '.mw-advancedSearch-namespacesPreview .mw-advancedSearch-namespacesPreview-previewPill' ); }
 	get searchInfoIcon() { return $( '.mw-advancedSearch-container .oo-ui-fieldLayout .oo-ui-buttonElement-button' ); }
 	get searchButton() { return $( '#mw-search-top-table button' ); }
-	get namespaceTagsInCollapsedMode() { return $$( '.mw-advancedSearch-namespacesPreview .mw-advancedSearch-namespacesPreview-previewPill .oo-ui-labelElement-label span' ); }
 	get allNamespacesPreset() { return $( '.mw-advancedSearch-namespace-selection input[value="all"]' ); }
 	get generalHelpPreset() { return $( '.mw-advancedSearch-namespace-selection input[value="generalHelp"]' ); }
 	get rememberSelection() { return $( '.mw-advancedSearch-namespace-selection input[name="nsRemember"]' ); }
@@ -214,10 +204,6 @@ class SearchPage extends Page {
 
 	toggleInputFields() {
 		$( '.mw-advancedSearch-expandablePane-options .mw-advancedSearch-expandablePane-button a' ).click();
-		this.waitForSearchFieldsToLoad();
-	}
-
-	waitForSearchFieldsToLoad() {
 		// Wait for the last search field to be visible as an indicator that all search field widgets have been built
 		$( '#advancedSearchField-filetype' ).waitForExist();
 	}

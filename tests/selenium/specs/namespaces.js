@@ -38,7 +38,7 @@ describe( 'AdvancedSearch', function () {
 		SearchPage.namespaces.selectAll();
 		assert( SearchPage.allNamespacesPreset.isSelected() );
 
-		SearchPage.namespaces.removeFileNamespace();
+		SearchPage.namespaces.clickOnNamespace( SearchPage.FILE_NAMESPACE );
 
 		assert( !SearchPage.allNamespacesPreset.isSelected(), 'preset is not checked if a namespace is missing' );
 		assert( SearchPage.generalHelpPreset.isSelected() );
