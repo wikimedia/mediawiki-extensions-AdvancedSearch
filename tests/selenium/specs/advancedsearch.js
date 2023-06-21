@@ -46,14 +46,9 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchImageWidth.put( '40' );
 		SearchPage.searchImageHeight.put( '40' );
 
-		assert(
-			SearchPage.namespaceTagsInCollapsedMode.filter(
-				( tag ) => { return tag.getText() === 'File'; }
-			).length !== 0,
-			'File namespace is selected '
-		);
+		assert( SearchPage.getSelectedNamespaceIDs().includes( SearchPage.FILE_NAMESPACE ) );
 
-		assert( !SearchPage.searchPreviewItem.isExisting(), 'No preview pill elements should exist' );
+		assert( !SearchPage.searchPreviewItems.length, 'No preview pill elements should exist' );
 
 		// Test autocompletion
 		SearchPage.addCategory( 'Existing Category' );
@@ -89,7 +84,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.toggleInputFields();
 		browser.waitUntil( SearchPage.advancedSearchIsCollapsed );
 
-		assert( SearchPage.searchPreviewItem.isExisting(), 'Preview pills should be shown' );
+		assert( SearchPage.searchPreviewItems[ 0 ].isExisting(), 'Preview pills should be shown' );
 		assert.strictEqual(
 			SearchPage.searchPreviewItems.length,
 			12,
@@ -99,7 +94,7 @@ describe( 'Advanced Search', function () {
 		// Test the namespace preview
 		SearchPage.expandNamespacesPreview();
 		SearchPage.expandNamespacesMenu();
-		SearchPage.namespaces.clickOnNamespace( 4 );
+		SearchPage.namespaces.clickOnNamespace( SearchPage.FILE_NAMESPACE );
 
 		assert( !SearchPage.namespacePreviewItems.isExisting(), 'No preview pill elements should exist' );
 

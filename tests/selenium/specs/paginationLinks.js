@@ -12,11 +12,10 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchTheseWords.put( 'brown,' );
 		SearchPage.searchExactText.put( '"jumped over"' );
 		SearchPage.submitForm();
-		SearchPage.searchPaginationLink.waitForExist();
+		SearchPage.searchPaginationLinks[ 0 ].waitForExist();
 
-		assert( SearchPage.searchPaginationLink.isExisting() );
 		SearchPage.searchPaginationLinks.forEach( function ( link ) {
-			link.getAttribute( 'href' ).includes( 'advancedSearch-current' );
+			assert( link.getAttribute( 'href' ).includes( 'advancedSearch-current' ) );
 		} );
 	} );
 } );
