@@ -166,7 +166,7 @@ NamespaceFilters.prototype.highlightLastSelectedTag = function ( menuItemData ) 
 	} );
 };
 
-NamespaceFilters.prototype.removeHighlighFromTags = function () {
+NamespaceFilters.prototype.removeHighlightFromTags = function () {
 	this.getItems().forEach( function ( tag ) {
 		tag.$element.removeClass( 'selected' );
 	} );
@@ -209,7 +209,7 @@ NamespaceFilters.prototype.onMenuToggle = function ( isVisible ) {
 	NamespaceFilters.parent.prototype.onMenuToggle.call( this );
 	this.input.setIcon( isVisible ? 'search' : 'menu' );
 	if ( !isVisible ) {
-		this.removeHighlighFromTags();
+		this.removeHighlightFromTags();
 	}
 };
 
