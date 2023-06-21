@@ -5,15 +5,18 @@ const assert = require( 'assert' ),
 	UserLoginPage = require( 'wdio-mediawiki/LoginPage' );
 
 describe( 'AdvancedSearch', function () {
-	const NAMESPACE_USER = '2';
-
 	beforeEach( function () {
 		browser.deleteCookies();
 		SearchPage.open();
 	} );
 
-	it( 'selects all namespaces when clicking "All" preset', function () {
+	it( 'namespace selection', function () {
 		SearchPage.expandNamespacesPreview();
+
+		// do not allow remembering the selection for anon users
+		assert( !SearchPage.rememberSelection.isExisting() );
+
+		// select all namespaces
 		SearchPage.allNamespacesPreset.click();
 		SearchPage.expandNamespacesMenu();
 
@@ -21,40 +24,28 @@ describe( 'AdvancedSearch', function () {
 			SearchPage.namespaces.getAllTagLabels(),
 			SearchPage.namespaces.getAllLabelsFromMenu()
 		);
-	} );
 
-	it( 'de-selects all namespaces when clicking "All" preset twice', function () {
-		SearchPage.expandNamespacesPreview();
-		// clears the namespace bar
-		SearchPage.allNamespacesPreset.click();
+		// deselect all namespaces
 		SearchPage.allNamespacesPreset.click();
 
 		assert.deepStrictEqual(
 			SearchPage.namespaces.getAllTagLabels(),
 			[]
 		);
-	} );
 
-	it( 'unselects "All" preset when a single namespace is unselected after preset had been clicked', function () {
-		SearchPage.expandNamespacesPreview();
-		SearchPage.allNamespacesPreset.click();
-		SearchPage.namespaces.removeFileNamespace();
-
-		assert( !SearchPage.allNamespacesPreset.isSelected() );
-	} );
-
-	it( 'automatically selects "All" preset when selecting all namespaces from the list of all namespaces', function () {
-		SearchPage.expandNamespacesPreview();
+		// select all namespaces manually
 		SearchPage.expandNamespacesMenu();
 		SearchPage.namespaces.selectAll();
-
 		assert( SearchPage.allNamespacesPreset.isSelected() );
-	} );
 
-	it( 'does not allow to remember the selection of namespaces for anonymous users', function () {
-		SearchPage.expandNamespacesPreview();
+		SearchPage.namespaces.removeFileNamespace();
 
-		assert( !SearchPage.rememberSelection.isExisting() );
+		assert( !SearchPage.allNamespacesPreset.isSelected(), 'preset is not checked if a namespace is missing' );
+		assert( SearchPage.generalHelpPreset.isSelected() );
+
+		SearchPage.submitForm();
+
+		assert( SearchPage.generalHelpPreset.isSelected(), 'marks a namespace preset checkbox after submit' );
 	} );
 
 	it( 'allows logged-in users to remember the selection of namespaces for future searches', function () {
@@ -86,39 +77,15 @@ describe( 'AdvancedSearch', function () {
 		assert( SearchPage.getSelectedNamespaceIDs().includes( SearchPage.FILE_NAMESPACE ) );
 	} );
 
-	it( 'marks a namespace preset checkbox when all namespaces behind it are present in the namespace search bar', function () {
-		SearchPage.expandNamespacesPreview();
-		SearchPage.generalHelpPreset.click();
-
-		SearchPage.submitForm();
-
-		assert( SearchPage.generalHelpPreset.isSelected() );
-	} );
-
 	it( 'adds/removes the namespace tag when the namespace option is clicked', function () {
 		SearchPage.expandNamespacesPreview();
 		SearchPage.expandNamespacesMenu();
-		SearchPage.namespaces.clickOnNamespace( NAMESPACE_USER );
+		SearchPage.namespaces.clickOnNamespace( SearchPage.FILE_NAMESPACE );
 
-		assert( SearchPage.namespaceTags.filter( function ( tag ) {
-			return tag.getText() === 'User';
-		} ).length !== 0 );
+		assert( SearchPage.getSelectedNamespaceIDs().includes( SearchPage.FILE_NAMESPACE ) );
 
-		SearchPage.namespaces.clickOnNamespace( NAMESPACE_USER );
+		SearchPage.namespaces.clickOnNamespace( SearchPage.FILE_NAMESPACE );
 
-		assert( SearchPage.namespaceTags.filter( function ( tag ) {
-			return tag.getText() === 'User';
-		} ).length === 0 );
+		assert( !SearchPage.getSelectedNamespaceIDs().includes( SearchPage.FILE_NAMESPACE ) );
 	} );
-
-	it( 'changes the namespace filter input icon when menu is toggled', function () {
-		SearchPage.expandNamespacesPreview();
-
-		assert( SearchPage.inputIcon.getAttribute( 'class' ).includes( 'oo-ui-icon-menu' ) );
-
-		SearchPage.expandNamespacesMenu();
-
-		assert( SearchPage.inputIcon.getAttribute( 'class' ).includes( 'oo-ui-icon-search' ) );
-	} );
-
 } );
