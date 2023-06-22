@@ -54,7 +54,7 @@ describe( 'Advanced Search', function () {
 		SearchPage.addCategory( 'Existing Category' );
 		SearchPage.addTemplate( 'Existing Template' );
 
-		SearchPage.searchCategory.put( 'Existing C' );
+		SearchPage.searchCategory.put( 'Existing Category' );
 		SearchPage.categorySuggestionsBox.waitForDisplayed();
 		assert(
 			SearchPage.categorySuggestionsBox.isDisplayed(),
@@ -62,7 +62,7 @@ describe( 'Advanced Search', function () {
 		);
 		SearchPage.searchCategory.put( '\nCategory2\n' );
 
-		SearchPage.searchTemplate.put( 'Existing T' );
+		SearchPage.searchTemplate.put( 'Existing Template' );
 		SearchPage.templateSuggestionsBox.waitForDisplayed();
 		assert(
 			SearchPage.templateSuggestionsBox.isDisplayed(),
