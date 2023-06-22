@@ -71,14 +71,8 @@ describe( 'Advanced Search', function () {
 		SearchPage.searchTemplate.put( '\nTemplate2\n' );
 
 		// Test red linking
-		assert(
-			SearchPage.getCategoryPillLink( 'Category2' ).getAttribute( 'class' ).includes( 'new' ),
-			'Pill field marks non-existent categories in red'
-		);
-		assert(
-			SearchPage.getTemplatePillLink( 'Template2' ).getAttribute( 'class' ).includes( 'new' ),
-			'Pill field marks non-existent templates in red'
-		);
+		SearchPage.assertPillLinkMarkedRed( SearchPage.getCategoryPillLink( 'Category2' ) );
+		SearchPage.assertPillLinkMarkedRed( SearchPage.getTemplatePillLink( 'Template2' ) );
 
 		// Test preview pills
 		SearchPage.toggleInputFields();

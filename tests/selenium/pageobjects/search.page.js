@@ -187,6 +187,15 @@ class SearchPage extends Page {
 		return $( '.oo-ui-tagMultiselectWidget-group a[title="Template:' + template + '"]' );
 	}
 
+	assertPillLinkMarkedRed( $pillLink ) {
+		$pillLink.waitForExist();
+		browser.waitUntil( () => {
+			return $pillLink.getAttribute( 'class' ).includes( 'new' );
+		}, {
+			timeOutMsg: 'Pill field marks non-existent titles in red'
+		} );
+	}
+
 	open( params ) {
 		const pageName = 'Special:Search';
 		super.openTitle( pageName, params );
