@@ -163,20 +163,26 @@
 }
 
 .mw-advancedSearch-namespace-border {
-	border-top: 4px @border-style-base @border-color-subtle;
-	border-bottom: @border-subtle;
+	border: @border-subtle;
+	border-width: 4px 0 1px 0;
+
+	&:first-child {
+		border-top: 0;
+	}
 }
 
-.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-handle {
-	border-top: 0;
-	border-left: 0;
-	border-right: 0;
-	border-radius: 0 0 @border-radius-base @border-radius-base;
-}
+.mw-advancedSearch-namespaceFilter {
+	.oo-ui-tagMultiselectWidget-handle {
+		border-top: 0;
+		border-left: 0;
+		border-right: 0;
+		border-radius: 0 0 @border-radius-base @border-radius-base;
+	}
 
-.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-input .oo-ui-inputWidget-input {
-	border-left: 0;
-	border-right: 0;
+	.oo-ui-tagMultiselectWidget-input .oo-ui-inputWidget-input {
+		border-left: 0;
+		border-right: 0;
+	}
 }
 
 // that's how nested the background-color property of a tagWidget is

@@ -44,7 +44,7 @@ MenuSelectWidget.prototype.createMenu = function () {
 	this.menuInitialized = true;
 	const items = [];
 	for ( const id in this.namespaces ) {
-		const isDiscussionNamespace = ( Number( id ) % 2 );
+		const isTalkNamespace = id % 2;
 		// The following classes are used here:
 		// * mw-advancedSearch-namespace-0
 		// * mw-advancedSearch-namespace-1
@@ -54,7 +54,7 @@ MenuSelectWidget.prototype.createMenu = function () {
 			label: this.namespaces[ id ] || id,
 			classes: [
 				'mw-advancedSearch-namespace-' + id,
-				!isDiscussionNamespace ? 'mw-advancedSearch-namespace-border' : ''
+				isTalkNamespace ? '' : 'mw-advancedSearch-namespace-border'
 			]
 		}, this.config ) ) );
 	}
