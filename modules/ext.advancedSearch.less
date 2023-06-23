@@ -18,17 +18,19 @@
 	margin-right: 0.3125em;
 }
 
-.mw-advancedSearch-searchPreview-previewPill > .oo-ui-labelElement-label > .mw-advancedSearch-searchPreview-content {
-	display: inline-block;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	max-width: 5em;
-	padding-left: 0.3em;
-	vertical-align: bottom;
-}
+.mw-advancedSearch-searchPreview-previewPill {
+	> .oo-ui-labelElement-label > .mw-advancedSearch-searchPreview-content {
+		display: inline-block;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		max-width: 5em;
+		padding-left: 0.3em;
+		vertical-align: bottom;
+	}
 
-.mw-advancedSearch-searchPreview-previewPill.mw-advancedSearch-searchPreview-preview-sort > .oo-ui-labelElement-label > .mw-advancedSearch-searchPreview-content {
-	max-width: none;
+	&.mw-advancedSearch-searchPreview-preview-sort > .oo-ui-labelElement-label > .mw-advancedSearch-searchPreview-content {
+		max-width: none;
+	}
 }
 
 .mw-advancedSearch-fieldContainer {
@@ -128,11 +130,11 @@
 			padding: 0;
 		}
 	}
-}
 
-.mw-advancedSearch-namespacePresets .oo-ui-multiselectWidget-group {
-	margin-left: 0.5em;
-	padding-top: 0.5em;
+	.oo-ui-multiselectWidget-group {
+		margin-left: 0.5em;
+		padding-top: 0.5em;
+	}
 }
 
 .mw-advancedSearch-namespace-selection-header {
