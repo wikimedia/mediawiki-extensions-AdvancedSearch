@@ -13,5 +13,6 @@ exports.config = { ...config,
 		daily: [
 			'./tests/selenium/specs/*.js'
 		]
-	}
+	},
+	maxInstances: 4
 };
