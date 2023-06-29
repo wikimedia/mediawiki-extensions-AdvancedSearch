@@ -14,6 +14,8 @@
 	"advancedsearch-field-or": "انہاں لفظاں وچوں ہک",
 	"advancedsearch-field-not": "ایہ لفظ کائناں",
 	"advancedsearch-field-filetype": "فائل قسم",
+	"advancedsearch-field-filew": "فائل چوڑائی پکسلاں وچ",
+	"advancedsearch-field-fileh": "فائل لمبائی پکسلاں وچ",
 	"advancedsearch-field-sort": "چھانٹی ترتیب",
 	"advancedsearch-field-preview-sort": "ترتیب بمطابق",
 	"advancedsearch-inlanguage-default": "زبان چݨو",
