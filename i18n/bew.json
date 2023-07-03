@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bangrapip"
+		]
+	},
+	"advancedsearch-desc": "Aksès gampil ke kegapaan penyarian lanjutan di [[Special:Search]]",
+	"advancedsearch-options-pane-head": "Penyarian lanjutan:",
+	"advancedsearch-optgroup-text": "Cari di tèks halaman",
+	"advancedsearch-optgroup-structure": "Struktur",
+	"advancedsearch-optgroup-files": "Berekas èn gambar",
+	"advancedsearch-optgroup-sort": "Urutan penyortiran",
+	"advancedsearch-field-plain": "Ni kata pada",
+	"advancedsearch-field-phrase": "Percis ni kata",
+	"advancedsearch-field-or": "Atu deri ni kata pada",
+	"advancedsearch-field-not": "Bukan ni kata pada",
+	"advancedsearch-field-subpageof": "Anak-judul deri ni halaman",
+	"advancedsearch-field-intitle": "Halaman judul ada",
+	"advancedsearch-field-deepcategory": "Halaman di ni katègori",
+	"advancedsearch-field-hastemplate": "Halaman dengen ni blatan",
+	"advancedsearch-field-inlanguage": "Halaman dalem ni basa",
+	"advancedsearch-field-filetype": "Jenis berekas",
+	"advancedsearch-field-filew": "Lèbar berekas dalem piksel",
+	"advancedsearch-field-fileh": "Tinggi berekas dalem piksel",
+	"advancedsearch-field-sort": "Urutan penyortiran",
+	"advancedsearch-field-preview-sort": "Sortir berales $1"
+}
