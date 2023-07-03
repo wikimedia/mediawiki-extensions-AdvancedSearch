@@ -6,7 +6,8 @@
 			"Technic2",
 			"WikiPhoenix",
 			"Ainali",
-			"Sabelöga"
+			"Sabelöga",
+			"Lejonel"
 		]
 	},
 	"advancedsearch-desc": "Enkel åtkomst till avancerade sökförmågor på [[Special:Search]]",
@@ -64,7 +65,7 @@
 	"advancedsearch-sort-create-timestamp-desc": "Skapandedatum – senaste högst upp",
 	"advancedsearch-sort-preview-relevance": "relevans",
 	"advancedsearch-sort-preview-last-edit-desc": "redigeringsdatum",
-	"advancedsearch-sort-preview-create-timestamp-desc": "Skapningsdatum",
+	"advancedsearch-sort-preview-create-timestamp-desc": "skapningsdatum",
 	"advancedsearch-namespaces-search-in": "Sök på:",
 	"advancedsearch-namespaces-remember": "Kom ihåg val för framtida sökningar",
 	"advancedsearch-namespaces-preset-all": "Alla",
