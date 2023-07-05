@@ -292,7 +292,6 @@ if ( mw.config.get( 'wgCanonicalSpecialPageName' ) === 'Search' ) {
 				state,
 				new NamespacePresetProviders( searchableNamespaces ),
 				{
-					classes: [ 'mw-advancedSearch-namespacePresets' ],
 					presets: mw.config.get( 'advancedSearch.namespacePresets' )
 				}
 			),
