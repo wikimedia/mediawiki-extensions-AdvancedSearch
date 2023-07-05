@@ -1,8 +1,9 @@
+'use strict';
 ( function () {
-	'use strict';
 
-	let MultiselectLookup,
-		sandbox,
+	const { MultiselectLookup } = require( 'ext.advancedSearch.SearchFieldUI' );
+
+	let sandbox,
 		store,
 		config;
 
@@ -12,7 +13,6 @@
 				value.prop === 'info' &&
 				value.titles.match( /Template:/ );
 		} );
-		MultiselectLookup = mw.libs.advancedSearch.dm.MultiselectLookup;
 		sandbox = sinon.sandbox.create();
 		store = {
 			connect: sandbox.stub(),
@@ -215,5 +215,4 @@
 			assert.true( true, 'A failed promise is returned' );
 		} );
 	} );
-
 }() );

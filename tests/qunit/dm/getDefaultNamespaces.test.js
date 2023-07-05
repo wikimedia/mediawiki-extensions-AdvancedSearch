@@ -1,5 +1,5 @@
 ( function () {
-	const getDefaultNamespaces = mw.libs.advancedSearch.dm.getDefaultNamespaces;
+	const { getDefaultNamespaces } = require( 'ext.advancedSearch.elements' );
 
 	QUnit.module( 'ext.advancedSearch.dm.getDefaultNamespaces' );
 
@@ -44,5 +44,4 @@
 
 		assert.deepEqual( namespaces, [ '0', '10', '12' ] );
 	} );
-
 }() );

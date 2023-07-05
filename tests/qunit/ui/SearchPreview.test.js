@@ -1,13 +1,13 @@
 ( function () {
 	'use strict';
 
-	let SearchPreview,
-		sandbox,
+	const { SearchPreview } = require( 'ext.advancedSearch.elements' );
+
+	let sandbox,
 		store,
 		config;
 
 	QUnit.testStart( function () {
-		SearchPreview = mw.libs.advancedSearch.ui.SearchPreview;
 		sandbox = sinon.sandbox.create();
 		store = {
 			connect: sandbox.stub(),
@@ -179,5 +179,4 @@
 
 		assert.strictEqual( translationStub.callCount, 3 );
 	} );
-
 }() );

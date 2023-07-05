@@ -1,5 +1,6 @@
+'use strict';
 ( function () {
-	const TitleCache = mw.libs.advancedSearch.dm.TitleCache;
+	const { TitleCache } = require( 'ext.advancedSearch.SearchFieldUI' );
 
 	QUnit.module( 'ext.advancedSearch.dm.TitleCache' );
 
@@ -35,5 +36,4 @@
 		assert.true( cache.has( 'File name.jpg' ) );
 		assert.false( cache.has( 'File name.svg' ) );
 	} );
-
 }() );

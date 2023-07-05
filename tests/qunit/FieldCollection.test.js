@@ -1,7 +1,7 @@
+'use strict';
 ( function () {
-	'use strict';
 
-	const FieldCollection = mw.libs.advancedSearch.FieldCollection;
+	const { FieldCollection } = require( 'ext.advancedSearch.elements' );
 
 	QUnit.module( 'mw.libs.advancedSearch.FieldCollection' );
 
@@ -32,5 +32,4 @@
 			coll.add( stubField, 'test' );
 		} );
 	} );
-
 }() );

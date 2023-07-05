@@ -1,7 +1,6 @@
 ( function () {
-
-	const ArbitraryWordInput = mw.libs.advancedSearch.ui.ArbitraryWordInput;
-	const Model = mw.libs.advancedSearch.dm.SearchModel;
+	const { ArbitraryWordInput } = require( 'ext.advancedSearch.SearchFieldUI' );
+	const { SearchModel } = require( 'ext.advancedSearch.elements' );
 	let sandbox;
 
 	QUnit.testStart( function () {
@@ -15,7 +14,7 @@
 	QUnit.module( 'ext.advancedSearch.ui.ArbitraryWordInput' );
 
 	QUnit.test( 'Input initially gets set from store', function ( assert ) {
-		const model = new Model();
+		const model = new SearchModel();
 		model.storeField( 'myid', [ 'lorem', 'ipsum', 'something with spaces' ] );
 		const input = new ArbitraryWordInput( model, { fieldId: 'myid' } );
 
@@ -33,7 +32,7 @@
 	 * Currently does not write back into store by itself but relies on createMultiSelectChangeHandler in init to do so
 	 */
 	QUnit.test( 'Changes on input cause update event', function ( assert ) {
-		const input = new ArbitraryWordInput( new Model(), {} );
+		const input = new ArbitraryWordInput( new SearchModel(), {} );
 		const onChangeSpy = sandbox.spy();
 		input.on( 'change', onChangeSpy );
 
@@ -49,20 +48,20 @@
 	} );
 
 	QUnit.test( 'Placeholder text presented if no content', function ( assert ) {
-		const input = new ArbitraryWordInput( new Model(), { placeholder: 'lorem ipsum' } );
+		const input = new ArbitraryWordInput( new SearchModel(), { placeholder: 'lorem ipsum' } );
 
 		assert.strictEqual( input.getTextForPlaceholder(), 'lorem ipsum' );
 	} );
 
 	QUnit.test( 'Placeholder text empty if content gets set', function ( assert ) {
-		const input = new ArbitraryWordInput( new Model(), { placeholder: 'lorem ipsum' } );
+		const input = new ArbitraryWordInput( new SearchModel(), { placeholder: 'lorem ipsum' } );
 		input.setValue( [ 'asinus' ] );
 
 		assert.strictEqual( input.getTextForPlaceholder(), '' );
 	} );
 
 	QUnit.test( 'Placeholder text empty if content set from the start', function ( assert ) {
-		const model = new Model();
+		const model = new SearchModel();
 		model.storeField( 'somekey', [ 'gaudiamus' ] );
 		const input = new ArbitraryWordInput( model, { placeholder: 'lorem ipsum', fieldId: 'somekey' } );
 
@@ -70,7 +69,7 @@
 	} );
 
 	QUnit.test( 'Text with commas and spaces gets turned into tags', function ( assert ) {
-		const input = new ArbitraryWordInput( new Model(), {} );
+		const input = new ArbitraryWordInput( new SearchModel(), {} );
 		input.input.setValue( 'initial,comma,separated values' );
 		input.buildTagsFromInput();
 
@@ -86,7 +85,7 @@
 	} );
 
 	QUnit.test( 'Extra commas and spaces do not cause empty tag creation', function ( assert ) {
-		const input = new ArbitraryWordInput( new Model(), {} );
+		const input = new ArbitraryWordInput( new SearchModel(), {} );
 		input.input.setValue( ',initial,, comma   separated, values,,' );
 		input.buildTagsFromInput();
 
@@ -100,5 +99,4 @@
 			]
 		);
 	} );
-
 }() );

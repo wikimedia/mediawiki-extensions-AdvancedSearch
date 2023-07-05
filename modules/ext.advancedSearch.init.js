@@ -1,10 +1,22 @@
 /* eslint-disable no-jquery/no-global-selector */
-( function () {
-	'use strict';
+'use strict';
 
-	if ( mw.config.get( 'wgCanonicalSpecialPageName' ) !== 'Search' ) {
-		return;
-	}
+if ( mw.config.get( 'wgCanonicalSpecialPageName' ) === 'Search' ) {
+	const {
+		ExpandablePane,
+		FieldCollection,
+		FieldElementBuilder,
+		FormState,
+		NamespaceFilters,
+		NamespacePresetProviders,
+		NamespacePresets,
+		NamespacesPreview,
+		QueryCompiler,
+		SearchModel,
+		SearchPreview,
+		addDefaultFields,
+		getDefaultNamespaces
+	} = require( 'ext.advancedSearch.elements' );
 
 	/**
 	 * It is possible for the namespace field to be completely empty
@@ -15,9 +27,9 @@
 	 * When the search result page loads the file namespace will show up in the selected namespace list.
 	 *
 	 * @param {jQuery} $searchField The search fields inside the forms
-	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
+	 * @param {SearchModel} state
 	 */
-	function forceFileTypeNamespaceWhenSearchForFileType( $searchField, state ) {
+	const forceFileTypeNamespaceWhenSearchForFileType = function ( $searchField, state ) {
 		if ( state.fileTypeIsSelected() &&
 			state.fileNamespaceIsSelected()
 		) {
@@ -30,15 +42,15 @@
 			} ).val( '1' );
 			$( $searchField ).after( $compiledFileType );
 		}
-	}
+	};
 
 	/**
 	 * @param {jQuery} $search The search form element
 	 * @param {jQuery} $searchField The search fields inside the forms
-	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
-	 * @param {mw.libs.advancedSearch.QueryCompiler} queryCompiler
+	 * @param {SearchModel} state
+	 * @param {QueryCompiler} queryCompiler
 	 */
-	function setSearchSubmitTrigger( $search, $searchField, state, queryCompiler ) {
+	const setSearchSubmitTrigger = function ( $search, $searchField, state, queryCompiler ) {
 		$search.on( 'submit', function () {
 			const $form = $( this );
 			// Force a GET request when "Remember selection for future searches" isn't checked and
@@ -63,12 +75,12 @@
 				} ).val( state.getSortMethod() ) );
 			}
 		} );
-	}
+	};
 
 	/**
-	 * @param {mw.libs.advancedSearch.dm.SearchModel} currentState
+	 * @param {SearchModel} currentState
 	 */
-	function updateSearchResultLinks( currentState ) {
+	const updateSearchResultLinks = function ( currentState ) {
 		let extraParams = '';
 		const sort = currentState.getSortMethod();
 		const json = currentState.toJSON();
@@ -86,32 +98,32 @@
 				return href + extraParams;
 			} );
 		}
-	}
+	};
 
 	/**
-	 * @return {mw.libs.advancedSearch.FieldCollection}
+	 * @return {FieldCollection}
 	 */
-	function createFieldConfiguration() {
-		const fields = new mw.libs.advancedSearch.FieldCollection();
-		mw.libs.advancedSearch.addDefaultFields( fields );
+	const createFieldConfiguration = function () {
+		const fields = new FieldCollection();
+		addDefaultFields( fields );
 		fields.freezeGroups( [ 'text', 'structure', 'files' ] );
 		mw.hook( 'advancedSearch.configureFields' ).fire( fields );
 		return fields;
-	}
+	};
 
 	/**
-	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
-	 * @param {mw.libs.advancedSearch.FieldCollection} fields
-	 * @param {mw.libs.advancedSearch.FieldElementBuilder} advancedOptionsBuilder
+	 * @param {SearchModel} state
+	 * @param {FieldCollection} fields
+	 * @param {FieldElementBuilder} advancedOptionsBuilder
 	 * @return {jQuery}
 	 */
-	function buildPaneElement( state, fields, advancedOptionsBuilder ) {
-		const searchPreview = new mw.libs.advancedSearch.ui.SearchPreview( state, {
+	const buildPaneElement = function ( state, fields, advancedOptionsBuilder ) {
+		const searchPreview = new SearchPreview( state, {
 			label: mw.msg( 'advancedsearch-options-pane-head' ),
 			fieldNames: fields.getFieldIds()
 		} );
 
-		const pane = new mw.libs.advancedSearch.ui.ExpandablePane( {
+		const pane = new ExpandablePane( {
 			dependentPaneContentBuilder: function () {
 				return advancedOptionsBuilder.buildAllFieldsElement( fields );
 			},
@@ -136,24 +148,24 @@
 		} );
 
 		return pane.$element;
-	}
+	};
 
 	/**
-	 * @param {mw.libs.advancedSearch.dm.SearchModel} state
+	 * @param {SearchModel} state
 	 * @param {jQuery} header
-	 * @param {mw.libs.advancedSearch.ui.NamespacePresets} presets
-	 * @param {mw.libs.advancedSearch.ui.NamespaceFilters} selection
+	 * @param {NamespacePresets} presets
+	 * @param {NamespaceFilters} selection
 	 * @param {Object} searchableNamespaces Mapping namespace IDs to localized names
 	 * @return {jQuery}
 	 */
-	function buildNamespacesPaneElement( state, header, presets, selection, searchableNamespaces ) {
-		const nsPreview = new mw.libs.advancedSearch.ui.NamespacesPreview( state, {
+	const buildNamespacesPaneElement = function ( state, header, presets, selection, searchableNamespaces ) {
+		const nsPreview = new NamespacesPreview( state, {
 			label: mw.msg( 'advancedsearch-namespaces-search-in' ),
 			previewOptions: state.getNamespaces(),
 			namespacesLabels: searchableNamespaces
 		} );
 		const $container = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection' );
-		const pane = new mw.libs.advancedSearch.ui.ExpandablePane( {
+		const pane = new ExpandablePane( {
 			dependentPaneContentBuilder: function () {
 				return $container.append( header ).append( presets.$element ).append( selection.$element );
 			},
@@ -170,13 +182,13 @@
 		} );
 		pane.buildDependentPane();
 		return pane.$element;
-	}
+	};
 
 	/**
 	 * @param {Object} searchableNamespaces Mapping namespace IDs to localized names
 	 * @return {string[]}
 	 */
-	function getNamespacesFromUrl( searchableNamespaces ) {
+	const getNamespacesFromUrl = function ( searchableNamespaces ) {
 		const nsParamRegExp = /[?&]ns(\d+)\b/g;
 		const namespaces = [];
 		let nsMatch;
@@ -186,27 +198,27 @@
 			namespaces.push( nsMatch[ 1 ] );
 		}
 		return namespaces;
-	}
+	};
 
 	/**
-	 * @param {mw.libs.advancedSearch.SearchField[]} fields
+	 * @param {SearchField[]} fields
 	 * @return {Object} fieldId => default value pairs
 	 */
-	function getDefaultsFromConfig( fields ) {
+	const getDefaultsFromConfig = function ( fields ) {
 		return fields.reduce( function ( defaults, field ) {
 			defaults[ field.id ] = field.defaultValue;
 			return defaults;
 		}, {} );
-	}
+	};
 
 	/**
 	 * @param {Object} searchableNamespaces Mapping namespace IDs to localized names
-	 * @param {mw.libs.advancedSearch.FieldCollection} fieldCollection
-	 * @return {mw.libs.advancedSearch.dm.SearchModel}
+	 * @param {FieldCollection} fieldCollection
+	 * @return {SearchModel}
 	 */
-	function initState( searchableNamespaces, fieldCollection ) {
-		const state = new mw.libs.advancedSearch.dm.SearchModel(
-				mw.libs.advancedSearch.dm.getDefaultNamespaces( mw.user.options.values ),
+	const initState = function ( searchableNamespaces, fieldCollection ) {
+		const state = new SearchModel(
+				getDefaultNamespaces( mw.user.options.values ),
 				getDefaultsFromConfig( fieldCollection.fields )
 			),
 			namespacesFromUrl = getNamespacesFromUrl( searchableNamespaces ),
@@ -226,14 +238,14 @@
 		}
 
 		return state;
-	}
+	};
 
 	$( function () {
 		const searchableNamespaces = mw.config.get( 'advancedSearch.searchableNamespaces' ),
 			fieldCollection = createFieldConfiguration(),
 			state = initState( searchableNamespaces, fieldCollection ),
-			advancedOptionsBuilder = new mw.libs.advancedSearch.FieldElementBuilder( state ),
-			queryCompiler = new mw.libs.advancedSearch.QueryCompiler( fieldCollection.fields );
+			advancedOptionsBuilder = new FieldElementBuilder( state ),
+			queryCompiler = new QueryCompiler( fieldCollection.fields );
 
 		const $search = $( 'form#search, form#powersearch' ),
 			$advancedSearch = $( '<div>' ).addClass( 'mw-advancedSearch-container' ),
@@ -266,19 +278,19 @@
 
 		updateSearchResultLinks( state );
 
-		const currentSearch = new mw.libs.advancedSearch.ui.FormState( state, {
+		const currentSearch = new FormState( state, {
 			name: 'advancedSearch-current'
 		} );
 
 		$advancedSearch.append( currentSearch.$element );
-		const namespaceSelection = new mw.libs.advancedSearch.ui.NamespaceFilters( state, {
+		const namespaceSelection = new NamespaceFilters( state, {
 				namespaces: searchableNamespaces,
 				placeholder: mw.msg( 'advancedsearch-namespaces-placeholder' ),
 				$overlay: true
 			} ),
-			namespacePresets = new mw.libs.advancedSearch.ui.NamespacePresets(
+			namespacePresets = new NamespacePresets(
 				state,
-				new mw.libs.advancedSearch.dm.NamespacePresetProviders( searchableNamespaces ),
+				new NamespacePresetProviders( searchableNamespaces ),
 				{
 					classes: [ 'mw-advancedSearch-namespacePresets' ],
 					presets: mw.config.get( 'advancedSearch.namespacePresets' )
@@ -312,5 +324,4 @@
 			namespaceSelection.getMenu().toggle( false );
 		}, 0 );
 	} );
-
-}() );
+}

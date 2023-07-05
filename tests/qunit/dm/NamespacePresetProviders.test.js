@@ -1,4 +1,5 @@
 ( function () {
+	const { NamespacePresetProviders } = require( 'ext.advancedSearch.elements' );
 	const namespaces = {
 		0: 'Article',
 		1: 'Talk',
@@ -19,13 +20,13 @@
 	QUnit.module( 'ext.advancedSearch.dm.NamespacePresetProviders' );
 
 	QUnit.test( 'Provider function for all namespaces returns/selects all namespace IDs', function ( assert ) {
-		const presetProviders = new mw.libs.advancedSearch.dm.NamespacePresetProviders( namespaces );
+		const presetProviders = new NamespacePresetProviders( namespaces );
 
 		assert.deepEqual( presetProviders.getNamespaceIdsFromProvider( 'all' ), [ '0', '1', '2', '12', '911' ] );
 	} );
 
 	QUnit.test( 'Provider function for discussion namespaces selects all odd IDs', function ( assert ) {
-		const presetProviders = new mw.libs.advancedSearch.dm.NamespacePresetProviders( namespaces );
+		const presetProviders = new NamespacePresetProviders( namespaces );
 
 		assert.deepEqual( presetProviders.getNamespaceIdsFromProvider( 'discussion' ), [ '1', '911' ] );
 	} );
@@ -38,7 +39,7 @@
 		const namespaceIDs = [ '1', '2', '12' ];
 		const hook = mw.hook( 'advancedSearch.initNamespacePresetProviders' );
 		hook.add( providerInitializationFunction );
-		const presetProviders = new mw.libs.advancedSearch.dm.NamespacePresetProviders( namespaces );
+		const presetProviders = new NamespacePresetProviders( namespaces );
 		hook.remove( providerInitializationFunction );
 		providerFunction.returns( namespaceIDs );
 		const namespaceIdResult = presetProviders.getNamespaceIdsFromProvider( 'my-new-func' );
@@ -58,7 +59,7 @@
 		const hook = mw.hook( 'advancedSearch.initNamespacePresetProviders' );
 
 		hook.add( providerInitializationFunction );
-		const presetProviders = new mw.libs.advancedSearch.dm.NamespacePresetProviders( namespaces );
+		const presetProviders = new NamespacePresetProviders( namespaces );
 		hook.remove( providerInitializationFunction );
 		const result = presetProviders.getNamespaceIdsFromProvider( 'partlyInvalid' );
 
@@ -74,7 +75,7 @@
 		const namespaceIDs = [ '4709', '4710', '4711' ];
 		const hook = mw.hook( 'advancedSearch.initNamespacePresetProviders' );
 		hook.add( providerInitializationFunction );
-		const presetProviders = new mw.libs.advancedSearch.dm.NamespacePresetProviders( namespaces );
+		const presetProviders = new NamespacePresetProviders( namespaces );
 		hook.remove( providerInitializationFunction );
 		providerFunction.returns( namespaceIDs );
 		const namespaceIdResult = presetProviders.getNamespaceIdsFromProvider( 'invalid' );
@@ -92,7 +93,7 @@
 		const namespaceIDs = [ 0, 1, 12 ];
 		const hook = mw.hook( 'advancedSearch.initNamespacePresetProviders' );
 		hook.add( providerInitializationFunction );
-		const presetProviders = new mw.libs.advancedSearch.dm.NamespacePresetProviders( namespaces );
+		const presetProviders = new NamespacePresetProviders( namespaces );
 		hook.remove( providerInitializationFunction );
 		providerFunction.returns( namespaceIDs );
 		const namespaceIdResult = presetProviders.getNamespaceIdsFromProvider( 'invalid' );
@@ -100,5 +101,4 @@
 		assert.true( providerFunction.calledOnce );
 		assert.deepEqual( namespaceIdResult, [ '0', '1', '12' ] );
 	} );
-
 }() );

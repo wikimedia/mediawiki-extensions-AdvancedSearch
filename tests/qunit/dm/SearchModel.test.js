@@ -1,9 +1,8 @@
 ( function () {
-	let SearchModel,
-		sandbox;
+	const { SearchModel } = require( 'ext.advancedSearch.elements' );
+	let sandbox;
 
 	QUnit.testStart( function () {
-		SearchModel = mw.libs.advancedSearch.dm.SearchModel;
 		sandbox = sinon.sandbox.create();
 	} );
 
@@ -78,13 +77,13 @@
 		assert.true( model.hasFieldChanged( 'not', 'anything' ) );
 	} );
 
-	function createModelWithValues() {
+	const createModelWithValues = function () {
 		const model = new SearchModel();
 		model.storeField( 'not', 'octopi' );
 		model.storeField( 'prefix', 'Page' );
 		model.setNamespaces( [ '1', '3' ] );
 		return model;
-	}
+	};
 
 	QUnit.test( 'Setting values from empty JSON string does nothing', function ( assert ) {
 		const model = createModelWithValues(),
@@ -267,5 +266,4 @@
 
 		assert.false( updateSpy.called );
 	} );
-
 }() );
