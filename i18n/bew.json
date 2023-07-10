@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bangrapip"
+		]
+	},
+	"advancedsearch-desc": "Aksès gampil ke kegapaan penyarian lanjutan di [[Special:Search]]",
+	"advancedsearch-options-pane-head": "Penyarian lanjutan:",
+	"advancedsearch-optgroup-text": "Cari di tèks halaman",
+	"advancedsearch-optgroup-structure": "Struktur",
+	"advancedsearch-optgroup-files": "Berekas èn gambar",
+	"advancedsearch-optgroup-sort": "Urutan penyortiran",
+	"advancedsearch-field-plain": "Ni kata pada",
+	"advancedsearch-field-phrase": "Percis ni kata",
+	"advancedsearch-field-or": "Atu deri ni kata pada",
+	"advancedsearch-field-not": "Bukan ni kata pada",
+	"advancedsearch-field-subpageof": "Anak-judul deri ni halaman",
+	"advancedsearch-field-intitle": "Halaman judul ada",
+	"advancedsearch-field-deepcategory": "Halaman di ni katègori",
+	"advancedsearch-field-hastemplate": "Halaman dengen ni blatan",
+	"advancedsearch-field-inlanguage": "Halaman dalem ni basa",
+	"advancedsearch-field-filetype": "Jenis berekas",
+	"advancedsearch-field-filew": "Lèbar berekas dalem piksel",
+	"advancedsearch-field-fileh": "Tinggi berekas dalem piksel",
+	"advancedsearch-field-sort": "Urutan penyortiran",
+	"advancedsearch-field-preview-sort": "Sortir berales $1",
+	"advancedsearch-help-plain": ";Jabaran\n:Penyarian ni kata-kata di judul atawa tèks.\n;Peratiin ama ni hal pada\n:* Beberapa kata bisa dimasupin di mari.\n:* Tenger baca èn laèn-laèn lèter bukan-hurup-nomer (kecuali titik dua èn koma) bakal dicuèkin.\n:* Barangkali ada hasil nyang kaga' ada atu atawa lebi bagèan deri lu punya penyarian.\n:* Pembongkotan kata diterepin. Tulad: Kalo kata ''puun'' dimasupin, mangka penyarian juga' bakal mertimbangin masupnya juga' akta ''puunan''. Pembongkotan kata entu sipatnya kusus pada atu basa ketentu.\n;Halaman pertulungan\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Full_text_search Penyarian tèks lengkep]\n;Nahwu nyang sepantar di penyarian biasa\n:<code>puun semak duri</code>",
+	"advancedsearch-help-phrase": ";Jabaran\n:Penyarian rèndèngan lèter kusus. Tenger baca dicuèkin.\n;Peratiin ama ni hal pada\n:(aci kalo paké tenger penukil, liat tulad di bawah) \n:* Pisahin antar gabungan kata penyarian paké tenger penukil, tulad: <code>\"tabé\"</code>, <code>\"tabé tong!\"</code>.\n:* Tenger baca èn laèn-laèn lèter bukan-hurup-nomer (kecuali titik dua èn koma) bakal dicuèkin.\n:* Penyarian kaga' peka gedé-kecilnya hurup.\n:* Pembongkotan kata kaga' diterepin.\n;Halaman pertulungan\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Kata, gabungan kata, èn pengrobah]\n;Nahwu nyang sepantar di penyarian biasa\n:Kata-kata di dalem tenger penukil, tulad: <code>\"Mulain deri awal\"</code>."
+}
