@@ -17,7 +17,7 @@
 	"advancedsearch-field-filew": "فائل چوڑائی پکسلاں وچ",
 	"advancedsearch-field-fileh": "فائل لمبائی پکسلاں وچ",
 	"advancedsearch-field-sort": "چھانٹی ترتیب",
-	"advancedsearch-field-preview-sort": "ترتیب بمطابق",
+	"advancedsearch-field-preview-sort": "ترتیب بمطابق $1",
 	"advancedsearch-inlanguage-default": "زبان چݨو",
 	"advancedsearch-filetype-section-image": "تصویر فارمیٹ",
 	"advancedsearch-filetype-section-video": "وڈیو فارمیٹ",
