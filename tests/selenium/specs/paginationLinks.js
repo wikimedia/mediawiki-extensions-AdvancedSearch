@@ -5,13 +5,11 @@ const assert = require( 'assert' ),
 
 describe( 'Advanced Search', function () {
 	it( 'adds search parameters to pagination links', function () {
-		SearchPage.addExamplePages( 21 );
-		SearchPage.open();
-
-		SearchPage.toggleInputFields();
-		SearchPage.searchTheseWords.put( 'brown,' );
-		SearchPage.searchExactText.put( '"jumped over"' );
-		SearchPage.submitForm();
+		SearchPage.addExamplePages( 2 );
+		SearchPage.open( {
+			limit: 1,
+			search: 'The',
+			'advancedSearch-current': JSON.stringify( { fields: { plain: [ 'The' ] } } ) } );
 		SearchPage.searchPaginationLinks[ 0 ].waitForExist();
 
 		SearchPage.searchPaginationLinks.forEach( function ( link ) {
