@@ -1,0 +1,42 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lifeway"
+		]
+	},
+	"advancedsearch-options-pane-head": "Кумдаҥдыме кычалмаш:",
+	"advancedsearch-optgroup-text": "Велыж текстыште кычалаш",
+	"advancedsearch-optgroup-files": "Файл да сӱрет-влак",
+	"advancedsearch-optgroup-sort": "Ойыркалыме радам",
+	"advancedsearch-field-plain": "Тиде мут-влак",
+	"advancedsearch-field-or": "Нине мут-влак гыч иктыже",
+	"advancedsearch-field-not": "Нине мут-влак огытыл",
+	"advancedsearch-field-deepcategory": "Тиде категорийыште велыж-влак",
+	"advancedsearch-field-hastemplate": "Тиде шаблон ден велыж-влак",
+	"advancedsearch-field-inlanguage": "Тиде йылме дене велыж-влак",
+	"advancedsearch-field-filetype": "Файл тӱрлылык",
+	"advancedsearch-field-filew": "Пиксель дене файлын лопкытшо",
+	"advancedsearch-field-fileh": "Пиксель дене файлын кӱкшытшӧ",
+	"advancedsearch-field-sort": "Ойыркалыме радам",
+	"advancedsearch-field-preview-sort": "$1 дене ойыркалаш",
+	"advancedsearch-placeholder-exact-text": "\"пырыс казам йӧрата\"",
+	"advancedsearch-inlanguage-default": "Йылмым ойыро",
+	"advancedsearch-filetype-section-image": "Сӱрет формат-влак",
+	"advancedsearch-filetype-section-video": "Видео формат-влак",
+	"advancedsearch-filetype-section-audio": "Аудио формат-влак",
+	"advancedsearch-filetype-section-document": "Документ формат-влак",
+	"advancedsearch-filetype-section-other": "Моло формат-влак",
+	"advancedsearch-filetype-default": "Файл тӱрлылыкым ойыро",
+	"advancedsearch-filetype-bitmap": "Сӱрет",
+	"advancedsearch-filetype-drawing": "Сӱрет",
+	"advancedsearch-filetype-audio": "Аудио",
+	"advancedsearch-filetype-video": "Видео",
+	"advancedsearch-filetype-office": "Документ",
+	"advancedsearch-filesize-equals": "икгай",
+	"advancedsearch-filesize-greater-than": "кугурак",
+	"advancedsearch-namespaces-preset-all": "Чыла",
+	"advancedsearch-namespaces-preset-default": "Ойлыде",
+	"advancedsearch-namespaces-preset-discussion": "Каҥашымаш",
+	"advancedsearch-namespaces-placeholder": "Лӱм кумдыкым ешараш…",
+	"prefs-advancedsearch": "Кумдаҥдыме кычалмаш"
+}
