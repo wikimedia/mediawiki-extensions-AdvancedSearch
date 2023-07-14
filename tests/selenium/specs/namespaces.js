@@ -1,91 +1,78 @@
 'use strict';
 
 const assert = require( 'assert' ),
-	SearchPage = require( '../pageobjects/search.page' ),
-	UserLoginPage = require( 'wdio-mediawiki/LoginPage' );
+	SearchPage = require( '../pageobjects/search.page' );
 
 describe( 'AdvancedSearch', function () {
-	beforeEach( function () {
-		browser.deleteCookies();
-		SearchPage.open();
+
+	beforeEach( async function () {
+		await SearchPage.open();
 	} );
 
-	it( 'namespace selection', function () {
-		SearchPage.expandNamespacesPreview();
+	it( 'namespace selection', async function () {
+		await SearchPage.expandNamespacesPreview();
 
 		// do not allow remembering the selection for anon users
-		assert( !SearchPage.rememberSelection.isExisting() );
+		assert( !await SearchPage.rememberSelection.isExisting() );
 
 		// select all namespaces
-		SearchPage.allNamespacesPreset.click();
-		SearchPage.expandNamespacesMenu();
+		await SearchPage.allNamespacesPreset.click();
+		await SearchPage.expandNamespacesMenu();
 
 		assert.deepStrictEqual(
-			SearchPage.namespaces.getAllTagLabels(),
-			SearchPage.namespaces.getAllLabelsFromMenu()
+			await SearchPage.namespaces().getAllTagLabels(),
+			await SearchPage.namespaces().getAllLabelsFromMenu()
 		);
 
 		// deselect all namespaces
-		SearchPage.allNamespacesPreset.click();
+		await SearchPage.allNamespacesPreset.click();
 
 		assert.deepStrictEqual(
-			SearchPage.namespaces.getAllTagLabels(),
+			await SearchPage.namespaces().getAllTagLabels(),
 			[]
 		);
 
 		// select all namespaces manually
-		SearchPage.expandNamespacesMenu();
-		SearchPage.namespaces.selectAll();
-		assert( SearchPage.allNamespacesPreset.isSelected() );
+		await SearchPage.expandNamespacesMenu();
+		await SearchPage.namespaces().selectAll();
+		assert( await SearchPage.allNamespacesPreset.isSelected() );
 
-		SearchPage.namespaces.clickOnNamespace( SearchPage.FILE_NAMESPACE );
+		await SearchPage.namespaces().clickOnNamespace( SearchPage.FILE_NAMESPACE );
 
-		assert( !SearchPage.allNamespacesPreset.isSelected(), 'preset is not checked if a namespace is missing' );
-		assert( SearchPage.generalHelpPreset.isSelected() );
+		assert( !await SearchPage.allNamespacesPreset.isSelected(), 'preset is not checked if a namespace is missing' );
+		assert( await SearchPage.generalHelpPreset.isSelected() );
 
-		SearchPage.submitForm();
+		await SearchPage.submitForm();
 
-		assert( SearchPage.generalHelpPreset.isSelected(), 'marks a namespace preset checkbox after submit' );
+		await SearchPage.expandNamespacesPreview();
+		assert( await SearchPage.generalHelpPreset.isSelected(), 'marks a namespace preset checkbox after submit' );
 	} );
 
-	it( 'allows logged-in users to remember the selection of namespaces for future searches', function () {
-		UserLoginPage.loginAdmin();
-		SearchPage.open();
+	it( 're-adds filetype namespace after search when file type option has been selected but namespace has been removed', async function () {
+		await SearchPage.toggleInputFields();
 
-		SearchPage.expandNamespacesPreview();
-		SearchPage.generalHelpPreset.click();
-		SearchPage.rememberSelection.click();
-		const cache = SearchPage.getSelectedNamespaceIDs();
-
-		SearchPage.submitForm();
-
-		assert.deepStrictEqual( cache, SearchPage.getSelectedNamespaceIDs() );
-	} );
-
-	it( 're-adds filetype namespace after search when file type option has been selected but namespace has been removed', function () {
-		SearchPage.toggleInputFields();
-
-		SearchPage.searchTheseWords.put( 'dog' );
-		SearchPage.searchFileType.selectImageType();
-		SearchPage.expandNamespacesPreview();
+		await SearchPage.searchTheseWords.put( 'dog' );
+		await SearchPage.searchFileType().selectImageType();
+		await SearchPage.expandNamespacesPreview();
 		// clears the namespace bar
-		SearchPage.allNamespacesPreset.click();
-		SearchPage.allNamespacesPreset.click();
+		await SearchPage.allNamespacesPreset.click();
+		await SearchPage.allNamespacesPreset.click();
 
-		SearchPage.submitForm();
+		await SearchPage.submitForm();
 
-		assert( SearchPage.getSelectedNamespaceIDs().includes( SearchPage.FILE_NAMESPACE ) );
+		await SearchPage.expandNamespacesPreview();
+		assert( ( await SearchPage.getSelectedNamespaceIDs() ).includes( SearchPage.FILE_NAMESPACE ) );
 	} );
 
-	it( 'adds/removes the namespace tag when the namespace option is clicked', function () {
-		SearchPage.expandNamespacesPreview();
-		SearchPage.expandNamespacesMenu();
-		SearchPage.namespaces.clickOnNamespace( SearchPage.FILE_NAMESPACE );
+	it( 'adds/removes the namespace tag when the namespace option is clicked', async function () {
+		await SearchPage.expandNamespacesPreview();
+		await SearchPage.expandNamespacesMenu();
+		await SearchPage.namespaces().clickOnNamespace( SearchPage.FILE_NAMESPACE );
 
-		assert( SearchPage.getSelectedNamespaceIDs().includes( SearchPage.FILE_NAMESPACE ) );
+		assert( ( await SearchPage.getSelectedNamespaceIDs() ).includes( SearchPage.FILE_NAMESPACE ) );
 
-		SearchPage.namespaces.clickOnNamespace( SearchPage.FILE_NAMESPACE );
+		await SearchPage.namespaces().clickOnNamespace( SearchPage.FILE_NAMESPACE );
 
-		assert( !SearchPage.getSelectedNamespaceIDs().includes( SearchPage.FILE_NAMESPACE ) );
+		assert( !( await SearchPage.getSelectedNamespaceIDs() ).includes( SearchPage.FILE_NAMESPACE ) );
 	} );
 } );

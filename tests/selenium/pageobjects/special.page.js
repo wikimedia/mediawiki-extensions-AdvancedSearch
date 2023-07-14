@@ -6,8 +6,8 @@ class SpecialPage extends Page {
 
 	get translateExtensionLink() { return $( '#mw-version-ext-other-Translate' ); }
 
-	open() {
-		super.openTitle( 'Special:Version' );
+	async open() {
+		await super.openTitle( 'Special:Version' );
 	}
 
 }
