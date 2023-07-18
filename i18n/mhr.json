@@ -5,13 +5,17 @@
 			"Валентина Семёнова"
 		]
 	},
+	"advancedsearch-desc": "[[Special:Search]] манмыште кумдаҥдыме кычалме йӧным куштылгын кучылтмаш",
 	"advancedsearch-options-pane-head": "Кумдаҥдыме кычалмаш:",
 	"advancedsearch-optgroup-text": "Велыж текстыште кычалаш",
+	"advancedsearch-optgroup-structure": "Структур",
 	"advancedsearch-optgroup-files": "Файл да сӱрет-влак",
 	"advancedsearch-optgroup-sort": "Ойыркалыме радам",
 	"advancedsearch-field-plain": "Тиде мут-влак",
+	"advancedsearch-field-phrase": "Лачак тиде текст",
 	"advancedsearch-field-or": "Нине мут-влак гыч иктыже",
 	"advancedsearch-field-not": "Нине мут-влак огытыл",
+	"advancedsearch-field-intitle": "Лаштыкын вуймутыштыжо уло",
 	"advancedsearch-field-deepcategory": "Тиде категорийыште велыж-влак",
 	"advancedsearch-field-hastemplate": "Тиде шаблон ден велыж-влак",
 	"advancedsearch-field-inlanguage": "Тиде йылме дене велыж-влак",
