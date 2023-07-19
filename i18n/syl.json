@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"এম আবু সাঈদ"
+			"এম আবু সাঈদ",
+			"ꠢꠣꠍꠘ ꠞꠣꠎꠣ"
 		]
 	},
 	"advancedsearch-optgroup-structure": "ꠉꠐꠘ",
@@ -11,5 +12,11 @@
 	"advancedsearch-field-or": "ꠅꠃ ꠡꠛ꠆ꠖꠣꠘ꠆ꠔꠞ ꠄꠉꠥ",
 	"advancedsearch-field-not": "ꠁꠔꠣ ꠡꠛ꠆ꠖꠣꠁꠘ ꠘꠣꠄ",
 	"advancedsearch-field-inlanguage": "ꠅꠃ ꠜꠣꠡꠣꠞ ꠚꠣꠔꠣꠁꠘ",
-	"advancedsearch-field-filetype": "ꠚꠣꠁꠟꠞ ꠗꠞꠘ"
+	"advancedsearch-field-filetype": "ꠚꠣꠁꠟꠞ ꠗꠞꠘ",
+	"advancedsearch-filetype-audio": "ꠢꠥꠘꠣ",
+	"advancedsearch-filetype-video": "ꠖꠦꠈꠣ",
+	"advancedsearch-filetype-office": "ꠅꠚꠤꠍ",
+	"advancedsearch-filesize-equals": "ꠢꠝꠣꠘ ꠢꠝꠣꠘ",
+	"advancedsearch-namespaces-preset-all": "ꠢꠇ꠆ꠇꠟ",
+	"advancedsearch-namespaces-preset-discussion": "ꠝꠣꠔ ꠇꠕꠣ"
 }
