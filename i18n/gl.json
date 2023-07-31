@@ -6,7 +6,8 @@
 			"Banjo",
 			"Elisardojm",
 			"Iváns",
-			"Maria zaos"
+			"Maria zaos",
+			"Toliño"
 		]
 	},
 	"advancedsearch-desc": "Acceso sinxelo a capacidades de procura avanzadas en [[Special:Search]]",
@@ -53,7 +54,7 @@
 	"advancedsearch-sort-preview-last-edit-desc": "data de edición",
 	"advancedsearch-sort-preview-create-timestamp-desc": "data de creación",
 	"advancedsearch-namespaces-search-in": "Procurar en:",
-	"advancedsearch-namespaces-remember": "Lembrar selección pra procuras futuras",
+	"advancedsearch-namespaces-remember": "Lembrar a selección para procuras futuras",
 	"advancedsearch-namespaces-preset-all": "Todos",
 	"advancedsearch-namespaces-preset-default": "Predefinido",
 	"advancedsearch-namespaces-preset-general-help": "Axuda xeral",
@@ -61,5 +62,5 @@
 	"advancedsearch-namespaces-placeholder": "Engadir espazos nominais…",
 	"prefs-advancedsearch": "Procura avanzada",
 	"advancedsearch-preference-help": "A Procura Avanzada engade un formulario na páxina Especial:Procurar. Isto permite realizar procuras especializadas, mesmo sen ter coñecementos de sintaxe de procuras. Tamén cambia a forma na que se poden seleccionar os espazos de nomes.",
-	"advancedsearch-preference-disable": "Non amosar a interface de Procura Avanzada"
+	"advancedsearch-preference-disable": "Non amosar a interface de procura avanzada ao usar Special:Search"
 }
