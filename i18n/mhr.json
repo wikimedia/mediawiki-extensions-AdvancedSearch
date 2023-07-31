@@ -15,6 +15,7 @@
 	"advancedsearch-field-phrase": "Лачак тиде текст",
 	"advancedsearch-field-or": "Нине мут-влак гыч иктыже",
 	"advancedsearch-field-not": "Нине мут-влак огытыл",
+	"advancedsearch-field-subpageof": "Тиде страницын подстраницыже-влак",
 	"advancedsearch-field-intitle": "Лаштыкын вуймутыштыжо уло",
 	"advancedsearch-field-deepcategory": "Тиде категорийыште велыж-влак",
 	"advancedsearch-field-hastemplate": "Тиде шаблон ден велыж-влак",
