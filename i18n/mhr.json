@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Lifeway",
-			"Валентина Семёнова"
+			"Валентина Семёнова",
+			"Mxalexandrov86"
 		]
 	},
 	"advancedsearch-desc": "[[Special:Search]] манмыште кумдаҥдыме кычалме йӧным куштылгын кучылтмаш",
@@ -25,6 +26,7 @@
 	"advancedsearch-field-fileh": "Пиксель дене файлын кӱкшытшӧ",
 	"advancedsearch-field-sort": "Ойыркалыме радам",
 	"advancedsearch-field-preview-sort": "$1 дене ойыркалаш",
+	"advancedsearch-help-plain": ";Ончыктен возымаш\n:Тиде мут кычалмаш вуймутышто але текстыште ышталтеш.\n;Тидым шотыш налза \n:* Тыште икмыняр мутым пурташ лиеш.\n:* Пунктуаций пале да вес алфавит гыч огыл пале-влак (кокточко да запятой деч посна) шотеш огыт налалт.\n:* Тыште лийын кертыт лектыш-влак, кудыжо ик але икмыняр тендан кычалмаш йодыш деч посна улыт.\n:* Тыгай муттӱҥ кучылталтеш. Мутлан:\"автомобиль\" мутым пуртымо гын, кычалмаште тыгак \"автомобили\" шотыш налалташ тӱҥалеш. Мут кузе лекме кажне посна йылме деч шога.\n;Полыш велыж\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Full_text_search Full text search]\n;Синтаксический эквивалент тыглай кычалмаште\n: <code>сезам урем гыч машина</code>.",
 	"advancedsearch-placeholder-exact-text": "\"пырыс казам йӧрата\"",
 	"advancedsearch-inlanguage-default": "Йылмым ойыро",
 	"advancedsearch-filetype-section-types": "Файл-влакын чумыр тӱрлылыкшӧ-влак",
