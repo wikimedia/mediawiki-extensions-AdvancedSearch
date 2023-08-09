@@ -95,8 +95,7 @@
 
 		assert.true( messageStub.calledOnce );
 		assert.strictEqual( element.title, 'my field value' );
-		// https://phabricator.wikimedia.org/T172781 prevents a semantic way to check for draggable
-		assert.true( $( element ).hasClass( 'oo-ui-draggableElement-undraggable' ) );
+		assert.false( tag.isDraggable() );
 		assert.strictEqual( $( '.mw-advancedSearch-searchPreview-content', element ).html(), '<bdi>my field value</bdi>' );
 		assert.strictEqual( $( '.oo-ui-labelElement-label span', element ).html(), 'my label:' );
 	} );
