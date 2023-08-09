@@ -17,6 +17,7 @@ use Wikimedia\TestingAccessWrapper;
 /**
  * @covers \AdvancedSearch\Hooks
  *
+ * @group Database
  * @license GPL-2.0-or-later
  */
 class HooksTest extends MediaWikiIntegrationTestCase {
