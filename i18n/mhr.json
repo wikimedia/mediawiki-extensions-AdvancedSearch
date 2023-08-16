@@ -62,5 +62,7 @@
 	"advancedsearch-namespaces-preset-general-help": "Чумыр справке",
 	"advancedsearch-namespaces-preset-discussion": "Каҥашымаш",
 	"advancedsearch-namespaces-placeholder": "Лӱм кумдыкым ешараш…",
-	"prefs-advancedsearch": "Кумдаҥдыме кычалмаш"
+	"prefs-advancedsearch": "Кумдаҥдыме кычалмаш",
+	"advancedsearch-preference-help": "Кумдаҥдыме кычалмаш Служебный:Кычалмаш велыжыш ешартыш корнан кычалмаш формым ешара. Кычалмаш синтаксисым огыда пале гынат, тудо посна кычалаш йӧным ышта. Тыгак лӱмым ойырен налме йӧнымат вашталта.",
+	"advancedsearch-preference-disable": "Служебный:Кычалмаш велыжым кучылтмо годым кумдаҥдыме кычалмашын интерфейсшым ончыкташ огеш кӱл"
 }
