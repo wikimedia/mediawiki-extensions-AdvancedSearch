@@ -5,6 +5,7 @@ namespace AdvancedSearch\Tests;
 use AdvancedSearch\Hooks;
 use ExtensionRegistry;
 use HashConfig;
+use MediaWiki\Request\FauxRequest;
 use MediaWiki\User\UserOptionsLookup;
 use MediaWikiIntegrationTestCase;
 use MimeAnalyzer;
@@ -240,7 +241,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 	 */
 	private function newSpecialSearchPage( User $user, $url, $requestValues = [] ) {
 		$output = new OutputPage( new RequestContext() );
-		$request = new \FauxRequest( $requestValues );
+		$request = new FauxRequest( $requestValues );
 		$request->setRequestURL( $url );
 		$context = new RequestContext();
 		$context->setOutput( $output );
