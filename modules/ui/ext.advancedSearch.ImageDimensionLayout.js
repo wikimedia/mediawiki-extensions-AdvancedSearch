@@ -19,6 +19,13 @@ const ImageDimensionLayout = function ( store, widget, config ) {
 
 	ImageDimensionLayout.parent.call( this, widget, config );
 
+	// Set ARIA labels and description from the FieldLayout label and help text.
+	this.fieldWidget.operatorInput.dropdownWidget.$handle.attr( {
+		'aria-labelledby': this.$label.attr( 'id' ),
+		'aria-describedby': this.$help.attr( 'aria-owns' )
+	} );
+	this.fieldWidget.valueInput.$input.attr( 'aria-labelledby', this.$label.attr( 'id' ) );
+
 	this.toggle( this.checkVisibility() );
 };
 
