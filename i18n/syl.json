@@ -13,10 +13,12 @@
 	"advancedsearch-field-not": "ꠁꠔꠣ ꠡꠛ꠆ꠖꠣꠁꠘ ꠘꠣꠄ",
 	"advancedsearch-field-inlanguage": "ꠅꠃ ꠜꠣꠡꠣꠞ ꠚꠣꠔꠣꠁꠘ",
 	"advancedsearch-field-filetype": "ꠚꠣꠁꠟꠞ ꠗꠞꠘ",
+	"advancedsearch-filetype-bitmap": "ꠍꠛꠤ",
 	"advancedsearch-filetype-audio": "ꠢꠥꠘꠣ",
 	"advancedsearch-filetype-video": "ꠖꠦꠈꠣ",
 	"advancedsearch-filetype-office": "ꠅꠚꠤꠍ",
 	"advancedsearch-filesize-equals": "ꠢꠝꠣꠘ ꠢꠝꠣꠘ",
+	"advancedsearch-sort-preview-relevance": "ꠅꠟꠣꠘ",
 	"advancedsearch-namespaces-preset-all": "ꠢꠇ꠆ꠇꠟ",
 	"advancedsearch-namespaces-preset-discussion": "ꠝꠣꠔ ꠇꠕꠣ"
 }
