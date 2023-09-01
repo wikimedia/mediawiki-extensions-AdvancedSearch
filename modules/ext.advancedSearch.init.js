@@ -117,7 +117,6 @@ const createFieldConfiguration = function () {
  */
 const buildPaneElement = function ( state, fields, advancedOptionsBuilder ) {
 	const searchPreview = new SearchPreview( state, {
-		label: mw.msg( 'advancedsearch-options-pane-head' ),
 		fieldNames: fields.getFieldIds()
 	} );
 
@@ -125,6 +124,7 @@ const buildPaneElement = function ( state, fields, advancedOptionsBuilder ) {
 		dependentPaneContentBuilder: function () {
 			return advancedOptionsBuilder.buildAllFieldsElement( fields );
 		},
+		label: mw.msg( 'advancedsearch-options-pane-head' ),
 		$buttonContent: searchPreview.$element,
 		tabIndex: 0,
 		suffix: 'options'
@@ -158,7 +158,6 @@ const buildPaneElement = function ( state, fields, advancedOptionsBuilder ) {
  */
 const buildNamespacesPaneElement = function ( state, header, presets, selection, searchableNamespaces ) {
 	const nsPreview = new NamespacesPreview( state, {
-		label: mw.msg( 'advancedsearch-namespaces-search-in' ),
 		previewOptions: state.getNamespaces(),
 		namespacesLabels: searchableNamespaces
 	} );
@@ -167,6 +166,7 @@ const buildNamespacesPaneElement = function ( state, header, presets, selection,
 		dependentPaneContentBuilder: function () {
 			return $container.append( header ).append( presets.$element ).append( selection.$element );
 		},
+		label: mw.msg( 'advancedsearch-namespaces-search-in' ),
 		$buttonContent: nsPreview.$element,
 		tabIndex: 0,
 		suffix: 'namespaces'

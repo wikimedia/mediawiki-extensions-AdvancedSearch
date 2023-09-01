@@ -24,15 +24,6 @@
 
 	QUnit.module( 'ext.advancedSearch.ui.SearchPreview' );
 
-	QUnit.test( 'Label gets setup', function ( assert ) {
-		config = {
-			label: 'something'
-		};
-		const searchPreview = new SearchPreview( store, config );
-
-		assert.strictEqual( searchPreview.label.getLabel(), 'something' );
-	} );
-
 	QUnit.test( 'Store data subscribed to and synced initially', function ( assert ) {
 		const updatePreviewSpy = sandbox.spy( SearchPreview.prototype, 'updatePreview' );
 
