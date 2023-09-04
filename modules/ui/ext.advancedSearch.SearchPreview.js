@@ -139,7 +139,7 @@ SearchPreview.prototype.generateTag = function ( fieldId, value ) {
 	} else {
 		tag = new OO.ui.TagItemWidget( {
 			label: $()
-				.add( $( '<span>' ).text( lookupTranslationForLabel( fieldId ) ) )
+				.add( $( '<span>' ).text( lookupTranslationForLabel( fieldId ) + mw.msg( 'colon-separator' ) ) )
 				// redundant span to cover browsers without support for bdi tag
 				.add( $( '<span>' ).addClass( 'mw-advancedSearch-searchPreview-content' ).append(
 					$( '<bdi>' ).text( formattedValue )

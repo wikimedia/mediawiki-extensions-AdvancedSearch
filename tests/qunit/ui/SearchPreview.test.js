@@ -87,7 +87,9 @@
 	} );
 
 	QUnit.test( 'Tag is generated', function ( assert ) {
-		const messageStub = sandbox.stub( mw, 'msg' ).withArgs( 'advancedsearch-field-somename' ).returns( 'my label:' );
+		const messageStub = sandbox.stub( mw, 'msg' )
+			.withArgs( 'advancedsearch-field-somename' ).returns( 'my label' )
+			.withArgs( 'colon-separator' ).returns( ':' );
 		const searchPreview = new SearchPreview( store, config );
 		const tag = searchPreview.generateTag( 'somename', 'my field value' );
 
@@ -110,13 +112,15 @@
 	} );
 
 	QUnit.test( 'Tag label is HTML-safe', function ( assert ) {
-		sandbox.stub( mw, 'msg' ).withArgs( 'advancedsearch-field-whatever' ).returns( '<div>block</div>' );
+		sandbox.stub( mw, 'msg' )
+			.withArgs( 'advancedsearch-field-whatever' ).returns( '<div>block</div>' )
+			.withArgs( 'colon-separator' ).returns( ':' );
 		const searchPreview = new SearchPreview( store, config );
 		const tag = searchPreview.generateTag( 'whatever', 'lorem' );
 
 		const element = tag.$element[ 0 ];
 
-		assert.strictEqual( $( '.oo-ui-labelElement-label span', element ).html(), '&lt;div&gt;block&lt;/div&gt;' );
+		assert.strictEqual( $( '.oo-ui-labelElement-label span', element ).html(), '&lt;div&gt;block&lt;/div&gt;:' );
 	} );
 
 	QUnit.test( 'Tag removals clears store', function ( assert ) {

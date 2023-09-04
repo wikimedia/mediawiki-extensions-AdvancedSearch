@@ -156,6 +156,7 @@
 				"advancedsearch-sort-preview-last-edit-desc",
 				"advancedsearch-sort-preview-create-timestamp-asc",
 				"advancedsearch-sort-preview-create-timestamp-desc",
+				"colon-separator",
 				"comma-separator",
 				"word-separator"
 			],
