@@ -255,15 +255,4 @@
 
 		assert.true( updateSpy.calledOnce );
 	} );
-
-	QUnit.test( 'Removing an unset option does not trigger emitUpdate', function ( assert ) {
-		const model = new SearchModel();
-		model.storeField( 'lorem', 'ipsum' );
-
-		const updateSpy = sandbox.spy( model, 'emitUpdate' );
-
-		model.removeField( 'amet' );
-
-		assert.false( updateSpy.called );
-	} );
 }() );

@@ -150,7 +150,8 @@ SearchPreview.prototype.generateTag = function ( fieldId, value ) {
 		tag = new OO.ui.TagItemWidget( {
 			label: $()
 				.add( $( '<span>' ).text( mw.msg( 'advancedsearch-field-preview-sort', formattedValue ) ) ),
-			draggable: false
+			draggable: false,
+			disabled: value === 'relevance'
 		} );
 	} else {
 		tag = new OO.ui.TagItemWidget( {

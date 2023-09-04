@@ -111,11 +111,11 @@ SearchModel.prototype.getField = function ( fieldId ) {
  * @param {string} fieldId
  */
 SearchModel.prototype.removeField = function ( fieldId ) {
-	if ( !Object.prototype.hasOwnProperty.call( this.searchFields, fieldId ) ) {
-		return;
+	if ( fieldId === 'sort' ) {
+		delete this.sortMethod;
+	} else {
+		delete this.searchFields[ fieldId ];
 	}
-
-	delete this.searchFields[ fieldId ];
 
 	if ( fieldId === 'filetype' ) {
 		this.resetFileDimensionFields();
