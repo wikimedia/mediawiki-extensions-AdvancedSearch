@@ -168,14 +168,12 @@
 		const searchPreview = new SearchPreview( store, config );
 		const translationStub = sandbox.stub( mw, 'msg' );
 		translationStub.withArgs( 'advancedsearch-filesize-equals-symbol' ).returns( '=' );
-		translationStub.withArgs( 'advancedsearch-filesize-greater-than-symbol' ).returns( '>' );
-		translationStub.withArgs( 'advancedsearch-filesize-smaller-than-symbol' ).returns( '<' );
 
 		assert.strictEqual( searchPreview.formatValue( 'someOption', [ '', '' ] ), '' );
 		assert.strictEqual( searchPreview.formatValue( 'fileh', [ '', 1000 ] ), '= 1000' );
 		assert.strictEqual( searchPreview.formatValue( 'fileh', [ '>', 300 ] ), '> 300' );
 		assert.strictEqual( searchPreview.formatValue( 'filew', [ '<', 1400 ] ), '< 1400' );
 
-		assert.strictEqual( translationStub.callCount, 3 );
+		assert.strictEqual( translationStub.callCount, 1 );
 	} );
 }() );

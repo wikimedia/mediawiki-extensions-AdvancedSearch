@@ -59,9 +59,7 @@
 	"advancedsearch-filesize-equals": "equal to",
 	"advancedsearch-filesize-equals-symbol": "=",
 	"advancedsearch-filesize-greater-than": "greater than",
-	"advancedsearch-filesize-greater-than-symbol": ">",
 	"advancedsearch-filesize-smaller-than": "lower than",
-	"advancedsearch-filesize-smaller-than-symbol": "<",
 
 	"advancedsearch-sort-relevance": "Relevance",
 	"advancedsearch-sort-last-edit-asc": "Edit date – oldest on top",

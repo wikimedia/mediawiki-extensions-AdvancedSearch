@@ -138,8 +138,6 @@
 				"advancedsearch-namespaces-preset-general-help",
 				"advancedsearch-namespaces-preset-discussion",
 				"advancedsearch-filesize-equals-symbol",
-				"advancedsearch-filesize-greater-than-symbol",
-				"advancedsearch-filesize-smaller-than-symbol",
 				"advancedsearch-field-plain",
 				"advancedsearch-field-phrase",
 				"advancedsearch-field-or",

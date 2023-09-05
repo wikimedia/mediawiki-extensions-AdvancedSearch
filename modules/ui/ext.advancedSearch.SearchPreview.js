@@ -1,23 +1,6 @@
 'use strict';
 
 /**
- * Get the message associated with a file dimension comparator value
- *
- * @param {string} comparator
- * @return {string}
- */
-const fileComparatorToMessage = function ( comparator ) {
-	switch ( comparator ) {
-		case '':
-			return mw.msg( 'advancedsearch-filesize-equals-symbol' );
-		case '>':
-			return mw.msg( 'advancedsearch-filesize-greater-than-symbol' );
-		case '<':
-			return mw.msg( 'advancedsearch-filesize-smaller-than-symbol' );
-	}
-};
-
-/**
  * @param {string} fieldId
  * @return {boolean}
  */
@@ -210,7 +193,7 @@ SearchPreview.prototype.formatValue = function ( fieldId, value ) {
 		}
 		return value;
 	} else if ( fieldIsImageDimension( fieldId ) && Array.isArray( value ) ) {
-		return fileComparatorToMessage( value[ 0 ] ) + ' ' + value[ 1 ];
+		return ( value[ 0 ] || mw.msg( 'advancedsearch-filesize-equals-symbol' ) ) + ' ' + value[ 1 ];
 	} else if ( fieldId === 'sort' ) {
 		return lookupTranslationForSortMethod( value );
 	}
