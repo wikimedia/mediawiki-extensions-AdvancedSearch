@@ -63,7 +63,6 @@
 	"advancedsearch-filetype-video": "Label for video file type\n{{Identical|Video}}",
 	"advancedsearch-filetype-office": "Label for office file types\n{{Identical|Office}}",
 	"advancedsearch-filesize-equals": "Label for the file width/height 'equals' comparator selection",
-	"advancedsearch-filesize-equals-symbol": "{{notranslate}}\nLabel for the file width/height 'equals' comparator selection as shorthand symbol",
 	"advancedsearch-filesize-greater-than": "Label for the file width/height 'greater than' comparator selection",
 	"advancedsearch-filesize-smaller-than": "Label for the file width/height 'smaller than' comparator selection",
 	"advancedsearch-sort-relevance": "Dropdown label for sort option relevance",

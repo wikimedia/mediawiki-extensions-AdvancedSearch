@@ -193,7 +193,7 @@ SearchPreview.prototype.formatValue = function ( fieldId, value ) {
 		}
 		return value;
 	} else if ( fieldIsImageDimension( fieldId ) && Array.isArray( value ) ) {
-		return ( value[ 0 ] || mw.msg( 'advancedsearch-filesize-equals-symbol' ) ) + mw.msg( 'word-separator' ) + value[ 1 ];
+		return ( value[ 0 ] || '=' ) + mw.msg( 'word-separator' ) + value[ 1 ];
 	} else if ( fieldId === 'sort' ) {
 		return lookupTranslationForSortMethod( value );
 	}

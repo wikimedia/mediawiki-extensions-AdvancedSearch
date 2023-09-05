@@ -167,15 +167,13 @@
 
 	QUnit.test( 'Dimension values get formatted well', function ( assert ) {
 		const searchPreview = new SearchPreview( store, config );
-		const translationStub = sandbox.stub( mw, 'msg' );
-		translationStub.withArgs( 'word-separator' ).returns( ' ' );
-		translationStub.withArgs( 'advancedsearch-filesize-equals-symbol' ).returns( '=' );
+		const translationStub = sandbox.stub( mw, 'msg' ).withArgs( 'word-separator' ).returns( ' ' );
 
 		assert.strictEqual( searchPreview.formatValue( 'someOption', [ '', '' ] ), '' );
 		assert.strictEqual( searchPreview.formatValue( 'fileh', [ '', 1000 ] ), '= 1000' );
 		assert.strictEqual( searchPreview.formatValue( 'fileh', [ '>', 300 ] ), '> 300' );
 		assert.strictEqual( searchPreview.formatValue( 'filew', [ '<', 1400 ] ), '< 1400' );
 
-		assert.strictEqual( translationStub.callCount, 5 );
+		assert.strictEqual( translationStub.callCount, 3 );
 	} );
 }() );
