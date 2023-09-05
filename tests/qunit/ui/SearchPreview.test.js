@@ -158,6 +158,7 @@
 
 	QUnit.test( 'Array values get formatted well', function ( assert ) {
 		const searchPreview = new SearchPreview( store, config );
+		sandbox.stub( mw, 'msg' ).withArgs( 'comma-separator' ).returns( ', ' );
 
 		assert.strictEqual( searchPreview.formatValue( 'someOption', [ 'some', 'words', 'in', 'combination' ] ), 'some, words, in, combination' );
 		assert.strictEqual( searchPreview.formatValue( 'someOption', [ 'related words', 'not', 'so' ] ), 'related words, not, so' );
@@ -167,6 +168,7 @@
 	QUnit.test( 'Dimension values get formatted well', function ( assert ) {
 		const searchPreview = new SearchPreview( store, config );
 		const translationStub = sandbox.stub( mw, 'msg' );
+		translationStub.withArgs( 'word-separator' ).returns( ' ' );
 		translationStub.withArgs( 'advancedsearch-filesize-equals-symbol' ).returns( '=' );
 
 		assert.strictEqual( searchPreview.formatValue( 'someOption', [ '', '' ] ), '' );
@@ -174,6 +176,6 @@
 		assert.strictEqual( searchPreview.formatValue( 'fileh', [ '>', 300 ] ), '> 300' );
 		assert.strictEqual( searchPreview.formatValue( 'filew', [ '<', 1400 ] ), '< 1400' );
 
-		assert.strictEqual( translationStub.callCount, 1 );
+		assert.strictEqual( translationStub.callCount, 5 );
 	} );
 }() );
