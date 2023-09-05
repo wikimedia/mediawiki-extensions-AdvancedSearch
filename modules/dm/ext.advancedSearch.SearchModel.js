@@ -1,13 +1,5 @@
 'use strict';
 
-// Internal constants
-const FILETYPES_WITH_DIMENSIONS = [
-	'bitmap',
-	'drawing',
-	'image',
-	'video'
-];
-
 const cloneReferenceTypeValue = function ( value ) {
 	if ( Array.isArray( value ) ) {
 		return value.slice();
@@ -209,11 +201,7 @@ SearchModel.prototype.setAllFromJSON = function ( jsonSerialized ) {
  */
 SearchModel.prototype.filetypeSupportsDimensions = function () {
 	const fileType = this.getField( 'filetype' );
-	if ( !fileType ) {
-		return false;
-	}
-	const generalFileType = fileType.replace( /\/.*/, '' );
-	return FILETYPES_WITH_DIMENSIONS.indexOf( generalFileType ) !== -1;
+	return !!fileType && /^(bitmap|drawing|image|video)\b/.test( fileType );
 };
 
 /**

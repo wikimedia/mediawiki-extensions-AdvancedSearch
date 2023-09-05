@@ -48,11 +48,10 @@ const lookupTranslationForLabel = function ( fieldId ) {
  */
 const SearchPreview = function ( store, config ) {
 	config = $.extend( {
-		fieldNames: [],
 		data: true
 	}, config );
 	this.store = store;
-	this.fieldNames = config.fieldNames;
+	this.fieldNames = config.fieldNames || [];
 
 	store.connect( this, { update: 'onStoreUpdate' } );
 
@@ -62,9 +61,8 @@ const SearchPreview = function ( store, config ) {
 		label: config.label,
 		classes: [ 'mw-advancedSearch-searchPreview-label' ]
 	} );
-	this.$element.append( this.label.$element );
-
-	this.$element.addClass( 'mw-advancedSearch-searchPreview' );
+	this.$element.append( this.label.$element )
+		.addClass( 'mw-advancedSearch-searchPreview' );
 	this.updatePreview();
 };
 
@@ -88,11 +86,9 @@ SearchPreview.prototype.updatePreview = function () {
 	this.fieldNames.forEach( function ( fieldId ) {
 		const val = this.store.getField( fieldId );
 
-		if ( this.skipFieldInPreview( fieldId, val ) ) {
-			return;
+		if ( !this.skipFieldInPreview( fieldId, val ) ) {
+			this.$element.append( this.generateTag( fieldId, val ).$element );
 		}
-
-		this.$element.append( this.generateTag( fieldId, val ).$element );
 	}.bind( this ) );
 
 	this.$element.append( this.generateTag( 'sort', this.store.getSortMethod() ).$element );
@@ -128,25 +124,24 @@ SearchPreview.prototype.skipFieldInPreview = function ( fieldId, value ) {
  */
 SearchPreview.prototype.generateTag = function ( fieldId, value ) {
 	const formattedValue = this.formatValue( fieldId, value );
-	let tag;
+	let $label = $( '<span>' );
+	let disabled = false;
 	if ( fieldId === 'sort' ) {
-		tag = new OO.ui.TagItemWidget( {
-			label: $()
-				.add( $( '<span>' ).text( mw.msg( 'advancedsearch-field-preview-sort', formattedValue ) ) ),
-			draggable: false,
-			disabled: value === 'relevance'
-		} );
+		$label.text( mw.msg( 'advancedsearch-field-preview-sort', formattedValue ) );
+		disabled = value === 'relevance';
 	} else {
-		tag = new OO.ui.TagItemWidget( {
-			label: $()
-				.add( $( '<span>' ).text( lookupTranslationForLabel( fieldId ) + mw.msg( 'colon-separator' ) ) )
-				// redundant span to cover browsers without support for bdi tag
-				.add( $( '<span>' ).addClass( 'mw-advancedSearch-searchPreview-content' ).append(
-					$( '<bdi>' ).text( formattedValue )
-				) ),
-			draggable: false
-		} );
+		$label = $label.text( lookupTranslationForLabel( fieldId ) + mw.msg( 'colon-separator' ) )
+			// redundant span to cover browsers without support for bdi tag
+			.add( $( '<span>' ).addClass( 'mw-advancedSearch-searchPreview-content' ).append(
+				$( '<bdi>' ).text( formattedValue )
+			) );
 	}
+
+	const tag = new OO.ui.TagItemWidget( {
+		label: $label,
+		disabled: disabled,
+		draggable: false
+	} );
 
 	tag.connect( this, {
 		remove: function () {
@@ -170,8 +165,7 @@ SearchPreview.prototype.generateTag = function ( fieldId, value ) {
 	// * mw-advancedsearch-searchPreview-preview-subpageof
 	tag.$element
 		.attr( 'title', formattedValue )
-		.addClass( 'mw-advancedSearch-searchPreview-previewPill' )
-		.addClass( 'mw-advancedSearch-searchPreview-preview-' + fieldId );
+		.addClass( 'mw-advancedSearch-searchPreview-previewPill mw-advancedSearch-searchPreview-preview-' + fieldId );
 
 	return tag;
 };
