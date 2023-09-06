@@ -44,22 +44,10 @@
 		}
 	}
 
-	.mw-search-profile-tabs {
-		display: none;
-	}
-
 	/* stylelint-disable-next-line selector-max-id */
+	.mw-search-profile-tabs,
 	#mw-searchoptions {
 		display: none;
-		height: 0;
-		padding: 0;
-		visibility: hidden;
-
-		/* This won't be the last element any more when `.mw-advancedSearch-container` is added */
-		/* stylelint-disable-next-line selector-max-id */
-		&:last-child {
-			display: block;
-		}
 	}
 
 	@keyframes mw-search-bounceDelay {
