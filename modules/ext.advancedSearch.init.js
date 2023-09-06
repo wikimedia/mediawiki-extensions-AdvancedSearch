@@ -130,12 +130,8 @@ const buildPaneElement = function ( state, fields, advancedOptionsBuilder ) {
 		tabIndex: 0,
 		suffix: 'options'
 	} );
-	pane.on( 'change', function () {
-		if ( pane.isOpen() ) {
-			searchPreview.hidePreview();
-		} else {
-			searchPreview.showPreview();
-		}
+	pane.on( 'change', function ( open ) {
+		searchPreview.togglePreview( !open );
 	} );
 
 	// Proactively lazy-load the pane: if the user hasn't already clicked to open the pane,
@@ -172,12 +168,8 @@ const buildNamespacesPaneElement = function ( state, header, presets, selection,
 		tabIndex: 0,
 		suffix: 'namespaces'
 	} );
-	pane.on( 'change', function () {
-		if ( pane.isOpen() ) {
-			nsPreview.hidePreview();
-		} else {
-			nsPreview.showPreview();
-		}
+	pane.on( 'change', function ( open ) {
+		nsPreview.togglePreview( !open );
 	} );
 	pane.buildDependentPane();
 	return pane.$element;

@@ -77,13 +77,11 @@ NamespacesPreview.prototype.generateTag = function ( nsId, value ) {
 	return tag;
 };
 
-NamespacesPreview.prototype.showPreview = function () {
-	this.data = true;
-	this.updatePreview();
-};
-
-NamespacesPreview.prototype.hidePreview = function () {
-	this.data = false;
+/**
+ * @param {boolean} show
+ */
+NamespacesPreview.prototype.togglePreview = function ( show ) {
+	this.data = show;
 	this.updatePreview();
 };
 

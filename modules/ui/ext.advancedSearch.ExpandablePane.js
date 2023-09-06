@@ -11,13 +11,13 @@
  * @constructor
  *
  * @param {Object} config
+ * @param {boolean} [config.data=false] True to expand the pane by default
  * @param {string} config.suffix
  * @param {jQuery} config.$buttonLabel
  * @param {number} [config.tabIndex]
  * @param {Function} config.dependentPaneContentBuilder
  */
 const ExpandablePane = function ( config ) {
-	config = $.extend( config, { data: this.STATE_CLOSED } );
 	this.suffix = config.suffix;
 	ExpandablePane.parent.call( this, config );
 
@@ -47,28 +47,19 @@ const ExpandablePane = function ( config ) {
 		'aria-expanded': 'false'
 	} );
 
-	this.notifyChildInputVisibility( config.data === this.STATE_OPEN );
+	this.notifyChildInputVisibility();
 };
 
 OO.inheritClass( ExpandablePane, OO.ui.Widget );
 OO.mixinClass( ExpandablePane, OO.ui.mixin.IndicatorElement );
 
-ExpandablePane.prototype.STATE_CLOSED = 'closed';
-ExpandablePane.prototype.STATE_OPEN = 'open';
-
 ExpandablePane.prototype.onButtonClick = function () {
-	if ( this.data === this.STATE_OPEN ) {
-		this.data = this.STATE_CLOSED;
-		this.updatePaneVisibility( this.STATE_CLOSED );
-		this.notifyChildInputVisibility( false );
-		mw.track( 'counter.MediaWiki.AdvancedSearch.event.' + this.suffix + '.collapse' );
-	} else {
-		this.data = this.STATE_OPEN;
-		this.updatePaneVisibility( this.STATE_OPEN );
-		this.notifyChildInputVisibility( true );
-		mw.track( 'counter.MediaWiki.AdvancedSearch.event.' + this.suffix + '.expand' );
-	}
-	this.emit( 'change', this.data );
+	const action = this.isOpen() ? 'collapse' : 'expand';
+	this.data = !this.isOpen();
+	this.updatePaneVisibility();
+	this.notifyChildInputVisibility();
+	mw.track( 'counter.MediaWiki.AdvancedSearch.event.' + this.suffix + '.' + action );
+	this.emit( 'change', this.isOpen() );
 };
 
 ExpandablePane.prototype.buildDependentPane = function () {
@@ -80,31 +71,25 @@ ExpandablePane.prototype.buildDependentPane = function () {
 
 /**
  * @private
- * @param {boolean} visible
  */
-ExpandablePane.prototype.notifyChildInputVisibility = function ( visible ) {
-	$( 'input', this.$dependentPane ).trigger( visible === true ? 'visible' : 'hidden' );
+ExpandablePane.prototype.notifyChildInputVisibility = function () {
+	$( 'input', this.$dependentPane ).trigger( this.isOpen() ? 'visible' : 'hidden' );
 };
 
 /**
  * @private
- * @param {string} state
  */
-ExpandablePane.prototype.updatePaneVisibility = function ( state ) {
-	if ( state === this.STATE_OPEN ) {
-		this.$dependentPane.show();
-		this.button.$button.attr( 'aria-expanded', 'true' );
-	} else {
-		this.$dependentPane.hide();
-		this.button.$button.attr( 'aria-expanded', 'false' );
-	}
+ExpandablePane.prototype.updatePaneVisibility = function () {
+	const open = this.isOpen();
+	this.$dependentPane.toggle( open );
+	this.button.$button.attr( 'aria-expanded', open ? 'true' : 'false' );
 };
 
 /**
  * @return {boolean}
  */
 ExpandablePane.prototype.isOpen = function () {
-	return this.data === this.STATE_OPEN;
+	return !!this.data;
 };
 
 module.exports = ExpandablePane;
