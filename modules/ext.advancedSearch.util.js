@@ -1,22 +1,19 @@
 'use strict';
 
-const arrayEquals = function ( a1, a2 ) {
-	let i = a1.length;
-	if ( i !== a2.length ) {
-		return false;
-	}
-	while ( i-- ) {
-		if ( a1[ i ] !== a2[ i ] ) {
-			return false;
-		}
-	}
-	return true;
-};
-
+/**
+ * @param {Array} a1
+ * @param {Array} a2
+ * @return {boolean}
+ */
 const arrayContains = function ( a1, a2 ) {
 	return $( a1 ).filter( a2 ).length === a2.length;
 };
 
+/**
+ * @param {Array} a1
+ * @param {Array} a2
+ * @return {Array}
+ */
 const arrayConcatUnique = function ( a1, a2 ) {
 	return a1.concat( a2.filter( function ( item ) {
 		return a1.indexOf( item ) === -1;
@@ -25,6 +22,5 @@ const arrayConcatUnique = function ( a1, a2 ) {
 
 module.exports = {
 	arrayConcatUnique,
-	arrayContains,
-	arrayEquals
+	arrayContains
 };

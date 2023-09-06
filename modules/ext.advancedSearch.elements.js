@@ -24,6 +24,5 @@ module.exports = {
 	SearchField: SearchFieldModule.SearchField,
 	createSearchFieldFromObject: SearchFieldModule.createSearchFieldFromObject,
 	arrayConcatUnique: UtilModule.arrayConcatUnique,
-	arrayContains: UtilModule.arrayContains,
-	arrayEquals: UtilModule.arrayEquals
+	arrayContains: UtilModule.arrayContains
 };
