@@ -14,27 +14,20 @@ ClassesForDropdownOptions.prototype.setOptionsData = function ( options ) {
 	this.optionsDirty = true;
 
 	const optionWidgets = options.map( function ( opt ) {
-		let optValue, optionWidget;
-
-		if ( opt.optgroup === undefined ) {
-			optValue = widget.cleanUpValue( opt.data );
-			// The following classes are used here:
-			// * mw-advancedSearch-inlanguage-*
-			// * mw-advancedSearch-filetype-*
-			// * mw-advancedSearch-sort-*
-			optionWidget = new OO.ui.MenuOptionWidget( {
-				data: optValue,
-				classes: [ widget.className + optValue.replace( /\W+/g, '-' ) ],
-				label: opt.label !== undefined ? opt.label : optValue
-			} );
-		} else {
-			optionWidget = new OO.ui.MenuSectionOptionWidget( {
-				label: opt.optgroup,
-				classes: []
-			} );
+		if ( opt.optgroup ) {
+			return new OO.ui.MenuSectionOptionWidget( { label: opt.optgroup } );
 		}
 
-		return optionWidget;
+		const value = widget.cleanUpValue( opt.data );
+		// The following classes are used here:
+		// * mw-advancedSearch-inlanguage-*
+		// * mw-advancedSearch-filetype-*
+		// * mw-advancedSearch-sort-*
+		return new OO.ui.MenuOptionWidget( {
+			data: value,
+			classes: [ widget.className + value.replace( /\W+/g, '-' ) ],
+			label: opt.label || value
+		} );
 	} );
 
 	this.dropdownWidget.getMenu().clearItems().addItems( optionWidgets );

@@ -35,11 +35,10 @@ const forceFileTypeNamespaceWhenSearchForFileType = function ( $searchField, sta
 		// Can't call state.setNamespaces with file namespace here,
 		// because this function is called inside the onSubmit event
 		// and the DOM update from the state change would take too long.
-		const $compiledFileType = $( '<input>' ).prop( {
+		$searchField.after( $( '<input>' ).prop( {
 			name: 'ns6',
 			type: 'hidden'
-		} ).val( '1' );
-		$( $searchField ).after( $compiledFileType );
+		} ).val( '1' ) );
 	}
 };
 

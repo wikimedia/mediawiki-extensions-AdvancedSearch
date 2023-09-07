@@ -74,7 +74,7 @@ const getOptionHelpMessage = function ( id ) {
 	// * advancedsearch-help-plain
 	// * advancedsearch-help-sort
 	// * advancedsearch-help-subpageof
-	const message = mw.config.get( 'advancedSearch.tooltips' )[ 'advancedsearch-help-' + id ] || '';
+	const message = mw.config.get( 'advancedSearch.tooltips' )[ 'advancedsearch-help-' + id ];
 	if ( !message ) {
 		return false;
 	}
