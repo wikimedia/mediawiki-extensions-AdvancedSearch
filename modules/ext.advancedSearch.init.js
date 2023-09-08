@@ -311,10 +311,8 @@ $( function () {
 		searchableNamespaces
 	) );
 
-	$( '.mw-search-spinner' ).hide();
-
 	// remove old namespace selection item to avoid double ns parameters
-	$( '#mw-searchoptions' ).remove();
+	$( '.mw-search-spinner, #mw-searchoptions' ).remove();
 
 	// TODO this is workaround to fix a toggle true event fired after the DOM is loaded
 	setTimeout( function () {
