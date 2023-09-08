@@ -26,14 +26,16 @@ class SearchableNamespaceListBuilderTest extends TestCase {
 			0 => '(Main)',
 			1 => 'Some Namespace',
 			123 => 'Some other namespace',
-			500 => 'Yet another namespace'
 		];
 
 		$languageConverter = $this->createMock( ILanguageConverter::class );
 		$languageConverter->method( 'convertNamespace' )
 			->willReturnCallback( static fn ( $id ) => $configNamespaces[$id] );
 
-		$namespaceBuilder = new SearchableNamespaceListBuilder( $languageConverter );
+		$namespaceBuilder = new SearchableNamespaceListBuilder(
+			$languageConverter,
+			static fn ( $ns ) => $ns !== 500
+		);
 		$actual = $namespaceBuilder->getCuratedNamespaces( $configNamespaces );
 		$this->assertSame( $expected, $actual );
 	}

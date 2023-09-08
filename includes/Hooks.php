@@ -12,6 +12,7 @@ use MediaWiki\Output\OutputPage;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Request\WebRequest;
+use MediaWiki\SiteStats\SiteStats;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Specials\SpecialSearch;
@@ -94,6 +95,7 @@ class Hooks implements
 			$special->getContext(),
 			$special->getLanguage(),
 			$special->getConfig(),
+			$this->getDefaultNamespaces( $user ),
 			ExtensionRegistry::getInstance()
 		) );
 	}
@@ -102,6 +104,7 @@ class Hooks implements
 	 * @param MessageLocalizer $context
 	 * @param Language $userLang
 	 * @param Config $config
+	 * @param int[] $defaultNamespaces
 	 * @param ExtensionRegistry $extensionRegistry
 	 * @return array<string,mixed>
 	 */
@@ -109,11 +112,19 @@ class Hooks implements
 		MessageLocalizer $context,
 		Language $userLang,
 		Config $config,
+		array $defaultNamespaces,
 		ExtensionRegistry $extensionRegistry
 	): array {
 		$namespaceBuilder = new SearchableNamespaceListBuilder(
 			MediaWikiServices::getInstance()->getLanguageConverterFactory()
-				->getLanguageConverter( $userLang )
+				->getLanguageConverter( $userLang ),
+			static function ( int $ns ) use ( $defaultNamespaces ): bool {
+				// Skip the expensive query for all standard namespaces that are hard-coded in core
+				return $ns <= NS_CATEGORY_TALK ||
+					// Must include empty namespaces in $wgNamespacesToBeSearchedDefault
+					in_array( $ns, $defaultNamespaces ) ||
+					SiteStats::pagesInNs( $ns );
+			}
 		);
 
 		$vars = [
@@ -141,6 +152,7 @@ class Hooks implements
 
 	/**
 	 * If the request does not contain any namespaces, redirect to URL with user default namespaces
+	 *
 	 * @param SpecialPage $special
 	 * @return string|null the URL to redirect to or null if not needed
 	 */
@@ -168,6 +180,7 @@ class Hooks implements
 
 	/**
 	 * Checks if there is a search request, and it already specifies namespaces.
+	 *
 	 * @param WebRequest $request
 	 * @return bool
 	 */

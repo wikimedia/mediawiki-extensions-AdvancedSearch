@@ -155,6 +155,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 				MainConfigNames::FileExtensions => [ '<EXT>' ],
 				'AdvancedSearchDeepcatEnabled' => true
 			] ),
+			[],
 			$extensionRegistry
 		);
 

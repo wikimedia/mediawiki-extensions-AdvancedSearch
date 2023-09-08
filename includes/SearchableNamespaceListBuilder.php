@@ -9,8 +9,14 @@ use MediaWiki\Language\ILanguageConverter;
  */
 class SearchableNamespaceListBuilder {
 
+	/**
+	 * @param ILanguageConverter $languageConverter
+	 * @param callable|null $pagesInNs A function like {@see SiteStats::pagesInNs} that returns true
+	 *  or an int > 0 when there are pages in the namespace, i.e. it's not empty
+	 */
 	public function __construct(
 		private readonly ILanguageConverter $languageConverter,
+		private $pagesInNs,
 	) {
 	}
 
@@ -31,6 +37,14 @@ class SearchableNamespaceListBuilder {
 
 		// Remove entries that still have an empty name
 		$configNamespaces = array_filter( $configNamespaces );
+
+		if ( $this->pagesInNs ) {
+			foreach ( $configNamespaces as $ns => $_ ) {
+				if ( !( $this->pagesInNs )( $ns ) ) {
+					unset( $configNamespaces[$ns] );
+				}
+			}
+		}
 
 		ksort( $configNamespaces );
 		return $configNamespaces;
