@@ -125,7 +125,7 @@ const buildPaneElement = function ( state, fields, advancedOptionsBuilder ) {
 		dependentPaneContentBuilder: function () {
 			return advancedOptionsBuilder.buildAllFieldsElement( fields );
 		},
-		$buttonLabel: searchPreview.$element,
+		$buttonContent: searchPreview.$element,
 		tabIndex: 0,
 		suffix: 'options'
 	} );
@@ -167,7 +167,7 @@ const buildNamespacesPaneElement = function ( state, header, presets, selection,
 		dependentPaneContentBuilder: function () {
 			return $container.append( header ).append( presets.$element ).append( selection.$element );
 		},
-		$buttonLabel: nsPreview.$element,
+		$buttonContent: nsPreview.$element,
 		tabIndex: 0,
 		suffix: 'namespaces'
 	} );
