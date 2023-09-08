@@ -80,8 +80,8 @@ describe( 'Advanced Search', () => {
 		await expect( await SearchPage.searchPreviewItems[ 0 ] ).toExist( { message: 'Preview pills should be shown' } );
 		await expect(
 			await SearchPage.searchPreviewItems ).toHaveLength(
-			12,
-			{ message: 'Number of preview pills must match number of filled fields + 1 (default sorting)' }
+			11,
+			{ message: 'Number of preview pills must match number of filled fields' }
 		);
 
 		// Test the namespace preview

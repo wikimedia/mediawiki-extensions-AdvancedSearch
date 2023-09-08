@@ -102,7 +102,10 @@ SearchPreview.prototype.updatePreview = function () {
 		}
 	} );
 
-	this.$previewTagList.append( this.generateTag( 'sort', this.store.getSortMethod() ).$element );
+	const sort = this.store.getSortMethod();
+	if ( sort !== 'relevance' ) {
+		this.$previewTagList.append( this.generateTag( 'sort', sort ).$element );
+	}
 };
 
 /**
@@ -136,10 +139,8 @@ SearchPreview.prototype.skipFieldInPreview = function ( fieldId, value ) {
 SearchPreview.prototype.generateTag = function ( fieldId, value ) {
 	const formattedValue = this.formatValue( fieldId, value );
 	let $label = $( '<span>' );
-	let disabled = false;
 	if ( fieldId === 'sort' ) {
 		$label.text( mw.msg( 'advancedsearch-field-preview-sort', formattedValue ) );
-		disabled = value === 'relevance';
 	} else {
 		$label = $label.text( lookupTranslationForLabel( fieldId ) + mw.msg( 'colon-separator' ) )
 			// redundant span to cover browsers without support for bdi tag
@@ -151,7 +152,6 @@ SearchPreview.prototype.generateTag = function ( fieldId, value ) {
 	const tag = new OO.ui.TagItemWidget( {
 		$element: $( '<li>' ),
 		label: $label,
-		disabled: disabled,
 		draggable: false
 	} );
 
