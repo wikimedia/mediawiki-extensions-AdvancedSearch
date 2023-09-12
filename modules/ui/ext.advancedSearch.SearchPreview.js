@@ -57,12 +57,7 @@ const SearchPreview = function ( store, config ) {
 
 	SearchPreview.parent.call( this, config );
 
-	this.label = new OO.ui.LabelWidget( {
-		label: config.label,
-		classes: [ 'mw-advancedSearch-searchPreview-label' ]
-	} );
-	this.$element.append( this.label.$element )
-		.addClass( 'mw-advancedSearch-searchPreview' );
+	this.$element.addClass( 'mw-advancedSearch-searchPreview' );
 	this.updatePreview();
 };
 

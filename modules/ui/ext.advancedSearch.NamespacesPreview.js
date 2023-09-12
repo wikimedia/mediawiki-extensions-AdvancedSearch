@@ -20,12 +20,6 @@ const NamespacesPreview = function ( store, config ) {
 
 	NamespacesPreview.parent.call( this, config );
 
-	this.label = new OO.ui.LabelWidget( {
-		label: config.label,
-		classes: [ 'advancedsearch-namespacesPreview-label' ]
-	} );
-	this.$element.append( this.label.$element );
-
 	this.$element.addClass( 'mw-advancedSearch-namespacesPreview' );
 	this.updatePreview();
 };

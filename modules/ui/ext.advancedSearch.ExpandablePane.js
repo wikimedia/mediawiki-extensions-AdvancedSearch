@@ -12,6 +12,7 @@
  *
  * @param {Object} config
  * @param {string} config.suffix
+ * @param {string} config.label Text label on the button, placed before the $buttonContent
  * @param {jQuery} config.$buttonContent
  * @param {number} [config.tabIndex]
  * @param {Function} config.dependentPaneContentBuilder
@@ -21,13 +22,19 @@ const ExpandablePane = function ( config ) {
 	this.suffix = config.suffix;
 	ExpandablePane.parent.call( this, config );
 
+	const label = new OO.ui.LabelWidget( {
+		label: config.label,
+		classes: [ 'mw-advancedSearch-searchPreview-label' ]
+	} );
+
 	this.button = new OO.ui.ButtonWidget( {
 		classes: [ 'mw-advancedSearch-expandablePane-button' ],
 		framed: true,
 		tabIndex: config.tabIndex,
-		label: config.$buttonContent,
+		label: config.$buttonContent.prepend( label.$element ),
 		indicator: 'down'
 	} );
+	this.button.setLabelledBy( label.getElementId() );
 	this.button.connect( this, {
 		click: 'onButtonClick'
 	} );
