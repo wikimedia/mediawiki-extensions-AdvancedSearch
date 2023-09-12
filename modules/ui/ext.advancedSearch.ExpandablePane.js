@@ -12,7 +12,7 @@
  *
  * @param {Object} config
  * @param {string} config.suffix
- * @param {jQuery} config.$buttonLabel
+ * @param {jQuery} config.$buttonContent
  * @param {number} [config.tabIndex]
  * @param {Function} config.dependentPaneContentBuilder
  */
@@ -25,7 +25,7 @@ const ExpandablePane = function ( config ) {
 		classes: [ 'mw-advancedSearch-expandablePane-button' ],
 		framed: true,
 		tabIndex: config.tabIndex,
-		label: config.$buttonLabel,
+		label: config.$buttonContent,
 		indicator: 'down'
 	} );
 	this.button.connect( this, {
