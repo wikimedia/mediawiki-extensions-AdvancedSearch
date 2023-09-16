@@ -12,38 +12,23 @@ use PHPUnit\Framework\TestCase;
  */
 class SearchableNamespaceListBuilderTest extends TestCase {
 
-	public function testMainNamespaceAddedToList() {
-		$curatedNamespaces = SearchableNamespaceListBuilder::getCuratedNamespaces(
-			$this->getSampleNamespaces()
-		);
-
-		$this->assertSame( '(Main)', $curatedNamespaces[0] );
-	}
-
-	public function testEmptyNamespacesAreFiltered() {
-		$curatedNamespaces = SearchableNamespaceListBuilder::getCuratedNamespaces(
-			$this->getSampleNamespaces()
-		);
-
-		$this->assertSame( $this->getCuratedSampleNamespaces(), $curatedNamespaces );
-	}
-
-	private function getSampleNamespaces() {
-		return [
+	public function testGetCuratedNamespaces() {
+		$configNamespaces = [
 			1 => 'Some Namespace',
 			5 => '',
 			123 => 'Some other namespace',
 			500 => 'Yet another namespace',
 			550 => ''
 		];
-	}
-
-	private function getCuratedSampleNamespaces() {
-		return [
+		$expected = [
 			0 => '(Main)',
 			1 => 'Some Namespace',
 			123 => 'Some other namespace',
 			500 => 'Yet another namespace'
 		];
+
+		$actual = SearchableNamespaceListBuilder::getCuratedNamespaces( $configNamespaces );
+		$this->assertSame( $expected, $actual );
 	}
+
 }

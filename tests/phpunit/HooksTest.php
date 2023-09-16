@@ -23,11 +23,6 @@ use Wikimedia\TestingAccessWrapper;
  */
 class HooksTest extends MediaWikiIntegrationTestCase {
 
-	/**
-	 * @var Hooks
-	 */
-	private $hook;
-
 	protected function setUp(): void {
 		parent::setUp();
 
@@ -39,13 +34,12 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			'wgNamespacesToBeSearchedDefault' => [ NS_MAIN => true ],
 			'wgServer' => '//hooks.test'
 		] );
-		$this->hook = new Hooks();
 	}
 
 	public function testGetPreferencesHookHandler() {
 		$preferences = [];
 
-		$this->hook->onGetPreferences( $this->newRegisteredUser(), $preferences );
+		( new Hooks() )->onGetPreferences( $this->newRegisteredUser(), $preferences );
 
 		$this->assertArrayHasKey( 'advancedsearch-disable', $preferences );
 	}
@@ -107,7 +101,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			->getPage( 'Search' );
 		$special->setContext( $context );
 
-		$this->hook->onSpecialSearchResultsPrepend( $special, $output, '' );
+		( new Hooks() )->onSpecialSearchResultsPrepend( $special, $output, '' );
 
 		$this->assertStringContainsString( 'mw-search-spinner', $output->getHTML() );
 	}
@@ -115,7 +109,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 	public function testSpecialPageHookHandler_wrongSpecialPage() {
 		$specialPage = $this->createMock( SpecialPage::class );
 		$specialPage->expects( $this->never() )->method( 'getUser' );
-		$this->hook->onSpecialPageBeforeExecute( $specialPage, null );
+		( new Hooks() )->onSpecialPageBeforeExecute( $specialPage, null );
 	}
 
 	public function testSpecialPageHookHandler_userOptedOut() {
@@ -126,19 +120,19 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		$specialPage = $this->createMock( SpecialPage::class );
 		$specialPage->method( 'getUser' )->willReturn( $user );
 		$specialPage->expects( $this->never() )->method( 'getOutput' );
-		$this->hook->onSpecialPageBeforeExecute( $specialPage, null );
+		( new Hooks() )->onSpecialPageBeforeExecute( $specialPage, null );
 	}
 
 	public function testGetJsConfigVars() {
 		$this->mockMimeAnalyser();
-
-		$hook = TestingAccessWrapper::newFromObject( $this->hook );
 
 		$extensionRegistry = $this->createMock( ExtensionRegistry::class );
 		$extensionRegistry->method( 'isLoaded' )
 			->with( 'Translate' )
 			->willReturn( true );
 
+		/** @var Hooks $hook */
+		$hook = TestingAccessWrapper::newFromObject( new Hooks() );
 		$vars = $hook->getJsConfigVars(
 			new RequestContext(),
 			new HashConfig( [
@@ -171,7 +165,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			[ 'ns0' => 1 ]
 		);
 
-		$this->hook->onSpecialPageBeforeExecute( $special, null );
+		( new Hooks() )->onSpecialPageBeforeExecute( $special, null );
 
 		// Ensure that no namespace-related redirect was performed
 		$this->assertSame( '', $special->getOutput()->getRedirect() );
@@ -187,7 +181,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			[ 'search' => 'test' ]
 		);
 
-		$ret = $this->hook->onSpecialPageBeforeExecute( $special, null );
+		$ret = ( new Hooks() )->onSpecialPageBeforeExecute( $special, null );
 		$this->assertFalse( $ret );
 		$this->assertSame(
 			'http://hooks.test/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1',
@@ -205,7 +199,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			[ 'search' => 'test' ]
 		);
 
-		$ret = $this->hook->onSpecialPageBeforeExecute( $special, null );
+		$ret = ( new Hooks() )->onSpecialPageBeforeExecute( $special, null );
 		$this->assertFalse( $ret );
 
 		$this->assertSame(
@@ -224,7 +218,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			[ 'search' => 'test' ]
 		);
 
-		$ret = $this->hook->onSpecialPageBeforeExecute( $special, null );
+		$ret = ( new Hooks() )->onSpecialPageBeforeExecute( $special, null );
 		$this->assertFalse( $ret );
 
 		$this->assertSame(
