@@ -10,7 +10,6 @@
  */
 const NamespacesPreview = function ( store, config ) {
 	config = $.extend( {
-		previewOptions: [],
 		data: true
 	}, config );
 	this.store = store;
@@ -39,9 +38,9 @@ NamespacesPreview.prototype.updatePreview = function () {
 	if ( !this.data ) {
 		return;
 	}
-	const namespaces = this.store.getNamespaces();
-	namespaces.forEach( function ( nsId ) {
-		const val = this.namespacesLabels[ nsId ];
+
+	this.store.getNamespaces().forEach( function ( nsId ) {
+		const val = this.namespacesLabels[ nsId ] || nsId;
 		this.$element.append( this.generateTag( nsId, val ).$element );
 	}.bind( this ) );
 };

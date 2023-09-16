@@ -158,7 +158,6 @@ const buildPaneElement = function ( state, fields, advancedOptionsBuilder ) {
  */
 const buildNamespacesPaneElement = function ( state, header, presets, selection, searchableNamespaces ) {
 	const nsPreview = new NamespacesPreview( state, {
-		previewOptions: state.getNamespaces(),
 		namespacesLabels: searchableNamespaces
 	} );
 	const $container = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection' );
