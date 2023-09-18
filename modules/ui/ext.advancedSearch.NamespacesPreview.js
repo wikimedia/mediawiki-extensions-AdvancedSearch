@@ -7,6 +7,8 @@
  *
  * @param {SearchModel} store
  * @param {Object} config
+ * @cfg {boolean} [data=true] If the set of preview pills should be visible
+ * @cfg {Object.<int,string>} namespacesLabels
  */
 const NamespacesPreview = function ( store, config ) {
 	config = $.extend( {

@@ -45,6 +45,8 @@ const lookupTranslationForLabel = function ( fieldId ) {
  *
  * @param {SearchModel} store
  * @param {Object} config
+ * @cfg {boolean} [data=true] If the set of preview pills should be visible
+ * @cfg {string[]} [fieldNames=[]]
  */
 const SearchPreview = function ( store, config ) {
 	config = $.extend( {

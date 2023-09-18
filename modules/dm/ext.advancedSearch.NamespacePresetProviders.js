@@ -13,7 +13,7 @@ const { arrayContains } = require( '../ext.advancedSearch.util.js' );
  */
 
 /**
- * @param {Object} namespaces Mapping namespace IDs to localized names
+ * @param {Object.<int,string>} namespaces Mapping namespace IDs to localized names
  * @constructor
  */
 const NamespacePresetProviders = function ( namespaces ) {
