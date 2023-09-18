@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Conky77",
 			"Cusolotto",
 			"Fierodelveneto"
@@ -14,7 +15,7 @@
 	"advancedsearch-optgroup-sort": "Òrdene de clasefegasion",
 	"advancedsearch-field-plain": "Ste paròle",
 	"advancedsearch-field-phrase": "Pròpio sto idéntego testo",
-	"advancedsearch-field-or": "Una de  ste paròle",
+	"advancedsearch-field-or": "Una de ste paròle",
 	"advancedsearch-field-not": "Mia ste parołe cuà",
 	"advancedsearch-field-subpageof": "Sotovoxe de sta voxe",
 	"advancedsearch-field-intitle": "El tìtoło de ła voxe ła detien",
