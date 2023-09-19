@@ -26,5 +26,12 @@
 	"advancedsearch-field-sort": "Айырыу тәртибе",
 	"advancedsearch-field-preview-sort": "$1 буйынса айырыу",
 	"advancedsearch-help-not": "; Тасуирламаһы\n:Был һүҙҙәрҙе үҙ эсенә алған биттәрҙе эҙләүҙән алып ташлай.\n;Түбәндәге мәғлүмәтте күҙ уңында тотоғоҙ\n: * Һүҙбәйләнеш ҡулланығыҙ. Миҫал: әгәр \"автомобиль\" яҙылһа, \"автомобилдәр\" эҙләгәндә лә иҫәпкә алынасаҡ. Һүҙҙең тамыры ҡулланылған телгә бәйле.\n;Белешмә бите\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch/tr#Words.2C_phrases.2C_and_modifiers Һүҙҙәр, фразалар һәм квалификаторҙар]\n; Ғәҙәти эҙләүҙә синтаксик эквивалент\n: Һүҙ алдынан <code>-</code> ҡулланырға кәрәк, мәҫәлән <code>фил</code>.",
-	"advancedsearch-help-intitle": "; Тасуирламаһы\n: Был һүҙ булған баш исемдәрҙә эҙләй\n;Түбәндәге мәғлүмәтте күҙ уңында тотоғоҙ\n: * Башҡа биткә йүнәлтеүҙәрҙе лә иҫәпкә ала.\n: * Һүҙ стеммингы ҡулланыла. Миҫал: әгәр \"автомобиль\" яҙылһа, \"автомобилдәр\" һүҙе лә лә иҫәпкә алынасаҡ. Һүҙҙең стеммингы ҡулланылған телгә бәйле.\n;Белешмә бите\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch/tr#Intitle_and_incategory Intitle һәм incategory]\n; Ғәҙәти эҙләүҙә синтаксик эквивалент\n: Һүҙ алдынан <code>intitle:</code> ҡулланырға кәрәк, мәҫәлән <code>intitle:королева</code>."
+	"advancedsearch-help-intitle": "; Тасуирламаһы\n: Был һүҙ булған баш исемдәрҙә эҙләй\n;Түбәндәге мәғлүмәтте күҙ уңында тотоғоҙ\n: * Башҡа биткә йүнәлтеүҙәрҙе лә иҫәпкә ала.\n: * Һүҙ стеммингы ҡулланыла. Миҫал: әгәр \"автомобиль\" яҙылһа, \"автомобилдәр\" һүҙе лә лә иҫәпкә алынасаҡ. Һүҙҙең стеммингы ҡулланылған телгә бәйле.\n;Белешмә бите\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch/tr#Intitle_and_incategory Intitle һәм incategory]\n; Ғәҙәти эҙләүҙә синтаксик эквивалент\n: Һүҙ алдынан <code>intitle:</code> ҡулланырға кәрәк, мәҫәлән <code>intitle:королева</code>.",
+	"advancedsearch-inlanguage-default": "Тел һайлағыҙ",
+	"advancedsearch-filetype-section-types": "Файлдарҙың дөйөм төрҙәре",
+	"advancedsearch-filetype-section-image": "Рәсем форматтары",
+	"advancedsearch-filetype-section-video": "Видео форматтары",
+	"advancedsearch-filetype-section-audio": "Аудио форматттары",
+	"advancedsearch-filetype-section-document": "Документ форматтары",
+	"advancedsearch-filetype-section-other": "Башҡа форматтар"
 }
