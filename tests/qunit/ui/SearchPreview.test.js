@@ -129,7 +129,7 @@
 		store.getField.withArgs( 'two' ).returns( 'field two value' );
 
 		const searchPreview = new SearchPreview( store, config );
-		searchPreview.showPreview();
+		searchPreview.togglePreview( true );
 
 		assert.strictEqual( searchPreview.$element.find( '.mw-advancedSearch-searchPreview-previewPill' ).length, 3 );
 	} );
@@ -138,7 +138,7 @@
 		config.fieldNames = [ 'one', 'two' ];
 
 		const searchPreview = new SearchPreview( store, config );
-		searchPreview.hidePreview();
+		searchPreview.togglePreview( false );
 
 		assert.strictEqual( searchPreview.$element.find( '.mw-advancedSearch-searchPreview-previewPill' ).length, 0 );
 	} );

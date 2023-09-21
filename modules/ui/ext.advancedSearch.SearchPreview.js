@@ -200,13 +200,11 @@ SearchPreview.prototype.formatValue = function ( fieldId, value ) {
 	return value.trim();
 };
 
-SearchPreview.prototype.showPreview = function () {
-	this.data = true;
-	this.updatePreview();
-};
-
-SearchPreview.prototype.hidePreview = function () {
-	this.data = false;
+/**
+ * @param {boolean} show
+ */
+SearchPreview.prototype.togglePreview = function ( show ) {
+	this.data = show;
 	this.updatePreview();
 };
 
