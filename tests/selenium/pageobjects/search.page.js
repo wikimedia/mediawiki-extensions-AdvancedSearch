@@ -1,7 +1,7 @@
 'use strict';
 const Api = require( 'wdio-mediawiki/Api' ),
 	Page = require( 'wdio-mediawiki/Page' ),
-	Util = require( '../util' ),
+	Util = require( 'wdio-mediawiki/Util' ),
 	url = require( 'url' );
 
 class TextInputField {
