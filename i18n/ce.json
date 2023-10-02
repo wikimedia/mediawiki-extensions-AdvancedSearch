@@ -45,6 +45,8 @@
 	"advancedsearch-sort-last-edit-desc": "Хийцина терахь — керланаш лакхахь",
 	"advancedsearch-sort-create-timestamp-desc": "Кхоьллина терахь — керланаш лакхахь",
 	"advancedsearch-sort-preview-relevance": "релевантица",
+	"advancedsearch-sort-preview-last-edit-desc": "хийцаран терахье",
+	"advancedsearch-sort-preview-create-timestamp-desc": "Кхоьллина терахь",
 	"advancedsearch-namespaces-search-in": "Лахар:",
 	"advancedsearch-namespaces-remember": "Дагахь дита хаьржинарг кхечу хенахь лаха",
 	"advancedsearch-namespaces-preset-all": "Йерриге",
