@@ -54,12 +54,17 @@ const SearchPreview = function ( store, config ) {
 	}, config );
 	this.store = store;
 	this.fieldNames = config.fieldNames || [];
+	this.$previewTagList = $( '<ul>' )
+		.addClass( 'mw-advancedSearch-searchPreview-tagList' )
+		.attr( 'title', mw.msg( 'advancedsearch-options-pane-preview-list' ) );
 
 	store.connect( this, { update: 'onStoreUpdate' } );
 
 	SearchPreview.parent.call( this, config );
 
-	this.$element.addClass( 'mw-advancedSearch-searchPreview' );
+	this.$element
+		.addClass( 'mw-advancedSearch-searchPreview' )
+		.append( this.$previewTagList );
 	this.updatePreview();
 };
 
@@ -74,7 +79,7 @@ SearchPreview.prototype.onStoreUpdate = function () {
  */
 SearchPreview.prototype.updatePreview = function () {
 	// TODO check if we really need to re-generate
-	this.$element.find( '.mw-advancedSearch-searchPreview-previewPill' ).remove();
+	this.$previewTagList.find( '.mw-advancedSearch-searchPreview-previewPill' ).remove();
 
 	if ( !this.data ) {
 		return;
@@ -84,11 +89,11 @@ SearchPreview.prototype.updatePreview = function () {
 		const val = this.store.getField( fieldId );
 
 		if ( !this.skipFieldInPreview( fieldId, val ) ) {
-			this.$element.append( this.generateTag( fieldId, val ).$element );
+			this.$previewTagList.append( this.generateTag( fieldId, val ).$element );
 		}
 	}.bind( this ) );
 
-	this.$element.append( this.generateTag( 'sort', this.store.getSortMethod() ).$element );
+	this.$previewTagList.append( this.generateTag( 'sort', this.store.getSortMethod() ).$element );
 };
 
 /**
@@ -135,6 +140,7 @@ SearchPreview.prototype.generateTag = function ( fieldId, value ) {
 	}
 
 	const tag = new OO.ui.TagItemWidget( {
+		$element: $( '<li>' ),
 		label: $label,
 		disabled: disabled,
 		draggable: false
