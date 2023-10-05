@@ -13,6 +13,7 @@
 	},
 	"advancedsearch-desc": "Ermöglicht einen leichten Zugang zu erweiterten Suchmöglichkeiten auf der Spezialseite [[Special:Search]]",
 	"advancedsearch-options-pane-head": "Erweiterte Suche:",
+	"advancedsearch-options-pane-preview-list": "Derzeit verwendete Suchbegriffe",
 	"advancedsearch-optgroup-text": "Im Seitentext suchen",
 	"advancedsearch-optgroup-structure": "Struktur",
 	"advancedsearch-optgroup-files": "Dateien und Bilder",
