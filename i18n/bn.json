@@ -9,6 +9,7 @@
 	},
 	"advancedsearch-desc": "[[Special:Search]]-এ উচ্চতর অনুসন্ধান ক্ষমতায় সহজে প্রবেশাধিকার দেয়",
 	"advancedsearch-options-pane-head": "উচ্চতর অনুসন্ধান:",
+	"advancedsearch-options-pane-preview-list": "বর্তমানে ব্যবহৃত অনুসন্ধান পদ",
 	"advancedsearch-optgroup-text": "পাতার পাঠ্যে সন্ধান করুন",
 	"advancedsearch-optgroup-structure": "কাঠামো",
 	"advancedsearch-optgroup-files": "ফাইল ও চিত্র",
