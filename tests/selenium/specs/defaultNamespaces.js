@@ -6,12 +6,11 @@ const assert = require( 'assert' ),
 
 describe( 'Advanced Search', function () {
 
-	beforeEach( async function () {
-		await browser.deleteCookies();
+	before( async function () {
+		await UserLoginPage.loginAdmin();
 	} );
 
 	it( 'allows logged-in users to remember the selection of namespaces for future searches', async function () {
-		await UserLoginPage.loginAdmin();
 		await SearchPage.open();
 
 		await SearchPage.expandNamespacesPreview();
@@ -27,8 +26,6 @@ describe( 'Advanced Search', function () {
 	} );
 
 	it( 'selects the users default namespaces when logged in', async function () {
-		await UserLoginPage.loginAdmin();
-
 		const namespaceOptions = [ '0', '1', '2', '10' ];
 		await SearchPage.setSearchNamespaceOptions( namespaceOptions );
 		await SearchPage.open();
@@ -54,5 +51,9 @@ describe( 'Advanced Search', function () {
 		expectedNamespaceIDs.sort();
 
 		assert.deepStrictEqual( selectedNamespaceIDs, expectedNamespaceIDs );
+	} );
+
+	after( async function () {
+		await browser.deleteCookies();
 	} );
 } );
