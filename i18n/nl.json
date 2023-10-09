@@ -10,12 +10,14 @@
 			"KlaasZ4usV",
 			"Mainframe98",
 			"Mar(c)",
+			"McDutchie",
 			"Nickthijssen1994",
 			"Patio"
 		]
 	},
 	"advancedsearch-desc": "Eenvoudige toegang tot geavanceerde zoekmogelijkheden op [[Special:Search]]",
 	"advancedsearch-options-pane-head": "Geavanceerd zoeken:",
+	"advancedsearch-options-pane-preview-list": "Momenteel gebruikte zoektermen",
 	"advancedsearch-optgroup-text": "In paginatekst zoeken",
 	"advancedsearch-optgroup-structure": "Structuur",
 	"advancedsearch-optgroup-files": "Bestanden en afbeeldingen",
