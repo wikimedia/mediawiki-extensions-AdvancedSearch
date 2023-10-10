@@ -9,18 +9,33 @@
 }
 
 .mw-advancedSearch-searchPreview-tagList {
-	display: inline-block;
+	display: inline-flex;
+	flex-flow: row wrap;
+	gap: 4px;
 	margin: 0;
+	vertical-align: middle;
+
+	.oo-ui-tagItemWidget {
+		margin: 0;
+	}
 }
 
 .mw-advancedSearch-searchPreview-label {
 	font-weight: bold;
 	margin-right: 0.3125em;
+	vertical-align: middle;
 }
 
-.advancedsearch-namespacesPreview-label {
+.mw-advancedSearch-namespacesPreview {
+	.oo-ui-tagItemWidget {
+		margin: 0;
+	}
+}
+
+.mw-advancedsearch-namespacesPreview-label {
 	font-weight: bold;
 	margin-right: 0.3125em;
+	vertical-align: middle;
 }
 
 .mw-advancedSearch-searchPreview-previewPill {
@@ -29,7 +44,7 @@
 		text-overflow: ellipsis;
 		overflow: hidden;
 		max-width: 5em;
-		vertical-align: bottom;
+		vertical-align: middle;
 	}
 
 	&.mw-advancedSearch-searchPreview-preview-sort > .oo-ui-labelElement-label > .mw-advancedSearch-searchPreview-content {
