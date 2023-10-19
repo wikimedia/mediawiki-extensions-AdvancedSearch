@@ -4,7 +4,15 @@
 			"Jun Misugi"
 		]
 	},
+	"advancedsearch-options-pane-head": "Ricerca avanzata:",
+	"advancedsearch-optgroup-structure": "Struttura",
+	"advancedsearch-optgroup-files": "Schedàrii é imàgine",
+	"advancedsearch-field-plain": "Queste parolle",
+	"advancedsearch-field-phrase": "Esattamente stu testu",
+	"advancedsearch-field-or": "Una di queste parolle",
+	"advancedsearch-field-not": "Micca ste parolle",
 	"advancedsearch-field-subpageof": "Sottupàghjine di sta pàghjina",
+	"advancedsearch-field-intitle": "Tìtulu di a pàgina cuntene",
 	"advancedsearch-field-deepcategory": "Pàghjine in iste catigurìe",
 	"advancedsearch-field-hastemplate": "Pàghjine incù sti mudelli",
 	"advancedsearch-field-inlanguage": "Pàghjine in ista lingua",
