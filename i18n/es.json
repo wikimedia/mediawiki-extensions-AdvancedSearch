@@ -17,11 +17,13 @@
 			"Rossnyev",
 			"Suecarmol",
 			"Tiberius1701",
-			"ZebaX2010"
+			"ZebaX2010",
+			"No se"
 		]
 	},
 	"advancedsearch-desc": "Acceso sencillo a las funciones de búsqueda avanzadas de [[Special:Search]]",
 	"advancedsearch-options-pane-head": "Búsqueda avanzada:",
+	"advancedsearch-options-pane-preview-list": "Términos de búsqueda utilizados actualmente",
 	"advancedsearch-optgroup-text": "Buscar en el texto de la página",
 	"advancedsearch-optgroup-structure": "Estructura",
 	"advancedsearch-optgroup-files": "Archivos e imágenes",
