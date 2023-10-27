@@ -74,6 +74,7 @@
 
 	"advancedsearch-namespaces-search-in": "Search in:",
 	"advancedsearch-namespaces-remember": "Remember selection for future searches",
+	"advancedsearch-namespaces-pane-preview-list": "Currently active namespace filters",
 	"advancedsearch-namespaces-preset-all": "All",
 	"advancedsearch-namespaces-preset-default": "Default",
 	"advancedsearch-namespaces-preset-general-help": "General Help",

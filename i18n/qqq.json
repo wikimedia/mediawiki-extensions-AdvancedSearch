@@ -78,6 +78,7 @@
 	"advancedsearch-sort-preview-create-timestamp-desc": "Preview label for sort option most to least recently created. Used as $1 in {{msg-mw|advancedsearch-field-preview-sort}}.",
 	"advancedsearch-namespaces-search-in": "Label for the 'Search in' section heading of the namespace section",
 	"advancedsearch-namespaces-remember": "Label for a checkbox to save namespace choice for advanced search to user preferences",
+	"advancedsearch-namespaces-pane-preview-list": "Title used for the list of previewed namespace filters in the collapsed pane.",
 	"advancedsearch-namespaces-preset-all": "Label for the namespace preset 'All namespaces'\n{{Identical|All}}",
 	"advancedsearch-namespaces-preset-default": "Label for the namespace preset 'Default'\n{{Identical|Default}}",
 	"advancedsearch-namespaces-preset-general-help": "Label for namespace preset 'General Help'",

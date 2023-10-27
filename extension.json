@@ -122,6 +122,7 @@
 			"messages": [
 				"advancedsearch-options-pane-head",
 				"advancedsearch-options-pane-preview-list",
+				"advancedsearch-namespaces-pane-preview-list",
 				"advancedsearch-namespaces-search-in",
 				"advancedsearch-namespaces-placeholder",
 				"advancedsearch-sort-relevance",
