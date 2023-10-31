@@ -159,11 +159,10 @@ NamespaceFilters.prototype.highlightSelectedNamespacesInMenu = function () {
 };
 
 NamespaceFilters.prototype.highlightLastSelectedTag = function ( menuItemData ) {
-	this.getItems().forEach( function ( tag ) {
-		if ( tag.getData() === menuItemData ) {
-			tag.$element.addClass( 'selected' );
-		}
-	} );
+	const tag = this.findItemFromData( menuItemData );
+	if ( tag ) {
+		tag.$element.addClass( 'selected' );
+	}
 };
 
 NamespaceFilters.prototype.removeHighlightFromTags = function () {
