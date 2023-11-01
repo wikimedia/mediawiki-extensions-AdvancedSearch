@@ -16,5 +16,10 @@
 	"advancedsearch-field-deepcategory": "Pàghjine in iste catigurìe",
 	"advancedsearch-field-hastemplate": "Pàghjine incù sti mudelli",
 	"advancedsearch-field-inlanguage": "Pàghjine in ista lingua",
-	"advancedsearch-field-filetype": "Tipu di schedàriu"
+	"advancedsearch-field-filetype": "Tipu di schedàriu",
+	"advancedsearch-inlanguage-default": "Sceglie a lingua",
+	"advancedsearch-filetype-section-types": "Tipi generali di schedàrii",
+	"advancedsearch-filetype-section-image": "Furmati d'imàghjini",
+	"advancedsearch-filetype-section-other": "Altri furmati",
+	"advancedsearch-filetype-bitmap": "Imàgine"
 }

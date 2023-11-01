@@ -4,11 +4,13 @@
 			"Daud I.F. Argana",
 			"J Nia30",
 			"Kenrick95",
-			"William Surya Permana"
+			"William Surya Permana",
+			"Stevannus rua"
 		]
 	},
 	"advancedsearch-desc": "Akses mudah ke penelusuran tingkat lanjut di [[Special:Search]]",
 	"advancedsearch-options-pane-head": "Pencarian lanjut:",
+	"advancedsearch-options-pane-preview-list": "Istilah pencarian yang digunakan saat ini",
 	"advancedsearch-optgroup-text": "Cari dalam teks halaman",
 	"advancedsearch-optgroup-structure": "Struktur",
 	"advancedsearch-optgroup-files": "Berkas dan gambar",
