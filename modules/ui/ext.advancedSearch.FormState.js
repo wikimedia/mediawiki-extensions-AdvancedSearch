@@ -12,7 +12,7 @@
 const FormState = function ( store, config ) {
 	this.store = store;
 	this.name = config.name;
-	FormState.parent.call( this, config );
+	FormState.super.call( this, config );
 
 	this.store.connect( this, { update: 'onStoreUpdate' } );
 

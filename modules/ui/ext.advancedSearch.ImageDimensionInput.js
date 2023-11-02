@@ -17,7 +17,7 @@ const ImageDimensionInput = function ( store, config ) {
 	this.store = store;
 	store.connect( this, { update: 'onStoreUpdate' } );
 
-	ImageDimensionInput.parent.call( this, config );
+	ImageDimensionInput.super.call( this, config );
 
 	if ( !Array.isArray( this.data ) ) {
 		this.data = [ '>', '' ];

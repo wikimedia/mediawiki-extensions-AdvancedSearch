@@ -22,7 +22,7 @@ const NamespaceFilters = function ( store, config ) {
 	this.namespaces = this.prettifyNamespaces( config.namespaces );
 	config.classes.push( 'mw-advancedSearch-namespaceFilter' );
 
-	NamespaceFilters.parent.call( this, $.extend( true, {
+	NamespaceFilters.super.call( this, $.extend( true, {
 		inputPosition: 'outline',
 		allowArbitrary: false,
 		allowDisplayInvalidTags: false,
@@ -192,7 +192,7 @@ NamespaceFilters.prototype.onMenuChoose = function ( menuItem ) {
 	if ( menuItem.checkboxWidget.isSelected() ) {
 		this.store.setNamespaces( this.removeNamespaceTag( menuItem.getData() ) );
 	} else {
-		NamespaceFilters.parent.prototype.onMenuChoose.call( this, menuItem, true );
+		NamespaceFilters.super.prototype.onMenuChoose.call( this, menuItem, true );
 		this.highlightLastSelectedTag( menuItem.getData() );
 		this.clearInput();
 	}
@@ -205,7 +205,7 @@ NamespaceFilters.prototype.onMenuChoose = function ( menuItem ) {
  * @param {boolean} isVisible Open state of the menu
  */
 NamespaceFilters.prototype.onMenuToggle = function ( isVisible ) {
-	NamespaceFilters.parent.prototype.onMenuToggle.call( this );
+	NamespaceFilters.super.prototype.onMenuToggle.call( this );
 	this.input.setIcon( isVisible ? 'search' : 'menu' );
 	if ( !isVisible ) {
 		this.removeHighlightFromTags();

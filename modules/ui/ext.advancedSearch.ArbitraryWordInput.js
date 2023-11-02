@@ -17,7 +17,7 @@ const ArbitraryWordInput = function ( store, config ) {
 
 	this.store.connect( this, { update: 'onStoreUpdate' } );
 
-	ArbitraryWordInput.parent.call(
+	ArbitraryWordInput.super.call(
 		this,
 		$.extend( { allowArbitrary: true }, config )
 	);
@@ -70,7 +70,7 @@ ArbitraryWordInput.prototype.buildTagsFromInput = function () {
  */
 ArbitraryWordInput.prototype.isAllowedData = function ( data ) {
 	return data.trim() &&
-		ArbitraryWordInput.parent.prototype.isAllowedData.call( this, data );
+		ArbitraryWordInput.super.prototype.isAllowedData.call( this, data );
 };
 
 ArbitraryWordInput.prototype.updatePlaceholder = function () {
@@ -88,7 +88,7 @@ ArbitraryWordInput.prototype.getTextForPlaceholder = function () {
  */
 ArbitraryWordInput.prototype.doInputEnter = function () {
 	return !this.input.getValue().trim() ||
-		ArbitraryWordInput.parent.prototype.doInputEnter.call( this );
+		ArbitraryWordInput.super.prototype.doInputEnter.call( this );
 };
 
 /**
@@ -98,7 +98,7 @@ ArbitraryWordInput.prototype.onInputBlur = function () {
 	if ( this.input.getValue().trim() ) {
 		this.addTagFromInput();
 	}
-	return ArbitraryWordInput.parent.prototype.onInputBlur.call( this );
+	return ArbitraryWordInput.super.prototype.onInputBlur.call( this );
 };
 
 module.exports = ArbitraryWordInput;

@@ -48,7 +48,7 @@ const MultiselectLookup = function ( store, config ) {
 
 	this.store.connect( this, { update: 'onStoreUpdate' } );
 
-	MultiselectLookup.parent.call( this, config );
+	MultiselectLookup.super.call( this, config );
 
 	this.$input = this.input.$input;
 
@@ -79,7 +79,7 @@ MultiselectLookup.prototype.setValue = function ( valueObject ) {
 	names.forEach( function ( value ) {
 		this.queryCache.set( value, 'PENDING' );
 	}.bind( this ) );
-	MultiselectLookup.parent.prototype.setValue.call( this, valueObject );
+	MultiselectLookup.super.prototype.setValue.call( this, valueObject );
 
 	this.searchForPagesInNamespace( names ).then( function () {
 		const self = this;

@@ -14,7 +14,7 @@ const StoreListener = function ( store, config ) {
 	this.fieldId = config.fieldId;
 
 	store.connect( this, { update: 'onStoreUpdate' } );
-	StoreListener.parent.call( this, config );
+	StoreListener.super.call( this, config );
 	this.setValueFromStore();
 };
 

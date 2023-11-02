@@ -60,7 +60,7 @@ const SearchPreview = function ( store, config ) {
 
 	store.connect( this, { update: 'onStoreUpdate' } );
 
-	SearchPreview.parent.call( this, config );
+	SearchPreview.super.call( this, config );
 
 	this.$element
 		.addClass( 'mw-advancedSearch-searchPreview' )

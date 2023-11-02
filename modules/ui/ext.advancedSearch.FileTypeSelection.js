@@ -21,7 +21,7 @@ const getOptions = function ( optionProvider ) {
 const FileTypeSelection = function ( store, optionProvider, config ) {
 	config = $.extend( { options: getOptions( optionProvider ) }, config );
 	this.className = 'mw-advancedSearch-filetype-';
-	FileTypeSelection.parent.call( this, store, config );
+	FileTypeSelection.super.call( this, store, config );
 };
 
 OO.inheritClass( FileTypeSelection, StoreListener );

@@ -33,7 +33,7 @@ const SortPreference = function ( store, config ) {
 	this.className = 'mw-advancedSearch-sort-';
 
 	store.connect( this, { update: 'onStoreUpdate' } );
-	SortPreference.parent.call( this, config );
+	SortPreference.super.call( this, config );
 	this.setValueFromStore();
 	this.connect( this, { change: 'onValueUpdate' } );
 };

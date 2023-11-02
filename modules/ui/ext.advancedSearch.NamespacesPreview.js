@@ -19,7 +19,7 @@ const NamespacesPreview = function ( store, config ) {
 
 	store.connect( this, { update: 'onStoreUpdate' } );
 
-	NamespacesPreview.parent.call( this, config );
+	NamespacesPreview.super.call( this, config );
 
 	this.$element.addClass( 'mw-advancedSearch-namespacesPreview' );
 	this.updatePreview();

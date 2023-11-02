@@ -94,7 +94,7 @@ const NamespacePresets = function ( store, presetProvider, config ) {
 
 	this.presets = config.presets;
 
-	NamespacePresets.parent.call( this, config );
+	NamespacePresets.super.call( this, config );
 
 	// Using undocumented internals because this.on does not work, see https://phabricator.wikimedia.org/T168735
 	this.checkboxMultiselectWidget.on( 'change', this.updateStoreFromPresets, [], this );

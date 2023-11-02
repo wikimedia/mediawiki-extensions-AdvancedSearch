@@ -20,7 +20,7 @@ const MenuSelectWidget = function ( store, config ) {
 	this.$overlay = config.$overlay || this.$element;
 	this.$body = $( '<div>' ).addClass( 'mw-advancedSearch-ui-menuSelectWidget-body' );
 
-	MenuSelectWidget.parent.call( this, $.extend( {
+	MenuSelectWidget.super.call( this, $.extend( {
 		$autoCloseIgnore: this.$overlay,
 		filterFromInput: true
 	}, config ) );
@@ -33,7 +33,7 @@ OO.inheritClass( MenuSelectWidget, OO.ui.MenuSelectWidget );
  * @inheritdoc
  */
 MenuSelectWidget.prototype.toggle = function ( show ) {
-	MenuSelectWidget.parent.prototype.toggle.call( this, show );
+	MenuSelectWidget.super.prototype.toggle.call( this, show );
 	this.setVerticalPosition( 'below' );
 };
 

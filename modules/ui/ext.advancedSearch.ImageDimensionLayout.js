@@ -17,7 +17,7 @@ const ImageDimensionLayout = function ( store, widget, config ) {
 
 	store.connect( this, { update: 'onStoreUpdate' } );
 
-	ImageDimensionLayout.parent.call( this, widget, config );
+	ImageDimensionLayout.super.call( this, widget, config );
 
 	// Set ARIA labels and description from the FieldLayout label and help text.
 	this.fieldWidget.operatorInput.dropdownWidget.$handle.attr( {

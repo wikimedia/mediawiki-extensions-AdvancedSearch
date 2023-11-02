@@ -20,7 +20,7 @@ const getOptions = function ( optionProvider ) {
 const LanguageSelection = function ( store, optionProvider, config ) {
 	config = $.extend( { options: getOptions( optionProvider ) }, config );
 	this.className = 'mw-advancedSearch-inlanguage-';
-	LanguageSelection.parent.call( this, store, config );
+	LanguageSelection.super.call( this, store, config );
 };
 
 OO.inheritClass( LanguageSelection, StoreListener );

@@ -15,7 +15,7 @@ const TextInput = function ( store, config ) {
 
 	this.store.connect( this, { update: 'onStoreUpdate' } );
 
-	TextInput.parent.call( this, config );
+	TextInput.super.call( this, config );
 
 	this.populateFromStore();
 };

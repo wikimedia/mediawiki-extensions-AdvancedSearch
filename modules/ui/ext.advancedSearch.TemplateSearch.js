@@ -13,7 +13,7 @@ const MultiselectLookup = require( '../dm/ext.advancedSearch.MultiselectLookup.j
 const TemplateSearch = function ( store, config ) {
 	this.store = store;
 
-	TemplateSearch.parent.call( this, store, config );
+	TemplateSearch.super.call( this, store, config );
 
 	this.$element.addClass( 'mw-advancedSearch-template' );
 

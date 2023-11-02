@@ -20,7 +20,7 @@
  */
 const ExpandablePane = function ( config ) {
 	this.suffix = config.suffix;
-	ExpandablePane.parent.call( this, config );
+	ExpandablePane.super.call( this, config );
 
 	const label = new OO.ui.LabelWidget( {
 		label: config.label,
