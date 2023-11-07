@@ -120,6 +120,7 @@
 				"modules/ext.advancedSearch.util.js"
 			],
 			"messages": [
+				"advancedsearch-help-general-instruction",
 				"advancedsearch-options-pane-head",
 				"advancedsearch-options-pane-preview-list",
 				"advancedsearch-namespaces-pane-preview-list",

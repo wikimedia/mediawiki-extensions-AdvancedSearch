@@ -103,7 +103,7 @@ const getOptionHelpMessage = function ( id ) {
  * @return {OO.ui.FieldLayout}
  */
 const createDefaultLayout = function ( widget, id ) {
-	return new OO.ui.FieldLayout(
+	const $fieldLayout = new OO.ui.FieldLayout(
 		widget,
 		{
 			// Messages documented in getOptionHelpMessage
@@ -113,6 +113,14 @@ const createDefaultLayout = function ( widget, id ) {
 			$overlay: true
 		}
 	);
+
+	$fieldLayout.$help.find( 'a' )
+		.attr( 'aria-description',
+			mw.msg( 'advancedsearch-help-general-instruction',
+				mw.msg( 'advancedsearch-field-' + id ) )
+		);
+
+	return $fieldLayout;
 };
 
 /**
