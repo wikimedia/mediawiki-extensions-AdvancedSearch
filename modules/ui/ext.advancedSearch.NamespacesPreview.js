@@ -16,12 +16,17 @@ const NamespacesPreview = function ( store, config ) {
 	}, config );
 	this.store = store;
 	this.namespacesLabels = config.namespacesLabels;
+	this.$previewTagList = $( '<ul>' )
+		.addClass( 'mw-advancedSearch-searchPreview-tagList' )
+		.attr( 'title', mw.msg( 'advancedsearch-namespaces-pane-preview-list' ) );
 
 	store.connect( this, { update: 'onStoreUpdate' } );
 
 	NamespacesPreview.super.call( this, config );
 
-	this.$element.addClass( 'mw-advancedSearch-namespacesPreview' );
+	this.$element
+		.addClass( 'mw-advancedSearch-namespacesPreview' )
+		.append( this.$previewTagList );
 	this.updatePreview();
 };
 
@@ -36,14 +41,14 @@ NamespacesPreview.prototype.onStoreUpdate = function () {
  */
 NamespacesPreview.prototype.updatePreview = function () {
 	// TODO check if we really need to re-generate
-	this.$element.find( '.mw-advancedSearch-namespacesPreview-previewPill' ).remove();
+	this.$previewTagList.empty();
 	if ( !this.data ) {
 		return;
 	}
 
 	this.store.getNamespaces().forEach( function ( nsId ) {
 		const val = this.namespacesLabels[ nsId ] || nsId;
-		this.$element.append( this.generateTag( nsId, val ).$element );
+		this.$previewTagList.append( this.generateTag( nsId, val ).$element );
 	}.bind( this ) );
 };
 
@@ -56,6 +61,7 @@ NamespacesPreview.prototype.updatePreview = function () {
  */
 NamespacesPreview.prototype.generateTag = function ( nsId, value ) {
 	const tag = new OO.ui.TagItemWidget( {
+		$element: $( '<li>' ),
 		label: $( '<span>' ).text( value ),
 		draggable: false
 	} );
