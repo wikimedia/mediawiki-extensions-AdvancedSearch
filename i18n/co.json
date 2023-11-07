@@ -5,6 +5,7 @@
 		]
 	},
 	"advancedsearch-options-pane-head": "Ricerca avanzata:",
+	"advancedsearch-optgroup-text": "Ricerca in u testu di a pàgina",
 	"advancedsearch-optgroup-structure": "Struttura",
 	"advancedsearch-optgroup-files": "Schedàrii é imàgine",
 	"advancedsearch-field-plain": "Queste parolle",
@@ -21,5 +22,7 @@
 	"advancedsearch-filetype-section-types": "Tipi generali di schedàrii",
 	"advancedsearch-filetype-section-image": "Furmati d'imàghjini",
 	"advancedsearch-filetype-section-other": "Altri furmati",
-	"advancedsearch-filetype-bitmap": "Imàgine"
+	"advancedsearch-filetype-bitmap": "Imàgine",
+	"advancedsearch-sort-preview-create-timestamp-desc": "data di creazione",
+	"advancedsearch-namespaces-preset-all": "Tutti"
 }
