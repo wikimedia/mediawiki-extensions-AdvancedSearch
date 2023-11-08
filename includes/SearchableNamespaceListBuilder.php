@@ -14,7 +14,7 @@ class SearchableNamespaceListBuilder {
 	 * @param string[] $configNamespaces Key is namespace ID and value namespace string
 	 * @return string[]
 	 */
-	public static function getCuratedNamespaces( array $configNamespaces ) {
+	public static function getCuratedNamespaces( array $configNamespaces ): array {
 		// Make sure the main namespace is listed with a non-empty name
 		$configNamespaces[ NS_MAIN ] = wfMessage( self::MAIN_NAMESPACE )->text();
 

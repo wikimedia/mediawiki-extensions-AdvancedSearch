@@ -9,14 +9,8 @@ use MimeAnalyzer;
  */
 class MimeTypeConfigurator {
 
-	/**
-	 * @var MimeAnalyzer
-	 */
-	private $mimeAnalyzer;
+	private MimeAnalyzer $mimeAnalyzer;
 
-	/**
-	 * @param MimeAnalyzer $mimeAnalyzer
-	 */
 	public function __construct( MimeAnalyzer $mimeAnalyzer ) {
 		$this->mimeAnalyzer = $mimeAnalyzer;
 	}
@@ -26,7 +20,7 @@ class MimeTypeConfigurator {
 	 *
 	 * @return string[] List of file extension => MIME type.
 	 */
-	public function getMimeTypes( array $fileExtensions ) {
+	public function getMimeTypes( array $fileExtensions ): array {
 		$mimeTypes = [];
 
 		foreach ( $fileExtensions as $ext ) {
