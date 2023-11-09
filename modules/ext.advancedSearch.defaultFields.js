@@ -94,7 +94,8 @@ const getOptionHelpMessage = function ( id ) {
 	// * advancedsearch-field-sort
 	// * advancedsearch-field-subpageof
 	const head = mw.msg( 'advancedsearch-field-' + id );
-	return new OO.ui.HtmlSnippet( '<h6 class="mw-advancedSearch-tooltip-head">' + head + '</h6>' + message );
+	return new OO.ui.HtmlSnippet( '<h6 class="mw-advancedSearch-tooltip-head">' + head + '</h6>' +
+		'<div class="mw-advancedSearch-tooltip-body">' + message + '</div>' );
 };
 
 /**
