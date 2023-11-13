@@ -71,6 +71,7 @@
 	"advancedsearch-sort-preview-create-timestamp-desc": "датуму прављења",
 	"advancedsearch-namespaces-search-in": "Претрага по именским просторима:",
 	"advancedsearch-namespaces-remember": "Запамти избор за будуће претраге",
+	"advancedsearch-namespaces-pane-preview-list": "Тренутно активни филтери за именске просторе",
 	"advancedsearch-namespaces-preset-all": "Све",
 	"advancedsearch-namespaces-preset-default": "Подразумевано",
 	"advancedsearch-namespaces-preset-general-help": "Општа помоћ",
