@@ -118,6 +118,7 @@
 			"class": "AdvancedSearch\\SearchnamespaceTokenModule"
 		},
 		"ext.advancedSearch.elements": {
+			"class": "AdvancedSearch\\ElementsModule",
 			"packageFiles": [
 				"modules/ext.advancedSearch.elements.js",
 				"modules/ext.advancedSearch.defaultFields.js",
@@ -161,10 +162,6 @@
 				"advancedsearch-optgroup-files",
 				"advancedsearch-optgroup-sort",
 				"advancedsearch-namespaces-remember",
-				"advancedsearch-namespaces-preset-all",
-				"advancedsearch-namespaces-preset-default",
-				"advancedsearch-namespaces-preset-general-help",
-				"advancedsearch-namespaces-preset-discussion",
 				"advancedsearch-field-plain",
 				"advancedsearch-field-phrase",
 				"advancedsearch-field-or",
