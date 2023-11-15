@@ -17,11 +17,13 @@
 			"Tmv",
 			"Whym",
 			"Yusuke1109",
-			"夢蝶葬花"
+			"夢蝶葬花",
+			"もなー(偽物)"
 		]
 	},
 	"advancedsearch-desc": "[[Special:Search]]の高度な検索機能への簡単なアクセス",
 	"advancedsearch-options-pane-head": "高度な検索:",
+	"advancedsearch-options-pane-preview-list": "現在使用されている検索ワード",
 	"advancedsearch-optgroup-text": "ページ内のテキストで検索",
 	"advancedsearch-optgroup-structure": "書式",
 	"advancedsearch-optgroup-files": "ファイルと画像",
