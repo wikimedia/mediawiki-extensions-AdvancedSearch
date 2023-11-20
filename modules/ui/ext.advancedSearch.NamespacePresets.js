@@ -84,10 +84,7 @@ const prepareOptions = function ( presets ) {
  * @param {Object} config
  */
 const NamespacePresets = function ( store, presetProvider, config ) {
-	config = $.extend( {
-		presets: {}
-	}, config );
-	config.presets = groomPresets( config.presets, presetProvider );
+	config.presets = groomPresets( config.presets || {}, presetProvider );
 
 	config.options = prepareOptions( config.presets );
 	this.store = store;

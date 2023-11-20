@@ -12,17 +12,11 @@ const MenuSelectWidget = require( './ext.advancedSearch.MenuSelectWidget.js' );
  * @cfg {Object} [namespaces={}] Namespace id => Namespace label (similar to mw.config.get( 'wgFormattedNamespaces' ) )
  */
 const NamespaceFilters = function ( store, config ) {
-	config = $.extend( {
-		namespaces: {},
-		options: [],
-		classes: []
-	}, config );
-
 	this.store = store;
-	this.namespaces = this.prettifyNamespaces( config.namespaces );
-	config.classes.push( 'mw-advancedSearch-namespaceFilter' );
+	this.namespaces = this.prettifyNamespaces( config.namespaces || {} );
 
 	NamespaceFilters.super.call( this, $.extend( true, {
+		classes: [ 'mw-advancedSearch-namespaceFilter' ],
 		inputPosition: 'outline',
 		allowArbitrary: false,
 		allowDisplayInvalidTags: false,
@@ -41,7 +35,6 @@ const NamespaceFilters = function ( store, config ) {
 	this.$namespaceContainer = $( '<span>' ).addClass( 'mw-advancedSearch-namespaceContainer' );
 	this.$element.append( this.$namespaceContainer );
 
-	this.store = store;
 	this.store.connect( this, { update: 'onStoreUpdate' } );
 	this.setValueFromStore();
 	this.updateNamespaceFormFields();

@@ -9,7 +9,6 @@
  * @param {Object} config
  */
 const TextInput = function ( store, config ) {
-	config = $.extend( {}, config );
 	this.store = store;
 	this.fieldId = config.fieldId;
 
