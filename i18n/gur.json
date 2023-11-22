@@ -5,6 +5,7 @@
 			"Amoramah"
 		]
 	},
+	"advancedsearch-desc": "Yɔ'ɔ naana bɔna adeŋɛ te'ele eere \"capabilities\" n boi [[Special: Search]]",
 	"advancedsearch-options-pane-head": "Adeŋɛ te'ele eere",
 	"advancedsearch-options-pane-preview-list": "Lɔgeseto ti ba dikɛ tum nananawa",
 	"advancedsearch-optgroup-text": "Ɛ pɛgerɛ gulesegɔ puan",
@@ -55,11 +56,13 @@
 	"advancedsearch-sort-preview-create-timestamp-desc": "Maalegɔ dabeserɛ",
 	"advancedsearch-namespaces-search-in": "Ɛ doose:",
 	"advancedsearch-namespaces-remember": "Tɛra loore bo beere iya",
+	"advancedsearch-namespaces-pane-preview-list": "Nananawa wa kpeŋɛ yu'urɛ fole \"filters\"",
 	"advancedsearch-namespaces-preset-all": "Za'a",
 	"advancedsearch-namespaces-preset-default": "Naaŋen",
 	"advancedsearch-namespaces-preset-general-help": "Suŋerɛ za'a",
 	"advancedsearch-namespaces-preset-discussion": "Sɔsega",
 	"advancedsearch-namespaces-placeholder": "Pa'asɛ yelesegɔ",
 	"prefs-advancedsearch": "Adeŋɛ te'ele eere",
+	"advancedsearch-preference-help": "Adeŋɛ te'ele eere pa'aseri la naam n boi buutɛ puan:ɛ pɛgerɛ. Ŋwana wa baseri ti fu tuna la yelebiura yɛla, fu sam pugum ka mina \"syntax\" eere. A kelum tɛɛra la yu'ura fɔla n wan ta'am iŋɛ se'em loose.",
 	"advancedsearch-preference-disable": "Da dikɛ adente'ele eere zi'an la pa'alɛ fu San tara eere buutɛ la tuna"
 }
