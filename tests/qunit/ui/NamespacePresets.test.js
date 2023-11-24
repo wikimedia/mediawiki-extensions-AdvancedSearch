@@ -16,7 +16,9 @@
 
 	const getDummyCheckbox = function ( selected ) {
 		return {
-			getData: function () { return 'all'; },
+			getData: function () {
+				return 'all';
+			},
 			selected: selected
 		};
 	};

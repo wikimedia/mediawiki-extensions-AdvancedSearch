@@ -11,7 +11,9 @@
 		},
 		{
 			id: 'keyword',
-			formatter: function ( v ) { return 'keyword:' + v; }
+			formatter: function ( v ) {
+				return 'keyword:' + v;
+			}
 		}
 	];
 

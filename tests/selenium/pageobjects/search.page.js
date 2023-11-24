@@ -74,9 +74,13 @@ class SearchPage extends Page {
 		this.searchImageHeight = new TextInputField( '#advancedSearchField-fileh' );
 	}
 
-	get FILE_NAMESPACE() { return '6'; }
+	get FILE_NAMESPACE() {
+		return '6';
+	}
 
-	get searchContainer() { return $( '.mw-advancedSearch-container' ); }
+	get searchContainer() {
+		return $( '.mw-advancedSearch-container' );
+	}
 
 	searchFileType() {
 		return {
@@ -91,15 +95,24 @@ class SearchPage extends Page {
 		};
 	}
 
-	get namespacesPreview() { return $( '.mw-advancedSearch-expandablePane-namespaces .mw-advancedSearch-expandablePane-button .oo-ui-indicator-down' ); }
-	get namespacesMenu() { return $( '.mw-advancedSearch-namespaceFilter .oo-ui-inputWidget-input' ); }
-	get namespaceOptionMain() { return $( '.mw-advancedSearch-namespace-0' ); }
+	get namespacesPreview() {
+		return $( '.mw-advancedSearch-expandablePane-namespaces .mw-advancedSearch-expandablePane-button .oo-ui-indicator-down' );
+	}
+
+	get namespacesMenu() {
+		return $( '.mw-advancedSearch-namespaceFilter .oo-ui-inputWidget-input' );
+	}
+
+	get namespaceOptionMain() {
+		return $( '.mw-advancedSearch-namespace-0' );
+	}
 
 	async expandNamespacesPreview() {
 		await this.namespacesPreview.waitForDisplayed();
 		await this.namespacesPreview.click();
 		await this.namespacesMenu.waitForDisplayed();
 	}
+
 	async expandNamespacesMenu() {
 		await this.namespacesMenu.waitForDisplayed();
 		await this.namespacesMenu.click();
@@ -136,17 +149,50 @@ class SearchPage extends Page {
 			}
 		};
 	}
-	async getSearchPaginationLinks() { return $$( '.mw-search-pager-bottom a' ); }
-	get searchPreviewItems() { return $$( '.mw-advancedSearch-searchPreview .mw-advancedSearch-searchPreview-previewPill' ); }
-	get namespacePreviewItems() { return $( '.mw-advancedSearch-namespacesPreview .mw-advancedSearch-namespacesPreview-previewPill' ); }
-	get searchInfoIcon() { return $( '.mw-advancedSearch-container .oo-ui-fieldLayout .oo-ui-buttonElement-button' ); }
-	get searchButton() { return $( '#mw-search-top-table button' ); }
-	get allNamespacesPreset() { return $( '.mw-advancedSearch-namespace-selection input[value="all"]' ); }
-	get generalHelpPreset() { return $( '.mw-advancedSearch-namespace-selection input[value="generalHelp"]' ); }
-	get rememberSelection() { return $( '.mw-advancedSearch-namespace-selection input[name="nsRemember"]' ); }
-	get default() { return $( '.mw-advancedSearch-namespace-selection input[value="defaultNamespaces"]' ); }
-	get categorySuggestionsBox() { return $( '.mw-advancedSearch-deepCategory div[role="listbox"]' ); }
-	get templateSuggestionsBox() { return $( '.mw-advancedSearch-template div[role="listbox"]' ); }
+
+	async getSearchPaginationLinks() {
+		return $$( '.mw-search-pager-bottom a' );
+	}
+
+	get searchPreviewItems() {
+		return $$( '.mw-advancedSearch-searchPreview .mw-advancedSearch-searchPreview-previewPill' );
+	}
+
+	get namespacePreviewItems() {
+		return $( '.mw-advancedSearch-namespacesPreview .mw-advancedSearch-namespacesPreview-previewPill' );
+	}
+
+	get searchInfoIcon() {
+		return $( '.mw-advancedSearch-container .oo-ui-fieldLayout .oo-ui-buttonElement-button' );
+	}
+
+	get searchButton() {
+		return $( '#mw-search-top-table button' );
+	}
+
+	get allNamespacesPreset() {
+		return $( '.mw-advancedSearch-namespace-selection input[value="all"]' );
+	}
+
+	get generalHelpPreset() {
+		return $( '.mw-advancedSearch-namespace-selection input[value="generalHelp"]' );
+	}
+
+	get rememberSelection() {
+		return $( '.mw-advancedSearch-namespace-selection input[name="nsRemember"]' );
+	}
+
+	get default() {
+		return $( '.mw-advancedSearch-namespace-selection input[value="defaultNamespaces"]' );
+	}
+
+	get categorySuggestionsBox() {
+		return $( '.mw-advancedSearch-deepCategory div[role="listbox"]' );
+	}
+
+	get templateSuggestionsBox() {
+		return $( '.mw-advancedSearch-template div[role="listbox"]' );
+	}
 
 	async formWasSubmitted() {
 		return Object.prototype.hasOwnProperty.call( await this.getQueryFromUrl(), 'profile' );
@@ -161,7 +207,7 @@ class SearchPage extends Page {
 	}
 
 	async getQueryFromUrl() {
-		// eslint-disable-next-line node/no-deprecated-api
+		// eslint-disable-next-line n/no-deprecated-api
 		return url.parse( await browser.getUrl(), true ).query;
 	}
 
