@@ -86,6 +86,9 @@
 				"modules/ext.advancedSearch.less"
 			],
 			"skinStyles": {
+				"minerva": [
+					"modules/ext.advancedSearch.minerva.less"
+				],
 				"timeless": [
 					"modules/ext.advancedSearch.timeless.less"
 				],
