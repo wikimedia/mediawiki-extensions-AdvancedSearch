@@ -17,9 +17,9 @@ const validateNamespacePreset = function ( presetProvider, namespaceIDs, presetN
 /**
  * Prepare static namespace ID presets for improved performance during later processing
  *
- * @param {Object} presets
+ * @param {Object.<string,Object>} presets
  * @param {NamespacePresetProviders} presetProvider
- * @return {Object}
+ * @return {Object.<string,Object>}
  */
 const groomPresets = function ( presets, presetProvider ) {
 	const groomedPresets = {};
@@ -27,7 +27,7 @@ const groomPresets = function ( presets, presetProvider ) {
 		const presetConfig = presets[ key ],
 			preset = { label: presetConfig.label || key };
 
-		if ( !Object.prototype.hasOwnProperty.call( presetConfig, 'enabled' ) || presetConfig.enabled !== true ) {
+		if ( !presetConfig.enabled ) {
 			return;
 		}
 
@@ -59,7 +59,7 @@ const groomPresets = function ( presets, presetProvider ) {
 };
 
 /**
- * @param {Object} presets
+ * @param {Object.<string,Object>} presets
  * @return {Object}
  */
 const prepareOptions = function ( presets ) {
@@ -82,15 +82,13 @@ const prepareOptions = function ( presets ) {
  * @param {SearchModel} store
  * @param {NamespacePresetProviders} presetProvider
  * @param {Object} config
+ * @cfg {Object.<string,Object>} presets
  */
 const NamespacePresets = function ( store, presetProvider, config ) {
-	config.presets = groomPresets( config.presets || {}, presetProvider );
-
-	config.options = prepareOptions( config.presets );
 	this.store = store;
+	this.presets = groomPresets( config.presets || {}, presetProvider );
 
-	this.presets = config.presets;
-
+	config.options = prepareOptions( this.presets );
 	NamespacePresets.super.call( this, config );
 
 	// Using undocumented internals because this.on does not work, see https://phabricator.wikimedia.org/T168735
