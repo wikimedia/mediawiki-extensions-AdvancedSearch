@@ -45,7 +45,10 @@ class TooltipGenerator {
 		$tooltips = [];
 
 		foreach ( self::MESSAGE_KEYS as $key ) {
-			$tooltips[$key] = $this->messageLocalizer->msg( $key )->parse();
+			$msg = $this->messageLocalizer->msg( $key );
+			if ( !$msg->isDisabled() ) {
+				$tooltips[$key] = $msg->parse();
+			}
 		}
 
 		return $tooltips;
