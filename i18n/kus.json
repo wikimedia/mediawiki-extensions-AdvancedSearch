@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bugirbiig"
+		]
+	},
+	"advancedsearch-desc": "Fʋn na niŋ si'em paam ieb linɛ an viki na'ana [[Special:Search]]",
+	"advancedsearch-options-pane-head": "Ieb linɛ an viki",
+	"advancedsearch-optgroup-text": "Iem lakir la sɔbirin",
+	"advancedsearch-optgroup-structure": "Si'esim",
+	"advancedsearch-optgroup-files": "Faalnam nɛ footnam",
+	"advancedsearch-optgroup-sort": "Maalim din nar si'em",
+	"advancedsearch-field-plain": "Pian'a bama",
+	"advancedsearch-field-phrase": "Sɔb kaŋa yim",
+	"advancedsearch-field-or": "Pian'a bama yinne",
+	"advancedsearch-field-not": "Ka' pian'a bamaa",
+	"advancedsearch-field-subpageof": "Lak-si'eba banɛ bɛ lak kaŋa ni",
+	"advancedsearch-field-intitle": "Lakir la zug mɔri",
+	"advancedsearch-field-deepcategory": "Lakir banɛ bɛ buudbama pʋʋgin",
+	"advancedsearch-field-hastemplate": "Lakir banɛ mɔr tempilet-bama",
+	"advancedsearch-field-inlanguage": "Lakir banɛ bɛ pian'ad nwa ni",
+	"advancedsearch-field-filetype": "Faal buudi",
+	"advancedsearch-field-filew": "Faal labisim zem si'em pigizil ni",
+	"advancedsearch-field-fileh": "Faali dʋʋ agɔla si'em pigizil bama ni",
+	"advancedsearch-field-sort": "Maalim din nar si'em",
+	"advancedsearch-field-preview-sort": "Maalim dɔlis nɛ $1"
+}
