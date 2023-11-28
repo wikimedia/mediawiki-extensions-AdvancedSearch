@@ -70,7 +70,8 @@ const prepareOptions = function ( presets ) {
 		// * advancedsearch-namespaces-preset-default
 		// * advancedsearch-namespaces-preset-general-help
 		// * advancedsearch-namespaces-preset-discussion
-		return { data: id, label: mw.msg( preset.label ) };
+		const msg = mw.message( preset.label );
+		return { data: id, label: msg.exists() ? msg.text() : preset.label };
 	} );
 };
 
