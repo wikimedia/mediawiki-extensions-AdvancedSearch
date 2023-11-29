@@ -6,7 +6,7 @@ use AdvancedSearch\Hooks;
 use ExtensionRegistry;
 use HashConfig;
 use MediaWiki\Request\FauxRequest;
-use MediaWiki\User\UserOptionsLookup;
+use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWikiIntegrationTestCase;
 use MimeAnalyzer;
 use OutputPage;
