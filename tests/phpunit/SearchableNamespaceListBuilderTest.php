@@ -14,6 +14,7 @@ class SearchableNamespaceListBuilderTest extends TestCase {
 
 	public function testGetCuratedNamespaces() {
 		$configNamespaces = [
+			0 => '',
 			1 => 'Some Namespace',
 			5 => '',
 			123 => 'Some other namespace',

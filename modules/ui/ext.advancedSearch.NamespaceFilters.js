@@ -9,11 +9,11 @@ const MenuSelectWidget = require( './ext.advancedSearch.MenuSelectWidget.js' );
  * @constructor
  * @param {SearchModel} store
  * @param {Object} config
- * @param {Object} [config.namespaces={}] Namespace id => Namespace label (similar to mw.config.get( 'wgFormattedNamespaces' ) )
+ * @param {Object} config.namespaces Namespace id => Namespace label (similar to mw.config.get( 'wgFormattedNamespaces' ) )
  */
 const NamespaceFilters = function ( store, config ) {
 	this.store = store;
-	this.namespaces = this.prettifyNamespaces( config.namespaces || {} );
+	this.namespaces = this.prettifyNamespaces( config.namespaces );
 
 	NamespaceFilters.super.call( this, $.extend( true, {
 		classes: [ 'mw-advancedSearch-namespaceFilter' ],
@@ -55,7 +55,7 @@ OO.inheritClass( NamespaceFilters, OO.ui.MenuTagMultiselectWidget );
  */
 NamespaceFilters.prototype.prettifyNamespaces = function ( namespaces ) {
 	Object.keys( namespaces ).forEach( function ( id ) {
-		namespaces[ id ] = mw.Title.newFromText( namespaces[ id ] ).getMainText();
+		namespaces[ id ] = mw.Title.newFromText( namespaces[ id ] || id ).getMainText();
 	} );
 	return namespaces;
 };
