@@ -85,6 +85,7 @@
 	"advancedsearch-sort-preview-create-timestamp-desc": "fecha de creación",
 	"advancedsearch-namespaces-search-in": "Buscar en:",
 	"advancedsearch-namespaces-remember": "Recordar la selección en búsquedas futuras",
+	"advancedsearch-namespaces-pane-preview-list": "Filtros de espacio de nombres activos",
 	"advancedsearch-namespaces-preset-all": "Todos",
 	"advancedsearch-namespaces-preset-default": "Predeterminado",
 	"advancedsearch-namespaces-preset-general-help": "Ayuda general",
