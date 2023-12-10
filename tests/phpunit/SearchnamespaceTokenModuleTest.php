@@ -4,8 +4,8 @@ namespace AdvancedSearch\Tests;
 
 use AdvancedSearch\SearchnamespaceTokenModule;
 use MediaWiki\ResourceLoader\Context;
+use MediaWiki\User\User;
 use PHPUnit\Framework\TestCase;
-use User;
 
 /**
  * @covers \AdvancedSearch\SearchnamespaceTokenModule

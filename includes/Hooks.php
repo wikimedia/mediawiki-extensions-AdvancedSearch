@@ -2,20 +2,20 @@
 
 namespace AdvancedSearch;
 
-use Config;
 use ExtensionRegistry;
-use Html;
+use MediaWiki\Config\Config;
 use MediaWiki\Hook\SpecialSearchResultsPrependHook;
+use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Output\OutputPage;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
+use MediaWiki\Request\WebRequest;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Specials\SpecialSearch;
+use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MessageLocalizer;
-use OutputPage;
-use SpecialPage;
-use SpecialSearch;
-use User;
-use WebRequest;
 
 /**
  * @license GPL-2.0-or-later
