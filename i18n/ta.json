@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Balajijagadesh"
+			"Balajijagadesh",
+			"Fahimrazick"
 		]
 	},
 	"advancedsearch-options-pane-head": "மேம்பட்ட தேடல்:",
-	"advancedsearch-optgroup-text": "பக்க உரையில் தேடவும்",
+	"advancedsearch-optgroup-text": "பக்க உரையில் தேடு",
 	"advancedsearch-optgroup-structure": "கட்டமைப்பு",
 	"advancedsearch-optgroup-files": "கோப்புகள் மற்றும் படங்கள்",
 	"advancedsearch-optgroup-sort": "ஒழுங்குபடுத்தும் வரிசை",
@@ -36,7 +37,7 @@
 	"advancedsearch-sort-preview-relevance": "தொடர்புடைய",
 	"advancedsearch-sort-preview-last-edit-desc": "தொகுப்புத் தேதி",
 	"advancedsearch-sort-preview-create-timestamp-desc": "உருவாக்கப்பட்ட நாள்",
-	"advancedsearch-namespaces-preset-all": "அனைத்தும்",
+	"advancedsearch-namespaces-preset-all": "யாவும்",
 	"advancedsearch-namespaces-preset-default": "இயல்பிருப்பு",
 	"advancedsearch-namespaces-preset-general-help": "பொதுவான உதவி",
 	"advancedsearch-namespaces-preset-discussion": "உரையாடல்",
