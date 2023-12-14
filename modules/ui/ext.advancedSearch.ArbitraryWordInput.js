@@ -9,8 +9,6 @@
  * @param {Object} config
  */
 const ArbitraryWordInput = function ( store, config ) {
-	config = $.extend( {}, config );
-
 	this.store = store;
 	this.fieldId = config.fieldId;
 	this.placeholderText = config.placeholder || '';
