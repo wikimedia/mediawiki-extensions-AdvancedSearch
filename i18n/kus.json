@@ -68,5 +68,7 @@
 	"advancedsearch-namespaces-preset-general-help": "Sʋŋir wʋsa",
 	"advancedsearch-namespaces-preset-discussion": "Sɔnsig",
 	"advancedsearch-namespaces-placeholder": "Paasim yʋda zin'ig",
-	"prefs-advancedsearch": "Ieb linɛ an viki"
+	"prefs-advancedsearch": "Ieb linɛ an viki",
+	"advancedsearch-preference-help": "Tuon Ieb kɛtnɛ ka li bɛllim aan di Kɔn': Lakir Ieb. Dina kɛtnɛ ka fʋ nyaŋidi ied iebanɛ bɛɛ ba kɔn' hali fʋ ya'a zi' ieb la sintaksɛ. Di mɛ ti'akid fʋn na niŋ si'em gaŋ yʋda zin'is.",
+	"advancedsearch-preference-disable": "Da pa'al Tuon Ieb bʋn fʋ ya'a mɔr Ieb linɛ bɛɛ di Kɔn' la tʋmma"
 }
