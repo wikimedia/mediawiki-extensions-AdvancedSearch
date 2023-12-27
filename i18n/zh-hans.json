@@ -18,13 +18,14 @@
 			"佛壁灯",
 			"列维劳德",
 			"夢蝶葬花",
-			"沈澄心"
+			"沈澄心",
+			"LittlePaw365"
 		]
 	},
 	"advancedsearch-desc": "轻松访问[[Special:Search]]上的高级搜索功能",
 	"advancedsearch-options-pane-head": "高级搜索：",
 	"advancedsearch-options-pane-preview-list": "当前使用的搜索词",
-	"advancedsearch-optgroup-text": "在页面文本中搜索",
+	"advancedsearch-optgroup-text": "在页面文字内搜索",
 	"advancedsearch-optgroup-structure": "结构",
 	"advancedsearch-optgroup-files": "文件和图像",
 	"advancedsearch-optgroup-sort": "排序方式",
@@ -86,7 +87,7 @@
 	"advancedsearch-namespaces-remember": "记住选择以备将来搜索",
 	"advancedsearch-namespaces-preset-all": "全部",
 	"advancedsearch-namespaces-preset-default": "默认",
-	"advancedsearch-namespaces-preset-general-help": "一般性帮助",
+	"advancedsearch-namespaces-preset-general-help": "通用帮助",
 	"advancedsearch-namespaces-preset-discussion": "讨论",
 	"advancedsearch-namespaces-placeholder": "添加命名空间…",
 	"prefs-advancedsearch": "高级搜索",
