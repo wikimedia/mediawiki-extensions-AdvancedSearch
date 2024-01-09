@@ -25,8 +25,8 @@ class MimeTypeConfigurator {
 
 		foreach ( $fileExtensions as $ext ) {
 			$mimeType = $this->mimeAnalyzer->getMimeTypeFromExtensionOrNull( $ext );
-			if ( $mimeType && !isset( $mimeTypes[$mimeType] ) ) {
-				$mimeTypes[$mimeType] = $ext;
+			if ( $mimeType ) {
+				$mimeTypes += [ $mimeType => $ext ];
 			}
 		}
 
