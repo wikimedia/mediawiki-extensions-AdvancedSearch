@@ -17,11 +17,6 @@ class SearchnamespaceTokenModule extends RL\Module {
 	protected $origin = self::ORIGIN_CORE_INDIVIDUAL;
 
 	/**
-	 * @var string[]
-	 */
-	protected $targets = [ 'desktop', 'mobile' ];
-
-	/**
 	 * @param RL\Context $context
 	 * @return string JavaScript code
 	 */
