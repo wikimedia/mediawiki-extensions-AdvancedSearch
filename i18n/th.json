@@ -8,11 +8,13 @@
 			"Just Sayori",
 			"NP-chaonay",
 			"Patsagorn Y.",
-			"กิ๊ฟ เลิกล่ะ สายแข็ง"
+			"กิ๊ฟ เลิกล่ะ สายแข็ง",
+			"Kaoavi"
 		]
 	},
 	"advancedsearch-desc": "เข้าถึงสมรรถนะค้นหาขั้นสูงบน [[Special:Search]] ได้โดยง่าย",
 	"advancedsearch-options-pane-head": "การค้นหาขั้นสูง:",
+	"advancedsearch-options-pane-preview-list": "คำค้นหาที่ใช้อยู่ในปัจจุบัน",
 	"advancedsearch-optgroup-text": "ค้นหาข้อความในหน้า",
 	"advancedsearch-optgroup-structure": "โครงสร้าง",
 	"advancedsearch-optgroup-files": "ไฟล์และภาพ",
