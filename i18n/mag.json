@@ -4,6 +4,9 @@
 			"ऐक्टिवेटेड्"
 		]
 	},
+	"advancedsearch-field-phrase": "एकदम एही पाठ",
+	"advancedsearch-field-or": "एही सबमे से कौनो शब्द",
+	"advancedsearch-field-not": "ई शब्द न",
 	"advancedsearch-filetype-default": "सञ्चिका प्रकार चुनी",
 	"advancedsearch-filetype-bitmap": "चित्र",
 	"advancedsearch-filetype-drawing": "चित्रकला",
