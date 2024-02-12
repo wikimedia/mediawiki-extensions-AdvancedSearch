@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Maxí",
+			"Stefán Örvar Sigmundsson",
 			"Sveinki",
 			"Sveinn í Felli"
 		]
@@ -17,7 +18,7 @@
 	"advancedsearch-field-subpageof": "Undirsíður undir þessari síðu",
 	"advancedsearch-field-intitle": "Titill síðunnar inniheldur",
 	"advancedsearch-field-deepcategory": "Síður í þessum flokki",
-	"advancedsearch-field-hastemplate": "Síður með þessum sniðum",
+	"advancedsearch-field-hastemplate": "Síður með þessi snið",
 	"advancedsearch-field-inlanguage": "Síður á þessu tungumáli",
 	"advancedsearch-field-filetype": "Skráartegund",
 	"advancedsearch-field-filew": "Breidd skráar í mynddílum",
