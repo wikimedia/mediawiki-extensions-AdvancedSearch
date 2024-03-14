@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Akakiiri",
+			"Amire80",
 			"Amoramah"
 		]
 	},
@@ -22,7 +23,7 @@
 	"advancedsearch-field-hastemplate": "Pɛgesi'a n tari tɛmPilate duma",
 	"advancedsearch-field-inlanguage": "Pɛgesi'a n boi yeletɔgum buna puan",
 	"advancedsearch-field-filetype": "Faali buuri",
-	"advancedsearch-field-filew": "Faali yaleŋa n de se'em pizɛl  puan",
+	"advancedsearch-field-filew": "Faali yaleŋa n de se'em pizɛl puan",
 	"advancedsearch-field-fileh": "Faali yaleŋa n de se'em pizɛl puan",
 	"advancedsearch-field-sort": "Gasega sɔa",
 	"advancedsearch-field-preview-sort": "$1 n gãsɛ",
