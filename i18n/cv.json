@@ -22,5 +22,22 @@
 	"advancedsearch-field-filew": "Файл сарлакӑшӗ пиксельпе",
 	"advancedsearch-field-fileh": "Файл ҫӳллӗшӗ пиксельпе",
 	"advancedsearch-field-sort": "Сортламалли йӗрке",
-	"advancedsearch-field-preview-sort": "$1 тӑрӑх сортла"
+	"advancedsearch-field-preview-sort": "$1 тӑрӑх сортла",
+	"advancedsearch-filetype-section-image": "Ӳкерчӗк формачӗсем",
+	"advancedsearch-filetype-section-video": "Видео формачӗсем",
+	"advancedsearch-filetype-section-audio": "Аудио формачӗсем",
+	"advancedsearch-filetype-section-document": "Документ формачӗсем",
+	"advancedsearch-filetype-section-other": "Ытти форматсем",
+	"advancedsearch-filetype-default": "Файл тӗсне суйлӑр",
+	"advancedsearch-filetype-bitmap": "Сӑн",
+	"advancedsearch-filetype-drawing": "Ӳкерчӗк",
+	"advancedsearch-filetype-audio": "Аудио",
+	"advancedsearch-filetype-video": "Видео",
+	"advancedsearch-filetype-office": "Документ",
+	"advancedsearch-namespaces-preset-all": "Пурте",
+	"advancedsearch-namespaces-preset-default": "Ахаль чухнехилле",
+	"advancedsearch-namespaces-preset-general-help": "Пӗтӗмӗшле пулӑшу",
+	"advancedsearch-namespaces-preset-discussion": "Сӳтсе явнисем",
+	"advancedsearch-namespaces-placeholder": "Ятсен уҫлӑхне хуш…",
+	"prefs-advancedsearch": "Анлă шырав"
 }
