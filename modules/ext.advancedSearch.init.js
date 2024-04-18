@@ -105,7 +105,18 @@ const createFieldConfiguration = function () {
 	const fields = new FieldCollection();
 	addDefaultFields( fields );
 	fields.freezeGroups( [ 'text', 'structure', 'files' ] );
+
+	/**
+	 * Fired after the default fields have been added to the {@see FieldCollection}. Hook handlers
+	 * can add additional fields and possibly modify existing ones. See docs/adding_fields.md for an
+	 * example.
+	 *
+	 * @event advancedSearch.configureFields
+	 * @param {FieldCollection} fields
+	 * @stable to use
+	 */
 	mw.hook( 'advancedSearch.configureFields' ).fire( fields );
+
 	return fields;
 };
 

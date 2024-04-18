@@ -4,31 +4,26 @@ const getDefaultNamespaces = require( './ext.advancedSearch.getDefaultNamespaces
 const { arrayContains } = require( '../ext.advancedSearch.util.js' );
 
 /**
- * Fired when the namespace ID providers are initialized
- *
- * The real event name is `advancedSearch.initNamespacePresetProviders`, but jsDuck does not support dots in event names.
- *
- * @event advancedSearch_initNamespacePresetProviders
- * @param {Object} providerFunctions
- */
-
-/**
  * @param {Object.<int,string>} namespaces Mapping namespace IDs to localized names
  * @constructor
  */
 const NamespacePresetProviders = function ( namespaces ) {
 	this.namespaces = namespaces;
 	this.providerFunctions = {
-		all: function ( namespaceIds ) {
-			return namespaceIds;
-		},
-		discussion: function ( namespaceIds ) {
-			return namespaceIds.filter( mw.Title.isTalkNamespace );
-		},
-		defaultNamespaces: function () {
-			return getDefaultNamespaces( mw.user.options.values );
-		}
+		all: ( namespaceIds ) => namespaceIds,
+		discussion: ( namespaceIds ) => namespaceIds.filter( mw.Title.isTalkNamespace ),
+		defaultNamespaces: () => getDefaultNamespaces( mw.user.options.values )
 	};
+
+	/**
+	 * Fired after the default namespace preset provider functions have been registered. Hook
+	 * handlers can add additional presets and modify or remove existing ones. See docs/settings.md
+	 * for an example.
+	 *
+	 * @event advancedSearch.initNamespacePresetProviders
+	 * @param {Object.<string,Function>} providerFunctions
+	 * @stable to use
+	 */
 	mw.hook( 'advancedSearch.initNamespacePresetProviders' ).fire( this.providerFunctions );
 };
 
