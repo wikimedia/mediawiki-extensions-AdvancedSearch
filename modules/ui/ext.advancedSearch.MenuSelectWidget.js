@@ -8,23 +8,14 @@ const ItemMenuOptionWidget = require( './ext.advancedSearch.ItemMenuOptionWidget
  * @extends OO.ui.MenuSelectWidget
  *
  * @constructor
- * @param {SearchModel} store
  * @param {Object} config
  * @cfg {Object} namespaces
- * @cfg {jQuery} [$overlay] A jQuery object serving as overlay for popups
  */
-const MenuSelectWidget = function ( store, config ) {
-	this.store = store;
-	this.config = config;
-	this.namespaces = config.namespaces;
-	this.$overlay = config.$overlay || this.$element;
-	this.$body = $( '<div>' ).addClass( 'mw-advancedSearch-ui-menuSelectWidget-body' );
-
+const MenuSelectWidget = function ( config ) {
 	MenuSelectWidget.super.call( this, $.extend( {
-		$autoCloseIgnore: this.$overlay,
 		filterFromInput: true
 	}, config ) );
-	this.createMenu();
+	this.addItems( this.createMenuItems( config.namespaces ) );
 };
 
 OO.inheritClass( MenuSelectWidget, OO.ui.MenuSelectWidget );
@@ -37,28 +28,28 @@ MenuSelectWidget.prototype.toggle = function ( show ) {
 	this.setVerticalPosition( 'below' );
 };
 
-MenuSelectWidget.prototype.createMenu = function () {
-	if ( this.menuInitialized ) {
-		return;
-	}
-	this.menuInitialized = true;
+/**
+ * @param {Object.<number,string>} namespaces Maps namespace id => label
+ * @return {OO.ui.MenuOptionWidget[]}
+ */
+MenuSelectWidget.prototype.createMenuItems = function ( namespaces ) {
 	const items = [];
-	for ( const id in this.namespaces ) {
+	for ( const id in namespaces ) {
 		const isTalkNamespace = id % 2;
 		// The following classes are used here:
 		// * mw-advancedSearch-namespace-0
 		// * mw-advancedSearch-namespace-1
 		// etc.
-		items.push( new ItemMenuOptionWidget( $.extend( {
+		items.push( new ItemMenuOptionWidget( {
 			data: id,
-			label: this.namespaces[ id ] || id,
+			label: namespaces[ id ] || id,
 			classes: [
 				'mw-advancedSearch-namespace-' + id,
 				isTalkNamespace ? '' : 'mw-advancedSearch-namespace-border'
 			]
-		}, this.config ) ) );
+		} ) );
 	}
-	this.addItems( items );
+	return items;
 };
 
 /**
