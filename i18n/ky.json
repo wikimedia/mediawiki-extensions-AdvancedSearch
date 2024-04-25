@@ -10,5 +10,6 @@
 	"advancedsearch-field-or": "Бул сөздөрдүн бири",
 	"advancedsearch-field-not": "Бул сөздөр эмес",
 	"advancedsearch-filetype-bitmap": "Сүрөт",
-	"advancedsearch-filetype-audio": "Аудио"
+	"advancedsearch-filetype-audio": "Аудио",
+	"advancedsearch-filetype-video": "Видео"
 }
