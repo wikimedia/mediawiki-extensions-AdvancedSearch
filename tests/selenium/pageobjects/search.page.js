@@ -9,16 +9,16 @@ class TextInputField {
 		this.selector = selector;
 	}
 
-	put( content ) {
-		$( this.selector + ' input' ).setValue( content );
+	async put( content ) {
+		await $( this.selector + ' input' ).setValue( content );
 	}
 
-	getPlaceholderText() {
-		return $( this.selector + ' input' ).getAttribute( 'placeholder' ) || '';
+	async getPlaceholderText() {
+		return await $( this.selector + ' input' ).getAttribute( 'placeholder' ) || '';
 	}
 
-	isDisplayed() {
-		return $( this.selector + ' input' ).isDisplayed();
+	async isDisplayed() {
+		return await $( this.selector + ' input' ).isDisplayed();
 	}
 }
 
@@ -27,17 +27,17 @@ class PillField {
 		this.selector = selector;
 	}
 
-	put( content ) {
-		$( this.selector ).click();
-		browser.keys( content );
+	async put( content ) {
+		await $( this.selector ).click();
+		await browser.keys( content );
 	}
 
-	getPlaceholderText() {
-		return $( this.selector + ' input' ).getAttribute( 'placeholder' ) || '';
+	async getPlaceholderText() {
+		return await $( this.selector + ' input' ).getAttribute( 'placeholder' ) || '';
 	}
 
-	getTagLabels() {
-		return $$( this.selector + ' .oo-ui-tagItemWidget > .oo-ui-labelElement-label' ).map( ( elem ) => elem.getText() );
+	async getTagLabels() {
+		return await $$( this.selector + ' .oo-ui-tagItemWidget > .oo-ui-labelElement-label' ).map( async ( elem ) => await elem.getText() );
 	}
 }
 
@@ -46,15 +46,11 @@ class DropdownField {
 		this.selector = selector;
 	}
 
-	choose( fieldName ) {
+	async choose( fieldName ) {
 		const fieldElement = $( '.mw-advancedSearch-inlanguage-' + fieldName );
-		$( this.selector ).click(); // open inlanguage dropdown
-		browser.execute( 'arguments[0].scrollIntoView(true);', fieldElement ); // scroll to the option to get it into view
-		fieldElement.click();
-	}
-
-	isDisplayed() {
-		return $( this.selector ).isDisplayed();
+		await $( this.selector ).click(); // open inlanguage dropdown
+		await browser.execute( 'arguments[0].scrollIntoView(true);', fieldElement ); // scroll to the option to get it into view
+		await fieldElement.click();
 	}
 }
 
@@ -78,114 +74,148 @@ class SearchPage extends Page {
 		this.searchImageHeight = new TextInputField( '#advancedSearchField-fileh' );
 	}
 
-	get FILE_NAMESPACE() { return '6'; }
+	get FILE_NAMESPACE() {
+		return '6';
+	}
 
-	get searchContainer() { return $( '.mw-advancedSearch-container' ); }
+	get searchContainer() {
+		return $( '.mw-advancedSearch-container' );
+	}
 
-	get searchFileType() {
+	searchFileType() {
 		return {
-			selectImageType: function () {
-				$( '#advancedSearchField-filetype .oo-ui-dropdownWidget-handle' ).click();
-				$( '.mw-advancedSearch-filetype-image-gif' ).click();
+			selectImageType: async () => {
+				await $( '#advancedSearchField-filetype .oo-ui-dropdownWidget-handle' ).click();
+				await $( '.mw-advancedSearch-filetype-image-gif' ).click();
 			},
-			selectAudioType: function () {
-				$( '#advancedSearchField-filetype .oo-ui-dropdownWidget-handle' ).click();
-				$( '.mw-advancedSearch-filetype-audio' ).click();
+			selectAudioType: async () => {
+				await $( '#advancedSearchField-filetype .oo-ui-dropdownWidget-handle' ).click();
+				await $( '.mw-advancedSearch-filetype-audio' ).click();
 			}
 		};
 	}
 
-	get namespacesPreview() { return $( '.mw-advancedSearch-expandablePane-namespaces .mw-advancedSearch-expandablePane-button .oo-ui-indicator-down' ); }
-	get namespacesMenu() { return $( '.mw-advancedSearch-namespaceFilter .oo-ui-inputWidget-input' ); }
-	get namespaceOptionMain() { return $( '.mw-advancedSearch-namespace-0' ); }
-
-	expandNamespacesPreview() {
-		this.namespacesPreview.waitForDisplayed();
-		this.namespacesPreview.click();
-		this.namespacesMenu.waitForDisplayed();
-	}
-	expandNamespacesMenu() {
-		this.namespacesMenu.waitForDisplayed();
-		this.namespacesMenu.click();
-		this.namespaceOptionMain.waitForDisplayed();
+	get namespacesPreview() {
+		return $( '.mw-advancedSearch-expandablePane-namespaces .mw-advancedSearch-expandablePane-button .oo-ui-indicator-down' );
 	}
 
-	get namespaces() {
+	get namespacesMenu() {
+		return $( '.mw-advancedSearch-namespaceFilter .oo-ui-inputWidget-input' );
+	}
+
+	get namespaceOptionMain() {
+		return $( '.mw-advancedSearch-namespace-0' );
+	}
+
+	async expandNamespacesPreview() {
+		await this.namespacesPreview.waitForDisplayed();
+		await this.namespacesPreview.click();
+		await this.namespacesMenu.waitForDisplayed();
+	}
+
+	async expandNamespacesMenu() {
+		await this.namespacesMenu.waitForDisplayed();
+		await this.namespacesMenu.click();
+		await this.namespaceOptionMain.waitForDisplayed();
+	}
+
+	namespaces() {
 		return {
-			removeFileNamespace: function () {
-				$( '.mw-advancedSearch-namespaceFilter .mw-advancedSearch-namespace-6 .oo-ui-buttonWidget' ).click();
+			selectAll: async () => {
+				const namespaces = await $$( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"]:not(.oo-ui-optionWidget-selected)' );
+				for ( const element of namespaces ) {
+					await browser.execute( 'arguments[0].scrollIntoView(true);', element );
+					await element.waitForDisplayed();
+					await element.click();
+				}
+				await browser.keys( '\uE00C' ); // Close menu by hitting the Escape key
 			},
-			selectAll: function () {
-				$$( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"]:not(.oo-ui-optionWidget-selected)' )
-					.forEach( ( element ) => {
-						browser.execute( 'arguments[0].scrollIntoView(true);', element );
-						element.waitForDisplayed();
-						element.click();
-					} );
-				browser.keys( '\uE00C' ); // Close menu by hitting the Escape key
-			},
-			clickOnNamespace: function ( nsId ) {
+			clickOnNamespace: async ( nsId ) => {
 				const menuItem = $( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget .mw-advancedSearch-namespace-' + nsId );
-				menuItem.waitForDisplayed();
-				menuItem.click();
+				await menuItem.waitForDisplayed();
+				await menuItem.click();
 			},
-			getAllLabelsFromMenu: function () {
+			getAllLabelsFromMenu: async () => {
 				const labels = $$( '.oo-ui-defaultOverlay .oo-ui-menuSelectWidget div[class^="mw-advancedSearch-namespace-"]' ).map(
-					( el ) => el.$( '.oo-ui-labelElement-label' ).getText()
+					async ( el ) => await el.$( '.oo-ui-labelElement-label' ).getText()
 				);
-				browser.keys( '\uE00C' ); // Close menu by hitting the Escape key
+				await browser.keys( '\uE00C' ); // Close menu by hitting the Escape key
 				return labels;
 			},
-			getAllTagLabels: function () {
+			getAllTagLabels: async () => {
 				return $$( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-content div[class^="mw-advancedSearch-namespace-"]' ).map(
-					( element ) => { return element.getText(); }
+					async ( el ) => await el.getText()
 				);
 			}
 		};
 	}
-	get searchPaginationLink() { return $( '.mw-search-pager-bottom a' ); }
-	get searchPaginationLinks() { return $$( '.mw-search-pager-bottom a' ); }
-	get searchPreviewItem() { return $( '.mw-advancedSearch-searchPreview .mw-advancedSearch-searchPreview-previewPill' ); }
-	get searchPreviewItems() { return $$( '.mw-advancedSearch-searchPreview .mw-advancedSearch-searchPreview-previewPill' ); }
-	get namespacePreviewItems() { return $( '.mw-advancedSearch-namespacesPreview .mw-advancedSearch-namespacesPreview-previewPill' ); }
-	get searchInfoIcon() { return $( '.mw-advancedSearch-container .oo-ui-fieldLayout .oo-ui-buttonElement-button' ); }
-	get searchInfoIcons() { return $$( '.mw-advancedSearch-container .oo-ui-fieldLayout .oo-ui-buttonElement-button' ); }
-	get infoPopup() { return $$( '.oo-ui-popupWidget-popup' ); }
-	get searchButton() { return $( '#mw-search-top-table button' ); }
-	get namespaceTags() { return $$( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-group span' ); }
-	get namespaceTagsInCollapsedMode() { return $$( '.mw-advancedSearch-namespacesPreview .mw-advancedSearch-namespacesPreview-previewPill .oo-ui-labelElement-label span' ); }
-	get allNamespacesPreset() { return $( '.mw-advancedSearch-namespace-selection input[value="all"]' ); }
-	get generalHelpPreset() { return $( '.mw-advancedSearch-namespace-selection input[value="generalHelp"]' ); }
-	get rememberSelection() { return $( '.mw-advancedSearch-namespace-selection input[name="nsRemember"]' ); }
-	get default() { return $( '.mw-advancedSearch-namespace-selection input[value="defaultNamespaces"]' ); }
-	get categorySuggestionsBox() { return $( '.mw-advancedSearch-deepCategory div[role="listbox"]' ); }
-	get templateSuggestionsBox() { return $( '.mw-advancedSearch-template div[role="listbox"]' ); }
-	get inputIcon() { return $( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-input .oo-ui-iconElement-icon' ); }
 
-	formWasSubmitted() {
-		return Object.prototype.hasOwnProperty.call( this.getQueryFromUrl(), 'profile' );
+	async getSearchPaginationLinks() {
+		return $$( '.mw-search-pager-bottom a' );
 	}
 
-	advancedSearchIsCollapsed() {
-		return $( '.mw-advancedSearch-expandablePane-options > .oo-ui-indicatorElement .oo-ui-indicatorElement-indicator.oo-ui-indicator-down' ).isExisting();
+	get searchPreviewItems() {
+		return $$( '.mw-advancedSearch-searchPreview .mw-advancedSearch-searchPreview-previewPill' );
 	}
 
-	getSearchQueryFromUrl() {
-		return this.getQueryFromUrl().search;
+	get namespacePreviewItems() {
+		return $( '.mw-advancedSearch-namespacesPreview .mw-advancedSearch-namespacesPreview-previewPill' );
 	}
 
-	getQueryFromUrl() {
+	get searchInfoIcon() {
+		return $( '.mw-advancedSearch-container .oo-ui-fieldLayout .oo-ui-buttonElement-button' );
+	}
+
+	get searchButton() {
+		return $( '#mw-search-top-table button' );
+	}
+
+	get allNamespacesPreset() {
+		return $( '.mw-advancedSearch-namespace-selection input[value="all"]' );
+	}
+
+	get generalHelpPreset() {
+		return $( '.mw-advancedSearch-namespace-selection input[value="generalHelp"]' );
+	}
+
+	get rememberSelection() {
+		return $( '.mw-advancedSearch-namespace-selection input[name="nsRemember"]' );
+	}
+
+	get default() {
+		return $( '.mw-advancedSearch-namespace-selection input[value="defaultNamespaces"]' );
+	}
+
+	get categorySuggestionsBox() {
+		return $( '.mw-advancedSearch-deepCategory div[role="listbox"]' );
+	}
+
+	get templateSuggestionsBox() {
+		return $( '.mw-advancedSearch-template div[role="listbox"]' );
+	}
+
+	async formWasSubmitted() {
+		return Object.prototype.hasOwnProperty.call( await this.getQueryFromUrl(), 'profile' );
+	}
+
+	async advancedSearchIsCollapsed() {
+		return await $( '.mw-advancedSearch-expandablePane-options > .oo-ui-indicatorElement .oo-ui-indicatorElement-indicator.oo-ui-indicator-down' ).isExisting();
+	}
+
+	async getSearchQueryFromUrl() {
+		return ( await this.getQueryFromUrl() ).search;
+	}
+
+	async getQueryFromUrl() {
 		// eslint-disable-next-line node/no-deprecated-api
-		return url.parse( browser.getUrl(), true ).query;
+		return url.parse( await browser.getUrl(), true ).query;
 	}
 
-	getInfoPopupContent( popup ) {
-		return popup.$( 'dl' );
-	}
-
-	getSelectedNamespaceIDs() {
-		return $$( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-group .oo-ui-tagItemWidget' ).reduce( ( acc, widget ) => {
-			const widgetClass = widget.getAttribute( 'class' );
+	async getSelectedNamespaceIDs() {
+		const nameSpaceTags = await $$( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-group .oo-ui-tagItemWidget' );
+		return nameSpaceTags.reduce( async ( accPromise, widget ) => {
+			const acc = await accPromise;
+			const widgetClass = await widget.getAttribute( 'class' );
 			if ( !widgetClass ) {
 				return acc;
 			}
@@ -205,33 +235,38 @@ class SearchPage extends Page {
 		return $( '.oo-ui-tagMultiselectWidget-group a[title="Template:' + template + '"]' );
 	}
 
-	open( params ) {
+	async assertPillLinkMarkedRed( $pillLink ) {
+		await $pillLink.waitForExist();
+		await browser.waitUntil( async () => {
+			return ( await $pillLink.getAttribute( 'class' ) ).includes( 'new' );
+		}, {
+			timeOutMsg: 'Pill field marks non-existent titles in red'
+		} );
+	}
+
+	async open( params ) {
 		const pageName = 'Special:Search';
-		super.openTitle( pageName, params );
-		this.waitForAdvancedSearchToLoad();
+		await super.openTitle( pageName, params );
+		await this.waitForAdvancedSearchToLoad();
 	}
 
-	waitForAdvancedSearchToLoad() {
-		Util.waitForModuleState( 'ext.advancedSearch.init' );
+	async waitForAdvancedSearchToLoad() {
+		await Util.waitForModuleState( 'ext.advancedSearch.init' );
 	}
 
-	submitForm() {
-		this.searchButton.click();
-		this.waitForAdvancedSearchToLoad();
+	async submitForm() {
+		await this.searchButton.click();
+		await this.waitForAdvancedSearchToLoad();
 	}
 
-	toggleInputFields() {
-		$( '.mw-advancedSearch-expandablePane-options .mw-advancedSearch-expandablePane-button a' ).click();
-		this.waitForSearchFieldsToLoad();
-	}
-
-	waitForSearchFieldsToLoad() {
+	async toggleInputFields() {
+		await $( '.mw-advancedSearch-expandablePane-options .mw-advancedSearch-expandablePane-button a' ).click();
 		// Wait for the last search field to be visible as an indicator that all search field widgets have been built
-		$( '#advancedSearchField-filetype' ).waitForExist();
+		await $( '#advancedSearchField-filetype' ).waitForExist();
 	}
 
-	addExamplePages( num ) {
-		browser.call( async () => {
+	async addExamplePages( num ) {
+		await browser.call( async () => {
 			const animals = [ 'cat', 'goat' ],
 				bot = await Api.bot();
 
@@ -244,58 +279,56 @@ class SearchPage extends Page {
 		} );
 	}
 
-	setSearchNamespaceOptions( nsIds ) {
-		Util.waitForModuleState( 'mediawiki.base' );
-		return browser.execute( function ( namespaceIds ) {
-			return mw.loader.using( 'mediawiki.api' ).then( function () {
-				const api = new mw.Api();
-				return api.postWithToken( 'csrf',
-					{
-						action: 'query',
-						meta: 'userinfo',
-						uiprop: 'options'
-					} ).then( ( data ) => {
-					let newSearchNamespaces = namespaceIds.map( ( nsId ) => {
-						return 'searchNs' + nsId + '=1';
-					} ).join( '|' );
-
-					const userOptions = data.query.userinfo.options;
-					Object.keys( userOptions ).forEach( function ( key ) {
-						if ( userOptions[ key ] &&
-								key.indexOf( 'searchNs' ) === 0 &&
-								!newSearchNamespaces.includes( key + '=1' )
-						) {
-							newSearchNamespaces += '|' + key + '=0';
-						}
-					} );
-
-					return api.postWithToken( 'csrf',
-						{
-							action: 'options',
-							change: newSearchNamespaces
-						} );
+	async setSearchNamespaceOptions( nsIds ) {
+		await Util.waitForModuleState( 'mediawiki.base' );
+		await browser.execute( async ( namespaceIds ) => {
+			await mw.loader.using( 'mediawiki.api' );
+			const api = new mw.Api();
+			const data = await api.postWithToken( 'csrf',
+				{
+					action: 'query',
+					meta: 'userinfo',
+					uiprop: 'options'
 				} );
+
+			let newSearchNamespaces = namespaceIds.map( ( nsId ) => {
+				return 'searchNs' + nsId + '=1';
+			} ).join( '|' );
+
+			const userOptions = data.query.userinfo.options;
+			Object.keys( userOptions ).forEach( ( key ) => {
+				if ( userOptions[ key ] &&
+					key.indexOf( 'searchNs' ) === 0 &&
+					!newSearchNamespaces.includes( key + '=1' )
+				) {
+					newSearchNamespaces += '|' + key + '=0';
+				}
 			} );
+
+			await api.postWithToken( 'csrf',
+				{
+					action: 'options',
+					change: newSearchNamespaces
+				} );
 		}, nsIds );
 	}
 
-	addPage( title, text ) {
-		browser.call( async () => {
+	async addPage( title, text ) {
+		await browser.call( async () => {
 			const bot = await Api.bot();
-
-			return await bot.edit(
+			return bot.edit(
 				title,
 				text
 			);
 		} );
 	}
 
-	addCategory( title ) {
-		this.addPage( 'Category:' + title, 'test' );
+	async addCategory( title ) {
+		await this.addPage( 'Category:' + title, 'test' );
 	}
 
-	addTemplate( title ) {
-		this.addPage( 'Template:' + title, 'test' );
+	async addTemplate( title ) {
+		await this.addPage( 'Template:' + title, 'test' );
 	}
 }
 module.exports = new SearchPage();

@@ -11,10 +11,8 @@ exports.config = { ...config,
 
 	suites: {
 		daily: [
-			'./tests/selenium/specs/defaultNamespaces.js',
-			'./tests/selenium/specs/paginationLinks.js',
-			'./tests/selenium/specs/searchPage.js',
-			'./tests/selenium/specs/searchSubmit.js'
+			'./tests/selenium/specs/*.js'
 		]
-	}
+	},
+	maxInstances: 4
 };
