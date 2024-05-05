@@ -1,8 +1,7 @@
 'use strict';
 const Api = require( 'wdio-mediawiki/Api' ),
 	Page = require( 'wdio-mediawiki/Page' ),
-	Util = require( 'wdio-mediawiki/Util' ),
-	url = require( 'url' );
+	Util = require( 'wdio-mediawiki/Util' );
 
 class TextInputField {
 	constructor( selector ) {
@@ -193,7 +192,7 @@ class SearchPage extends Page {
 	}
 
 	async formWasSubmitted() {
-		return Object.prototype.hasOwnProperty.call( await this.getQueryFromUrl(), 'profile' );
+		return ( await this.getQueryFromUrl() ).has( 'profile' );
 	}
 
 	async advancedSearchIsCollapsed() {
@@ -201,12 +200,11 @@ class SearchPage extends Page {
 	}
 
 	async getSearchQueryFromUrl() {
-		return ( await this.getQueryFromUrl() ).search;
+		return ( await this.getQueryFromUrl() ).get( 'search' );
 	}
 
 	async getQueryFromUrl() {
-		// eslint-disable-next-line n/no-deprecated-api
-		return url.parse( await browser.getUrl(), true ).query;
+		return new URL( await browser.getUrl() ).searchParams;
 	}
 
 	async getSelectedNamespaceIDs() {
