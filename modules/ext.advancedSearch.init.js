@@ -50,6 +50,9 @@ const forceFileTypeNamespaceWhenSearchForFileType = function ( $searchField, sta
  */
 const setSearchSubmitTrigger = function ( $search, $searchField, state, queryCompiler ) {
 	$search.on( 'submit', function () {
+		// T354107: This can actually trigger more than once; undo before we try again
+		$searchField.siblings( 'input[type=hidden]' ).remove();
+
 		const $form = $( this );
 		// Force a GET request when "Remember selection for future searches" isn't checked and
 		// no user setting will be written to the database.
@@ -59,7 +62,7 @@ const setSearchSubmitTrigger = function ( $search, $searchField, state, queryCom
 		forceFileTypeNamespaceWhenSearchForFileType( $searchField, state );
 		const compiledQuery = ( $searchField.val() + ' ' + queryCompiler.compileSearchQuery( state ) ).trim(),
 			$compiledSearchField = $( '<input>' ).prop( {
-				name: $searchField.prop( 'name' ),
+				name: 'search',
 				type: 'hidden'
 			} ).val( compiledQuery );
 		$searchField.prop( 'name', '' )
