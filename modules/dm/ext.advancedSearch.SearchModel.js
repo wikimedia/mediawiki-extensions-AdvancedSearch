@@ -122,11 +122,11 @@ SearchModel.prototype.removeField = function ( fieldId ) {
  * @param {string} nsId
  */
 SearchModel.prototype.removeNamespace = function ( nsId ) {
-	const index = this.getNamespaces().indexOf( nsId );
+	const index = this.namespaces.indexOf( nsId );
 	if ( index !== -1 ) {
-		this.getNamespaces().splice( index, 1 );
+		this.namespaces.splice( index, 1 );
+		this.emitUpdate();
 	}
-	this.emitUpdate();
 };
 
 /**
@@ -239,7 +239,7 @@ SearchModel.prototype.sortNamespacesByNumber = function ( namespaces ) {
  * @param {string[]} namespaces
  */
 SearchModel.prototype.setNamespaces = function ( namespaces ) {
-	const previousNamespaces = this.namespaces.slice( 0 );
+	const previousNamespaces = this.namespaces.slice();
 
 	this.namespaces = this.sortNamespacesByNumber( namespaces );
 
