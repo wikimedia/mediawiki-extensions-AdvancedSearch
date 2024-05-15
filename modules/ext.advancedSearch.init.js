@@ -29,9 +29,7 @@ const {
  * @param {SearchModel} state
  */
 const forceFileTypeNamespaceWhenSearchForFileType = function ( $searchField, state ) {
-	if ( state.fileTypeIsSelected() &&
-		state.fileNamespaceIsSelected()
-	) {
+	if ( state.fileTypeIsSelected() && !state.fileNamespaceIsSelected() ) {
 		// Can't call state.setNamespaces with file namespace here,
 		// because this function is called inside the onSubmit event
 		// and the DOM update from the state change would take too long.

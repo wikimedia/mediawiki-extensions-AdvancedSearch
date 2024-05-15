@@ -72,8 +72,8 @@ SearchModel.prototype.storeField = function ( fieldId, value ) {
 		this.resetFileDimensionFields();
 	}
 
-	const namespaces = this.getNamespaces();
-	if ( fieldId === 'filetype' && namespaces.indexOf( SearchModel.FILE_NAMESPACE ) === -1 ) {
+	if ( fieldId === 'filetype' && !this.fileNamespaceIsSelected() ) {
+		const namespaces = this.getNamespaces();
 		namespaces.push( SearchModel.FILE_NAMESPACE );
 		this.setNamespaces( namespaces );
 	}
@@ -215,7 +215,7 @@ SearchModel.prototype.fileTypeIsSelected = function () {
  * @return {boolean}
  */
 SearchModel.prototype.fileNamespaceIsSelected = function () {
-	return this.getNamespaces().indexOf( SearchModel.FILE_NAMESPACE ) === -1;
+	return this.namespaces.indexOf( SearchModel.FILE_NAMESPACE ) !== -1;
 };
 
 /**
