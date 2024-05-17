@@ -1,10 +1,10 @@
 'use strict';
 
 /**
- * @param {SearchModel} state
- *
  * @class
+ *
  * @constructor
+ * @param {SearchModel} state
  */
 const FieldElementBuilder = function ( state ) {
 	this.state = state;

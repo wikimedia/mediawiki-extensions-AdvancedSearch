@@ -3,10 +3,12 @@
 /**
  * @class
  * @extends OO.ui.TagMultiselectWidget
- * @constructor
  *
+ * @constructor
  * @param {SearchModel} store
  * @param {Object} config
+ * @param {string} config.fieldId Field name
+ * @param {string} [config.placeholder=""]
  */
 const ArbitraryWordInput = function ( store, config ) {
 	this.store = store;
@@ -77,6 +79,9 @@ ArbitraryWordInput.prototype.updatePlaceholder = function () {
 	this.input.$input.attr( 'placeholder', this.getTextForPlaceholder() );
 };
 
+/**
+ * @return {string}
+ */
 ArbitraryWordInput.prototype.getTextForPlaceholder = function () {
 	return this.getValue().length ? '' : this.placeholderText;
 };

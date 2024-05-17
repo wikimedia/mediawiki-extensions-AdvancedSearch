@@ -3,7 +3,7 @@
 /**
  * Get the default search namespace ids from user settings
  *
- * @param {Object} userSettings User settings like in mw.user.fields.values
+ * @param {Object.<string,string>} userSettings User settings like in mw.user.fields.values
  * @return {string[]} Namespace ids
  */
 const getDefaultNamespaces = function ( userSettings ) {

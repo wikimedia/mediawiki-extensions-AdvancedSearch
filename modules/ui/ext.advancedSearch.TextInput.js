@@ -3,10 +3,11 @@
 /**
  * @class
  * @extends OO.ui.TextInputWidget
- * @constructor
  *
+ * @constructor
  * @param {SearchModel} store
  * @param {Object} config
+ * @param {string} config.fieldId Field name
  */
 const TextInput = function ( store, config ) {
 	this.store = store;

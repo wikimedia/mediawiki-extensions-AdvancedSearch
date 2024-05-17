@@ -3,10 +3,11 @@
 /**
  * @class
  * @extends OO.ui.DropdownInputWidget
- * @constructor
  *
+ * @constructor
  * @param {SearchModel} store
  * @param {Object} config
+ * @param {string} config.fieldId Field name
  */
 
 const StoreListener = function ( store, config ) {

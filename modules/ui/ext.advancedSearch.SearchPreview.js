@@ -8,6 +8,10 @@ const fieldIsImageDimension = function ( fieldId ) {
 	return /^file[hw]$/.test( fieldId );
 };
 
+/**
+ * @param {string} name
+ * @return {string}
+ */
 const lookupTranslationForSortMethod = function ( name ) {
 	// The following messages are used here:
 	// * advancedsearch-sort-preview-create-timestamp-asc
@@ -20,6 +24,10 @@ const lookupTranslationForSortMethod = function ( name ) {
 	return msg.exists() ? msg.text() : name;
 };
 
+/**
+ * @param {string} fieldId
+ * @return {string}
+ */
 const lookupTranslationForLabel = function ( fieldId ) {
 	// The following messages are used here:
 	// * advancedsearch-field-deepcategory

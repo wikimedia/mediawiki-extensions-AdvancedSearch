@@ -4,9 +4,9 @@ const MultiselectLookup = require( '../dm/ext.advancedSearch.MultiselectLookup.j
 
 /**
  * @class
- * @extends OO.ui.MultiselectLookup
- * @constructor
+ * @extends MultiselectLookup
  *
+ * @constructor
  * @param {SearchModel} store
  * @param {Object} config
  */

@@ -11,8 +11,9 @@ const cloneReferenceTypeValue = function ( value ) {
 
 /**
  * @class
- * @constructor
  * @mixes OO.EventEmitter
+ *
+ * @constructor
  * @param {string[]} [defaultNamespaces=[]] The namespaces selected by default (for new searches)
  * @param {Object} [defaultFieldValues={}] Defaults for search field values
  */

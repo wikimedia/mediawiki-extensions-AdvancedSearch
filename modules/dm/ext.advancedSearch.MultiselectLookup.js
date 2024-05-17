@@ -2,16 +2,28 @@
 
 const TitleCache = require( './ext.advancedSearch.TitleCache.js' );
 
+/**
+ * @param {OO.ui.TagItemWidget} item
+ */
 const markNonExistent = function ( item ) {
 	item.$label.addClass( 'new' );
 };
 
+/**
+ * @param {OO.ui.TagItemWidget} item
+ * @param {TitleCache} queryCache
+ */
 const markPageExistence = function ( item, queryCache ) {
 	if ( queryCache.get( item.getLabel() ) === 'NO' ) {
 		markNonExistent( item );
 	}
 };
 
+/**
+ * @param {Object} res API response
+ * @param {MultiselectLookup} self
+ * @return {string[]}
+ */
 const populateCache = function ( res, self ) {
 	const pages = [];
 	for ( const i in res.query.pages ) {
@@ -26,13 +38,24 @@ const populateCache = function ( res, self ) {
 
 /**
  * @param {string} name
- * @param {string} namespace
+ * @param {string} namespace Lowercase namespace name, e.g. "category" or "template"
  * @return {mw.Title|null}
  */
 const getTitle = function ( name, namespace ) {
 	return mw.Title.newFromText( name, mw.config.get( 'wgNamespaceIds' )[ namespace ] );
 };
 
+/**
+ * @class
+ * @extends OO.ui.TagMultiselectWidget
+ *
+ * @constructor
+ * @param {SearchModel} store
+ * @param {Object} config
+ * @param {string} config.fieldId Field name
+ * @param {string} config.lookupId Lowercase namespace name, e.g. "category" or "template"
+ * @param {mw.Api} [config.api]
+ */
 const MultiselectLookup = function ( store, config ) {
 	config = $.extend( {}, config, {
 		allowArbitrary: true,
@@ -73,6 +96,9 @@ MultiselectLookup.prototype.populateFromStore = function () {
 	}
 };
 
+/**
+ * @param {string|string[]} valueObject
+ */
 MultiselectLookup.prototype.setValue = function ( valueObject ) {
 	const names = Array.isArray( valueObject ) ? valueObject : [ valueObject ];
 	// Initialize with "PENDING" value to avoid new request in createTagItemWidget
@@ -89,6 +115,10 @@ MultiselectLookup.prototype.setValue = function ( valueObject ) {
 	}.bind( this ) );
 };
 
+/**
+ * @param {string} name
+ * @return {jQuery.Promise}
+ */
 MultiselectLookup.prototype.searchForPageInNamespace = function ( name ) {
 	const deferred = $.Deferred(),
 		self = this;
@@ -116,6 +146,10 @@ MultiselectLookup.prototype.searchForPageInNamespace = function ( name ) {
 	return deferred.promise();
 };
 
+/**
+ * @param {string[]} names
+ * @return {jQuery.Promise}
+ */
 MultiselectLookup.prototype.searchForPagesInNamespace = function ( names ) {
 	const deferred = $.Deferred(),
 		self = this;
@@ -150,6 +184,11 @@ MultiselectLookup.prototype.searchForPagesInNamespace = function ( names ) {
 	return deferred.promise();
 };
 
+/**
+ * @param {string} data
+ * @param {string} label
+ * @return {OO.ui.TagItemWidget}
+ */
 MultiselectLookup.prototype.createTagItemWidget = function ( data, label ) {
 	label = label || data;
 	const title = getTitle( label, this.lookupId ),
