@@ -22,18 +22,6 @@ const SearchField = function ( id, defaultValue ) {
 	this.defaultValue = defaultValue || '';
 };
 
-SearchField.prototype.createWidget = function ( state, config ) { // eslint-disable-line no-unused-vars
-	throw new Error( 'You must implement the createWidget function' );
-};
-
-SearchField.prototype.createLayout = function ( widget, config, state ) { // eslint-disable-line no-unused-vars
-	throw new Error( 'You must implement the createLayout function' );
-};
-
-SearchField.prototype.formatSearchValue = function ( value ) { // eslint-disable-line no-unused-vars
-	throw new Error( 'You must implement the formatSearchValue function' );
-};
-
 /**
  * @param {Object} obj
  * @param {string} obj.id
