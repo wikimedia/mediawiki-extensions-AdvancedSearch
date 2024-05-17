@@ -102,9 +102,12 @@ const NamespacePresets = function ( store, presetProvider, config ) {
 
 OO.inheritClass( NamespacePresets, OO.ui.CheckboxMultiselectInputWidget );
 
+/**
+ * @param {OO.ui.CheckboxMultioptionWidget} newValue
+ */
 NamespacePresets.prototype.updateStoreFromPresets = function ( newValue ) {
 	const key = newValue.getData();
-	if ( newValue.selected ) {
+	if ( newValue.isSelected() ) {
 		this.store.setNamespaces( arrayConcatUnique(
 			this.presets[ key ].namespaces,
 			this.store.getNamespaces() )
