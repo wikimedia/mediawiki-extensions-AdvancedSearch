@@ -15,12 +15,7 @@
 	} );
 
 	const getDummyCheckbox = function ( selected ) {
-		return {
-			getData: function () {
-				return 'all';
-			},
-			selected: selected
-		};
+		return new OO.ui.CheckboxMultioptionWidget( { data: 'all', selected: selected } );
 	};
 
 	QUnit.test( 'Passing a provider function creates namespace presets from the provider', function ( assert ) {
