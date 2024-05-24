@@ -5,7 +5,7 @@
  * @constructor
  *
  * @property {SearchField[]} fields
- * @property {Object} groupLookup Field ID => group name
+ * @property {Object} groupLookup Field name => group name
  * @property {string[]} frozenGroups
  */
 const FieldCollection = function () {

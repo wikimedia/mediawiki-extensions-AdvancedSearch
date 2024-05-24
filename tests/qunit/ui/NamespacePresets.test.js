@@ -133,7 +133,7 @@
 			} );
 
 		assert.false( Object.prototype.hasOwnProperty.call( presets.presets, 'notvalid' ) );
-		assert.true( warningLogger.calledWith( 'AdvancedSearch namespace preset "notvalid" contains unknown namespace ID' ) );
+		assert.true( warningLogger.calledWith( 'AdvancedSearch namespace preset "notvalid" contains unknown namespace id' ) );
 	} );
 
 	QUnit.test( 'Preset is initially selected and stays when adding unrelated values', function ( assert ) {

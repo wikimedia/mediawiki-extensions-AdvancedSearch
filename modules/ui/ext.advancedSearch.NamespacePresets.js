@@ -4,7 +4,7 @@ const { arrayConcatUnique, arrayContains } = require( '../ext.advancedSearch.uti
 
 const validateNamespacePreset = function ( presetProvider, namespaceIDs, presetName ) {
 	if ( !presetProvider.namespaceIdsAreValid( namespaceIDs ) ) {
-		mw.log.warn( 'AdvancedSearch namespace preset "' + presetName + '" contains unknown namespace ID' );
+		mw.log.warn( 'AdvancedSearch namespace preset "' + presetName + '" contains unknown namespace id' );
 		return false;
 	}
 	if ( namespaceIDs.length === 0 ) {
@@ -15,7 +15,7 @@ const validateNamespacePreset = function ( presetProvider, namespaceIDs, presetN
 };
 
 /**
- * Prepare static namespace ID presets for improved performance during later processing
+ * Prepare static namespace id presets for improved performance during later processing
  *
  * @param {Object.<string,Object>} presets
  * @param {NamespacePresetProviders} presetProvider

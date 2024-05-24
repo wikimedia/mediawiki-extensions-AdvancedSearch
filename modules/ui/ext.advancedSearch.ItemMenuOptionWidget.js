@@ -51,6 +51,7 @@ const ItemMenuOptionWidget = function ( config ) {
 };
 
 OO.inheritClass( ItemMenuOptionWidget, OO.ui.MenuOptionWidget );
+
 // prevents a visual jump when selecting a menu option
 ItemMenuOptionWidget.static.scrollIntoViewOnSelect = false;
 

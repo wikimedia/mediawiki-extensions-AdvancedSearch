@@ -51,7 +51,7 @@ You can place the code for adding new fields in the [`common.js` page](https://w
 
 #### id
 
-A unique ID for the field.
+A unique name for the field.
 
 #### defaultValue
 

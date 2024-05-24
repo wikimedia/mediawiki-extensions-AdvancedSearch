@@ -1,10 +1,10 @@
 'use strict';
 
 /**
- * Get the default search namespace IDs from user settings
+ * Get the default search namespace ids from user settings
  *
  * @param {Object} userSettings User settings like in mw.user.fields.values
- * @return {string[]} Namespace IDs
+ * @return {string[]} Namespace ids
  */
 const getDefaultNamespaces = function ( userSettings ) {
 	const defaultNamespaces = [];

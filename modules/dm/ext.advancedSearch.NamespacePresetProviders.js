@@ -4,7 +4,7 @@ const getDefaultNamespaces = require( './ext.advancedSearch.getDefaultNamespaces
 const { arrayContains } = require( '../ext.advancedSearch.util.js' );
 
 /**
- * @param {Object.<int,string>} namespaces Mapping namespace IDs to localized names
+ * @param {Object.<int,string>} namespaces Mapping namespace ids to localized names
  * @constructor
  */
 const NamespacePresetProviders = function ( namespaces ) {
@@ -47,7 +47,7 @@ NamespacePresetProviders.prototype.getNamespaceIdsFromProvider = function ( prov
 			if ( id in self.namespaces ) {
 				return true;
 			}
-			mw.log.warn( 'AdvancedSearch namespace preset provider "' + providerName + '" returned invalid namespace ID' );
+			mw.log.warn( 'AdvancedSearch namespace preset provider "' + providerName + '" returned invalid namespace id' );
 			return false;
 		} );
 };

@@ -161,7 +161,7 @@ const buildPaneElement = function ( state, fields, advancedOptionsBuilder ) {
  * @param {jQuery} header
  * @param {NamespacePresets} presets
  * @param {NamespaceFilters} selection
- * @param {Object.<int,string>} searchableNamespaces Mapping namespace IDs to localized names
+ * @param {Object.<int,string>} searchableNamespaces Mapping namespace ids to localized names
  * @return {jQuery}
  */
 const buildNamespacesPaneElement = function ( state, header, presets, selection, searchableNamespaces ) {
@@ -186,7 +186,7 @@ const buildNamespacesPaneElement = function ( state, header, presets, selection,
 };
 
 /**
- * @param {Object.<int,string>} searchableNamespaces Mapping namespace IDs to localized names
+ * @param {Object.<int,string>} searchableNamespaces Mapping namespace ids to localized names
  * @return {string[]}
  */
 const getNamespacesFromUrl = function ( searchableNamespaces ) {
@@ -213,7 +213,7 @@ const getDefaultsFromConfig = function ( fields ) {
 };
 
 /**
- * @param {Object.<int,string>} searchableNamespaces Mapping namespace IDs to localized names
+ * @param {Object.<int,string>} searchableNamespaces Mapping namespace ids to localized names
  * @param {FieldCollection} fieldCollection
  * @return {SearchModel}
  */

@@ -11,8 +11,8 @@ class SearchableNamespaceListBuilder {
 
 	/**
 	 * Get a curated list of namespaces. Adds Main namespace and removes unnamed namespaces
-	 * @param string[] $configNamespaces Key is namespace ID and value namespace string
-	 * @return string[]
+	 * @param array<int,string> $configNamespaces Mapping namespace ids to localized names
+	 * @return array<int,string>
 	 */
 	public static function getCuratedNamespaces( array $configNamespaces ): array {
 		// Make sure the main namespace is listed with a non-empty name
