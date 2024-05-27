@@ -64,10 +64,7 @@ NamespaceFilters.prototype.prettifyNamespaces = function ( namespaces ) {
  * @inheritdoc
  */
 NamespaceFilters.prototype.createMenuWidget = function ( menuConfig ) {
-	return new MenuSelectWidget(
-		this.store,
-		menuConfig
-	);
+	return new MenuSelectWidget( menuConfig );
 };
 
 /**
