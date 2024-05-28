@@ -5,11 +5,12 @@ const ItemMenuOptionWidget = require( './ext.advancedSearch.ItemMenuOptionWidget
 /**
  * A floating menu widget for the filter list
  *
+ * @class
  * @extends OO.ui.MenuSelectWidget
  *
  * @constructor
  * @param {Object} config
- * @cfg {Object} namespaces
+ * @param {Object.<number,string>} config.namespaces
  */
 const MenuSelectWidget = function ( config ) {
 	MenuSelectWidget.super.call( this, $.extend( {

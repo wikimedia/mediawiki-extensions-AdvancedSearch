@@ -5,11 +5,12 @@ const CheckboxInputWidget = require( './ext.advancedSearch.CheckboxInputWidget.j
 /**
  * A menu option widget that shows the selection state with a checkbox.
  *
+ * @class
  * @extends OO.ui.MenuOptionWidget
  *
  * @constructor
  * @param {Object} config
- * @cfg {string} data
+ * @param {string} config.data
  */
 const ItemMenuOptionWidget = function ( config ) {
 	const $label = $( '<div>' )

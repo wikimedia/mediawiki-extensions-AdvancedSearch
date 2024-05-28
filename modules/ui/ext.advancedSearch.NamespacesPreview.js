@@ -3,12 +3,12 @@
 /**
  * @class
  * @extends OO.ui.Widget
- * @constructor
  *
+ * @constructor
  * @param {SearchModel} store
  * @param {Object} config
- * @cfg {boolean} [data=true] If the set of preview pills should be visible
- * @cfg {Object.<int,string>} namespacesLabels
+ * @param {boolean} [config.data=true] If the set of preview pills should be visible
+ * @param {Object.<int,string>} config.namespacesLabels
  */
 const NamespacesPreview = function ( store, config ) {
 	config = $.extend( {

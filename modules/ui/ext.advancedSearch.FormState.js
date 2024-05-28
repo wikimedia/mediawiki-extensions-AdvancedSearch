@@ -3,11 +3,11 @@
 /**
  * @class
  * @extends OO.ui.HiddenInputWidget
- * @constructor
  *
+ * @constructor
  * @param {SearchModel} store
  * @param {Object} config
- * @cfg {string} name
+ * @param {string} config.name
  */
 const FormState = function ( store, config ) {
 	this.store = store;

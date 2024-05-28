@@ -78,12 +78,12 @@ const prepareOptions = function ( presets ) {
 /**
  * @class
  * @extends OO.ui.CheckboxMultiselectInputWidget
- * @constructor
  *
+ * @constructor
  * @param {SearchModel} store
  * @param {NamespacePresetProviders} presetProvider
  * @param {Object} config
- * @cfg {Object.<string,Object>} presets
+ * @param {Object.<string,Object>} [config.presets={}]
  */
 const NamespacePresets = function ( store, presetProvider, config ) {
 	this.store = store;

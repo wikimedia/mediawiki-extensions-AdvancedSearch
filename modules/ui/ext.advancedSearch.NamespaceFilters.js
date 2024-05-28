@@ -5,11 +5,11 @@ const MenuSelectWidget = require( './ext.advancedSearch.MenuSelectWidget.js' );
 /**
  * @class
  * @extends OO.ui.MenuTagMultiselectWidget
- * @constructor
  *
+ * @constructor
  * @param {SearchModel} store
  * @param {Object} config
- * @cfg {Object} [namespaces={}] Namespace id => Namespace label (similar to mw.config.get( 'wgFormattedNamespaces' ) )
+ * @param {Object} [config.namespaces={}] Namespace id => Namespace label (similar to mw.config.get( 'wgFormattedNamespaces' ) )
  */
 const NamespaceFilters = function ( store, config ) {
 	this.store = store;
