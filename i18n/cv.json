@@ -72,5 +72,7 @@
 	"advancedsearch-namespaces-preset-general-help": "Пӗтӗмӗшле пулӑшу",
 	"advancedsearch-namespaces-preset-discussion": "Сӳтсе явнисем",
 	"advancedsearch-namespaces-placeholder": "Ятсен уҫлӑхне хуш…",
-	"prefs-advancedsearch": "Анлă шырав"
+	"prefs-advancedsearch": "Анлă шырав",
+	"advancedsearch-preference-help": "Анлӑ шырав Ятарлӑ:Шырав страница ҫине хушма аналлӑ формӑна хушать. Ҫакӑ эсир шырав синтаксисне пӗлместӗр пулин те ятарлӑ шырав ирттерме май туса парать. Вӑлах ҫавӑн пекех ятсен уҫлӑхне суйлассине те улӑштарать.",
+	"advancedsearch-preference-disable": "Special:Search-па усӑ курнӑ чухне анлӑ шырав интерфейсне кӑтартмалла мар."
 }
