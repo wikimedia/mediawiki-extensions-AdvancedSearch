@@ -39,5 +39,6 @@
 	"advancedsearch-sort-preview-create-timestamp-desc": "Түзүлгөн датасы",
 	"advancedsearch-namespaces-search-in": "Төмөнкү аталыш мейкиндиктеринен издөө:",
 	"advancedsearch-namespaces-remember": "Мындан кийинки издөөлөрдө да колдонулсун",
-	"advancedsearch-namespaces-placeholder": "Аталыш мейкиндиктерин кошуу..."
+	"advancedsearch-namespaces-placeholder": "Аталыш мейкиндиктерин кошуу...",
+	"prefs-advancedsearch": "Кеңейтилген издөө"
 }
