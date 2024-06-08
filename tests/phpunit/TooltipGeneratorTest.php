@@ -3,8 +3,8 @@
 namespace AdvancedSearch\Tests;
 
 use AdvancedSearch\TooltipGenerator;
+use MediaWiki\Message\Message;
 use MediaWikiIntegrationTestCase;
-use Message;
 use MessageLocalizer;
 
 /**

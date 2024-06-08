@@ -5,6 +5,7 @@ namespace AdvancedSearch\Tests;
 use AdvancedSearch\Hooks;
 use ExtensionRegistry;
 use MediaWiki\Config\HashConfig;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -12,7 +13,6 @@ use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\User;
 use MediaWikiIntegrationTestCase;
 use MimeAnalyzer;
-use RequestContext;
 use Wikimedia\TestingAccessWrapper;
 
 /**
