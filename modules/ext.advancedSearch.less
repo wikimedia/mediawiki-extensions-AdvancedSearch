@@ -58,7 +58,8 @@
 }
 
 .mw-advancedSearch-fieldContainer {
-	background: linear-gradient( rgba( 0, 0, 0, 0.1 ), #fff 0.5em );
+	// FIXME: This is a non-standard styling, which should be unified with Codex.
+	background: linear-gradient( rgba( 0, 0, 0, 0.1 ), @background-color-base 0.5em );
 	border: @border-subtle;
 	border-top: 0;
 	box-sizing: border-box;
@@ -75,7 +76,7 @@
 	/* FIXME: Why does this try to mimic a <fieldset><legend> element instead of being an actual one? */
 	/* See https://phabricator.wikimedia.org/T151061 and https://gerrit.wikimedia.org/r/#/c/325243/  */
 	.oo-ui-labelElement > .oo-ui-fieldsetLayout-header > .oo-ui-labelElement-label {
-		background: #fff;
+		background: @background-color-base;
 		color: @color-subtle;
 		font-weight: normal;
 		font-size: 1em;
@@ -108,11 +109,11 @@
 
 	&.oo-ui-widget-enabled.oo-ui-buttonWidget {
 		&.oo-ui-buttonElement-pressed > .oo-ui-buttonElement-button {
-			background-color: #f8f9fa;
+			background-color: @background-color-interactive-subtle;
 		}
 
 		> .oo-ui-buttonElement-button:hover {
-			background-color: #f8f9fa;
+			background-color: @background-color-interactive-subtle;
 			color: @color-base;
 		}
 	}
@@ -177,7 +178,8 @@
 }
 
 .mw-advancedSearch-namespace-selection {
-	background: linear-gradient( rgba( 0, 0, 0, 0.1 ), #f8f9fa 0.5em );
+	// FIXME: This is a non-standard styling, which should be unified with Codex.
+	background: linear-gradient( rgba( 0, 0, 0, 0.1 ), @background-color-interactive-subtle 0.5em );
 	border: @border-base;
 	box-sizing: border-box;
 	max-width: 50em;
@@ -218,7 +220,7 @@
 }
 
 .oo-ui-popupWidget-popup .mw-advancedSearch-tooltip-head {
-	color: #72777d;
+	color: @color-subtle;
 	// Override MW core's h1-h6 top padding.
 	padding-top: 0;
 	font-size: 110%;
