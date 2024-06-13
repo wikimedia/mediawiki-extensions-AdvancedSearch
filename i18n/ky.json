@@ -4,7 +4,7 @@
 			"Bosogo"
 		]
 	},
-	"advancedsearch-options-pane-head": "Кеңейтилген издөө:",
+	"advancedsearch-options-pane-head": "Дыкат издөө:",
 	"advancedsearch-optgroup-text": "Барактын текстинен издөө",
 	"advancedsearch-optgroup-structure": "Түзүм",
 	"advancedsearch-optgroup-files": "Файлдар жана сүрөттөр",
@@ -40,5 +40,5 @@
 	"advancedsearch-namespaces-search-in": "Төмөнкү аталыш мейкиндиктеринен издөө:",
 	"advancedsearch-namespaces-remember": "Мындан кийинки издөөлөрдө да колдонулсун",
 	"advancedsearch-namespaces-placeholder": "Аталыш мейкиндиктерин кошуу...",
-	"prefs-advancedsearch": "Кеңейтилген издөө"
+	"prefs-advancedsearch": "Дыкат издөө"
 }
