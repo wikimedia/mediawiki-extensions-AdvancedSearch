@@ -144,9 +144,18 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			->with( 'Translate' )
 			->willReturn( true );
 
+		$special = $this->newSpecialSearchPage(
+			$this->newAnonymousUser(),
+			'/wiki/Special%3ASearch',
+			[ 'search' => 'test' ]
+		);
+
 		/** @var Hooks $hook */
 		$hook = TestingAccessWrapper::newFromObject( $this->newInstance() );
+
 		$vars = $hook->getJsConfigVars(
+			$special->getRequest(),
+			$special->getUser(),
 			new RequestContext(),
 			$this->createMock( Language::class ),
 			new HashConfig( [
@@ -195,12 +204,25 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			[ 'search' => 'test' ]
 		);
 
-		$ret = $this->newInstance()->onSpecialPageBeforeExecute( $special, null );
-		$this->assertFalse( $ret );
-		$this->assertSame(
-			'http://hooks.test/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1',
-			$special->getOutput()->getRedirect()
+		/** @var Hooks $hook */
+		$hook = TestingAccessWrapper::newFromObject( $this->newInstance() );
+
+		$vars = $hook->getJsConfigVars(
+			$special->getRequest(),
+			$special->getUser(),
+			new RequestContext(),
+			$this->createMock( Language::class ),
+			new HashConfig( [
+				'AdvancedSearchNamespacePresets' => '<NAMESPACEPRESETS>',
+				'ExtensionAssetsPath' => '<PATH>',
+				'FileExtensions' => [ '<EXT>' ],
+				'AdvancedSearchDeepcatEnabled' => true
+			] ),
+			[],
+			$this->createMock( ExtensionRegistry::class )
 		);
+
+		$this->assertSame( [ 0 ], $vars['advancedSearch.defaultNamespaces'] );
 	}
 
 	public function testAdvancedSearchForcesNamespacedUrlsForDirectPageAccess() {
@@ -213,13 +235,25 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			[ 'search' => 'test' ]
 		);
 
-		$ret = $this->newInstance()->onSpecialPageBeforeExecute( $special, null );
-		$this->assertFalse( $ret );
+		/** @var Hooks $hook */
+		$hook = TestingAccessWrapper::newFromObject( $this->newInstance() );
 
-		$this->assertSame(
-			'http://hooks.test/wiki/Special%3ASearch?ns0=1',
-			$special->getOutput()->getRedirect()
+		$vars = $hook->getJsConfigVars(
+			$special->getRequest(),
+			$special->getUser(),
+			new RequestContext(),
+			$this->createMock( Language::class ),
+			new HashConfig( [
+				'AdvancedSearchNamespacePresets' => '<NAMESPACEPRESETS>',
+				'ExtensionAssetsPath' => '<PATH>',
+				'FileExtensions' => [ '<EXT>' ],
+				'AdvancedSearchDeepcatEnabled' => true
+			] ),
+			[],
+			$this->createMock( ExtensionRegistry::class )
 		);
+
+		$this->assertSame( [ 0 ], $vars['advancedSearch.defaultNamespaces'] );
 	}
 
 	public function testAdvancedSearchForcesUserSpecificNamespacedUrls() {
@@ -232,13 +266,25 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			[ 'search' => 'test' ]
 		);
 
-		$ret = $this->newInstance()->onSpecialPageBeforeExecute( $special, null );
-		$this->assertFalse( $ret );
+		/** @var Hooks $hook */
+		$hook = TestingAccessWrapper::newFromObject( $this->newInstance() );
 
-		$this->assertSame(
-			'http://hooks.test/w/index.php?search=test&title=Special%3ASearch&go=Go&ns0=1&ns6=1&ns10=1',
-			$special->getOutput()->getRedirect()
+		$vars = $hook->getJsConfigVars(
+			$special->getRequest(),
+			$special->getUser(),
+			new RequestContext(),
+			$this->createMock( Language::class ),
+			new HashConfig( [
+				'AdvancedSearchNamespacePresets' => '<NAMESPACEPRESETS>',
+				'ExtensionAssetsPath' => '<PATH>',
+				'FileExtensions' => [ '<EXT>' ],
+				'AdvancedSearchDeepcatEnabled' => true
+			] ),
+			[],
+			$this->createMock( ExtensionRegistry::class ),
 		);
+
+		$this->assertSame( [ 0, 6, 10 ], $vars['advancedSearch.defaultNamespaces'] );
 	}
 
 	/**
