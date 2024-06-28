@@ -6,6 +6,7 @@ use AdvancedSearch\Hooks;
 use ExtensionRegistry;
 use MediaWiki\Config\HashConfig;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -29,10 +30,10 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		// Dummy language code makes sure no actual localization is loaded
 		$this->setUserLang( 'qqx' );
 
-		$this->setMwGlobals( [
-			'wgLanguageCode' => 'qqx',
-			'wgNamespacesToBeSearchedDefault' => [ NS_MAIN => true ],
-			'wgServer' => '//hooks.test'
+		$this->overrideConfigValues( [
+			MainConfigNames::LanguageCode => 'qqx',
+			MainConfigNames::NamespacesToBeSearchedDefault => [ NS_MAIN => true ],
+			MainConfigNames::Server => '//hooks.test'
 		] );
 	}
 
@@ -77,9 +78,8 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			$this->fail( 'Anonymous users cant have user options' );
 		}
 
-		$this->setMwGlobals( [
-			'wgNamespacesToBeSearchedDefault' => $namespacesToBeSearchedDefault,
-		] );
+		$this->overrideConfigValue( MainConfigNames::NamespacesToBeSearchedDefault,
+			$namespacesToBeSearchedDefault );
 
 		$user = $isNamed ? $this->getTestUser()->getUser() : new User();
 		$userOptionsManager = $this->getServiceContainer()->getUserOptionsManager();
