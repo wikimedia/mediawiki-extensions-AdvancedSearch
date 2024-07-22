@@ -4,8 +4,12 @@ const getDefaultNamespaces = require( './ext.advancedSearch.getDefaultNamespaces
 const { arrayContains } = require( '../ext.advancedSearch.util.js' );
 
 /**
- * @param {Object.<int,string>} namespaces Mapping namespace ids to localized names
+ * @class
+ * @property {Object.<int,string>} namespaces
+ * @property {Object.<string,Function>} providerFunctions
+ *
  * @constructor
+ * @param {Object.<int,string>} namespaces Mapping namespace ids to localized names
  */
 const NamespacePresetProviders = function ( namespaces ) {
 	this.namespaces = namespaces;
@@ -29,6 +33,10 @@ const NamespacePresetProviders = function ( namespaces ) {
 
 OO.initClass( NamespacePresetProviders );
 
+/**
+ * @param {string} providerName
+ * @return {boolean}
+ */
 NamespacePresetProviders.prototype.hasProvider = function ( providerName ) {
 	return Object.prototype.hasOwnProperty.call( this.providerFunctions, providerName );
 };

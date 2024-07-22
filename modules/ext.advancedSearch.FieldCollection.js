@@ -1,12 +1,12 @@
 'use strict';
 
 /**
- * @class FieldCollection
- * @constructor
- *
+ * @class
  * @property {SearchField[]} fields
- * @property {Object} groupLookup Field name => group name
+ * @property {Object.<string,string>} groupLookup Field name => group name
  * @property {string[]} frozenGroups
+ *
+ * @constructor
  */
 const FieldCollection = function () {
 	this.fields = [];

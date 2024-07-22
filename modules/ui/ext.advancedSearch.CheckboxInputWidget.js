@@ -3,6 +3,7 @@
 /**
  * A widget representing a single toggle filter
  *
+ * @class
  * @extends OO.ui.CheckboxInputWidget
  *
  * @constructor

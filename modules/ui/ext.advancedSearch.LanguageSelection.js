@@ -3,6 +3,10 @@
 const ClassesForDropdownOptions = require( './mixins/ext.advancedSearch.ClassesForDropdownOptions.js' );
 const StoreListener = require( './ext.advancedSearch.StoreListener.js' );
 
+/**
+ * @param {LanguageOptionProvider} optionProvider
+ * @return {Object[]}
+ */
 const getOptions = function ( optionProvider ) {
 	const languages = optionProvider.getLanguages();
 	return [ { data: '', label: mw.msg( 'advancedsearch-inlanguage-default' ) } ].concat( languages );
@@ -10,9 +14,9 @@ const getOptions = function ( optionProvider ) {
 
 /**
  * @class
- * @extends OO.ui.DropdownInputWidget
- * @constructor
+ * @extends StoreListener
  *
+ * @constructor
  * @param {SearchModel} store
  * @param {LanguageOptionProvider} optionProvider
  * @param {Object} config

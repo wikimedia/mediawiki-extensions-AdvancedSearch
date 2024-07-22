@@ -5,11 +5,13 @@
  *
  * @class
  * @extends OO.ui.FieldLayout
- * @constructor
  *
+ * @constructor
  * @param {SearchModel} store
  * @param {OO.ui.Widget} widget
  * @param {Object} config
+ * @param {Function} config.checkVisibility A callback that returns false when this element should
+ *  be hidden
  */
 const ImageDimensionLayout = function ( store, widget, config ) {
 	this.store = store;

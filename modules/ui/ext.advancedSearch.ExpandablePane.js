@@ -8,8 +8,8 @@
  * @class
  * @extends OO.ui.Widget
  * @mixes OO.ui.mixin.IndicatorElement
- * @constructor
  *
+ * @constructor
  * @param {Object} config
  * @param {boolean} [config.data=false] True to expand the pane by default
  * @param {string} config.suffix

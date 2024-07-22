@@ -3,12 +3,8 @@
 /**
  * Base class for search form fields
  *
- * @class SearchField
- * @param {string} id
- * @param {string|string[]} [defaultValue='']
- * @constructor
  * @abstract
- *
+ * @class
  * @property {string} id
  * @property {string|string[]} defaultValue
  * @property {Function} formatter A callback returning a string
@@ -16,6 +12,10 @@
  * @property {boolean} [customEventHandling]
  * @property {Function} [enabled] A callback returning a boolean
  * @property {Function} layout A callback returning a {@see OO.ui.FieldLayout}
+ *
+ * @constructor
+ * @param {string} id
+ * @param {string|string[]} [defaultValue='']
  */
 const SearchField = function ( id, defaultValue ) {
 	this.id = id;

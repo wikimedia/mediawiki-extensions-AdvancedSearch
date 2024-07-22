@@ -9,6 +9,10 @@ const KNOWN_DOCUMENT_TYPES = [
 	'pdf'
 ];
 
+/**
+ * @param {string} fileExtension
+ * @return {boolean}
+ */
 const isKnownDocumentType = function ( fileExtension ) {
 	return KNOWN_DOCUMENT_TYPES.indexOf( fileExtension ) !== -1;
 };
@@ -22,7 +26,7 @@ const getTopLevelMimeType = function ( mimeType ) {
 };
 
 /**
- * @param {Object} options
+ * @param {Object.<string,Object[]>} options
  * @param {string} groupName
  * @param {Object} option
  */
@@ -41,9 +45,9 @@ const addFileOption = function ( options, groupName, option ) {
 };
 
 /**
- * @param {Object} options
- * @param {Object} allowedMimeTypes File extension => MIME type
- * @return {Object}
+ * @param {Object.<string,Object[]>} options
+ * @param {Object.<string,string>} allowedMimeTypes File extension => MIME type
+ * @return {Object.<string,Object[]>}
  */
 const getFileOptions = function ( options, allowedMimeTypes ) {
 	for ( const fileExtension in allowedMimeTypes ) {
@@ -65,9 +69,11 @@ const getFileOptions = function ( options, allowedMimeTypes ) {
 
 /**
  * @class
- * @constructor
+ * @property {Object.<string,string>} mimeTypes
+ * @property {Object.<string,Object[]>} options
  *
- * @param {Object} mimeTypes File extension => MIME type
+ * @constructor
+ * @param {Object.<string,string>} mimeTypes File extension => MIME type
  */
 const FileTypeOptionProvider = function ( mimeTypes ) {
 	this.mimeTypes = mimeTypes;

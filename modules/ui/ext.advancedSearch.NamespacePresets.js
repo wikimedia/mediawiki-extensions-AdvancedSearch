@@ -2,6 +2,12 @@
 
 const { arrayConcatUnique, arrayContains } = require( '../ext.advancedSearch.util.js' );
 
+/**
+ * @param {NamespacePresetProviders} presetProvider
+ * @param {string[]} namespaceIDs
+ * @param {string} presetName
+ * @return {boolean}
+ */
 const validateNamespacePreset = function ( presetProvider, namespaceIDs, presetName ) {
 	if ( !presetProvider.namespaceIdsAreValid( namespaceIDs ) ) {
 		mw.log.warn( 'AdvancedSearch namespace preset "' + presetName + '" contains unknown namespace id' );

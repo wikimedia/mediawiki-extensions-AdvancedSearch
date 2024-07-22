@@ -1,9 +1,11 @@
 'use strict';
 
 /**
- * @param {SearchField[]} searchFields
  * @class
+ * @property {SearchField[]} fields
+ *
  * @constructor
+ * @param {SearchField[]} searchFields
  */
 const QueryCompiler = function ( searchFields ) {
 	this.fields = searchFields;

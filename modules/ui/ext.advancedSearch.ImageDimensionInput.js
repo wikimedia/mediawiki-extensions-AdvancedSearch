@@ -7,10 +7,11 @@
  *
  * @class
  * @extends OO.ui.Widget
- * @constructor
  *
+ * @constructor
  * @param {SearchModel} store
  * @param {Object} config
+ * @param {string} config.fieldId Field name
  */
 const ImageDimensionInput = function ( store, config ) {
 	this.fieldId = config.fieldId;
@@ -76,6 +77,9 @@ ImageDimensionInput.prototype.getValue = function () {
 	return this.data;
 };
 
+/**
+ * @param {string[]} newValue
+ */
 ImageDimensionInput.prototype.setValue = function ( newValue ) {
 	this.data = newValue;
 	this.operatorInput.setValue( this.data[ 0 ] );

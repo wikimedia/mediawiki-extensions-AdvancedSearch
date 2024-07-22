@@ -3,6 +3,10 @@
 const ClassesForDropdownOptions = require( './mixins/ext.advancedSearch.ClassesForDropdownOptions.js' );
 const getSortMethods = require( '../dm/ext.advancedSearch.getSortMethods.js' );
 
+/**
+ * @param {string} selected
+ * @return {Object[]}
+ */
 const getOptions = function ( selected ) {
 	const options = getSortMethods().map( function ( name ) {
 		// The currently active sort method already appears in the list, don't add it again
@@ -25,6 +29,14 @@ const getOptions = function ( selected ) {
 	return options;
 };
 
+/**
+ * @class
+ * @extends OO.ui.DropdownInputWidget
+ *
+ * @constructor
+ * @param {SearchModel} store
+ * @param {Object} [config={}]
+ */
 const SortPreference = function ( store, config ) {
 	this.store = store;
 	config = $.extend( {

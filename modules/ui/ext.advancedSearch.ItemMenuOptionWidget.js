@@ -10,7 +10,7 @@ const CheckboxInputWidget = require( './ext.advancedSearch.CheckboxInputWidget.j
  *
  * @constructor
  * @param {Object} config
- * @param {string} config.data
+ * @param {string} config.data Value associated with this item, usually the namespace id
  */
 const ItemMenuOptionWidget = function ( config ) {
 	const $label = $( '<div>' )
