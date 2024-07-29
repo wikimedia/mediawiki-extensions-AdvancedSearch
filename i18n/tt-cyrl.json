@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Ерней",
-			"Ильнар"
+			"Ильнар",
+			"Don Alessandro"
 		]
 	},
 	"advancedsearch-desc": "[[Special:Search]] битендә киңәйтелгән эзләү мөмкинлекләрен куллану",
@@ -49,7 +50,7 @@
 	"advancedsearch-sort-preview-last-edit-desc": "Үзгәртү вакыты",
 	"advancedsearch-sort-preview-create-timestamp-desc": "Төзү вакыты",
 	"advancedsearch-namespaces-search-in": "Эзләү:",
-	"advancedsearch-namespaces-remember": "Сайлаганын киләчәк эзләүләр өчен истә калдырырга",
+	"advancedsearch-namespaces-remember": "Сайлаганын киләчәк эзләүләр өчен истә калдыру",
 	"advancedsearch-namespaces-preset-all": "Барысы",
 	"advancedsearch-namespaces-preset-default": "Гадәттәге",
 	"advancedsearch-namespaces-preset-general-help": "Гомуми белешмә",

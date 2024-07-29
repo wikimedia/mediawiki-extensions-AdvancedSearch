@@ -14,7 +14,9 @@
 			"Wmr",
 			"Xiplus",
 			"予弦",
-			"神樂坂秀吉"
+			"神樂坂秀吉",
+			"LowensteinYang",
+			"列维劳德"
 		]
 	},
 	"advancedsearch-desc": "在 [[Special:Search]] 提供進階搜尋功能的輕鬆存取",
@@ -83,7 +85,7 @@
 	"advancedsearch-namespaces-preset-default": "預設",
 	"advancedsearch-namespaces-preset-general-help": "綜合說明",
 	"advancedsearch-namespaces-preset-discussion": "討論",
-	"advancedsearch-namespaces-placeholder": "加入命名空間…",
+	"advancedsearch-namespaces-placeholder": "新增命名空間…",
 	"prefs-advancedsearch": "進階搜尋",
 	"advancedsearch-preference-help": "進階搜尋可添加表單至 Special:Search page。這能讓您即使不瞭解搜尋語法，也能執行特定搜尋。這也會變更命名空間選擇的方式。",
 	"advancedsearch-preference-disable": "當使用 Special:Search 時不要顯示進階搜尋介面"
