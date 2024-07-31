@@ -16,6 +16,7 @@
 	},
 	"advancedsearch-desc": "Helpottaa laajennettujen hakuominaisuuksien käyttöä sivulle [[Special:Search|Toiminnot:Haku]]",
 	"advancedsearch-options-pane-head": "Laajennettu haku:",
+	"advancedsearch-options-pane-preview-list": "Tällä hetkellä käytetyt hakusanat",
 	"advancedsearch-optgroup-text": "Hae sivun tekstistä",
 	"advancedsearch-optgroup-structure": "Rakenne",
 	"advancedsearch-optgroup-files": "Tiedostot ja kuvat",
