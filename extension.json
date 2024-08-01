@@ -59,7 +59,13 @@
 	},
 	"HookHandlers": {
 		"main": {
-			"class": "AdvancedSearch\\Hooks"
+			"class": "AdvancedSearch\\Hooks",
+			"services": [
+				"UserOptionsLookup",
+				"LanguageNameUtils",
+				"SearchEngineConfig",
+				"MimeAnalyzer"
+			]
 		}
 	},
 	"Hooks": {
