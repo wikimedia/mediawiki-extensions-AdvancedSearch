@@ -149,8 +149,8 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			new RequestContext(),
 			new HashConfig( [
 				'AdvancedSearchNamespacePresets' => '<NAMESPACEPRESETS>',
-				'ExtensionAssetsPath' => '<PATH>',
-				'FileExtensions' => [ '<EXT>' ],
+				MainConfigNames::ExtensionAssetsPath => '<PATH>',
+				MainConfigNames::FileExtensions => [ '<EXT>' ],
 				'AdvancedSearchDeepcatEnabled' => true
 			] ),
 			$extensionRegistry
