@@ -263,12 +263,10 @@ const addDefaultFields = function ( fieldCollection ) {
 				}
 				return keyword + optionalQuotes( val );
 			},
-			init: function ( state, config ) {
-				return new MultiselectLookup( state, Object.assign( {}, config, {
-					classes: [ 'mw-advancedSearch-deepCategory' ],
-					lookupId: 'category'
-				} ) );
-			},
+			init: ( state, config ) => new MultiselectLookup( state, Object.assign( {}, config, {
+				classes: [ 'mw-advancedSearch-deepCategory' ],
+				namespaceId: 14
+			} ) ),
 			layout: createDefaultLayout
 		} ),
 		'structure'
@@ -284,12 +282,10 @@ const addDefaultFields = function ( fieldCollection ) {
 				}
 				return 'hastemplate:' + optionalQuotes( val );
 			},
-			init: function ( state, config ) {
-				return new MultiselectLookup( state, Object.assign( {}, config, {
-					classes: [ 'mw-advancedSearch-template' ],
-					lookupId: 'template'
-				} ) );
-			},
+			init: ( state, config ) => new MultiselectLookup( state, Object.assign( {}, config, {
+				classes: [ 'mw-advancedSearch-template' ],
+				namespaceId: 10
+			} ) ),
 			customEventHandling: true,
 			layout: createDefaultLayout
 		} ),

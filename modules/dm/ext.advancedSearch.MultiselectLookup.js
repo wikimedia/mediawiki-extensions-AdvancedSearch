@@ -37,15 +37,6 @@ const populateCache = function ( res, queryCache ) {
 };
 
 /**
- * @param {string} name
- * @param {string} namespace Lowercase namespace name, e.g. "category" or "template"
- * @return {mw.Title|null}
- */
-const getTitle = function ( name, namespace ) {
-	return mw.Title.newFromText( name, mw.config.get( 'wgNamespaceIds' )[ namespace ] );
-};
-
-/**
  * @class
  * @extends OO.ui.TagMultiselectWidget
  *
@@ -53,7 +44,7 @@ const getTitle = function ( name, namespace ) {
  * @param {SearchModel} store
  * @param {Object} config
  * @param {string} config.fieldId Field name
- * @param {string} config.lookupId Lowercase namespace name, e.g. "category" or "template"
+ * @param {number} config.namespaceId
  * @param {mw.Api} [config.api]
  */
 const MultiselectLookup = function ( store, config ) {
@@ -65,7 +56,7 @@ const MultiselectLookup = function ( store, config ) {
 	} );
 	this.store = store;
 	this.fieldId = config.fieldId;
-	this.lookupId = config.lookupId;
+	this.namespaceId = config.namespaceId;
 	this.api = config.api || new mw.Api();
 	this.queryCache = new TitleCache();
 
@@ -121,7 +112,7 @@ MultiselectLookup.prototype.setValue = function ( valueObject ) {
 MultiselectLookup.prototype.searchForPageInNamespace = function ( name ) {
 	const deferred = $.Deferred();
 
-	const title = getTitle( name, this.lookupId );
+	const title = this.getPrefixedTitle( name );
 	if ( !title ) {
 		this.queryCache[ name ] = 'NO';
 		return deferred.resolve( [] ).promise();
@@ -152,7 +143,7 @@ MultiselectLookup.prototype.searchForPagesInNamespace = function ( names ) {
 	const deferred = $.Deferred();
 
 	names = names.map( ( name ) => {
-		const title = getTitle( name, this.lookupId );
+		const title = this.getPrefixedTitle( name );
 		if ( !title ) {
 			this.queryCache[ name ] = 'NO';
 			return null;
@@ -185,7 +176,7 @@ MultiselectLookup.prototype.searchForPagesInNamespace = function ( names ) {
  */
 MultiselectLookup.prototype.createTagItemWidget = function ( data, label ) {
 	label = label || data;
-	const title = getTitle( label, this.lookupId ),
+	const title = this.getPrefixedTitle( label ),
 		$tagItemLabel = $( '<a>' );
 
 	if ( title ) {
@@ -240,7 +231,7 @@ MultiselectLookup.prototype.getLookupRequest = function () {
 	return this.api.get( {
 		action: 'opensearch',
 		search: value,
-		namespace: mw.config.get( 'wgNamespaceIds' )[ this.lookupId ]
+		namespace: this.namespaceId
 	} );
 };
 
@@ -274,8 +265,18 @@ MultiselectLookup.prototype.getLookupMenuOptionsFromData = function ( data ) {
 };
 
 /**
+ * @private
+ * @param {string} pageName
+ * @return {mw.Title|null}
+ */
+MultiselectLookup.prototype.getPrefixedTitle = function ( pageName ) {
+	return mw.Title.newFromText( pageName, this.namespaceId );
+};
+
+/**
  * Get the name part of a page title containing a namespace
  *
+ * @private
  * @param {string} pageTitle
  * @return {string}
  */
