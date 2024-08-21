@@ -11,7 +11,7 @@
 		const queryTemplatePages = sinon.match( function ( value ) {
 			return value.action === 'query' &&
 				value.prop === 'info' &&
-				value.titles.match( /Template:/ );
+				value.titles.startsWith( mw.config.get( 'wgFormattedNamespaces' )[ 10 ] );
 		} );
 		sandbox = sinon.sandbox.create();
 		store = {
