@@ -4,7 +4,8 @@
 			"NMW03",
 			"Toghrul Rahimli",
 			"Wertuose",
-			"Şeyx Şamil"
+			"Şeyx Şamil",
+			"Nemoralis"
 		]
 	},
 	"advancedsearch-desc": "[[Special:Search]]-dakı inkişaf etmiş axtarış xüsusiyyətlərini istifadə etmə",
@@ -31,6 +32,7 @@
 	"advancedsearch-help-general-instruction": "$1 üçün ətraflı təlimat",
 	"advancedsearch-help-plain": ";Təsvir\n:Başlıqda və ya mətndə bu sözləri axtarır.\n;Aşağıdakılara diqqət yetirin\n:* Buraya bir neçə söz daxil edilə bilər.\n:* Durğu işarələri və digər rəqəm olmayan simvollar (iki nöqtə və vergül istisna olmaqla) nəzərə alınmayacaq.\n:* Axtardığınız sözlərdən birini və ya bir neçəsini ehtiva etməyən nəticələr ola bilər.\n:* Söz köklənməsi tətbiq olunur. Misal: ''avtomobil'' daxil edilərsə, axtarışda ''avtomobillər'' də nəzərə alınacaq. Köklənən söz dilə xasdır.\n;Kömək səhifəsi\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Full_text_search Tam mətn axtarışı]\n;Sintaksis-ekvivalent normal axtarışda\n: <code>viki küçəsi avtomobil</code>",
 	"advancedsearch-help-phrase": ";Açqlama\n:Müəyyən simvollar ardıcıllığını axtarır. Durğu işarələri nəzərə alınmır.\n;Aşağıdakılara diqqət yetirin \n:(yalnız dırnaq işarələrindən istifadə edərkən etibarlıdır, aşağıdakı nümunəyə nəzər yetirin) \n:* Axtarış ifadələrini vergül və ya boşluqla ayırın, məsələn <code>\"sabahınız xeyir\"</code> , <code>\"hamıya salam!\"</code> .\n:* Durğu işarələri və digər rəqəm olmayan simvollar (iki nöqtə və vergül istisna olmaqla) nəzərə alınmayacaq.\n:* Axtarış böyük hərflərə həssas deyil.\n:* Söz köklənməsi tətbiq edilmir. \n;Kömək səhifəsi\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Sözlər, ifadələr və dəyişdiricilər]\n;Normal axtarışda sintaksis-ekvivalent\n:Dırnaq içərisindəki sözlər, məsələn, <code>\"Begin at the beginning\"</code> .",
+	"advancedsearch-help-or": ";Açıqlama\n;Axtarış terminlərindən ən azı biri səhifəyə daxil edilməlidir.\n;Kömək səhifəsi\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Sözlər, ifadələr və dəyişdiricilər]\n;Normal axtarışda sintaksis-ekvivalent\n: Aralarında <code>OR</code> olan <code>Laptop OR Notebook</code> sözləri kimi.",
 	"advancedsearch-placeholder-exact-text": "\"pişik keçini sevir\"",
 	"advancedsearch-inlanguage-default": "Dili seçin",
 	"advancedsearch-filetype-section-types": "Əsas fayl tipləri",
@@ -54,10 +56,13 @@
 	"advancedsearch-sort-create-timestamp-asc": "Yaradılma tarixi – əvvəlki ən üstdə",
 	"advancedsearch-sort-create-timestamp-desc": "Yaradılma tarixi – sonuncu ən üstdə",
 	"advancedsearch-sort-preview-relevance": "Uyğunluğa görə",
+	"advancedsearch-sort-preview-last-edit-asc": "ən son redaktə olunmuş",
 	"advancedsearch-sort-preview-last-edit-desc": "Redaktə tarixinə görə",
+	"advancedsearch-sort-preview-create-timestamp-asc": "ən son yaradılmış",
 	"advancedsearch-sort-preview-create-timestamp-desc": "Yaradılma tarixinə görə",
 	"advancedsearch-namespaces-search-in": "Axtar:",
 	"advancedsearch-namespaces-remember": "Gələcək axtarışlar üçün seçimi yadda saxla",
+	"advancedsearch-namespaces-pane-preview-list": "Hazırda aktiv ad fəzası filtrləri",
 	"advancedsearch-namespaces-preset-all": "Hamısı",
 	"advancedsearch-namespaces-preset-default": "Standart",
 	"advancedsearch-namespaces-preset-general-help": "Kömək",
