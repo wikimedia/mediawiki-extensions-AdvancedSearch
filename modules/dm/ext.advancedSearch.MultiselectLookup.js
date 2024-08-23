@@ -22,7 +22,7 @@ const markPageExistence = function ( item, queryCache ) {
 /**
  * @param {Object} res API response
  * @param {MultiselectLookup} self
- * @return {string[]}
+ * @return {string[]} Subset of titles that are known to exist, otherwise empty
  */
 const populateCache = function ( res, self ) {
 	const pages = [];
@@ -102,17 +102,16 @@ MultiselectLookup.prototype.populateFromStore = function () {
 MultiselectLookup.prototype.setValue = function ( valueObject ) {
 	const names = Array.isArray( valueObject ) ? valueObject : [ valueObject ];
 	// Initialize with "PENDING" value to avoid new request in createTagItemWidget
-	names.forEach( function ( value ) {
+	names.forEach( ( value ) => {
 		this.queryCache.set( value, 'PENDING' );
-	}.bind( this ) );
+	} );
 	MultiselectLookup.super.prototype.setValue.call( this, valueObject );
 
-	this.searchForPagesInNamespace( names ).then( function () {
-		const self = this;
-		this.items.forEach( function ( item ) {
-			markPageExistence( item, self.queryCache );
+	this.searchForPagesInNamespace( names ).then( () => {
+		this.items.forEach( ( item ) => {
+			markPageExistence( item, this.queryCache );
 		} );
-	}.bind( this ) );
+	} );
 };
 
 /**
@@ -136,10 +135,10 @@ MultiselectLookup.prototype.searchForPageInNamespace = function ( name ) {
 		action: 'query',
 		prop: 'info',
 		titles: title.getPrefixedText()
-	} ).done( function ( res ) {
+	} ).done( ( res ) => {
 		const pages = populateCache( res, self );
 		deferred.resolve( pages );
-	} ).fail( function () {
+	} ).fail( () => {
 		deferred.reject.bind( deferred );
 	} );
 
@@ -161,11 +160,9 @@ MultiselectLookup.prototype.searchForPagesInNamespace = function ( names ) {
 			return null;
 		}
 		return title.getPrefixedText();
-	} ).filter( function ( name ) {
-		return name !== null;
-	} );
+	} ).filter( ( name ) => name );
 	if ( names.length === 0 ) {
-		return deferred.resolve( [] ).promise();
+		return deferred.resolve().promise();
 	}
 
 	this.api.get( {
@@ -173,11 +170,10 @@ MultiselectLookup.prototype.searchForPagesInNamespace = function ( names ) {
 		action: 'query',
 		prop: 'info',
 		titles: names.join( '|' )
-	} ).done( function ( res ) {
-		const pages = [];
+	} ).done( ( res ) => {
 		populateCache( res, self );
-		deferred.resolve( pages );
-	} ).fail( function () {
+		deferred.resolve();
+	} ).fail( () => {
 		deferred.reject.bind( deferred );
 	} );
 
@@ -240,12 +236,12 @@ MultiselectLookup.prototype.getLookupRequest = function () {
 	const value = this.input.getValue();
 
 	// @todo More elegant way to prevent empty API requests?
-	if ( value.trim() === '' ) {
+	if ( !value.trim() ) {
 		return $.Deferred().reject();
 	}
 	return this.api.get( {
 		action: 'opensearch',
-		search: this.input.getValue(),
+		search: value,
 		namespace: mw.config.get( 'wgNamespaceIds' )[ this.lookupId ]
 	} );
 };
@@ -261,11 +257,10 @@ MultiselectLookup.prototype.getLookupCacheDataFromResponse = function ( response
  * @inheritdoc OO.ui.mixin.LookupElement
  */
 MultiselectLookup.prototype.getLookupMenuOptionsFromData = function ( data ) {
-	let i, pageNameWithoutNamespace;
 	const items = [];
 	const currentValues = this.getValue();
-	for ( i = 0; i < data[ 1 ].length; i++ ) {
-		pageNameWithoutNamespace = this.removeNamespace( data[ 1 ][ i ] );
+	for ( let i = 0; i < data[ 1 ].length; i++ ) {
+		const pageNameWithoutNamespace = this.removeNamespace( data[ 1 ][ i ] );
 
 		// do not show suggestions for items already selected
 		if ( currentValues.indexOf( pageNameWithoutNamespace ) !== -1 ) {
