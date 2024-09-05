@@ -41,9 +41,7 @@
 		model.setNamespaces = function ( namespaces ) {
 			assert.deepEqual( namespaces, [ '1', '2' ] );
 		};
-		filter.getValue = function () {
-			return [ '1', '2' ];
-		};
+		filter.getValue = () => [ '1', '2' ];
 
 		filter.onValueUpdate();
 	} );

@@ -8,15 +8,9 @@
 		const field = createSearchFieldFromObject( {
 			id: 'test',
 			// overriding the abstract methods with dummy functions, in production code init and layout must return factory functions instead of values.
-			init: function () {
-				return 'foo';
-			},
-			layout: function () {
-				return 'bar';
-			},
-			formatter: function () {
-				return 'baz';
-			}
+			init: () => 'foo',
+			layout: () => 'bar',
+			formatter: () => 'baz'
 		} );
 		assert.true( field instanceof SearchField );
 		assert.strictEqual( field.id, 'test' );

@@ -41,9 +41,7 @@ QUnit.module( 'ext.advancedSearch.dm.NamespacePresetProviders', () => {
 
 	QUnit.test( 'A single invalid name does not render the entire preset invalid', ( assert ) => {
 		const providerInitializationFunction = function ( providerFunctions ) {
-			providerFunctions.partlyInvalid = function () {
-				return [ '0', '1', '4711' ];
-			};
+			providerFunctions.partlyInvalid = () => [ '0', '1', '4711' ];
 		};
 		const hook = mw.hook( 'advancedSearch.initNamespacePresetProviders' );
 

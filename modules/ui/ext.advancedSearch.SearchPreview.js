@@ -204,7 +204,9 @@ SearchPreview.prototype.formatValue = function ( fieldId, value ) {
 	}
 
 	if ( Array.isArray( value ) ) {
-		return value.map( ( v ) => String( v ).trim() ).filter( ( v ) => v !== '' ).join( mw.msg( 'comma-separator' ) );
+		return value.map( ( v ) => String( v ).trim() )
+			.filter( ( v ) => v )
+			.join( mw.msg( 'comma-separator' ) );
 	}
 
 	return value.trim();

@@ -119,9 +119,9 @@ NamespacePresets.prototype.updateStoreFromPresets = function ( newValue ) {
 			this.store.getNamespaces() )
 		);
 	} else {
-		this.store.setNamespaces( this.store.getNamespaces().filter( function ( id ) {
-			return !this.presets[ key ].namespaces.includes( id );
-		}, this ) );
+		this.store.setNamespaces( this.store.getNamespaces().filter(
+			( id ) => !this.presets[ key ].namespaces.includes( id )
+		) );
 	}
 };
 

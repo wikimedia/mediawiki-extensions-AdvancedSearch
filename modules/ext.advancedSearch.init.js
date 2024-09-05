@@ -131,9 +131,7 @@ const buildPaneElement = function ( state, fields, advancedOptionsBuilder ) {
 	} );
 
 	const pane = new ExpandablePane( {
-		dependentPaneContentBuilder: function () {
-			return advancedOptionsBuilder.buildAllFieldsElement( fields );
-		},
+		dependentPaneContentBuilder: () => advancedOptionsBuilder.buildAllFieldsElement( fields ),
 		label: mw.msg( 'advancedsearch-options-pane-head' ),
 		$buttonContent: searchPreview.$element,
 		tabIndex: 0,
@@ -168,9 +166,7 @@ const buildNamespacesPaneElement = function ( state, header, presets, selection,
 	} );
 	const $container = $( '<div>' ).addClass( 'mw-advancedSearch-namespace-selection' );
 	const pane = new ExpandablePane( {
-		dependentPaneContentBuilder: function () {
-			return $container.append( header ).append( presets.$element ).append( selection.$element );
-		},
+		dependentPaneContentBuilder: () => $container.append( header, presets.$element, selection.$element ),
 		label: mw.msg( 'advancedsearch-namespaces-search-in' ),
 		$buttonContent: nsPreview.$element,
 		tabIndex: 0,

@@ -26,17 +26,10 @@ Object.assign( FieldElementBuilder.prototype, {
 		const self = this;
 
 		return function ( newValue ) {
-			if ( typeof newValue !== 'object' ) {
-				self.state.storeField( id, newValue );
-				return;
+			if ( Array.isArray( newValue ) ) {
+				newValue = newValue.map( ( v ) => typeof v === 'string' ? v : v.data );
 			}
-
-			self.state.storeField( id, newValue.map( ( valueObj ) => {
-				if ( typeof valueObj === 'string' ) {
-					return valueObj;
-				}
-				return valueObj.data;
-			} ) );
+			self.state.storeField( id, newValue );
 		};
 	},
 

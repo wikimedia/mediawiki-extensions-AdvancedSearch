@@ -86,11 +86,9 @@ MenuSelectWidget.prototype.getItemMatcher = function ( query, mode ) {
 		}
 	}
 
-	return function ( item ) {
-		return item.getData() in goodIds ||
-			// This is the default behavior from OO.ui.SelectWidget.getItemMatcher
-			normalizeForMatching( item.getMatchText() ).startsWith( normalizedQuery );
-	};
+	return ( item ) => item.getData() in goodIds ||
+		// This is the default behavior from OO.ui.SelectWidget.getItemMatcher
+		normalizeForMatching( item.getMatchText() ).startsWith( normalizedQuery );
 };
 
 module.exports = MenuSelectWidget;
