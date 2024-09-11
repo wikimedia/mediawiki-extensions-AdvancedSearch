@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Daud I.F. Argana",
+			"Ezagren",
 			"J Nia30",
 			"Kenrick95",
 			"Stevannus rua",
@@ -9,7 +10,7 @@
 		]
 	},
 	"advancedsearch-desc": "Akses mudah ke penelusuran tingkat lanjut di [[Special:Search]]",
-	"advancedsearch-options-pane-head": "Pencarian lanjut:",
+	"advancedsearch-options-pane-head": "Penelusuran lanjutan:",
 	"advancedsearch-options-pane-preview-list": "Istilah pencarian yang digunakan saat ini",
 	"advancedsearch-optgroup-text": "Cari dalam teks halaman",
 	"advancedsearch-optgroup-structure": "Struktur",
