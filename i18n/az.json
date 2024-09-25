@@ -5,7 +5,8 @@
 			"Nemoralis",
 			"Toghrul Rahimli",
 			"Wertuose",
-			"Şeyx Şamil"
+			"Şeyx Şamil",
+			"Əkrəm Cəfər"
 		]
 	},
 	"advancedsearch-desc": "[[Special:Search]]-dəki təkmil axtarış imkanlarına asan giriş",
@@ -20,7 +21,7 @@
 	"advancedsearch-field-or": "Bu sözlərdən biri",
 	"advancedsearch-field-not": "Bu sözlər olmayan",
 	"advancedsearch-field-subpageof": "Bu səhifənin alt səhifələri",
-	"advancedsearch-field-intitle": "Səhifə adında:",
+	"advancedsearch-field-intitle": "Səhifə adında",
 	"advancedsearch-field-deepcategory": "Bu kateqoriyalardakı səhifələr",
 	"advancedsearch-field-hastemplate": "Bu şablonları istifadə edən səhifələr",
 	"advancedsearch-field-inlanguage": "Bu dildə olan səhifələr",
