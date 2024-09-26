@@ -5,7 +5,8 @@
 			"Toghrul Rahimli",
 			"Wertuose",
 			"Şeyx Şamil",
-			"Nemoralis"
+			"Nemoralis",
+			"Əkrəm Cəfər"
 		]
 	},
 	"advancedsearch-desc": "[[Special:Search]]-dəki təkmil axtarış imkanlarına asan giriş",
@@ -20,7 +21,7 @@
 	"advancedsearch-field-or": "Bu sözlərdən biri",
 	"advancedsearch-field-not": "Bu sözlər olmayan",
 	"advancedsearch-field-subpageof": "Bu səhifənin alt səhifələri",
-	"advancedsearch-field-intitle": "Səhifə adında:",
+	"advancedsearch-field-intitle": "Səhifə adında",
 	"advancedsearch-field-deepcategory": "Bu kateqoriyalardakı səhifələr",
 	"advancedsearch-field-hastemplate": "Bu şablonları istifadə edən səhifələr",
 	"advancedsearch-field-inlanguage": "Bu dildə olan səhifələr",
@@ -33,6 +34,7 @@
 	"advancedsearch-help-plain": ";Təsvir\n:Başlıqda və ya mətndə bu sözləri axtarır.\n;Aşağıdakılara diqqət yetirin\n:* Buraya bir neçə söz daxil edilə bilər.\n:* Durğu işarələri və digər rəqəm olmayan simvollar (iki nöqtə və vergül istisna olmaqla) nəzərə alınmayacaq.\n:* Axtardığınız sözlərdən birini və ya bir neçəsini ehtiva etməyən nəticələr ola bilər.\n:* Söz köklənməsi tətbiq olunur. Misal: ''avtomobil'' daxil edilərsə, axtarışda ''avtomobillər'' də nəzərə alınacaq. Köklənən söz dilə xasdır.\n;Kömək səhifəsi\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Full_text_search Tam mətn axtarışı]\n;Sintaksis-ekvivalent normal axtarışda\n: <code>viki küçəsi avtomobil</code>",
 	"advancedsearch-help-phrase": ";Açqlama\n:Müəyyən simvollar ardıcıllığını axtarır. Durğu işarələri nəzərə alınmır.\n;Aşağıdakılara diqqət yetirin \n:(yalnız dırnaq işarələrindən istifadə edərkən etibarlıdır, aşağıdakı nümunəyə nəzər yetirin) \n:* Axtarış ifadələrini vergül və ya boşluqla ayırın, məsələn <code>\"sabahınız xeyir\"</code> , <code>\"hamıya salam!\"</code> .\n:* Durğu işarələri və digər rəqəm olmayan simvollar (iki nöqtə və vergül istisna olmaqla) nəzərə alınmayacaq.\n:* Axtarış böyük hərflərə həssas deyil.\n:* Söz köklənməsi tətbiq edilmir. \n;Kömək səhifəsi\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Sözlər, ifadələr və dəyişdiricilər]\n;Normal axtarışda sintaksis-ekvivalent\n:Dırnaq içərisindəki sözlər, məsələn, <code>\"Begin at the beginning\"</code> .",
 	"advancedsearch-help-or": ";Açıqlama\n;Axtarış terminlərindən ən azı biri səhifəyə daxil edilməlidir.\n;Kömək səhifəsi\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Sözlər, ifadələr və dəyişdiricilər]\n;Normal axtarışda sintaksis-ekvivalent\n: Aralarında <code>OR</code> olan <code>Laptop OR Notebook</code> sözləri kimi.",
+	"advancedsearch-help-not": ";Açıqlama\n:Bu sözləri ehtiva edən səhifələri istisna edir.\n;Aşağıdakılara diqqət yetirin\n:* Söz köklənməsi tətbiq olunur. Misal: ''avtomobil'' daxil edilərsə, axtarışda ''avtomobillər'' də nəzərə alınacaq. Stemminq dilə xasdır.\n;Kömək səhifəsi\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Sözlər, ifadələr və dəyişdiricilər] \n;Normal axtarışda sintaksis ekvivalenti\n:Sözlərdən əvvəl <code>-</code> istifadə edilməlidir, məsələn <code>-pişik</code>.",
 	"advancedsearch-placeholder-exact-text": "\"pişik keçini sevir\"",
 	"advancedsearch-inlanguage-default": "Dili seçin",
 	"advancedsearch-filetype-section-types": "Əsas fayl tipləri",
