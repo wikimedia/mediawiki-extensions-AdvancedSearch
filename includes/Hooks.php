@@ -162,7 +162,7 @@ class Hooks implements
 	 * @return bool
 	 */
 	private static function isNamespacedSearch( WebRequest $request ): bool {
-		if ( $request->getRawVal( 'search', '' ) === '' ) {
+		if ( ( $request->getRawVal( 'search' ) ?? '' ) === '' ) {
 			return true;
 		}
 
