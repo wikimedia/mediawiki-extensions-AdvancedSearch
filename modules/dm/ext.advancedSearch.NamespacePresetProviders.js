@@ -51,7 +51,7 @@ NamespacePresetProviders.prototype.getNamespaceIdsFromProvider = function ( prov
 	return this.providerFunctions[ providerName ]( Object.keys( this.namespaces ) )
 		// Calling String() as a function casts numbers to strings
 		.map( String )
-		.filter( function ( id ) {
+		.filter( ( id ) => {
 			if ( id in self.namespaces ) {
 				return true;
 			}

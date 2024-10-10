@@ -22,7 +22,7 @@ const getOptions = function ( optionProvider ) {
  * @param {Object} config
  */
 const LanguageSelection = function ( store, optionProvider, config ) {
-	config = $.extend( { options: getOptions( optionProvider ) }, config );
+	config = Object.assign( { options: getOptions( optionProvider ) }, config );
 	this.className = 'mw-advancedSearch-inlanguage-';
 	LanguageSelection.super.call( this, store, config );
 };

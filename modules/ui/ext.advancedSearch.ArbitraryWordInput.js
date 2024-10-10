@@ -19,7 +19,7 @@ const ArbitraryWordInput = function ( store, config ) {
 
 	ArbitraryWordInput.super.call(
 		this,
-		$.extend( { allowArbitrary: true }, config )
+		Object.assign( { allowArbitrary: true }, config )
 	);
 
 	this.input.$input.on( 'input', this.buildTagsFromInput.bind( this ) );
@@ -30,9 +30,9 @@ const ArbitraryWordInput = function ( store, config ) {
 	}
 
 	// run initial size calculation after off-canvas construction (hidden parent node)
-	this.input.$input.on( 'visible', function () {
+	this.input.$input.on( 'visible', () => {
 		this.updateInputSize();
-	}.bind( this ) );
+	} );
 
 	this.populateFromStore();
 };
@@ -55,7 +55,7 @@ ArbitraryWordInput.prototype.buildTagsFromInput = function () {
 	if ( segments.length > 1 ) {
 		const self = this;
 
-		segments.forEach( function ( segment ) {
+		segments.forEach( ( segment ) => {
 			if ( self.isAllowedData( segment ) ) {
 				self.addTag( segment );
 			}

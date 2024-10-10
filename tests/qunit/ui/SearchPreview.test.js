@@ -7,7 +7,7 @@
 		store,
 		config;
 
-	QUnit.testStart( function () {
+	QUnit.testStart( () => {
 		sandbox = sinon.sandbox.create();
 		store = {
 			connect: sandbox.stub(),
@@ -18,13 +18,13 @@
 		config = {};
 	} );
 
-	QUnit.testDone( function () {
+	QUnit.testDone( () => {
 		sandbox.restore();
 	} );
 
 	QUnit.module( 'ext.advancedSearch.ui.SearchPreview' );
 
-	QUnit.test( 'Store data subscribed to and synced initially', function ( assert ) {
+	QUnit.test( 'Store data subscribed to and synced initially', ( assert ) => {
 		const updatePreviewSpy = sandbox.spy( SearchPreview.prototype, 'updatePreview' );
 
 		// eslint-disable-next-line no-new
@@ -34,7 +34,7 @@
 		assert.true( updatePreviewSpy.calledOnce );
 	} );
 
-	QUnit.test( 'Store state is reflected in preview', function ( assert ) {
+	QUnit.test( 'Store state is reflected in preview', ( assert ) => {
 		const generateTagSpy = sandbox.spy( SearchPreview.prototype, 'generateTag' );
 
 		store.getField.withArgs( 'somename' ).returns( 'field one value' );
@@ -54,7 +54,7 @@
 		assert.true( generateTagSpy.withArgs( 'another', 'field two value' ).calledOnce );
 	} );
 
-	QUnit.test( 'Fields are correctly selected for preview', function ( assert ) {
+	QUnit.test( 'Fields are correctly selected for preview', ( assert ) => {
 		const searchPreview = new SearchPreview( store, config );
 
 		assert.false( searchPreview.skipFieldInPreview( 'plain', 'searchme' ) );
@@ -77,7 +77,7 @@
 		assert.true( searchPreview.skipFieldInPreview( 'filew', [ '>', null ] ) );
 	} );
 
-	QUnit.test( 'Tag is generated', function ( assert ) {
+	QUnit.test( 'Tag is generated', ( assert ) => {
 		const messageStub = sandbox.stub( mw, 'msg' )
 			.withArgs( 'advancedsearch-field-somename' ).returns( 'my label' )
 			.withArgs( 'colon-separator' ).returns( ':' );
@@ -93,7 +93,7 @@
 		assert.strictEqual( $( '.oo-ui-labelElement-label span', element ).html(), 'my label:' );
 	} );
 
-	QUnit.test( 'Tag content is HTML-safe', function ( assert ) {
+	QUnit.test( 'Tag content is HTML-safe', ( assert ) => {
 		const searchPreview = new SearchPreview( store, config );
 		const tag = searchPreview.generateTag( 'whatever', '<script>alert("evil");</script>' );
 
@@ -102,7 +102,7 @@
 		assert.strictEqual( $( '.mw-advancedSearch-searchPreview-content', element ).html(), '<bdi>&lt;script&gt;alert("evil");&lt;/script&gt;</bdi>' );
 	} );
 
-	QUnit.test( 'Tag label is HTML-safe', function ( assert ) {
+	QUnit.test( 'Tag label is HTML-safe', ( assert ) => {
 		sandbox.stub( mw, 'msg' )
 			.withArgs( 'advancedsearch-field-whatever' ).returns( '<div>block</div>' )
 			.withArgs( 'colon-separator' ).returns( ':' );
@@ -114,7 +114,7 @@
 		assert.strictEqual( $( '.oo-ui-labelElement-label span', element ).html(), '&lt;div&gt;block&lt;/div&gt;:' );
 	} );
 
-	QUnit.test( 'Tag removals clears store', function ( assert ) {
+	QUnit.test( 'Tag removals clears store', ( assert ) => {
 		const searchPreview = new SearchPreview( store, config );
 		const tag = searchPreview.generateTag( 'somename', 'my field value' );
 
@@ -122,7 +122,7 @@
 		assert.true( store.removeField.withArgs( 'somename' ).calledOnce );
 	} );
 
-	QUnit.test( 'Showing rendered pills', function ( assert ) {
+	QUnit.test( 'Showing rendered pills', ( assert ) => {
 		config.fieldNames = [ 'one', 'two' ];
 
 		store.getField.withArgs( 'one' ).returns( 'field one value' );
@@ -134,7 +134,7 @@
 		assert.strictEqual( searchPreview.$element.find( '.mw-advancedSearch-searchPreview-previewPill' ).length, 3 );
 	} );
 
-	QUnit.test( 'Hiding removes pills', function ( assert ) {
+	QUnit.test( 'Hiding removes pills', ( assert ) => {
 		config.fieldNames = [ 'one', 'two' ];
 
 		const searchPreview = new SearchPreview( store, config );
@@ -143,7 +143,7 @@
 		assert.strictEqual( searchPreview.$element.find( '.mw-advancedSearch-searchPreview-previewPill' ).length, 0 );
 	} );
 
-	QUnit.test( 'Scalar values get formatted well', function ( assert ) {
+	QUnit.test( 'Scalar values get formatted well', ( assert ) => {
 		const searchPreview = new SearchPreview( store, config );
 
 		assert.strictEqual( searchPreview.formatValue( 'someOption', '' ), '' );
@@ -151,7 +151,7 @@
 		assert.strictEqual( searchPreview.formatValue( 'someOption', ' stray whitespace  ' ), 'stray whitespace' );
 	} );
 
-	QUnit.test( 'Array values get formatted well', function ( assert ) {
+	QUnit.test( 'Array values get formatted well', ( assert ) => {
 		const searchPreview = new SearchPreview( store, config );
 		sandbox.stub( mw, 'msg' ).withArgs( 'comma-separator' ).returns( ', ' );
 
@@ -160,7 +160,7 @@
 		assert.strictEqual( searchPreview.formatValue( 'someOption', [ '', ' stray', 'whitespace  ' ] ), 'stray, whitespace' );
 	} );
 
-	QUnit.test( 'Dimension values get formatted well', function ( assert ) {
+	QUnit.test( 'Dimension values get formatted well', ( assert ) => {
 		const searchPreview = new SearchPreview( store, config );
 		const translationStub = sandbox.stub( mw, 'msg' ).withArgs( 'word-separator' ).returns( ' ' );
 

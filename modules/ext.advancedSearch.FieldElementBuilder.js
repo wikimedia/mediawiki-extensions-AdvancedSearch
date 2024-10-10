@@ -10,7 +10,7 @@ const FieldElementBuilder = function ( state ) {
 	this.state = state;
 };
 
-$.extend( FieldElementBuilder.prototype, {
+Object.assign( FieldElementBuilder.prototype, {
 	/**
 	 * @type {SearchModel}
 	 * @private
@@ -31,7 +31,7 @@ $.extend( FieldElementBuilder.prototype, {
 				return;
 			}
 
-			self.state.storeField( id, newValue.map( function ( valueObj ) {
+			self.state.storeField( id, newValue.map( ( valueObj ) => {
 				if ( typeof valueObj === 'string' ) {
 					return valueObj;
 				}
@@ -70,7 +70,7 @@ $.extend( FieldElementBuilder.prototype, {
 		const self = this;
 		let group;
 
-		fieldCollection.fields.forEach( function ( field ) {
+		fieldCollection.fields.forEach( ( field ) => {
 			if ( typeof field.enabled === 'function' && !field.enabled() ) {
 				return;
 			}

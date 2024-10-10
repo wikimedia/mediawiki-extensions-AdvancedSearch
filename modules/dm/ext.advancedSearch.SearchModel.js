@@ -231,9 +231,7 @@ SearchModel.prototype.getNamespaces = function () {
  * @return {string[]}
  */
 SearchModel.prototype.sortNamespacesByNumber = function ( namespaces ) {
-	return namespaces.sort( function ( a, b ) {
-		return Number( a ) - Number( b );
-	} );
+	return namespaces.sort( ( a, b ) => Number( a ) - Number( b ) );
 };
 
 /**

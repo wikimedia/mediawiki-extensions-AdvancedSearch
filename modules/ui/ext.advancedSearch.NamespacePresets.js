@@ -29,7 +29,7 @@ const validateNamespacePreset = function ( presetProvider, namespaceIDs, presetN
  */
 const groomPresets = function ( presets, presetProvider ) {
 	const groomedPresets = {};
-	Object.keys( presets ).forEach( function ( key ) {
+	Object.keys( presets ).forEach( ( key ) => {
 		const presetConfig = presets[ key ],
 			preset = { label: presetConfig.label || key };
 
@@ -70,7 +70,7 @@ const groomPresets = function ( presets, presetProvider ) {
  */
 const prepareOptions = function ( presets ) {
 	// eslint-disable-next-line no-jquery/no-map-util
-	return $.map( presets, function ( preset, id ) {
+	return $.map( presets, ( preset, id ) => {
 		// The following messages are used here:
 		// * advancedsearch-namespaces-preset-all
 		// * advancedsearch-namespaces-preset-default

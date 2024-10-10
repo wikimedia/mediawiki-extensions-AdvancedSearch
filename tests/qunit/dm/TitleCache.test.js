@@ -4,7 +4,7 @@
 
 	QUnit.module( 'ext.advancedSearch.dm.TitleCache' );
 
-	QUnit.test( 'Getting and setting page names allows lowercase', function ( assert ) {
+	QUnit.test( 'Getting and setting page names allows lowercase', ( assert ) => {
 		const cache = new TitleCache();
 		cache.set( 'foo', 'OK' );
 
@@ -12,7 +12,7 @@
 		assert.strictEqual( cache.get( 'Foo' ), 'OK' );
 	} );
 
-	QUnit.test( 'Checking for value existence allows lowercase', function ( assert ) {
+	QUnit.test( 'Checking for value existence allows lowercase', ( assert ) => {
 		const cache = new TitleCache();
 		cache.set( 'foo', 'OK' );
 
@@ -21,7 +21,7 @@
 		assert.false( cache.has( 'bar' ) );
 	} );
 
-	QUnit.test( 'Different namespace does make a difference', function ( assert ) {
+	QUnit.test( 'Different namespace does make a difference', ( assert ) => {
 		const cache = new TitleCache();
 		cache.set( 'Template:Foo', 'OK' );
 
@@ -29,7 +29,7 @@
 		assert.false( cache.has( 'User:Foo' ) );
 	} );
 
-	QUnit.test( 'Different file name extension does make a difference', function ( assert ) {
+	QUnit.test( 'Different file name extension does make a difference', ( assert ) => {
 		const cache = new TitleCache();
 		cache.set( 'File name.jpg', 'OK' );
 

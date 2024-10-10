@@ -3,13 +3,13 @@
 const assert = require( 'assert' ),
 	SearchPage = require( '../pageobjects/search.page' );
 
-describe( 'Advanced Search', function () {
+describe( 'Advanced Search', () => {
 
-	beforeEach( async function () {
+	beforeEach( async () => {
 		await SearchPage.open();
 	} );
 
-	it( 'inserts advanced search elements on search page', async function () {
+	it( 'inserts advanced search elements on search page', async () => {
 		assert( await SearchPage.searchContainer.isDisplayed() );
 
 		await SearchPage.toggleInputFields();

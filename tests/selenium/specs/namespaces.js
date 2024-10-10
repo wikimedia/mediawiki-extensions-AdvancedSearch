@@ -3,13 +3,13 @@
 const assert = require( 'assert' ),
 	SearchPage = require( '../pageobjects/search.page' );
 
-describe( 'AdvancedSearch', function () {
+describe( 'AdvancedSearch', () => {
 
-	beforeEach( async function () {
+	beforeEach( async () => {
 		await SearchPage.open();
 	} );
 
-	it( 'namespace selection', async function () {
+	it( 'namespace selection', async () => {
 		await SearchPage.expandNamespacesPreview();
 
 		// do not allow remembering the selection for anon users
@@ -48,7 +48,7 @@ describe( 'AdvancedSearch', function () {
 		assert( await SearchPage.generalHelpPreset.isSelected(), 'marks a namespace preset checkbox after submit' );
 	} );
 
-	it( 're-adds filetype namespace after search when file type option has been selected but namespace has been removed', async function () {
+	it( 're-adds filetype namespace after search when file type option has been selected but namespace has been removed', async () => {
 		await SearchPage.toggleInputFields();
 
 		await SearchPage.searchTheseWords.put( 'dog' );
@@ -64,7 +64,7 @@ describe( 'AdvancedSearch', function () {
 		assert( ( await SearchPage.getSelectedNamespaceIDs() ).includes( SearchPage.FILE_NAMESPACE ) );
 	} );
 
-	it( 'adds/removes the namespace tag when the namespace option is clicked', async function () {
+	it( 'adds/removes the namespace tag when the namespace option is clicked', async () => {
 		await SearchPage.expandNamespacesPreview();
 		await SearchPage.expandNamespacesMenu();
 		await SearchPage.namespaces().clickOnNamespace( SearchPage.FILE_NAMESPACE );

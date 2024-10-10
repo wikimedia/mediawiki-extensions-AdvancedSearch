@@ -13,7 +13,7 @@ const ItemMenuOptionWidget = require( './ext.advancedSearch.ItemMenuOptionWidget
  * @param {Object.<number,string>} config.namespaces
  */
 const MenuSelectWidget = function ( config ) {
-	MenuSelectWidget.super.call( this, $.extend( {
+	MenuSelectWidget.super.call( this, Object.assign( {
 		filterFromInput: true
 	}, config ) );
 	this.addItems( this.createMenuItems( config.namespaces ) );

@@ -13,7 +13,7 @@ ClassesForDropdownOptions.prototype.setOptionsData = function ( options ) {
 	const widget = this;
 	this.optionsDirty = true;
 
-	const optionWidgets = options.map( function ( opt ) {
+	const optionWidgets = options.map( ( opt ) => {
 		if ( opt.optgroup ) {
 			return new OO.ui.MenuSectionOptionWidget( { label: opt.optgroup } );
 		}

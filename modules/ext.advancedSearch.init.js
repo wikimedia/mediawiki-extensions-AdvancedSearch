@@ -93,9 +93,7 @@ const updateSearchResultLinks = function ( currentState ) {
 	}
 
 	if ( extraParams ) {
-		$( '.mw-prevlink, .mw-nextlink, .mw-numlink' ).attr( 'href', function ( i, href ) {
-			return href + extraParams;
-		} );
+		$( '.mw-prevlink, .mw-nextlink, .mw-numlink' ).attr( 'href', ( i, href ) => href + extraParams );
 	}
 };
 
@@ -141,14 +139,14 @@ const buildPaneElement = function ( state, fields, advancedOptionsBuilder ) {
 		tabIndex: 0,
 		suffix: 'options'
 	} );
-	pane.on( 'change', function ( open ) {
+	pane.on( 'change', ( open ) => {
 		searchPreview.togglePreview( !open );
 	} );
 
 	// Proactively lazy-load the pane: if the user hasn't already clicked to open the pane,
 	// build it in the background.
-	mw.requestIdleCallback( function () {
-		mw.loader.using( 'ext.advancedSearch.SearchFieldUI' ).then( function () {
+	mw.requestIdleCallback( () => {
+		mw.loader.using( 'ext.advancedSearch.SearchFieldUI' ).then( () => {
 			pane.buildDependentPane();
 		} );
 	} );
@@ -178,7 +176,7 @@ const buildNamespacesPaneElement = function ( state, header, presets, selection,
 		tabIndex: 0,
 		suffix: 'namespaces'
 	} );
-	pane.on( 'change', function ( open ) {
+	pane.on( 'change', ( open ) => {
 		nsPreview.togglePreview( !open );
 	} );
 	pane.buildDependentPane();
@@ -206,7 +204,7 @@ const getNamespacesFromUrl = function ( searchableNamespaces ) {
  * @return {Object} fieldId => default value pairs
  */
 const getDefaultsFromConfig = function ( fields ) {
-	return fields.reduce( function ( defaults, field ) {
+	return fields.reduce( ( defaults, field ) => {
 		defaults[ field.id ] = field.defaultValue;
 		return defaults;
 	}, {} );
@@ -241,7 +239,7 @@ const initState = function ( searchableNamespaces, fieldCollection ) {
 	return state;
 };
 
-$( function () {
+$( () => {
 	const searchableNamespaces = mw.config.get( 'advancedSearch.searchableNamespaces' ),
 		fieldCollection = createFieldConfiguration(),
 		state = initState( searchableNamespaces, fieldCollection ),
@@ -318,7 +316,7 @@ $( function () {
 	$( '.mw-search-spinner, #mw-searchoptions' ).remove();
 
 	// TODO this is workaround to fix a toggle true event fired after the DOM is loaded
-	setTimeout( function () {
+	setTimeout( () => {
 		namespaceSelection.getMenu().toggle( false );
 	}, 0 );
 } );

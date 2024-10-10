@@ -42,7 +42,7 @@ const createSearchFieldFromObject = function ( obj ) {
 		SearchField.apply( this, arguments );
 	};
 	SearchFieldSubclass.prototype = Object.create( SearchField.prototype );
-	$.extend( SearchFieldSubclass.prototype, obj );
+	Object.assign( SearchFieldSubclass.prototype, obj );
 	return new SearchFieldSubclass( id, defaultValue );
 };
 

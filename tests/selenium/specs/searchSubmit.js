@@ -4,13 +4,13 @@ const assert = require( 'assert' ),
 	SearchPage = require( '../pageobjects/search.page' ),
 	SpecialPage = require( '../pageobjects/special.page' );
 
-describe( 'Advanced Search', function () {
+describe( 'Advanced Search', () => {
 
-	beforeEach( async function () {
+	beforeEach( async () => {
 		await SearchPage.open();
 	} );
 
-	it( 'submits the search on enter when there is no text in "These Words" field', async function () {
+	it( 'submits the search on enter when there is no text in "These Words" field', async () => {
 		await SearchPage.toggleInputFields();
 		await SearchPage.searchTheseWords.put( '\n' );
 

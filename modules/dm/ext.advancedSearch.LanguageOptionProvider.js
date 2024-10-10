@@ -8,13 +8,9 @@
  * @param {Object.<string,string>} languages in format { language-code: language-name }
  */
 const LanguageOptionProvider = function ( languages ) {
-	this.languages = Object.keys( languages ).map( function ( key ) {
-		return { data: key, label: key + ' - ' + languages[ key ] };
-	} );
-	this.languages.sort( function ( a, b ) {
-		// Sort alphabetically
-		return a.data.localeCompare( b.data );
-	} );
+	this.languages = Object.keys( languages ).map( ( key ) => ( { data: key, label: key + ' - ' + languages[ key ] } ) );
+	// Sort alphabetically
+	this.languages.sort( ( a, b ) => a.data.localeCompare( b.data ) );
 };
 
 OO.initClass( LanguageOptionProvider );

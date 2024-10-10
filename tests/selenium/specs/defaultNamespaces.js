@@ -4,13 +4,13 @@ const assert = require( 'assert' ),
 	SearchPage = require( '../pageobjects/search.page' ),
 	UserLoginPage = require( 'wdio-mediawiki/LoginPage' );
 
-describe( 'Advanced Search', function () {
+describe( 'Advanced Search', () => {
 
-	before( async function () {
+	before( async () => {
 		await UserLoginPage.loginAdmin();
 	} );
 
-	it( 'allows logged-in users to remember the selection of namespaces for future searches', async function () {
+	it( 'allows logged-in users to remember the selection of namespaces for future searches', async () => {
 		await SearchPage.open();
 
 		await SearchPage.expandNamespacesPreview();
@@ -25,7 +25,7 @@ describe( 'Advanced Search', function () {
 		assert.deepStrictEqual( cache, await SearchPage.getSelectedNamespaceIDs() );
 	} );
 
-	it( 'selects the users default namespaces when logged in', async function () {
+	it( 'selects the users default namespaces when logged in', async () => {
 		const namespaceOptions = [ '0', '1', '2', '10' ];
 		await SearchPage.setSearchNamespaceOptions( namespaceOptions );
 		await SearchPage.open();
@@ -40,7 +40,7 @@ describe( 'Advanced Search', function () {
 		assert.deepStrictEqual( selectedNamespaceIDs, namespaceOptions );
 	} );
 
-	it( 'selects the namespaces from the URL', async function () {
+	it( 'selects the namespaces from the URL', async () => {
 		await SearchPage.open( { ns0: 1, ns1: 1, ns2: 1, ns10: 1 } );
 
 		await SearchPage.expandNamespacesPreview();
@@ -53,7 +53,7 @@ describe( 'Advanced Search', function () {
 		assert.deepStrictEqual( selectedNamespaceIDs, expectedNamespaceIDs );
 	} );
 
-	after( async function () {
+	after( async () => {
 		await browser.deleteCookies();
 	} );
 } );

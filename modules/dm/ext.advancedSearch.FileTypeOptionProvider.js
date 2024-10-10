@@ -113,7 +113,7 @@ FileTypeOptionProvider.prototype.getAllowedFileTypeOptions = function () {
 	let options = [];
 
 	// eslint-disable-next-line no-jquery/no-each-util
-	$.each( getFileOptions( this.options, this.mimeTypes ), function ( index, fileOptions ) {
+	$.each( getFileOptions( this.options, this.mimeTypes ), ( index, fileOptions ) => {
 		options = options.concat( fileOptions );
 	} );
 

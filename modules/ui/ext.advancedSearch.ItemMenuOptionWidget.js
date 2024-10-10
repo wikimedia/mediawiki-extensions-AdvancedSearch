@@ -16,7 +16,7 @@ const ItemMenuOptionWidget = function ( config ) {
 	const $label = $( '<div>' )
 		.addClass( 'mw-advancedSearch-ui-itemMenuOptionWidget-label' );
 
-	ItemMenuOptionWidget.super.call( this, $.extend( {
+	ItemMenuOptionWidget.super.call( this, Object.assign( {
 		// Override the 'check' icon that OOUI defines
 		icon: ''
 	}, config ) );

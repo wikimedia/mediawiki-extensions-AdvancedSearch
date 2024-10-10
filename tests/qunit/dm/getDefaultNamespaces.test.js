@@ -3,11 +3,11 @@
 
 	QUnit.module( 'ext.advancedSearch.dm.getDefaultNamespaces' );
 
-	QUnit.test( 'Empty user settings return no other default', function ( assert ) {
+	QUnit.test( 'Empty user settings return no other default', ( assert ) => {
 		assert.deepEqual( getDefaultNamespaces( {} ), [] );
 	} );
 
-	QUnit.test( 'User settings without namespaces return no other default', function ( assert ) {
+	QUnit.test( 'User settings without namespaces return no other default', ( assert ) => {
 		assert.deepEqual(
 			getDefaultNamespaces( {
 				foo: 1,
@@ -17,7 +17,7 @@
 		);
 	} );
 
-	QUnit.test( 'User settings with all namespaces set to false return no other default', function ( assert ) {
+	QUnit.test( 'User settings with all namespaces set to false return no other default', ( assert ) => {
 		assert.deepEqual(
 			getDefaultNamespaces( {
 				foo: 1,
@@ -30,7 +30,7 @@
 		);
 	} );
 
-	QUnit.test( 'All selected namespaces are returned', function ( assert ) {
+	QUnit.test( 'All selected namespaces are returned', ( assert ) => {
 		const namespaces = getDefaultNamespaces( {
 			foo: 1,
 			searchNs0: true,

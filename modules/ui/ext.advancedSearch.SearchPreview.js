@@ -57,7 +57,7 @@ const lookupTranslationForLabel = function ( fieldId ) {
  * @param {string[]} [config.fieldNames=[]]
  */
 const SearchPreview = function ( store, config ) {
-	config = $.extend( {
+	config = Object.assign( {
 		data: true
 	}, config );
 	this.store = store;
@@ -93,13 +93,13 @@ SearchPreview.prototype.updatePreview = function () {
 		return;
 	}
 
-	this.fieldNames.forEach( function ( fieldId ) {
+	this.fieldNames.forEach( ( fieldId ) => {
 		const val = this.store.getField( fieldId );
 
 		if ( !this.skipFieldInPreview( fieldId, val ) ) {
 			this.$previewTagList.append( this.generateTag( fieldId, val ).$element );
 		}
-	}.bind( this ) );
+	} );
 
 	this.$previewTagList.append( this.generateTag( 'sort', this.store.getSortMethod() ).$element );
 };
@@ -204,11 +204,7 @@ SearchPreview.prototype.formatValue = function ( fieldId, value ) {
 	}
 
 	if ( Array.isArray( value ) ) {
-		return value.map( function ( v ) {
-			return String( v ).trim();
-		} ).filter( function ( v ) {
-			return v !== '';
-		} ).join( mw.msg( 'comma-separator' ) );
+		return value.map( ( v ) => String( v ).trim() ).filter( ( v ) => v !== '' ).join( mw.msg( 'comma-separator' ) );
 	}
 
 	return value.trim();

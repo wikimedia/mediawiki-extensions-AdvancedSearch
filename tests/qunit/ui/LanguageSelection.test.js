@@ -19,7 +19,7 @@
 
 	QUnit.module( 'ext.advancedSearch.ui.LanguageSelection' );
 
-	QUnit.test( 'Dropdown menu fields are set from provider', function ( assert ) {
+	QUnit.test( 'Dropdown menu fields are set from provider', ( assert ) => {
 		const dropdown = new LanguageSelection( store, optionProvider, config );
 		const optionGroups = dropdown.$element[ 0 ].childNodes[ 0 ];
 
@@ -30,7 +30,7 @@
 		assert.strictEqual( optionGroups[ 3 ].value, 'bg' );
 	} );
 
-	QUnit.test( 'Dropdown menu updates when store changes', function ( assert ) {
+	QUnit.test( 'Dropdown menu updates when store changes', ( assert ) => {
 		const dropdown = new LanguageSelection( store, optionProvider, config );
 
 		store.storeField( 'inlanguage', 'bg' );
@@ -40,7 +40,7 @@
 		assert.strictEqual( dropdown.getValue(), '' );
 	} );
 
-	QUnit.test( 'Selected option is displayed', function ( assert ) {
+	QUnit.test( 'Selected option is displayed', ( assert ) => {
 		const dropdown = new LanguageSelection( store, optionProvider, config );
 		dropdown.setValue( 'en' );
 

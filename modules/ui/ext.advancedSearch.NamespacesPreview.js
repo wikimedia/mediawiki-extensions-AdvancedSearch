@@ -11,7 +11,7 @@
  * @param {Object.<int,string>} config.namespacesLabels
  */
 const NamespacesPreview = function ( store, config ) {
-	config = $.extend( {
+	config = Object.assign( {
 		data: true
 	}, config );
 	this.store = store;
@@ -46,10 +46,10 @@ NamespacesPreview.prototype.updatePreview = function () {
 		return;
 	}
 
-	this.store.getNamespaces().forEach( function ( nsId ) {
+	this.store.getNamespaces().forEach( ( nsId ) => {
 		const val = this.namespacesLabels[ nsId ] || nsId;
 		this.$previewTagList.append( this.generateTag( nsId, val ).$element );
-	}.bind( this ) );
+	} );
 };
 
 /**

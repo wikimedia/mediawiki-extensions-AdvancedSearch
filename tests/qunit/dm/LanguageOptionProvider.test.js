@@ -9,7 +9,7 @@
 
 	QUnit.module( 'ext.advancedSearch.dm.LanguageOptionProvider' );
 
-	QUnit.test( 'Languages are correctly formatted', function ( assert ) {
+	QUnit.test( 'Languages are correctly formatted', ( assert ) => {
 		const provider = new LanguageOptionProvider( languages );
 		assert.deepEqual( provider.getLanguages(), [
 			{ data: 'bg', label: 'bg - Български' },
@@ -19,7 +19,7 @@
 		] );
 	} );
 
-	QUnit.test( 'Returns empty languages list when languages object is empty', function ( assert ) {
+	QUnit.test( 'Returns empty languages list when languages object is empty', ( assert ) => {
 		languages = {};
 		const provider = new LanguageOptionProvider( languages );
 		assert.deepEqual( provider.getLanguages(), [] );

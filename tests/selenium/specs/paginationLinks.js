@@ -3,9 +3,9 @@
 const assert = require( 'assert' ),
 	SearchPage = require( '../pageobjects/search.page' );
 
-describe( 'Advanced Search', function () {
+describe( 'Advanced Search', () => {
 
-	it( 'adds search parameters to pagination links', async function () {
+	it( 'adds search parameters to pagination links', async () => {
 		await SearchPage.addExamplePages( 2 );
 		await SearchPage.open( {
 			limit: 1,

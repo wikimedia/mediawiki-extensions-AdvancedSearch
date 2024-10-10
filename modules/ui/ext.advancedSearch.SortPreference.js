@@ -8,7 +8,7 @@ const getSortMethods = require( '../dm/ext.advancedSearch.getSortMethods.js' );
  * @return {Object[]}
  */
 const getOptions = function ( selected ) {
-	const options = getSortMethods().map( function ( name ) {
+	const options = getSortMethods().map( ( name ) => {
 		// The currently active sort method already appears in the list, don't add it again
 		if ( name === selected ) {
 			selected = undefined;
@@ -39,7 +39,7 @@ const getOptions = function ( selected ) {
  */
 const SortPreference = function ( store, config ) {
 	this.store = store;
-	config = $.extend( {
+	config = Object.assign( {
 		options: getOptions( store.getSortMethod() )
 	}, config );
 	this.className = 'mw-advancedSearch-sort-';

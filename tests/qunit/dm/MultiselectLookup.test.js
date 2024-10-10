@@ -7,12 +7,10 @@
 		store,
 		config;
 
-	QUnit.testStart( function () {
-		const queryTemplatePages = sinon.match( function ( value ) {
-			return value.action === 'query' &&
+	QUnit.testStart( () => {
+		const queryTemplatePages = sinon.match( ( value ) => value.action === 'query' &&
 				value.prop === 'info' &&
-				value.titles.startsWith( mw.config.get( 'wgFormattedNamespaces' )[ 10 ] );
-		} );
+				value.titles.startsWith( mw.config.get( 'wgFormattedNamespaces' )[ 10 ] ) );
 		sandbox = sinon.sandbox.create();
 		store = {
 			connect: sandbox.stub(),
@@ -29,13 +27,13 @@
 		sandbox.stub( config.api, 'get' ).withArgs( queryTemplatePages ).returns( $.Deferred().resolve( { query: { pages: {} } } ).promise() );
 	} );
 
-	QUnit.testDone( function () {
+	QUnit.testDone( () => {
 		sandbox.restore();
 	} );
 
 	QUnit.module( 'ext.advancedSearch.dm.MultiselectLookup' );
 
-	QUnit.test( 'Value picked from menu is added to tags and stored', function ( assert ) {
+	QUnit.test( 'Value picked from menu is added to tags and stored', ( assert ) => {
 		const lookup = new MultiselectLookup( store, config );
 		lookup.addTag( 'Preexisting' );
 		lookup.input.setValue( 'My Templ' );
@@ -58,7 +56,7 @@
 		assert.strictEqual( lookup.input.getValue(), '' );
 	} );
 
-	QUnit.test( 'Store data subscribed to and synced initially', function ( assert ) {
+	QUnit.test( 'Store data subscribed to and synced initially', ( assert ) => {
 		const setValueSpy = sandbox.spy( MultiselectLookup.prototype, 'setValue' );
 
 		store.getField.withArgs( 'hastemplate' ).returns( [ 'Burg' ] );
@@ -71,7 +69,7 @@
 		assert.deepEqual( lookupField.getValue(), [ 'Burg' ] );
 	} );
 
-	QUnit.test( 'Store update is applied', function ( assert ) {
+	QUnit.test( 'Store update is applied', ( assert ) => {
 		store.getField.withArgs( 'hastemplate' ).returns( [ 'from', 'beyond' ] );
 		store.hasFieldChanged.withArgs( 'hastemplate' ).returns( true );
 
@@ -82,12 +80,12 @@
 		assert.deepEqual( lookupField.getValue(), [ 'from', 'beyond' ] );
 	} );
 
-	QUnit.test( 'Mixin method overridden to prevent problems', function ( assert ) {
+	QUnit.test( 'Mixin method overridden to prevent problems', ( assert ) => {
 		const lookupField = new MultiselectLookup( store, config );
 		assert.false( lookupField.isReadOnly() );
 	} );
 
-	QUnit.test( 'API response processed correctly', function ( assert ) {
+	QUnit.test( 'API response processed correctly', ( assert ) => {
 		const lookupField = new MultiselectLookup( store, config );
 
 		const apiData = [
@@ -123,7 +121,7 @@
 		assert.strictEqual( result[ 2 ].getData(), 'Johannes' );
 	} );
 
-	QUnit.test( 'Items already selected are not suggested', function ( assert ) {
+	QUnit.test( 'Items already selected are not suggested', ( assert ) => {
 		const lookupField = new MultiselectLookup( store, config );
 
 		lookupField.setValue( [ 'Jochen', 'Johannes' ] );
@@ -154,20 +152,20 @@
 		assert.strictEqual( result[ 0 ].getData(), 'Jens' );
 	} );
 
-	QUnit.test( 'Page titles post-processes nicely', function ( assert ) {
+	QUnit.test( 'Page titles post-processes nicely', ( assert ) => {
 		const lookupField = new MultiselectLookup( store, config );
 		assert.strictEqual( lookupField.removeNamespace( 'Test' ), 'Test' );
 		assert.strictEqual( lookupField.removeNamespace( 'Template:Test' ), 'Test' );
 		assert.strictEqual( lookupField.removeNamespace( 'User:Foo/Bar.js' ), 'Foo/Bar.js' );
 	} );
 
-	QUnit.test( 'Native browser autocomplete is not used', function ( assert ) {
+	QUnit.test( 'Native browser autocomplete is not used', ( assert ) => {
 		const lookupField = new MultiselectLookup( store, config );
 
 		assert.strictEqual( $( lookupField.$input ).attr( 'autocomplete' ), 'off' );
 	} );
 
-	QUnit.test( 'Well-formed API request yields result', function ( assert ) {
+	QUnit.test( 'Well-formed API request yields result', ( assert ) => {
 		config.api = new mw.Api();
 		const getStub = sandbox.stub( config.api, 'get' ).withArgs( {
 			action: 'opensearch',
@@ -193,13 +191,13 @@
 		assert.true( getStub.calledOnce );
 
 		assert.strictEqual( result.state(), 'resolved' );
-		result.done( function ( doneData ) {
+		result.done( ( doneData ) => {
 			assert.strictEqual( doneData[ 0 ], 'Burg' );
 			assert.deepEqual( doneData[ 1 ], [ 'Template:Burg' ] );
 		} );
 	} );
 
-	QUnit.test( 'Empty query does not trigger API request', function ( assert ) {
+	QUnit.test( 'Empty query does not trigger API request', ( assert ) => {
 		config.api = new mw.Api();
 		const getStub = sandbox.stub( config.api, 'get' );
 
@@ -211,7 +209,7 @@
 		assert.false( getStub.called );
 
 		assert.strictEqual( result.state(), 'rejected' );
-		result.fail( function () {
+		result.fail( () => {
 			assert.true( true, 'A failed promise is returned' );
 		} );
 	} );

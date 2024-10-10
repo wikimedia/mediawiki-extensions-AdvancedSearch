@@ -11,7 +11,7 @@
 		this.deepEqual( actualNamespaces, expectedNamespaces, message );
 	};
 
-	QUnit.test( 'StoreUpdate event handler updates hidden namespace fields', function ( assert ) {
+	QUnit.test( 'StoreUpdate event handler updates hidden namespace fields', ( assert ) => {
 		const model = new SearchModel(),
 			filter = new NamespaceFilters( model, {
 				namespaces: {
@@ -27,7 +27,7 @@
 		assert.namespaceElementsPresent( filter.$namespaceContainer, [ '1', '3' ] );
 	} );
 
-	QUnit.test( 'Value update propagates to model', function ( assert ) {
+	QUnit.test( 'Value update propagates to model', ( assert ) => {
 		const model = new SearchModel(),
 			filter = new NamespaceFilters( model, {
 				namespaces: {
@@ -48,7 +48,7 @@
 		filter.onValueUpdate();
 	} );
 
-	QUnit.test( 'Choosing a namespace from the menu clears the input field', function ( assert ) {
+	QUnit.test( 'Choosing a namespace from the menu clears the input field', ( assert ) => {
 		const model = new SearchModel(),
 			filter = new NamespaceFilters( model, {
 				namespaces: {
@@ -64,7 +64,7 @@
 		assert.strictEqual( filter.input.getValue(), '' );
 	} );
 
-	QUnit.test( 'On multiple namespaces either one can be removed', function ( assert ) {
+	QUnit.test( 'On multiple namespaces either one can be removed', ( assert ) => {
 		const model = new SearchModel(),
 			filter = new NamespaceFilters( model, {
 				namespaces: {

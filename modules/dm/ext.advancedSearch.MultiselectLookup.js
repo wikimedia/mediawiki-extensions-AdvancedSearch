@@ -57,7 +57,7 @@ const getTitle = function ( name, namespace ) {
  * @param {mw.Api} [config.api]
  */
 const MultiselectLookup = function ( store, config ) {
-	config = $.extend( {}, config, {
+	config = Object.assign( {}, config, {
 		allowArbitrary: true,
 		input: {
 			autocomplete: false
@@ -206,7 +206,7 @@ MultiselectLookup.prototype.createTagItemWidget = function ( data, label ) {
 
 	if ( !this.queryCache.has( tagItem.getLabel() ) ) {
 		this.searchForPageInNamespace( tagItem.getLabel() )
-			.then( function ( response ) {
+			.then( ( response ) => {
 				if ( response.length === 0 ) {
 					markNonExistent( tagItem );
 				}

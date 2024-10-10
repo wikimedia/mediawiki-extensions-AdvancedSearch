@@ -142,11 +142,9 @@ class SearchPage extends Page {
 				await browser.keys( '\uE00C' ); // Close menu by hitting the Escape key
 				return labels;
 			},
-			getAllTagLabels: async () => {
-				return $$( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-content div[class^="mw-advancedSearch-namespace-"]' ).map(
-					async ( el ) => await el.getText()
-				);
-			}
+			getAllTagLabels: async () => $$( '.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-content div[class^="mw-advancedSearch-namespace-"]' ).map(
+				async ( el ) => await el.getText()
+			)
 		};
 	}
 
@@ -237,9 +235,7 @@ class SearchPage extends Page {
 
 	async assertPillLinkMarkedRed( $pillLink ) {
 		await $pillLink.waitForExist();
-		await browser.waitUntil( async () => {
-			return ( await $pillLink.getAttribute( 'class' ) ).includes( 'new' );
-		}, {
+		await browser.waitUntil( async () => ( await $pillLink.getAttribute( 'class' ) ).includes( 'new' ), {
 			timeOutMsg: 'Pill field marks non-existent titles in red'
 		} );
 	}
@@ -291,9 +287,7 @@ class SearchPage extends Page {
 					uiprop: 'options'
 				} );
 
-			let newSearchNamespaces = namespaceIds.map( ( nsId ) => {
-				return 'searchNs' + nsId + '=1';
-			} ).join( '|' );
+			let newSearchNamespaces = namespaceIds.map( ( nsId ) => 'searchNs' + nsId + '=1' ).join( '|' );
 
 			const userOptions = data.query.userinfo.options;
 			Object.keys( userOptions ).forEach( ( key ) => {

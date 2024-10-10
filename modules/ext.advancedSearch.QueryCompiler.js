@@ -19,7 +19,7 @@ const QueryCompiler = function ( searchFields ) {
 QueryCompiler.prototype.formatSearchFields = function ( state ) {
 	const queryElements = [];
 
-	this.fields.forEach( function ( field ) {
+	this.fields.forEach( ( field ) => {
 		const val = state.getField( field.id ),
 			formattedQueryElement = val ? field.formatter( val ) : '';
 

@@ -1,6 +1,6 @@
 QUnit.module( 'ext.advancedSearch.ui.ItemMenuOptionWidget' );
 
-QUnit.test( 'Creates a valid menu option', function ( assert ) {
+QUnit.test( 'Creates a valid menu option', ( assert ) => {
 	const { CheckboxInputWidget, ItemMenuOptionWidget } = require( 'ext.advancedSearch.elements' );
 
 	const menuOption = new ItemMenuOptionWidget( {

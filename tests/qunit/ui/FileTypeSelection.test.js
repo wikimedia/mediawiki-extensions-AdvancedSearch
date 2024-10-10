@@ -26,7 +26,7 @@
 
 	QUnit.module( 'ext.advancedSearch.ui.FileTypeSelection' );
 
-	QUnit.test( 'Dropdown menu fields are set from the provider', function ( assert ) {
+	QUnit.test( 'Dropdown menu fields are set from the provider', ( assert ) => {
 		const dropdown = new FileTypeSelection( store, optionProvider, config );
 		const optionGroups = dropdown.$element[ 0 ].childNodes[ 0 ].childNodes;
 
@@ -37,7 +37,7 @@
 		assert.strictEqual( optionGroups[ 2 ].children[ 0 ].value, 'image/png' );
 	} );
 
-	QUnit.test( 'Dropdown menu updates when store changes', function ( assert ) {
+	QUnit.test( 'Dropdown menu updates when store changes', ( assert ) => {
 		const dropdown = new FileTypeSelection( store, optionProvider, config );
 
 		store.storeField( 'filetype', 'drawing' );
@@ -47,7 +47,7 @@
 		assert.strictEqual( dropdown.getValue(), '' );
 	} );
 
-	QUnit.test( 'Selected option is displayed', function ( assert ) {
+	QUnit.test( 'Selected option is displayed', ( assert ) => {
 		const dropdown = new FileTypeSelection( store, optionProvider, config );
 		dropdown.setValue( 'bitmap' );
 

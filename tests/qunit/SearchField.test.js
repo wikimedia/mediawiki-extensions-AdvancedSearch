@@ -4,7 +4,7 @@
 
 	QUnit.module( 'mw.libs.advancedSearch.createSearchFieldFromObject' );
 
-	QUnit.test( 'It creates a subclassed instance', function ( assert ) {
+	QUnit.test( 'It creates a subclassed instance', ( assert ) => {
 		const field = createSearchFieldFromObject( {
 			id: 'test',
 			// overriding the abstract methods with dummy functions, in production code init and layout must return factory functions instead of values.
@@ -25,15 +25,15 @@
 		assert.strictEqual( field.formatter(), 'baz' );
 	} );
 
-	QUnit.test( 'Given missing method overrides for abstract methods, calling them throws an exeption', function ( assert ) {
+	QUnit.test( 'Given missing method overrides for abstract methods, calling them throws an exeption', ( assert ) => {
 		const field = createSearchFieldFromObject( { id: 'test' } );
-		assert.throws( function () {
+		assert.throws( () => {
 			field.init();
 		} );
-		assert.throws( function () {
+		assert.throws( () => {
 			field.layout();
 		} );
-		assert.throws( function () {
+		assert.throws( () => {
 			field.formatter();
 		} );
 	} );

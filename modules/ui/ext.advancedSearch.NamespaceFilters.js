@@ -54,7 +54,7 @@ OO.inheritClass( NamespaceFilters, OO.ui.MenuTagMultiselectWidget );
  * @return {Object} namespaces
  */
 NamespaceFilters.prototype.prettifyNamespaces = function ( namespaces ) {
-	Object.keys( namespaces ).forEach( function ( id ) {
+	Object.keys( namespaces ).forEach( ( id ) => {
 		namespaces[ id ] = mw.Title.newFromText( namespaces[ id ] || id ).getMainText();
 	} );
 	return namespaces;
@@ -87,7 +87,7 @@ NamespaceFilters.prototype.updateNamespaceFormFields = function () {
 	const self = this,
 		namespaces = this.store.getNamespaces();
 	this.$namespaceContainer.empty();
-	namespaces.forEach( function ( key ) {
+	namespaces.forEach( ( key ) => {
 		self.$namespaceContainer.append(
 			$( '<input>' ).attr( {
 				type: 'hidden',
@@ -104,7 +104,7 @@ NamespaceFilters.prototype.setValueFromStore = function () {
 	// prevent updating the store while reacting to its update notification
 	this.disconnect( this, { change: 'onValueUpdate' } );
 	this.clearItems();
-	namespaces.forEach( function ( key ) {
+	namespaces.forEach( ( key ) => {
 		self.addTag( key, self.namespaces[ key ] );
 	} );
 
@@ -137,7 +137,7 @@ NamespaceFilters.prototype.createTagItemWidget = function ( data, label ) {
 
 NamespaceFilters.prototype.highlightSelectedNamespacesInMenu = function () {
 	const self = this;
-	this.getMenu().getItems().forEach( function ( menuItem ) {
+	this.getMenu().getItems().forEach( ( menuItem ) => {
 		const isInTagList = !!self.findItemFromData( menuItem.getData() );
 		if ( isInTagList ) {
 			menuItem.checkboxWidget.setSelected( false );
@@ -156,7 +156,7 @@ NamespaceFilters.prototype.highlightLastSelectedTag = function ( menuItemData ) 
 };
 
 NamespaceFilters.prototype.removeHighlightFromTags = function () {
-	this.getItems().forEach( function ( tag ) {
+	this.getItems().forEach( ( tag ) => {
 		tag.$element.removeClass( 'selected' );
 	} );
 };
@@ -168,9 +168,7 @@ NamespaceFilters.prototype.removeHighlightFromTags = function () {
  * @return {string[]} collection of namespaces minus the removed item
  */
 NamespaceFilters.prototype.removeNamespaceTag = function ( namespace ) {
-	return this.store.getNamespaces().filter( function ( el ) {
-		return el !== namespace;
-	} );
+	return this.store.getNamespaces().filter( ( el ) => el !== namespace );
 };
 
 /**
