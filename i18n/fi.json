@@ -15,7 +15,7 @@
 		]
 	},
 	"advancedsearch-desc": "Helpottaa tarkempien hakuominaisuuksien käyttöä sivulla [[Special:Search|Toiminnot:Haku]]",
-	"advancedsearch-options-pane-head": "Tarkempi haku:",
+	"advancedsearch-options-pane-head": "Tarkennettu haku:",
 	"advancedsearch-options-pane-preview-list": "Tällä hetkellä käytetyt hakusanat",
 	"advancedsearch-optgroup-text": "Hae sivun tekstistä",
 	"advancedsearch-optgroup-structure": "Rakenne",
@@ -84,7 +84,7 @@
 	"advancedsearch-namespaces-preset-general-help": "Yleinen apu",
 	"advancedsearch-namespaces-preset-discussion": "Keskustelu",
 	"advancedsearch-namespaces-placeholder": "Lisää nimiavaruuksia...",
-	"prefs-advancedsearch": "Tarkempi haku",
-	"advancedsearch-preference-help": "Tarkempi haku lisää lomakkeen sivulle Toiminto:Haku. Voit suorittaa sillä erikoistuneita hakuja, vaikka et tietäisi mitään hakusyntaksista. Se myös muuttaa nimiavaruuksien valintatapaa.",
-	"advancedsearch-preference-disable": "Älä näytä tarkemman haun käyttöliittymää hakutoimintoa käytettäessä"
+	"prefs-advancedsearch": "Tarkennettu haku",
+	"advancedsearch-preference-help": "Tarkennettu haku lisää lomakkeen sivulle Toiminto:Haku. Voit suorittaa sillä erikoistuneita hakuja, vaikka et tietäisi mitään hakusyntaksista. Se myös muuttaa nimiavaruuksien valintatapaa.",
+	"advancedsearch-preference-disable": "Älä näytä tarkennetun haun käyttöliittymää hakutoimintoa käytettäessä"
 }
