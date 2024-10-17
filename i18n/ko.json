@@ -77,6 +77,7 @@
 	"advancedsearch-sort-preview-create-timestamp-desc": "생성일",
 	"advancedsearch-namespaces-search-in": "검색 위치:",
 	"advancedsearch-namespaces-remember": "향후 검색에 선택 기억하기",
+	"advancedsearch-namespaces-pane-preview-list": "현재 활성화된 네임스페이스 필터",
 	"advancedsearch-namespaces-preset-all": "모두",
 	"advancedsearch-namespaces-preset-default": "기본값",
 	"advancedsearch-namespaces-preset-general-help": "일반 도움말",
