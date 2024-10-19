@@ -2,13 +2,13 @@
 
 namespace AdvancedSearch;
 
-use ExtensionRegistry;
 use MediaWiki\Config\Config;
 use MediaWiki\Hook\SpecialSearchResultsPrependHook;
 use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -17,8 +17,8 @@ use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MessageLocalizer;
-use MimeAnalyzer;
 use SearchEngineConfig;
+use Wikimedia\Mime\MimeAnalyzer;
 
 /**
  * @license GPL-2.0-or-later

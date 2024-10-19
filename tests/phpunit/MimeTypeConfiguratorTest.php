@@ -3,8 +3,8 @@
 namespace AdvancedSearch\Tests;
 
 use AdvancedSearch\MimeTypeConfigurator;
-use MimeAnalyzer;
 use PHPUnit\Framework\TestCase;
+use Wikimedia\Mime\MimeAnalyzer;
 
 /**
  * @covers \AdvancedSearch\MimeTypeConfigurator

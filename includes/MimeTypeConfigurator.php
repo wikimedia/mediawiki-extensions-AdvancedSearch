@@ -2,7 +2,7 @@
 
 namespace AdvancedSearch;
 
-use MimeAnalyzer;
+use Wikimedia\Mime\MimeAnalyzer;
 
 /**
  * @license GPL-2.0-or-later
