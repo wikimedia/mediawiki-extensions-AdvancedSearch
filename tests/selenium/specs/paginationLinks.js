@@ -1,7 +1,6 @@
 'use strict';
 
-const assert = require( 'assert' ),
-	SearchPage = require( '../pageobjects/search.page' );
+const SearchPage = require( '../pageobjects/search.page' );
 
 describe( 'Advanced Search', () => {
 
@@ -14,7 +13,7 @@ describe( 'Advanced Search', () => {
 		await ( await SearchPage.getSearchPaginationLinks() )[ 0 ].waitForExist();
 
 		for ( const link of await SearchPage.getSearchPaginationLinks() ) {
-			assert( ( await link.getAttribute( 'href' ) ).includes( 'advancedSearch-current' ) );
+			await expect( await link.getAttribute( 'href' ) ).toContain( 'advancedSearch-current' );
 		}
 	} );
 } );

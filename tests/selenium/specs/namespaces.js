@@ -1,7 +1,6 @@
 'use strict';
 
-const assert = require( 'assert' ),
-	SearchPage = require( '../pageobjects/search.page' );
+const SearchPage = require( '../pageobjects/search.page' );
 
 describe( 'AdvancedSearch', () => {
 
@@ -13,39 +12,39 @@ describe( 'AdvancedSearch', () => {
 		await SearchPage.expandNamespacesPreview();
 
 		// do not allow remembering the selection for anon users
-		assert( !await SearchPage.rememberSelection.isExisting() );
+		await expect( await SearchPage.rememberSelection ).not.toExist();
 
 		// select all namespaces
 		await SearchPage.allNamespacesPreset.click();
 		await SearchPage.expandNamespacesMenu();
 
-		assert.deepStrictEqual(
-			await SearchPage.namespaces().getAllTagLabels(),
+		await expect(
+			await SearchPage.namespaces().getAllTagLabels() ).toStrictEqual(
 			await SearchPage.namespaces().getAllLabelsFromMenu()
 		);
 
 		// deselect all namespaces
 		await SearchPage.allNamespacesPreset.click();
 
-		assert.deepStrictEqual(
-			await SearchPage.namespaces().getAllTagLabels(),
+		await expect(
+			await SearchPage.namespaces().getAllTagLabels() ).toStrictEqual(
 			[]
 		);
 
 		// select all namespaces manually
 		await SearchPage.expandNamespacesMenu();
 		await SearchPage.namespaces().selectAll();
-		assert( await SearchPage.allNamespacesPreset.isSelected() );
+		await expect( await SearchPage.allNamespacesPreset ).toBeSelected();
 
 		await SearchPage.namespaces().clickOnNamespace( SearchPage.FILE_NAMESPACE );
 
-		assert( !await SearchPage.allNamespacesPreset.isSelected(), 'preset is not checked if a namespace is missing' );
-		assert( await SearchPage.generalHelpPreset.isSelected() );
+		await expect( await SearchPage.allNamespacesPreset ).not.toBeSelected( { message: 'preset is not checked if a namespace is missing' } );
+		await expect( await SearchPage.generalHelpPreset ).toBeSelected();
 
 		await SearchPage.submitForm();
 
 		await SearchPage.expandNamespacesPreview();
-		assert( await SearchPage.generalHelpPreset.isSelected(), 'marks a namespace preset checkbox after submit' );
+		await expect( await SearchPage.generalHelpPreset ).toBeSelected( { message: 'marks a namespace preset checkbox after submit' } );
 	} );
 
 	it( 're-adds filetype namespace after search when file type option has been selected but namespace has been removed', async () => {
@@ -61,7 +60,7 @@ describe( 'AdvancedSearch', () => {
 		await SearchPage.submitForm();
 
 		await SearchPage.expandNamespacesPreview();
-		assert( ( await SearchPage.getSelectedNamespaceIDs() ).includes( SearchPage.FILE_NAMESPACE ) );
+		await expect( await SearchPage.getSelectedNamespaceIDs() ).toContain( SearchPage.FILE_NAMESPACE );
 	} );
 
 	it( 'adds/removes the namespace tag when the namespace option is clicked', async () => {
@@ -69,10 +68,10 @@ describe( 'AdvancedSearch', () => {
 		await SearchPage.expandNamespacesMenu();
 		await SearchPage.namespaces().clickOnNamespace( SearchPage.FILE_NAMESPACE );
 
-		assert( ( await SearchPage.getSelectedNamespaceIDs() ).includes( SearchPage.FILE_NAMESPACE ) );
+		await expect( await SearchPage.getSelectedNamespaceIDs() ).toContain( SearchPage.FILE_NAMESPACE );
 
 		await SearchPage.namespaces().clickOnNamespace( SearchPage.FILE_NAMESPACE );
 
-		assert( !( await SearchPage.getSelectedNamespaceIDs() ).includes( SearchPage.FILE_NAMESPACE ) );
+		await expect( await SearchPage.getSelectedNamespaceIDs() ).not.toContain( SearchPage.FILE_NAMESPACE );
 	} );
 } );

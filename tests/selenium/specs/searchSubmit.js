@@ -1,8 +1,7 @@
 'use strict';
 
-const assert = require( 'assert' ),
-	SearchPage = require( '../pageobjects/search.page' ),
-	SpecialPage = require( '../pageobjects/special.page' );
+const SearchPage = require( '../pageobjects/search.page' );
+const SpecialPage = require( '../pageobjects/special.page' );
 
 describe( 'Advanced Search', () => {
 
@@ -14,7 +13,7 @@ describe( 'Advanced Search', () => {
 		await SearchPage.toggleInputFields();
 		await SearchPage.searchTheseWords.put( '\n' );
 
-		assert( await SearchPage.formWasSubmitted() );
+		await expect( await SearchPage.formWasSubmitted() ).toBeTruthy();
 	} );
 
 	it( 'submits the search with the specific chosen language', async function () {
@@ -27,6 +26,6 @@ describe( 'Advanced Search', () => {
 		await SearchPage.searchInLanguage.choose( 'en' );
 		await SearchPage.submitForm();
 
-		assert.strictEqual( await SearchPage.getSearchQueryFromUrl(), 'goat inlanguage:en' );
+		await expect( await SearchPage.getSearchQueryFromUrl() ).toStrictEqual( 'goat inlanguage:en' );
 	} );
 } );
