@@ -62,7 +62,7 @@ SearchModel.prototype.storeField = function ( fieldId, value ) {
 		return;
 	}
 
-	if ( value === '' || ( Array.isArray( value ) && value.length === 0 ) ) {
+	if ( !value || ( Array.isArray( value ) && !value.length ) ) {
 		this.removeField( fieldId );
 		return;
 	}

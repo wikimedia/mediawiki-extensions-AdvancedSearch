@@ -49,7 +49,7 @@ const optionalQuotes = function ( val ) {
  * @return {string}
  */
 const formatSizeConstraint = function ( prefix, val ) {
-	if ( !Array.isArray( val ) || val.length < 2 || ( val[ 1 ] || '' ).trim() === '' ) {
+	if ( !Array.isArray( val ) || val.length < 2 || !( val[ 1 ] || '' ).trim() ) {
 		return '';
 	}
 	return prefix + val.join( '' );

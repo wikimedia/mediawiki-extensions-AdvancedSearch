@@ -31,7 +31,7 @@ const getTopLevelMimeType = function ( mimeType ) {
  * @param {Object} option
  */
 const addFileOption = function ( options, groupName, option ) {
-	if ( options[ groupName ].length === 0 ) {
+	if ( !options[ groupName ].length ) {
 		// The following messages are used here:
 		// * advancedsearch-filetype-section-types
 		// * advancedsearch-filetype-section-image

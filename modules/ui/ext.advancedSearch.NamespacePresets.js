@@ -13,7 +13,7 @@ const validateNamespacePreset = function ( presetProvider, namespaceIDs, presetN
 		mw.log.warn( 'AdvancedSearch namespace preset "' + presetName + '" contains unknown namespace id' );
 		return false;
 	}
-	if ( namespaceIDs.length === 0 ) {
+	if ( !namespaceIDs.length ) {
 		mw.log.warn( 'Empty namespaces for ' + presetName + ' in $wgAdvancedSearchNamespacePresets' );
 		return false;
 	}
@@ -41,7 +41,7 @@ const groomPresets = function ( presets, presetProvider ) {
 			if ( presetProvider.hasProvider( presetConfig.provider ) ) {
 				preset.namespaces = presetProvider.getNamespaceIdsFromProvider( presetConfig.provider );
 				// Providers might return empty arrays to disable certain presets when preconditions are not fulfilled
-				if ( preset.namespaces.length === 0 ) {
+				if ( !preset.namespaces.length ) {
 					return;
 				}
 			} else {

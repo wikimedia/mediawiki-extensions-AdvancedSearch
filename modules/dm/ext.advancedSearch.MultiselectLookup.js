@@ -161,7 +161,7 @@ MultiselectLookup.prototype.searchForPagesInNamespace = function ( names ) {
 		}
 		return title.getPrefixedText();
 	} ).filter( ( name ) => name );
-	if ( names.length === 0 ) {
+	if ( !names.length ) {
 		return deferred.resolve().promise();
 	}
 
@@ -207,7 +207,7 @@ MultiselectLookup.prototype.createTagItemWidget = function ( data, label ) {
 	if ( !this.queryCache.has( tagItem.getLabel() ) ) {
 		this.searchForPageInNamespace( tagItem.getLabel() )
 			.then( ( response ) => {
-				if ( response.length === 0 ) {
+				if ( !response.length ) {
 					markNonExistent( tagItem );
 				}
 			} );
