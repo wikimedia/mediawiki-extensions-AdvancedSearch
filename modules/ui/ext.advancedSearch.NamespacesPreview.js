@@ -8,7 +8,7 @@
  * @param {SearchModel} store
  * @param {Object} config
  * @param {boolean} [config.data=true] If the set of preview pills should be visible
- * @param {Object.<int,string>} config.namespacesLabels
+ * @param {Object.<number,string>} config.namespacesLabels
  */
 const NamespacesPreview = function ( store, config ) {
 	config = Object.assign( {
