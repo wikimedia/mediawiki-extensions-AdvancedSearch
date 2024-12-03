@@ -21,17 +21,17 @@ const markPageExistence = function ( item, queryCache ) {
 
 /**
  * @param {Object} res API response
- * @param {MultiselectLookup} self
+ * @param {TitleCache} queryCache
  * @return {string[]} Subset of titles that are known to exist, otherwise empty
  */
-const populateCache = function ( res, self ) {
+const populateCache = function ( res, queryCache ) {
 	const pages = [];
 	for ( const i in res.query.pages ) {
 		const page = res.query.pages[ i ];
 		if ( !page.missing ) {
 			pages.push( page.title );
 		}
-		self.queryCache.set( page.title, page.missing ? 'NO' : 'YES' );
+		queryCache.set( page.title, page.missing ? 'NO' : 'YES' );
 	}
 	return pages;
 };
@@ -119,8 +119,7 @@ MultiselectLookup.prototype.setValue = function ( valueObject ) {
  * @return {jQuery.Promise}
  */
 MultiselectLookup.prototype.searchForPageInNamespace = function ( name ) {
-	const deferred = $.Deferred(),
-		self = this;
+	const deferred = $.Deferred();
 
 	const title = getTitle( name, this.lookupId );
 	if ( !title ) {
@@ -136,7 +135,7 @@ MultiselectLookup.prototype.searchForPageInNamespace = function ( name ) {
 		prop: 'info',
 		titles: title.getPrefixedText()
 	} ).done( ( res ) => {
-		const pages = populateCache( res, self );
+		const pages = populateCache( res, this.queryCache );
 		deferred.resolve( pages );
 	} ).fail( () => {
 		deferred.reject.bind( deferred );
@@ -150,11 +149,10 @@ MultiselectLookup.prototype.searchForPageInNamespace = function ( name ) {
  * @return {jQuery.Promise}
  */
 MultiselectLookup.prototype.searchForPagesInNamespace = function ( names ) {
-	const deferred = $.Deferred(),
-		self = this;
+	const deferred = $.Deferred();
 
-	names = names.map( function ( name ) {
-		const title = getTitle( name, self.lookupId );
+	names = names.map( ( name ) => {
+		const title = getTitle( name, this.lookupId );
 		if ( !title ) {
 			this.queryCache[ name ] = 'NO';
 			return null;
@@ -171,7 +169,7 @@ MultiselectLookup.prototype.searchForPagesInNamespace = function ( names ) {
 		prop: 'info',
 		titles: names.join( '|' )
 	} ).done( ( res ) => {
-		populateCache( res, self );
+		populateCache( res, this.queryCache );
 		deferred.resolve();
 	} ).fail( () => {
 		deferred.reject.bind( deferred );
