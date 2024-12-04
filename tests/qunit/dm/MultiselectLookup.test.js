@@ -98,7 +98,8 @@ QUnit.module( 'ext.advancedSearch.dm.MultiselectLookup', ( hooks ) => {
 			]
 		];
 
-		const result = lookupField.getLookupMenuOptionsFromData( apiData );
+		const titles = lookupField.getLookupCacheDataFromResponse( apiData );
+		const result = lookupField.getLookupMenuOptionsFromData( titles );
 		assert.true( Array.isArray( result ) );
 		assert.strictEqual( result.length, 3 );
 
@@ -135,19 +136,13 @@ QUnit.module( 'ext.advancedSearch.dm.MultiselectLookup', ( hooks ) => {
 			]
 		];
 
-		const result = lookupField.getLookupMenuOptionsFromData( apiData );
+		const titles = lookupField.getLookupCacheDataFromResponse( apiData );
+		const result = lookupField.getLookupMenuOptionsFromData( titles );
 		assert.true( Array.isArray( result ) );
 		assert.strictEqual( result.length, 1 );
 
 		assert.strictEqual( result[ 0 ].getLabel(), 'Jens' );
 		assert.strictEqual( result[ 0 ].getData(), 'Jens' );
-	} );
-
-	QUnit.test( 'Page titles post-processes nicely', ( assert ) => {
-		const lookupField = new MultiselectLookup( store, config );
-		assert.strictEqual( lookupField.removeNamespace( 'Test' ), 'Test' );
-		assert.strictEqual( lookupField.removeNamespace( 'Template:Test' ), 'Test' );
-		assert.strictEqual( lookupField.removeNamespace( 'User:Foo/Bar.js' ), 'Foo/Bar.js' );
 	} );
 
 	QUnit.test( 'Native browser autocomplete is not used', ( assert ) => {

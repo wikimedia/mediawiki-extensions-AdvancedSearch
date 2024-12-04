@@ -219,6 +219,7 @@ MultiselectLookup.prototype.onValueUpdate = function () {
 };
 
 /**
+ * @protected
  * @inheritdoc OO.ui.mixin.LookupElement
  */
 MultiselectLookup.prototype.getLookupRequest = function () {
@@ -236,30 +237,29 @@ MultiselectLookup.prototype.getLookupRequest = function () {
 };
 
 /**
+ * @protected
  * @inheritdoc OO.ui.mixin.LookupElement
  */
-MultiselectLookup.prototype.getLookupCacheDataFromResponse = function ( response ) {
-	return response || [];
+MultiselectLookup.prototype.getLookupCacheDataFromResponse = function ( openSearchResponse ) {
+	return openSearchResponse && openSearchResponse[ 1 ];
 };
 
 /**
+ * @protected
  * @inheritdoc OO.ui.mixin.LookupElement
  */
-MultiselectLookup.prototype.getLookupMenuOptionsFromData = function ( data ) {
+MultiselectLookup.prototype.getLookupMenuOptionsFromData = function ( titles ) {
 	const items = [];
 	const currentValues = this.getValue();
-	for ( let i = 0; i < data[ 1 ].length; i++ ) {
-		const pageNameWithoutNamespace = this.removeNamespace( data[ 1 ][ i ] );
-
+	for ( const title of titles || [] ) {
+		const pageNameWithoutNamespace = this.getPrefixedTitle( title ).getMainText();
 		// do not show suggestions for items already selected
-		if ( currentValues.includes( pageNameWithoutNamespace ) ) {
-			continue;
+		if ( !currentValues.includes( pageNameWithoutNamespace ) ) {
+			items.push( new OO.ui.MenuOptionWidget( {
+				data: pageNameWithoutNamespace,
+				label: pageNameWithoutNamespace
+			} ) );
 		}
-
-		items.push( new OO.ui.MenuOptionWidget( {
-			data: pageNameWithoutNamespace,
-			label: pageNameWithoutNamespace
-		} ) );
 	}
 	return items;
 };
@@ -274,19 +274,9 @@ MultiselectLookup.prototype.getPrefixedTitle = function ( pageName ) {
 };
 
 /**
- * Get the name part of a page title containing a namespace
- *
- * @private
- * @param {string} pageTitle
- * @return {string}
- */
-MultiselectLookup.prototype.removeNamespace = function ( pageTitle ) {
-	return mw.Title.newFromText( pageTitle ).getMainText();
-};
-
-/**
  * Override behavior from OO.ui.mixin.LookupElement
  *
+ * @protected
  * @param {OO.ui.TagItemWidget} item
  */
 MultiselectLookup.prototype.onLookupMenuChoose = function ( item ) {
@@ -297,6 +287,7 @@ MultiselectLookup.prototype.onLookupMenuChoose = function ( item ) {
 /**
  * Override to make sure query caching is based on the correct (input) value
  *
+ * @protected
  * @inheritdoc
  */
 MultiselectLookup.prototype.getRequestQuery = function () {
