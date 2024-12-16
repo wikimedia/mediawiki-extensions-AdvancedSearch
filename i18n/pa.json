@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cabal"
+		]
+	},
+	"advancedsearch-optgroup-text": "ਸਫ਼ੇ ਦੇ ਪਾਠ ਵਿੱਚ ਖੋਜ ਕਰੋ",
+	"advancedsearch-optgroup-structure": "ਬਣਤਰ",
+	"advancedsearch-optgroup-files": "ਫਾਇਲਾਂ ਅਤੇ ਚਿੱਤਰ",
+	"advancedsearch-optgroup-sort": "ਛਾਂਟੀ ਦੀ ਤਰਤੀਬ",
+	"advancedsearch-field-plain": "ਇਹ ਸ਼ਬਦ",
+	"advancedsearch-field-phrase": "ਬਿਲਕੁਲ ਏਹੀ ਲਿਖਿਆ",
+	"advancedsearch-field-or": "ਇਨ੍ਹਾਂ ਵਿੱਚੋਂ ਇੱਕ ਸ਼ਬਦ",
+	"advancedsearch-field-not": "ਇਹ ਸ਼ਬਦ ਨਹੀਂ",
+	"advancedsearch-field-intitle": "ਵਰਕੇ ਦੇ ਸਿਰਲੇਖ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਨ",
+	"advancedsearch-field-deepcategory": "ਇਹਨਾਂ ਸ਼੍ਰੇਣੀਆਂ ਵਿੱਚ ਸਫ਼ੇ",
+	"advancedsearch-field-hastemplate": "ਇਹਨਾਂ ਫਰਮਿਆਂ ਵਾਲੇ ਸਫ਼ੇ",
+	"advancedsearch-field-inlanguage": "ਇਸ ਭਾਸ਼ਾ ਵਿੱਚ ਸਫ਼ੇ",
+	"advancedsearch-field-filetype": "ਫਾਈਲ ਕਿਸਮ",
+	"advancedsearch-field-sort": "ਛਾਂਟੀ ਦੀ ਤਰਤੀਬ",
+	"advancedsearch-field-preview-sort": "$1 ਮੁਤਾਬਕ ਛਾਂਟੋ",
+	"advancedsearch-inlanguage-default": "ਭਾਸ਼ਾ ਚੁਣੋ",
+	"advancedsearch-filetype-section-types": "ਆਮ ਫਾਈਲ ਕਿਸਮਾਂ",
+	"advancedsearch-filetype-bitmap": "ਤਸਵੀਰ",
+	"advancedsearch-filetype-office": "ਦਫ਼ਤਰ",
+	"advancedsearch-namespaces-preset-all": "ਸਾਰੇ",
+	"advancedsearch-namespaces-preset-default": "ਮੂਲ",
+	"advancedsearch-namespaces-preset-discussion": "ਗੱਲਬਾਤ",
+	"advancedsearch-namespaces-placeholder": "ਨਾਂ-ਥਾਂ ਜੋੜੋ…"
+}
