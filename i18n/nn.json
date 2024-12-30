@@ -47,6 +47,7 @@
 	"advancedsearch-sort-relevance": "Relevans",
 	"advancedsearch-sort-last-edit-asc": "Endringsdato - eldste øvst",
 	"advancedsearch-sort-last-edit-desc": "Endringsdato - nyaste øvst",
+	"advancedsearch-sort-create-timestamp-asc": "Opprettingsdato – eldste øvst",
 	"advancedsearch-namespaces-search-in": "Søk i:",
 	"advancedsearch-namespaces-remember": "Hugs vala for framtidige søk",
 	"advancedsearch-namespaces-preset-all": "Alle",
