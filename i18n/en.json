@@ -4,7 +4,7 @@
 			"WMDE"
 		]
 	},
-	"advancedsearch-desc": "Easy access to advanced search capabilities on [[Special:Search]]",
+	"advancedsearch-desc": "Easy access to advanced search capabilities on [[{{#Special:Search}}]]",
 
 	"advancedsearch-options-pane-head": "Advanced search:",
 	"advancedsearch-options-pane-preview-list": "Currently used search terms",
@@ -83,6 +83,6 @@
 	"advancedsearch-namespaces-placeholder": "Add namespaces…",
 
 	"prefs-advancedsearch": "Advanced Search",
-	"advancedsearch-preference-help": "Advanced Search adds a form to the Special:Search page. This allows you to perform specialized searches, even if you don't know any search syntax. It also changes the way namespaces can be selected.",
-	"advancedsearch-preference-disable": "Don’t show the Advanced Search interface when using Special:Search"
+	"advancedsearch-preference-help": "Advanced Search adds a form to the {{#Special:Search}} page. This allows you to perform specialized searches, even if you don't know any search syntax. It also changes the way namespaces can be selected.",
+	"advancedsearch-preference-disable": "Don’t show the Advanced Search interface when using {{#Special:Search}}"
 }
