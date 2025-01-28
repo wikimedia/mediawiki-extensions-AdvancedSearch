@@ -7,7 +7,7 @@
 			"Volvox"
 		]
 	},
-	"advancedsearch-desc": "Liichten Zougang zu erweiderte Sich-Méiglechkeeten op [[Special:Search]]",
+	"advancedsearch-desc": "Liichten Zougang zu erweiderte Sich-Méiglechkeeten op [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Erweidert Sich:",
 	"advancedsearch-optgroup-text": "Am Text vun der Säit sichen",
 	"advancedsearch-optgroup-structure": "Struktur",
@@ -69,5 +69,5 @@
 	"advancedsearch-namespaces-placeholder": "Nummraim derbäisetzen...",
 	"prefs-advancedsearch": "Erweidert Sich",
 	"advancedsearch-preference-help": "Erweidert Sich setzt e Formulaire op d'Spezial-Sichsäit dobäi. Dëst erlaabt Iech et fir spezialiséiert Sichen ze maachen esouguer wann Dir d'Sichsyntax net kennt. Et ännert och d'Manéier wéi Nimmraim eraus gesicht kënne ginn.",
-	"advancedsearch-preference-disable": "Den Interface fir déi erweidert Sich net weisen"
+	"advancedsearch-preference-disable": "Den Interface fir déi erweidert Sich beim Benotze vun {{#Special:Search}} net weisen"
 }

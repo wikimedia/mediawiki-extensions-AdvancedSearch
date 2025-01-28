@@ -14,7 +14,7 @@
 			"Yupik"
 		]
 	},
-	"advancedsearch-desc": "Helpottaa tarkempien hakuominaisuuksien käyttöä sivulla [[Special:Search|Toiminnot:Haku]]",
+	"advancedsearch-desc": "Helpottaa tarkempien hakuominaisuuksien käyttöä sivulla [[{{#Special:Search}}|Toiminnot:Haku]]",
 	"advancedsearch-options-pane-head": "Tarkennettu haku:",
 	"advancedsearch-options-pane-preview-list": "Tällä hetkellä käytetyt hakusanat",
 	"advancedsearch-optgroup-text": "Hae sivun tekstistä",

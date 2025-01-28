@@ -9,7 +9,7 @@
 			"Əkrəm Cəfər"
 		]
 	},
-	"advancedsearch-desc": "[[Special:Search]]-dəki təkmil axtarış imkanlarına asan giriş",
+	"advancedsearch-desc": "[[{{#Special:Search}}]]-dakı təkmil axtarış imkanlarına asan giriş",
 	"advancedsearch-options-pane-head": "Ətraflı axtarış:",
 	"advancedsearch-options-pane-preview-list": "Hazırda istifadə olunan axtarış terminləri",
 	"advancedsearch-optgroup-text": "Səhifənin mətnində axtar",

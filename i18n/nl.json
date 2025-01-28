@@ -15,7 +15,7 @@
 			"Patio"
 		]
 	},
-	"advancedsearch-desc": "Eenvoudige toegang tot geavanceerde zoekmogelijkheden op [[Special:Search]]",
+	"advancedsearch-desc": "Eenvoudige toegang tot geavanceerde zoekmogelijkheden op [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Geavanceerd zoeken:",
 	"advancedsearch-options-pane-preview-list": "Momenteel gebruikte zoektermen",
 	"advancedsearch-optgroup-text": "In paginatekst zoeken",
@@ -86,6 +86,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Overleg",
 	"advancedsearch-namespaces-placeholder": "Naamruimtes toevoegen...",
 	"prefs-advancedsearch": "Uitgebreid zoeken",
-	"advancedsearch-preference-help": "Geavanceerd zoeken voegt een formulier toe aan de pagina Speciaal: Zoeken. Hierdoor kunt u gespecialiseerde zoekopdrachten uitvoeren, zelfs als u geen zoeksyntaxis kent. Het verandert ook de manier waarop naamruimten kunnen worden geselecteerd.",
-	"advancedsearch-preference-disable": "Uitgebreid zoeken niet meer weergeven bij gebruik van Speciaal:Zoeken"
+	"advancedsearch-preference-help": "Geavanceerd zoeken voegt een formulier toe aan de pagina {{#Special:Search}}. Hierdoor kunt u gespecialiseerde zoekopdrachten uitvoeren, ook als u geen zoeksyntaxis kent. Het verandert ook de manier waarop naamruimten kunnen worden geselecteerd.",
+	"advancedsearch-preference-disable": "De interface Geavanceerd zoeken niet weergeven bij gebruik van {{#Special:Search}}"
 }

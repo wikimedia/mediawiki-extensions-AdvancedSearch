@@ -11,7 +11,7 @@
 			"Sebastian Wallroth"
 		]
 	},
-	"advancedsearch-desc": "Ermöglicht einen leichten Zugang zu erweiterten Suchmöglichkeiten auf der Spezialseite [[Special:Search]]",
+	"advancedsearch-desc": "Ermöglicht einen leichten Zugang zu erweiterten Suchmöglichkeiten auf der Spezialseite [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Erweiterte Suche:",
 	"advancedsearch-options-pane-preview-list": "Derzeit verwendete Suchbegriffe",
 	"advancedsearch-optgroup-text": "Im Seitentext suchen",
@@ -82,6 +82,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Diskussion",
 	"advancedsearch-namespaces-placeholder": "Namensräume hinzufügen …",
 	"prefs-advancedsearch": "Erweiterte Suche",
-	"advancedsearch-preference-help": "Die Erweiterte Suchoberfläche ergänzt ein Formular auf der Such-Spezialseite. Dieses erlaubt dir, spezialisierte Suchanfragen durchzuführen, auch wenn du keine Suchsyntax beherrschst. Es ändert auch die Weise, wie Namensräume ausgewählt werden können.",
-	"advancedsearch-preference-disable": "Die Oberfläche der erweiterten Suche nicht anzeigen, wenn Spezial:Suche verwendet wird"
+	"advancedsearch-preference-help": "Die Erweiterte Suchoberfläche ergänzt ein Formular auf der Seite [[{{#Special:Search}}]]. Dieses erlaubt dir, spezialisierte Suchanfragen durchzuführen, auch wenn du keine Suchsyntax beherrschst. Es ändert auch die Weise, wie Namensräume ausgewählt werden können.",
+	"advancedsearch-preference-disable": "Die Oberfläche der erweiterten Suche nicht anzeigen, wenn [[{{#Special:Search}}]] verwendet wird"
 }

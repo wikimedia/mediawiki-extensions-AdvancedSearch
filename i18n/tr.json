@@ -14,7 +14,7 @@
 			"Trockya"
 		]
 	},
-	"advancedsearch-desc": "[[Special:Search]] sayfasındaki gelişmiş arama özelliklerine kolay erişim",
+	"advancedsearch-desc": "[[{{#Special:Search}}]] sayfasındaki gelişmiş arama özelliklerine kolay erişim",
 	"advancedsearch-options-pane-head": "Gelişmiş arama:",
 	"advancedsearch-options-pane-preview-list": "Şu anda kullanılan arama terimleri",
 	"advancedsearch-optgroup-text": "Sayfa metninde ara",
