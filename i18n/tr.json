@@ -85,6 +85,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Tartışma",
 	"advancedsearch-namespaces-placeholder": "Ad alanları ekle…",
 	"prefs-advancedsearch": "Gelişmiş Arama",
-	"advancedsearch-preference-help": "Gelişmiş Arama, Özel:Ara sayfasına bir form ekler. Bu, herhangi bir arama sözdizimini bilmiyor olsanız bile özel aramalar yapmanızı sağlar. Ayrıca, ad alanlarının seçilme şeklini de değiştirir.",
-	"advancedsearch-preference-disable": "Special:Search kullanırken Gelişmiş Arama arayüzünü gösterme"
+	"advancedsearch-preference-help": "Gelişmiş Arama, {{#Special:Search}} sayfasına bir form ekler. Bu, herhangi bir arama sözdizimini bilmiyor olsanız bile özelleştirilmiş aramalar yapmanızı sağlar. Ayrıca, ad alanlarının seçilme biçimini de değiştirir.",
+	"advancedsearch-preference-disable": "{{#Special:Search}} kullanırken Gelişmiş Arama arayüzünü gösterme"
 }

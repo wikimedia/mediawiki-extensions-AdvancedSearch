@@ -10,7 +10,7 @@
 			"Милан Јелисавчић"
 		]
 	},
-	"advancedsearch-desc": "Лак приступ напредним могућностима претраге на [[Special:Search|Посебно:Претражи]]",
+	"advancedsearch-desc": "Лак приступ напредним могућностима претраге на [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Напредна претрага:",
 	"advancedsearch-options-pane-preview-list": "Актуелни термини који се претражују",
 	"advancedsearch-optgroup-text": "Претрага у тексту странице",
@@ -78,6 +78,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Разговор",
 	"advancedsearch-namespaces-placeholder": "Додајте именске просторе…",
 	"prefs-advancedsearch": "Напредна претрага",
-	"advancedsearch-preference-help": "Напредна претрага додаје образац на страницу „Посебно:Претражи”. Ово вам омогућава да извршите специјализоване претраге, чак и ако не знате никакву синтаксу претраге. Мења и начин на који се могу изабрати именски простори.",
-	"advancedsearch-preference-disable": "Не приказуј напредни интерфејс при употреби Special:Search"
+	"advancedsearch-preference-help": "Напредна претрага додаје образац на страницу {{#Special:Search}}. Ово вам омогућава да извршите специјализоване претраге, чак и ако не знате никакву синтаксу претраге. Мења и начин на који се могу изабрати именски простори.",
+	"advancedsearch-preference-disable": "Не приказуј напредни интерфејс при употреби {{#Special:Search}}"
 }

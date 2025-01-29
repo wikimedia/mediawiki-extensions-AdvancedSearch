@@ -6,7 +6,7 @@
 			"IKhitron"
 		]
 	},
-	"advancedsearch-desc": "גישה קלה ליכולות חיפוש מתקדמות בדף [[Special:Search|מיוחד:חיפוש]]",
+	"advancedsearch-desc": "גישה קלה ליכולות חיפוש מתקדמות בדף [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "חיפוש מתקדם:",
 	"advancedsearch-options-pane-preview-list": "מונחי חיפוש בשימוש כעת",
 	"advancedsearch-optgroup-text": "חיפוש בטקסט הדף",
@@ -77,6 +77,6 @@
 	"advancedsearch-namespaces-preset-discussion": "דיון",
 	"advancedsearch-namespaces-placeholder": "הוספת מרחבי שם...",
 	"prefs-advancedsearch": "חיפוש מתקדם",
-	"advancedsearch-preference-help": "חיפוש מתקדם מוסיף טופס לדף מיוחד:חיפוש, המאפשר לבצע חיפושים מיוחדים גם למי שלא מכיר את תחביר החיפוש. הוא גם משנה את אופן הבחירה של מרחבי השם לחיפוש.",
-	"advancedsearch-preference-disable": "לא להציג ממשק חיפוש מתקדם בעת שימוש במיוחד:חיפוש"
+	"advancedsearch-preference-help": "חיפוש מתקדם מוסיף טופס לדף {{#Special:Search}}, המאפשר לבצע חיפושים מיוחדים גם למי שלא מכיר את תחביר החיפוש. הוא גם משנה את אופן הבחירה של מרחבי השם לחיפוש.",
+	"advancedsearch-preference-disable": "לא להציג ממשק חיפוש מתקדם בעת שימוש בדף {{#Special:Search}}"
 }

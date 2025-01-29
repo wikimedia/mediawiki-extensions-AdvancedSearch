@@ -10,7 +10,7 @@
 			"Toliño"
 		]
 	},
-	"advancedsearch-desc": "Acceso sinxelo a capacidades de procura avanzadas en [[Special:Search]]",
+	"advancedsearch-desc": "Acceso sinxelo a capacidades de procura avanzadas en [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Procura avanzada:",
 	"advancedsearch-options-pane-preview-list": "Termos de busca utilizados actualmente",
 	"advancedsearch-optgroup-text": "Procurar no texto da páxina",
@@ -81,6 +81,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Conversa",
 	"advancedsearch-namespaces-placeholder": "Engadir espazos de nomes…",
 	"prefs-advancedsearch": "Procura avanzada",
-	"advancedsearch-preference-help": "A procura avanzada engade un formulario na páxina Special:Search. Isto permite realizar procuras especializadas, mesmo sen ter coñecementos da sintaxe de procuras. Tamén cambia a forma na que se poden seleccionar os espazos de nomes.",
-	"advancedsearch-preference-disable": "Non amosar a interface de procura avanzada ao usar Special:Search"
+	"advancedsearch-preference-help": "A procura avanzada engade un formulario na páxina {{#Special:Search}}. Isto permite realizar procuras especializadas, mesmo sen ter coñecementos da sintaxe de procuras. Tamén cambia a forma na que se poden seleccionar os espazos de nomes.",
+	"advancedsearch-preference-disable": "Non amosar a interface de procura avanzada ao usar {{#Special:Search}}"
 }
