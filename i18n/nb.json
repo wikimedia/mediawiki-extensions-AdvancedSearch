@@ -11,7 +11,7 @@
 			"Pmt"
 		]
 	},
-	"advancedsearch-desc": "Enkel tilgang til avanserte søkemuligheter på [[Special:Search]]",
+	"advancedsearch-desc": "Enkel tilgang til avanserte søkemuligheter på [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Avansert søk:",
 	"advancedsearch-options-pane-preview-list": "Søkeord i bruk",
 	"advancedsearch-optgroup-text": "Søk i sidetekst",

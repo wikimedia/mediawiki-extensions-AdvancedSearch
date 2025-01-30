@@ -5,6 +5,7 @@
 			"CiaPan",
 			"InternerowyGołąb",
 			"Matma Rex",
+			"Msz2001",
 			"Rail",
 			"Railfail536",
 			"SemanticPioneer",
@@ -12,7 +13,7 @@
 			"Woytecr"
 		]
 	},
-	"advancedsearch-desc": "Ułatwia korzystanie z zaawansowanych możliwości wyszukiwania na [[Special:Search|Specjalna:Szukaj]]",
+	"advancedsearch-desc": "Ułatwia korzystanie z zaawansowanych możliwości wyszukiwania na [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Zaawansowane wyszukiwanie:",
 	"advancedsearch-options-pane-preview-list": "Obecnie używane frazy wyszukiwania",
 	"advancedsearch-optgroup-text": "Szukaj w treści strony",
@@ -83,6 +84,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Dyskusja",
 	"advancedsearch-namespaces-placeholder": "Dodaj przestrzenie nazw...",
 	"prefs-advancedsearch": "Wyszukiwanie zaawansowane",
-	"advancedsearch-preference-help": "Zaawansowane Wyszukiwanie to rozbudowany formularz na stronie Specjalna:Szukaj. Pozwala na łatwiejsze dokonywanie wyspecjalizowanego wyszukiwania bez konieczności znajomości składni wyszukiwania. Zmienia również sposób wybierania przeszukiwanych przestrzeni nazw.",
-	"advancedsearch-preference-disable": "Wyłącz zaawansowany interfejs wyszukiwania na stronie Specjalna:Szukaj"
+	"advancedsearch-preference-help": "Zaawansowane Wyszukiwanie to rozbudowany formularz na stronie {{#Specjalna:Szukaj}}. Pozwala na łatwiejsze dokonywanie wyspecjalizowanego wyszukiwania bez konieczności znajomości składni wyszukiwania. Zmienia również sposób wybierania przeszukiwanych przestrzeni nazw.",
+	"advancedsearch-preference-disable": "Wyłącz zaawansowany interfejs wyszukiwania na stronie {{#Specjalna:Szukaj}}"
 }
