@@ -7,13 +7,14 @@
 			"Gomoko",
 			"Pols12",
 			"Shirayuki",
+			"SleaY",
 			"Thibaut120094",
 			"Urhixidur",
 			"Verdy p",
 			"Wladek92"
 		]
 	},
-	"advancedsearch-desc": "Accès facile aux possibilités de recherche avancée sur [[Special:Search]]",
+	"advancedsearch-desc": "Accès facile aux possibilités de recherche avancée sur : [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Recherche avancée :",
 	"advancedsearch-options-pane-preview-list": "Termes de recherche actuellement utilisés",
 	"advancedsearch-optgroup-text": "Rechercher dans le texte de la page",
@@ -84,6 +85,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Discussion",
 	"advancedsearch-namespaces-placeholder": "Ajouter des espaces de noms...",
 	"prefs-advancedsearch": "Recherche avancée",
-	"advancedsearch-preference-help": "La recherche avancée ajoute un formulaire à la page ''Special:Search''. Ceci vous permet de réaliser des recherches spécialisées, même si vous ne connaissez aucune syntaxe de recherche. Elle modifie également la façon dont les espaces de noms peuvent être sélectionnés.",
-	"advancedsearch-preference-disable": "Ne pas afficher l’interface de recherche avancée lors de l’utilisation de Special:Search"
+	"advancedsearch-preference-help": "La recherche avancée ajoute un formulaire à la page : {{#Special:Search}}. Ceci vous permet de réaliser des recherches spécialisées, même si vous ne connaissez aucune syntaxe de recherche. Elle modifie également la façon dont les espaces de noms peuvent être sélectionnés.",
+	"advancedsearch-preference-disable": "Ne pas afficher l’interface de recherche avancée lors de l’utilisation de {{#Special:Search}}"
 }

@@ -93,6 +93,6 @@
 	"advancedsearch-namespaces-preset-discussion": "議論",
 	"advancedsearch-namespaces-placeholder": "名前空間を追加…",
 	"prefs-advancedsearch": "高度な検索",
-	"advancedsearch-preference-help": "高度な検索では「{{Special:Search}}」ページにフォームが追加されます。これにより、検索構文がわからなくても、特殊な検索を実行できます。また、名前空間の選択方法も変更されます。",
+	"advancedsearch-preference-help": "高度な検索では「{{#Special:Search}}」ページにフォームが追加されます。これにより、検索構文がわからなくても、特殊な検索を実行できます。また、名前空間の選択方法も変更されます。",
 	"advancedsearch-preference-disable": "{{#Special:Search}} の使用中、高度な検索インターフェイスを表示しない"
 }
