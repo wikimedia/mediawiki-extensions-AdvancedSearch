@@ -32,7 +32,7 @@ class MimeTypeConfiguratorTest extends TestCase {
 
 		$analyzer = $this->createMock( MimeAnalyzer::class );
 		$analyzer->method( 'getMimeTypeFromExtensionOrNull' )
-			->willReturnCallback( fn ( $ext ) => $fileExtensionToMimeTypeMap[$ext] ?? null );
+			->willReturnCallback( static fn ( $ext ) => $fileExtensionToMimeTypeMap[$ext] ?? null );
 
 		$configurator = new MimeTypeConfigurator( $analyzer );
 		$this->assertSame( $expected, $configurator->getMimeTypes( $fileExtensions ) );
