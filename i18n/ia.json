@@ -4,7 +4,7 @@
 			"McDutchie"
 		]
 	},
-	"advancedsearch-desc": "Accesso facile al functiones de recerca avantiate sur [[Special:Search]]",
+	"advancedsearch-desc": "Accesso facile al functiones de recerca avantiate sur [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Recerca avantiate:",
 	"advancedsearch-options-pane-preview-list": "Terminos de recerca actualmente usate",
 	"advancedsearch-optgroup-text": "Cercar in le texto del pagina",
@@ -75,6 +75,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Discussion",
 	"advancedsearch-namespaces-placeholder": "Adder spatios de nomines…",
 	"prefs-advancedsearch": "Recerca avantiate",
-	"advancedsearch-preference-help": "Le recerca avantiate adde un formulario al pagina Special:Recerca que te permitte facer recercas specialisate, mesmo si tu non cognosce le syntaxe de recerca. Illo etiam cambia le maniera de selection de spatios de nomines.",
-	"advancedsearch-preference-disable": "Non monstrar le interfacie de recerca avantiate quando se usa Special:Recerca"
+	"advancedsearch-preference-help": "Le recerca avantiate adde un formulario al pagina {{#Special:Search}} que te permitte facer recercas specialisate, mesmo si tu non cognosce le syntaxe de recerca. Illo etiam cambia le maniera de selection de spatios de nomines.",
+	"advancedsearch-preference-disable": "Non monstrar le interfacie de recerca avantiate quando se usa {{#Special:Search}}"
 }

@@ -20,7 +20,7 @@
 			"Obzord"
 		]
 	},
-	"advancedsearch-desc": "دسترسی آسان به قابلیت‌های جستجوی پیشرفته در [[Special:Search]]",
+	"advancedsearch-desc": "دسترسی آسان به قابلیت‌های جستجوی پیشرفته در [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "جستجوی پیشرفته:",
 	"advancedsearch-options-pane-preview-list": "عبارت‌های در حال حاضر استفاده شده",
 	"advancedsearch-optgroup-text": "جستجو در متن صفحه",
@@ -79,6 +79,6 @@
 	"advancedsearch-namespaces-preset-discussion": "بحث",
 	"advancedsearch-namespaces-placeholder": "افزودن فضاهای نام…",
 	"prefs-advancedsearch": "جستجوی پیشرفته",
-	"advancedsearch-preference-help": "جستجوی پیشرفته یک فرم به صفحهٔ ویژه:جستجو می‌افزاید. این فرم اجازه می‌دهد که جستجوهای ویژه‌ای انجام دهید حتی اگر با نحو دستورات جستجو آشنا نباشید. این فرم همچنین روش انتخاب فضاهای نام را تغییر می‌دهد.",
-	"advancedsearch-preference-disable": "در هنگام استفاده از ویژه:جستجو رابط کاربری «جستجوی پیشرفته» را نشان نده"
+	"advancedsearch-preference-help": "جستجوی پیشرفته یک فرم به صفحهٔ {{#Special:Search}} می‌افزاید. این فرم اجازه می‌دهد که جستجوهای ویژه‌ای انجام دهید حتی اگر با نحو دستورات جستجو آشنا نباشید. این فرم همچنین روش انتخاب فضاهای نام را تغییر می‌دهد.",
+	"advancedsearch-preference-disable": "در هنگام استفاده از ویژه:جستجو رابط کاربری «{{#Special:Search}}» را نشان نده"
 }

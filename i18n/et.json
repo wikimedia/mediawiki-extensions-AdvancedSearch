@@ -6,7 +6,7 @@
 			"Pikne"
 		]
 	},
-	"advancedsearch-desc": "Lihtne juurdepääs täpsematele otsivõimalustele leheküljel [[Special:Search]]",
+	"advancedsearch-desc": "Lihtne juurdepääs täpsematele otsivõimalustele leheküljel [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Täpsem otsing:",
 	"advancedsearch-options-pane-preview-list": "Hetkel kasutatavad otsisõnad",
 	"advancedsearch-optgroup-text": "Otsimine lehekülje tekstist",
@@ -77,6 +77,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Arutelu",
 	"advancedsearch-namespaces-placeholder": "Lisa nimeruume...",
 	"prefs-advancedsearch": "Täpsem otsing",
-	"advancedsearch-preference-help": "Täpsema otsinguga lisatakse otsimise erileheküljele vorm, mis võimaldab otsida eri moel ka siis, kui otsisüntaksit ei tunta. Samuti muudab see nimeruumide valimise viisi.",
-	"advancedsearch-preference-disable": "Ära näita otsingu erilehe kasutamisel täpsema otsingu liidest"
+	"advancedsearch-preference-help": "Täpsema otsinguga lisatakse leheküljele {{#Special:Search}} vorm, mis võimaldab otsida eri moel ka siis, kui otsisüntaksit ei tunta. Samuti muudab see nimeruumide valimise viisi.",
+	"advancedsearch-preference-disable": "Ära näita lehekülje {{#Special:Search}} kasutamisel täpsema otsingu liidest"
 }

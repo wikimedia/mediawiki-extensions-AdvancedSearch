@@ -5,6 +5,7 @@
 			"Lejonel",
 			"Liuxinyu970226",
 			"Mar(c)",
+			"McDutchie",
 			"Nike",
 			"Pikne",
 			"Raymond",
@@ -86,6 +87,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Label for namespace preset 'Discussion'\n{{Identical|Discussion}}",
 	"advancedsearch-namespaces-placeholder": "Placeholder text shown in the namespace selection field",
 	"prefs-advancedsearch": "Section name for advanced search settings in the user preferences.",
-	"advancedsearch-preference-help": "Help text explaining the AdvancedSearch interface for the user preference that disables the interface",
-	"advancedsearch-preference-disable": "Label for the user preference that disables the AdvancedSearch interface"
+	"advancedsearch-preference-help": "{{doc-important|Do not translate <tt><nowiki>{{#Special:Search}}</nowiki></tt>!}}\nHelp text explaining the AdvancedSearch interface for the user preference that disables the interface",
+	"advancedsearch-preference-disable": "{{doc-important|Do not translate <tt><nowiki>{{#Special:Search}}</nowiki></tt>!}}\nLabel for the user preference that disables the AdvancedSearch interface"
 }
