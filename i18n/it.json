@@ -12,7 +12,7 @@
 			"Titore"
 		]
 	},
-	"advancedsearch-desc": "Accesso rapido alle funzioni di ricerca avanzata in [[Special:Search]]",
+	"advancedsearch-desc": "Accesso rapido alle funzioni di ricerca avanzata in [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Ricerca avanzata:",
 	"advancedsearch-optgroup-text": "Cerca nel testo della pagina",
 	"advancedsearch-optgroup-structure": "Struttura",
@@ -79,6 +79,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Discussione",
 	"advancedsearch-namespaces-placeholder": "Aggiungi namespace…",
 	"prefs-advancedsearch": "Ricerca avanzata",
-	"advancedsearch-preference-help": "La ricerca avanzata aggiunge un modulo alla pagina Speciale:Ricerca per consentirti di effettuare ricerche specializzate, anche se non conosci la sintassi di ricerca. Inoltre cambia il modo in cui si possono selezionare i namespace.",
-	"advancedsearch-preference-disable": "Non mostrare l'interfaccia di ricerca avanzata quanto utilizzi Speciale:Ricerca"
+	"advancedsearch-preference-help": "La ricerca avanzata aggiunge un modulo alla pagina {{#Special:Search}} per consentirti di effettuare ricerche specializzate, anche se non conosci la sintassi di ricerca. Inoltre cambia il modo in cui si possono selezionare i namespace.",
+	"advancedsearch-preference-disable": "Non mostrare l'interfaccia di ricerca avanzata quanto utilizzi {{#Special:Search}}"
 }
