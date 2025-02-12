@@ -54,5 +54,5 @@
 	"advancedsearch-namespaces-preset-discussion": "Kaozeadenn",
 	"advancedsearch-namespaces-placeholder": "Ouzhpennañ esaouennoù anv...",
 	"prefs-advancedsearch": "Klask araokaet",
-	"advancedsearch-preference-disable": "Arabat diskouez etrefas ar c'hlask araokaet pa implijer Special:Search"
+	"advancedsearch-preference-disable": "Arabat diskouez etrefas ar c'hlask araokaet pa implijer {{#Special:Search}}"
 }
