@@ -83,5 +83,5 @@
 	"advancedsearch-namespaces-placeholder": "Legg til navnerom …",
 	"prefs-advancedsearch": "Avansert søk",
 	"advancedsearch-preference-help": "Avansert søk legger til et skjema på søkesiden. Dette lar deg utføre spesialiserte søk selv om du ikke kan søkesyntaksen. Det endrer også måten navnerom velges på.",
-	"advancedsearch-preference-disable": "Ikke vis grensesnittet for avansert søk når du bruker Special:Search"
+	"advancedsearch-preference-disable": "Ikke vis grensesnittet for avansert søk når du bruker {{#Special:Search}}"
 }
