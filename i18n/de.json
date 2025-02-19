@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"AnnaTheProgrammer777",
 			"Gabriel Birke (WMDE)",
 			"Inkowik",
 			"Jeeputer",
@@ -82,6 +83,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Diskussion",
 	"advancedsearch-namespaces-placeholder": "Namensräume hinzufügen …",
 	"prefs-advancedsearch": "Erweiterte Suche",
-	"advancedsearch-preference-help": "Die Erweiterte Suchoberfläche ergänzt ein Formular auf der Seite [[{{#Special:Search}}]]. Dieses erlaubt dir, spezialisierte Suchanfragen durchzuführen, auch wenn du keine Suchsyntax beherrschst. Es ändert auch die Weise, wie Namensräume ausgewählt werden können.",
-	"advancedsearch-preference-disable": "Die Oberfläche der erweiterten Suche nicht anzeigen, wenn [[{{#Special:Search}}]] verwendet wird"
+	"advancedsearch-preference-help": "Die Erweiterte Suchoberfläche ergänzt ein Formular auf der Seite {{#Special:Search}}. Dieses erlaubt dir, spezialisierte Suchanfragen durchzuführen, auch wenn du keine Suchsyntax beherrschst. Es ändert auch die Weise, wie Namensräume ausgewählt werden können.",
+	"advancedsearch-preference-disable": "Die Oberfläche der erweiterten Suche nicht anzeigen, wenn {{#Special:Search}} verwendet wird"
 }
