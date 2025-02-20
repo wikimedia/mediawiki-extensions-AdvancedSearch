@@ -8,7 +8,7 @@
 			"আফতাবুজ্জামান"
 		]
 	},
-	"advancedsearch-desc": "[[Special:Search]]-এ উচ্চতর অনুসন্ধান ক্ষমতায় সহজে প্রবেশাধিকার দেয়",
+	"advancedsearch-desc": "[[{{#Special:Search}}]]-এ উচ্চতর অনুসন্ধান ক্ষমতায় সহজে প্রবেশাধিকার দেয়",
 	"advancedsearch-options-pane-head": "উচ্চতর অনুসন্ধান:",
 	"advancedsearch-options-pane-preview-list": "বর্তমানে ব্যবহৃত অনুসন্ধান পদ",
 	"advancedsearch-optgroup-text": "পাতার পাঠ্যে সন্ধান করুন",
@@ -66,6 +66,6 @@
 	"advancedsearch-namespaces-preset-discussion": "আলোচনা",
 	"advancedsearch-namespaces-placeholder": "নামস্থান যোগ করুন...",
 	"prefs-advancedsearch": "উচ্চতর অনুসন্ধান",
-	"advancedsearch-preference-help": "উচ্চতর অনুসন্ধান বিশেষ:অনুসন্ধান পৃষ্ঠায় একটি ফরম যুক্ত করে। এটি আপনাকে বিশেষায়িত অনুসন্ধান করার অনুমতি দিবে, এমনকি যদি আপনি অনুসন্ধানের কোনো শব্দবিন্যাস নাও জানেন। এছাড়া এটি নামস্থান নির্বাচন করার পদ্ধতিও পরিবর্তন করে।",
-	"advancedsearch-preference-disable": "বিশেষ:অনুসন্ধান ব্যবহারের সময় উচ্চতর অনুসন্ধানের ইন্টারফেস প্রদর্শন করবেন না"
+	"advancedsearch-preference-help": "উচ্চতর অনুসন্ধান {{#Special:Search}} পৃষ্ঠায় একটি ফরম যুক্ত করে। এটি আপনাকে বিশেষায়িত অনুসন্ধান করার অনুমতি দিবে, এমনকি যদি আপনি অনুসন্ধানের কোনো শব্দবিন্যাস নাও জানেন। এছাড়া এটি নামস্থান নির্বাচন করার পদ্ধতিও পরিবর্তন করে।",
+	"advancedsearch-preference-disable": "{{#Special:Search}} ব্যবহারের সময় উচ্চতর অনুসন্ধানের ইন্টারফেস প্রদর্শন করবেন না"
 }

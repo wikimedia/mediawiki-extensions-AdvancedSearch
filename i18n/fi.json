@@ -85,6 +85,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Keskustelu",
 	"advancedsearch-namespaces-placeholder": "Lisää nimiavaruuksia...",
 	"prefs-advancedsearch": "Tarkennettu haku",
-	"advancedsearch-preference-help": "Tarkennettu haku lisää lomakkeen sivulle Toiminto:Haku. Voit suorittaa sillä erikoistuneita hakuja, vaikka et tietäisi mitään hakusyntaksista. Se myös muuttaa nimiavaruuksien valintatapaa.",
-	"advancedsearch-preference-disable": "Älä näytä tarkennetun haun käyttöliittymää hakutoimintoa käytettäessä"
+	"advancedsearch-preference-help": "Tarkennettu haku lisää lomakkeen sivulle {{#Special:Search}}. Voit suorittaa sillä erikoistuneita hakuja, vaikka et tietäisi mitään hakusyntaksista. Se myös muuttaa nimiavaruuksien valintatapaa.",
+	"advancedsearch-preference-disable": "Älä näytä tarkennetun haun käyttöliittymää hakutoimintoa ({{#Special:Search}}) käytettäessä"
 }
