@@ -2,12 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"1917 Ekim Devrimi",
+			"GolyatGeri",
 			"Mirzali",
 			"Orbot707"
 		]
 	},
-	"advancedsearch-desc": "Pela [[Special:Search|Xısusi:Cıgeyrayış]]i sero cıgeyrayışê ravêrşıyayışan rê rehat cırestışi",
+	"advancedsearch-desc": "Pela [[{{#Special:Search}}]]i sero cıgeyrayışê ravêrşıyayışan rê rehat cırestışi",
 	"advancedsearch-options-pane-head": "Cıgeyrayışo hera:",
+	"advancedsearch-options-pane-preview-list": "Enewke definaye ternê cıgeyrayışi",
 	"advancedsearch-optgroup-text": "Pela nuşteyi de cıgeyrên",
 	"advancedsearch-optgroup-structure": "Awaniye",
 	"advancedsearch-optgroup-files": "Dosyeyi u resımi",
@@ -26,6 +28,7 @@
 	"advancedsearch-field-fileh": "Pikseli heta gırdiya dosya",
 	"advancedsearch-field-sort": "Nizamê rêzkerdışi",
 	"advancedsearch-field-preview-sort": "Babeta rêze $1",
+	"advancedsearch-help-general-instruction": "Serva $1 direktifi",
 	"advancedsearch-placeholder-exact-text": "\"pısing, bıze sinena\"",
 	"advancedsearch-inlanguage-default": "Zıwan weçine",
 	"advancedsearch-filetype-section-types": "Tewrê dosyaya umumiye",
@@ -57,5 +60,5 @@
 	"advancedsearch-namespaces-preset-discussion": "Werênayış",
 	"advancedsearch-namespaces-placeholder": "Cayê nameyan cı kerên...",
 	"prefs-advancedsearch": "Cıgeyrayışo Hera",
-	"advancedsearch-preference-disable": "Demo ke Xısusi:Cıgeyrayış gurena, miyanriyê cıgeyrayışiyê raverberdeyi memocne"
+	"advancedsearch-preference-disable": "Demo ke {{#Special:Search}} gurena, miyanriyê cıgeyrayışiyê raverberdeyi memocne"
 }
