@@ -6,7 +6,7 @@
 			"Renessaince"
 		]
 	},
-	"advancedsearch-desc": "Лёгкі доступ да пашыраных парамэтраў пошуку ў [[Special:Search|Спэцыяльныя:Пошук]]",
+	"advancedsearch-desc": "Лёгкі доступ да пашыраных парамэтраў пошуку ў [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Пашыраны пошук:",
 	"advancedsearch-optgroup-text": "Шукаць у тэксьце старонкі",
 	"advancedsearch-optgroup-structure": "Структура",
@@ -74,6 +74,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Абмеркаваньне",
 	"advancedsearch-namespaces-placeholder": "Дадаць прасторы назваў…",
 	"prefs-advancedsearch": "Пашыраны пошук",
-	"advancedsearch-preference-help": "Пашыраны пошук дадае форму на старонку Спэцыяльныя:Пошук. Гэта дазваляе вам выконваць спэцыялізаваныя пошукі, нават ня ведаючы адмысловага сынтаксу. Ён таксама зьмяняе спосаб выбару прасторы назваў.",
-	"advancedsearch-preference-disable": "Не паказваць інтэрфэйс Пашыранага пошуку пры выкарыстаньні Спэцыяльныя:Пошук"
+	"advancedsearch-preference-help": "Пашыраны пошук дадае форму на старонку {{#Special:Search}}. Гэта дазваляе вам выконваць спэцыялізаваныя пошукі, нават ня ведаючы адмысловага сынтаксу. Ён таксама зьмяняе спосаб выбару прасторы назваў.",
+	"advancedsearch-preference-disable": "Не паказваць інтэрфэйс Пашыранага пошуку пры выкарыстаньні {{#Special:Search}}"
 }
