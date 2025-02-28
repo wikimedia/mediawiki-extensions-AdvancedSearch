@@ -84,11 +84,10 @@ NamespaceFilters.prototype.onValueUpdate = function () {
 };
 
 NamespaceFilters.prototype.updateNamespaceFormFields = function () {
-	const self = this,
-		namespaces = this.store.getNamespaces();
+	const namespaces = this.store.getNamespaces();
 	this.$namespaceContainer.empty();
 	namespaces.forEach( ( key ) => {
-		self.$namespaceContainer.append(
+		this.$namespaceContainer.append(
 			$( '<input>' ).attr( {
 				type: 'hidden',
 				value: '1',
@@ -99,13 +98,12 @@ NamespaceFilters.prototype.updateNamespaceFormFields = function () {
 };
 
 NamespaceFilters.prototype.setValueFromStore = function () {
-	const self = this,
-		namespaces = this.store.getNamespaces();
+	const namespaces = this.store.getNamespaces();
 	// prevent updating the store while reacting to its update notification
 	this.disconnect( this, { change: 'onValueUpdate' } );
 	this.clearItems();
 	namespaces.forEach( ( key ) => {
-		self.addTag( key, self.namespaces[ key ] );
+		this.addTag( key, this.namespaces[ key ] );
 	} );
 
 	// re-establish event binding
@@ -136,9 +134,8 @@ NamespaceFilters.prototype.createTagItemWidget = function ( data, label ) {
 };
 
 NamespaceFilters.prototype.highlightSelectedNamespacesInMenu = function () {
-	const self = this;
 	this.getMenu().getItems().forEach( ( menuItem ) => {
-		const isInTagList = !!self.findItemFromData( menuItem.getData() );
+		const isInTagList = !!this.findItemFromData( menuItem.getData() );
 		if ( isInTagList ) {
 			menuItem.checkboxWidget.setSelected( false );
 			menuItem.setSelected( false );

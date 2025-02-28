@@ -10,7 +10,6 @@
 const ClassesForDropdownOptions = function () {};
 
 ClassesForDropdownOptions.prototype.setOptionsData = function ( options ) {
-	const widget = this;
 	this.optionsDirty = true;
 
 	const optionWidgets = options.map( ( opt ) => {
@@ -18,14 +17,14 @@ ClassesForDropdownOptions.prototype.setOptionsData = function ( options ) {
 			return new OO.ui.MenuSectionOptionWidget( { label: opt.optgroup } );
 		}
 
-		const value = widget.cleanUpValue( opt.data );
+		const value = this.cleanUpValue( opt.data );
 		// The following classes are used here:
 		// * mw-advancedSearch-inlanguage-*
 		// * mw-advancedSearch-filetype-*
 		// * mw-advancedSearch-sort-*
 		return new OO.ui.MenuOptionWidget( {
 			data: value,
-			classes: [ widget.className + value.replace( /\W+/g, '-' ) ],
+			classes: [ this.className + value.replace( /\W+/g, '-' ) ],
 			label: opt.label || value
 		} );
 	} );

@@ -53,11 +53,9 @@ ArbitraryWordInput.prototype.buildTagsFromInput = function () {
 	const segments = this.input.getValue().split( /[\s,]+/ );
 
 	if ( segments.length > 1 ) {
-		const self = this;
-
 		segments.forEach( ( segment ) => {
-			if ( self.isAllowedData( segment ) ) {
-				self.addTag( segment );
+			if ( this.isAllowedData( segment ) ) {
+				this.addTag( segment );
 			}
 		} );
 
