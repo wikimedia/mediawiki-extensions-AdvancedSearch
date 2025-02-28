@@ -14,7 +14,7 @@ const cloneReferenceTypeValue = function ( value ) {
  * @mixes OO.EventEmitter
  *
  * @constructor
- * @param {string[]} [defaultNamespaces=[]] The namespaces selected by default (for new searches)
+ * @param {string[]} [defaultNamespaces=[]] Numeric namespace ids selected by default (for new searches)
  * @param {Object} [defaultFieldValues={}] Defaults for search field values
  */
 const SearchModel = function ( defaultNamespaces, defaultFieldValues ) {
@@ -74,9 +74,9 @@ SearchModel.prototype.storeField = function ( fieldId, value ) {
 	}
 
 	if ( fieldId === 'filetype' && !this.fileNamespaceIsSelected() ) {
-		const namespaces = this.getNamespaces();
-		namespaces.push( SearchModel.FILE_NAMESPACE );
-		this.setNamespaces( namespaces );
+		const namespaceIds = this.getNamespaces();
+		namespaceIds.push( SearchModel.FILE_NAMESPACE );
+		this.setNamespaces( namespaceIds );
 	}
 
 	this.emitUpdate();
@@ -220,27 +220,27 @@ SearchModel.prototype.fileNamespaceIsSelected = function () {
 };
 
 /**
- * @return {string[]}
+ * @return {string[]} Numeric namespace ids
  */
 SearchModel.prototype.getNamespaces = function () {
 	return this.namespaces;
 };
 
 /**
- * @param {string[]} namespaces
+ * @param {string[]} namespaceIds Numeric namespace ids
  * @return {string[]}
  */
-SearchModel.prototype.sortNamespacesByNumber = function ( namespaces ) {
-	return namespaces.sort( ( a, b ) => Number( a ) - Number( b ) );
+SearchModel.prototype.sortNamespacesByNumber = function ( namespaceIds ) {
+	return namespaceIds.sort( ( a, b ) => Number( a ) - Number( b ) );
 };
 
 /**
- * @param {string[]} namespaces
+ * @param {string[]} namespaceIds Numeric namespace ids
  */
-SearchModel.prototype.setNamespaces = function ( namespaces ) {
+SearchModel.prototype.setNamespaces = function ( namespaceIds ) {
 	const previousNamespaces = this.namespaces.slice();
 
-	this.namespaces = this.sortNamespacesByNumber( namespaces );
+	this.namespaces = this.sortNamespacesByNumber( namespaceIds );
 
 	if ( !OO.compare( previousNamespaces, this.namespaces ) ) {
 		this.emitUpdate();

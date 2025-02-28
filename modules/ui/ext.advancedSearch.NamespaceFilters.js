@@ -9,7 +9,7 @@ const MenuSelectWidget = require( './ext.advancedSearch.MenuSelectWidget.js' );
  * @constructor
  * @param {SearchModel} store
  * @param {Object} config
- * @param {Object} config.namespaces Namespace id => Namespace label (similar to mw.config.get( 'wgFormattedNamespaces' ) )
+ * @param {Object.<string,string>} config.namespaces Namespace id => Namespace label (similar to mw.config.get( 'wgFormattedNamespaces' ) )
  */
 const NamespaceFilters = function ( store, config ) {
 	this.store = store;
@@ -50,14 +50,14 @@ OO.inheritClass( NamespaceFilters, OO.ui.MenuTagMultiselectWidget );
 /**
  * Prettify namespace names e.g. "config_talk" becomes "Config talk"
  *
- * @param {Object} namespaces Namespace id => Namespace label (similar to mw.config.get( 'wgFormattedNamespaces' ) )
- * @return {Object} namespaces
+ * @param {Object.<string,string>} namespaceIds Namespace id => Namespace label (similar to mw.config.get( 'wgFormattedNamespaces' ) )
+ * @return {Object.<string,string>}
  */
-NamespaceFilters.prototype.prettifyNamespaces = function ( namespaces ) {
-	Object.keys( namespaces ).forEach( ( id ) => {
-		namespaces[ id ] = mw.Title.newFromText( namespaces[ id ] || id ).getMainText();
+NamespaceFilters.prototype.prettifyNamespaces = function ( namespaceIds ) {
+	Object.keys( namespaceIds ).forEach( ( id ) => {
+		namespaceIds[ id ] = mw.Title.newFromText( namespaceIds[ id ] || id ).getMainText();
 	} );
-	return namespaces;
+	return namespaceIds;
 };
 
 /**
@@ -84,26 +84,26 @@ NamespaceFilters.prototype.onValueUpdate = function () {
 };
 
 NamespaceFilters.prototype.updateNamespaceFormFields = function () {
-	const namespaces = this.store.getNamespaces();
+	const namespaceIds = this.store.getNamespaces();
 	this.$namespaceContainer.empty();
-	namespaces.forEach( ( key ) => {
+	namespaceIds.forEach( ( nsId ) => {
 		this.$namespaceContainer.append(
 			$( '<input>' ).attr( {
 				type: 'hidden',
 				value: '1',
-				name: 'ns' + key
+				name: 'ns' + nsId
 			} )
 		);
 	} );
 };
 
 NamespaceFilters.prototype.setValueFromStore = function () {
-	const namespaces = this.store.getNamespaces();
+	const namespaceIds = this.store.getNamespaces();
 	// prevent updating the store while reacting to its update notification
 	this.disconnect( this, { change: 'onValueUpdate' } );
 	this.clearItems();
-	namespaces.forEach( ( key ) => {
-		this.addTag( key, this.namespaces[ key ] );
+	namespaceIds.forEach( ( id ) => {
+		this.addTag( id, this.namespaces[ id ] );
 	} );
 
 	// re-establish event binding
@@ -116,20 +116,20 @@ NamespaceFilters.prototype.setValueFromStore = function () {
  * Overrides OO.ui.TagMultiselectWidget default behaviour to further configure individual tags; called in addTag()
  *
  * @protected
- * @param {string} data Item data
- * @param {string} [label] The label text.
+ * @param {string} nsId Numeric namespace id
+ * @param {string} [label=nsId] Pretty-printed name of the namespace
  * @return {OO.ui.TagItemWidget}
  */
-NamespaceFilters.prototype.createTagItemWidget = function ( data, label ) {
+NamespaceFilters.prototype.createTagItemWidget = function ( nsId, label ) {
 	// The following classes are used here:
 	// * mw-advancedSearch-namespace-0
 	// * mw-advancedSearch-namespace-1
 	// etc.
 	return new OO.ui.TagItemWidget( {
-		data: data,
-		label: label || data,
+		data: nsId,
+		label: label || nsId,
 		draggable: false,
-		classes: [ 'mw-advancedSearch-namespace-' + data ]
+		classes: [ 'mw-advancedSearch-namespace-' + nsId ]
 	} );
 };
 
@@ -161,11 +161,11 @@ NamespaceFilters.prototype.removeHighlightFromTags = function () {
 /**
  * Remove an item from the list of namespaces in store
  *
- * @param {string} namespace The item to be removed
+ * @param {string} namespace Numeric namespace id to be removed
  * @return {string[]} collection of namespaces minus the removed item
  */
 NamespaceFilters.prototype.removeNamespaceTag = function ( namespace ) {
-	return this.store.getNamespaces().filter( ( el ) => el !== namespace );
+	return this.store.getNamespaces().filter( ( id ) => id !== namespace );
 };
 
 /**
