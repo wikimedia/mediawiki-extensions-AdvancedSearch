@@ -4,7 +4,7 @@
 			"Къарачайлы"
 		]
 	},
-	"advancedsearch-desc": "[[Special:Search]] бетдеги кенгерилген излеу амаллагъа тынч джетиш",
+	"advancedsearch-desc": "[[{{#Special:Search}}]] бетдеги кенгерилген излеу амаллагъа тынч джетиш",
 	"advancedsearch-options-pane-head": "Кенг излеу:",
 	"advancedsearch-options-pane-preview-list": "Бу сагъатда хайырланнган излеу терминле",
 	"advancedsearch-optgroup-text": "Бет текстде изле",
