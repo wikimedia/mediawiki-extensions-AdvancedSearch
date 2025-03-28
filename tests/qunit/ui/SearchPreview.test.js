@@ -1,31 +1,22 @@
-( function () {
+QUnit.module( 'ext.advancedSearch.ui.SearchPreview', ( hooks ) => {
 	'use strict';
 
 	const { SearchPreview } = require( 'ext.advancedSearch.elements' );
 
-	let sandbox,
-		store,
-		config;
+	let store, config;
 
-	QUnit.testStart( () => {
-		sandbox = sinon.sandbox.create();
+	hooks.beforeEach( function () {
 		store = {
-			connect: sandbox.stub(),
-			getField: sandbox.stub(),
-			removeField: sandbox.stub(),
-			getSortMethod: sandbox.stub().returns( '' )
+			connect: this.sandbox.stub(),
+			getField: this.sandbox.stub(),
+			removeField: this.sandbox.stub(),
+			getSortMethod: this.sandbox.stub().returns( '' )
 		};
 		config = {};
 	} );
 
-	QUnit.testDone( () => {
-		sandbox.restore();
-	} );
-
-	QUnit.module( 'ext.advancedSearch.ui.SearchPreview' );
-
-	QUnit.test( 'Store data subscribed to and synced initially', ( assert ) => {
-		const updatePreviewSpy = sandbox.spy( SearchPreview.prototype, 'updatePreview' );
+	QUnit.test( 'Store data subscribed to and synced initially', function ( assert ) {
+		const updatePreviewSpy = this.sandbox.spy( SearchPreview.prototype, 'updatePreview' );
 
 		// eslint-disable-next-line no-new
 		new SearchPreview( store, config );
@@ -34,8 +25,8 @@
 		assert.true( updatePreviewSpy.calledOnce );
 	} );
 
-	QUnit.test( 'Store state is reflected in preview', ( assert ) => {
-		const generateTagSpy = sandbox.spy( SearchPreview.prototype, 'generateTag' );
+	QUnit.test( 'Store state is reflected in preview', function ( assert ) {
+		const generateTagSpy = this.sandbox.spy( SearchPreview.prototype, 'generateTag' );
 
 		store.getField.withArgs( 'somename' ).returns( 'field one value' );
 		store.getField.withArgs( 'another' ).returns( 'field two value' );
@@ -77,8 +68,8 @@
 		assert.true( searchPreview.skipFieldInPreview( 'filew', [ '>', null ] ) );
 	} );
 
-	QUnit.test( 'Tag is generated', ( assert ) => {
-		const messageStub = sandbox.stub( mw, 'msg' )
+	QUnit.test( 'Tag is generated', function ( assert ) {
+		const messageStub = this.sandbox.stub( mw, 'msg' )
 			.withArgs( 'advancedsearch-field-somename' ).returns( 'my label' )
 			.withArgs( 'colon-separator' ).returns( ':' );
 		const searchPreview = new SearchPreview( store, config );
@@ -102,8 +93,8 @@
 		assert.strictEqual( $( '.mw-advancedSearch-searchPreview-content', element ).html(), '<bdi>&lt;script&gt;alert("evil");&lt;/script&gt;</bdi>' );
 	} );
 
-	QUnit.test( 'Tag label is HTML-safe', ( assert ) => {
-		sandbox.stub( mw, 'msg' )
+	QUnit.test( 'Tag label is HTML-safe', function ( assert ) {
+		this.sandbox.stub( mw, 'msg' )
 			.withArgs( 'advancedsearch-field-whatever' ).returns( '<div>block</div>' )
 			.withArgs( 'colon-separator' ).returns( ':' );
 		const searchPreview = new SearchPreview( store, config );
@@ -151,18 +142,18 @@
 		assert.strictEqual( searchPreview.formatValue( 'someOption', ' stray whitespace  ' ), 'stray whitespace' );
 	} );
 
-	QUnit.test( 'Array values get formatted well', ( assert ) => {
+	QUnit.test( 'Array values get formatted well', function ( assert ) {
 		const searchPreview = new SearchPreview( store, config );
-		sandbox.stub( mw, 'msg' ).withArgs( 'comma-separator' ).returns( ', ' );
+		this.sandbox.stub( mw, 'msg' ).withArgs( 'comma-separator' ).returns( ', ' );
 
 		assert.strictEqual( searchPreview.formatValue( 'someOption', [ 'some', 'words', 'in', 'combination' ] ), 'some, words, in, combination' );
 		assert.strictEqual( searchPreview.formatValue( 'someOption', [ 'related words', 'not', 'so' ] ), 'related words, not, so' );
 		assert.strictEqual( searchPreview.formatValue( 'someOption', [ '', ' stray', 'whitespace  ' ] ), 'stray, whitespace' );
 	} );
 
-	QUnit.test( 'Dimension values get formatted well', ( assert ) => {
+	QUnit.test( 'Dimension values get formatted well', function ( assert ) {
 		const searchPreview = new SearchPreview( store, config );
-		const translationStub = sandbox.stub( mw, 'msg' ).withArgs( 'word-separator' ).returns( ' ' );
+		const translationStub = this.sandbox.stub( mw, 'msg' ).withArgs( 'word-separator' ).returns( ' ' );
 
 		assert.strictEqual( searchPreview.formatValue( 'someOption', [ '', '' ] ), '' );
 		assert.strictEqual( searchPreview.formatValue( 'fileh', [ '', 1000 ] ), '= 1000' );
@@ -171,4 +162,4 @@
 
 		assert.strictEqual( translationStub.callCount, 3 );
 	} );
-}() );
+} );
