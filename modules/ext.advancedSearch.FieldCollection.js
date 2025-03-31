@@ -22,7 +22,7 @@ FieldCollection.prototype.add = function ( field, group ) {
 	if ( field.id in this.groupLookup ) {
 		throw new Error( 'Field "' + field.id + '" has already been added.' );
 	}
-	if ( this.frozenGroups.indexOf( group ) !== -1 ) {
+	if ( this.frozenGroups.includes( group ) ) {
 		throw new Error( 'Group "' + group + '" is frozen and does not accept more fields.' );
 	}
 	this.fields.push( field );

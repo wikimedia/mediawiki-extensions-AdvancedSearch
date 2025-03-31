@@ -14,7 +14,7 @@ const KNOWN_DOCUMENT_TYPES = [
  * @return {boolean}
  */
 const isKnownDocumentType = function ( fileExtension ) {
-	return KNOWN_DOCUMENT_TYPES.indexOf( fileExtension ) !== -1;
+	return KNOWN_DOCUMENT_TYPES.includes( fileExtension );
 };
 
 /**

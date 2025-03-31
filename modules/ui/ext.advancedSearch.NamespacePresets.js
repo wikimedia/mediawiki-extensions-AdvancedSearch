@@ -120,7 +120,7 @@ NamespacePresets.prototype.updateStoreFromPresets = function ( newValue ) {
 		);
 	} else {
 		this.store.setNamespaces( this.store.getNamespaces().filter( function ( id ) {
-			return this.presets[ key ].namespaces.indexOf( id ) === -1;
+			return !this.presets[ key ].namespaces.includes( id );
 		}, this ) );
 	}
 };
