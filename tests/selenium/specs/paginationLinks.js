@@ -9,8 +9,10 @@ describe( 'Advanced Search', () => {
 		await SearchPage.open( {
 			limit: 1,
 			search: 'The',
-			'advancedSearch-current': JSON.stringify( { fields: { plain: [ 'The' ] } } ) } );
-		await ( await SearchPage.getSearchPaginationLinks() )[ 0 ].waitForExist();
+			ns0: 1,
+			'advancedSearch-current': JSON.stringify( { fields: { plain: [ 'dog' ] } } )
+		} );
+		await ( await $( '.searchresults' ) ).waitForExist();
 
 		for ( const link of await SearchPage.getSearchPaginationLinks() ) {
 			await expect( await link.getAttribute( 'href' ) ).toContain( 'advancedSearch-current' );
