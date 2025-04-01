@@ -1,4 +1,4 @@
-( function () {
+QUnit.module( 'ext.advancedSearch.dm.NamespacePresetProviders', () => {
 	const { NamespacePresetProviders } = require( 'ext.advancedSearch.elements' );
 	const namespaces = {
 		0: 'Article',
@@ -7,17 +7,6 @@
 		12: 'Help',
 		911: 'Emergency Talk'
 	};
-	let sandbox;
-
-	QUnit.testStart( () => {
-		sandbox = sinon.sandbox.create();
-	} );
-
-	QUnit.testDone( () => {
-		sandbox.restore();
-	} );
-
-	QUnit.module( 'ext.advancedSearch.dm.NamespacePresetProviders' );
 
 	QUnit.test( 'Provider function for all namespaces returns/selects all namespace ids', ( assert ) => {
 		const presetProviders = new NamespacePresetProviders( namespaces );
@@ -31,8 +20,8 @@
 		assert.deepEqual( presetProviders.getNamespaceIdsFromProvider( 'discussion' ), [ '1', '911' ] );
 	} );
 
-	QUnit.test( 'New provider functions can be added and are called with namespace ids', ( assert ) => {
-		const providerFunction = sinon.stub();
+	QUnit.test( 'New provider functions can be added and are called with namespace ids', function ( assert ) {
+		const providerFunction = this.sandbox.stub();
 		const providerInitializationFunction = function ( providerFunctions ) {
 			providerFunctions[ 'my-new-func' ] = providerFunction;
 		};
@@ -66,9 +55,9 @@
 		assert.deepEqual( result, [ '0', '1' ] );
 	} );
 
-	QUnit.test( 'When all provided ids are invalid, a warning is logged and empty array is returned', ( assert ) => {
-		const warningLogger = sandbox.stub( mw.log, 'warn' );
-		const providerFunction = sinon.stub();
+	QUnit.test( 'When all provided ids are invalid, a warning is logged and empty array is returned', function ( assert ) {
+		const warningLogger = this.sandbox.stub( mw.log, 'warn' );
+		const providerFunction = this.sandbox.stub();
 		const providerInitializationFunction = function ( providerFunctions ) {
 			providerFunctions.invalid = providerFunction;
 		};
@@ -85,8 +74,8 @@
 		assert.true( warningLogger.calledWith( 'AdvancedSearch namespace preset provider "invalid" returned invalid namespace id' ) );
 	} );
 
-	QUnit.test( 'Numeric ids from provider are converted to string ids', ( assert ) => {
-		const providerFunction = sinon.stub();
+	QUnit.test( 'Numeric ids from provider are converted to string ids', function ( assert ) {
+		const providerFunction = this.sandbox.stub();
 		const providerInitializationFunction = function ( providerFunctions ) {
 			providerFunctions.invalid = providerFunction;
 		};
@@ -101,4 +90,4 @@
 		assert.true( providerFunction.calledOnce );
 		assert.deepEqual( namespaceIdResult, [ '0', '1', '12' ] );
 	} );
-}() );
+} );

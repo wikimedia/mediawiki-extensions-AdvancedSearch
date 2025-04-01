@@ -1,22 +1,15 @@
-( function () {
+QUnit.module( 'ext.advancedSearch.ui.NamespacePresets', ( hooks ) => {
 	const { NamespacePresets, NamespacePresetProviders, SearchModel } = require( 'ext.advancedSearch.elements' );
-	let sandbox, presetProvider;
+	let presetProvider;
 
-	QUnit.module( 'ext.advancedSearch.ui.NamespacePresets' );
-
-	QUnit.testStart( () => {
-		sandbox = sinon.sandbox.create();
+	hooks.beforeEach( () => {
 		presetProvider = sinon.createStubInstance( NamespacePresetProviders );
 		presetProvider.namespaceIdsAreValid.returns( true );
 	} );
 
-	QUnit.testDone( () => {
-		sandbox.restore();
-	} );
-
-	const getDummyCheckbox = function ( selected ) {
+	function getDummyCheckbox( selected ) {
 		return new OO.ui.CheckboxMultioptionWidget( { data: 'all', selected: selected } );
-	};
+	}
 
 	QUnit.test( 'Passing a provider function creates namespace presets from the provider', ( assert ) => {
 		presetProvider.hasProvider.returns( true );
@@ -34,9 +27,9 @@
 		assert.deepEqual( [ '0', '1', '2' ], presets.presets.justatest.namespaces );
 	} );
 
-	QUnit.test( 'Passing a nonexisting provider function creates no namespace preset', ( assert ) => {
+	QUnit.test( 'Passing a nonexisting provider function creates no namespace preset', function ( assert ) {
 		presetProvider.hasProvider.withArgs( 'blackhole' ).returns( false );
-		const warningLogger = sandbox.stub( mw.log, 'warn' );
+		const warningLogger = this.sandbox.stub( mw.log, 'warn' );
 		const presets = new NamespacePresets( new SearchModel(), presetProvider, {
 			presets: {
 				blackhole: {
@@ -50,8 +43,8 @@
 		assert.false( Object.prototype.hasOwnProperty.call( presets.presets, 'blackhole' ) );
 	} );
 
-	QUnit.test( 'Passing a malformed preset config creates no namespace preset', ( assert ) => {
-		const warningLogger = sandbox.stub( mw.log, 'warn' );
+	QUnit.test( 'Passing a malformed preset config creates no namespace preset', function ( assert ) {
+		const warningLogger = this.sandbox.stub( mw.log, 'warn' );
 		const presets = new NamespacePresets( new SearchModel(), presetProvider, {
 			presets: {
 				borken: {
@@ -103,8 +96,8 @@
 		assert.deepEqual( [ '0', '1', '2' ], model.getNamespaces() );
 	} );
 
-	QUnit.test( 'Presets with empty namespace definitions log a warning', ( assert ) => {
-		const warningLogger = sandbox.stub( mw.log, 'warn' ),
+	QUnit.test( 'Presets with empty namespace definitions log a warning', function ( assert ) {
+		const warningLogger = this.sandbox.stub( mw.log, 'warn' ),
 			model = new SearchModel(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
@@ -119,9 +112,9 @@
 		assert.true( warningLogger.calledWith( 'Empty namespaces for emptypreset in $wgAdvancedSearchNamespacePresets' ) );
 	} );
 
-	QUnit.test( 'Presets with invalid namespace definitions log a warning', ( assert ) => {
+	QUnit.test( 'Presets with invalid namespace definitions log a warning', function ( assert ) {
 		presetProvider.namespaceIdsAreValid.returns( false );
-		const warningLogger = sandbox.stub( mw.log, 'warn' ),
+		const warningLogger = this.sandbox.stub( mw.log, 'warn' ),
 			model = new SearchModel(),
 			presets = new NamespacePresets( model, presetProvider, {
 				presets: {
@@ -235,4 +228,4 @@
 		model.setNamespaces( [ '0', '1' ] );
 		assert.deepEqual( presets.getValue(), [] );
 	} );
-}() );
+} );

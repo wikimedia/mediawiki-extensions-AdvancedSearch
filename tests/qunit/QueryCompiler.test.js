@@ -1,4 +1,4 @@
-( function () {
+QUnit.module( 'mw.libs.advancedSearch.QueryCompiler', () => {
 	'use strict';
 
 	const { QueryCompiler } = require( 'ext.advancedSearch.elements' );
@@ -11,13 +11,9 @@
 		},
 		{
 			id: 'keyword',
-			formatter: function ( v ) {
-				return 'keyword:' + v;
-			}
+			formatter: ( v ) => 'keyword:' + v
 		}
 	];
-
-	QUnit.module( 'mw.libs.advancedSearch.QueryCompiler' );
 
 	const getDefaultState = function () {
 		const state = { getField: sinon.stub() };
@@ -63,4 +59,4 @@
 
 		assert.strictEqual( compiler.removeCompiledQueryFromSearch( currentQuery, state ), 'awesome goats' );
 	} );
-}() );
+} );

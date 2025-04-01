@@ -1,17 +1,6 @@
-( function () {
+QUnit.module( 'ext.advancedSearch.ui.ArbitraryWordInput', () => {
 	const { ArbitraryWordInput } = require( 'ext.advancedSearch.SearchFieldUI' );
 	const { SearchModel } = require( 'ext.advancedSearch.elements' );
-	let sandbox;
-
-	QUnit.testStart( () => {
-		sandbox = sinon.sandbox.create();
-	} );
-
-	QUnit.testDone( () => {
-		sandbox.restore();
-	} );
-
-	QUnit.module( 'ext.advancedSearch.ui.ArbitraryWordInput' );
 
 	QUnit.test( 'Input initially gets set from store', ( assert ) => {
 		const model = new SearchModel();
@@ -31,9 +20,9 @@
 	/**
 	 * Currently does not write back into store by itself but relies on createMultiSelectChangeHandler in init to do so
 	 */
-	QUnit.test( 'Changes on input cause update event', ( assert ) => {
+	QUnit.test( 'Changes on input cause update event', function ( assert ) {
 		const input = new ArbitraryWordInput( new SearchModel(), {} );
-		const onChangeSpy = sandbox.spy();
+		const onChangeSpy = this.sandbox.spy();
 		input.on( 'change', onChangeSpy );
 
 		input.input.setValue( 'scalar, octopus' );
@@ -99,4 +88,4 @@
 			]
 		);
 	} );
-}() );
+} );

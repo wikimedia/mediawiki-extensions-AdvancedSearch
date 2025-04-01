@@ -1,22 +1,11 @@
-( function () {
+QUnit.module( 'ext.advancedSearch.dm.FileTypeOptionProvider', ( hooks ) => {
 	const { FileTypeOptionProvider } = require( 'ext.advancedSearch.SearchFieldUI' );
-	let sandbox;
-	const stubMessage = function () {
-		sandbox.stub( mw, 'msg', ( msg ) => msg );
-	};
 
-	QUnit.testStart( () => {
-		sandbox = sinon.sandbox.create();
+	hooks.beforeEach( function () {
+		this.sandbox.stub( mw, 'msg', ( msg ) => msg );
 	} );
-
-	QUnit.testDone( () => {
-		sandbox.restore();
-	} );
-
-	QUnit.module( 'ext.advancedSearch.dm.FileTypeOptionProvider' );
 
 	QUnit.test( 'Mime types are assigned the correct groups', ( assert ) => {
-		stubMessage();
 		const mimeTypes = {
 				jpg: 'image/jpg',
 				wav: 'audio/wav',
@@ -35,7 +24,6 @@
 	} );
 
 	QUnit.test( 'Known document formats are assigned to the document group', ( assert ) => {
-		stubMessage();
 		const mimeTypes = {
 				ods: 'application/whatever'
 			},
@@ -48,7 +36,6 @@
 	} );
 
 	QUnit.test( 'Unassignable mime types are assigned to the group "other"', ( assert ) => {
-		stubMessage();
 		const mimeTypes = {
 				qqq: 'application/whatever'
 			},
@@ -59,4 +46,4 @@
 		const model = new FileTypeOptionProvider( mimeTypes );
 		assert.deepEqual( model.getAllowedFileTypeOptions(), expectedOptions );
 	} );
-}() );
+} );

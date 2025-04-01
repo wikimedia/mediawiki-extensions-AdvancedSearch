@@ -1,16 +1,5 @@
-( function () {
+QUnit.module( 'ext.advancedSearch.dm.SearchModel', () => {
 	const { SearchModel } = require( 'ext.advancedSearch.elements' );
-	let sandbox;
-
-	QUnit.testStart( () => {
-		sandbox = sinon.sandbox.create();
-	} );
-
-	QUnit.testDone( () => {
-		sandbox.restore();
-	} );
-
-	QUnit.module( 'ext.advancedSearch.dm.SearchModel' );
 
 	QUnit.test( 'Default model has no fields', ( assert ) => {
 		const model = new SearchModel();
@@ -193,19 +182,19 @@
 		assert.false( model.filetypeSupportsDimensions() );
 	} );
 
-	QUnit.test( 'Setting namespace to existing value does not trigger emitUpdate', ( assert ) => {
+	QUnit.test( 'Setting namespace to existing value does not trigger emitUpdate', function ( assert ) {
 		const model = new SearchModel();
 		model.setNamespaces( [ '1', '2', '3' ] );
 
-		const updateSpy = sandbox.spy( model, 'emitUpdate' );
+		const updateSpy = this.sandbox.spy( model, 'emitUpdate' );
 		model.setNamespaces( [ '1', '2', '3' ] );
 
 		assert.false( updateSpy.called );
 	} );
 
-	QUnit.test( 'Changing namespaces triggers emitUpdate', ( assert ) => {
+	QUnit.test( 'Changing namespaces triggers emitUpdate', function ( assert ) {
 		const model = new SearchModel();
-		const updateSpy = sandbox.spy( model, 'emitUpdate' );
+		const updateSpy = this.sandbox.spy( model, 'emitUpdate' );
 
 		model.setNamespaces( [ '1', '2', '3' ] );
 		assert.true( updateSpy.calledOnce );
@@ -214,45 +203,45 @@
 		assert.true( updateSpy.calledTwice );
 	} );
 
-	QUnit.test( 'Storing an option triggers emitUpdate', ( assert ) => {
+	QUnit.test( 'Storing an option triggers emitUpdate', function ( assert ) {
 		const model = new SearchModel();
-		const updateSpy = sandbox.spy( model, 'emitUpdate' );
+		const updateSpy = this.sandbox.spy( model, 'emitUpdate' );
 
 		model.storeField( 'aaa', 'fff' );
 
 		assert.true( updateSpy.calledOnce );
 	} );
 
-	QUnit.test( 'Storing an option with the same scalar value does not trigger emitUpdate', ( assert ) => {
+	QUnit.test( 'Storing an option with the same scalar value does not trigger emitUpdate', function ( assert ) {
 		const model = new SearchModel();
 		model.storeField( 'lorem', 'ipsum' );
 
-		const updateSpy = sandbox.spy( model, 'emitUpdate' );
+		const updateSpy = this.sandbox.spy( model, 'emitUpdate' );
 
 		model.storeField( 'lorem', 'ipsum' );
 
 		assert.false( updateSpy.called );
 	} );
 
-	QUnit.test( 'Storing an option with the same array value does not trigger emitUpdate', ( assert ) => {
+	QUnit.test( 'Storing an option with the same array value does not trigger emitUpdate', function ( assert ) {
 		const model = new SearchModel();
 		model.storeField( 'lorem', [ 'hakuna', 'matata' ] );
 
-		const updateSpy = sandbox.spy( model, 'emitUpdate' );
+		const updateSpy = this.sandbox.spy( model, 'emitUpdate' );
 
 		model.storeField( 'lorem', [ 'hakuna', 'matata' ] );
 
 		assert.false( updateSpy.called );
 	} );
 
-	QUnit.test( 'Removing an option triggers emitUpdate', ( assert ) => {
+	QUnit.test( 'Removing an option triggers emitUpdate', function ( assert ) {
 		const model = new SearchModel();
 		model.storeField( 'lorem', 'ipsum' );
 
-		const updateSpy = sandbox.spy( model, 'emitUpdate' );
+		const updateSpy = this.sandbox.spy( model, 'emitUpdate' );
 
 		model.removeField( 'lorem' );
 
 		assert.true( updateSpy.calledOnce );
 	} );
-}() );
+} );
