@@ -216,7 +216,7 @@ SearchModel.prototype.fileTypeIsSelected = function () {
  * @return {boolean}
  */
 SearchModel.prototype.fileNamespaceIsSelected = function () {
-	return this.namespaces.indexOf( SearchModel.FILE_NAMESPACE ) !== -1;
+	return this.namespaces.includes( SearchModel.FILE_NAMESPACE );
 };
 
 /**

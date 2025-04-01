@@ -189,7 +189,7 @@ SearchPreview.prototype.generateTag = function ( fieldId, value ) {
  * @return {string}
  */
 SearchPreview.prototype.formatValue = function ( fieldId, value ) {
-	if ( fieldId === 'filetype' && value.indexOf( '/' ) !== -1 ) {
+	if ( fieldId === 'filetype' && value.includes( '/' ) ) {
 		const mimeTypes = mw.config.get( 'advancedSearch.mimeTypes' );
 		for ( const fileExtension in mimeTypes ) {
 			if ( mimeTypes[ fileExtension ] === value ) {

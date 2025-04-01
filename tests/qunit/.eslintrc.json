@@ -8,6 +8,7 @@
 		"sinon": "readonly"
 	},
 	"rules": {
-		"no-jquery/no-class-state": "off"
+		"no-jquery/no-class-state": "off",
+		"no-jquery/no-done-fail": "warn"
 	}
 }

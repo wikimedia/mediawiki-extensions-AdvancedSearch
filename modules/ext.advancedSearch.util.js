@@ -15,7 +15,7 @@ const arrayContains = function ( a1, a2 ) {
  * @return {Array}
  */
 const arrayConcatUnique = function ( a1, a2 ) {
-	return a1.concat( a2.filter( ( item ) => a1.indexOf( item ) === -1 ) );
+	return a1.concat( a2.filter( ( item ) => !a1.includes( item ) ) );
 };
 
 module.exports = {

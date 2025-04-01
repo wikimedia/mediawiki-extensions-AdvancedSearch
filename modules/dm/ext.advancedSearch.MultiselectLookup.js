@@ -261,7 +261,7 @@ MultiselectLookup.prototype.getLookupMenuOptionsFromData = function ( data ) {
 		const pageNameWithoutNamespace = this.removeNamespace( data[ 1 ][ i ] );
 
 		// do not show suggestions for items already selected
-		if ( currentValues.indexOf( pageNameWithoutNamespace ) !== -1 ) {
+		if ( currentValues.includes( pageNameWithoutNamespace ) ) {
 			continue;
 		}
 
