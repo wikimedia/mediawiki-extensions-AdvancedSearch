@@ -68,20 +68,16 @@ QUnit.module( 'ext.advancedSearch.ui.SearchPreview', ( hooks ) => {
 		assert.true( searchPreview.skipFieldInPreview( 'filew', [ '>', null ] ) );
 	} );
 
-	QUnit.test( 'Tag is generated', function ( assert ) {
-		const messageStub = this.sandbox.stub( mw, 'msg' )
-			.withArgs( 'advancedsearch-field-somename' ).returns( 'my label' )
-			.withArgs( 'colon-separator' ).returns( ':' );
+	QUnit.test( 'Tag is generated', ( assert ) => {
 		const searchPreview = new SearchPreview( store, config );
 		const tag = searchPreview.generateTag( 'somename', 'my field value' );
 
 		const element = tag.$element[ 0 ];
 
-		assert.true( messageStub.calledOnce );
 		assert.strictEqual( element.title, 'my field value' );
 		assert.false( tag.isDraggable() );
 		assert.strictEqual( $( '.mw-advancedSearch-searchPreview-content', element ).html(), '<bdi>my field value</bdi>' );
-		assert.strictEqual( $( '.oo-ui-labelElement-label span', element ).html(), 'my label:' );
+		assert.strictEqual( $( '.oo-ui-labelElement-label span', element ).html(), '(advancedsearch-field-somename)(colon-separator)' );
 	} );
 
 	QUnit.test( 'Tag content is HTML-safe', ( assert ) => {
@@ -91,18 +87,6 @@ QUnit.module( 'ext.advancedSearch.ui.SearchPreview', ( hooks ) => {
 		const element = tag.$element[ 0 ];
 
 		assert.strictEqual( $( '.mw-advancedSearch-searchPreview-content', element ).html(), '<bdi>&lt;script&gt;alert("evil");&lt;/script&gt;</bdi>' );
-	} );
-
-	QUnit.test( 'Tag label is HTML-safe', function ( assert ) {
-		this.sandbox.stub( mw, 'msg' )
-			.withArgs( 'advancedsearch-field-whatever' ).returns( '<div>block</div>' )
-			.withArgs( 'colon-separator' ).returns( ':' );
-		const searchPreview = new SearchPreview( store, config );
-		const tag = searchPreview.generateTag( 'whatever', 'lorem' );
-
-		const element = tag.$element[ 0 ];
-
-		assert.strictEqual( $( '.oo-ui-labelElement-label span', element ).html(), '&lt;div&gt;block&lt;/div&gt;:' );
 	} );
 
 	QUnit.test( 'Tag removals clears store', ( assert ) => {
@@ -142,24 +126,20 @@ QUnit.module( 'ext.advancedSearch.ui.SearchPreview', ( hooks ) => {
 		assert.strictEqual( searchPreview.formatValue( 'someOption', ' stray whitespace  ' ), 'stray whitespace' );
 	} );
 
-	QUnit.test( 'Array values get formatted well', function ( assert ) {
+	QUnit.test( 'Array values get formatted well', ( assert ) => {
 		const searchPreview = new SearchPreview( store, config );
-		this.sandbox.stub( mw, 'msg' ).withArgs( 'comma-separator' ).returns( ', ' );
 
-		assert.strictEqual( searchPreview.formatValue( 'someOption', [ 'some', 'words', 'in', 'combination' ] ), 'some, words, in, combination' );
-		assert.strictEqual( searchPreview.formatValue( 'someOption', [ 'related words', 'not', 'so' ] ), 'related words, not, so' );
-		assert.strictEqual( searchPreview.formatValue( 'someOption', [ '', ' stray', 'whitespace  ' ] ), 'stray, whitespace' );
+		assert.strictEqual( searchPreview.formatValue( 'someOption', [ 'some', 'words', 'in', 'combination' ] ), 'some(comma-separator)words(comma-separator)in(comma-separator)combination' );
+		assert.strictEqual( searchPreview.formatValue( 'someOption', [ 'related words', 'not', 'so' ] ), 'related words(comma-separator)not(comma-separator)so' );
+		assert.strictEqual( searchPreview.formatValue( 'someOption', [ '', ' stray', 'whitespace  ' ] ), 'stray(comma-separator)whitespace' );
 	} );
 
-	QUnit.test( 'Dimension values get formatted well', function ( assert ) {
+	QUnit.test( 'Dimension values get formatted well', ( assert ) => {
 		const searchPreview = new SearchPreview( store, config );
-		const translationStub = this.sandbox.stub( mw, 'msg' ).withArgs( 'word-separator' ).returns( ' ' );
 
 		assert.strictEqual( searchPreview.formatValue( 'someOption', [ '', '' ] ), '' );
-		assert.strictEqual( searchPreview.formatValue( 'fileh', [ '', 1000 ] ), '= 1000' );
-		assert.strictEqual( searchPreview.formatValue( 'fileh', [ '>', 300 ] ), '> 300' );
-		assert.strictEqual( searchPreview.formatValue( 'filew', [ '<', 1400 ] ), '< 1400' );
-
-		assert.strictEqual( translationStub.callCount, 3 );
+		assert.strictEqual( searchPreview.formatValue( 'fileh', [ '', 1000 ] ), '=(word-separator)1000' );
+		assert.strictEqual( searchPreview.formatValue( 'fileh', [ '>', 300 ] ), '>(word-separator)300' );
+		assert.strictEqual( searchPreview.formatValue( 'filew', [ '<', 1400 ] ), '<(word-separator)1400' );
 	} );
 } );

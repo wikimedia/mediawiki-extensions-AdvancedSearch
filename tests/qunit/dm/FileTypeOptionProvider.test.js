@@ -1,9 +1,5 @@
-QUnit.module( 'ext.advancedSearch.dm.FileTypeOptionProvider', ( hooks ) => {
+QUnit.module( 'ext.advancedSearch.dm.FileTypeOptionProvider', () => {
 	const { FileTypeOptionProvider } = require( 'ext.advancedSearch.SearchFieldUI' );
-
-	hooks.beforeEach( function () {
-		this.sandbox.stub( mw, 'msg', ( msg ) => msg );
-	} );
 
 	QUnit.test( 'Mime types are assigned the correct groups', ( assert ) => {
 		const mimeTypes = {
@@ -12,11 +8,11 @@ QUnit.module( 'ext.advancedSearch.dm.FileTypeOptionProvider', ( hooks ) => {
 				mp4: 'video/mp4'
 			},
 			expectedOptions = [
-				{ optgroup: 'advancedsearch-filetype-section-image' },
+				{ optgroup: '(advancedsearch-filetype-section-image)' },
 				{ data: 'image/jpg', label: 'jpg' },
-				{ optgroup: 'advancedsearch-filetype-section-audio' },
+				{ optgroup: '(advancedsearch-filetype-section-audio)' },
 				{ data: 'audio/wav', label: 'wav' },
-				{ optgroup: 'advancedsearch-filetype-section-video' },
+				{ optgroup: '(advancedsearch-filetype-section-video)' },
 				{ data: 'video/mp4', label: 'mp4' }
 			];
 		const model = new FileTypeOptionProvider( mimeTypes );
@@ -28,7 +24,7 @@ QUnit.module( 'ext.advancedSearch.dm.FileTypeOptionProvider', ( hooks ) => {
 				ods: 'application/whatever'
 			},
 			expectedOptions = [
-				{ optgroup: 'advancedsearch-filetype-section-document' },
+				{ optgroup: '(advancedsearch-filetype-section-document)' },
 				{ data: 'application/whatever', label: 'ods' }
 			];
 		const model = new FileTypeOptionProvider( mimeTypes );
@@ -40,7 +36,7 @@ QUnit.module( 'ext.advancedSearch.dm.FileTypeOptionProvider', ( hooks ) => {
 				qqq: 'application/whatever'
 			},
 			expectedOptions = [
-				{ optgroup: 'advancedsearch-filetype-section-other' },
+				{ optgroup: '(advancedsearch-filetype-section-other)' },
 				{ data: 'application/whatever', label: 'qqq' }
 			];
 		const model = new FileTypeOptionProvider( mimeTypes );
