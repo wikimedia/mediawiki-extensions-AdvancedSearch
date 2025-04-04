@@ -176,7 +176,8 @@ const addDefaultFields = function ( fieldCollection ) {
 		createSearchFieldFromObject( {
 			id: 'phrase',
 			formatter: function ( val ) {
-				return val;
+				// Add quotes only when missing; don't destroy deliberate user input
+				return val.includes( '"' ) ? val : enforceQuotes( val );
 			},
 			init: function ( state, config ) {
 				return new TextInput(
