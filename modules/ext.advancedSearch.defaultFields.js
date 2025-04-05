@@ -2,15 +2,14 @@
 
 const {
 	ArbitraryWordInput,
-	DeepCategoryFilter,
 	FileTypeOptionProvider,
 	FileTypeSelection,
 	ImageDimensionInput,
 	ImageDimensionLayout,
 	LanguageOptionProvider,
 	LanguageSelection,
+	MultiselectLookup,
 	SortPreference,
-	TemplateSearch,
 	TextInput
 } = require( 'ext.advancedSearch.SearchFieldUI' );
 const { createSearchFieldFromObject } = require( './ext.advancedSearch.SearchField.js' );
@@ -266,10 +265,10 @@ const addDefaultFields = function ( fieldCollection ) {
 				return keyword + optionalQuotes( val );
 			},
 			init: function ( state, config ) {
-				return new DeepCategoryFilter(
-					state,
-					Object.assign( {}, config, { lookupId: 'category' } )
-				);
+				return new MultiselectLookup( state, Object.assign( {}, config, {
+					classes: [ 'mw-advancedSearch-deepCategory' ],
+					lookupId: 'category'
+				} ) );
 			},
 			layout: createDefaultLayout
 		} ),
@@ -287,10 +286,10 @@ const addDefaultFields = function ( fieldCollection ) {
 				return 'hastemplate:' + optionalQuotes( val );
 			},
 			init: function ( state, config ) {
-				return new TemplateSearch(
-					state,
-					Object.assign( {}, config, { lookupId: 'template' } )
-				);
+				return new MultiselectLookup( state, Object.assign( {}, config, {
+					classes: [ 'mw-advancedSearch-template' ],
+					lookupId: 'template'
+				} ) );
 			},
 			customEventHandling: true,
 			layout: createDefaultLayout

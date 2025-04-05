@@ -200,8 +200,6 @@
 				"modules/dm/ext.advancedSearch.TitleCache.js",
 				"modules/dm/ext.advancedSearch.MultiselectLookup.js",
 				"modules/ui/ext.advancedSearch.ArbitraryWordInput.js",
-				"modules/ui/ext.advancedSearch.DeepCategoryFilter.js",
-				"modules/ui/ext.advancedSearch.TemplateSearch.js",
 				"modules/ui/ext.advancedSearch.StoreListener.js",
 				"modules/ui/mixins/ext.advancedSearch.ClassesForDropdownOptions.js",
 				"modules/ui/ext.advancedSearch.FileTypeSelection.js",
