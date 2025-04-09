@@ -17,7 +17,7 @@ QUnit.module( 'ext.advancedSearch.dm.MultiselectLookup', ( hooks ) => {
 		};
 		config = {
 			fieldId: 'hastemplate',
-			lookupId: 'template',
+			namespaceId: 10,
 			api: new mw.Api()
 		};
 		// Stub out API to avoid queries if template pages exist
