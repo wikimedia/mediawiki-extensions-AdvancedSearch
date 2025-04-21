@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amankel'dy",
 			"Casserium"
 		]
 	},
@@ -23,6 +24,7 @@
 	"advancedsearch-field-fileh": "Пиксель түріндегі файл биіктігі",
 	"advancedsearch-field-sort": "Іріктеу реті",
 	"advancedsearch-field-preview-sort": "$1 бойынша іріктеу",
+	"advancedsearch-help-general-instruction": "$1 жайлы толық нұсқаулықтар",
 	"advancedsearch-placeholder-exact-text": "\"мысық ешкіні жақсы көреді\"",
 	"advancedsearch-inlanguage-default": "Тілді таңдаңыз",
 	"advancedsearch-filetype-section-types": "Жалпы файл түрлері",
