@@ -4,7 +4,7 @@
 			"Don Alessandro"
 		]
 	},
-	"advancedsearch-options-pane-head": "Tafsilâtlı qıdıruv:",
+	"advancedsearch-options-pane-head": "İnkişaflı qıdıruv:",
 	"advancedsearch-options-pane-preview-list": "Şimdi qullanılğan qıdıruv terminleri",
 	"advancedsearch-optgroup-text": "Saife metninde qıdır",
 	"advancedsearch-optgroup-structure": "Qurulış",
@@ -58,5 +58,5 @@
 	"advancedsearch-namespaces-preset-general-help": "Umumiy yardım",
 	"advancedsearch-namespaces-preset-discussion": "Muzakere",
 	"advancedsearch-namespaces-placeholder": "İsimler fezaları qoş...",
-	"prefs-advancedsearch": "Tafsilâtlı Qıdıruv"
+	"prefs-advancedsearch": "İnkişaflı Qıdıruv"
 }
