@@ -4,7 +4,7 @@
 			"IJzeren Jan"
 		]
 	},
-	"advancedsearch-desc": "Legky dostup k razširjenym možnostam iskanja na stranici [[Special:Search]]",
+	"advancedsearch-desc": "Legky dostup k razširjenym možnostam iskanja na stranici [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Razširjene iskanje:",
 	"advancedsearch-options-pane-preview-list": "Tutčasno upotrěbjajeme iskalne izrazy",
 	"advancedsearch-optgroup-text": "Iskati v tekstu stranice",
@@ -75,6 +75,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Besěda",
 	"advancedsearch-namespaces-placeholder": "Dodati imenne prostory...",
 	"prefs-advancedsearch": "Razširjene iskanje",
-	"advancedsearch-preference-help": "Razširjene iskanje dodavaje formular na stranicu Specialna:Iskanje. To pozvaljaje vam sdělati specializovano iskanje, daže ako ne znajete ničto o sintaksě iskanja, a takože izměnjaje sposob izbiranja imennyh prostorov.",
-	"advancedsearch-preference-disable": "Ne pokazyvati interfejs Razširjenogo iskanja pri upotrěbě stranice Specialna:Iskanje"
+	"advancedsearch-preference-help": "Razširjeno iskanje dodavaje formular na stranicu {{#Special:Search}}. To pozvaljaje vam sdělati specializovano iskanje, daže ako ne znajete ničto o sintaksě iskanja, a takože izměnjaje sposob izbiranja imennyh prostorov.",
+	"advancedsearch-preference-disable": "Ne pokazyvati interfejs Razširjenogo iskanja pri upotrěbě stranice {{#Special:Search}}"
 }
