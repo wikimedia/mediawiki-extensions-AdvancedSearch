@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Malikxan"
+			"Malikxan",
+			"Diyora Iskandarova"
 		]
 	},
 	"advancedsearch-options-pane-head": "Kengaytirilgan qidiruv",
@@ -19,6 +20,8 @@
 	"advancedsearch-field-hastemplate": "Bu andozalardan foydalanilgan sahifalar",
 	"advancedsearch-field-inlanguage": "Bu tildagi sahifalar",
 	"advancedsearch-field-filetype": "Fayl turi",
+	"advancedsearch-field-filew": "Fayl kengligi piksellarda",
+	"advancedsearch-field-fileh": "Fayl balandligi piksellarda",
 	"advancedsearch-field-sort": "Saralash tartibi",
 	"advancedsearch-field-preview-sort": "$1ga koʻra saralash",
 	"advancedsearch-placeholder-exact-text": "\"mushuk echkini sevadi\"",
