@@ -12,6 +12,7 @@
 			"Jack who built the house",
 			"Kaganer",
 			"Kareyac",
+			"MidnightLG",
 			"Mouse21",
 			"Movses",
 			"Okras",
@@ -25,7 +26,7 @@
 			"Wirbel78"
 		]
 	},
-	"advancedsearch-desc": "Лёгкий доступ к расширенным возможностям поиска на [[Special:Search]]",
+	"advancedsearch-desc": "Лёгкий доступ к расширенным возможностям поиска на [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Расширенный поиск:",
 	"advancedsearch-options-pane-preview-list": "Используемые в настоящее время поисковые запросы",
 	"advancedsearch-optgroup-text": "Искать в тексте страницы",
@@ -96,6 +97,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Обсуждения",
 	"advancedsearch-namespaces-placeholder": "Добавить пространства имён…",
 	"prefs-advancedsearch": "Расширенный поиск",
-	"advancedsearch-preference-help": "Расширенный поиск добавляет на страницу Служебная:Поиск форму с дополнительными полями. Это позволяет выполнять специализированный поиск, даже если вы не знаете поискового синтаксиса. Он также изменяет способ выбора пространств имён.",
-	"advancedsearch-preference-disable": "Не показывать интерфейс расширенного поиска при использовании Special:Search"
+	"advancedsearch-preference-help": "Расширенный поиск добавляет на страницу {{#Special:Search}} форму с дополнительными полями. Это позволяет выполнять специализированный поиск, даже если вы не знаете поискового синтаксиса. Он также изменяет способ выбора пространств имён.",
+	"advancedsearch-preference-disable": "Не показывать интерфейс расширенного поиска при использовании {{#Special:Search}}"
 }
