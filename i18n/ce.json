@@ -4,7 +4,7 @@
 			"Умар"
 		]
 	},
-	"advancedsearch-desc": "[[Special:Search]] тӀехь шуьйрачу лахаран атта тӀекхачар.",
+	"advancedsearch-desc": "[[{{#Special:Search}}]] тӀехь шуьйрачу лахаран атта тӀекхачар.",
 	"advancedsearch-options-pane-head": "Шуьйра лахар:",
 	"advancedsearch-options-pane-preview-list": "ХӀинца йолу ханна лелош йолу лахаран терминаш",
 	"advancedsearch-optgroup-text": "АгӀонан текстан йукъехь лаха",
