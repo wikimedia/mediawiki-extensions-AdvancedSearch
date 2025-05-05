@@ -7,7 +7,12 @@
 			"Kwj2772",
 			"MemphisA5",
 			"Revi",
-			"Ykhwong"
+			"Ykhwong",
+			"Dr1t jg",
+			"Suleiman the Magnificent Television",
+			"Tensama0415",
+			"밥풀떼기",
+			"아라"
 		]
 	},
 	"advancedsearch-desc": "[[Special:Search|특수:검색]]의 고급 검색 기능에 대한 쉬운 접근입니다",
@@ -61,10 +66,10 @@
 	"advancedsearch-filesize-greater-than": "보다 큼",
 	"advancedsearch-filesize-smaller-than": "보다 작음",
 	"advancedsearch-sort-relevance": "관련성",
-	"advancedsearch-sort-last-edit-asc": "편집일 – 가장 오래된 것이 맨 위로",
-	"advancedsearch-sort-last-edit-desc": "편집일 - 현재 최상위",
-	"advancedsearch-sort-create-timestamp-asc": "생성일 – 가장 오래된 것이 맨 위로",
-	"advancedsearch-sort-create-timestamp-desc": "생성일 - 현재 최상위",
+	"advancedsearch-sort-last-edit-asc": "편집일 – 최초가 맨 위로",
+	"advancedsearch-sort-last-edit-desc": "편집일 - 현재가 맨 위로",
+	"advancedsearch-sort-create-timestamp-asc": "생성일 – 최초가 맨 위로",
+	"advancedsearch-sort-create-timestamp-desc": "생성일 - 현재가 맨 위로",
 	"advancedsearch-sort-preview-relevance": "관련성",
 	"advancedsearch-sort-preview-last-edit-asc": "적어도 최근에 편집함",
 	"advancedsearch-sort-preview-last-edit-desc": "편집일",
