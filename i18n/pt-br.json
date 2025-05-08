@@ -9,7 +9,7 @@
 			"Leonardo9387"
 		]
 	},
-	"advancedsearch-desc": "Acesso fácil a capacidades de pesquisa avançada em [[Special:Search]]",
+	"advancedsearch-desc": "Acesso fácil a capacidades de pesquisa avançada em [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Pesquisa avançada:",
 	"advancedsearch-options-pane-preview-list": "Termos de pesquisa usados atualmente",
 	"advancedsearch-optgroup-text": "Pesquisar no texto da página",
@@ -80,6 +80,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Discussão",
 	"advancedsearch-namespaces-placeholder": "Acrescentar espaços nominais…",
 	"prefs-advancedsearch": "Pesquisa avançada",
-	"advancedsearch-preference-help": "A pesquisa avançada adiciona um formulário à página Special:Search. Este permite-lhe fazer pesquisas especializadas, mesmo que não conheça nenhuma sintaxe de pesquisa. Também altera a forma como os espaços nominais/domínios podem ser selecionados.",
-	"advancedsearch-preference-disable": "Não mostrar a interface da pesquisa avançada ao usar Especial:Pesquisar"
+	"advancedsearch-preference-help": "A pesquisa avançada adiciona um formulário à página {{#Special:Search}}. Este permite-lhe fazer pesquisas especializadas, mesmo que não conheça nenhuma sintaxe de pesquisa. Também altera a forma como os espaços nominais/domínios podem ser selecionados.",
+	"advancedsearch-preference-disable": "Não mostrar a interface da pesquisa avançada ao usar {{#Special:Search}}"
 }
