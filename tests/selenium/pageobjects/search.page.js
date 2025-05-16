@@ -290,7 +290,7 @@ class SearchPage extends Page {
 			const userOptions = data.query.userinfo.options;
 			Object.keys( userOptions ).forEach( ( key ) => {
 				if ( userOptions[ key ] &&
-					key.indexOf( 'searchNs' ) === 0 &&
+					key.startsWith( 'searchNs' ) &&
 					!newSearchNamespaces.includes( key + '=1' )
 				) {
 					newSearchNamespaces += '|' + key + '=0';

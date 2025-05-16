@@ -81,7 +81,7 @@ MenuSelectWidget.prototype.getItemMatcher = function ( query, mode ) {
 	const namespaceIds = mw.config.get( 'wgNamespaceIds' );
 	for ( const name in namespaceIds ) {
 		// Prefix match with the canonical, normalized namespace names in wgNamespaceIds
-		if ( name.indexOf( normalizedQuery ) === 0 ) {
+		if ( name.startsWith( normalizedQuery ) ) {
 			goodIds[ namespaceIds[ name ] ] = true;
 		}
 	}
@@ -89,7 +89,7 @@ MenuSelectWidget.prototype.getItemMatcher = function ( query, mode ) {
 	return function ( item ) {
 		return item.getData() in goodIds ||
 			// This is the default behavior from OO.ui.SelectWidget.getItemMatcher
-			normalizeForMatching( item.getMatchText() ).indexOf( normalizedQuery ) === 0;
+			normalizeForMatching( item.getMatchText() ).startsWith( normalizedQuery );
 	};
 };
 

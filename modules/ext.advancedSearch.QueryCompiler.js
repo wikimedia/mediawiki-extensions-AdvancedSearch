@@ -40,23 +40,13 @@ QueryCompiler.prototype.compileSearchQuery = function ( state ) {
 };
 
 /**
- * @param {string} haystack
- * @param {string} needle
- * @return {boolean}
- */
-const stringEndsWith = function ( haystack, needle ) {
-	const position = haystack.length - needle.length;
-	return position >= 0 && haystack.indexOf( needle, position ) === position;
-};
-
-/**
  * @param {string} search The current search string
  * @param {SearchModel} state
  * @return {string}
  */
 QueryCompiler.prototype.removeCompiledQueryFromSearch = function ( search, state ) {
 	const advancedQuery = this.compileSearchQuery( state );
-	if ( advancedQuery && stringEndsWith( search, advancedQuery ) ) {
+	if ( advancedQuery && search.endsWith( advancedQuery ) ) {
 		return search.slice( 0, -advancedQuery.length ).replace( /\s+$/, '' );
 	}
 	return search;
