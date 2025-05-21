@@ -61,12 +61,9 @@ OO.inheritClass( ExpandablePane, OO.ui.Widget );
 OO.mixinClass( ExpandablePane, OO.ui.mixin.IndicatorElement );
 
 ExpandablePane.prototype.onButtonClick = function () {
-	const action = this.isOpen() ? 'collapse' : 'expand';
 	this.data = !this.isOpen();
 	this.updatePaneVisibility();
 	this.notifyChildInputVisibility();
-	mw.track( 'counter.MediaWiki.AdvancedSearch.event.' + this.suffix + '.' + action );
-	mw.track( 'stats.mediawiki_AdvancedSearch_event_total', 1, { suffix: this.suffix, action } );
 	this.emit( 'change', this.isOpen() );
 };
 
