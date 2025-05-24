@@ -175,7 +175,6 @@
 			"dependencies": [
 				"mediawiki.user",
 				"mediawiki.jqueryMsg",
-				"mediawiki.Uri",
 				"mediawiki.util",
 				"oojs",
 				"oojs-ui-widgets",
