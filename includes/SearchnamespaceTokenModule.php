@@ -4,7 +4,6 @@ namespace AdvancedSearch;
 
 use MediaWiki\Html\Html;
 use MediaWiki\ResourceLoader as RL;
-use MediaWiki\ResourceLoader\ResourceLoader;
 
 /**
  * ResourceLoader module providing the users "searchnamespace" token.
@@ -17,9 +16,7 @@ class SearchnamespaceTokenModule extends RL\Module {
 	/** @inheritDoc */
 	public function getScript( RL\Context $context ) {
 		$user = $context->getUserObj();
-		// Use FILTER_NOMIN annotation to prevent needless minification and caching (T84960).
-		return ResourceLoader::FILTER_NOMIN .
-			Html::encodeJsCall(
+		return Html::encodeJsCall(
 				'mw.user.tokens.set',
 				[ 'searchnamespaceToken', $user->getEditToken( 'searchnamespace' ) ],
 				(bool)$context->getDebug()
