@@ -9,7 +9,7 @@
 			"Zakawer2"
 		]
 	},
-	"advancedsearch-desc": "Nem adgang til avancerede søgefunktioner på [[Special:Search]]",
+	"advancedsearch-desc": "Nem adgang til avancerede søgefunktioner på [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Avanceret søgning:",
 	"advancedsearch-options-pane-preview-list": "Brugte søgetermer i øjeblikket",
 	"advancedsearch-optgroup-text": "Søgning i sidetekst",
@@ -80,6 +80,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Diskussion",
 	"advancedsearch-namespaces-placeholder": "Tilføj navnerum...",
 	"prefs-advancedsearch": "Avanceret søgning",
-	"advancedsearch-preference-help": "Avanceret Søgning er en ekstra formularboks på siden Speciel:Søgning. Dette giver mulighed for avancerede søgninger, selv hvis man ikke kender til søgesyntaks. Måden man vælger navnerum er også anderledes.",
-	"advancedsearch-preference-disable": "Vis ikke formularen for Avanceret Søgning når Speciel:Søg bruges"
+	"advancedsearch-preference-help": "Avanceret søgning tilføjer en formular til siden {{#Special:Search}}. Dette giver dig mulighed for at udføre specialiserede søgninger, selvom du ikke kender nogen søgesyntaks. Det ændrer også den måde, navnerum kan vælges på.",
+	"advancedsearch-preference-disable": "Vis ikke brugerfladen Avanceret søgning, når du bruger {{#Special:Search}}"
 }
