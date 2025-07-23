@@ -8,7 +8,7 @@
 			"Vogone"
 		]
 	},
-	"advancedsearch-desc": "Lengva naudotis išplėstinės paieškos galimybėmis puslapyje [[Special:Search]]",
+	"advancedsearch-desc": "Lengva naudotis išplėstinės paieškos galimybėmis puslapyje [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Išplėstinė paieška:",
 	"advancedsearch-optgroup-text": "Ieškoti puslapio tekste",
 	"advancedsearch-optgroup-structure": "Struktūra",
@@ -61,5 +61,5 @@
 	"advancedsearch-namespaces-preset-discussion": "Aptarimas",
 	"advancedsearch-namespaces-placeholder": "Pridėti vardų sritis…",
 	"prefs-advancedsearch": "Išplėstinė paieška",
-	"advancedsearch-preference-disable": "Nerodyti išplėstinės paieškos sąsajos naudojant Special:Search"
+	"advancedsearch-preference-disable": "Nerodyti išplėstinės paieškos sąsają naudojant {{#Special:Search}}"
 }
