@@ -10,10 +10,11 @@
 			"Nikosgranturismogt",
 			"Norhorn",
 			"Protnet",
+			"Warudo",
 			"Αντιγόνη"
 		]
 	},
-	"advancedsearch-desc": "Εύκολη πρόσβαση σε προηγμένες δυνατότητες αναζήτησης στην [[Special:Search]]",
+	"advancedsearch-desc": "Εύκολη πρόσβαση σε προηγμένες δυνατότητες αναζήτησης στην [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Σύνθετη αναζήτηση:",
 	"advancedsearch-optgroup-text": "Αναζήτηση στο κείμενο σελίδας",
 	"advancedsearch-optgroup-structure": "Δομή",
@@ -81,6 +82,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Συζήτηση",
 	"advancedsearch-namespaces-placeholder": "Προσθήκη ονοματοχώρων...",
 	"prefs-advancedsearch": "Προχωρημένη αναζήτηση",
-	"advancedsearch-preference-help": "Η Σύνθετη Αναζήτηση προσθέτει μια φόρμα στη σελίδα Special:Search. Αυτό σας επιτρέπει να πραγματοποιείτε εξειδικευμένες αναζητήσεις, ακόμα και αν δε γνωρίζετε κάποια σύνταξη αναζήτησης. Αλλάζει επίσης τον τρόπο επιλογής χώρων ονομάτων.",
-	"advancedsearch-preference-disable": "Να μην εμφανίζεται η διεπαφή Σύνθετης Αναζήτησης όταν χρησιμοποιείτε το Special:Search"
+	"advancedsearch-preference-help": "Η Σύνθετη Αναζήτηση προσθέτει μια φόρμα στη σελίδα {{#Special:Search}}. Αυτό σας επιτρέπει να πραγματοποιείτε εξειδικευμένες αναζητήσεις, ακόμα και αν δε γνωρίζετε κάποια σύνταξη αναζήτησης. Αλλάζει επίσης τον τρόπο επιλογής χώρων ονομάτων.",
+	"advancedsearch-preference-disable": "Να μην εμφανίζεται η διεπαφή Σύνθετης Αναζήτησης όταν χρησιμοποιείτε το {{#Special:Search}}"
 }
