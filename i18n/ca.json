@@ -9,10 +9,11 @@
 			"Jmarchn",
 			"Leptictidium",
 			"Mguix",
-			"SMP"
+			"SMP",
+			"Sma1997"
 		]
 	},
-	"advancedsearch-desc": "Accés fàcil a capacitats avançades de recerca a [[Special:Search]]",
+	"advancedsearch-desc": "Accés fàcil a capacitats avançades de cerca a [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Cerca avançada:",
 	"advancedsearch-options-pane-preview-list": "Termes de cerca utilitzats actualment",
 	"advancedsearch-optgroup-text": "Cerca dins del text de la pàgina",
@@ -83,6 +84,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Discussió",
 	"advancedsearch-namespaces-placeholder": "Afegeix espais de noms",
 	"prefs-advancedsearch": "Cerca avançada",
-	"advancedsearch-preference-help": "La cerca avançada incorpora un formulari a la pàgina \"Especial:Cerca\". Això permet realitzar cerques especialitzades fins i tot sense conèixer-ne la sintaxi. També canvia la manera com poden ser seleccionats els espais de noms.",
-	"advancedsearch-preference-disable": "No mostrar la interfície de cerca avançada quan s’utilitza Special:Search"
+	"advancedsearch-preference-help": "La cerca avançada afegeix un formulari a la pàgina {{#Special:Search}}. Això permet realitzar cerques especialitzades fins i tot sense conèixer la sintaxi. També canvia la manera com es poden seleccionar els espais de noms.",
+	"advancedsearch-preference-disable": "No mostrar la interfície de cerca avançada quan s’utilitza {{#Special:Search}}"
 }
