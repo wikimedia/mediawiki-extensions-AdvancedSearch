@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ktchankt",
 			"Winston Sung"
 		]
 	},
@@ -55,5 +56,6 @@
 	"advancedsearch-namespaces-preset-discussion": "討論",
 	"advancedsearch-namespaces-placeholder": "加名空間……",
 	"prefs-advancedsearch": "進階搜尋",
-	"advancedsearch-preference-disable": "用Special:Search嗰陣唔好顯示進階搜尋介面"
+	"advancedsearch-preference-help": "進階搵嘢會加個表單到 {{#Special:Search}} 。呢個等你可以唔識搵嘢語法都可以做特定嘅搵嘢。呢個亦會改咗揀名空間嘅方式。",
+	"advancedsearch-preference-disable": "用{{#Special:Search}}h嗰陣唔好顯示進階搜尋介面"
 }
