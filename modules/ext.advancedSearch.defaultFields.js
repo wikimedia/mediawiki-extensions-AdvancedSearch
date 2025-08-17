@@ -83,7 +83,7 @@
 		// * advancedsearch-field-plain
 		// * advancedsearch-field-sort
 		// * advancedsearch-field-subpageof
-		var head = mw.msg( 'advancedsearch-field-' + id );
+		var head = mw.message( 'advancedsearch-field-' + id ).escaped();
 		return new OO.ui.HtmlSnippet( '<h6 class="mw-advancedSearch-tooltip-head">' + head + '</h6>' + message );
 	}
 
