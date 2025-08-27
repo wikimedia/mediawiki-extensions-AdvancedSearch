@@ -19,7 +19,7 @@
 			"神樂坂秀吉"
 		]
 	},
-	"advancedsearch-desc": "在 [[Special:Search]] 提供進階搜尋功能的輕鬆存取",
+	"advancedsearch-desc": "在 [[{{#Special:Search}}]] 提供進階搜尋功能的輕鬆存取",
 	"advancedsearch-options-pane-head": "進階搜尋：",
 	"advancedsearch-options-pane-preview-list": "目前使用的搜尋詞",
 	"advancedsearch-optgroup-text": "在頁面文字中搜尋",
@@ -90,6 +90,6 @@
 	"advancedsearch-namespaces-preset-discussion": "討論",
 	"advancedsearch-namespaces-placeholder": "新增命名空間…",
 	"prefs-advancedsearch": "進階搜尋",
-	"advancedsearch-preference-help": "進階搜尋可添加表單至 Special:Search page。這能讓您即使不瞭解搜尋語法，也能執行特定搜尋。這也會變更命名空間選擇的方式。",
-	"advancedsearch-preference-disable": "當使用 Special:Search 時不要顯示進階搜尋介面"
+	"advancedsearch-preference-help": "進階搜尋可添加表單至{{#Special:Search}} 頁面。這能讓您即使不瞭解搜尋語法，也能執行特定搜尋。這也會變更命名空間選擇的方式。",
+	"advancedsearch-preference-disable": "當使用 {{#Special:Search}} 時不要顯示進階搜尋介面"
 }
