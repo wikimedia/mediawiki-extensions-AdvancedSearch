@@ -3,10 +3,11 @@
 		"authors": [
 			"Aue Nai",
 			"Htawmonzel",
-			"Ranger-Mon"
+			"Ranger-Mon",
+			"咽頭べさ"
 		]
 	},
-	"advancedsearch-desc": "ပ္ဍဲကဵု [[Special:Search]]ဂှ် နွံကဵု အစောမ်စရာဲ မဂၠာဲနာနာ ဗွဲမလောဲသွာရ။",
+	"advancedsearch-desc": "မလုပ်စိုပ်နကဵုပရေၚ်အစောံစရာဲမဂၠာဲ လ္တူ [[{{#Special:Search}}]]  ဗွဲမလောဲသွာရ။",
 	"advancedsearch-options-pane-head": "ဂၠာဲနာနာ",
 	"advancedsearch-optgroup-text": "ဂၠာဲ ပ္ဍဲ မုက်လိက်",
 	"advancedsearch-optgroup-structure": "လဒက်ပတန်",
@@ -74,6 +75,6 @@
 	"advancedsearch-namespaces-preset-discussion": "သဳကၠဳ",
 	"advancedsearch-namespaces-placeholder": "ထပ် ဒၞဲါယၟု...",
 	"prefs-advancedsearch": "ဂၠာဲနာနာ",
-	"advancedsearch-preference-help": "ဂၠာဲနာနာ စုတ်ပၠုပ် နဒဒှ် ဗီုပြင် တၟေင် :ဂၠာဲ မုက်လိက်။ အရာဏအ်ဂှ် ပကဵုမၞး ညံင်ဂွံ ဂၠာဲအရာမဆက်စပ်ရ။ ၜိုန်ရ မၞးဟွံတီ နဲမဂၠာဲကီုလေဝ်။ ဍေဟ် သီုသၠာဲကဵု ဒၞာဲယၟု မထေက်ကဵု ရုဲစှ်တအ်ကီုရ။",
-	"advancedsearch-preference-disable": "လ္ပထ္ၜး ဂၠာဲနာနာ ပ္ဍဲအခိင်ကာလမစကာဒၟံင် တၟေင်:ဂၠာဲ"
+	"advancedsearch-preference-help": "ဂၠာဲနာနာ စုတ်ပၠုပ် နဒဒှ် ဗီုပြၚ် တၟေၚ် {{#Special:ဂၠာဲ}} မုက်လိက်။ အရာဏအ်ဂှ် ပကဵုမၞး ညံၚ်ဂွံ ဂၠာဲအရာမဆက်စပ်ရ။ ၜိုန်ရ မၞးဟွံတီ နဲမဂၠာဲကီုလေဝ်။ ဍေဟ် သီုသၠာဲကဵု ဒၞာဲယၟု မထေက်ကဵု ရုဲစှ်တအ်ကီုရ။",
+	"advancedsearch-preference-disable": "လ္ပထ္ၜး interface ဂၠာဲနာနာ ပ္ဍဲအခိၚ်ကာလမစကာဒၟံၚ် {{#Special:ဂၠာဲ}}"
 }
