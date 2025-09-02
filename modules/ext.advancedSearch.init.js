@@ -89,7 +89,7 @@ const updateSearchResultLinks = function ( currentState ) {
 		extraParams += '&sort=' + sort;
 	}
 	if ( json ) {
-		extraParams += '&advancedSearch-current=' + json;
+		extraParams += '&advancedSearch-current=' + encodeURIComponent( json );
 	}
 
 	if ( extraParams ) {
