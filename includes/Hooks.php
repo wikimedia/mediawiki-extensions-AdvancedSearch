@@ -5,7 +5,9 @@ namespace AdvancedSearch;
 use MediaWiki\Config\Config;
 use MediaWiki\Hook\SpecialSearchResultsPrependHook;
 use MediaWiki\Html\Html;
+use MediaWiki\Language\Language;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\Registration\ExtensionRegistry;
@@ -90,6 +92,7 @@ class Hooks implements
 
 		$outputPage->addJsConfigVars( $this->getJsConfigVars(
 			$special->getContext(),
+			$special->getLanguage(),
 			$special->getConfig(),
 			ExtensionRegistry::getInstance()
 		) );
@@ -97,15 +100,22 @@ class Hooks implements
 
 	/**
 	 * @param MessageLocalizer $context
+	 * @param Language $userLang
 	 * @param Config $config
 	 * @param ExtensionRegistry $extensionRegistry
-	 * @return array
+	 * @return array<string,mixed>
 	 */
 	private function getJsConfigVars(
 		MessageLocalizer $context,
+		Language $userLang,
 		Config $config,
 		ExtensionRegistry $extensionRegistry
 	): array {
+		$namespaceBuilder = new SearchableNamespaceListBuilder(
+			MediaWikiServices::getInstance()->getLanguageConverterFactory()
+				->getLanguageConverter( $userLang )
+		);
+
 		$vars = [
 			'advancedSearch.mimeTypes' =>
 				( new MimeTypeConfigurator( $this->mimeAnalyzer ) )->getMimeTypes(
@@ -115,7 +125,7 @@ class Hooks implements
 			'advancedSearch.namespacePresets' => $config->get( 'AdvancedSearchNamespacePresets' ),
 			'advancedSearch.deepcategoryEnabled' => $config->get( 'AdvancedSearchDeepcatEnabled' ),
 			'advancedSearch.searchableNamespaces' =>
-				SearchableNamespaceListBuilder::getCuratedNamespaces(
+				$namespaceBuilder->getCuratedNamespaces(
 					$this->searchEngineConfig->searchableNamespaces()
 				),
 		];

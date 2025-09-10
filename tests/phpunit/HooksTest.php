@@ -5,6 +5,7 @@ namespace AdvancedSearch\Tests;
 use AdvancedSearch\Hooks;
 use MediaWiki\Config\HashConfig;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Language\Language;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Registration\ExtensionRegistry;
@@ -147,6 +148,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		$hook = TestingAccessWrapper::newFromObject( $this->newInstance() );
 		$vars = $hook->getJsConfigVars(
 			new RequestContext(),
+			$this->createMock( Language::class ),
 			new HashConfig( [
 				'AdvancedSearchNamespacePresets' => '<NAMESPACEPRESETS>',
 				MainConfigNames::ExtensionAssetsPath => '<PATH>',

@@ -3,6 +3,7 @@
 namespace AdvancedSearch\Tests;
 
 use AdvancedSearch\SearchableNamespaceListBuilder;
+use MediaWiki\Language\ILanguageConverter;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -28,7 +29,12 @@ class SearchableNamespaceListBuilderTest extends TestCase {
 			500 => 'Yet another namespace'
 		];
 
-		$actual = SearchableNamespaceListBuilder::getCuratedNamespaces( $configNamespaces );
+		$languageConverter = $this->createMock( ILanguageConverter::class );
+		$languageConverter->method( 'convertNamespace' )
+			->willReturnCallback( static fn ( $id ) => $configNamespaces[$id] );
+
+		$namespaceBuilder = new SearchableNamespaceListBuilder( $languageConverter );
+		$actual = $namespaceBuilder->getCuratedNamespaces( $configNamespaces );
 		$this->assertSame( $expected, $actual );
 	}
 
