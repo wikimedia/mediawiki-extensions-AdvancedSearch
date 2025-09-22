@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jose Antonio Guillen Landaverde",
 			"TimumachtikanNawat"
 		]
 	},
+	"advancedsearch-optgroup-files": "tajtaanalis u ijikwikwil",
+	"advancedsearch-field-inlanguage": "ajamat tik ini tajtaketzalis",
 	"advancedsearch-filetype-bitmap": "Ikwikwil",
 	"advancedsearch-filetype-drawing": "Tilkwil",
 	"advancedsearch-filetype-audio": "Iijiu",
