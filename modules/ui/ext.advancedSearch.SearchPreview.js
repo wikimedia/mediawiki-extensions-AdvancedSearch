@@ -35,6 +35,7 @@ const lookupTranslationForLabel = function ( fieldId ) {
 	// * advancedsearch-field-filetype
 	// * advancedsearch-field-filew
 	// * advancedsearch-field-hastemplate
+	// * advancedsearch-field-incategory
 	// * advancedsearch-field-inlanguage
 	// * advancedsearch-field-intitle
 	// * advancedsearch-field-not
@@ -166,6 +167,7 @@ SearchPreview.prototype.generateTag = function ( fieldId, value ) {
 	// * mw-advancedsearch-searchPreview-preview-filetype
 	// * mw-advancedsearch-searchPreview-preview-filew
 	// * mw-advancedsearch-searchPreview-preview-hastemplate
+	// * mw-advancedsearch-searchPreview-preview-incategory
 	// * mw-advancedsearch-searchPreview-preview-inlanguage
 	// * mw-advancedsearch-searchPreview-preview-intitle
 	// * mw-advancedsearch-searchPreview-preview-not

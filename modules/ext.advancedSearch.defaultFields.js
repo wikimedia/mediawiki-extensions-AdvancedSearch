@@ -65,6 +65,7 @@ const getOptionHelpMessage = function ( id ) {
 	// * advancedsearch-help-filetype
 	// * advancedsearch-help-filew
 	// * advancedsearch-help-hastemplate
+	// * advancedsearch-help-incategory
 	// * advancedsearch-help-inlanguage
 	// * advancedsearch-help-intitle
 	// * advancedsearch-help-not
@@ -84,6 +85,7 @@ const getOptionHelpMessage = function ( id ) {
 	// * advancedsearch-field-filetype
 	// * advancedsearch-field-filew
 	// * advancedsearch-field-hastemplate
+	// * advancedsearch-field-incategory
 	// * advancedsearch-field-inlanguage
 	// * advancedsearch-field-intitle
 	// * advancedsearch-field-not
@@ -229,18 +231,19 @@ const addDefaultFields = function ( fieldCollection ) {
 		'structure'
 	);
 
+	const deepcatEnabled = mw.config.get( 'advancedSearch.deepcategoryEnabled' );
 	fieldCollection.add(
 		createSearchFieldFromObject( {
-			id: 'deepcategory',
+			id: deepcatEnabled ? 'deepcategory' : 'incategory',
 			formatter: function ( val ) {
-				const keyword = mw.config.get( 'advancedSearch.deepcategoryEnabled' ) ? 'deepcat:' : 'incategory:';
+				const keyword = deepcatEnabled ? 'deepcat:' : 'incategory:';
 				if ( Array.isArray( val ) ) {
 					return val.map( ( v ) => keyword + optionalQuotes( v ) ).join( ' ' );
 				}
 				return keyword + optionalQuotes( val );
 			},
 			init: ( state, config ) => new MultiselectLookup( state, Object.assign( {}, config, {
-				classes: [ 'mw-advancedSearch-deepCategory' ],
+				classes: [ deepcatEnabled ? 'mw-advancedSearch-deepCategory' : 'mw-advancedSearch-inCategory' ],
 				namespaceId: 14
 			} ) ),
 			layout: createDefaultLayout
