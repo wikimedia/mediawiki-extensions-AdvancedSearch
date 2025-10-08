@@ -7,7 +7,7 @@
 			"Dj"
 		]
 	},
-	"advancedsearch-desc": "Egyszerű hozzáférés a haladó keresési lehetőségekhez a [[Special:Search]] oldalon.",
+	"advancedsearch-desc": "Egyszerű hozzáférés a haladó keresési lehetőségekhez a [[{{#Special:Search}}]] oldalon.",
 	"advancedsearch-options-pane-head": "Haladó paraméterek:",
 	"advancedsearch-options-pane-preview-list": "Jelenleg használt keresési kifejezések",
 	"advancedsearch-optgroup-text": "Keresés az oldalak szövegében",
@@ -65,5 +65,5 @@
 	"advancedsearch-namespaces-placeholder": "Névterek hozzáadása…",
 	"prefs-advancedsearch": "Fejlett kereső",
 	"advancedsearch-preference-help": "A fejlett keresőfelület hozzáad egy űrlapot a {{#Special:Search}} laphoz. Ez lehetővé teszi speciális keresések indítását anélkül, hogy fejből tudnod kellene a szintaxisukat. A névterek kiválasztásának módját is megváltoztatja.",
-	"advancedsearch-preference-disable": "A fejlett keresőfelület elrejtése a {{#Special:Search}} oldalon"
+	"advancedsearch-preference-disable": "A fejlett keresőfelület elrejtése a {{#Special:Search}} lapon"
 }
