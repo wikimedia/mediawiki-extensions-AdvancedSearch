@@ -27,6 +27,7 @@
 	"advancedsearch-field-not": "Bu kelimeler olmasın",
 	"advancedsearch-field-subpageof": "Bu sayfanın alt sayfaları",
 	"advancedsearch-field-intitle": "Sayfa başlığı bunları içersin",
+	"advancedsearch-field-incategory": "Bu kategorilerdeki sayfalar",
 	"advancedsearch-field-deepcategory": "Bu kategorilerdeki sayfalar",
 	"advancedsearch-field-hastemplate": "Bu şablonlara sahip sayfalar",
 	"advancedsearch-field-inlanguage": "Bu dildeki sayfalar",

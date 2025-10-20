@@ -24,6 +24,7 @@
 	"advancedsearch-field-not": "Не ове речи",
 	"advancedsearch-field-subpageof": "Подстранице ове странице",
 	"advancedsearch-field-intitle": "Наслов странице садржи",
+	"advancedsearch-field-incategory": "Странице у овим категоријама",
 	"advancedsearch-field-deepcategory": "Странице у овим категоријама",
 	"advancedsearch-field-hastemplate": "Странице са овим шаблонима",
 	"advancedsearch-field-inlanguage": "Странице на овом језику",

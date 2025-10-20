@@ -3,6 +3,7 @@
 		"authors": [
 			"KuboF",
 			"Mirin",
+			"Tymewalk",
 			"YvesNevelsteen",
 			"Ziko"
 		]
@@ -20,6 +21,7 @@
 	"advancedsearch-field-not": "Ne ĉi tiuj vortoj",
 	"advancedsearch-field-subpageof": "Subpaĝoj de ĉi tiu paĝo",
 	"advancedsearch-field-intitle": "Paĝa titolo enhavas",
+	"advancedsearch-field-incategory": "Paĝoj en ĉi tiuj kategorioj",
 	"advancedsearch-field-deepcategory": "Paĝoj en ĉi tiuj kategorioj",
 	"advancedsearch-field-hastemplate": "Paĝoj kun ĉi tiuj ŝablonoj",
 	"advancedsearch-field-inlanguage": "Paĝoj en ĉi tiu lingvo",
