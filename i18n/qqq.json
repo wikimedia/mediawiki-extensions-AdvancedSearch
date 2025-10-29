@@ -13,7 +13,8 @@
 			"Thibaut120094",
 			"Umherirrender",
 			"WMDE",
-			"Woytecr"
+			"Woytecr",
+			"SaldırganSincap"
 		]
 	},
 	"advancedsearch-desc": "{{desc|name=AdvancedSearch|url=https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:AdvancedSearch}}",
@@ -87,6 +88,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Label for namespace preset 'Discussion'\n{{Identical|Discussion}}",
 	"advancedsearch-namespaces-placeholder": "Placeholder text shown in the namespace selection field",
 	"prefs-advancedsearch": "Section name for advanced search settings in the user preferences.",
-	"advancedsearch-preference-help": "{{doc-important|Do not translate <tt><nowiki>{{#Special:Search}}</nowiki></tt>!}}\nHelp text explaining the AdvancedSearch interface for the user preference that disables the interface",
-	"advancedsearch-preference-disable": "{{doc-important|Do not translate <tt><nowiki>{{#Special:Search}}</nowiki></tt>!}}\nLabel for the user preference that disables the AdvancedSearch interface"
+	"advancedsearch-preference-help": "{{doc-important|Do not translate <code><nowiki>{{#Special:Search}}</nowiki></code>!}}\nHelp text explaining the AdvancedSearch interface for the user preference that disables the interface",
+	"advancedsearch-preference-disable": "{{doc-important|Do not translate <code><nowiki>{{#Special:Search}}</nowiki></code>!}}\nLabel for the user preference that disables the AdvancedSearch interface"
 }
