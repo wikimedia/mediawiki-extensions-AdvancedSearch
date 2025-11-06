@@ -21,7 +21,7 @@
 			"ZebaX2010"
 		]
 	},
-	"advancedsearch-desc": "Acceso sencillo a las funciones de búsqueda avanzadas de [[Special:Search]]",
+	"advancedsearch-desc": "Acceso sencillo a las funciones de búsqueda avanzadas de [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Búsqueda avanzada:",
 	"advancedsearch-options-pane-preview-list": "Términos de búsqueda utilizados actualmente",
 	"advancedsearch-optgroup-text": "Buscar en el texto de la página",
@@ -34,6 +34,7 @@
 	"advancedsearch-field-not": "Ninguna de estas palabras",
 	"advancedsearch-field-subpageof": "Subpáginas de esta página",
 	"advancedsearch-field-intitle": "El título de la página contiene",
+	"advancedsearch-field-incategory": "Páginas en esas categorías",
 	"advancedsearch-field-deepcategory": "Páginas en estas categorías",
 	"advancedsearch-field-hastemplate": "Páginas con estas plantillas",
 	"advancedsearch-field-inlanguage": "Páginas en este idioma",
@@ -93,5 +94,5 @@
 	"advancedsearch-namespaces-placeholder": "Añadir espacios de nombres…",
 	"prefs-advancedsearch": "Búsqueda avanzada",
 	"advancedsearch-preference-help": "La búsqueda avanzada añade un formulario a la página Especial:Buscar. Este te permite realizar búsquedas especializadas, incluso si no conoces ninguna sintaxis de búsqueda. También cambia la manera en que se pueden seleccionar los espacios de nombres.",
-	"advancedsearch-preference-disable": "No mostrar la opcion de búsqueda avanzada."
+	"advancedsearch-preference-disable": "No mostrar la interfaz de búsqueda avanzada al usar {{#Special:Search}}"
 }
