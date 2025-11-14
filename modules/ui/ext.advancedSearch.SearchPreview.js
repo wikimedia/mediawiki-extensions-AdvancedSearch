@@ -16,10 +16,11 @@ const lookupTranslationForSortMethod = function ( name ) {
 	// The following messages are used here:
 	// * advancedsearch-sort-preview-create-timestamp-asc
 	// * advancedsearch-sort-preview-create-timestamp-desc
+	// * advancedsearch-sort-preview-incoming-links-asc
+	// * advancedsearch-sort-preview-incoming-links-asc
 	// * advancedsearch-sort-preview-last-edit-asc
 	// * advancedsearch-sort-preview-last-edit-desc
 	// * advancedsearch-sort-preview-relevance
-	// * advancedsearch-sort-preview-*
 	const msg = mw.message( 'advancedsearch-sort-preview-' + name.replace( /_/g, '-' ) );
 	return msg.exists() ? msg.text() : name;
 };

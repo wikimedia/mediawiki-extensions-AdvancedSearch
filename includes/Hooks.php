@@ -22,6 +22,7 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MessageLocalizer;
 use SearchEngineConfig;
+use SearchEngineFactory;
 use Wikimedia\Mime\MimeAnalyzer;
 
 /**
@@ -37,6 +38,7 @@ class Hooks implements
 		private readonly UserOptionsLookup $userOptionsLookup,
 		private readonly LanguageNameUtils $languageNameUtils,
 		private readonly SearchEngineConfig $searchEngineConfig,
+		private readonly SearchEngineFactory $searchEngineFactory,
 		private readonly MimeAnalyzer $mimeAnalyzer,
 	) {
 	}
@@ -114,6 +116,9 @@ class Hooks implements
 					SiteStats::pagesInNs( $ns );
 			}
 		);
+		$validSorts = $this->searchEngineFactory->create()->getValidSorts();
+		$enabledSorts = $config->get( 'AdvancedSearchEnabledSortMethods' );
+		$filteredSorts = array_values( array_intersect( $validSorts, $enabledSorts ) );
 
 		$vars = [
 			'advancedSearch.mimeTypes' =>
@@ -127,6 +132,7 @@ class Hooks implements
 				$namespaceBuilder->getCuratedNamespaces(
 					$this->searchEngineConfig->searchableNamespaces()
 				),
+			'advancedSearch.sortMethods' => $filteredSorts,
 		];
 
 		if ( !self::isNamespacedSearch( $request ) ) {

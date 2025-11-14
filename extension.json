@@ -55,6 +55,15 @@
 				}
 			},
 			"merge_strategy": "array_plus_2d"
+		},
+		"AdvancedSearchEnabledSortMethods": {
+			"description": "Sort options to offer to the user (when they are available).",
+			"value": [
+				"relevance",
+				"last_edit_desc",
+				"create_timestamp_desc"
+			],
+			"merge_strategy": "provide_default"
 		}
 	},
 	"HookHandlers": {
@@ -64,6 +73,7 @@
 				"UserOptionsLookup",
 				"LanguageNameUtils",
 				"SearchEngineConfig",
+				"SearchEngineFactory",
 				"MimeAnalyzer"
 			]
 		}
@@ -140,6 +150,9 @@
 				"advancedsearch-sort-last-edit-desc",
 				"advancedsearch-sort-create-timestamp-asc",
 				"advancedsearch-sort-create-timestamp-desc",
+				"advancedsearch-sort-incoming-links-asc",
+				"advancedsearch-sort-incoming-links-desc",
+				"advancedsearch-sort-random",
 				"advancedsearch-optgroup-text",
 				"advancedsearch-optgroup-structure",
 				"advancedsearch-optgroup-files",
@@ -169,6 +182,9 @@
 				"advancedsearch-sort-preview-last-edit-desc",
 				"advancedsearch-sort-preview-create-timestamp-asc",
 				"advancedsearch-sort-preview-create-timestamp-desc",
+				"advancedsearch-sort-preview-incoming-links-asc",
+				"advancedsearch-sort-preview-incoming-links-desc",
+				"advancedsearch-sort-preview-random",
 				"colon-separator",
 				"comma-separator",
 				"word-separator"
@@ -245,10 +261,7 @@
 				"advancedsearch-filesize-equals",
 				"advancedsearch-filesize-greater-than",
 				"advancedsearch-filesize-smaller-than",
-				"advancedsearch-unit-pixel",
-				"advancedsearch-sort-relevance",
-				"advancedsearch-sort-last-edit-desc",
-				"advancedsearch-sort-create-timestamp-desc"
+				"advancedsearch-unit-pixel"
 			],
 			"dependencies": [
 				"oojs",

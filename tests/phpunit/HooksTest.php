@@ -44,6 +44,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			$services->getUserOptionsLookup(),
 			$services->getLanguageNameUtils(),
 			$services->getSearchEngineConfig(),
+			$services->getSearchEngineFactory(),
 			$services->getMimeAnalyzer()
 		);
 	}
@@ -61,7 +62,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			'anonymous user' => [
 				'expected' => [ NS_MAIN ],
 				'isNamed' => false,
-				'userOptionsns' => [],
+				'userOptions' => [],
 				'namespacesToBeSearchedDefault' => [ NS_MAIN => true, NS_TALK => false ],
 			],
 			'registered user, no user options' => [
@@ -137,6 +138,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 
 	public function testGetJsConfigVars() {
 		$this->mockMimeAnalyser();
+		$this->mockSearchEngineFactory( [ 'relevance', 'create_timestamp_desc', 'last_edit_desc' ] );
 
 		$extensionRegistry = $this->createMock( ExtensionRegistry::class );
 		$extensionRegistry->method( 'isLoaded' )
@@ -157,12 +159,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			$special->getUser(),
 			new RequestContext(),
 			$this->createMock( Language::class ),
-			new HashConfig( [
-				'AdvancedSearchNamespacePresets' => '<NAMESPACEPRESETS>',
-				MainConfigNames::ExtensionAssetsPath => '<PATH>',
-				MainConfigNames::FileExtensions => [ '<EXT>' ],
-				'AdvancedSearchDeepcatEnabled' => true
-			] ),
+			$this->newHashConfig(),
 			[],
 			$extensionRegistry
 		);
@@ -174,6 +171,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 
 		$this->assertSame( '<NAMESPACEPRESETS>', $vars['advancedSearch.namespacePresets'] );
 		$this->assertSame( true, $vars['advancedSearch.deepcategoryEnabled'] );
+		$this->assertSame( [ 'relevance', 'last_edit_desc' ], $vars['advancedSearch.sortMethods'] );
 
 		$this->assertArrayHasKey( 'advancedSearch.languages', $vars );
 	}
@@ -211,12 +209,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			$special->getUser(),
 			new RequestContext(),
 			$this->createMock( Language::class ),
-			new HashConfig( [
-				'AdvancedSearchNamespacePresets' => '<NAMESPACEPRESETS>',
-				MainConfigNames::ExtensionAssetsPath => '<PATH>',
-				MainConfigNames::FileExtensions => [ '<EXT>' ],
-				'AdvancedSearchDeepcatEnabled' => true
-			] ),
+			$this->newHashConfig(),
 			[],
 			$this->createMock( ExtensionRegistry::class )
 		);
@@ -242,12 +235,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			$special->getUser(),
 			new RequestContext(),
 			$this->createMock( Language::class ),
-			new HashConfig( [
-				'AdvancedSearchNamespacePresets' => '<NAMESPACEPRESETS>',
-				MainConfigNames::ExtensionAssetsPath => '<PATH>',
-				MainConfigNames::FileExtensions => [ '<EXT>' ],
-				'AdvancedSearchDeepcatEnabled' => true
-			] ),
+			$this->newHashConfig(),
 			[],
 			$this->createMock( ExtensionRegistry::class )
 		);
@@ -273,17 +261,23 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			$special->getUser(),
 			new RequestContext(),
 			$this->createMock( Language::class ),
-			new HashConfig( [
-				'AdvancedSearchNamespacePresets' => '<NAMESPACEPRESETS>',
-				MainConfigNames::ExtensionAssetsPath => '<PATH>',
-				MainConfigNames::FileExtensions => [ '<EXT>' ],
-				'AdvancedSearchDeepcatEnabled' => true
-			] ),
+			$this->newHashConfig(),
 			[],
 			$this->createMock( ExtensionRegistry::class ),
 		);
 
 		$this->assertSame( [ 0, 6, 10 ], $vars['advancedSearch.defaultNamespaces'] );
+	}
+
+	private function newHashConfig( array $overrides = [] ): HashConfig {
+		return new HashConfig( [
+			'AdvancedSearchNamespacePresets' => '<NAMESPACEPRESETS>',
+			MainConfigNames::ExtensionAssetsPath => '<PATH>',
+			MainConfigNames::FileExtensions => [ '<EXT>' ],
+			'AdvancedSearchDeepcatEnabled' => true,
+			'AdvancedSearchEnabledSortMethods' => [ 'relevance', 'last_edit_desc', 'boogie' ],
+		],
+		...$overrides );
 	}
 
 	/**
@@ -332,5 +326,18 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		$mock = $this->createNoOpMock( MimeAnalyzer::class, [ 'getMimeTypeFromExtensionOrNull' ] );
 		$mock->method( 'getMimeTypeFromExtensionOrNull' )->willReturn( '<MIME>' );
 		$this->setService( 'MimeAnalyzer', $mock );
+	}
+
+	/**
+	 * @param string[] $validSorts
+	 */
+	private function mockSearchEngineFactory( array $validSorts ) {
+		$searchEngine = $this->createMock( \SearchEngine::class );
+		$searchEngine->method( 'getValidSorts' )->willReturn( $validSorts );
+
+		$factory = $this->createMock( \SearchEngineFactory::class );
+		$factory->method( 'create' )->willReturn( $searchEngine );
+
+		$this->setService( 'SearchEngineFactory', $factory );
 	}
 }

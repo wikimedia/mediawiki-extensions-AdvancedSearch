@@ -14,15 +14,17 @@ const getOptions = function ( selected ) {
 			selected = undefined;
 		}
 		// The following messages are used here:
+		// * advancedsearch-sort-create-timestamp-asc
+		// * advancedsearch-sort-create-timestamp-desc
+		// * advancedsearch-sort-incoming-links-asc
+		// * advancedsearch-sort-incoming-links-desc
+		// * advancedsearch-sort-last-edit-asc
+		// * advancedsearch-sort-last-edit-desc
 		// * advancedsearch-sort-relevance
-		// * advancedsearch-sort-*
 		const msg = mw.message( 'advancedsearch-sort-' + name.replace( /_/g, '-' ) );
 		return { data: name, label: msg.exists() ? msg.text() : name };
 	} );
 	if ( selected ) {
-		// The following messages are used here:
-		// * advancedsearch-sort-relevance
-		// * advancedsearch-sort-*
 		const selectedMsg = mw.message( 'advancedsearch-sort-' + selected.replace( /_/g, '-' ) );
 		options.push( { data: selected, label: selectedMsg.exists() ? selectedMsg.text() : selected } );
 	}
