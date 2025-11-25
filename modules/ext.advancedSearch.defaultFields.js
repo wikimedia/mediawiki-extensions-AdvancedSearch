@@ -293,10 +293,10 @@ const addDefaultFields = function ( fieldCollection ) {
 			formatter: function ( val ) {
 				switch ( val ) {
 					case 'bitmap':
-					case 'audio':
 					case 'drawing':
-					case 'office':
+					case 'audio':
 					case 'video':
+					case 'office':
 						return 'filetype:' + val;
 					default:
 						return 'filemime:' + val;

@@ -97,8 +97,8 @@ FileTypeOptionProvider.prototype.getFileGroupOptions = function () {
 		{ optgroup: mw.msg( 'advancedsearch-filetype-section-types' ) },
 		{ data: 'bitmap', label: mw.msg( 'advancedsearch-filetype-bitmap' ) },
 		{ data: 'drawing', label: mw.msg( 'advancedsearch-filetype-drawing' ) },
-		{ data: 'video', label: mw.msg( 'advancedsearch-filetype-video' ) },
 		{ data: 'audio', label: mw.msg( 'advancedsearch-filetype-audio' ) },
+		{ data: 'video', label: mw.msg( 'advancedsearch-filetype-video' ) },
 		{ data: 'office', label: mw.msg( 'advancedsearch-filetype-office' ) }
 	];
 };

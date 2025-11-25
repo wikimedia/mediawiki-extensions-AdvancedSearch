@@ -50,8 +50,8 @@
 
 	"advancedsearch-filetype-section-types": "General file types",
 	"advancedsearch-filetype-section-image": "Image formats",
-	"advancedsearch-filetype-section-video": "Video formats",
 	"advancedsearch-filetype-section-audio": "Audio formats",
+	"advancedsearch-filetype-section-video": "Video formats",
 	"advancedsearch-filetype-section-document": "Document formats",
 	"advancedsearch-filetype-section-other": "Other formats",
 	"advancedsearch-filetype-default": "Select file type",
