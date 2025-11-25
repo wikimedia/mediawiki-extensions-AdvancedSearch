@@ -43,7 +43,7 @@ const populateCache = function ( res, queryCache ) {
  * @constructor
  * @param {SearchModel} store
  * @param {Object} config
- * @param {string} config.fieldId Field name
+ * @param {string} config.fieldId Name of the form field, e.g. "deepcategory" or "hastemplate"
  * @param {number} config.namespaceId
  * @param {mw.Api} [config.api]
  */
@@ -62,13 +62,13 @@ const MultiselectLookup = function ( store, config ) {
 
 	this.store.connect( this, { update: 'onStoreUpdate' } );
 
+	// Parent constructor
 	MultiselectLookup.super.call( this, config );
 
+	// Mixin constructors
 	this.$input = this.input.$input;
-
-	this.input.connect( this, { change: 'onLookupInputChange' } );
-
 	OO.ui.mixin.LookupElement.call( this, config );
+	this.input.connect( this, { change: 'onLookupInputChange' } );
 
 	this.populateFromStore();
 	this.connect( this, { change: 'onValueUpdate' } );
@@ -106,6 +106,7 @@ MultiselectLookup.prototype.setValue = function ( valueObject ) {
 };
 
 /**
+ * @private
  * @param {string} name
  * @return {jQuery.Promise}
  */
@@ -114,6 +115,7 @@ MultiselectLookup.prototype.searchForPageInNamespace = function ( name ) {
 
 	const title = this.getPrefixedTitle( name );
 	if ( !title ) {
+		// An invalid title cannot exist
 		this.queryCache[ name ] = 'NO';
 		return deferred.resolve( [] ).promise();
 	}
@@ -136,6 +138,7 @@ MultiselectLookup.prototype.searchForPageInNamespace = function ( name ) {
 };
 
 /**
+ * @private
  * @param {string[]} names
  * @return {jQuery.Promise}
  */
@@ -145,6 +148,7 @@ MultiselectLookup.prototype.searchForPagesInNamespace = function ( names ) {
 	names = names.map( ( name ) => {
 		const title = this.getPrefixedTitle( name );
 		if ( !title ) {
+			// An invalid title cannot exist
 			this.queryCache[ name ] = 'NO';
 			return null;
 		}
