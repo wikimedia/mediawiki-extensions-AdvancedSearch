@@ -1,20 +1,11 @@
 'use strict';
 
-const KNOWN_DOCUMENT_TYPES = [
-	'xls', 'xlsx',
-	'doc', 'docx',
-	'odt',
-	'ods',
-	'odp',
-	'pdf'
-];
-
 /**
  * @param {string} fileExtension
  * @return {boolean}
  */
 const isKnownDocumentType = function ( fileExtension ) {
-	return KNOWN_DOCUMENT_TYPES.includes( fileExtension );
+	return /^((doc|ppt|xls)x?|hwp|od[a-z]|pdf|wps)$/i.test( fileExtension );
 };
 
 /**
