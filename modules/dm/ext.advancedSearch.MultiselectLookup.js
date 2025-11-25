@@ -116,11 +116,11 @@ MultiselectLookup.prototype.searchForPageInNamespace = function ( name ) {
 	const title = this.getPrefixedTitle( name );
 	if ( !title ) {
 		// An invalid title cannot exist
-		this.queryCache[ name ] = 'NO';
+		this.queryCache.set( name, 'NO' );
 		return deferred.resolve( [] ).promise();
 	}
 
-	this.queryCache[ name ] = 'PENDING';
+	this.queryCache.set( name, 'PENDING' );
 
 	this.api.get( {
 		formatversion: 2,
@@ -149,7 +149,7 @@ MultiselectLookup.prototype.searchForPagesInNamespace = function ( names ) {
 		const title = this.getPrefixedTitle( name );
 		if ( !title ) {
 			// An invalid title cannot exist
-			this.queryCache[ name ] = 'NO';
+			this.queryCache.set( name, 'NO' );
 			return null;
 		}
 		return title.getPrefixedText();
