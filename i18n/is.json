@@ -7,6 +7,7 @@
 			"Sveinn í Felli"
 		]
 	},
+	"advancedsearch-desc": "Auðveldur aðgangur að ítarlegri leitarmöguleikum á [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Ítarleg leit:",
 	"advancedsearch-optgroup-text": "Leita í síðutexta",
 	"advancedsearch-optgroup-structure": "Uppbygging",
@@ -44,6 +45,9 @@
 	"advancedsearch-namespaces-preset-all": "Allt",
 	"advancedsearch-namespaces-preset-default": "Sjálfgefið",
 	"advancedsearch-namespaces-preset-general-help": "Almenn ráð",
-	"advancedsearch-namespaces-preset-discussion": "Spjall",
-	"advancedsearch-namespaces-placeholder": "Bæta við nafnrýmum…"
+	"advancedsearch-namespaces-preset-discussion": "Umræða",
+	"advancedsearch-namespaces-placeholder": "Bæta við nafnrýmum…",
+	"prefs-advancedsearch": "Ítarleg leit",
+	"advancedsearch-preference-help": "Ítarleg leit bætir innfyllingarreitum við síðuna {{#Special:Search}}. Þetta gerir þér kleift að framkvæma sérhæfðar leitir, jafnvel þótt þú þekkir ekki neina leitarsetningafræði. Það breytir einnig því hvernig hægt er að velja nafnrými.",
+	"advancedsearch-preference-disable": "Ekki sýna ítarlega leitarviðmótið þegar {{#Special:Search}} er notuð"
 }
