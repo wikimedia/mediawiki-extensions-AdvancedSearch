@@ -32,6 +32,7 @@
 	"advancedsearch-field-not": "不含這些詞",
 	"advancedsearch-field-subpageof": "此頁面的子頁面",
 	"advancedsearch-field-intitle": "頁面標題包含",
+	"advancedsearch-field-incategory": "這些分類中的頁面",
 	"advancedsearch-field-deepcategory": "這些分類中的頁面",
 	"advancedsearch-field-hastemplate": "包含這些模板的頁面",
 	"advancedsearch-field-inlanguage": "此語言的頁面",
