@@ -2,7 +2,7 @@
 
 /**
  * @class
- * @property {Object.<string,string>} cache
+ * @property {Object.<string,boolean|undefined>} cache
  *
  * @constructor
  */
@@ -26,18 +26,18 @@ const getCacheKey = function ( name ) {
 
 /**
  * @param {string} name
- * @return {string}
+ * @return {boolean|undefined} If the page exists, undefined when we don't know yet
  */
-TitleCache.prototype.get = function ( name ) {
+TitleCache.prototype.exists = function ( name ) {
 	return this.cache[ getCacheKey( name ) ];
 };
 
 /**
  * @param {string} name
- * @param {string} value
+ * @param {boolean|undefined} [exists=undefined] If the page exists, undefined when we don't know yet
  */
-TitleCache.prototype.set = function ( name, value ) {
-	this.cache[ getCacheKey( name ) ] = value;
+TitleCache.prototype.set = function ( name, exists ) {
+	this.cache[ getCacheKey( name ) ] = exists;
 };
 
 /**
@@ -45,7 +45,7 @@ TitleCache.prototype.set = function ( name, value ) {
  * @return {boolean}
  */
 TitleCache.prototype.has = function ( name ) {
-	return Object.prototype.hasOwnProperty.call( this.cache, getCacheKey( name ) );
+	return getCacheKey( name ) in this.cache;
 };
 
 module.exports = TitleCache;

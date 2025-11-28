@@ -14,7 +14,7 @@ const markNonExistent = function ( item ) {
  * @param {TitleCache} queryCache
  */
 const markPageExistence = function ( item, queryCache ) {
-	if ( queryCache.get( item.getLabel() ) === 'NO' ) {
+	if ( queryCache.exists( item.getLabel() ) === false ) {
 		markNonExistent( item );
 	}
 };
@@ -31,7 +31,7 @@ const populateCache = function ( res, queryCache ) {
 		if ( !page.missing ) {
 			pages.push( page.title );
 		}
-		queryCache.set( page.title, page.missing ? 'NO' : 'YES' );
+		queryCache.set( page.title, !page.missing );
 	}
 	return pages;
 };
@@ -92,9 +92,9 @@ MultiselectLookup.prototype.populateFromStore = function () {
  */
 MultiselectLookup.prototype.setValue = function ( valueObject ) {
 	const names = Array.isArray( valueObject ) ? valueObject : [ valueObject ];
-	// Initialize with "PENDING" value to avoid new request in createTagItemWidget
-	names.forEach( ( value ) => {
-		this.queryCache.set( value, 'PENDING' );
+	// Initialize cache to avoid new request in createTagItemWidget
+	names.forEach( ( name ) => {
+		this.queryCache.set( name );
 	} );
 	MultiselectLookup.super.prototype.setValue.call( this, valueObject );
 
@@ -116,11 +116,11 @@ MultiselectLookup.prototype.searchForPageInNamespace = function ( name ) {
 	const title = this.getPrefixedTitle( name );
 	if ( !title ) {
 		// An invalid title cannot exist
-		this.queryCache.set( name, 'NO' );
+		this.queryCache.set( name, false );
 		return deferred.resolve( [] ).promise();
 	}
 
-	this.queryCache.set( name, 'PENDING' );
+	this.queryCache.set( name );
 
 	this.api.get( {
 		formatversion: 2,
@@ -149,7 +149,7 @@ MultiselectLookup.prototype.searchForPagesInNamespace = function ( names ) {
 		const title = this.getPrefixedTitle( name );
 		if ( !title ) {
 			// An invalid title cannot exist
-			this.queryCache.set( name, 'NO' );
+			this.queryCache.set( name, false );
 			return null;
 		}
 		return title.getPrefixedText();
