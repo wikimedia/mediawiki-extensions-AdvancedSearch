@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aca",
 			"Winston Sung"
 		]
 	},
@@ -55,6 +56,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Razgovor",
 	"advancedsearch-namespaces-placeholder": "Dodaj imenske prostore…",
 	"prefs-advancedsearch": "Napredna pretraga",
-	"advancedsearch-preference-help": "Napredna pretraga dodaje obrazac na stranicu „Posebno:Pretraži”. Ovo vam omogućava da izvršite specijalizovane pretrage, čak i ako ne znate nikakvu sintaksu pretrage. Menja i način izbora imenskih prostora.",
+	"advancedsearch-preference-help": "Napredna pretraga dodaje obrazac na stranicu {{#Special:Search}}. Omogućava izvršavanje naprednih pretraga i bez poznavanja sintakse, a mijenja i način odabira imenskih prostora.",
 	"advancedsearch-preference-disable": "Ne prikazuj interfejs napredne pretrage"
 }
