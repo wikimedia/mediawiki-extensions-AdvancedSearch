@@ -32,21 +32,12 @@ class Hooks implements
 	SpecialSearchResultsPrependHook
 {
 
-	private UserOptionsLookup $userOptionsLookup;
-	private LanguageNameUtils $languageNameUtils;
-	private SearchEngineConfig $searchEngineConfig;
-	private MimeAnalyzer $mimeAnalyzer;
-
 	public function __construct(
-		UserOptionsLookup $userOptionsLookup,
-		LanguageNameUtils $languageNameUtils,
-		SearchEngineConfig $searchEngineConfig,
-		MimeAnalyzer $mimeAnalyzer
+		private readonly UserOptionsLookup $userOptionsLookup,
+		private readonly LanguageNameUtils $languageNameUtils,
+		private readonly SearchEngineConfig $searchEngineConfig,
+		private readonly MimeAnalyzer $mimeAnalyzer,
 	) {
-		$this->userOptionsLookup = $userOptionsLookup;
-		$this->languageNameUtils = $languageNameUtils;
-		$this->searchEngineConfig = $searchEngineConfig;
-		$this->mimeAnalyzer = $mimeAnalyzer;
 	}
 
 	/**

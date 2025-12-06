@@ -33,10 +33,7 @@ class TooltipGenerator {
 		'advancedsearch-help-sort'
 	];
 
-	private MessageLocalizer $messageLocalizer;
-
-	public function __construct( MessageLocalizer $messageLocalizer ) {
-		$this->messageLocalizer = $messageLocalizer;
+	public function __construct( private readonly MessageLocalizer $messageLocalizer ) {
 	}
 
 	/**

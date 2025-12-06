@@ -9,10 +9,7 @@ use Wikimedia\Mime\MimeAnalyzer;
  */
 class MimeTypeConfigurator {
 
-	private MimeAnalyzer $mimeAnalyzer;
-
-	public function __construct( MimeAnalyzer $mimeAnalyzer ) {
-		$this->mimeAnalyzer = $mimeAnalyzer;
+	public function __construct( private readonly MimeAnalyzer $mimeAnalyzer ) {
 	}
 
 	/**
