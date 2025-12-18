@@ -7,7 +7,6 @@
 	],
 	"rules": {
 		"max-len": "off",
-		"mediawiki/msg-doc": "warn",
 		"no-jquery/no-done-fail": "warn"
 	}
 }
