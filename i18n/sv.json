@@ -24,6 +24,7 @@
 	"advancedsearch-field-not": "Inte dessa ord",
 	"advancedsearch-field-subpageof": "Undersidor för denna sida",
 	"advancedsearch-field-intitle": "Sidans titel innehåller",
+	"advancedsearch-field-incategory": "Sidor i dessa kategorier",
 	"advancedsearch-field-deepcategory": "Sidor i dessa kategorier",
 	"advancedsearch-field-hastemplate": "Sidor med dessa mallar",
 	"advancedsearch-field-inlanguage": "Sidor på detta språk",
