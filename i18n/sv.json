@@ -7,10 +7,11 @@
 			"Mjälten",
 			"Sabelöga",
 			"Technic2",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Stefan2255"
 		]
 	},
-	"advancedsearch-desc": "Enkel åtkomst till avancerade sökförmågor på [[Special:Search]]",
+	"advancedsearch-desc": "Enkel åtkomst till avancerade sökfunktioner på [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Avancerad sök:",
 	"advancedsearch-options-pane-preview-list": "Söktermer som används för närvarande",
 	"advancedsearch-optgroup-text": "Sök i sidtext",
@@ -81,6 +82,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Diskussion",
 	"advancedsearch-namespaces-placeholder": "Lägg till namnrymder…",
 	"prefs-advancedsearch": "Avancerad sökning",
-	"advancedsearch-preference-help": "Avancerad sökning lägger till ett formulär på sidan Special:Search. Detta låter dig göra specialiserade sökningar även om du inte kan någon sökningssyntax. Det ändrar även sättet namnrymder kan markeras.",
-	"advancedsearch-preference-disable": "Visa inte gränssnittet för avancerad sökning vid användning av Special:Search"
+	"advancedsearch-preference-help": "Avancerad sökning lägger till ett formulär på sidan {{#Special:Search}}. Detta låter dig göra specialiserade sökningar även om du inte kan någon sökningssyntax. Det ändrar även sättet namnrymder kan markeras.",
+	"advancedsearch-preference-disable": "Visa inte gränssnittet för avancerad sökning vid användning av {{#Special:Search}}"
 }
