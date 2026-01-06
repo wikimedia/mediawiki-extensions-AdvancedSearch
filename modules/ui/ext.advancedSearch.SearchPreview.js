@@ -21,6 +21,8 @@ const lookupTranslationForSortMethod = function ( name ) {
 	// * advancedsearch-sort-preview-last-edit-asc
 	// * advancedsearch-sort-preview-last-edit-desc
 	// * advancedsearch-sort-preview-relevance
+	// * advancedsearch-sort-preview-title-natural-asc
+	// * advancedsearch-sort-preview-title-natural-desc
 	const msg = mw.message( 'advancedsearch-sort-preview-' + name.replace( /_/g, '-' ) );
 	return msg.exists() ? msg.text() : name;
 };

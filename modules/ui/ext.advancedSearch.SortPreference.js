@@ -21,6 +21,8 @@ const getOptions = function ( selected ) {
 		// * advancedsearch-sort-last-edit-asc
 		// * advancedsearch-sort-last-edit-desc
 		// * advancedsearch-sort-relevance
+		// * advancedsearch-sort-title-natural-asc
+		// * advancedsearch-sort-title-natural-desc
 		const msg = mw.message( 'advancedsearch-sort-' + name.replace( /_/g, '-' ) );
 		return { data: name, label: msg.exists() ? msg.text() : name };
 	} );
