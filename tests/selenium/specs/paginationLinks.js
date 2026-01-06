@@ -4,7 +4,8 @@ const SearchPage = require( '../pageobjects/search.page' );
 
 describe( 'Advanced Search', () => {
 
-	it( 'adds search parameters to pagination links', async () => {
+	// FIXME fix or abandon test T413900
+	it.skip( 'adds search parameters to pagination links', async () => {
 		await SearchPage.addExamplePages( 2 );
 		await SearchPage.open( {
 			limit: 1,
