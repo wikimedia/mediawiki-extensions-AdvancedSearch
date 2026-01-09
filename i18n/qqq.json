@@ -71,6 +71,7 @@
 	"advancedsearch-filesize-equals": "Label for the file width/height 'equals' comparator selection",
 	"advancedsearch-filesize-greater-than": "Label for the file width/height 'greater than' comparator selection",
 	"advancedsearch-filesize-smaller-than": "Label for the file width/height 'smaller than' comparator selection",
+	"advancedsearch-unit-pixel": "Label to indicate the unit for image dimensions in the input field.\n{{identical|unit-pixel}}",
 	"advancedsearch-sort-relevance": "Dropdown label for sort option relevance",
 	"advancedsearch-sort-last-edit-asc": "Dropdown label for sort option least to most recently edited",
 	"advancedsearch-sort-last-edit-desc": "Dropdown label for sort option most to least recently edited",

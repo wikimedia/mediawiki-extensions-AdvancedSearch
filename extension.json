@@ -245,6 +245,7 @@
 				"advancedsearch-filesize-equals",
 				"advancedsearch-filesize-greater-than",
 				"advancedsearch-filesize-smaller-than",
+				"advancedsearch-unit-pixel",
 				"advancedsearch-sort-relevance",
 				"advancedsearch-sort-last-edit-desc",
 				"advancedsearch-sort-create-timestamp-desc"

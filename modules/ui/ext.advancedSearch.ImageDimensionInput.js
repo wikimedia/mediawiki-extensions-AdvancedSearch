@@ -34,7 +34,7 @@ const ImageDimensionInput = function ( store, config ) {
 		],
 		value: '>'
 	} );
-	this.valueInput = new OO.ui.TextInputWidget( { label: 'px' } );
+	this.valueInput = new OO.ui.TextInputWidget( { label: mw.msg( 'advancedsearch-unit-pixel' ) } );
 
 	this.operatorInput.connect( this, { change: 'onOperatorInputChange' } );
 	this.valueInput.connect( this, { change: 'onValueInputChange' } );

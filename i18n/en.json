@@ -63,7 +63,7 @@
 	"advancedsearch-filesize-equals": "equal to",
 	"advancedsearch-filesize-greater-than": "greater than",
 	"advancedsearch-filesize-smaller-than": "lower than",
-
+	"advancedsearch-unit-pixel": "px",
 	"advancedsearch-sort-relevance": "Relevance",
 	"advancedsearch-sort-last-edit-asc": "Edit date – oldest on top",
 	"advancedsearch-sort-last-edit-desc": "Edit date – current on top",
