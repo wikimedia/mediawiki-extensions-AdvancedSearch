@@ -202,7 +202,9 @@ SearchModel.prototype.setAllFromJSON = function ( jsonSerialized ) {
  */
 SearchModel.prototype.filetypeSupportsDimensions = function () {
 	const fileType = this.getField( 'filetype' );
-	return !!fileType && /^(bitmap|drawing|image|video)\b/.test( fileType );
+	// "bitmap", "drawing", and "video" are general file types.
+	// "image/…" and "application/pdf" are MIME types.
+	return !!fileType && /^(bitmap|drawing|image|video|application\/pdf)\b/.test( fileType );
 };
 
 /**
