@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Papuass",
-			"Silraks"
+			"Silraks",
+			"Rusjanis"
 		]
 	},
-	"advancedsearch-desc": "Viegla piekļuve paplašinātajām meklēšanas iespējām [[Special:Search]]",
+	"advancedsearch-desc": "Vienkārša piekļuve paplašinātajām meklēšanas iespējām vietnē [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Izvērstā meklēšana:",
 	"advancedsearch-optgroup-text": "Meklēt lapas tekstā",
 	"advancedsearch-optgroup-structure": "Struktūra",
