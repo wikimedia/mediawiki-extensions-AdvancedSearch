@@ -23,6 +23,7 @@
 	"advancedsearch-field-not": "ये शब्द नहीं",
 	"advancedsearch-field-subpageof": "इस पृष्ठ के उपपृष्ठ",
 	"advancedsearch-field-intitle": "पृष्ठ के शीर्षक में शामिल है",
+	"advancedsearch-field-incategory": "इन श्रेणियों में पृष्ठ",
 	"advancedsearch-field-deepcategory": "इन श्रेणियों में पृष्ठ",
 	"advancedsearch-field-hastemplate": "इन साँचों वाले पृष्ठ",
 	"advancedsearch-field-inlanguage": "इस भाषा में पृष्ठ",
