@@ -301,7 +301,11 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		$context->setOutput( $output );
 		$context->setUser( $user );
 		$context->setRequest( $request );
-		$special = new SpecialPage( 'Search' );
+		$special = new class() extends SpecialPage {
+			public function __construct() {
+				parent::__construct( 'Search' );
+			}
+		};
 		$special->setContext( $context );
 		return $special;
 	}
