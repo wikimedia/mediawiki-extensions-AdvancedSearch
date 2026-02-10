@@ -120,8 +120,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testSpecialPageHookHandler_wrongSpecialPage() {
-		$specialPage = $this->createMock( SpecialPage::class );
-		$specialPage->expects( $this->never() )->method( 'getUser' );
+		$specialPage = $this->createNoOpMock( SpecialPage::class, [ 'getName' ] );
 		$this->newInstance()->onSpecialPageBeforeExecute( $specialPage, null );
 	}
 
@@ -214,8 +213,8 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			$this->createMock( Language::class ),
 			new HashConfig( [
 				'AdvancedSearchNamespacePresets' => '<NAMESPACEPRESETS>',
-				'ExtensionAssetsPath' => '<PATH>',
-				'FileExtensions' => [ '<EXT>' ],
+				MainConfigNames::ExtensionAssetsPath => '<PATH>',
+				MainConfigNames::FileExtensions => [ '<EXT>' ],
 				'AdvancedSearchDeepcatEnabled' => true
 			] ),
 			[],
@@ -245,8 +244,8 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			$this->createMock( Language::class ),
 			new HashConfig( [
 				'AdvancedSearchNamespacePresets' => '<NAMESPACEPRESETS>',
-				'ExtensionAssetsPath' => '<PATH>',
-				'FileExtensions' => [ '<EXT>' ],
+				MainConfigNames::ExtensionAssetsPath => '<PATH>',
+				MainConfigNames::FileExtensions => [ '<EXT>' ],
 				'AdvancedSearchDeepcatEnabled' => true
 			] ),
 			[],
@@ -276,8 +275,8 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			$this->createMock( Language::class ),
 			new HashConfig( [
 				'AdvancedSearchNamespacePresets' => '<NAMESPACEPRESETS>',
-				'ExtensionAssetsPath' => '<PATH>',
-				'FileExtensions' => [ '<EXT>' ],
+				MainConfigNames::ExtensionAssetsPath => '<PATH>',
+				MainConfigNames::FileExtensions => [ '<EXT>' ],
 				'AdvancedSearchDeepcatEnabled' => true
 			] ),
 			[],

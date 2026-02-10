@@ -7,6 +7,7 @@ use MediaWiki\Hook\SpecialSearchResultsPrependHook;
 use MediaWiki\Html\Html;
 use MediaWiki\Language\Language;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
@@ -117,7 +118,7 @@ class Hooks implements
 		$vars = [
 			'advancedSearch.mimeTypes' =>
 				( new MimeTypeConfigurator( $this->mimeAnalyzer ) )->getMimeTypes(
-					$config->get( 'FileExtensions' )
+					$config->get( MainConfigNames::FileExtensions )
 				),
 			'advancedSearch.tooltips' => ( new TooltipGenerator( $context ) )->generateTooltips(),
 			'advancedSearch.namespacePresets' => $config->get( 'AdvancedSearchNamespacePresets' ),
