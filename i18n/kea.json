@@ -1,8 +1,30 @@
 {
 	"@metadata": {
 		"authors": [
-			"Quintino Lopes Castro Tavares"
+			"Quintino Lopes Castro Tavares",
+			"GrogeXaKaba"
 		]
 	},
-	"advancedsearch-placeholder-exact-text": "\"Gatu ama kabra\""
+	"advancedsearch-desc": "Asésu faxi pa funsonalidadis vansadu di piskiza na [[{{#Special:Search}}]]",
+	"advancedsearch-options-pane-head": "Piskiza vansadu:",
+	"advancedsearch-options-pane-preview-list": "Térmus di piskiza uzadu gósi",
+	"advancedsearch-optgroup-text": "Piskiza na testu di pájina",
+	"advancedsearch-optgroup-structure": "Strutura",
+	"advancedsearch-optgroup-files": "Fixerus ku imájis",
+	"advancedsearch-optgroup-sort": "Órdi di klasifikason",
+	"advancedsearch-field-plain": "Es palabras",
+	"advancedsearch-field-phrase": "Es testu izatu",
+	"advancedsearch-field-or": "Un di es palabras",
+	"advancedsearch-field-not": "Non es palabras",
+	"advancedsearch-field-subpageof": "Subipájinas di es pájina",
+	"advancedsearch-field-intitle": "Titlu di pájina ta konte",
+	"advancedsearch-field-incategory": "Pájinas na es katigurias",
+	"advancedsearch-field-deepcategory": "Pájinas na es katigurias",
+	"advancedsearch-field-hastemplate": "Pájinas ku es pridifinisons",
+	"advancedsearch-field-inlanguage": "Pájinas na es linga",
+	"advancedsearch-field-filetype": "Tipu di fixeru",
+	"advancedsearch-field-filew": "Largéza di fixeru, na píksels",
+	"advancedsearch-field-fileh": "Oltura di fixeru, na píksels",
+	"advancedsearch-field-sort": "Órdi di klasifikason",
+	"advancedsearch-placeholder-exact-text": "\"gatu ta ama kabra\""
 }
