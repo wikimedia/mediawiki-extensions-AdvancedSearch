@@ -89,7 +89,7 @@ describe( 'Advanced Search', () => {
 		await SearchPage.expandNamespacesMenu();
 		await SearchPage.namespaces().clickOnNamespace( SearchPage.FILE_NAMESPACE );
 
-		await expect( await SearchPage.namespacePreviewItems ).not.toExist( { message: 'No preview pill elements should exist' } );
+		expect( await SearchPage.namespacePreviewItems.isExisting() ).toBe( false, { message: 'No preview pill elements should exist' } );
 
 		await SearchPage.namespacesPreview.click();
 		await SearchPage.namespacesMenu.waitForDisplayed( { reverse: true } );

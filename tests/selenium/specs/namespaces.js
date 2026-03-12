@@ -12,7 +12,7 @@ describe( 'AdvancedSearch', () => {
 		await SearchPage.expandNamespacesPreview();
 
 		// do not allow remembering the selection for anon users
-		await expect( await SearchPage.rememberSelection ).not.toExist();
+		expect( await SearchPage.rememberSelection.isExisting() ).toBe( false );
 
 		// select all namespaces
 		await SearchPage.allNamespacesPreset.click();
