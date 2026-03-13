@@ -66,6 +66,7 @@
 	"advancedsearch-sort-last-edit-desc": "датум измене — тренутни на врху",
 	"advancedsearch-sort-create-timestamp-asc": "Датум прављења — најстарији прво",
 	"advancedsearch-sort-create-timestamp-desc": "датум прављења — тренутни на врху",
+	"advancedsearch-sort-title-natural-asc": "Азбучно",
 	"advancedsearch-sort-random": "Насумично",
 	"advancedsearch-sort-preview-relevance": "важности",
 	"advancedsearch-sort-preview-last-edit-asc": "најкасније уређивани",
