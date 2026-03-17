@@ -3,7 +3,8 @@
 		"authors": [
 			"Adeliine",
 			"Misosoof",
-			"Pikne"
+			"Pikne",
+			"Rivoz"
 		]
 	},
 	"advancedsearch-desc": "Lihtne juurdepääs täpsematele otsivõimalustele leheküljel [[{{#Special:Search}}]]",
@@ -63,11 +64,15 @@
 	"advancedsearch-sort-last-edit-desc": "Redigeerimiskuupäev – eespool praegused",
 	"advancedsearch-sort-create-timestamp-asc": "Alustamiskuupäev – eespool vanemad",
 	"advancedsearch-sort-create-timestamp-desc": "Alustamiskuupäev – eespool praegused",
+	"advancedsearch-sort-title-natural-asc": "tähestiku järgi",
 	"advancedsearch-sort-preview-relevance": "asjakohasus",
 	"advancedsearch-sort-preview-last-edit-asc": "kõige viimati redigeeritud",
 	"advancedsearch-sort-preview-last-edit-desc": "redigeerimiskuupäev",
 	"advancedsearch-sort-preview-create-timestamp-asc": "kõige viimati alustatud",
 	"advancedsearch-sort-preview-create-timestamp-desc": "alustamiskuupäev",
+	"advancedsearch-sort-preview-title-natural-desc": "tähestikulises järjekorras (kahanevalt)",
+	"advancedsearch-sort-preview-incoming-links-asc": "vähim lingitud",
+	"advancedsearch-sort-preview-incoming-links-desc": "enim lingitud",
 	"advancedsearch-namespaces-search-in": "Otsi neist nimeruumidest:",
 	"advancedsearch-namespaces-remember": "Edaspidistes otsingutes pea valikut meeles",
 	"advancedsearch-namespaces-pane-preview-list": "Praegu aktiivsed nimeruumifiltrid",
