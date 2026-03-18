@@ -10,6 +10,7 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Request\FauxRequest;
+use MediaWiki\Search\SearchEngine;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\User;
@@ -138,7 +139,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 
 	public function testGetJsConfigVars() {
 		$this->mockMimeAnalyser();
-		$this->mockSearchEngineFactory( [ 'relevance', 'create_timestamp_desc', 'last_edit_desc' ] );
+		$this->mockSearchEngineFactory( [ SearchEngine::DEFAULT_SORT, 'create_timestamp_desc', 'last_edit_desc' ] );
 
 		$extensionRegistry = $this->createMock( ExtensionRegistry::class );
 		$extensionRegistry->method( 'isLoaded' )
@@ -171,7 +172,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 
 		$this->assertSame( '<NAMESPACEPRESETS>', $vars['advancedSearch.namespacePresets'] );
 		$this->assertSame( true, $vars['advancedSearch.deepcategoryEnabled'] );
-		$this->assertSame( [ 'relevance', 'last_edit_desc' ], $vars['advancedSearch.sortMethods'] );
+		$this->assertSame( [ SearchEngine::DEFAULT_SORT, 'last_edit_desc' ], $vars['advancedSearch.sortMethods'] );
 
 		$this->assertArrayHasKey( 'advancedSearch.languages', $vars );
 	}
@@ -275,7 +276,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			MainConfigNames::ExtensionAssetsPath => '<PATH>',
 			MainConfigNames::FileExtensions => [ '<EXT>' ],
 			'AdvancedSearchDeepcatEnabled' => true,
-			'AdvancedSearchEnabledSortMethods' => [ 'relevance', 'last_edit_desc', 'boogie' ],
+			'AdvancedSearchEnabledSortMethods' => [ SearchEngine::DEFAULT_SORT, 'last_edit_desc', 'boogie' ],
 		],
 		...$overrides );
 	}

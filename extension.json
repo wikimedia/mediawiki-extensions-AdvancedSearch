@@ -226,7 +226,6 @@
 				"modules/ui/mixins/ext.advancedSearch.ClassesForDropdownOptions.js",
 				"modules/ui/ext.advancedSearch.FileTypeSelection.js",
 				"modules/ui/ext.advancedSearch.SortPreference.js",
-				"modules/dm/ext.advancedSearch.getSortMethods.js",
 				"modules/ui/ext.advancedSearch.LanguageSelection.js",
 				"modules/ui/ext.advancedSearch.ImageDimensionInput.js",
 				"modules/ui/ext.advancedSearch.ImageDimensionLayout.js",

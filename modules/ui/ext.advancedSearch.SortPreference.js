@@ -1,14 +1,14 @@
 'use strict';
 
 const ClassesForDropdownOptions = require( './mixins/ext.advancedSearch.ClassesForDropdownOptions.js' );
-const getSortMethods = require( '../dm/ext.advancedSearch.getSortMethods.js' );
 
 /**
  * @param {string} selected
  * @return {Object[]}
  */
 const getOptions = function ( selected ) {
-	const options = getSortMethods().map( ( name ) => {
+	const sortMethods = mw.config.get( 'advancedSearch.sortMethods' ) || [ 'relevance' ];
+	const options = sortMethods.map( ( name ) => {
 		// The currently active sort method already appears in the list, don't add it again
 		if ( name === selected ) {
 			selected = undefined;
@@ -26,10 +26,13 @@ const getOptions = function ( selected ) {
 		const msg = mw.message( 'advancedsearch-sort-' + name.replace( /_/g, '-' ) );
 		return { data: name, label: msg.exists() ? msg.text() : name };
 	} );
+
+	// In case the user-provided &sort=… parameter is not in $wgAdvancedSearchEnabledSortMethods
 	if ( selected ) {
 		const selectedMsg = mw.message( 'advancedsearch-sort-' + selected.replace( /_/g, '-' ) );
 		options.push( { data: selected, label: selectedMsg.exists() ? selectedMsg.text() : selected } );
 	}
+
 	return options;
 };
 

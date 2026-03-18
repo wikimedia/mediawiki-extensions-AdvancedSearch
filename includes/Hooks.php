@@ -116,9 +116,11 @@ class Hooks implements
 					SiteStats::pagesInNs( $ns );
 			}
 		);
-		$validSorts = $this->searchEngineFactory->create()->getValidSorts();
-		$enabledSorts = $config->get( 'AdvancedSearchEnabledSortMethods' );
-		$filteredSorts = array_values( array_intersect( $validSorts, $enabledSorts ) );
+
+		$sortMethods = array_values( array_intersect(
+			$config->get( 'AdvancedSearchEnabledSortMethods' ),
+			$this->searchEngineFactory->create()->getValidSorts()
+		) );
 
 		$vars = [
 			'advancedSearch.mimeTypes' =>
@@ -132,7 +134,7 @@ class Hooks implements
 				$namespaceBuilder->getCuratedNamespaces(
 					$this->searchEngineConfig->searchableNamespaces()
 				),
-			'advancedSearch.sortMethods' => $filteredSorts,
+			'advancedSearch.sortMethods' => $sortMethods,
 		];
 
 		if ( !self::isNamespacedSearch( $request ) ) {
