@@ -89,6 +89,7 @@ By default only the most commonly used sort methods are shown in the form:
 * `relevance`
 * `last_edit_desc`
 * `create_timestamp_desc`
+* `title_natural_asc`
 
 You can set the `$wgAdvancedSearchEnabledSortMethods` to a custom array of sort methods to add additional sort methods.
 Sort modes are provided by the SearchEngine's `validSorts()` method and differ per search engine type.

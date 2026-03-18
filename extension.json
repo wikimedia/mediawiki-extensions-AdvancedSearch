@@ -61,7 +61,8 @@
 			"value": [
 				"relevance",
 				"last_edit_desc",
-				"create_timestamp_desc"
+				"create_timestamp_desc",
+				"title_natural_asc"
 			],
 			"merge_strategy": "provide_default"
 		}
