@@ -23,7 +23,8 @@
 			"Sunpriat",
 			"Thothsum",
 			"Vlad5250",
-			"Wirbel78"
+			"Wirbel78",
+			"Tomasdd"
 		]
 	},
 	"advancedsearch-desc": "Лёгкий доступ к расширенным возможностям поиска на [[{{#Special:Search}}]]",
@@ -39,6 +40,7 @@
 	"advancedsearch-field-not": "Не эти слова",
 	"advancedsearch-field-subpageof": "Подстраницы данной страницы",
 	"advancedsearch-field-intitle": "Заголовок страницы содержит",
+	"advancedsearch-field-incategory": "Страницы в этих категориях",
 	"advancedsearch-field-deepcategory": "Страницы в этих категориях",
 	"advancedsearch-field-hastemplate": "Страницы с этими шаблонами",
 	"advancedsearch-field-inlanguage": "Страницы на этом языке",

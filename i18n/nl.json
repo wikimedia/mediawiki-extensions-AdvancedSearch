@@ -12,7 +12,8 @@
 			"Mar(c)",
 			"McDutchie",
 			"Nickthijssen1994",
-			"Patio"
+			"Patio",
+			"HanV"
 		]
 	},
 	"advancedsearch-desc": "Eenvoudige toegang tot geavanceerde zoekmogelijkheden op [[{{#Special:Search}}]]",
@@ -81,7 +82,7 @@
 	"advancedsearch-sort-preview-create-timestamp-desc": "aanmaakdatum",
 	"advancedsearch-namespaces-search-in": "Zoeken in:",
 	"advancedsearch-namespaces-remember": "Onthoud keuze voor toekomstige zoekopdrachten",
-	"advancedsearch-namespaces-pane-preview-list": "Momenteel actieve naamruimtefilters",
+	"advancedsearch-namespaces-pane-preview-list": "Nu actieve naamruimtefilters",
 	"advancedsearch-namespaces-preset-all": "Alle",
 	"advancedsearch-namespaces-preset-default": "Standaard",
 	"advancedsearch-namespaces-preset-general-help": "Algemene hulp",
