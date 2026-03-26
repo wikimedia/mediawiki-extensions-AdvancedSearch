@@ -22,6 +22,7 @@
 	"advancedsearch-field-not": "Sem estas palavras",
 	"advancedsearch-field-subpageof": "Subpáginas desta página",
 	"advancedsearch-field-intitle": "O título da página contém",
+	"advancedsearch-field-incategory": "Página nestas categorias",
 	"advancedsearch-field-deepcategory": "Página nestas categorias",
 	"advancedsearch-field-hastemplate": "Páginas com estas predefinições",
 	"advancedsearch-field-inlanguage": "Páginas neste idioma",
