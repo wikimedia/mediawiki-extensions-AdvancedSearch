@@ -1,12 +1,10 @@
-'use strict';
-
-const SearchPage = require( '../pageobjects/search.page' );
-const UserLoginPage = require( 'wdio-mediawiki/LoginPage' );
+import SearchPage from '../pageobjects/search.page.js';
+import LoginPage from 'wdio-mediawiki/LoginPage';
 
 describe( 'Advanced Search', () => {
 
 	before( async () => {
-		await UserLoginPage.loginAdmin();
+		await LoginPage.loginAdmin();
 	} );
 
 	it( 'allows logged-in users to remember the selection of namespaces for future searches', async () => {

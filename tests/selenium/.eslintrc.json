@@ -6,6 +6,9 @@
 	"globals": {
 		"mw": "readonly"
 	},
+	"parserOptions": {
+		"sourceType": "module"
+	},
 	"rules": {
 		"max-len": "off"
 	}

@@ -1,6 +1,4 @@
-'use strict';
-
-const SearchPage = require( '../pageobjects/search.page' );
+import SearchPage from '../pageobjects/search.page.js';
 
 describe( 'Advanced Search', () => {
 

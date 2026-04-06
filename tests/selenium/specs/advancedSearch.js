@@ -1,6 +1,4 @@
-'use strict';
-
-const SearchPage = require( '../pageobjects/search.page' );
+import SearchPage from '../pageobjects/search.page.js';
 
 describe( 'Advanced Search', () => {
 
@@ -37,8 +35,8 @@ describe( 'Advanced Search', () => {
 
 		// Don't show dimension on audio input
 		await SearchPage.searchFileType().selectAudioType();
-		await expect( await SearchPage.searchImageWidth ).not.toBeDisplayed();
-		await expect( await SearchPage.searchImageHeight ).not.toBeDisplayed();
+		expect( await SearchPage.searchImageWidth.isDisplayed() ).toBe( false );
+		expect( await SearchPage.searchImageHeight.isDisplayed() ).toBe( false );
 
 		// Add image
 		await SearchPage.searchFileType().selectImageType();

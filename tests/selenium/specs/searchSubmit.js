@@ -1,7 +1,5 @@
-'use strict';
-
-const SearchPage = require( '../pageobjects/search.page' );
-const SpecialPage = require( '../pageobjects/special.page' );
+import SearchPage from '../pageobjects/search.page.js';
+import SpecialPage from '../pageobjects/special.page.js';
 
 describe( 'Advanced Search', () => {
 

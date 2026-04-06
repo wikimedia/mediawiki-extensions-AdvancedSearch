@@ -1,6 +1,4 @@
-'use strict';
-
-const SearchPage = require( '../pageobjects/search.page' );
+import SearchPage from '../pageobjects/search.page.js';
 
 describe( 'AdvancedSearch', () => {
 
@@ -36,6 +34,7 @@ describe( 'AdvancedSearch', () => {
 		await SearchPage.namespaces().selectAll();
 		await expect( await SearchPage.allNamespacesPreset ).toBeSelected();
 
+		await SearchPage.expandNamespacesMenu();
 		await SearchPage.namespaces().clickOnNamespace( SearchPage.FILE_NAMESPACE );
 
 		await expect( await SearchPage.allNamespacesPreset ).not.toBeSelected( { message: 'preset is not checked if a namespace is missing' } );
