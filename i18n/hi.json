@@ -69,5 +69,5 @@
 	"advancedsearch-namespaces-placeholder": "नामस्थान जोड़ें…",
 	"prefs-advancedsearch": "उन्नत खोज",
 	"advancedsearch-preference-help": "उन्नत खोज {{#Special:Search}} पर एक फ़ॉर्म जोड़ देता है। इससे आप विशेषीकृत खोज कर सकते हैं, भले ही आपको खोज सिनटैक्स न आता हो। यह नामस्थानों को चुनने का तरीका भी बदल देता है।",
-	"advancedsearch-preference-disable": "{{#Special:Search}} का उपयोग करते समय उन्नत खोज का इंटरफ़ेस न दिखाएँ"
+	"advancedsearch-preference-disable": "{{#Special:Search}} का उपयोग करते समय उन्नत खोज अंतरफलक न दिखाएँ"
 }
