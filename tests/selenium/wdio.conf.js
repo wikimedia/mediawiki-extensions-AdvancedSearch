@@ -9,7 +9,7 @@ export const config = { ...wdioDefaults,
 
 	suites: {
 		daily: [
-			'./tests/selenium/specs/*.js'
+			'./specs/*.js'
 		]
 	},
 	maxInstances: 4
