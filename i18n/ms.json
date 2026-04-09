@@ -4,10 +4,11 @@
 			"Anakmalaysia",
 			"CyberTroopers",
 			"Hakimi97",
-			"Tofeiku"
+			"Tofeiku",
+			"SNN95"
 		]
 	},
-	"advancedsearch-desc": "Capaian mudah ke kemampuan carian lanjut di [[Special:Search|Khas:Cari]]",
+	"advancedsearch-desc": "Akses mudah kepada keupayaan carian lanjutan pada [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Carian lanjut",
 	"advancedsearch-options-pane-preview-list": "Kata carian yang digunakan kini",
 	"advancedsearch-optgroup-text": "Cari dalam teks halaman",
@@ -34,7 +35,7 @@
 	"advancedsearch-help-or": ";Penerangan\n:Sekurang-kurangnya satu daripada istilah carian perlu disertakan dalam laman tersebut.\n;Laman bantuan\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Perkataan, frasa, dan pengubahsuai]\n;Sintaks yang setara dalam pencarian normal\n:Perkataan dengan <code>ATAU</code> di antara perkataan tersebut contohnya <code>Maklumat ATAU Informasi</code> .",
 	"advancedsearch-help-not": ";Penerangan\n:Mengecualikan laman yang mengandungi perkataan ini daripada carian.\n;Berhati-hati dengan perkara berikut\n:* Pengakaran kata diguna pakai. Contohnya: Jika ''kereta'' dimasukkan, carian juga akan mempertimbangkan ''kereta-kereta''. Pengakaran kata adalah khusus terhadap bahasa.\n;Halaman bantuan\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Perkataan, frasa dan pengubahsuai]\n;Padanan sintaks pada pencarian biasa\n:Perkataan dengan <code>-</code> sebelumnya, contohnya <code>-gajah</code>",
 	"advancedsearch-help-intitle": ";Penerangan\n:Mencari halaman dengan tajuk yang mengandungi perkataan ini\n;Berhati-hati dengan perkara berikut\n:* Carian termasuk lencongan.\n:* Pengakaran kata diguna pakai. Contohnya: Jika ''kereta'' dimasukkan, carian juga akan mempertimbangkan ''kereta-kereta''. Pengakaran kata adalah khusus terhadap bahasa.\n;Halaman bantuan\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Intitle_and_incategory Tajuk dalaman dan kategori dalaman]\n;Padanan sintaks dalam pencarian biasa\n:Perkataan dengan <code>intitle:</code> sebelum mereka seperti <code>intitle:queen</code>.",
-	"advancedsearch-help-inlanguage": ";Huraian:\nHanya akan mencari dalam bahasa pilihan anda.\n;Peringatan\n:*Anda boleh mencari halaman dalam satu bahasa sahaja.\n:*Ruangan ini hanya akan dipaparkan dalam wiki-wiki yang mana sambungan translatewiki dihidupkan.\n;Bantuan\n: [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Inlanguage Inlanguage]\n;Padanan sintaks dalam carian normal\n:<code>inlanguage:</code> diikuti kod bahasa seperti <code>inlanguage:en</code>. Anda boleh mengecualikan bahasa dengan membubuh <code>-</code> di awal kata kunci, cth. <code>-inlanguage:ms</code>.",
+	"advancedsearch-help-inlanguage": ";Penerangan\n:Hanya akan mencari dalam bahasa yang anda pilih.\n;Sila ambil perhatian tentang perkara berikut\n:* Anda hanya boleh mencari halaman dalam satu bahasa sahaja.\n:* Medan ini hanya akan dipaparkan pada wiki yang mempunyai pelanjutan Translatewiki yang didayakan.\n;Halaman bantuan\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Inlanguage Inlanguage]\n;Sintaks yang setara dalam carian biasa\n:<code>inlanguage:</code> diikuti oleh kod bahasa seperti <code>inlanguage:es</code>. Anda boleh mengecualikan bahasa dengan menambahkan tanda <code>-</code> di hadapan kata kunci, contohnya <code>-inlanguage:en</code>.",
 	"advancedsearch-placeholder-exact-text": "\"kucing suka akan kambing\"",
 	"advancedsearch-inlanguage-default": "Pilih bahasa",
 	"advancedsearch-filetype-section-types": "Jenis fail umum",
@@ -70,6 +71,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Perbincangan",
 	"advancedsearch-namespaces-placeholder": "Tambah ruang nama…",
 	"prefs-advancedsearch": "Carian lanjutan",
-	"advancedsearch-preference-help": "Carian Lanjut menambah borang pada halaman Khas:Carian. Pilihan ini membolehkan anda melakukan carian khusus, walaupun anda tidak mengetahui sebarang sintaks carian. Ia juga mengubah cara ruang nama boleh dipilih.",
-	"advancedsearch-preference-disable": "Jangan tampilkan paparan antara muka Carian Lanjut apabila menggunakan Khas:Cari"
+	"advancedsearch-preference-help": "Carian Lanjutan menambah satu borang pada halaman {{#Special:Search}}. Ini membolehkan anda melakukan carian khusus, walaupun anda tidak mengetahui sebarang sintaks carian. Ia juga mengubah cara ruang nama boleh dipilih.",
+	"advancedsearch-preference-disable": "Don’t show the Advanced Search interface when using {{#Special:Search}}"
 }
