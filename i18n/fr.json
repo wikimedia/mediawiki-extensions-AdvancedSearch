@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"ALDO CP",
+			"Antimuonium",
 			"DePlusJean",
 			"Djiboun",
 			"Escargot bleu",
@@ -75,11 +76,15 @@
 	"advancedsearch-sort-last-edit-desc": "Date de modification – la plus récente en tête",
 	"advancedsearch-sort-create-timestamp-asc": "Date de création — la plus ancienne en premier",
 	"advancedsearch-sort-create-timestamp-desc": "Date de création – la plus récente en tête",
+	"advancedsearch-sort-title-natural-asc": "Alphabétique",
+	"advancedsearch-sort-title-natural-desc": "Alphabétique – descendant",
 	"advancedsearch-sort-preview-relevance": "pertinence",
 	"advancedsearch-sort-preview-last-edit-asc": "modifié le moins récemment",
 	"advancedsearch-sort-preview-last-edit-desc": "date de modification",
 	"advancedsearch-sort-preview-create-timestamp-asc": "créé le moins récemment",
 	"advancedsearch-sort-preview-create-timestamp-desc": "date de création",
+	"advancedsearch-sort-preview-title-natural-asc": "alphabétique",
+	"advancedsearch-sort-preview-title-natural-desc": "alphabétique (descendant)",
 	"advancedsearch-namespaces-search-in": "Rechercher dans :",
 	"advancedsearch-namespaces-remember": "Conserver la sélection pour les recherches futures",
 	"advancedsearch-namespaces-pane-preview-list": "Filtres d’espaces de nom actuellement actifs",
