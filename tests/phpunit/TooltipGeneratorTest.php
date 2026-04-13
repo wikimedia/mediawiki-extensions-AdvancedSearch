@@ -3,9 +3,9 @@
 namespace AdvancedSearch\Tests;
 
 use AdvancedSearch\TooltipGenerator;
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\Message\Message;
 use MediaWikiIntegrationTestCase;
-use MessageLocalizer;
 
 /**
  * @covers \AdvancedSearch\TooltipGenerator

@@ -11,6 +11,7 @@ use MediaWiki\Output\OutputPage;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Search\SearchEngine;
+use MediaWiki\Search\SearchEngineFactory;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\User;
@@ -333,10 +334,10 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 	 * @param string[] $validSorts
 	 */
 	private function mockSearchEngineFactory( array $validSorts ) {
-		$searchEngine = $this->createMock( \SearchEngine::class );
+		$searchEngine = $this->createMock( SearchEngine::class );
 		$searchEngine->method( 'getValidSorts' )->willReturn( $validSorts );
 
-		$factory = $this->createMock( \SearchEngineFactory::class );
+		$factory = $this->createMock( SearchEngineFactory::class );
 		$factory->method( 'create' )->willReturn( $searchEngine );
 
 		$this->setService( 'SearchEngineFactory', $factory );

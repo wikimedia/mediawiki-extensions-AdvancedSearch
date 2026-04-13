@@ -2,7 +2,7 @@
 
 namespace AdvancedSearch;
 
-use MessageLocalizer;
+use MediaWiki\Language\MessageLocalizer;
 
 /**
  * Generate HTML tooltips from messages
