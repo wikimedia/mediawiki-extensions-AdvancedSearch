@@ -101,8 +101,7 @@ FileTypeOptionProvider.prototype.getFileGroupOptions = function () {
  */
 FileTypeOptionProvider.prototype.getAllowedFileTypeOptions = function () {
 	const groups = getFileOptions( this.mimeTypes );
-	// TODO: Replace with Object.values( groups ) when we can
-	return [].concat( ...Object.keys( groups ).map( ( k ) => groups[ k ] ) );
+	return [].concat( ...Object.values( groups ) );
 };
 
 module.exports = FileTypeOptionProvider;
