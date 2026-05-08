@@ -72,5 +72,5 @@
 	"advancedsearch-namespaces-placeholder": "Tambah ruang nama…",
 	"prefs-advancedsearch": "Carian lanjutan",
 	"advancedsearch-preference-help": "Carian Lanjutan menambah satu borang pada halaman {{#Special:Search}}. Ini membolehkan anda melakukan carian khusus, walaupun anda tidak mengetahui sebarang sintaks carian. Ia juga mengubah cara ruang nama boleh dipilih.",
-	"advancedsearch-preference-disable": "Don’t show the Advanced Search interface when using {{#Special:Search}}"
+	"advancedsearch-preference-disable": "Jangan paparkan antara muka Carian Lanjutan apabila menggunakan {{#Special:Search}}"
 }
