@@ -1,10 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Abdullahi"
+			"Abdullahi",
+			"AhmedG612"
 		]
 	},
 	"advancedsearch-desc": "Helitaan sahlan ee leh awoodaha raadinta sare [[{{#Special:Search}}]]",
+	"advancedsearch-field-incategory": "Bogag ku jira qaybahan",
+	"advancedsearch-help-incategory": ";Sharaxaad\n:Waxay raadisaa bogagga ku jira qaybahan.\n\n;Ka digtoonow waxyaabaha soo socda\n:* Bogagga ku jira qayb-hoosaadyada kuma jiraan raadintaada.\n:* Tirada qaybaha waxaa lagu xaddiday 256.\n:* Waxaad raadin kartaa bogag ku jira qaybaha kala duwan.\n\n;Bogga caawinta\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Intitle_and_incategory Incategory]\n\n;Isku-dheellitirka syntax ee raadinta caadiga ah: <code>incategory:</code> oo ay raacdo magaca qaybta sida <code>incategory:Help</code>. Isticmaal calaamado xigasho laba-labo ah haddii magaca uu leeyahay meelo bannaan: <code>incategory:\"Hidden categories\"</code>.",
 	"prefs-advancedsearch": "Raadinta sare",
 	"advancedsearch-preference-disable": "Ha tusin muuqaalka Raadinta Sare"
 }
