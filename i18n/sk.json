@@ -6,10 +6,11 @@
 			"Robert Važan",
 			"Teslaton",
 			"TomášPolonec",
-			"Vegetator"
+			"Vegetator",
+			"Wizzard"
 		]
 	},
-	"advancedsearch-desc": "Jednoduchý prístup k pokročilým možnostiam vyhľadávania na stránke [[Special:Search]]",
+	"advancedsearch-desc": "Jednoduchý prístup k pokročilým možnostiam vyhľadávania na [[{{#Special:Search}}]]",
 	"advancedsearch-options-pane-head": "Pokročilé hľadanie:",
 	"advancedsearch-optgroup-text": "Hľadať v texte stránky",
 	"advancedsearch-optgroup-structure": "Štruktúra",
@@ -29,7 +30,7 @@
 	"advancedsearch-field-fileh": "Výška súboru v pixeloch",
 	"advancedsearch-field-sort": "Zoradiť podľa",
 	"advancedsearch-field-preview-sort": "Zoradiť podľa $1",
-	"advancedsearch-help-plain": ";Popis\n:Hľadá tieto slová v názve alebo v texte.\n;Uvedomte si nasledujúce\n:* Je možné zadať viac slov.\n:* Interpunkcia a ďalšie neabecedné a nečíselné znaky sú ignorované (s výnimkou dvojbotky a čiarky).\n:* Môžu sa zobraziť výsledky, které neobsahujú jeden alebo viac hľadaných slov.\n:* Používa se stemovanie. Príklad: Aj zadáte ''auto'', hľadanie sa bude vzťahovať aj na ''autá''. Stemovanie je závislé na jazyku.\n;Stránka s nápovedou\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search Help:CirrusSearch]\n;Syntaktický ekvivalent v bežnom vyhľadávaní\n:<code>rýchlosť svetla vákuum</code>",
+	"advancedsearch-help-plain": ";Popis\n:Hľadá tieto slová v názve alebo texte.\n;Uvedomte si nasledujúce\n:* Je možné zadať viac slov.\n:* Interpunkčné znamienka a ďalšie nealfanumerické znaky (s výnimkou dvojbodky a čiarky) budú ignorované.\n:* Môžu sa zobraziť výsledky, ktoré neobsahujú jedno alebo viac hľadaných slov.\n:* Používa sa stemovanie (hľadanie podľa koreňa slova). Príklad: Ak zadáte ''auto'', hľadanie zohľadní aj ''autá''. Stemovanie závisí od jazyka.\n;Stránka pomocníka\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Full_text_search Fulltextové vyhľadávanie]\n;Syntaktický ekvivalent v bežnom vyhľadávaní\n:<code>sesame street car</code>",
 	"advancedsearch-placeholder-exact-text": "\"mačka miluje kozu\"",
 	"advancedsearch-inlanguage-default": "Vybrať jazyk",
 	"advancedsearch-filetype-section-types": "Všeobecné typy súborov",
@@ -61,6 +62,6 @@
 	"advancedsearch-namespaces-preset-discussion": "Diskusie",
 	"advancedsearch-namespaces-placeholder": "Pridať menné priestory...",
 	"prefs-advancedsearch": "Pokročilé vyhľadávanie",
-	"advancedsearch-preference-help": "Pokročilé vyhľadávanie pridáva na stránku Špeciálne:Hľadanie formulár, ktorý umožňuje vykonávať špecializované vyhľadávania aj bez znalosti syntaxe vyhľadávača. Tiež mení spôsob, akým sa vyberajú menné priestory.",
-	"advancedsearch-preference-disable": "Nezobrazovať rozhranie Pokročilého vyhľadávania"
+	"advancedsearch-preference-help": "Pokročilé vyhľadávanie pridáva na stránku {{#Special:Search}} formulár. Ten umožňuje vykonávať špecializované vyhľadávania, aj keď nepoznáte syntax vyhľadávania. Mení tiež spôsob výberu menných priestorov.",
+	"advancedsearch-preference-disable": "Nezobrazovať rozhranie Pokročilého vyhľadávania pri použití {{#Special:Search}}"
 }
