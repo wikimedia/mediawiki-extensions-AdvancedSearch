@@ -10,7 +10,7 @@ const ItemMenuOptionWidget = require( './ext.advancedSearch.ItemMenuOptionWidget
  *
  * @constructor
  * @param {Object} config
- * @param {Object.<number,string>} config.namespaces
+ * @param {Object.<string,string>} config.namespaces
  */
 const MenuSelectWidget = function ( config ) {
 	MenuSelectWidget.super.call( this, Object.assign( {
@@ -30,7 +30,7 @@ MenuSelectWidget.prototype.toggle = function ( show ) {
 };
 
 /**
- * @param {Object.<number,string>} namespaces Maps namespace id => label
+ * @param {Object.<string,string>} namespaces Maps namespace id => label
  * @return {OO.ui.MenuOptionWidget[]}
  */
 MenuSelectWidget.prototype.createMenuItems = function ( namespaces ) {

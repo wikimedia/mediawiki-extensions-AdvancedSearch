@@ -5,11 +5,11 @@ const { arrayContains } = require( '../ext.advancedSearch.util.js' );
 
 /**
  * @class
- * @property {Object.<number,string>} namespaces
+ * @property {Object.<string,string>} namespaces
  * @property {Object.<string,Function>} providerFunctions
  *
  * @constructor
- * @param {Object.<number,string>} namespaces Mapping namespace ids to localized names
+ * @param {Object.<string,string>} namespaces Mapping namespace ids to localized names
  */
 const NamespacePresetProviders = function ( namespaces ) {
 	this.namespaces = namespaces;
