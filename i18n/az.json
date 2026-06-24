@@ -6,7 +6,8 @@
 			"Toghrul Rahimli",
 			"Wertuose",
 			"Şeyx Şamil",
-			"Əkrəm Cəfər"
+			"Əkrəm Cəfər",
+			"Əkrəm"
 		]
 	},
 	"advancedsearch-desc": "[[{{#Special:Search}}]]-dakı təkmil axtarış imkanlarına asan giriş",
@@ -75,7 +76,7 @@
 	"advancedsearch-namespaces-preset-default": "Standart",
 	"advancedsearch-namespaces-preset-general-help": "Kömək",
 	"advancedsearch-namespaces-preset-discussion": "Müzakirə",
-	"advancedsearch-namespaces-placeholder": "Adlar fəzası əlavə et...",
+	"advancedsearch-namespaces-placeholder": "Ad fəzası əlavə et...",
 	"prefs-advancedsearch": "Ətraflı axtarış:",
 	"advancedsearch-preference-help": "Qabaqcıl axtarış {{#Special:Search}} səhifəsinə forma əlavə edir. Bu, heç bir axtarış sintaksisini bilməsəniz belə, xüsusi axtarışlar aparmağa imkan verir. Həmçinin ad fəzalarının seçilmə üsulunu dəyişir.",
 	"advancedsearch-preference-disable": "{{#Special:Search}} istifadə edərkən Qabaqcıl Axtarış interfeysini göstərmə"
