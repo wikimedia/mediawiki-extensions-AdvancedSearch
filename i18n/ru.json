@@ -24,7 +24,8 @@
 			"Thothsum",
 			"Tomasdd",
 			"Vlad5250",
-			"Wirbel78"
+			"Wirbel78",
+			"Merrahtar"
 		]
 	},
 	"advancedsearch-desc": "Лёгкий доступ к расширенным возможностям поиска на [[{{#Special:Search}}]]",
@@ -85,6 +86,7 @@
 	"advancedsearch-sort-last-edit-desc": "Дата изменения — новые сверху",
 	"advancedsearch-sort-create-timestamp-asc": "Дата создания — старые сверху",
 	"advancedsearch-sort-create-timestamp-desc": "Дата создания — новые сверху",
+	"advancedsearch-sort-title-natural-asc": "По алфавиту",
 	"advancedsearch-sort-preview-relevance": "релевантности",
 	"advancedsearch-sort-preview-last-edit-asc": "минимальные последние правки",
 	"advancedsearch-sort-preview-last-edit-desc": "дате изменения",
