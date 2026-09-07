@@ -47,7 +47,9 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			$services->getLanguageNameUtils(),
 			$services->getSearchEngineConfig(),
 			$services->getSearchEngineFactory(),
-			$services->getMimeAnalyzer()
+			$services->getMimeAnalyzer(),
+			$services->getLanguageConverterFactory(),
+			$services->getExtensionRegistry(),
 		);
 	}
 

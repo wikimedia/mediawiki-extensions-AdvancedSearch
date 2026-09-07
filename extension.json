@@ -75,7 +75,9 @@
 				"LanguageNameUtils",
 				"SearchEngineConfig",
 				"SearchEngineFactory",
-				"MimeAnalyzer"
+				"MimeAnalyzer",
+				"LanguageConverterFactory",
+				"ExtensionRegistry"
 			]
 		}
 	},

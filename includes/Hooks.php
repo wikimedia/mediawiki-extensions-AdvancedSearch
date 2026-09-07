@@ -5,10 +5,10 @@ namespace AdvancedSearch;
 use MediaWiki\Config\Config;
 use MediaWiki\Html\Html;
 use MediaWiki\Language\Language;
+use MediaWiki\Language\LanguageConverterFactory;
 use MediaWiki\Language\LanguageNameUtils;
 use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\MainConfigNames;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\Registration\ExtensionRegistry;
@@ -40,6 +40,8 @@ class Hooks implements
 		private readonly SearchEngineConfig $searchEngineConfig,
 		private readonly SearchEngineFactory $searchEngineFactory,
 		private readonly MimeAnalyzer $mimeAnalyzer,
+		private readonly LanguageConverterFactory $languageConverterFactory,
+		private readonly ExtensionRegistry $extensionRegistry,
 	) {
 	}
 
@@ -82,7 +84,6 @@ class Hooks implements
 			$special->getLanguage(),
 			$special->getConfig(),
 			$this->getDefaultNamespaces( $user ),
-			ExtensionRegistry::getInstance()
 		) );
 	}
 
@@ -93,7 +94,6 @@ class Hooks implements
 	 * @param Language $userLang
 	 * @param Config $config
 	 * @param int[] $defaultNamespaces
-	 * @param ExtensionRegistry $extensionRegistry
 	 * @return array<string,mixed>
 	 */
 	private function getJsConfigVars(
@@ -103,11 +103,9 @@ class Hooks implements
 		Language $userLang,
 		Config $config,
 		array $defaultNamespaces,
-		ExtensionRegistry $extensionRegistry
 	): array {
 		$namespaceBuilder = new SearchableNamespaceListBuilder(
-			MediaWikiServices::getInstance()->getLanguageConverterFactory()
-				->getLanguageConverter( $userLang ),
+			$this->languageConverterFactory->getLanguageConverter( $userLang ),
 			static function ( int $ns ) use ( $defaultNamespaces ): bool {
 				// Skip the expensive query for all standard namespaces that are hard-coded in core
 				return $ns <= NS_CATEGORY_TALK ||
@@ -141,7 +139,7 @@ class Hooks implements
 			$vars += [ 'advancedSearch.defaultNamespaces' => $this->getDefaultNamespaces( $user ) ];
 		}
 
-		if ( $extensionRegistry->isLoaded( 'Translate' ) ) {
+		if ( $this->extensionRegistry->isLoaded( 'Translate' ) ) {
 			$vars += [ 'advancedSearch.languages' =>
 				$this->languageNameUtils->getLanguageNames()
 			];
