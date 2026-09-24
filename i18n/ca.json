@@ -10,7 +10,8 @@
 			"Leptictidium",
 			"Mguix",
 			"SMP",
-			"Sma1997"
+			"Sma1997",
+			"Paucabot"
 		]
 	},
 	"advancedsearch-desc": "Accés fàcil a capacitats avançades de cerca a [[{{#Special:Search}}]]",
@@ -26,6 +27,7 @@
 	"advancedsearch-field-not": "Cap d'aquestes paraules",
 	"advancedsearch-field-subpageof": "Subpàgines d'aquesta pàgina",
 	"advancedsearch-field-intitle": "El títol de la pàgina conté",
+	"advancedsearch-field-incategory": "Pàgines en aquestes categories",
 	"advancedsearch-field-deepcategory": "Pàgines dins d'aquestes categories",
 	"advancedsearch-field-hastemplate": "Pàgines amb aquestes plantilles",
 	"advancedsearch-field-inlanguage": "Pàgines en aquesta llengua",
