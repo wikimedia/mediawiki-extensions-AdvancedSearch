@@ -5,6 +5,7 @@
 		]
 	},
 	"advancedsearch-options-pane-head": "उन्नत खोज:",
+	"advancedsearch-options-pane-preview-list": "वर्तमानमे उपयुक्त खोजके शब्द",
 	"advancedsearch-optgroup-text": "पन्नाके पाठमे खोजथिन",
 	"advancedsearch-optgroup-structure": "संरचना",
 	"advancedsearch-optgroup-files": "सञ्चिका आउ चित्र",
@@ -23,6 +24,7 @@
 	"advancedsearch-field-fileh": "पिक्सल मे सञ्चिका ऊँचाई",
 	"advancedsearch-field-sort": "सरियावेके क्रम",
 	"advancedsearch-field-preview-sort": "$1 अनुसार सरियावथिन",
+	"advancedsearch-help-general-instruction": "$1 लागि विस्तृत निर्देश",
 	"advancedsearch-placeholder-exact-text": "\"बिल्लाई बकरियाके चाह हे\"",
 	"advancedsearch-inlanguage-default": "भाषा चुनथिन",
 	"advancedsearch-filetype-section-types": "सामान्य सञ्चिका प्रकार",
