@@ -4,7 +4,9 @@
 			"ऐक्टिवेटेड्"
 		]
 	},
+	"advancedsearch-desc": "[[{{#Special:Search}}]] पर खोजके उन्नत कार्यक्षमता तक सहज पहुँच",
 	"advancedsearch-options-pane-head": "उन्नत खोज:",
+	"advancedsearch-options-pane-preview-list": "वर्तमानमे उपयुक्त खोजके शब्द",
 	"advancedsearch-optgroup-text": "पन्नाके पाठमे खोजथिन",
 	"advancedsearch-optgroup-structure": "संरचना",
 	"advancedsearch-optgroup-files": "सञ्चिका आउ चित्र",
@@ -15,6 +17,7 @@
 	"advancedsearch-field-not": "ई शब्द न",
 	"advancedsearch-field-subpageof": "ई पन्नाके उपपन्ना",
 	"advancedsearch-field-intitle": "पन्ना शीर्षकमे होवहे",
+	"advancedsearch-field-incategory": "ईसभ श्रेणीमे पन्ना",
 	"advancedsearch-field-deepcategory": "ईसब श्रेणीमे पन्ना",
 	"advancedsearch-field-hastemplate": "ईसब साँचावाला पन्ना",
 	"advancedsearch-field-inlanguage": "ई भाषामे पन्ना",
@@ -23,6 +26,7 @@
 	"advancedsearch-field-fileh": "पिक्सल मे सञ्चिका ऊँचाई",
 	"advancedsearch-field-sort": "सरियावेके क्रम",
 	"advancedsearch-field-preview-sort": "$1 अनुसार सरियावथिन",
+	"advancedsearch-help-general-instruction": "$1 लागि विस्तृत निर्देश",
 	"advancedsearch-placeholder-exact-text": "\"बिल्लाई बकरियाके चाह हे\"",
 	"advancedsearch-inlanguage-default": "भाषा चुनथिन",
 	"advancedsearch-filetype-section-types": "सामान्य सञ्चिका प्रकार",
