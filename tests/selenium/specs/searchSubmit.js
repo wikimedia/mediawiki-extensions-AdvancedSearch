@@ -11,7 +11,7 @@ describe( 'Advanced Search', () => {
 		await SearchPage.toggleInputFields();
 		await SearchPage.searchTheseWords.put( '\n' );
 
-		await expect( await SearchPage.formWasSubmitted() ).toBeTruthy();
+		await expect( browser ).toHaveUrl( expect.stringContaining( 'profile=' ), { message: 'form was submitted' } );
 	} );
 
 	it( 'submits the search with the specific chosen language', async function () {

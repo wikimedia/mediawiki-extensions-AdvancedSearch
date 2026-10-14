@@ -191,10 +191,6 @@ class SearchPage extends Page {
 		return $( '.mw-advancedSearch-template div[role="listbox"]' );
 	}
 
-	async formWasSubmitted() {
-		return ( await this.getQueryFromUrl() ).has( 'profile' );
-	}
-
 	async advancedSearchIsCollapsed() {
 		return await $( '.mw-advancedSearch-expandablePane-options > .oo-ui-indicatorElement .oo-ui-indicatorElement-indicator.oo-ui-indicator-down' ).isExisting();
 	}

@@ -98,7 +98,7 @@ describe( 'Advanced Search', () => {
 		await SearchPage.toggleInputFields();
 		await SearchPage.searchTheseWords.put( '\n\n' );
 
-		await expect( await SearchPage.formWasSubmitted() ).toBe( true, { message: 'form was submitted on double enter in "These Words" field' } );
+		await expect( browser ).toHaveUrl( expect.stringContaining( 'profile=' ), { message: 'form was submitted on double enter in "These Words" field' } );
 
 		await SearchPage.waitForAdvancedSearchToLoad();
 		await expect( await SearchPage.advancedSearchIsCollapsed() ).toBe( true, { message: 'Search preview is collapsed after submission' } );
