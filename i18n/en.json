@@ -5,14 +5,12 @@
 		]
 	},
 	"advancedsearch-desc": "Easy access to advanced search capabilities on [[{{#Special:Search}}]]",
-
 	"advancedsearch-options-pane-head": "Advanced search:",
 	"advancedsearch-options-pane-preview-list": "Currently used search terms",
 	"advancedsearch-optgroup-text": "Search in page text",
 	"advancedsearch-optgroup-structure": "Structure",
 	"advancedsearch-optgroup-files": "Files and images",
 	"advancedsearch-optgroup-sort": "Sorting order",
-
 	"advancedsearch-field-plain": "These words",
 	"advancedsearch-field-phrase": "Exactly this text",
 	"advancedsearch-field-or": "One of these words",
@@ -28,7 +26,6 @@
 	"advancedsearch-field-fileh": "File height in pixels",
 	"advancedsearch-field-sort": "Sorting order",
 	"advancedsearch-field-preview-sort": "Sort by $1",
-
 	"advancedsearch-help-general-instruction": "Detailed instructions for $1",
 	"advancedsearch-help-plain": ";Description\n:Searches for these words in the title or text.\n;Be aware of the following\n:* Multiple words can be entered here.\n:* Punctuation marks and other non-alphanumeric characters (with exception of the colon and comma) will be ignored.\n:* There may be results that do not contain one or more of your search terms.\n:* Word stemming is applied. Example: If ''car'' is entered, the search will also consider ''cars''. The word stemming is language-specific.\n;Help page\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Full_text_search Full text search]\n;Syntax-equivalent in the normal search\n:<code>sesame street car</code>",
 	"advancedsearch-help-phrase": ";Description\n:Searches for a specific sequence of characters. Punctuation marks are ignored.\n;Be aware of the following\n:(only valid when using quotation marks, see example below)\n:* Separate the search phrases by comma or space e.g. <code>\"good morning\"</code>, <code>\"hello friend!\"</code>.\n:* Punctuation marks and other non-alphanumeric characters (with exception of the colon and comma) will be ignored.\n:* Search is not case-sensitive.\n:* Word stemming is not applied.\n;Help page\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Words, phrases, and modifiers]\n;Syntax-equivalent in the normal search\n:Words in quotation marks, for example <code>\"Begin at the beginning\"</code>.",
@@ -44,10 +41,7 @@
 	"advancedsearch-help-filew": ";Description\n:These fields allow you to specify the width of the file.\n;Be aware of the following\n:* This is only applicable to file types that have width and height, like videos and images.\n;Help page\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures Filemeasures]\n;Syntax-equivalent in the normal search\n:Numbers with <code>filew</code> before them like <code>filew:>800</code>.",
 	"advancedsearch-help-fileh": ";Description\n:These fields allow you to specify the height of the file.\n;Be aware of the following\n:* This is only applicable to file types that have width and height, like videos and images.\n;Help page\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures Filemeasures]\n;Syntax-equivalent in the normal search\n:Numbers with <code>fileh</code> before them like <code>fileh:>600</code>.",
 	"advancedsearch-help-sort": ";Description\n:Change the sorting order of results. The standard is that most relevant pages are placed on top of the results.\n;Help page\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Explicit_sort_orders Explicit sort orders]\n;Syntax-equivalent in the normal search\n:This feature has no keyword that you can type in the search input field since the function is specified via a parameter in the URL.",
-	"advancedsearch-placeholder-exact-text": "\"cat loves goat\"",
-
 	"advancedsearch-inlanguage-default": "Select language",
-
 	"advancedsearch-filetype-section-types": "General file types",
 	"advancedsearch-filetype-section-image": "Image formats",
 	"advancedsearch-filetype-section-audio": "Audio formats",
@@ -84,7 +78,6 @@
 	"advancedsearch-sort-preview-incoming-links-asc": "least linked",
 	"advancedsearch-sort-preview-incoming-links-desc": "most linked",
 	"advancedsearch-sort-preview-random": "random",
-
 	"advancedsearch-namespaces-search-in": "Search in:",
 	"advancedsearch-namespaces-remember": "Remember selection for future searches",
 	"advancedsearch-namespaces-pane-preview-list": "Currently active namespace filters",
@@ -93,7 +86,6 @@
 	"advancedsearch-namespaces-preset-general-help": "General Help",
 	"advancedsearch-namespaces-preset-discussion": "Discussion",
 	"advancedsearch-namespaces-placeholder": "Add namespaces…",
-
 	"prefs-advancedsearch": "Advanced Search",
 	"advancedsearch-preference-help": "Advanced Search adds a form to the {{#Special:Search}} page. This allows you to perform specialized searches, even if you don't know any search syntax. It also changes the way namespaces can be selected.",
 	"advancedsearch-preference-disable": "Don’t show the Advanced Search interface when using {{#Special:Search}}"

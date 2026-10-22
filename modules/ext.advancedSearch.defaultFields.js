@@ -169,10 +169,7 @@ const addDefaultFields = function ( fieldCollection ) {
 			id: 'phrase',
 			// Add quotes only when missing; don't destroy deliberate user input
 			formatter: ( val ) => val.includes( '"' ) ? val : enforceQuotes( val ),
-			init: ( state, config ) => new TextInput(
-				state,
-				Object.assign( {}, config, { placeholder: mw.msg( 'advancedsearch-placeholder-exact-text' ) } )
-			),
+			init: ( state, config ) => new TextInput( state, config ),
 			layout: createDefaultLayout
 		} ),
 		'text'

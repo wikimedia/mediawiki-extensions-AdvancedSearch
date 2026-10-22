@@ -233,7 +233,6 @@
 				"modules/dm/ext.advancedSearch.LanguageOptionProvider.js"
 			],
 			"messages": [
-				"advancedsearch-placeholder-exact-text",
 				"advancedsearch-field-deepcategory",
 				"advancedsearch-field-fileh",
 				"advancedsearch-field-filetype",

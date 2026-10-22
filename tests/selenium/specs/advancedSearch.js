@@ -13,7 +13,7 @@ describe( 'Advanced Search', () => {
 
 		await expect( await SearchPage.searchInfoIcon ).toBeDisplayed( ( { message: 'Info icons are visible' } ) );
 		await expect( await SearchPage.searchTheseWords.getPlaceholderText() ).toBe( '' );
-		await expect( await SearchPage.searchExactText.getPlaceholderText() ).not.toBe( '' );
+		await expect( await SearchPage.searchExactText.getPlaceholderText() ).toBe( '' );
 		await expect( await SearchPage.searchNotTheseWords.getPlaceholderText() ).toBe( '' );
 		await expect( await SearchPage.searchOneWord.getPlaceholderText() ).toBe( '' );
 
