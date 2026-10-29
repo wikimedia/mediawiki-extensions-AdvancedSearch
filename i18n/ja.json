@@ -58,7 +58,6 @@
 	"advancedsearch-help-filew": ";解説\n:これらの欄でファイルの幅を指定します。\n;注意点\n:* この条件を設定できるのは幅と高さのある、動画や画像などのファイルのみ。\n;ヘルプページ\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures ファイルの大きさ]\n;相当する通常の検索の構文\n:数字の前に<code>filew</code>を付け、<code>filew:>800</code>と記述。",
 	"advancedsearch-help-fileh": ";解説\n:この欄でファイルの高さを指定します。\n;注意点\n:* この条件を設定できるのは幅と高さのある、動画や画像などのファイルのみ。\n;ヘルプページ\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures ファイルの大きさ]\n;相当する通常の検索の構文\n:数字の前に<code>fileh</code>を付け、<code>fileh:>600</code>と記述。",
 	"advancedsearch-help-sort": ";解説\n:検索結果の並び順を変更します。既定では、最も関連性のあるページが検索結果の最上位に表示されます。\n;ヘルプ ページ\n: [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Explicit_sort_orders Explicit sort orders]\n;相当する通常の検索の構文\n: この機能が使えるようになるキーワードはありません。URLのパラメーターを介して、並び順が指定されます。",
-	"advancedsearch-placeholder-exact-text": "\"ネコはヤギが好き\"",
 	"advancedsearch-inlanguage-default": "言語の選択",
 	"advancedsearch-filetype-section-types": "一般的なファイルの種類",
 	"advancedsearch-filetype-section-image": "画像",

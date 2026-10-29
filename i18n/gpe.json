@@ -25,7 +25,6 @@
 	"advancedsearch-field-sort": "Sorting order",
 	"advancedsearch-field-preview-sort": "Sort by $1",
 	"advancedsearch-help-plain": ";Description\n:Searches for dese words for de title insyd anaa text.\n;Make you be aware of de following\n:* You go fi enter Multiple words for here.\n:* We go ignore punctuation marks den oda non-alphanumeric characters (plus exception of de colon den comma).\n:* Results go fi dey wey no dey contain one anaa more of your search terms.\n:* Dey apply Word stemming. Example: If dem enter ''car'', de search go san consider ''cars''. De word stemming be language specific.\n;Help page\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Full_text_search Full text search]\n;Syntax-equivalent for de normal search insyd\n:<code>sesame street car</code>",
-	"advancedsearch-placeholder-exact-text": "\"cat dey love goat\"",
 	"advancedsearch-inlanguage-default": "Make you select language",
 	"advancedsearch-filetype-section-types": "General file types",
 	"advancedsearch-filetype-section-image": "Image formats",

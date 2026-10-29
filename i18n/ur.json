@@ -30,7 +30,6 @@
 	"advancedsearch-field-preview-sort": "ترتیب بلحاظ $1",
 	"advancedsearch-help-plain": ";وضاحت\n:عنوان یا متن میں ان الفاظ کی تلاش کے نتائج۔\n;درج ذیل امور کا خیال رکھیں\n:* تلاش میں متعدد الفاظ درج کیے جا سکتے ہیں۔\n:* رموز اوقاف اور دوسرے غیر حرفی ہندسی نشانات (سوائے وقف توضیحی اور وقفہ کے) نظر انداز کر دیے جائیں گے۔\n:* ممکن ہے کہ آپ کی تلاش سے ایسے نتائج سامنے آئیں جن میں آپ کے تلاش کردہ ایک یا زائد الفاظ نہ ہوں۔\n;صفحہ معاونت\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search مکمل متن کی تلاش]\n;سادہ تلاش میں نحوی متبادل\n:<code>کالی بلی</code>",
 	"advancedsearch-help-phrase": ";وضاحت\n:عنوان یا متن میں ان الفاظ کی تلاش کے نتائج۔\n;درج ذیل امور کا خیال رکھیں\n:* تلاش میں متعدد الفاظ درج کیے جا سکتے ہیں۔\n:* رموز اوقاف اور دوسرے غیر حرفی ہندسی نشانات (سوائے وقف توضیحی اور وقفہ کے) نظر انداز کر دیے جائیں گے۔\n:* ممکن ہے کہ آپ کی تلاش سے ایسے نتائج سامنے آئیں جن میں آپ کے تلاش کردہ ایک یا زائد الفاظ نہ ہوں۔\n;صفحہ معاونت\n:[hthttps://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers الفاظ، جملے، پیرے]\n;سادہ تلاش میں نحوی متبادل\n:کوٹیشن مارکس میں الفاظ، مثال کے طور پر <code>\"شروع سے شروع کریں\"</code>۔",
-	"advancedsearch-placeholder-exact-text": "\"بلی اور بکری کی محبت\"",
 	"advancedsearch-inlanguage-default": "زبان منتخب کریں",
 	"advancedsearch-filetype-section-types": "عمومی فائل کی اقسام",
 	"advancedsearch-filetype-section-image": "تصویر کے فارمیٹ",

@@ -10,6 +10,7 @@
 			"Leptictidium",
 			"Mguix",
 			"Paucabot",
+			"Qllach",
 			"SMP",
 			"Sma1997"
 		]
@@ -50,7 +51,6 @@
 	"advancedsearch-help-filew": ";Descripció\n:Aquests camps permeten especificar l'amplada del fitxer.\n;Tingueu en compte el següent\n:* Tan sols és aplicable a tipus de fitxer que tenen amplada i alçària, com els vídeos i les imatges.\n;Pàgina d'ajuda\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures Mesures de fitxer]\n;Sintaxi equivalent en la cerca normal\n:Valors numèrics precedits de <code>filew</code>, com ara <code>filew:>800</code>.",
 	"advancedsearch-help-fileh": ";Descripció\n:Aquests camps permeten especificar l'alçària del fitxer.\n;Tingueu en compte el següent\n:* Tan sols és aplicable a tipus de fitxer que tenen amplada i alçària, com els vídeos i les imatges.\n;Pàgina d'ajuda\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures Mesures de fitxer]\n;Sintaxi equivalent en la cerca normal\n:Valors numèrics precedits de <code>fileh</code>, com ara <code>fileh:>600</code>.",
 	"advancedsearch-help-sort": ";Descripció\n:Canvia l'ordre d'ordenació dels resultats. L'estàndard és que les pàgines més rellevants siguin els primers resultats.\n;Pàgina d'ajuda\n: [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Explicit_sort_orders Ordres d'ordenació explícites]\n;Sintaxi equivalent a la cerca normal\n: Aquesta característica no té cap paraula clau que pugueu escriure al camp d'entrada de cerca ja que la funció s'especifica mitjançant un paràmetre a l'URL.",
-	"advancedsearch-placeholder-exact-text": "\"camp de blat\"",
 	"advancedsearch-inlanguage-default": "Selecciona llengua",
 	"advancedsearch-filetype-section-types": "Tipus de fitxers generals",
 	"advancedsearch-filetype-section-image": "Formats d'imatge",

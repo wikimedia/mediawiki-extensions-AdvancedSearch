@@ -43,7 +43,6 @@
 	"advancedsearch-help-filew": ";תיאור\n:שדות אלה מאפשרים לציין את רוחב הקובץ.\n;נא לשים לב לדברים הבאים\n:* האפשרות הזאת מתאימה רק לסוגי קבצים שיש להם רוחב וגובה, למשל סרטונים ותמונות.\n;דף עזרה\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures Filemeasures]\n;תחביר שעושה את אותו הדבר בחיפוש רגיל\n:התחילית <code>filew</code> ואחריה מספר, למשל: <code>filew:>800</code>.",
 	"advancedsearch-help-fileh": ";תיאור\n:שדות אלה מאפשרים לציין את גובה הקובץ.\n;נא לשים לב לדברים הבאים\n:* האפשרות הזאת מתאימה רק לסוגי קבצים שיש להם רוחב וגובה, למשל סרטונים ותמונות.\n;דף עזרה\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures Filemeasures]\n;תחביר שעושה את אותו הדבר בחיפוש רגיל\n:התחילית <code>fileh</code> ואחריה מספר, למשל: <code>fileh:>600</code>.",
 	"advancedsearch-help-sort": ";תיאור\n:שינוי סדר המיון של התוצאות. הסדר הרגיל הוא לשים את הדפים הרלוונטיים ביותר בראש התוצאות.\n;דף עזרה\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Explicit_sort_orders Explicit sort orders]\n;המקבילה בחיפוש רגיל\n:ליכולת הזאת אין מילת מפתח שאפשר להקליד בשורת החיפוש כי הפונקציה מוגדרת באמצעות פרמטר ב־URL.",
-	"advancedsearch-placeholder-exact-text": "\"חתול אוהב עז\"",
 	"advancedsearch-inlanguage-default": "בחירת שפה",
 	"advancedsearch-filetype-section-types": "סוגי קובץ כלליים",
 	"advancedsearch-filetype-section-image": "תסדירי תמונה",

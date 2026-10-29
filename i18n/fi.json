@@ -51,7 +51,6 @@
 	"advancedsearch-help-filew": ";Kuvaus\n:Näillä kentillä voit määrittää kuvan leveyden.\n;Ota huomioon seuraavat\n:* Nämä koskevat vain niitä tiedostotyyppejä, joilla on leveys ja korkeus, kuten videot ja kuvat.\n;Ohjesivu\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures Filemeasures]\n;Vastaava syntaksi tavallisessa haussa\n:Numerot, joiden edessä on <code>filew</code>, kuten <code>filew:>800</code>.",
 	"advancedsearch-help-fileh": ";Kuvaus\n:Näillä kentillä voit määrittää tiedoston korkeuden.\n;Ota huomioon seuraavat\n:* Tämä koskee vain niitä tiedostotyyppejä, joilla on leveys ja korkeus, kuten videot ja kuvat.\n;Ohjesivu\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures Filemeasures]\n;Vastaava syntaksi tavallisessa haussa\n:Numerot, joiden edessä on <code>fileh</code>, kuten <code>fileh:>600</code>.",
 	"advancedsearch-help-sort": ";Kuvaus\n:Muuta tulosten järjestystä. Oletuksena osuvimmat tulokset näytetään ylimpänä.\n;Ohjesivu\n: [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Explicit_sort_orders Explicit sort orders]\n;Vastaava syntaksi tavallisessa haussa\n: Tälle toiminnolle ei ole hakukenttään kirjoitettavaa termiä, koska toiminto suoritetaan URL-kentän parametrillä.",
-	"advancedsearch-placeholder-exact-text": "\"kissa rakastaa vuohta\"",
 	"advancedsearch-inlanguage-default": "Valitse kieli",
 	"advancedsearch-filetype-section-types": "Yleiset tiedostotyypit",
 	"advancedsearch-filetype-section-image": "Kuvamuodot",

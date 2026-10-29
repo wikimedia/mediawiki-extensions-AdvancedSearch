@@ -31,7 +31,6 @@
 	"advancedsearch-field-sort": "Zoradiť podľa",
 	"advancedsearch-field-preview-sort": "Zoradiť podľa $1",
 	"advancedsearch-help-plain": ";Popis\n:Hľadá tieto slová v názve alebo texte.\n;Uvedomte si nasledujúce\n:* Je možné zadať viac slov.\n:* Interpunkčné znamienka a ďalšie nealfanumerické znaky (s výnimkou dvojbodky a čiarky) budú ignorované.\n:* Môžu sa zobraziť výsledky, ktoré neobsahujú jedno alebo viac hľadaných slov.\n:* Používa sa stemovanie (hľadanie podľa koreňa slova). Príklad: Ak zadáte ''auto'', hľadanie zohľadní aj ''autá''. Stemovanie závisí od jazyka.\n;Stránka pomocníka\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Full_text_search Fulltextové vyhľadávanie]\n;Syntaktický ekvivalent v bežnom vyhľadávaní\n:<code>sesame street car</code>",
-	"advancedsearch-placeholder-exact-text": "\"mačka miluje kozu\"",
 	"advancedsearch-inlanguage-default": "Vybrať jazyk",
 	"advancedsearch-filetype-section-types": "Všeobecné typy súborov",
 	"advancedsearch-filetype-section-image": "Formáty obrázkov",

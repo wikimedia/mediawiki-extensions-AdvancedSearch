@@ -26,7 +26,6 @@
 	"advancedsearch-field-sort": "Pigpapakarhay an pasurunod-sunod",
 	"advancedsearch-field-preview-sort": "Ipasunod-sunod sa $1",
 	"advancedsearch-help-plain": ";Deskripsyon\n:Hanapon an mga tataramon na ini sa titulo asin teksto.\n;Magin mapagmangno sa masurunod\n:* Pwedeng ikaag an nagkakapirang tataramon igdi.\n:* Mga pananda asin iba pang mga non-alphanumeric na mga karakter (pwera sa colon asin comma) dai iintindihon.\n:* Pwedeng may mga resulta na mayo nin saro o mas gulpi pa sa mga pighahanap mong mga termino.\n:* Piggamit an Word stemming. Halimbawa: Kun ''car'' an piglaag,an pighahanap makokonsidera bilang ''cars''. An word stemming espisipiko sa kada lenggwahe.\n;Tabang pahina\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Full_text_search Full text search]\n;Syntax-equivalent katampad kan normal search\n:<code>sesame street car</code>",
-	"advancedsearch-placeholder-exact-text": "\"padangat kan mga ikos an mga kambing\"",
 	"advancedsearch-inlanguage-default": "Magpili nin lengguwahe",
 	"advancedsearch-filetype-section-types": "General na klase nin mga files",
 	"advancedsearch-filetype-section-image": "Format kan mga imahen",

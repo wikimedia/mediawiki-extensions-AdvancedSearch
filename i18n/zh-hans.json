@@ -62,7 +62,6 @@
 	"advancedsearch-help-filew": ";描述\n:这些字段允许您指定文件宽度。\n;请注意以下说明\n:* 这只应用到有宽和高的文件类型，例如视频和图片。\n;帮助页面\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures 文件度量]\n;正常搜索中的等效语法\n:前面带<code>filew</code>的数字，例如<code>filew:>800</code>。",
 	"advancedsearch-help-fileh": ";描述\n:这些字段允许您指定文件高度。\n;请注意以下说明\n:* 这只应用到有宽和高的文件类型，例如视频和图片。\n;帮助页面\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures 文件度量]\n;正常搜索中的等效语法\n:前面带<code>filew</code>的数字，例如<code>filew:>800</code>。",
 	"advancedsearch-help-sort": ";描述\n:更改结果的排序顺序。标准顺序是最相关的页面位于结果顶部。\n;帮助页面\n: [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Explicit_sort_orders 明确的排序顺序]\n;普通搜索内的等效语法\n: 该功能没有可在搜索输入字段键入的关键词，因为该功能是通过URL中的参数指定的。",
-	"advancedsearch-placeholder-exact-text": "\"猫喜爱山羊\"",
 	"advancedsearch-inlanguage-default": "选择语言",
 	"advancedsearch-filetype-section-types": "常规文件类型",
 	"advancedsearch-filetype-section-image": "图像格式",

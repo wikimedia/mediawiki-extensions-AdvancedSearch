@@ -22,7 +22,6 @@
 	"advancedsearch-field-filew": "Ambané barkas ing piksel",
 	"advancedsearch-field-fileh": "Dhuwuré barkas ing piksel",
 	"advancedsearch-help-plain": ";Wedharan\n:Golèk tembung-tembung iki ing jeroning sesirah utawa tulisan.\n;Gatèkaké prakara iki\n:* Tembung saroncé bisa kolebokaké ing kéné.\n:* Tandha waca lan karakter non-alfabèt lan non-angka (kajaba titik loro lan komah) bakal kalirwakaké.\n:* Bisa dadi ana wohing panggolèk kang ora ngemu tembung-tembing kang kogolèki.\n:* Tembung andhahan ora kaétung. Conto: yèn nggolèki tembung ''duwé'', wohing panggolèk ora bakal ngasilaké tembung ''nduwèni''.\n;Kaca pitulung\n:[https://www.mediawiki.org/wiki/Help:CirrusSearch#Full_text_search Nggolèki tulisan wutuhan]\n;Padhan sintaksis ing panggolèk kang lumrah\n:<code>sesame street car</code>",
-	"advancedsearch-placeholder-exact-text": "\"kucing tresna wedhus\"",
 	"advancedsearch-inlanguage-default": "Pilih basa",
 	"advancedsearch-filetype-section-types": "Jinis barkas kang lumrah",
 	"advancedsearch-filetype-section-image": "Format gambar",

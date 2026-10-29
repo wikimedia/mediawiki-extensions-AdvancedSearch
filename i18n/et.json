@@ -42,7 +42,6 @@
 	"advancedsearch-help-filew": ";Kirjeldus\n:Need väljad võimaldavad määrata faili laiust.\n;Silmaspidamiseks\n:* See on rakendatav ainult pikkuse ja laiusega failitüüpide suhtes nagu videod ja pildid.\n;Abilehekülg\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures Faili mõõtmed]\n;Vaste harilikus otsisüntaksis\n:Numbrid, mille ees on <code>filew</code>, nt <code>filew:>800</code>",
 	"advancedsearch-help-fileh": ";Kirjeldus\n:Need väljad võimaldavad määrata faili kõrgust.\n;Silmaspidamiseks\n:* See on rakendatav ainult pikkuse ja laiusega failitüüpide suhtes nagu videod ja pildid.\n;Abilehekülg\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures Faili mõõtmed]\n;Vaste harilikus otsisüntaksis\n:Numbrid, mille ees on <code>fileh</code>, nt <code>fileh:>600</code>",
 	"advancedsearch-help-sort": ";Kirjeldus\n:Muuda tulemuste järjestust. Vaikimisi on tulemuste seas eespool kõige asjakohasemad leheküljed.\n;Abilehekülg\n: [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Explicit_sort_orders Kindlas järjestuses tulemused]\n;Vaste harilikus otsisüntaksis\n: Sellel funktsioonil pole võtmesõna, mida otsiväljale sisestada. See funktsioon on määratud URL-i parameetriga.",
-	"advancedsearch-placeholder-exact-text": "\"kassile meeldib kits\"",
 	"advancedsearch-inlanguage-default": "Vali keel",
 	"advancedsearch-filetype-section-types": "Üldised failitüübid",
 	"advancedsearch-filetype-section-image": "Pildivormingud",

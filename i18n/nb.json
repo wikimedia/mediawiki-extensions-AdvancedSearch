@@ -48,7 +48,6 @@
 	"advancedsearch-help-filew": "; Beskrivelse\n: Disse feltene lar deg angi bredden til filen.\n; Vær obs på følgende\n:* Dette gjelder kun filtyper som har bredde og høyde, som videoer og bilder.\n; Hjelpeside\n: [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures Fildimensjoner]\n; Tilsvarende syntaks i vanlig søk\n: Tall med <code>filew</code> foran, som <code>filew:>800</code>.",
 	"advancedsearch-help-fileh": "; Beskrivelse\n: Disse feltene lar deg angi filens høyde.\n; Vær obs på følgende\n:* Dette gjelder kun filtyper som har bredde og høyde, som videoer og bilder.\n; Hjelpeside\n: [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures Fildimensjoner]\n; Tilsvarende syntaks i vanlig søk\n: Tall med <code>fileh</code> foran, som <code>fileh:>600</code>.",
 	"advancedsearch-help-sort": ";Beskrivelse\n:Endre sorteringsrekkefølgen til resultatene. Standarden er at de mest relevante sidene kommer først.\n;Hjelpeside\n: [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Explicit_sort_orders Eksplisitte sorteringsrekkefølger]\n;Tilsvarende syntaks i vanlig søk\n:Denne funksjonen har ingen nøkkelord du kan skrive inn i søkefeltet siden funksjonen spesifiseres via en parameter i URL-en.",
-	"advancedsearch-placeholder-exact-text": "\"katt elsker geit\"",
 	"advancedsearch-inlanguage-default": "Velg språk",
 	"advancedsearch-filetype-section-types": "Generelle filtyper",
 	"advancedsearch-filetype-section-image": "Bildeformater",
