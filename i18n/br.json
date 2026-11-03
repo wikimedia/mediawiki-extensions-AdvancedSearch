@@ -4,7 +4,8 @@
 			"Adriendelucca",
 			"Dishual",
 			"Fulup",
-			"Huñvreüs"
+			"Huñvreüs",
+			"Ar choler"
 		]
 	},
 	"advancedsearch-options-pane-head": "Klask araokaet:",
@@ -28,6 +29,9 @@
 	"advancedsearch-field-sort": "Urzh renkañ",
 	"advancedsearch-field-preview-sort": "Urzhiañ dre $1",
 	"advancedsearch-help-general-instruction": "Kemennoù resis evit $1",
+	"advancedsearch-help-phrase": ";Deskrivadur\n:Klask a ra ue steudad arouezennoù resis. Dianavezet e vez ar poentadur.\n;Bezit emouez ouzh kement-mañ\n:(ne dalvez nemet pa implijer daouaskoù, gwilt ar skouer a-is) :\n:* dispartit frazennoù ar c'hlask dre skejoù pe esaouennoù, da skouer <code>\"brav an amzer !\"</code> , <code>\"salud dit !\"</code> ;\n:* dianavezet e vo ar poentadur hag arouezennoù all nann-lizherniverennek (war-bouez an daoubik hag ar skej) ;\n:* ne ziforc'h ket etre pennlizherennoù ha lizherennoù bihan ;\n** ne glask ket deveradurioù ;\n;Pajenn Skoazell\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Gerioù, frazennoù, ha daskemmerien]\n;Kevatal a-fet ereadurezh er c'hlask boas\n:Gerioù etre daouaskoù, da skouer <code>\"Deraouit en deroù\"</code>",
+	"advancedsearch-help-or": ";Deskrivadur\n:Unan d'an nebeutañ eus termenoù ar c'hlask a ranker ensoc'hañ er bajenn.\n;Pajenn Skoazell\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers Gerioù, frazennoù, ha daskemmerien]\n;Kevatal a-fet ereadurezh er c'hlask boas\n:Gerioù gant <code>PE</code> etrezo, evel <code>urzhiataer PE kompoder</code>.",
+	"advancedsearch-help-subpageof": ";Deskrivadur\n:Kalsk a ra pajennoù a zo ispajennoù d'ar bajenn-mañ.\n;Bezit emouez ouzh kement-mañ :\n:* ne c'hallit klask nemet ispajennoù ur bajenn hepken war un dro ;\n:* na zisoñjit ket gweredekaat e sil an esaouennoù envel an esaouennoù envel ma vennit klask ;\n:* na lakait ket an esouenn envel e-tal anv ar bajenn evel-mañ : <del><code>{{ns:project}}:Redirect</code></del>.\n;Pajenn Skoazell\n:[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#subpageof Subpageof]\n;Kevatal a-fet ereadurezh er c'hlask boas\n:<code>subpageof:</code> heuliet gant anv ur bajenn evel <code>subpageof:Redirect</code>. Lakait daouaskoù mard eus esaouennoù er bajenn gar : <code>subpageof:\"Requests for comment\"</code>.",
 	"advancedsearch-placeholder-exact-text": "\"tri martolod yaouank\"",
 	"advancedsearch-inlanguage-default": "Dibab ar yezh",
 	"advancedsearch-filetype-section-types": "Seurtoù hollek ar restroù",
